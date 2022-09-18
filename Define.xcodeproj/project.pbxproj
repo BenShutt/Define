@@ -106,12 +106,12 @@
 		B80399DB28D79A37008CE7B4 /* Define */ = {
 			isa = PBXGroup;
 			children = (
-				B8039A0F28D7A51F008CE7B4 /* Extensions */,
 				B8039A0A28D7A26E008CE7B4 /* Assets */,
 				B8039A0728D7A0DC008CE7B4 /* DictionaryAPI */,
-				B80399DC28D79A37008CE7B4 /* DefineApp.swift */,
-				B80399DE28D79A37008CE7B4 /* ContentView.swift */,
+				B8039A0F28D7A51F008CE7B4 /* Extensions */,
 				B80399E228D79A3B008CE7B4 /* Preview Content */,
+				B80399DE28D79A37008CE7B4 /* ContentView.swift */,
+				B80399DC28D79A37008CE7B4 /* DefineApp.swift */,
 			);
 			path = Define;
 			sourceTree = "<group>";
@@ -145,8 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				B8039A1B28D7B36C008CE7B4 /* Endpoints */,
-				B8039A0828D7A14C008CE7B4 /* URLComponents+DictionaryAPI.swift */,
 				B8039A0D28D7A298008CE7B4 /* DictionaryAPIKey.swift */,
+				B8039A0828D7A14C008CE7B4 /* URLComponents+DictionaryAPI.swift */,
 			);
 			path = DictionaryAPI;
 			sourceTree = "<group>";
@@ -287,8 +287,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B80399E428D79A3B008CE7B4 /* Preview Assets.xcassets in Resources */,
 				B80399E128D79A3B008CE7B4 /* Assets.xcassets in Resources */,
+				B80399E428D79A3B008CE7B4 /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,13 +334,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8039A0928D7A14C008CE7B4 /* URLComponents+DictionaryAPI.swift in Sources */,
-				B8039A0E28D7A298008CE7B4 /* DictionaryAPIKey.swift in Sources */,
-				B8039A1D28D7B37A008CE7B4 /* EntriesAPI.swift in Sources */,
 				B80399DF28D79A37008CE7B4 /* ContentView.swift in Sources */,
 				B80399DD28D79A37008CE7B4 /* DefineApp.swift in Sources */,
+				B8039A0E28D7A298008CE7B4 /* DictionaryAPIKey.swift in Sources */,
+				B8039A1D28D7B37A008CE7B4 /* EntriesAPI.swift in Sources */,
 				B8039A1828D7AF09008CE7B4 /* String+Contants.swift in Sources */,
 				B8039A1128D7A52A008CE7B4 /* URL+Components.swift in Sources */,
+				B8039A0928D7A14C008CE7B4 /* URLComponents+DictionaryAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
