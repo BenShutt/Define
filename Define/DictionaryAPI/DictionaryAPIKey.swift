@@ -14,12 +14,12 @@ struct DictionaryAPIKey {
     private static let fileName = "dictionary-api-key.txt"
 
     /// Cache of the API key (static storage)
-    private static var apiKeyCache: String?
+    private static var apiKeyCache = ""
 
     /// Get API key
-    static var apiKey: String? {
-        if apiKeyCache == nil {
-            apiKeyCache = try? Self.loadFromFile() // Mask throw
+    static var apiKey: String {
+        if apiKeyCache.isEmpty {
+            apiKeyCache = (try? Self.loadFromFile()) ?? "" // Mask throw
         }
         return apiKeyCache
     }

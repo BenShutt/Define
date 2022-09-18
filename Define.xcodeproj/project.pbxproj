@@ -18,6 +18,8 @@
 		B8039A0E28D7A298008CE7B4 /* DictionaryAPIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8039A0D28D7A298008CE7B4 /* DictionaryAPIKey.swift */; };
 		B8039A1128D7A52A008CE7B4 /* URL+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8039A1028D7A52A008CE7B4 /* URL+Components.swift */; };
 		B8039A1428D7AAF7008CE7B4 /* HTTPRequest in Frameworks */ = {isa = PBXBuildFile; productRef = B8039A1328D7AAF7008CE7B4 /* HTTPRequest */; };
+		B8039A1828D7AF09008CE7B4 /* String+Contants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8039A1728D7AF09008CE7B4 /* String+Contants.swift */; };
+		B8039A1D28D7B37A008CE7B4 /* EntriesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8039A1C28D7B37A008CE7B4 /* EntriesAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		B8039A0828D7A14C008CE7B4 /* URLComponents+DictionaryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLComponents+DictionaryAPI.swift"; sourceTree = "<group>"; };
 		B8039A0D28D7A298008CE7B4 /* DictionaryAPIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryAPIKey.swift; sourceTree = "<group>"; };
 		B8039A1028D7A52A008CE7B4 /* URL+Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Components.swift"; sourceTree = "<group>"; };
+		B8039A1728D7AF09008CE7B4 /* String+Contants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Contants.swift"; sourceTree = "<group>"; };
+		B8039A1C28D7B37A008CE7B4 /* EntriesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +144,7 @@
 		B8039A0728D7A0DC008CE7B4 /* DictionaryAPI */ = {
 			isa = PBXGroup;
 			children = (
+				B8039A1B28D7B36C008CE7B4 /* Endpoints */,
 				B8039A0828D7A14C008CE7B4 /* URLComponents+DictionaryAPI.swift */,
 				B8039A0D28D7A298008CE7B4 /* DictionaryAPIKey.swift */,
 			);
@@ -150,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				B80399E028D79A3B008CE7B4 /* Assets.xcassets */,
+				B8039A1728D7AF09008CE7B4 /* String+Contants.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -160,6 +166,14 @@
 				B8039A1028D7A52A008CE7B4 /* URL+Components.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B8039A1B28D7B36C008CE7B4 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				B8039A1C28D7B37A008CE7B4 /* EntriesAPI.swift */,
+			);
+			path = Endpoints;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,8 +336,10 @@
 			files = (
 				B8039A0928D7A14C008CE7B4 /* URLComponents+DictionaryAPI.swift in Sources */,
 				B8039A0E28D7A298008CE7B4 /* DictionaryAPIKey.swift in Sources */,
+				B8039A1D28D7B37A008CE7B4 /* EntriesAPI.swift in Sources */,
 				B80399DF28D79A37008CE7B4 /* ContentView.swift in Sources */,
 				B80399DD28D79A37008CE7B4 /* DefineApp.swift in Sources */,
+				B8039A1828D7AF09008CE7B4 /* String+Contants.swift in Sources */,
 				B8039A1128D7A52A008CE7B4 /* URL+Components.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
