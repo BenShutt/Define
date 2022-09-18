@@ -20,6 +20,8 @@
 		B8039A1428D7AAF7008CE7B4 /* HTTPRequest in Frameworks */ = {isa = PBXBuildFile; productRef = B8039A1328D7AAF7008CE7B4 /* HTTPRequest */; };
 		B8039A1828D7AF09008CE7B4 /* String+Contants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8039A1728D7AF09008CE7B4 /* String+Contants.swift */; };
 		B8039A1D28D7B37A008CE7B4 /* EntriesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8039A1C28D7B37A008CE7B4 /* EntriesAPI.swift */; };
+		B8039A1F28D7B722008CE7B4 /* SearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8039A1E28D7B722008CE7B4 /* SearchAPI.swift */; };
+		B8039A2128D7B859008CE7B4 /* HTTPHeader+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8039A2028D7B859008CE7B4 /* HTTPHeader+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		B8039A1028D7A52A008CE7B4 /* URL+Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Components.swift"; sourceTree = "<group>"; };
 		B8039A1728D7AF09008CE7B4 /* String+Contants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Contants.swift"; sourceTree = "<group>"; };
 		B8039A1C28D7B37A008CE7B4 /* EntriesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesAPI.swift; sourceTree = "<group>"; };
+		B8039A1E28D7B722008CE7B4 /* SearchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAPI.swift; sourceTree = "<group>"; };
+		B8039A2028D7B859008CE7B4 /* HTTPHeader+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPHeader+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +167,7 @@
 		B8039A0F28D7A51F008CE7B4 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B8039A2028D7B859008CE7B4 /* HTTPHeader+Extensions.swift */,
 				B8039A1028D7A52A008CE7B4 /* URL+Components.swift */,
 			);
 			path = Extensions;
@@ -172,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				B8039A1C28D7B37A008CE7B4 /* EntriesAPI.swift */,
+				B8039A1E28D7B722008CE7B4 /* SearchAPI.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -338,6 +344,8 @@
 				B80399DD28D79A37008CE7B4 /* DefineApp.swift in Sources */,
 				B8039A0E28D7A298008CE7B4 /* DictionaryAPIKey.swift in Sources */,
 				B8039A1D28D7B37A008CE7B4 /* EntriesAPI.swift in Sources */,
+				B8039A2128D7B859008CE7B4 /* HTTPHeader+Extensions.swift in Sources */,
+				B8039A1F28D7B722008CE7B4 /* SearchAPI.swift in Sources */,
 				B8039A1828D7AF09008CE7B4 /* String+Contants.swift in Sources */,
 				B8039A1128D7A52A008CE7B4 /* URL+Components.swift in Sources */,
 				B8039A0928D7A14C008CE7B4 /* URLComponents+DictionaryAPI.swift in Sources */,

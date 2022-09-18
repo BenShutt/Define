@@ -1,5 +1,5 @@
 //
-//  EntriesAPI.swift
+//  SearchAPI.swift
 //  Define
 //
 //  Created by Ben Shutt on 18/09/2022.
@@ -9,27 +9,32 @@ import Foundation
 import Alamofire
 import HTTPRequest
 
-/// Make `HTTPRequest` for the Dictionary entries API
-struct EntriesAPI: HTTPRequestable {
+/// Make `HTTPRequest` for the Dictionary search API
+struct SearchAPI: HTTPRequestable {
 
-    /// Word identifier to get entry for
-    var wordId: String
+    /// Word to search
+    var word: String
 
     /// Additional `HTTPHeaders`
     var headers: HTTPHeaders {
-        HTTPHeaders([.appId, .appKey])
+        HTTPHeaders([.acceptJSON, .appId, .appKey])
     }
 
     /// Endpoint to hit
     var endpoint: String {
-        "entries/\(String.language)/\(wordId.lowercased())"
+        "search/\(String.language)"
+    }
+
+    /// `URLQueryItem`s
+    var queryItems: [URLQueryItem] {
+        [.init(name: "q", value: word)]
     }
 
     /// Make `HTTPRequest`
     func httpRequest() throws -> HTTPRequest {
         HTTPRequest(
             method: .get,
-            urlComponents: .dictionaryAPI(endpoint: endpoint),
+            urlComponents: .dictionaryAPI(endpoint: endpoint, queryItems: queryItems),
             additionalHeaders: headers,
             body: nil
         )

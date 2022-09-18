@@ -8,8 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+
+    @State var entry: String?
+
+    var word: String {
+        entry ?? "Loading..."
+    }
+
+    init() {
+        SearchAPI(word: "prejudice").request { result in
+            debugPrint(result)
+        }
+    }
+
     var body: some View {
-        Text(DictionaryAPIKey.apiKey)
+        Text(word)
             .padding()
     }
 }
