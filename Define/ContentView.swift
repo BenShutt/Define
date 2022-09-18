@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text(DictionaryAPIKey.apiKey ?? "")
+        Text(DictionaryAPIKey.apiKey)
             .padding()
     }
 }
