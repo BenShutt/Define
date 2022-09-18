@@ -14,31 +14,13 @@ extension String {
         "en-gb"
     }
 
-    /// Dictionary API app identifier
-    struct AppId {
-
-        /// Header name
-        static var name: String {
-            "app_id"
-        }
-
-        /// Header value
-        static var value: String {
-            "da68be2f"
-        }
+    /// Dictionary API app identifier header name
+    static var appIdHeaderName: String {
+        "app_id"
     }
 
-    /// Dictionary API app key
-    struct AppKey {
-
-        /// Header name
-        static var name: String {
-            "app_key"
-        }
-
-        /// Header value
-        static var value: String {
-            DictionaryAPIKey.apiKey
-        }
+    /// Dictionary API app key header name
+    static var appKeyHeaderName: String {
+        "app_key"
     }
 }

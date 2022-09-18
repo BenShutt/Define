@@ -6,32 +6,30 @@
 //
 
 import Foundation
+import HTTPRequest
 
 /// Load API key from the "dictionary-api-key.txt" file.
 struct DictionaryAPIKey {
 
     /// File with API key
-    private static let fileName = "dictionary-api-key.txt"
+    private static let fileName = "dictionary-api-key.json"
 
     /// Cache of the API key (static storage)
-    private static var apiKeyCache: String?
+    private static var apiKeyCache: APIKey?
 
     /// Get API key
-    static var apiKey: String {
+    static var apiKey: APIKey? {
         if apiKeyCache == nil {
             apiKeyCache = try? Self.loadFromFile() // Mask throw
         }
-        return apiKeyCache ?? ""
+        return apiKeyCache
     }
 
     /// Load API key from file
-    private static func loadFromFile() throws -> String {
-        let url = try URL
+    private static func loadFromFile() throws -> APIKey {
+        try JSONDecoder.snakeCase.decode(APIKey.self, from: Data(contentsOf: URL
             .findDirectoryOfXcodeProject()
-            .appendingPathComponent(fileName)
-
-        let data = try Data(contentsOf: url)
-        return String(decoding: data, as: UTF8.self)
-            .trimmingCharacters(in: .whitespacesAndNewlines)
+            .appendingPathComponent(fileName))
+        )
     }
 }

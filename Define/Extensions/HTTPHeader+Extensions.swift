@@ -11,10 +11,10 @@ import Alamofire
 extension HTTPHeader {
 
     static var appId: HTTPHeader {
-        .init(name: .AppId.name, value: .AppId.value)
+        .init(name: .appIdHeaderName, value: DictionaryAPIKey.apiKey?.appId ?? "")
     }
 
     static var appKey: HTTPHeader {
-        .init(name: .AppKey.name, value: .AppKey.value)
+        .init(name: .appKeyHeaderName, value: DictionaryAPIKey.apiKey?.appKey ?? "")
     }
 }
