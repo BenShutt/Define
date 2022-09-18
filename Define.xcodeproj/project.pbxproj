@@ -28,6 +28,8 @@
 		B8039A2C28D7BDBF008CE7B4 /* DataRequestResult+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8039A2B28D7BDBF008CE7B4 /* DataRequestResult+Extensions.swift */; };
 		B8039A2E28D7BE95008CE7B4 /* JSONModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8039A2D28D7BE95008CE7B4 /* JSONModel.swift */; };
 		B8039A3028D7C2FD008CE7B4 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8039A2F28D7C2FD008CE7B4 /* APIKey.swift */; };
+		B8039A3528D7C78D008CE7B4 /* JSONDecoder+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8039A3428D7C78D008CE7B4 /* JSONDecoder+Extensions.swift */; };
+		B8039A3728D7C803008CE7B4 /* JSONEncoder+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8039A3628D7C803008CE7B4 /* JSONEncoder+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		B8039A2B28D7BDBF008CE7B4 /* DataRequestResult+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataRequestResult+Extensions.swift"; sourceTree = "<group>"; };
 		B8039A2D28D7BE95008CE7B4 /* JSONModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONModel.swift; sourceTree = "<group>"; };
 		B8039A2F28D7C2FD008CE7B4 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		B8039A3428D7C78D008CE7B4 /* JSONDecoder+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Extensions.swift"; sourceTree = "<group>"; };
+		B8039A3628D7C803008CE7B4 /* JSONEncoder+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONEncoder+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +186,8 @@
 			children = (
 				B8039A2B28D7BDBF008CE7B4 /* DataRequestResult+Extensions.swift */,
 				B8039A2028D7B859008CE7B4 /* HTTPHeader+Extensions.swift */,
+				B8039A3428D7C78D008CE7B4 /* JSONDecoder+Extensions.swift */,
+				B8039A3628D7C803008CE7B4 /* JSONEncoder+Extensions.swift */,
 				B8039A1028D7A52A008CE7B4 /* URL+Components.swift */,
 			);
 			path = Extensions;
@@ -381,6 +387,8 @@
 				B8039A0E28D7A298008CE7B4 /* DictionaryAPIKey.swift in Sources */,
 				B8039A1D28D7B37A008CE7B4 /* EntriesAPI.swift in Sources */,
 				B8039A2128D7B859008CE7B4 /* HTTPHeader+Extensions.swift in Sources */,
+				B8039A3528D7C78D008CE7B4 /* JSONDecoder+Extensions.swift in Sources */,
+				B8039A3728D7C803008CE7B4 /* JSONEncoder+Extensions.swift in Sources */,
 				B8039A2E28D7BE95008CE7B4 /* JSONModel.swift in Sources */,
 				B8039A2428D7BC29008CE7B4 /* Metadata.swift in Sources */,
 				B8039A1F28D7B722008CE7B4 /* SearchAPI.swift in Sources */,
