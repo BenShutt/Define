@@ -17,6 +17,7 @@
 		B8039A0928D7A14C008CE7B4 /* URLComponents+DictionaryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8039A0828D7A14C008CE7B4 /* URLComponents+DictionaryAPI.swift */; };
 		B8039A0E28D7A298008CE7B4 /* DictionaryAPIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8039A0D28D7A298008CE7B4 /* DictionaryAPIKey.swift */; };
 		B8039A1128D7A52A008CE7B4 /* URL+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8039A1028D7A52A008CE7B4 /* URL+Components.swift */; };
+		B8039A1428D7AAF7008CE7B4 /* HTTPRequest in Frameworks */ = {isa = PBXBuildFile; productRef = B8039A1328D7AAF7008CE7B4 /* HTTPRequest */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8039A1428D7AAF7008CE7B4 /* HTTPRequest in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +179,9 @@
 			dependencies = (
 			);
 			name = Define;
+			packageProductDependencies = (
+				B8039A1328D7AAF7008CE7B4 /* HTTPRequest */,
+			);
 			productName = Define;
 			productReference = B80399D928D79A37008CE7B4 /* Define.app */;
 			productType = "com.apple.product-type.application";
@@ -249,6 +254,9 @@
 				Base,
 			);
 			mainGroup = B80399D028D79A36008CE7B4;
+			packageReferences = (
+				B8039A1228D7AAF7008CE7B4 /* XCRemoteSwiftPackageReference "HTTPRequest" */,
+			);
 			productRefGroup = B80399DA28D79A37008CE7B4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -637,6 +645,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B8039A1228D7AAF7008CE7B4 /* XCRemoteSwiftPackageReference "HTTPRequest" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/3sidedcube/HTTPRequest.git";
+			requirement = {
+				branch = release/v1.0.0;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B8039A1328D7AAF7008CE7B4 /* HTTPRequest */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B8039A1228D7AAF7008CE7B4 /* XCRemoteSwiftPackageReference "HTTPRequest" */;
+			productName = HTTPRequest;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B80399D128D79A36008CE7B4 /* Project object */;
 }

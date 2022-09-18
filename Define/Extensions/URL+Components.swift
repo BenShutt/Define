@@ -10,10 +10,9 @@ import Foundation
 extension URL {
 
     /// Extension of Xcode project
-    private static let xcodeproj = ".xcodeproj"
+    private static let xcodeproj = "xcodeproj"
 
     /// Find directory containing the `xcodeproj` file
-    ///
     /// - Returns: `URL`
     static func findDirectoryOfXcodeProject() throws -> URL {
         var url = URL(fileURLWithPath: #file)
@@ -27,9 +26,7 @@ extension URL {
         throw FileError.fileNotFound
     }
 
-    /// Does this directory contain a file with an `xcodeproj` extension
-    ///
-    /// - Parameter fileName: `String`
+    /// Does this directory contain the `xcodeproj` file (by checking file extension)
     /// - Returns: `Bool`
     private func containsXcodeProject() throws -> Bool {
         return try FileManager.default
