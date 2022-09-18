@@ -14,6 +14,9 @@
 		B80399EE28D79A3B008CE7B4 /* DefineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80399ED28D79A3B008CE7B4 /* DefineTests.swift */; };
 		B80399F828D79A3B008CE7B4 /* DefineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80399F728D79A3B008CE7B4 /* DefineUITests.swift */; };
 		B80399FA28D79A3B008CE7B4 /* DefineUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80399F928D79A3B008CE7B4 /* DefineUITestsLaunchTests.swift */; };
+		B8039A0928D7A14C008CE7B4 /* URLComponents+DictionaryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8039A0828D7A14C008CE7B4 /* URLComponents+DictionaryAPI.swift */; };
+		B8039A0E28D7A298008CE7B4 /* DictionaryAPIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8039A0D28D7A298008CE7B4 /* DictionaryAPIKey.swift */; };
+		B8039A1128D7A52A008CE7B4 /* URL+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8039A1028D7A52A008CE7B4 /* URL+Components.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		B80399F328D79A3B008CE7B4 /* DefineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DefineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B80399F728D79A3B008CE7B4 /* DefineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefineUITests.swift; sourceTree = "<group>"; };
 		B80399F928D79A3B008CE7B4 /* DefineUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefineUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B8039A0828D7A14C008CE7B4 /* URLComponents+DictionaryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLComponents+DictionaryAPI.swift"; sourceTree = "<group>"; };
+		B8039A0D28D7A298008CE7B4 /* DictionaryAPIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryAPIKey.swift; sourceTree = "<group>"; };
+		B8039A1028D7A52A008CE7B4 /* URL+Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Components.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,9 +100,11 @@
 		B80399DB28D79A37008CE7B4 /* Define */ = {
 			isa = PBXGroup;
 			children = (
+				B8039A0F28D7A51F008CE7B4 /* Extensions */,
+				B8039A0A28D7A26E008CE7B4 /* Assets */,
+				B8039A0728D7A0DC008CE7B4 /* DictionaryAPI */,
 				B80399DC28D79A37008CE7B4 /* DefineApp.swift */,
 				B80399DE28D79A37008CE7B4 /* ContentView.swift */,
-				B80399E028D79A3B008CE7B4 /* Assets.xcassets */,
 				B80399E228D79A3B008CE7B4 /* Preview Content */,
 			);
 			path = Define;
@@ -125,6 +133,31 @@
 				B80399F928D79A3B008CE7B4 /* DefineUITestsLaunchTests.swift */,
 			);
 			path = DefineUITests;
+			sourceTree = "<group>";
+		};
+		B8039A0728D7A0DC008CE7B4 /* DictionaryAPI */ = {
+			isa = PBXGroup;
+			children = (
+				B8039A0828D7A14C008CE7B4 /* URLComponents+DictionaryAPI.swift */,
+				B8039A0D28D7A298008CE7B4 /* DictionaryAPIKey.swift */,
+			);
+			path = DictionaryAPI;
+			sourceTree = "<group>";
+		};
+		B8039A0A28D7A26E008CE7B4 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				B80399E028D79A3B008CE7B4 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		B8039A0F28D7A51F008CE7B4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B8039A1028D7A52A008CE7B4 /* URL+Components.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,8 +312,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8039A0928D7A14C008CE7B4 /* URLComponents+DictionaryAPI.swift in Sources */,
+				B8039A0E28D7A298008CE7B4 /* DictionaryAPIKey.swift in Sources */,
 				B80399DF28D79A37008CE7B4 /* ContentView.swift in Sources */,
 				B80399DD28D79A37008CE7B4 /* DefineApp.swift in Sources */,
+				B8039A1128D7A52A008CE7B4 /* URL+Components.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
