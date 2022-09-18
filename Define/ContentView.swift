@@ -17,7 +17,7 @@ struct ContentView: View {
 
     init() {
         SearchAPI(word: "prejudice").request { result in
-            debugPrint(result)
+            debugPrint(result.dictionaryResult)
         }
     }
 
