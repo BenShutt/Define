@@ -1,3 +1,5 @@
+This project is very much a WIP at this stage.
+
 # Define
 
 A simple iOS app that looks up the definitions of words and saves them for later.
