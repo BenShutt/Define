@@ -7,25 +7,34 @@
 
 import SwiftUI
 
+/// View drawing the content of a `LookUpViewModel`
 struct ContentView: View {
 
-    @State var entry: String?
+    /// `LookUpViewModel`
+    @ObservedObject private var model = LookUpViewModel()
 
-    var word: String {
-        entry ?? "Loading..."
+    /// Initializer
+    init() {
+        model.lookUp(word: "prejudice")
     }
 
-    init() {
-        SearchAPI(word: "prejudice").request { result in
-            debugPrint(result.dictionaryResult)
+    /// Draw `View`
+    var body: some View {
+        if model.isLoading {
+            ProgressView()
+                .progressViewStyle(CircularProgressViewStyle())
+        } else {
+            VStack(alignment: .leading, spacing: 0) {
+                ForEach(values: model.definitions) {
+                    Text($0)
+                        .padding()
+                }
+            }
         }
     }
-
-    var body: some View {
-        Text(word)
-            .padding()
-    }
 }
+
+// MARK: - PreviewProvider
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

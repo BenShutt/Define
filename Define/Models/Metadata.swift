@@ -8,18 +8,26 @@
 import Foundation
 
 struct Metadata: JSONModel {
-    var limit: String?
-    var offset: String?
+    var offset: String
+    var limit: String
+    var total: String
     var operation: String?
     var provider: String?
     var schema: String?
     var sourceLanguage: String?
-    var total: String
 }
 
 // MARK: - Extensions
 
 extension Metadata {
+
+    var intOffset: Int {
+        Int(offset) ?? -1
+    }
+
+    var intLimit: Int {
+        Int(limit) ?? -1
+    }
 
     var intTotal: Int {
         Int(total) ?? -1

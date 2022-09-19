@@ -25,11 +25,22 @@ struct EntriesAPI: HTTPRequestable {
         "entries/\(String.language)/\(wordId.lowercased())"
     }
 
+    /// `URLQueryItem`s
+    ///
+    /// - "fields": A comma-separated list of data fields to return for the matched entries
+    /// - "strictMatch": Specifies whether diacritics must match exactly
+    var queryItems: [URLQueryItem] {
+        [
+            URLQueryItem(name: "fields", value: "definitions"),
+            URLQueryItem(name: "strictMatch", value: "true")
+        ]
+    }
+
     /// Make `HTTPRequest`
     func httpRequest() throws -> HTTPRequest {
         HTTPRequest(
             method: .get,
-            urlComponents: .dictionaryAPI(endpoint: endpoint),
+            urlComponents: .dictionaryAPI(endpoint: endpoint, queryItems: queryItems),
             additionalHeaders: headers,
             body: nil
         )

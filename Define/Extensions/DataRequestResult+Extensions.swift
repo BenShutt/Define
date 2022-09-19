@@ -8,16 +8,14 @@
 import Foundation
 import HTTPRequest
 
+/// Result of `Model` and `Error`
+typealias ModelResult<Model> = Result<Model, Error>
+
 extension DataRequestResult {
 
     /// Map to `Result` with `Model`
     /// - Returns: `Result<Model, Error>`
-    func modelResult<Model: Codable>() -> Result<Model, Error> {
+    func modelResult<Model: Codable>() -> ModelResult<Model> {
         modelResult(decoder: JSONDecoder())
-    }
-
-    /// Map to `DictionaryResult`
-    var dictionaryResult: Result<Words, Error> {
-        modelResult()
     }
 }
