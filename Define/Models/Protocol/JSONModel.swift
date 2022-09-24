@@ -7,10 +7,14 @@
 
 import Foundation
 
+/// A `Codable` which can be represented as a JSON `String`
 protocol JSONModel: Codable, CustomStringConvertible {}
+
+// MARK: - Extensions
 
 extension JSONModel {
 
+    /// Encode (pretty printed) JSON data as a `String`
     func jsonString() throws -> String {
         try String(
             decoding: JSONEncoder.pretty.encode(self),
@@ -18,7 +22,8 @@ extension JSONModel {
         )
     }
 
+    /// By default, return `jsonString()` or type `String` on throw
     var description: String {
-        (try? jsonString()) ?? ""
+        (try? jsonString()) ?? "\(type(of: self))"
     }
 }
