@@ -47,3 +47,17 @@ extension Entries.Result.LexicalEntry.Entry {
         var definitions: [String]
     }
 }
+
+// MARK: - Extensions
+
+extension Entries {
+
+    /// Map to definitions of words
+    var definitions: [String] {
+        results
+            .flatMap { $0.lexicalEntries }
+            .flatMap { $0.entries }
+            .flatMap { $0.senses }
+            .flatMap { $0.definitions }
+    }
+}

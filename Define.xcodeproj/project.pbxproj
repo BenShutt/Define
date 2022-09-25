@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		B80399DD28D79A37008CE7B4 /* DefineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80399DC28D79A37008CE7B4 /* DefineApp.swift */; };
-		B80399DF28D79A37008CE7B4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80399DE28D79A37008CE7B4 /* ContentView.swift */; };
 		B80399E128D79A3B008CE7B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B80399E028D79A3B008CE7B4 /* Assets.xcassets */; };
 		B80399E428D79A3B008CE7B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B80399E328D79A3B008CE7B4 /* Preview Assets.xcassets */; };
 		B80399EE28D79A3B008CE7B4 /* DefineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80399ED28D79A3B008CE7B4 /* DefineTests.swift */; };
@@ -66,7 +65,6 @@
 /* Begin PBXFileReference section */
 		B80399D928D79A37008CE7B4 /* Define.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Define.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B80399DC28D79A37008CE7B4 /* DefineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefineApp.swift; sourceTree = "<group>"; };
-		B80399DE28D79A37008CE7B4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B80399E028D79A3B008CE7B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B80399E328D79A3B008CE7B4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B80399E928D79A3B008CE7B4 /* DefineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DefineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,7 +160,6 @@
 				B8C894E428D895DE00975E25 /* Utilities */,
 				B8C894ED28D908E900975E25 /* ViewModel */,
 				B8D2A73828DEEF8B0096A020 /* Views */,
-				B80399DE28D79A37008CE7B4 /* ContentView.swift */,
 				B80399DC28D79A37008CE7B4 /* DefineApp.swift */,
 			);
 			path = Define;
@@ -482,7 +479,6 @@
 				B8039A3028D7C2FD008CE7B4 /* APIKey.swift in Sources */,
 				B8E49C0B28DF985500F9CAC4 /* CGFloat+Values.swift in Sources */,
 				B8D2A73E28DEEFE70096A020 /* Color+Values.swift in Sources */,
-				B80399DF28D79A37008CE7B4 /* ContentView.swift in Sources */,
 				B8039A2C28D7BDBF008CE7B4 /* DataRequestResult+Extensions.swift in Sources */,
 				B80399DD28D79A37008CE7B4 /* DefineApp.swift in Sources */,
 				B8039A0E28D7A298008CE7B4 /* DictionaryAPIKey.swift in Sources */,

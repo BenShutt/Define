@@ -10,21 +10,35 @@ import SwiftUI
 /// `View` to input a word to search for definitions
 struct EnterWordScreen: View {
 
-    /// The search text
-    @State private var search = ""
+    /// `LookUpViewModel`
+    @ObservedObject private var viewModel = LookUpViewModel()
+
+    /// Definitions of entered word
+    var definitions: [String] {
+        viewModel.result.success?.definitions ?? []
+    }
 
     /// `View` of the screen
     var body: some View {
         VStack {
-            // InputTextField
             InputTextField(
-                text: $search,
+                text: $viewModel.searchText,
                 prompt: .EnterWordScreen.prompt
             )
             .padding(.margins)
 
-            // LoadingView
-            LoadingView()
+            Group {
+                if viewModel.isLoading {
+                    LoadingView()
+                } else if !definitions.isEmpty {
+                    Text(definitions.joined(separator: "\n"))
+                } else if !viewModel.searchText.isEmpty {
+                    Text("No definitions found for '\(viewModel.searchText)'")
+                } else {
+                    Text("Enter text")
+                }
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
     }
 }
