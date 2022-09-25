@@ -7,8 +7,14 @@
 
 import SwiftUI
 
+/// `App` implementation
 @main
 struct DefineApp: App {
+
+    /// `AppDelegate`
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
+    /// Make `Scene`
     var body: some Scene {
         WindowGroup {
             EnterWordScreen()

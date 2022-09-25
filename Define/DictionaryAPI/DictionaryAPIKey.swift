@@ -32,4 +32,12 @@ struct DictionaryAPIKey {
             .appendingPathComponent(fileName))
         )
     }
+
+    /// Check that we can load the `APIKey` or log an error
+    ///
+    /// - Parameter logger: `Logger`
+    static func checkKey(logger: Logger) {
+        guard apiKey == nil else { return }
+        logger.log(type: .error, message: "Failed to load \(DictionaryAPIKey.self)")
+    }
 }
