@@ -30,7 +30,7 @@ extension Screen {
             screenBody
         }
         .onTapGesture {
-            hideKeyboard()
+            hideKeyboard() // TODO: Improve this
         }
     }
 }

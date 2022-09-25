@@ -26,12 +26,17 @@ struct EnterWordScreen: Screen {
                 prompt: .EnterWordScreen.prompt
             )
 
+            Spacer()
+                .frame(height: .large)
+
             if viewModel.isLoading {
                 LoadingView()
             } else if !definitions.isEmpty {
-                Text(definitions.joined(separator: "\n"))
+                Text(definitions.joined(separator: "\n\n"))
+                    .foregroundColor(.appGreen)
             } else if !viewModel.searchText.isEmpty {
                 Text(String.EnterWordScreen.empty(viewModel.searchText))
+                    .foregroundColor(.appBrown)
             } else {
                 Text(String.EnterWordScreen.enterWord)
             }
