@@ -29,5 +29,8 @@ extension Screen {
                 .ignoresSafeArea()
             screenBody
         }
+        .onTapGesture {
+            hideKeyboard()
+        }
     }
 }

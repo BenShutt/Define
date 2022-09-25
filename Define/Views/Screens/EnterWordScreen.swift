@@ -25,21 +25,20 @@ struct EnterWordScreen: Screen {
                 text: $viewModel.searchText,
                 prompt: .EnterWordScreen.prompt
             )
-            .padding(.margins)
 
-            Group {
-                if viewModel.isLoading {
-                    LoadingView()
-                } else if !definitions.isEmpty {
-                    Text(definitions.joined(separator: "\n"))
-                } else if !viewModel.searchText.isEmpty {
-                    Text("No definitions found for '\(viewModel.searchText)'")
-                } else {
-                    Text("Enter text")
-                }
+            if viewModel.isLoading {
+                LoadingView()
+            } else if !definitions.isEmpty {
+                Text(definitions.joined(separator: "\n"))
+            } else if !viewModel.searchText.isEmpty {
+                Text(String.EnterWordScreen.empty(viewModel.searchText))
+            } else {
+                Text(String.EnterWordScreen.enterWord)
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+
+            Spacer()
         }
+        .padding(.margins)
     }
 }
 

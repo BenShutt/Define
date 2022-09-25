@@ -10,13 +10,20 @@ import SwiftUI
 /// Default loading UI which fills the bound of its space
 struct LoadingView: View {
 
+    /// `Color` of indicator
+    var color = Color.appDarkBlue
+
+    /// When `true`, set maxWidth and minWidth of the frame to `.infinity`
+    var infiniteFrame = false
+
     /// Customize a `ProgressView`
     var body: some View {
         ProgressView()
-            .scaleEffect(2, anchor: .center)
-            .tint(.appGray)
+            .tint(color)
             .progressViewStyle(CircularProgressViewStyle())
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .if(infiniteFrame) {
+                $0.frame(maxWidth: .infinity, maxHeight: .infinity)
+            }
     }
 }
 
@@ -25,7 +32,8 @@ struct LoadingView: View {
 struct LoadingView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            Color.appWhite.ignoresSafeArea()
+            Color.appWhite
+                .ignoresSafeArea()
             LoadingView()
         }
     }
