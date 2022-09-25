@@ -32,6 +32,17 @@ class LookUpViewModel: ObservableObject {
         .failure(LookUpViewModelError.emptyText)
     }
 
+    /// Publisher of `$searchText`
+    private var searchTextPublisher: AnyPublisher<String, Never> {
+        $searchText
+            .dropFirst()
+            .removeDuplicates()
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
+    }
+
+    // MARK: - Init
+
     /// Initializer
     init() {
         // Handle changes to searchText
@@ -53,6 +64,8 @@ class LookUpViewModel: ObservableObject {
             .store(in: &cancellables)
     }
 
+    // MARK: - API
+
     /// Look up definitions for `word`
     ///
     /// - Parameter word: `String`
@@ -62,15 +75,6 @@ class LookUpViewModel: ObservableObject {
             self?.isLoading = false
             self?.result = result
         }
-    }
-
-    /// Publisher of `$searchText`
-    private var searchTextPublisher: AnyPublisher<String, Never> {
-        $searchText
-            .dropFirst()
-            .removeDuplicates()
-            .receive(on: DispatchQueue.main)
-            .eraseToAnyPublisher()
     }
 }
 
