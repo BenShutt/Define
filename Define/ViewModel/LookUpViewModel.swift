@@ -37,7 +37,6 @@ class LookUpViewModel: ObservableObject {
         $searchText
             .dropFirst()
             .removeDuplicates()
-            .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
 
@@ -46,22 +45,19 @@ class LookUpViewModel: ObservableObject {
     /// Initializer
     init() {
         // Handle changes to searchText
-        searchTextPublisher
-            .sink { [weak self] _ in
-                self?.isLoading = !(self?.searchText ?? "").isEmpty
-                self?.result = Self.emptyTextResult
-            }
-            .store(in: &cancellables)
+        searchTextPublisher.sinkAndStore(in: &cancellables) { [weak self] _ in
+            self?.isLoading = !(self?.searchText ?? "").isEmpty
+            self?.result = Self.emptyTextResult
+        }
 
         // Handle debounced changes to searchText
         searchTextPublisher
             .debounce(for: .seconds(Self.debounce), scheduler: DispatchQueue.main)
-            .sink { [weak self] value in
+            .sinkAndStore(in: &cancellables) { [weak self] value in
                 guard !value.isEmpty else { return }
                 guard value == self?.searchText else { return } // Outdated
                 self?.lookUp(word: value)
             }
-            .store(in: &cancellables)
     }
 
     // MARK: - API

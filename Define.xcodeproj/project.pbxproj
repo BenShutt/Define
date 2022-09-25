@@ -30,6 +30,8 @@
 		B8039A3528D7C78D008CE7B4 /* JSONDecoder+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8039A3428D7C78D008CE7B4 /* JSONDecoder+Extensions.swift */; };
 		B8039A3728D7C803008CE7B4 /* JSONEncoder+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8039A3628D7C803008CE7B4 /* JSONEncoder+Extensions.swift */; };
 		B82A76C528DFAA7200DABFBE /* RoundedBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82A76C428DFAA7200DABFBE /* RoundedBorder.swift */; };
+		B89F179428E0EBF100A96E35 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89F179328E0EBF100A96E35 /* Screen.swift */; };
+		B89F179728E0F38D00A96E35 /* Publisher+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89F179628E0F38D00A96E35 /* Publisher+Extensions.swift */; };
 		B8C894E628D895E900975E25 /* LookUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C894E528D895E900975E25 /* LookUp.swift */; };
 		B8C894E828D8FFB900975E25 /* Entries.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C894E728D8FFB900975E25 /* Entries.swift */; };
 		B8C894EA28D905BD00975E25 /* ForEach+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C894E928D905BD00975E25 /* ForEach+Extensions.swift */; };
@@ -88,6 +90,8 @@
 		B8039A3428D7C78D008CE7B4 /* JSONDecoder+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Extensions.swift"; sourceTree = "<group>"; };
 		B8039A3628D7C803008CE7B4 /* JSONEncoder+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONEncoder+Extensions.swift"; sourceTree = "<group>"; };
 		B82A76C428DFAA7200DABFBE /* RoundedBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBorder.swift; sourceTree = "<group>"; };
+		B89F179328E0EBF100A96E35 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
+		B89F179628E0F38D00A96E35 /* Publisher+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+Extensions.swift"; sourceTree = "<group>"; };
 		B8C894E528D895E900975E25 /* LookUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookUp.swift; sourceTree = "<group>"; };
 		B8C894E728D8FFB900975E25 /* Entries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entries.swift; sourceTree = "<group>"; };
 		B8C894E928D905BD00975E25 /* ForEach+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ForEach+Extensions.swift"; sourceTree = "<group>"; };
@@ -217,6 +221,7 @@
 		B8039A0F28D7A51F008CE7B4 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B89F179528E0F38200A96E35 /* Combine */,
 				B8C894EB28D905EE00975E25 /* SwiftUI */,
 				B8039A2B28D7BDBF008CE7B4 /* DataRequestResult+Extensions.swift */,
 				B8039A2028D7B859008CE7B4 /* HTTPHeader+Extensions.swift */,
@@ -265,6 +270,14 @@
 			path = ViewModifiers;
 			sourceTree = "<group>";
 		};
+		B89F179528E0F38200A96E35 /* Combine */ = {
+			isa = PBXGroup;
+			children = (
+				B89F179628E0F38D00A96E35 /* Publisher+Extensions.swift */,
+			);
+			path = Combine;
+			sourceTree = "<group>";
+		};
 		B8C894E428D895DE00975E25 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -304,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				B8D2A73B28DEEFAE0096A020 /* EnterWordScreen.swift */,
+				B89F179328E0EBF100A96E35 /* Screen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -496,7 +510,9 @@
 				B8C894E628D895E900975E25 /* LookUp.swift in Sources */,
 				B8C894EF28D908F300975E25 /* LookUpViewModel.swift in Sources */,
 				B8039A2428D7BC29008CE7B4 /* Metadata.swift in Sources */,
+				B89F179728E0F38D00A96E35 /* Publisher+Extensions.swift in Sources */,
 				B82A76C528DFAA7200DABFBE /* RoundedBorder.swift in Sources */,
+				B89F179428E0EBF100A96E35 /* Screen.swift in Sources */,
 				B8039A1F28D7B722008CE7B4 /* SearchAPI.swift in Sources */,
 				B8E49C0D28DF99EA00F9CAC4 /* String+Localizations.swift in Sources */,
 				B8039A1828D7AF09008CE7B4 /* String+Values.swift in Sources */,

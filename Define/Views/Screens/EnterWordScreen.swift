@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// `View` to input a word to search for definitions
-struct EnterWordScreen: View {
+struct EnterWordScreen: Screen {
 
     /// `LookUpViewModel`
     @ObservedObject private var viewModel = LookUpViewModel()
@@ -19,7 +19,7 @@ struct EnterWordScreen: View {
     }
 
     /// `View` of the screen
-    var body: some View {
+    var screenBody: some View {
         VStack {
             InputTextField(
                 text: $viewModel.searchText,
