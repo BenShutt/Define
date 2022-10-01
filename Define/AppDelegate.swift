@@ -20,6 +20,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: LaunchOptions? = nil
     ) -> Bool {
+        // Check that the API key can be loaded from the filesystem or log an error
         DictionaryAPIKey.checkKey(logger: logger)
         return true
     }
