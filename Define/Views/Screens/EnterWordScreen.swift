@@ -34,6 +34,10 @@ struct EnterWordScreen: Screen {
             } else if !definitions.isEmpty {
                 Text(definitions.joined(separator: "\n\n"))
                     .foregroundColor(.appGreen)
+                Spacer()
+                ButtonView(text: .EnterWordScreen.saveButton) {
+                    saveWord(word: viewModel.searchText)
+                }
             } else if !viewModel.searchText.isEmpty {
                 Text(String.EnterWordScreen.empty(viewModel.searchText))
                     .foregroundColor(.appBrown)
@@ -44,6 +48,12 @@ struct EnterWordScreen: Screen {
             Spacer()
         }
         .padding(.margins)
+    }
+
+    /// Save the given `word`
+    /// - Parameter word: `String`
+    private func saveWord(word: String) {
+        UINotificationFeedbackGenerator().notificationOccurred(.success)
     }
 }
 
