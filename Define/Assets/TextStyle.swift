@@ -22,12 +22,12 @@ enum TextStyle {
         }
     }
 
-    /// Get weight of the font
-    var fontWeight: Font.Weight {
+    /// Get name and weight of the font
+    var font: WorkSans {
         switch self {
         case .title: return .bold
         case .body: return .regular
-        case .button: return .semibold
+        case .button: return .semiBold
         }
     }
 }
@@ -41,6 +41,6 @@ extension View {
     /// - Parameter textStyle: `TextStyle`
     /// - Returns: `View`
     func textStyle(_ textStyle: TextStyle) -> some View {
-        self.font(.system(size: textStyle.fontSize, weight: textStyle.fontWeight))
+        self.customFont(textStyle.font, size: textStyle.fontSize)
     }
 }

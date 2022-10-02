@@ -14,6 +14,7 @@ extension String {
     struct EnterWordScreen {
 
         static let prompt = "Enter word to search..."
+
         static let saveButton = "SAVE WORD"
     }
 
@@ -22,6 +23,7 @@ extension String {
         struct Empty {
 
             static let title = "Start Your Search"
+
             static let subtitle = "Enter a word into the search field to look up its definition"
         }
 
