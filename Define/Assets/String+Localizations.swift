@@ -7,16 +7,31 @@
 
 import Foundation
 
+// swiftlint:disable nesting
+
 extension String {
 
     struct EnterWordScreen {
 
         static let prompt = "Enter word to search..."
-        static let enterWord = "Enter a word in the search field above to look up its definition..."
         static let saveButton = "SAVE WORD"
+    }
 
-        static func empty(_ word: String) -> String {
-            "No definitions found for the search: '\(word)'"
+    struct Search {
+
+        struct Empty {
+
+            static let title = "Start Your Search"
+            static let subtitle = "Enter a word into the search field to look up its definition"
+        }
+
+        struct NoResults {
+
+            static let title = "No Results"
+
+            static func subtitle(_ word: String) -> String {
+                "No definitions found for: '\(word)'"
+            }
         }
     }
 }

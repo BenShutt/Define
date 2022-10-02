@@ -9,12 +9,14 @@ import SwiftUI
 
 /// Set of `TextStyle`s (styles of text)
 enum TextStyle {
+    case title
     case body
     case button
 
     /// Get size of the font
     var fontSize: CGFloat {
         switch self {
+        case .title: return 24
         case .body: return 16
         case .button: return 16
         }
@@ -23,6 +25,7 @@ enum TextStyle {
     /// Get weight of the font
     var fontWeight: Font.Weight {
         switch self {
+        case .title: return .bold
         case .body: return .regular
         case .button: return .semibold
         }

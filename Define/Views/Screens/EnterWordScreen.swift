@@ -18,6 +18,11 @@ struct EnterWordScreen: Screen {
         viewModel.result.success?.definitions ?? []
     }
 
+    /// Get the text in the search field
+    var searchText: String {
+        viewModel.searchText
+    }
+
     /// `View` of the screen
     var screenBody: some View {
         VStack {
@@ -36,13 +41,12 @@ struct EnterWordScreen: Screen {
                     .foregroundColor(.appGreen)
                 Spacer()
                 ButtonView(text: .EnterWordScreen.saveButton) {
-                    saveWord(word: viewModel.searchText)
+                    saveWord(word: searchText)
                 }
-            } else if !viewModel.searchText.isEmpty {
-                Text(String.EnterWordScreen.empty(viewModel.searchText))
-                    .foregroundColor(.appBrown)
+            } else if !searchText.isEmpty {
+                SearchNoResults(word: searchText)
             } else {
-                Text(String.EnterWordScreen.enterWord)
+                SearchEmpty()
             }
 
             Spacer()
