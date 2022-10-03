@@ -19,6 +19,9 @@ struct InputTextField: View {
     /// Placeholder text
     var prompt: String
 
+    /// Leading image icon
+    var image: Image
+
     /// Content of the input
     var contentType: UITextContentType?
 
@@ -29,19 +32,27 @@ struct InputTextField: View {
 
     /// Border color
     private var borderColor: Color {
-        isFocused ? tintColor : .appLightGray
+        isFocused ? tintColor : .appFaintGray
     }
 
     /// `View` built from `TextField`
     var body: some View {
-        TextField(prompt, text: $text)
-            .focused($isFocused)
-            .textContentType(contentType)
-            .textStyle(.body)
-            .tint(tintColor)
-            .accentColor(tintColor) // For cursor
-            .padding(.mediumLarge)
-            .roundedBorder(color: borderColor)
+        HStack(spacing: 0) {
+            IconView(image: image)
+                .frame(width: 60)
+                .frame(maxHeight: .infinity)
+
+            TextField(prompt, text: $text)
+                .focused($isFocused)
+                .textContentType(contentType)
+                .textStyle(.body)
+                .tint(tintColor)
+                .accentColor(tintColor) // For cursor
+                .padding(.mediumLarge)
+                .frame(maxHeight: .infinity)
+        }
+        .shapeBorder(color: borderColor)
+        .fixedSize(horizontal: false, vertical: true)
     }
 }
 
@@ -49,10 +60,15 @@ struct InputTextField: View {
 
 struct InputTextField_Previews: PreviewProvider {
     static var previews: some View {
-        InputTextField(
-            text: .constant("The value"),
-            prompt: "Enter value...",
-            contentType: .name
-        )
+        VStack {
+            InputTextField(
+                text: .constant("The value"),
+                prompt: "Enter value...",
+                image: .search,
+                contentType: .name
+            )
+            Spacer()
+        }
+        .padding(.margins)
     }
 }

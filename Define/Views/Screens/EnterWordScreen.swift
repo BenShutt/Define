@@ -28,7 +28,8 @@ struct EnterWordScreen: Screen {
         VStack {
             InputTextField(
                 text: $viewModel.searchText,
-                prompt: .EnterWordScreen.prompt
+                prompt: .EnterWordScreen.prompt,
+                image: .search
             )
 
             Spacer()
