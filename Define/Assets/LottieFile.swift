@@ -9,6 +9,7 @@ import Foundation
 
 /// A Lottie asset file
 enum LottieFile: String {
+
     case searchEmpty
     case searchNoResults
 }

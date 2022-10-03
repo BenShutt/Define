@@ -9,6 +9,7 @@ import SwiftUI
 
 /// Set of `Color`s used in this app
 extension Color {
+
     static let appBlack = Color("appBlack")
     static let appBlue = Color("appBlue")
     static let appBrown = Color("appBrown")
@@ -24,11 +25,13 @@ extension Color {
 // MARK: - [Color] + Values
 
 extension Array where Element == Color {
-    static let blue: [Color] = [.appBlue, .appDarkBlue]
+
+    static let appBlue: [Color] = [.appBlue, .appDarkBlue]
 }
 
 // MARK: - Gradient + Values
 
 extension Gradient {
-    static let blue = Gradient(colors: .blue)
+
+    static let blue = Gradient(colors: .appBlue)
 }

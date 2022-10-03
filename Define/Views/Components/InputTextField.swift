@@ -38,9 +38,7 @@ struct InputTextField: View {
     /// `View` built from `TextField`
     var body: some View {
         HStack(spacing: 0) {
-            IconView(image: image)
-                .frame(width: 60)
-                .frame(maxHeight: .infinity)
+            SearchIconView()
 
             TextField(prompt, text: $text)
                 .focused($isFocused)
@@ -50,6 +48,12 @@ struct InputTextField: View {
                 .accentColor(tintColor) // For cursor
                 .padding(.mediumLarge)
                 .frame(maxHeight: .infinity)
+
+            if !text.isEmpty {
+                CrossIconView {
+                    text = ""
+                }
+            }
         }
         .shapeBorder(color: borderColor)
         .fixedSize(horizontal: false, vertical: true)

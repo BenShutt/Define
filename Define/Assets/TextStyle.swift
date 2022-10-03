@@ -9,6 +9,7 @@ import SwiftUI
 
 /// Set of `TextStyle`s (styles of text)
 enum TextStyle {
+
     case title
     case body
     case button
