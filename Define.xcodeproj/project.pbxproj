@@ -74,6 +74,8 @@
 		B8D2A73E28DEEFE70096A020 /* Color+Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2A73D28DEEFE70096A020 /* Color+Values.swift */; };
 		B8D2A74228DF3A250096A020 /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2A74128DF3A250096A020 /* InputTextField.swift */; };
 		B8D2A74628DF3AFE0096A020 /* TextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2A74528DF3AFE0096A020 /* TextStyle.swift */; };
+		B8E28DC828EA0C37009BE8A2 /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E28DC728EA0C37009BE8A2 /* Debug.swift */; };
+		B8E28DCA28EA0F93009BE8A2 /* Image+Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E28DC928EA0F93009BE8A2 /* Image+Values.swift */; };
 		B8E49C0928DF917E00F9CAC4 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E49C0828DF917E00F9CAC4 /* LoadingView.swift */; };
 		B8E49C0B28DF985500F9CAC4 /* CGFloat+Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E49C0A28DF985500F9CAC4 /* CGFloat+Values.swift */; };
 		B8E49C0D28DF99EA00F9CAC4 /* String+Localizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E49C0C28DF99EA00F9CAC4 /* String+Localizations.swift */; };
@@ -168,6 +170,8 @@
 		B8D2A73D28DEEFE70096A020 /* Color+Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Values.swift"; sourceTree = "<group>"; };
 		B8D2A74128DF3A250096A020 /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
 		B8D2A74528DF3AFE0096A020 /* TextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyle.swift; sourceTree = "<group>"; };
+		B8E28DC728EA0C37009BE8A2 /* Debug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
+		B8E28DC928EA0F93009BE8A2 /* Image+Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Values.swift"; sourceTree = "<group>"; };
 		B8E49C0828DF917E00F9CAC4 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		B8E49C0A28DF985500F9CAC4 /* CGFloat+Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Values.swift"; sourceTree = "<group>"; };
 		B8E49C0C28DF99EA00F9CAC4 /* String+Localizations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localizations.swift"; sourceTree = "<group>"; };
@@ -288,6 +292,7 @@
 				B8E49C0C28DF99EA00F9CAC4 /* String+Localizations.swift */,
 				B8039A1728D7AF09008CE7B4 /* String+Values.swift */,
 				B8D2A74528DF3AFE0096A020 /* TextStyle.swift */,
+				B8E28DC928EA0F93009BE8A2 /* Image+Values.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -428,6 +433,7 @@
 			children = (
 				B89F17A028E0FB8800A96E35 /* Logger */,
 				B8C894E528D895E900975E25 /* LookUp.swift */,
+				B8E28DC728EA0C37009BE8A2 /* Debug.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -679,6 +685,7 @@
 				B8C894EA28D905BD00975E25 /* ForEach+Extensions.swift in Sources */,
 				B8039A2128D7B859008CE7B4 /* HTTPHeader+Extensions.swift in Sources */,
 				B8D2A74228DF3A250096A020 /* InputTextField.swift in Sources */,
+				B8E28DCA28EA0F93009BE8A2 /* Image+Values.swift in Sources */,
 				B8039A3528D7C78D008CE7B4 /* JSONDecoder+Extensions.swift in Sources */,
 				B8039A3728D7C803008CE7B4 /* JSONEncoder+Extensions.swift in Sources */,
 				B8039A2E28D7BE95008CE7B4 /* JSONModel.swift in Sources */,
@@ -694,6 +701,7 @@
 				B89F179728E0F38D00A96E35 /* Publisher+Extensions.swift in Sources */,
 				B82A76C528DFAA7200DABFBE /* RoundedBorder.swift in Sources */,
 				B89F179428E0EBF100A96E35 /* Screen.swift in Sources */,
+				B8E28DC828EA0C37009BE8A2 /* Debug.swift in Sources */,
 				B8039A1F28D7B722008CE7B4 /* SearchAPI.swift in Sources */,
 				B8A1232D28E9765C00ACEC45 /* SearchEmpty.swift in Sources */,
 				B8A1232A28E9744E00ACEC45 /* SearchEmptyView.swift in Sources */,
