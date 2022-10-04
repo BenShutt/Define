@@ -26,11 +26,7 @@ struct EnterWordScreen: Screen {
     /// `View` of the screen
     var screenBody: some View {
         VStack {
-            InputTextField(
-                text: $viewModel.searchText,
-                prompt: .EnterWordScreen.prompt,
-                image: .search
-            )
+            SearchHeaderView(searchText: $viewModel.searchText)
 
             Spacer()
                 .frame(height: .large)
@@ -52,7 +48,6 @@ struct EnterWordScreen: Screen {
 
             Spacer()
         }
-        .padding(.margins)
     }
 
     /// Save the given `word`

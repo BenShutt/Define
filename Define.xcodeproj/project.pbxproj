@@ -71,6 +71,10 @@
 		B8A1235428E97D1A00ACEC45 /* WorkSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8A1234228E97D1A00ACEC45 /* WorkSans-SemiBold.ttf */; };
 		B8A1235A28E97EF300ACEC45 /* WorkSans.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A1235928E97EF300ACEC45 /* WorkSans.swift */; };
 		B8A1235D28E97FB000ACEC45 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A1235C28E97FB000ACEC45 /* CustomFont.swift */; };
+		B8B9B9D628EC5C54006FCA76 /* SearchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9B9D528EC5C54006FCA76 /* SearchHeaderView.swift */; };
+		B8B9B9D828EC603D006FCA76 /* EdgeInsets+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9B9D728EC603D006FCA76 /* EdgeInsets+Extensions.swift */; };
+		B8B9B9DA28EC6210006FCA76 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9B9D928EC6210006FCA76 /* BlurView.swift */; };
+		B8B9B9DD28EC66AD006FCA76 /* GradientBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9B9DC28EC66AD006FCA76 /* GradientBlurView.swift */; };
 		B8BBA16228E8EDF100222116 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BBA16128E8EDF100222116 /* ButtonView.swift */; };
 		B8C894E628D895E900975E25 /* LookUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C894E528D895E900975E25 /* LookUp.swift */; };
 		B8C894E828D8FFB900975E25 /* Entries.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C894E728D8FFB900975E25 /* Entries.swift */; };
@@ -173,6 +177,10 @@
 		B8A1235928E97EF300ACEC45 /* WorkSans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSans.swift; sourceTree = "<group>"; };
 		B8A1235C28E97FB000ACEC45 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
 		B8A1235E28E9829B00ACEC45 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8B9B9D528EC5C54006FCA76 /* SearchHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHeaderView.swift; sourceTree = "<group>"; };
+		B8B9B9D728EC603D006FCA76 /* EdgeInsets+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EdgeInsets+Extensions.swift"; sourceTree = "<group>"; };
+		B8B9B9D928EC6210006FCA76 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		B8B9B9DC28EC66AD006FCA76 /* GradientBlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBlurView.swift; sourceTree = "<group>"; };
 		B8BBA16128E8EDF100222116 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		B8C894E528D895E900975E25 /* LookUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookUp.swift; sourceTree = "<group>"; };
 		B8C894E728D8FFB900975E25 /* Entries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entries.swift; sourceTree = "<group>"; };
@@ -453,6 +461,15 @@
 			path = FontFiles;
 			sourceTree = "<group>";
 		};
+		B8B9B9DB28EC668C006FCA76 /* Gradient */ = {
+			isa = PBXGroup;
+			children = (
+				B8B9B9D928EC6210006FCA76 /* BlurView.swift */,
+				B8B9B9DC28EC66AD006FCA76 /* GradientBlurView.swift */,
+			);
+			path = Gradient;
+			sourceTree = "<group>";
+		};
 		B8C894E428D895DE00975E25 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -467,6 +484,7 @@
 			isa = PBXGroup;
 			children = (
 				B8A1235C28E97FB000ACEC45 /* CustomFont.swift */,
+				B8B9B9D728EC603D006FCA76 /* EdgeInsets+Extensions.swift */,
 				B8C894E928D905BD00975E25 /* ForEach+Extensions.swift */,
 				B8E49C1028DFA60000F9CAC4 /* View+If.swift */,
 				B89F179828E0F65100A96E35 /* View+Keyboard.swift */,
@@ -504,12 +522,14 @@
 		B8D2A74028DF0E670096A020 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				B8B9B9DB28EC668C006FCA76 /* Gradient */,
 				B813BFFB28EB7ACA000C766C /* Icon */,
 				B8A1232B28E975FE00ACEC45 /* SearchEmpty */,
 				B8BBA16128E8EDF100222116 /* ButtonView.swift */,
 				B8D2A74128DF3A250096A020 /* InputTextField.swift */,
 				B8E49C0828DF917E00F9CAC4 /* LoadingView.swift */,
 				B8A1232128E9714600ACEC45 /* LottieView.swift */,
+				B8B9B9D528EC5C54006FCA76 /* SearchHeaderView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -697,6 +717,7 @@
 			files = (
 				B8039A3028D7C2FD008CE7B4 /* APIKey.swift in Sources */,
 				B89F179D28E0FABE00A96E35 /* AppDelegate.swift in Sources */,
+				B8B9B9DA28EC6210006FCA76 /* BlurView.swift in Sources */,
 				B8BBA16228E8EDF100222116 /* ButtonView.swift in Sources */,
 				B82A76C528DFAA7200DABFBE /* CapsuleBorder.swift in Sources */,
 				B8E49C0B28DF985500F9CAC4 /* CGFloat+Values.swift in Sources */,
@@ -707,11 +728,13 @@
 				B8E28DC828EA0C37009BE8A2 /* Debug.swift in Sources */,
 				B80399DD28D79A37008CE7B4 /* DefineApp.swift in Sources */,
 				B8039A0E28D7A298008CE7B4 /* DictionaryAPIKey.swift in Sources */,
+				B8B9B9D828EC603D006FCA76 /* EdgeInsets+Extensions.swift in Sources */,
 				B8E49C0F28DF9AA500F9CAC4 /* EdgeInsets+Values.swift in Sources */,
 				B8D2A73C28DEEFAE0096A020 /* EnterWordScreen.swift in Sources */,
 				B8C894E828D8FFB900975E25 /* Entries.swift in Sources */,
 				B8039A1D28D7B37A008CE7B4 /* EntriesAPI.swift in Sources */,
 				B8C894EA28D905BD00975E25 /* ForEach+Extensions.swift in Sources */,
+				B8B9B9DD28EC66AD006FCA76 /* GradientBlurView.swift in Sources */,
 				B8039A2128D7B859008CE7B4 /* HTTPHeader+Extensions.swift in Sources */,
 				B813C00128EB7DB9000C766C /* Icon.swift in Sources */,
 				B813C00328EB7F7D000C766C /* IconContainerView.swift in Sources */,
@@ -735,6 +758,7 @@
 				B8039A1F28D7B722008CE7B4 /* SearchAPI.swift in Sources */,
 				B8A1232D28E9765C00ACEC45 /* SearchEmpty.swift in Sources */,
 				B8A1232A28E9744E00ACEC45 /* SearchEmptyView.swift in Sources */,
+				B8B9B9D628EC5C54006FCA76 /* SearchHeaderView.swift in Sources */,
 				B813BFFD28EB7BA1000C766C /* SearchIconView.swift in Sources */,
 				B8A1232F28E978DA00ACEC45 /* SearchNoResults.swift in Sources */,
 				B813BFFA28EB7022000C766C /* ShapeBorder.swift in Sources */,

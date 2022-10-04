@@ -12,16 +12,10 @@ struct SearchIconView: View {
 
     /// Draw `View`
     var body: some View {
-        IconContainerView {
-            LinearGradient(
-                colors: .appBlue,
-                startPoint: .leading,
-                endPoint: .trailing
-            )
-
+        IconContainerView(edge: .leading) {
             Icon(
                 image: .search,
-                foregroundColor: .appWhite
+                foregroundColor: .appDarkBlue
             )
         }
     }

@@ -17,7 +17,7 @@ enum TextStyle {
     /// Get size of the font
     var fontSize: CGFloat {
         switch self {
-        case .title: return 24
+        case .title: return 32
         case .body: return 16
         case .button: return 16
         }

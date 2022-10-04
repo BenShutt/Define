@@ -12,4 +12,6 @@ extension EdgeInsets {
     static let margins = EdgeInsets(
         top: .vMargin, leading: .hMargin, bottom: .vMargin, trailing: .hMargin
     )
+
+    static let largeMargins = EdgeInsets(CGFloat.large)
 }

@@ -15,7 +15,7 @@ struct CrossIconView: View {
 
     /// Draw `View`
     var body: some View {
-        IconContainerView {
+        IconContainerView(edge: .trailing) {
             Button(action: onTap) {
                 Icon(
                     image: .cross,

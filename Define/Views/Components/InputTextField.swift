@@ -44,9 +44,10 @@ struct InputTextField: View {
                 .focused($isFocused)
                 .textContentType(contentType)
                 .textStyle(.body)
+                .lineLimit(1)
                 .tint(tintColor)
                 .accentColor(tintColor) // For cursor
-                .padding(.mediumLarge)
+                .padding([.top, .bottom], .mediumLarge)
                 .frame(maxHeight: .infinity)
 
             if !text.isEmpty {
@@ -55,6 +56,7 @@ struct InputTextField: View {
                 }
             }
         }
+        .background(Color.appWhite)
         .shapeBorder(color: borderColor)
         .fixedSize(horizontal: false, vertical: true)
     }
