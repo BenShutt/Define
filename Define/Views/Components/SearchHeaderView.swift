@@ -22,7 +22,7 @@ struct SearchHeaderView: View {
 
             Text("This is provided by xyz")
                 .textStyle(.body)
-                .foregroundColor(.appDarkBlue)
+                .foregroundColor(.appDarkGray)
 
             Spacer()
                 .frame(height: .large)
@@ -34,8 +34,10 @@ struct SearchHeaderView: View {
             )
         }
         .padding(.largeMargins)
-        .background(GradientBlurView())
-        .shadow(color: .appBlack.opacity(0.2), radius: 2)
+        .background(
+            GradientBlurView()
+                .shadow(color: .appBlack.opacity(0.2), radius: 2)
+        )
     }
 }
 

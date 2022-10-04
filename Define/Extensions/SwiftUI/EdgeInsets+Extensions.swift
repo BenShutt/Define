@@ -15,5 +15,4 @@ extension EdgeInsets {
     init(_ value: CGFloat) {
         self.init(top: value, leading: value, bottom: value, trailing: value)
     }
-
 }

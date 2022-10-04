@@ -32,7 +32,7 @@ struct InputTextField: View {
 
     /// Border color
     private var borderColor: Color {
-        isFocused ? tintColor : .appFaintGray
+        isFocused ? tintColor : .clear
     }
 
     /// `View` built from `TextField`
@@ -47,6 +47,7 @@ struct InputTextField: View {
                 .lineLimit(1)
                 .tint(tintColor)
                 .accentColor(tintColor) // For cursor
+                .foregroundColor(tintColor)
                 .padding([.top, .bottom], .mediumLarge)
                 .frame(maxHeight: .infinity)
 

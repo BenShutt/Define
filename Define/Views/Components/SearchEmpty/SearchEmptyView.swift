@@ -49,6 +49,7 @@ extension SearchEmptyView {
 
             Text(subtitle)
                 .textStyle(.body)
+                .foregroundColor(.appDarkGray)
                 .multilineTextAlignment(.center)
         }
         .padding(.margins)

@@ -11,11 +11,11 @@ struct GradientBlurView: View {
     var body: some View {
         ZStack {
             LinearGradient(
-                colors: [.appDarkBlue, .appBlue],
+                colors: [.appGreen, .appBlue],
                 startPoint: .top,
                 endPoint: .bottom
             )
-            BlurView(style: .prominent)
+            BlurView(style: .extraLight)
         }
         .ignoresSafeArea()
     }
