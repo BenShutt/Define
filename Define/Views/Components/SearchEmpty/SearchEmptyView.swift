@@ -17,6 +17,9 @@ protocol SearchEmptyView: View {
     /// Lottie animation loop mode
     var loopMode: LottieLoopMode { get }
 
+    /// Transform for lottie
+    var lottieTransform: CGAffineTransform { get }
+
     /// Title text
     var title: String { get }
 
@@ -32,10 +35,18 @@ extension SearchEmptyView {
         .loop
     }
 
+    var lottieTransform: CGAffineTransform {
+        .identity
+    }
+
     var body: some View {
         VStack(alignment: .center, spacing: 0) {
-            LottieView(file: lottie, loopMode: loopMode)
-                .frame(width: 300, height: 100)
+            LottieView(
+                file: lottie,
+                loopMode: loopMode,
+                transform: lottieTransform
+            )
+            .frame(width: 300, height: 100)
 
             Spacer()
                 .frame(height: .large)

@@ -14,6 +14,10 @@ struct SearchEmpty: SearchEmptyView {
         .searchEmpty
     }
 
+    var lottieTransform: CGAffineTransform {
+        .init(scaleX: 2, y: 2)
+    }
+
     var title: String {
         .Search.Empty.title
     }

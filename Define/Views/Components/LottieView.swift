@@ -20,12 +20,16 @@ struct LottieView: UIViewRepresentable {
     /// Content mode
     var contentMode: UIView.ContentMode = .scaleAspectFit
 
+    /// If an animation file needs transforming to match a design
+    var transform: CGAffineTransform = .identity
+
     /// `AnimationView`
     private let animationView = AnimationView()
 
     func makeUIView(context: UIViewRepresentableContext<LottieView>) -> UIView {
         let view = UIView(frame: .zero)
 
+        animationView.transform = transform
         animationView.animation = Animation.named(file.rawValue)
         animationView.contentMode = contentMode
         animationView.loopMode = loopMode
