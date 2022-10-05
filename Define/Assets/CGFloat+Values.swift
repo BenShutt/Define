@@ -38,6 +38,9 @@ extension CGFloat {
     /// 20pts
     static let large: CGFloat = 20
 
+    /// 25pts
+    static let extraLarge: CGFloat = 25
+
     // MARK: - Dimension
 
     /// Large pts

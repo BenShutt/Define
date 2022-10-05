@@ -17,13 +17,13 @@ struct SearchHeaderView: View {
                 .title()
 
             Spacer()
-                .frame(height: .small)
+                .frame(height: .medium)
 
             Text(String.SearchHeaderView.subtitle)
                 .body()
 
             Spacer()
-                .frame(height: .large)
+                .frame(height: .extraLarge)
 
             InputTextField(
                 text: $searchText,

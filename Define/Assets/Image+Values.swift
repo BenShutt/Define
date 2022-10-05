@@ -10,5 +10,5 @@ import SwiftUI
 extension Image {
 
     static let cross = Image("cross-32")
-    static let search = Image("search-32")
+    static let search = Image("search")
 }

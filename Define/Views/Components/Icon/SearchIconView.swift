@@ -13,7 +13,11 @@ struct SearchIconView: View {
     /// Draw `View`
     var body: some View {
         IconContainerView(edge: .leading) {
-            Icon(image: .search, foregroundColor: .appPrimary)
+            Icon(
+                image: .search,
+                foregroundColor: .appPrimary,
+                size: .iconSize
+            )
         }
     }
 }

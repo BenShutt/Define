@@ -189,6 +189,8 @@
 		B8B9B9E228EDE65F006FCA76 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		B8B9B9E428EDE8BE006FCA76 /* View+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Shadow.swift"; sourceTree = "<group>"; };
 		B8B9B9E628EDED53006FCA76 /* NilCoalescingPrecedence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NilCoalescingPrecedence.swift; sourceTree = "<group>"; };
+		B8B9B9F628EE243B006FCA76 /* AppIconSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconSize.swift; sourceTree = "<group>"; };
+		B8B9B9F828EE28E8006FCA76 /* AppIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIcon.swift; sourceTree = "<group>"; };
 		B8BBA16128E8EDF100222116 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		B8C894E528D895E900975E25 /* LookUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookUp.swift; sourceTree = "<group>"; };
 		B8C894E728D8FFB900975E25 /* Entries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entries.swift; sourceTree = "<group>"; };
@@ -488,9 +490,19 @@
 			path = XCAssets;
 			sourceTree = "<group>";
 		};
+		B8B9B9FA28EE2A45006FCA76 /* AppIcon */ = {
+			isa = PBXGroup;
+			children = (
+				B8B9B9F828EE28E8006FCA76 /* AppIcon.swift */,
+				B8B9B9F628EE243B006FCA76 /* AppIconSize.swift */,
+			);
+			path = AppIcon;
+			sourceTree = "<group>";
+		};
 		B8C894E428D895DE00975E25 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				B8B9B9FA28EE2A45006FCA76 /* AppIcon */,
 				B89F17A028E0FB8800A96E35 /* Logger */,
 				B8E28DC728EA0C37009BE8A2 /* Debug.swift */,
 				B8C894E528D895E900975E25 /* LookUp.swift */,
@@ -622,7 +634,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1340;
+				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					B80399D828D79A37008CE7B4 = {

@@ -17,7 +17,11 @@ struct CrossIconView: View {
     var body: some View {
         IconContainerView(edge: .trailing) {
             Button(action: onTap) {
-                Icon(image: .cross, foregroundColor: .appPrimary)
+                Icon(
+                    image: .cross,
+                    foregroundColor: .appPrimary,
+                    size: .iconSize
+                )
             }
         }
     }

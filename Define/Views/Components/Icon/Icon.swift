@@ -19,6 +19,14 @@ struct Icon: View {
     /// Content mode
     var contentMode: ContentMode = .fit
 
+    /// Size of the icon
+    var size: CGFloat?
+
+    /// Get non-nullable `size` falling back on `-1`
+    private var iconSize: CGFloat {
+        size ?? -1
+    }
+
     /// Draw `View`
     var body: some View {
         image
@@ -26,6 +34,8 @@ struct Icon: View {
             .resizable()
             .aspectRatio(contentMode: contentMode)
             .foregroundColor(foregroundColor)
-            .frame(width: .iconSize, height: .iconSize)
+            .if(iconSize > 0) {
+                $0.frame(width: iconSize, height: iconSize)
+            }
     }
 }
