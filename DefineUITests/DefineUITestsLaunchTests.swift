@@ -7,8 +7,6 @@
 
 import XCTest
 
-// swiftlint:disable empty_xctest_method
-
 class DefineUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {

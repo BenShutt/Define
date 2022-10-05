@@ -5,7 +5,7 @@
 //  Created by Ben Shutt on 05/10/2022.
 //
 
-import Foundation
+import SwiftUI
 
 /// Generate App Icon
 ///
@@ -30,26 +30,46 @@ struct AppIcon {
         .appendingPathComponent(directory)
     }
 
+    /// Render instance as a PNG image
+    ///
+    /// - Parameters:
+    ///   - view: `View`
+    ///   - url: `URL` to write to
+    private static func renderPNG<T: View>(
+        of view: T,
+        writingTo url: URL
+    ) async throws {
+        let renderer = await ImageRenderer(content: view)
+        let uiImage = try await renderer.uiImage ?! ImageRendererError.uiImage
+        let pngData = try uiImage.pngData() ?! ImageRendererError.pngData
+        try pngData.write(to: url)
+    }
+
     /// Write image file
     ///
     /// - Parameters:
-    ///   - appIconSize: `AppIconSize`
     ///   - directoryURL: `URL`
+    ///   - appIconSize: `AppIconSize`
     ///   - multiplier: `Int`
     private static func write(
-        appIconSize: AppIconSize,
         in directoryURL: URL,
+        appIconSize: AppIconSize,
         for multiplier: Int
-    ) throws {
+    ) async throws {
         // Name of the file to write
         let fileName = appIconSize.fileName(for: multiplier, extn: "png")
 
         // URL to write the file at
         let url = directoryURL.appendingPathComponent(fileName)
 
+        // Make view to render
+        let view = LogoView(
+            showBorder: false,
+            size: appIconSize.sizePx(for: multiplier)
+        )
+
         // Render image and write to file
-        try LogoView(showBorder: false, size: appIconSize.sizePx(for: multiplier))
-            .renderPNG(writingTo: url)
+        try await renderPNG(of: view, writingTo: url)
     }
 
     /// Generate app icons
@@ -57,7 +77,9 @@ struct AppIcon {
         let directoryURL = try directoryURL()
 
         // Remove previous directory
-        try FileManager.default.removeItem(at: directoryURL)
+        if FileManager.default.fileExists(atPath: directoryURL.path) {
+            try FileManager.default.removeItem(at: directoryURL)
+        }
 
         // Create directory
         try FileManager.default.createDirectory(
@@ -65,30 +87,26 @@ struct AppIcon {
             withIntermediateDirectories: true
         )
 
-        try AppIconSize.all.forEach { appIconSize in
-            appIconSize.multipliers.forEach { multiplier in
-                write(appIconSize: appIconSize, in: directoryURL, for: multiplier)
+        for appIconSize in AppIconSize.all {
+            for multiplier in appIconSize.multipliers {
+                try await write(
+                    in: directoryURL,
+                    appIconSize: appIconSize,
+                    for: multiplier
+                )
             }
-        }    /// Write image file
-        ///
-        /// - Parameters:
-        ///   - appIconSize: `AppIconSize`
-        ///   - directoryURL: `URL`
-        ///   - multiplier: `Int`
-        private static func write(
-            appIconSize: AppIconSize,
-            in directoryURL: URL,
-            for multiplier: Int
-        ) throws {
-            // Name of the file to write
-            let fileName = appIconSize.fileName(for: multiplier, extn: "png")
-
-            // URL to write the file at
-            let url = directoryURL.appendingPathComponent(fileName)
-
-            // Render image and write to file
-            try LogoView(showBorder: false, size: appIconSize.sizePx(for: multiplier))
-                .renderPNG(writingTo: url)
         }
     }
+}
+
+// MARK: - ImageRendererError
+
+/// Error rendering image
+enum ImageRendererError: Error {
+
+    /// Failed to get image
+    case uiImage
+
+    /// Failed to get data
+    case pngData
 }

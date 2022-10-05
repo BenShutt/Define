@@ -12,7 +12,7 @@ import HTTPRequest
 class AppDelegate: NSObject, UIApplicationDelegate {
 
     /// Application `Logger`
-    private let logger = Logger(tag: "\(AppDelegate.self)")
+    let logger = Logger(tag: "\(AppDelegate.self)")
 
     /// Lauch options dictionary
     typealias LaunchOptions = [UIApplication.LaunchOptionsKey: Any]
@@ -25,7 +25,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         HTTPRequest.Configuration.shared.logging = Debug.isDebugging
 
         // Check that the API key can be loaded from the filesystem or log an error
-        DictionaryAPIKey.checkKey(logger: logger)
+        DictionaryAPIKey.checkKey()
         return true
     }
 }

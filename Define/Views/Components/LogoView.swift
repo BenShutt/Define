@@ -48,18 +48,6 @@ struct LogoView: View {
                 }
         )
     }
-
-    /// Render instance as a PNG image
-    ///
-    /// - Parameter url: `URL` to write to
-    /// - Throws: Error writing PNG
-    @MainActor
-    func renderPNG(writingTo url: URL) throws {
-        let renderer = ImageRenderer(content: LogoView())
-        let uiImage = try renderer.uiImage ?! LogoRenderError.image
-        let pngData = try uiImage.pngData() ?! LogoRenderError.data
-        try pngData.write(to: url)
-    }
 }
 
 // MARK: - PreviewProvider
@@ -71,16 +59,4 @@ struct LogoView_Previews: PreviewProvider {
             size: UIScreen.main.bounds.width * 0.8
         )
     }
-}
-
-// MARK: - LogoError
-
-/// Error rendering logo
-enum LogoRenderError: Error {
-
-    /// Failed to get image
-    case image
-
-    /// Failed to get data
-    case data
 }

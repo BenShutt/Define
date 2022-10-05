@@ -5,6 +5,7 @@
 //  Created by Ben Shutt on 24/09/2022.
 //
 
+import UIKit
 import SwiftUI
 
 /// `View` to input a word to search for definitions
