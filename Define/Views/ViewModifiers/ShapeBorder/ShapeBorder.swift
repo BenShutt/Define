@@ -30,10 +30,7 @@ extension ShapeBorder {
     /// - Returns: `View`
     func body(content: Content) -> some View {
         content
-            .overlay(
-                shape
-                    .strokeBorder(color, lineWidth: .borderWidth)
-            )
+            .overlay(shape.strokeBorder(color, lineWidth: .borderWidth))
             .clipShape(shape)
     }
 }

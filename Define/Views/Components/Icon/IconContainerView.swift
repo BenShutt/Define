@@ -46,8 +46,7 @@ struct IconContainerView<Body: View>: View {
     /// Draw `View`
     var body: some View {
         contentView
-            .padding(EdgeInsets(
-                top: 0, leading: leadingPadding, bottom: 0, trailing: trailingPadding
-            ))
+            .padding(.leading, leadingPadding)
+            .padding(.trailing, trailingPadding)
     }
 }

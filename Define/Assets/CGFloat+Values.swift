@@ -15,11 +15,14 @@ extension CGFloat {
 
     // MARK: - Config
 
-    /// 3pts
-    static let borderWidth: CGFloat = 3
+    /// 1.5pts
+    static let borderWidth: CGFloat = 1.5
 
     /// 20pts
     static let iconSize: CGFloat = 20
+
+    /// 2pts
+    static let shadowRadius: CGFloat = 2
 
     // MARK: - Size
 

@@ -13,14 +13,14 @@ struct SearchHeaderView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text("Search")
+            Text(String.SearchHeaderView.title)
                 .textStyle(.title)
                 .foregroundColor(.appBlack)
 
             Spacer()
                 .frame(height: .small)
 
-            Text("This is provided by xyz")
+            Text(String.SearchHeaderView.subtitle)
                 .textStyle(.body)
                 .foregroundColor(.appDarkGray)
 
@@ -36,7 +36,7 @@ struct SearchHeaderView: View {
         .padding(.largeMargins)
         .background(
             GradientBlurView()
-                .shadow(color: .appBlack.opacity(0.2), radius: 2)
+                .appShadow()
         )
     }
 }

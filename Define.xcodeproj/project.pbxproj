@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		B80399DD28D79A37008CE7B4 /* DefineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80399DC28D79A37008CE7B4 /* DefineApp.swift */; };
-		B80399E128D79A3B008CE7B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B80399E028D79A3B008CE7B4 /* Assets.xcassets */; };
 		B80399E428D79A3B008CE7B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B80399E328D79A3B008CE7B4 /* Preview Assets.xcassets */; };
 		B80399EE28D79A3B008CE7B4 /* DefineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80399ED28D79A3B008CE7B4 /* DefineTests.swift */; };
 		B80399F828D79A3B008CE7B4 /* DefineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80399F728D79A3B008CE7B4 /* DefineUITests.swift */; };
@@ -75,6 +74,11 @@
 		B8B9B9D828EC603D006FCA76 /* EdgeInsets+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9B9D728EC603D006FCA76 /* EdgeInsets+Extensions.swift */; };
 		B8B9B9DA28EC6210006FCA76 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9B9D928EC6210006FCA76 /* BlurView.swift */; };
 		B8B9B9DD28EC66AD006FCA76 /* GradientBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9B9DC28EC66AD006FCA76 /* GradientBlurView.swift */; };
+		B8B9B9E028EDC706006FCA76 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8B9B9DF28EDC706006FCA76 /* Colors.xcassets */; };
+		B8B9B9E128EDC9FC006FCA76 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B80399E028D79A3B008CE7B4 /* Images.xcassets */; };
+		B8B9B9E328EDE65F006FCA76 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9B9E228EDE65F006FCA76 /* LogoView.swift */; };
+		B8B9B9E528EDE8BE006FCA76 /* View+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9B9E428EDE8BE006FCA76 /* View+Shadow.swift */; };
+		B8B9B9E728EDED53006FCA76 /* NilCoalescingPrecedence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9B9E628EDED53006FCA76 /* NilCoalescingPrecedence.swift */; };
 		B8BBA16228E8EDF100222116 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BBA16128E8EDF100222116 /* ButtonView.swift */; };
 		B8C894E628D895E900975E25 /* LookUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C894E528D895E900975E25 /* LookUp.swift */; };
 		B8C894E828D8FFB900975E25 /* Entries.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C894E728D8FFB900975E25 /* Entries.swift */; };
@@ -113,7 +117,7 @@
 /* Begin PBXFileReference section */
 		B80399D928D79A37008CE7B4 /* Define.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Define.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B80399DC28D79A37008CE7B4 /* DefineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefineApp.swift; sourceTree = "<group>"; };
-		B80399E028D79A3B008CE7B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B80399E028D79A3B008CE7B4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B80399E328D79A3B008CE7B4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B80399E928D79A3B008CE7B4 /* DefineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DefineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B80399ED28D79A3B008CE7B4 /* DefineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefineTests.swift; sourceTree = "<group>"; };
@@ -181,6 +185,10 @@
 		B8B9B9D728EC603D006FCA76 /* EdgeInsets+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EdgeInsets+Extensions.swift"; sourceTree = "<group>"; };
 		B8B9B9D928EC6210006FCA76 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		B8B9B9DC28EC66AD006FCA76 /* GradientBlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBlurView.swift; sourceTree = "<group>"; };
+		B8B9B9DF28EDC706006FCA76 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		B8B9B9E228EDE65F006FCA76 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
+		B8B9B9E428EDE8BE006FCA76 /* View+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Shadow.swift"; sourceTree = "<group>"; };
+		B8B9B9E628EDED53006FCA76 /* NilCoalescingPrecedence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NilCoalescingPrecedence.swift; sourceTree = "<group>"; };
 		B8BBA16128E8EDF100222116 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		B8C894E528D895E900975E25 /* LookUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookUp.swift; sourceTree = "<group>"; };
 		B8C894E728D8FFB900975E25 /* Entries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entries.swift; sourceTree = "<group>"; };
@@ -304,7 +312,7 @@
 			children = (
 				B8A1231C28E9711600ACEC45 /* Lotties */,
 				B8A1233028E97CAD00ACEC45 /* WorkSans */,
-				B80399E028D79A3B008CE7B4 /* Assets.xcassets */,
+				B8B9B9DE28EDC6E4006FCA76 /* XCAssets */,
 				B8E49C0A28DF985500F9CAC4 /* CGFloat+Values.swift */,
 				B8D2A73D28DEEFE70096A020 /* Color+Values.swift */,
 				B8E49C0E28DF9AA500F9CAC4 /* EdgeInsets+Values.swift */,
@@ -326,6 +334,7 @@
 				B8039A2028D7B859008CE7B4 /* HTTPHeader+Extensions.swift */,
 				B8039A3428D7C78D008CE7B4 /* JSONDecoder+Extensions.swift */,
 				B8039A3628D7C803008CE7B4 /* JSONEncoder+Extensions.swift */,
+				B8B9B9E628EDED53006FCA76 /* NilCoalescingPrecedence.swift */,
 				B89F17A328E0FC9A00A96E35 /* OSLog+Extensions.swift */,
 				B8039A1028D7A52A008CE7B4 /* URL+Components.swift */,
 			);
@@ -470,6 +479,15 @@
 			path = Gradient;
 			sourceTree = "<group>";
 		};
+		B8B9B9DE28EDC6E4006FCA76 /* XCAssets */ = {
+			isa = PBXGroup;
+			children = (
+				B8B9B9DF28EDC706006FCA76 /* Colors.xcassets */,
+				B80399E028D79A3B008CE7B4 /* Images.xcassets */,
+			);
+			path = XCAssets;
+			sourceTree = "<group>";
+		};
 		B8C894E428D895DE00975E25 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -488,6 +506,7 @@
 				B8C894E928D905BD00975E25 /* ForEach+Extensions.swift */,
 				B8E49C1028DFA60000F9CAC4 /* View+If.swift */,
 				B89F179828E0F65100A96E35 /* View+Keyboard.swift */,
+				B8B9B9E428EDE8BE006FCA76 /* View+Shadow.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -528,6 +547,7 @@
 				B8BBA16128E8EDF100222116 /* ButtonView.swift */,
 				B8D2A74128DF3A250096A020 /* InputTextField.swift */,
 				B8E49C0828DF917E00F9CAC4 /* LoadingView.swift */,
+				B8B9B9E228EDE65F006FCA76 /* LogoView.swift */,
 				B8A1232128E9714600ACEC45 /* LottieView.swift */,
 				B8B9B9D528EC5C54006FCA76 /* SearchHeaderView.swift */,
 			);
@@ -647,7 +667,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B80399E128D79A3B008CE7B4 /* Assets.xcassets in Resources */,
+				B8B9B9E028EDC706006FCA76 /* Colors.xcassets in Resources */,
+				B8B9B9E128EDC9FC006FCA76 /* Images.xcassets in Resources */,
 				B80399E428D79A3B008CE7B4 /* Preview Assets.xcassets in Resources */,
 				B8A1232028E9712300ACEC45 /* searchEmpty.json in Resources */,
 				B8A1231F28E9712300ACEC45 /* searchNoResults.json in Resources */,
@@ -746,11 +767,13 @@
 				B8E49C0928DF917E00F9CAC4 /* LoadingView.swift in Sources */,
 				B89F17A228E0FB9E00A96E35 /* Loggable.swift in Sources */,
 				B89F179F28E0FB7700A96E35 /* Logger.swift in Sources */,
+				B8B9B9E328EDE65F006FCA76 /* LogoView.swift in Sources */,
 				B8C894E628D895E900975E25 /* LookUp.swift in Sources */,
 				B8C894EF28D908F300975E25 /* LookUpViewModel.swift in Sources */,
 				B8A1232728E971FD00ACEC45 /* LottieFile.swift in Sources */,
 				B8A1232228E9714600ACEC45 /* LottieView.swift in Sources */,
 				B8039A2428D7BC29008CE7B4 /* Metadata.swift in Sources */,
+				B8B9B9E728EDED53006FCA76 /* NilCoalescingPrecedence.swift in Sources */,
 				B89F17A428E0FC9A00A96E35 /* OSLog+Extensions.swift in Sources */,
 				B89F179728E0F38D00A96E35 /* Publisher+Extensions.swift in Sources */,
 				B813BFF828EB6F30000C766C /* RoundedBorder.swift in Sources */,
@@ -769,6 +792,7 @@
 				B8039A0928D7A14C008CE7B4 /* URLComponents+DictionaryAPI.swift in Sources */,
 				B8E49C1128DFA60000F9CAC4 /* View+If.swift in Sources */,
 				B89F179928E0F65100A96E35 /* View+Keyboard.swift in Sources */,
+				B8B9B9E528EDE8BE006FCA76 /* View+Shadow.swift in Sources */,
 				B8039A2628D7BCAB008CE7B4 /* Word.swift in Sources */,
 				B8039A2A28D7BD54008CE7B4 /* Words.swift in Sources */,
 				B8A1235A28E97EF300ACEC45 /* WorkSans.swift in Sources */,
@@ -933,12 +957,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Define/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -963,12 +988,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Define/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -990,7 +1016,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.benshutt.DefineTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1009,7 +1035,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.benshutt.DefineTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1027,6 +1053,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.benshutt.DefineUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1044,6 +1071,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.benshutt.DefineUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

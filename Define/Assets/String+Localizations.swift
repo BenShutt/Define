@@ -11,6 +11,12 @@ import Foundation
 
 extension String {
 
+    struct SearchHeaderView {
+
+        static let title = "Look Up Word"
+        static let subtitle = "Defintions are provided by the Oxford Dictionaries API"
+    }
+
     struct EnterWordScreen {
 
         static let prompt = "Enter word to search..."

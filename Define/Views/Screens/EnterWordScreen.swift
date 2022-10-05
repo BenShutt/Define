@@ -35,7 +35,6 @@ struct EnterWordScreen: Screen {
                 LoadingView()
             } else if !definitions.isEmpty {
                 Text(definitions.joined(separator: "\n\n"))
-                    .foregroundColor(.appGreen)
                 Spacer()
                 ButtonView(text: .EnterWordScreen.saveButton) {
                     saveWord(word: searchText)

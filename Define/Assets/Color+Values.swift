@@ -11,16 +11,25 @@ import SwiftUI
 extension Color {
 
     static let appBlack = Color("appBlack")
-    static let appBlue = Color("appBlue")
-    static let appBrown = Color("appBrown")
     static let appDarkBlue = Color("appDarkBlue")
+    static let appBlue = Color("appBlue")
     static let appDarkGray = Color("appDarkGray")
-    static let appFaintGray = Color("appFaintGray")
-    static let appGray = Color("appGray")
-    static let appGreen = Color("appGreen")
+    static let appLightBlue = Color("appLightBlue")
     static let appLightGray = Color("appLightGray")
-    static let appPurple = Color("appPurple")
+    static let appLightOrange = Color("appLightOrange")
+    static let appLightRed = Color("appLightRed")
+    static let appShadow = Color("appShadow")
     static let appWhite = Color("appWhite")
+
+    // MARK: - Computed
+
+    static var appPrimary: Color {
+        appDarkBlue
+    }
+
+    static var appAccent: Color {
+        appLightBlue
+    }
 }
 
 // MARK: - [Color] + Values

@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct GradientBlurView: View {
+
+    var colors: [Color] {
+        [Color.appWhite, .appLightBlue].map { $0.opacity(0.1) }
+    }
+
     var body: some View {
         ZStack {
-            LinearGradient(
-                colors: [.appGreen, .appBlue],
-                startPoint: .top,
-                endPoint: .bottom
-            )
-            BlurView(style: .extraLight)
+            LinearGradient(colors: colors, startPoint: .top, endPoint: .bottom)
+            BlurView(style: .light)
         }
         .ignoresSafeArea()
     }

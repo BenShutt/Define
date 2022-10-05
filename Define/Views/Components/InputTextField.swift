@@ -27,7 +27,7 @@ struct InputTextField: View {
 
     /// Tint color
     private var tintColor: Color {
-        .appBlue
+        .appPrimary
     }
 
     /// Border color

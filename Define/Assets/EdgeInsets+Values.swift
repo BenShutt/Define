@@ -9,9 +9,6 @@ import SwiftUI
 
 extension EdgeInsets {
 
-    static let margins = EdgeInsets(
-        top: .vMargin, leading: .hMargin, bottom: .vMargin, trailing: .hMargin
-    )
-
+    static let margins = EdgeInsets(vertical: .vMargin, horizontal: .hMargin)
     static let largeMargins = EdgeInsets(CGFloat.large)
 }
