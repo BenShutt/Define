@@ -44,7 +44,7 @@ extension View {
     /// - Parameter border: `Border`
     /// - Returns: `View`
     func shapeBorder<Border: ShapeBorder>(_ border: Border) -> some View {
-        self.modifier(border)
+        modifier(border)
     }
 
     /// Default shape border

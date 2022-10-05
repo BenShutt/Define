@@ -52,15 +52,14 @@ extension SearchEmptyView {
                 .frame(height: .large)
 
             Text(title)
-                .textStyle(.title)
+                .title()
                 .multilineTextAlignment(.center)
 
             Spacer()
                 .frame(height: .medium)
 
             Text(subtitle)
-                .textStyle(.body)
-                .foregroundColor(.appDarkGray)
+                .body()
                 .multilineTextAlignment(.center)
         }
         .padding(.margins)

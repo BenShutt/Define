@@ -42,6 +42,18 @@ extension View {
     /// - Parameter textStyle: `TextStyle`
     /// - Returns: `View`
     func textStyle(_ textStyle: TextStyle) -> some View {
-        self.customFont(textStyle.font, size: textStyle.fontSize)
+        customFont(textStyle.font, size: textStyle.fontSize)
+    }
+
+    /// Standard `.title` implementation
+    func title() -> some View {
+        textStyle(.title)
+            .foregroundColor(.appBlack)
+    }
+
+    /// Standard `.body` implementation
+    func body() -> some View {
+        textStyle(.body)
+            .foregroundColor(.appDarkGray)
     }
 }

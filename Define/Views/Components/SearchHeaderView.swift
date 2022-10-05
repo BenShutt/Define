@@ -14,15 +14,13 @@ struct SearchHeaderView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             Text(String.SearchHeaderView.title)
-                .textStyle(.title)
-                .foregroundColor(.appBlack)
+                .title()
 
             Spacer()
                 .frame(height: .small)
 
             Text(String.SearchHeaderView.subtitle)
-                .textStyle(.body)
-                .foregroundColor(.appDarkGray)
+                .body()
 
             Spacer()
                 .frame(height: .large)
