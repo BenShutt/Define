@@ -11,6 +11,9 @@ import os
 /// Basic structure conforming to `Loggable`
 struct Logger: Loggable {
 
+    /// Shared application logger
+    static let shared = Logger(tag: "Define")
+
     /// `OSLog` instance
     let logger: OSLog
 

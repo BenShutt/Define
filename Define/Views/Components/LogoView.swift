@@ -13,40 +13,59 @@ struct LogoView: View {
     /// Render border and shadow
     var showBorder = true
 
-    /// Overall size
-    var size: CGFloat = 1024
-
-    /// Relative size of the icon
-    var iconSize: CGFloat {
-        size * 0.5
+    /// Corner radius of border relative to container size
+    /// - Parameter proxy: `GeometryProxy`
+    /// - Returns: `CGFloat`
+    func borderRadius(_ proxy: GeometryProxy) -> CGFloat {
+        min(proxy.size.width, proxy.size.height) * 0.1
     }
 
-    /// Relative corner radius of the border
-    var borderRadius: CGFloat {
-        size * 0.1
+    /// Size of icon relative to container size
+    /// - Parameter proxy: `GeometryProxy`
+    /// - Returns: `CGFloat`
+    func iconSize(_ proxy: GeometryProxy) -> CGFloat {
+        min(proxy.size.width, proxy.size.height) * 0.5
     }
 
     /// Draw `View`
     var body: some View {
-        Icon(
-            image: .search,
-            foregroundColor: .appPrimary,
-            size: iconSize
-        )
-        .background(
-            GradientBlurView()
-                .frame(width: size, height: size)
-                .if(showBorder) { logoView in
-                    logoView
-                        .shapeBorder(
-                            RoundedBorder(
-                                color: .clear,
-                                cornerRadius: borderRadius
-                            )
+        GeometryReader { proxy in
+            ZStack {
+                GradientBlurView()
+                    .if(showBorder) {
+                        $0.modifier(
+                            LogoBorder(borderRadius: borderRadius(proxy))
                         )
-                        .appShadow()
-                }
-        )
+                    }
+
+                Icon(
+                    image: .search,
+                    foregroundColor: .appPrimary,
+                    size: iconSize(proxy)
+                )
+            }
+        }
+    }
+}
+
+// MARK: - LogoBorder
+
+/// Modify view to draw a border
+private struct LogoBorder: ViewModifier {
+
+    /// Corner radius of the border
+    var borderRadius: CGFloat
+
+    /// Modify `content`
+    /// - Parameter content: `Content`
+    /// - Returns: `View`
+    func body(content: Content) -> some View {
+        content
+            .shapeBorder(RoundedBorder(
+                color: .clear,
+                cornerRadius: borderRadius
+            ))
+            .appShadow()
     }
 }
 
@@ -54,9 +73,9 @@ struct LogoView: View {
 
 struct LogoView_Previews: PreviewProvider {
     static var previews: some View {
-        LogoView(
-            showBorder: true,
-            size: UIScreen.main.bounds.width * 0.8
-        )
+        ZStack {
+            LogoView(showBorder: true)
+                .frame(width: 240, height: 240)
+        }
     }
 }

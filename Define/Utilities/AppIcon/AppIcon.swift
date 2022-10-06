@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-/// Generate App Icon
+/// Generates App Icon images from the SwiftUI view: `LogoView`
 ///
 /// - Warning:
 /// Should be run on a simulator so the images are generated on the (hosting) computer
@@ -30,50 +30,29 @@ struct AppIcon {
         .appendingPathComponent(directory)
     }
 
-    /// Render instance as a PNG image
+    /// Resize image and write file to directory
     ///
     /// - Parameters:
-    ///   - view: `View`
-    ///   - url: `URL` to write to
-    private static func renderPNG<T: View>(
-        of view: T,
-        writingTo url: URL
-    ) async throws {
-        let renderer = await ImageRenderer(content: view)
-        let uiImage = try await renderer.uiImage ?! ImageRendererError.uiImage
-        let pngData = try uiImage.pngData() ?! ImageRendererError.pngData
+    ///   - image: `UIImage`
+    ///   - appIconSize: `AppIconSize`
+    ///   - directoryURL: `URL`
+    private static func resizeAndWrite(
+        image: UIImage,
+        for appIconSize: AppIconSize,
+        to directoryURL: URL
+    ) throws {
+        let format = UIGraphicsImageRendererFormat()
+        format.scale = 1
+
+        let fileName = "\(appIconSize).png"
+        let url = directoryURL.appendingPathComponent(fileName)
+        let newImage = image.resize(to: .init(appIconSize.sizeInPx), format: format)
+        let pngData = try newImage.pngData() ?! AppIconError.pngData
         try pngData.write(to: url)
     }
 
-    /// Write image file
-    ///
-    /// - Parameters:
-    ///   - directoryURL: `URL`
-    ///   - appIconSize: `AppIconSize`
-    ///   - multiplier: `Int`
-    private static func write(
-        in directoryURL: URL,
-        appIconSize: AppIconSize,
-        for multiplier: Int
-    ) async throws {
-        // Name of the file to write
-        let fileName = appIconSize.fileName(for: multiplier, extn: "png")
-
-        // URL to write the file at
-        let url = directoryURL.appendingPathComponent(fileName)
-
-        // Make view to render
-        let view = LogoView(
-            showBorder: false,
-            size: appIconSize.sizePx(for: multiplier)
-        )
-
-        // Render image and write to file
-        try await renderPNG(of: view, writingTo: url)
-    }
-
     /// Generate app icons
-    static func generate() async throws {
+    static func generate() throws {
         let directoryURL = try directoryURL()
 
         // Remove previous directory
@@ -87,25 +66,28 @@ struct AppIcon {
             withIntermediateDirectories: true
         )
 
-        for appIconSize in AppIconSize.all {
-            for multiplier in appIconSize.multipliers {
-                try await write(
-                    in: directoryURL,
-                    appIconSize: appIconSize,
-                    for: multiplier
-                )
-            }
+        // Make image from the largest
+        let logoImage = LogoView(showBorder: false)
+            .snapshot(size: .init(AppIconSize.max.sizeInPx))
+
+        // Resize and write all images
+        try AppIconSize.all.forEach {
+            try resizeAndWrite(image: logoImage, for: $0, to: directoryURL)
         }
+
+        // Log success
+        let count = AppIconSize.all.count
+        Logger.shared.log(
+            type: .info,
+            message: "Success, \(count) \(AppIconSize.self)s written to \(directoryURL)"
+        )
     }
 }
 
-// MARK: - ImageRendererError
+// MARK: - AppIconError
 
-/// Error rendering image
-enum ImageRendererError: Error {
-
-    /// Failed to get image
-    case uiImage
+/// Error with `AppIcon`
+enum AppIconError: Error {
 
     /// Failed to get data
     case pngData

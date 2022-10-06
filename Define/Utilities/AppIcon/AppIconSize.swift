@@ -8,32 +8,56 @@
 import Foundation
 
 /// Set of app icon sizes
-struct AppIconSize: Equatable, Hashable, Codable {
+struct AppIconSize: Equatable, Hashable, Codable, Comparable, CustomStringConvertible {
 
     /// Set of `AppIconSize`s to generate
-    static var all: [AppIconSize] {
-        [
-            .init(size: 20, multipliers: [1, 2, 3]),
-            .init(size: 29, multipliers: [1, 2, 3]),
-            .init(size: 40, multipliers: [1, 2, 3]),
-            .init(size: 60, multipliers: [2, 3]),
-            .init(size: 76, multipliers: [1, 2]),
-            .init(size: 83.5, multipliers: [2]),
-            .init(size: 1024, multipliers: [1])
-        ]
+    static let all: [AppIconSize] = [
+        // 20px
+        .init(size: 20, multiplier: 1),
+        .init(size: 20, multiplier: 2),
+        .init(size: 20, multiplier: 3),
+
+        // 29px
+        .init(size: 29, multiplier: 1),
+        .init(size: 29, multiplier: 2),
+        .init(size: 29, multiplier: 3),
+
+        // 40px
+        .init(size: 40, multiplier: 1),
+        .init(size: 40, multiplier: 2),
+        .init(size: 40, multiplier: 3),
+
+        // 60px
+        .init(size: 60, multiplier: 2),
+        .init(size: 60, multiplier: 3),
+
+        // 76px
+        .init(size: 76, multiplier: 1),
+        .init(size: 76, multiplier: 2),
+
+        // 83.5px
+        .init(size: 83.5, multiplier: 2),
+
+        // 1024px
+        .init(size: 1024, multiplier: 1)
+    ]
+
+    /// Max `AppIconSize`
+    static var max: AppIconSize {
+        guard let appIconSize = AppIconSize.all.max() else {
+            fatalError("\(AppIconSize.self)")
+        }
+        return appIconSize
     }
 
     /// Size in pts
     var size: CGFloat
 
-    /// Size multipers to apply
-    var multipliers: [Int]
+    /// Size multiper to apply
+    var multiplier: Int
 
     /// Size in pixels (px)
-    ///
-    /// - Parameter multiplier: `Int`
-    /// - Returns: `CGFloat`
-    func sizePx(for multiplier: Int) -> CGFloat {
+    var sizeInPx: CGFloat {
         size * CGFloat(multiplier)
     }
 
@@ -45,17 +69,25 @@ struct AppIconSize: Equatable, Hashable, Codable {
         return formatter.string(from: size as NSNumber) ?? "\(size)"
     }
 
-    /// Map to file name for `multiplier`
+    /// Name of the image file
     ///
-    /// - Parameters:
-    ///   - multiplier: `Int`
-    ///   - extn: `String` file extension (not including full-stop)
-    /// - Returns: `String`
-    func fileName(for multiplier: Int, extn: String) -> String {
-        var fileName = "appIcon-\(sizeString)"
-        if multiplier > 1 {
-            fileName += "@\(multiplier)x"
-        }
-        return "\(fileName).\(extn)"
+    /// - Note:
+    /// Does not include file extension
+    var fileName: String {
+        let prefix = "appIcon-\(sizeString)"
+        let suffix = multiplier > 1 ? "@\(multiplier)x" : ""
+        return "\(prefix)\(suffix)"
+    }
+
+    // MARK: - Comparable
+
+    static func < (lhs: AppIconSize, rhs: AppIconSize) -> Bool {
+        lhs.sizeInPx < rhs.sizeInPx
+    }
+
+    // MARK: - CustomStringConvertible
+
+    var description: String {
+        fileName
     }
 }

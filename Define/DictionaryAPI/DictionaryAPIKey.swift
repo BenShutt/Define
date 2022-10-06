@@ -5,7 +5,7 @@
 //  Created by Ben Shutt on 18/09/2022.
 //
 
-import UIKit
+import Foundation
 import HTTPRequest
 
 /// Load API key from the "dictionary-api-key.txt" file.
@@ -36,7 +36,7 @@ struct DictionaryAPIKey {
     /// Check that we can load the `APIKey` or log an error
     static func checkKey() {
         guard apiKey == nil else { return }
-        UIApplication.shared.appDelegate.logger.log(
+        Logger.shared.log(
             type: .error,
             message: "Failed to load \(DictionaryAPIKey.self)"
         )

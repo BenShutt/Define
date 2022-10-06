@@ -11,9 +11,6 @@ import HTTPRequest
 /// Implementation of `UIApplicationDelegate`
 class AppDelegate: NSObject, UIApplicationDelegate {
 
-    /// Application `Logger`
-    let logger = Logger(tag: "\(AppDelegate.self)")
-
     /// Lauch options dictionary
     typealias LaunchOptions = [UIApplication.LaunchOptionsKey: Any]
 
