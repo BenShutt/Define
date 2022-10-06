@@ -13,13 +13,13 @@ import SwiftUI
 /// Should be run on a simulator so the images are generated on the (hosting) computer
 struct AppIcon {
 
-    /// Name of the directory to write to
+    /// Name of the directory to write app icon images in
     private static let directory = "DefineLogo"
 
-    /// User directory to make `directory` in
+    /// User (search path) directory to make `directory` in
     private static let searchPathDirectory: FileManager.SearchPathDirectory = .desktopDirectory
 
-    /// URL to write app icon images to
+    /// `URL` to write app icon images to
     private static func directoryURL() throws -> URL {
         try FileManager.default.url(
             for: searchPathDirectory,
@@ -28,6 +28,13 @@ struct AppIcon {
             create: true
         )
         .appendingPathComponent(directory)
+    }
+
+    /// The `UIGraphicsImageRendererFormat` to render with
+    private static var graphicsFormat: UIGraphicsImageRendererFormat {
+        let format = UIGraphicsImageRendererFormat.default()
+        format.scale = 1 // Working in px
+        return format
     }
 
     /// Resize image and write file to directory
@@ -41,12 +48,9 @@ struct AppIcon {
         for appIconSize: AppIconSize,
         to directoryURL: URL
     ) throws {
-        let format = UIGraphicsImageRendererFormat()
-        format.scale = 1
-
         let fileName = "\(appIconSize).png"
         let url = directoryURL.appendingPathComponent(fileName)
-        let newImage = image.resize(to: .init(appIconSize.sizeInPx), format: format)
+        let newImage = image.resize(to: .init(appIconSize.sizeInPx), format: graphicsFormat)
         let pngData = try newImage.pngData() ?! AppIconError.pngData
         try pngData.write(to: url)
     }
