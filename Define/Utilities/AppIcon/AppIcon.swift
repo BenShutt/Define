@@ -11,6 +11,9 @@ import SwiftUI
 ///
 /// - Warning:
 /// Should be run on a simulator so the images are generated on the (hosting) computer
+///
+/// - Note:
+/// `ImageRenderer` didn't support UI components like `BlurView`
 struct AppIcon {
 
     /// Name of the directory to write app icon images in
@@ -79,11 +82,21 @@ struct AppIcon {
             try resizeAndWrite(image: logoImage, for: $0, to: directoryURL)
         }
 
+        // Generate launch screen images (WIP)
+        let containerSize: CGFloat = .Launch.containerSize * 3
+        let padding: CGFloat = .Launch.padding * 3
+        let launchScreenImage = LaunchScreen(containerSize: containerSize, padding: padding)
+            .screenBody
+            .snapshot(size: .init(containerSize))
+        try (1 ... 3).forEach { // multipliers: @1x, @2x, @3x
+            let size = AppIconSize(size: .Launch.containerSize, multiplier: $0)
+            try resizeAndWrite(image: launchScreenImage, for: size, to: directoryURL)
+        }
+
         // Log success
-        let count = AppIconSize.all.count
         Logger.shared.log(
             type: .info,
-            message: "Success, \(count) \(AppIconSize.self)s written to \(directoryURL)"
+            message: "Success, \(AppIcon.self) images written to \(directoryURL)"
         )
     }
 }

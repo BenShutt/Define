@@ -48,6 +48,13 @@ extension CGFloat {
 
     /// Medium pts
     static let vMargin: CGFloat = .medium
+
+    // MARK: - Launch
+
+    struct Launch {
+        static let containerSize: CGFloat = 200
+        static let padding: CGFloat = 40
+    }
 }
 
 // MARK: - Double + Values

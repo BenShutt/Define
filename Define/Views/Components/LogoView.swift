@@ -73,9 +73,7 @@ private struct LogoBorder: ViewModifier {
 
 struct LogoView_Previews: PreviewProvider {
     static var previews: some View {
-        ZStack {
-            LogoView(showBorder: true)
-                .frame(width: 240, height: 240)
-        }
+        LogoView(showBorder: true)
+            .frame(120)
     }
 }
