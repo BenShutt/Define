@@ -13,6 +13,7 @@ enum TextStyle {
     case title
     case body
     case button
+    case tag
 
     /// Get size of the font
     var fontSize: CGFloat {
@@ -20,6 +21,7 @@ enum TextStyle {
         case .title: return 32
         case .body: return 16
         case .button: return 16
+        case .tag: return 12
         }
     }
 
@@ -29,6 +31,7 @@ enum TextStyle {
         case .title: return .bold
         case .body: return .regular
         case .button: return .semiBold
+        case .tag: return .semiBold
         }
     }
 }
