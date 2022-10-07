@@ -8,16 +8,16 @@
 import Foundation
 import HTTPRequest
 
-/// Load API key from the "dictionary-api-key.txt" file.
+/// Load API key from the JSON file.
 struct DictionaryAPIKey {
 
-    /// File with API key
+    /// File name containing the API key
     private static let fileName = "dictionary-api-key.json"
 
     /// Cache of the API key (static storage)
     private static var apiKeyCache: APIKey?
 
-    /// Get API key
+    /// "Lazily" get API key
     static var apiKey: APIKey? {
         if apiKeyCache == nil {
             apiKeyCache = try? Self.loadFromFile() // Mask throw

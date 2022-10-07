@@ -31,8 +31,8 @@ struct EntriesAPI: HTTPRequestable {
     /// - "strictMatch": Specifies whether diacritics must match exactly
     var queryItems: [URLQueryItem] {
         [
-            URLQueryItem(name: "fields", value: "definitions"),
-            URLQueryItem(name: "strictMatch", value: "true")
+            .init(name: "fields", value: "definitions"),
+            .init(name: "strictMatch", value: "true")
         ]
     }
 
