@@ -1,19 +1,18 @@
 //
-//  LookUpViewModel.swift
+//  SearchViewModel.swift
 //  Define
 //
-//  Created by Ben Shutt on 19/09/2022.
+//  Created by Ben Shutt on 07/10/2022.
 //
 
-import Foundation
-import SwiftUI
 import Combine
+import SwiftUI
 
-/// View model wrapper of the `LookUp` API
-class LookUpViewModel: ObservableObject {
+/// View model wrapper of the `SearchAPI`
+class SearchViewModel: ObservableObject {
 
     /// Debounce throttle on the search
-    private static let debounce: TimeInterval = 1
+    private static let debounce: TimeInterval = .debounce
 
     /// Text being searched
     @Published var searchText = ""
@@ -28,8 +27,8 @@ class LookUpViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
 
     /// Result when there is no text to search
-    private static var emptyTextResult: Result<Entries, Error> {
-        .failure(LookUpViewModelError.emptyText)
+    private static var emptyTextResult: ModelResult<Words> {
+        .failure(SearchViewModelError.emptyText)
     }
 
     /// Publisher of `$searchText`
@@ -66,18 +65,18 @@ class LookUpViewModel: ObservableObject {
     ///
     /// - Parameter word: `String`
     private func lookUp(word: String) {
-        LookUp.entries(for: word) { [weak self] result in
+        SearchAPI(word: word).request { [weak self] result in
             guard word == self?.searchText else { return } // Outdated
             self?.isLoading = false
-            self?.result = result
+            self?.result = result.modelResult()
         }
     }
 }
 
-// MARK: - LookUpViewModelError
+// MARK: - SearchViewModelError
 
-/// Error with `LookUpViewModel`
-enum LookUpViewModelError: Error {
+/// Error with `SearchViewModel`
+enum SearchViewModelError: Error {
 
     /// No text to search
     case emptyText

@@ -9,6 +9,9 @@ import SwiftUI
 
 extension EdgeInsets {
 
+    /// Zero insets
+    static let zero = EdgeInsets(0)
+
     /// Initialize all insets to the same value
     ///
     /// - Parameter value: `CGFloat`

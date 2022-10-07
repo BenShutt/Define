@@ -29,6 +29,9 @@ extension CGFloat {
     /// 5pts
     static let small: CGFloat = 5
 
+    /// 7.5pts
+    static let smallMedium: CGFloat = 7.5
+
     /// 10pts
     static let medium: CGFloat = 10
 
@@ -61,4 +64,10 @@ extension CGFloat {
 
 extension Double {
     static let π: Double = .pi
+}
+
+// MARK: - TimeInterval + Values
+
+extension TimeInterval {
+    static let debounce: TimeInterval = 1
 }

@@ -40,4 +40,15 @@ extension String {
             }
         }
     }
+
+    struct WordListItemView {
+
+        static func matchType(_ matchType: String) -> String {
+            "Match Type: \(matchType)"
+        }
+
+        static func score(_ score: String) -> String {
+            "Score: \(score)"
+        }
+    }
 }

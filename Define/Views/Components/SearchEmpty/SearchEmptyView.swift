@@ -52,7 +52,7 @@ extension SearchEmptyView {
                 .frame(height: .large)
 
             Text(title)
-                .title()
+                .h1()
                 .multilineTextAlignment(.center)
 
             Spacer()

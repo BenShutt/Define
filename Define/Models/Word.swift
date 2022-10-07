@@ -7,12 +7,18 @@
 
 import Foundation
 
-struct Word: JSONModel {
+struct Word: JSONModel, Comparable, Identifiable {
     var id: String
     var label: String
     var matchString: String
     var matchType: String
-    var region: String
+    var region: String?
     var score: Double
     var word: String
+
+    // MARK: - Comparable
+
+    static func < (lhs: Word, rhs: Word) -> Bool {
+        lhs.score < rhs.score
+    }
 }

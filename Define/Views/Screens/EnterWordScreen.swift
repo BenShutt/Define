@@ -11,12 +11,12 @@ import SwiftUI
 /// `View` to input a word to search for definitions
 struct EnterWordScreen: Screen {
 
-    /// `LookUpViewModel`
-    @ObservedObject private var viewModel = LookUpViewModel()
+    /// `SearchViewModel`
+    @ObservedObject private var viewModel = SearchViewModel()
 
-    /// Definitions of entered word
-    var definitions: [String] {
-        viewModel.result.success?.definitions ?? []
+    /// `[Word]` returned from the API
+    var words: [Word] {
+        viewModel.result.success?.results ?? []
     }
 
     /// Get the text in the search field
@@ -26,7 +26,7 @@ struct EnterWordScreen: Screen {
 
     /// `View` of the screen
     var screenBody: some View {
-        VStack {
+        VStack(spacing: 0) {
             SearchHeaderView(searchText: $viewModel.searchText)
 
             Spacer()
@@ -34,12 +34,13 @@ struct EnterWordScreen: Screen {
 
             if viewModel.isLoading {
                 LoadingView()
-            } else if !definitions.isEmpty {
-                Text(definitions.joined(separator: "\n\n"))
-                Spacer()
-                ButtonView(text: .EnterWordScreen.saveButton) {
-                    saveWord(word: searchText)
+            } else if !words.isEmpty {
+                List {
+                    ForEach(words) {
+                        WordListItemView(word: $0, onTap: { /* TODO */ })
+                    }
                 }
+                .listStyle(PlainListStyle())
             } else if !searchText.isEmpty {
                 SearchNoResults(word: searchText)
             } else {

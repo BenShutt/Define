@@ -10,7 +10,8 @@ import SwiftUI
 /// Set of `TextStyle`s (styles of text)
 enum TextStyle {
 
-    case title
+    case h1
+    case h2
     case body
     case button
     case tag
@@ -18,7 +19,8 @@ enum TextStyle {
     /// Get size of the font
     var fontSize: CGFloat {
         switch self {
-        case .title: return 32
+        case .h1: return 32
+        case .h2: return 20
         case .body: return 16
         case .button: return 16
         case .tag: return 12
@@ -28,7 +30,8 @@ enum TextStyle {
     /// Get name and weight of the font
     var font: WorkSans {
         switch self {
-        case .title: return .bold
+        case .h1: return .bold
+        case .h2: return .bold
         case .body: return .regular
         case .button: return .semiBold
         case .tag: return .semiBold
@@ -48,9 +51,15 @@ extension View {
         customFont(textStyle.font, size: textStyle.fontSize)
     }
 
-    /// Standard `.title` implementation
-    func title() -> some View {
-        textStyle(.title)
+    /// Standard `.h1` implementation
+    func h1() -> some View {
+        textStyle(.h1)
+            .foregroundColor(.appBlack)
+    }
+
+    /// Standard `.h2` implementation
+    func h2() -> some View {
+        textStyle(.h2)
             .foregroundColor(.appBlack)
     }
 

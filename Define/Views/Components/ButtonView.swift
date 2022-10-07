@@ -25,7 +25,7 @@ struct ButtonView: View {
                 .frame(maxWidth: .infinity)
                 .padding(.margins)
         }
-        .background(Color.appDarkBlue)
+        .background(Color.appPrimary)
         .clipShape(Capsule())
     }
 }

@@ -14,7 +14,7 @@ struct SearchHeaderView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             Text(String.SearchHeaderView.title)
-                .title()
+                .h1()
 
             Spacer()
                 .frame(height: .medium)

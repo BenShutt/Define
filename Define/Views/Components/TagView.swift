@@ -18,7 +18,7 @@ struct TagView: View {
         Text(text)
             .textStyle(.tag)
             .foregroundColor(Color.appBlack)
-            .padding(.small)
+            .padding(.smallMedium)
             .background(Color.appLightOrange)
             .clipShape(Capsule())
     }
