@@ -15,12 +15,30 @@ extension String {
 
         static let title = "Look Up Word"
         static let subtitle = "Defintions are provided by the Oxford Dictionaries API"
+        static let prompt = "Enter word to search..."
     }
 
-    struct EnterWordScreen {
+    struct WordScreen {
 
-        static let prompt = "Enter word to search..."
         static let saveButton = "SAVE WORD"
+
+        struct Empty {
+
+            static let title = "No Definitions"
+
+            static func subtitle(word: String) -> String {
+                "No definitions were found for: '\(word)'"
+            }
+        }
+
+        struct Error {
+
+            static let title = "Error"
+            
+            static func subtitle(word: String) -> String {
+                "Failed to load words for: '\(word)'"
+            }
+        }
     }
 
     struct Search {

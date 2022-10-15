@@ -17,7 +17,7 @@ struct DefineApp: App {
     /// Make `Scene`
     var body: some Scene {
         WindowGroup {
-            EnterWordScreen()
+            ContentView()
         }
     }
 }

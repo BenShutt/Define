@@ -14,7 +14,7 @@ struct Entries: JSONModel {
 // MARK: - Entries.Result
 
 extension Entries {
-    struct Result: Codable {
+    struct Result: Codable, Identifiable {
         var id: String
         var language: String
         var type: String
@@ -42,7 +42,7 @@ extension Entries.Result.LexicalEntry {
 // MARK: - Entries.Result.LexicalEntry.Entry.Sense
 
 extension Entries.Result.LexicalEntry.Entry {
-    struct Sense: Codable {
+    struct Sense: Codable, Identifiable {
         var id: String
         var definitions: [String]
     }

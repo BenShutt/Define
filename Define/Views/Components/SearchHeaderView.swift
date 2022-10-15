@@ -27,7 +27,7 @@ struct SearchHeaderView: View {
 
             InputTextField(
                 text: $searchText,
-                prompt: .EnterWordScreen.prompt,
+                prompt: .SearchHeaderView.prompt,
                 image: .search
             )
         }

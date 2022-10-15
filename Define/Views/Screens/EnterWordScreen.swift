@@ -35,12 +35,13 @@ struct EnterWordScreen: Screen {
             if viewModel.isLoading {
                 LoadingView()
             } else if !words.isEmpty {
-                List {
-                    ForEach(words) {
-                        WordListItemView(word: $0, onTap: { /* TODO */ })
+                ListView(elements: words) { word in
+                    NavigationLink {
+                        WordScreen(word: word)
+                    } label: {
+                        WordListItemView(word: word)
                     }
                 }
-                .listStyle(PlainListStyle())
             } else if !searchText.isEmpty {
                 SearchNoResults(word: searchText)
             } else {
@@ -49,12 +50,6 @@ struct EnterWordScreen: Screen {
 
             Spacer()
         }
-    }
-
-    /// Save the given `word`
-    /// - Parameter word: `String`
-    private func saveWord(word: String) {
-        UINotificationFeedbackGenerator().notificationOccurred(.success)
     }
 }
 

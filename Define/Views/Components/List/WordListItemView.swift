@@ -13,9 +13,6 @@ struct WordListItemView: View {
     /// `Word`
     var word: Word
 
-    /// On tap handler
-    var onTap: () -> Void
-
     /// Score as a string
     var score: String {
         let formatter = NumberFormatter()
@@ -36,25 +33,23 @@ struct WordListItemView: View {
 
     /// Draw `View`
     var body: some View {
-        ListItemView(onTap: onTap) {
-            VStack(alignment: .leading, spacing: 0) {
-                Text(word.word.capitalized)
-                    .h2()
+        VStack(alignment: .leading, spacing: 0) {
+            Text(word.word.capitalized)
+                .h2()
 
-                Spacer()
-                    .frame(height: .small)
+            Spacer()
+                .frame(height: .small)
 
-                Text(matchTypeText)
-                    .body()
+            Text(matchTypeText)
+                .body()
 
-                Spacer()
-                    .frame(height: .medium)
+            Spacer()
+                .frame(height: .medium)
 
-                TagView(text: scoreText)
-            }
-            .padding(.large)
-            .background(Color.appWhite)
+            TagView(text: scoreText)
         }
+        .listItem()
+        .padding(.large)
     }
 }
 
@@ -62,7 +57,7 @@ struct WordListItemView: View {
 
 struct WordListItemView_Previews: PreviewProvider {
     static var previews: some View {
-        List {
+        VStack {
             WordListItemView(word: .init(
                 id: "",
                 label: "label",
@@ -70,8 +65,7 @@ struct WordListItemView_Previews: PreviewProvider {
                 matchType: "matchType",
                 score: 1.234_56,
                 word: "word"
-            ), onTap: {})
+            ))
         }
-        .listStyle(PlainListStyle())
     }
 }

@@ -20,4 +20,11 @@ extension View {
     func frame(_ size: CGFloat) -> some View {
         frame(width: size, height: size)
     }
+
+    /// Configure for list item
+    func listItem() -> some View {
+        frame(maxWidth: .infinity, alignment: .leading)
+            .fixedSize(horizontal: false, vertical: true)
+            .multilineTextAlignment(.leading)
+    }
 }
