@@ -19,11 +19,6 @@ struct SearchScreen: Screen {
         viewModel.result.success?.results ?? []
     }
 
-    /// Get the text in the search field
-    var searchText: String {
-        viewModel.searchText
-    }
-
     /// `View` of the screen
     var screenBody: some View {
         VStack(spacing: 0) {
@@ -34,6 +29,7 @@ struct SearchScreen: Screen {
 
             if viewModel.isLoading {
                 LoadingView()
+
             } else if !words.isEmpty {
                 ListView(words) { word in
                     NavigationLink {
@@ -42,10 +38,21 @@ struct SearchScreen: Screen {
                         WordListItemView(word: word)
                     }
                 }
-            } else if !searchText.isEmpty {
-                SearchNoResults(word: searchText)
+
+            } else if !viewModel.searchText.isEmpty {
+                SearchEmptyView(
+                    lottie: .searchNoResults,
+                    title: .SearchScreen.NoResults.title,
+                    subtitle: .SearchScreen.NoResults.subtitle(viewModel.searchText)
+                )
+                
             } else {
-                SearchEmpty()
+                SearchEmptyView(
+                    lottie: .searchEmpty,
+                    lottieTransform: .init(scaleX: 1.5, y: 1.5),
+                    title: .SearchScreen.Empty.title,
+                    subtitle: .SearchScreen.Empty.subtitle
+                )
             }
 
             Spacer()

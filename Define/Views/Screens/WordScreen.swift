@@ -21,11 +21,6 @@ struct WordScreen: Screen {
         entriesResult == nil
     }
 
-    /// Did the API error
-    var isAPIError: Bool {
-        entriesResult?.failure != nil
-    }
-
     /// `Entries` for `word` returned from the API
     var definitions: [String] {
         entriesResult?.success?.definitions ?? []
@@ -45,10 +40,11 @@ struct WordScreen: Screen {
                     // ButtonView(text: .WordScreen.saveButton) {
                     //    saveWord(word: word)
                     // }
-                } else if isAPIError {
-                    SearchEmpty() // TODO localizations
                 } else {
-                    SearchNoResults(word: word.word) // TODO localizations
+                    NoDefinitionsView(
+                        word: word.word,
+                        isAPIError: entriesResult?.failure != nil
+                    )
                 }
             }
         }
@@ -64,5 +60,38 @@ struct WordScreen: Screen {
     /// - Parameter word: `Word`
     private func saveWord(word: Word) {
         UINotificationFeedbackGenerator().notificationOccurred(.success)
+    }
+}
+
+// MARK: - NoDefinitionsView
+
+/// Draw empty state when no definitions can be found
+private struct NoDefinitionsView: View {
+
+    /// Word that was searched
+    var word: String
+
+    /// Was there an API error
+    var isAPIError: Bool
+
+    /// Title text
+    var title: String {
+        isAPIError ? .WordScreen.Error.title : .WordScreen.Empty.title
+    }
+
+    /// Subtitle text
+    var subtitle: String {
+        isAPIError ?
+            .WordScreen.Error.subtitle(word: word) :
+                .WordScreen.Empty.subtitle(word: word)
+    }
+
+    /// Make a `SearchEmptyView`
+    var body: some View {
+        SearchEmptyView(
+            lottie: .searchNoResults,
+            title: title,
+            subtitle: subtitle
+        )
     }
 }

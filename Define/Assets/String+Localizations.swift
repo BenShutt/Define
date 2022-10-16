@@ -18,6 +18,24 @@ extension String {
         static let prompt = "Enter word to search..."
     }
 
+    struct SearchScreen {
+
+        struct Empty {
+
+            static let title = "Start Your Search"
+            static let subtitle = "Enter a word into the search field to look up its definition"
+        }
+
+        struct NoResults {
+
+            static let title = "No Results"
+
+            static func subtitle(_ word: String) -> String {
+                "No definitions found for: '\(word)'"
+            }
+        }
+    }
+
     struct WordScreen {
 
         static let saveButton = "SAVE WORD"
@@ -37,24 +55,6 @@ extension String {
 
             static func subtitle(word: String) -> String {
                 "Failed to load words for: '\(word)'"
-            }
-        }
-    }
-
-    struct Search {
-
-        struct Empty {
-
-            static let title = "Start Your Search"
-            static let subtitle = "Enter a word into the search field to look up its definition"
-        }
-
-        struct NoResults {
-
-            static let title = "No Results"
-
-            static func subtitle(_ word: String) -> String {
-                "No definitions found for: '\(word)'"
             }
         }
     }

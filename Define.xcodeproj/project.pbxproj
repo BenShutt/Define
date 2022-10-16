@@ -57,8 +57,6 @@
 		B8A1232528E971EC00ACEC45 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = B8A1232428E971EC00ACEC45 /* Lottie */; };
 		B8A1232728E971FD00ACEC45 /* LottieFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A1232628E971FD00ACEC45 /* LottieFile.swift */; };
 		B8A1232A28E9744E00ACEC45 /* SearchEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A1232928E9744E00ACEC45 /* SearchEmptyView.swift */; };
-		B8A1232D28E9765C00ACEC45 /* SearchEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A1232C28E9765C00ACEC45 /* SearchEmpty.swift */; };
-		B8A1232F28E978DA00ACEC45 /* SearchNoResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A1232E28E978DA00ACEC45 /* SearchNoResults.swift */; };
 		B8A1234328E97D1A00ACEC45 /* WorkSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8A1233128E97D1800ACEC45 /* WorkSans-ExtraBold.ttf */; };
 		B8A1234428E97D1A00ACEC45 /* WorkSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8A1233228E97D1800ACEC45 /* WorkSans-Regular.ttf */; };
 		B8A1234528E97D1A00ACEC45 /* WorkSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8A1233328E97D1800ACEC45 /* WorkSans-Medium.ttf */; };
@@ -179,8 +177,6 @@
 		B8A1232128E9714600ACEC45 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		B8A1232628E971FD00ACEC45 /* LottieFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieFile.swift; sourceTree = "<group>"; };
 		B8A1232928E9744E00ACEC45 /* SearchEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEmptyView.swift; sourceTree = "<group>"; };
-		B8A1232C28E9765C00ACEC45 /* SearchEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEmpty.swift; sourceTree = "<group>"; };
-		B8A1232E28E978DA00ACEC45 /* SearchNoResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNoResults.swift; sourceTree = "<group>"; };
 		B8A1233128E97D1800ACEC45 /* WorkSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-ExtraBold.ttf"; sourceTree = "<group>"; };
 		B8A1233228E97D1800ACEC45 /* WorkSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Regular.ttf"; sourceTree = "<group>"; };
 		B8A1233328E97D1800ACEC45 /* WorkSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Medium.ttf"; sourceTree = "<group>"; };
@@ -470,16 +466,6 @@
 			path = Lotties;
 			sourceTree = "<group>";
 		};
-		B8A1232B28E975FE00ACEC45 /* SearchEmpty */ = {
-			isa = PBXGroup;
-			children = (
-				B8A1232C28E9765C00ACEC45 /* SearchEmpty.swift */,
-				B8A1232928E9744E00ACEC45 /* SearchEmptyView.swift */,
-				B8A1232E28E978DA00ACEC45 /* SearchNoResults.swift */,
-			);
-			path = SearchEmpty;
-			sourceTree = "<group>";
-		};
 		B8A1233028E97CAD00ACEC45 /* WorkSans */ = {
 			isa = PBXGroup;
 			children = (
@@ -602,12 +588,12 @@
 				B8B9B9DB28EC668C006FCA76 /* Gradient */,
 				B813BFFB28EB7ACA000C766C /* Icon */,
 				B879E9EA28F0C7110094AA24 /* List */,
-				B8A1232B28E975FE00ACEC45 /* SearchEmpty */,
 				B8BBA16128E8EDF100222116 /* ButtonView.swift */,
 				B8D2A74128DF3A250096A020 /* InputTextField.swift */,
 				B8E49C0828DF917E00F9CAC4 /* LoadingView.swift */,
 				B8B9B9E228EDE65F006FCA76 /* LogoView.swift */,
 				B8A1232128E9714600ACEC45 /* LottieView.swift */,
+				B8A1232928E9744E00ACEC45 /* SearchEmptyView.swift */,
 				B8B9B9D528EC5C54006FCA76 /* SearchHeaderView.swift */,
 				B879E9E828F0C5190094AA24 /* TagView.swift */,
 			);
@@ -844,11 +830,9 @@
 				B813BFF828EB6F30000C766C /* RoundedBorder.swift in Sources */,
 				B89F179428E0EBF100A96E35 /* Screen.swift in Sources */,
 				B8039A1F28D7B722008CE7B4 /* SearchAPI.swift in Sources */,
-				B8A1232D28E9765C00ACEC45 /* SearchEmpty.swift in Sources */,
 				B8A1232A28E9744E00ACEC45 /* SearchEmptyView.swift in Sources */,
 				B8B9B9D628EC5C54006FCA76 /* SearchHeaderView.swift in Sources */,
 				B813BFFD28EB7BA1000C766C /* SearchIconView.swift in Sources */,
-				B8A1232F28E978DA00ACEC45 /* SearchNoResults.swift in Sources */,
 				B8D2A73C28DEEFAE0096A020 /* SearchScreen.swift in Sources */,
 				B879E9F028F0CA910094AA24 /* SearchViewModel.swift in Sources */,
 				B813BFFA28EB7022000C766C /* ShapeBorder.swift in Sources */,

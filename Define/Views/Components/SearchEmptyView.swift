@@ -9,36 +9,24 @@ import SwiftUI
 import Lottie
 
 /// `View` that draws a search empty state
-protocol SearchEmptyView: View {
+struct SearchEmptyView: View {
 
     /// Lottie animation
-    var lottie: LottieFile { get }
+    var lottie: LottieFile
 
     /// Lottie animation loop mode
-    var loopMode: LottieLoopMode { get }
+    var loopMode: LottieLoopMode = .loop
 
     /// Transform for lottie
-    var lottieTransform: CGAffineTransform { get }
+    var lottieTransform: CGAffineTransform = .identity
 
     /// Title text
-    var title: String { get }
+    var title: String
 
     /// Subtitle text
-    var subtitle: String { get }
-}
+    var subtitle: String
 
-// MARK: - View
-
-extension SearchEmptyView {
-
-    var loopMode: LottieLoopMode {
-        .loop
-    }
-
-    var lottieTransform: CGAffineTransform {
-        .identity
-    }
-
+    /// Draw `View`
     var body: some View {
         VStack(alignment: .center, spacing: 0) {
             LottieView(

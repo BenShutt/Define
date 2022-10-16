@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-/// Icon with a fixed olor
+/// Icon with a fixed color
 struct Icon: View {
 
     /// Image icon
