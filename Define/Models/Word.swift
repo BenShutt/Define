@@ -16,6 +16,11 @@ struct Word: JSONModel, Comparable, Identifiable {
     var score: Double
     var word: String
 
+    /// Title text
+    var title: String {
+        word.capitalized
+    }
+
     // MARK: - Comparable
 
     static func < (lhs: Word, rhs: Word) -> Bool {

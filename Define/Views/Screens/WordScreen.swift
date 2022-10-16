@@ -28,24 +28,19 @@ struct WordScreen: Screen {
 
     /// `View` of the screen
     var screenBody: some View {
-        Group {
+        ScrollView {
+            Text(word.title)
+                .h1()
+
             if isLoading {
                 LoadingView()
+            } else if !definitions.isEmpty {
+                DefinitionsView(definitions: definitions)
             } else {
-                if !definitions.isEmpty {
-                    List(definitions, id: \.self) { defintion in
-                        Text(defintion)
-                            .body()
-                    }
-                    // ButtonView(text: .WordScreen.saveButton) {
-                    //    saveWord(word: word)
-                    // }
-                } else {
-                    NoDefinitionsView(
-                        word: word.word,
-                        isAPIError: entriesResult?.failure != nil
-                    )
-                }
+                NoDefinitionsView(
+                    word: word.word,
+                    isAPIError: entriesResult?.failure != nil
+                )
             }
         }
         .padding(.margins)
@@ -60,6 +55,25 @@ struct WordScreen: Screen {
     /// - Parameter word: `Word`
     private func saveWord(word: Word) {
         UINotificationFeedbackGenerator().notificationOccurred(.success)
+    }
+}
+
+// MARK: - DefinitionsView
+
+/// Draws a list of definitions
+struct DefinitionsView: View {
+
+    /// The definitions
+    var definitions: [String]
+
+    /// Draw `View`
+    var body: some View {
+        ForEach(values: definitions) { definition in
+            Text(definition)
+                .body()
+                .listItem()
+                .padding(.margins)
+        }
     }
 }
 
@@ -93,5 +107,13 @@ private struct NoDefinitionsView: View {
             title: title,
             subtitle: subtitle
         )
+    }
+}
+
+// MARK: - PreviewProvider
+
+struct WordScreen_Previews: PreviewProvider {
+    static var previews: some View {
+        WordScreen(word: .preview)
     }
 }

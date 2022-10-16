@@ -34,7 +34,7 @@ struct WordListItemView: View {
     /// Draw `View`
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text(word.word.capitalized)
+            Text(word.title)
                 .h2()
 
             Spacer()
@@ -58,14 +58,7 @@ struct WordListItemView: View {
 struct WordListItemView_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            WordListItemView(word: .init(
-                id: "",
-                label: "label",
-                matchString: "matchString",
-                matchType: "matchType",
-                score: 1.234_56,
-                word: "word"
-            ))
+            WordListItemView(word: .preview)
         }
     }
 }
