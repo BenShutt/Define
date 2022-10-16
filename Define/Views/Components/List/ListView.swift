@@ -26,3 +26,17 @@ struct ListView<Element: Identifiable, Content: View>: View {
         .listStyle(.plain)
     }
 }
+
+// MARK: - Extensions
+
+extension ListView {
+
+    /// Initialize omitting the argument label
+    ///
+    /// - Parameters:
+    ///   - elements: `[Element]`
+    ///   - content: View builder
+    init(_ elements: [Element], content: @escaping (Element) -> Content) {
+        self.init(elements: elements, content: content)
+    }
+}

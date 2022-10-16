@@ -1,5 +1,5 @@
 //
-//  EnterWordScreen.swift
+//  SearchScreen.swift
 //  Define
 //
 //  Created by Ben Shutt on 24/09/2022.
@@ -9,7 +9,7 @@ import UIKit
 import SwiftUI
 
 /// `View` to input a word to search for definitions
-struct EnterWordScreen: Screen {
+struct SearchScreen: Screen {
 
     /// `SearchViewModel`
     @ObservedObject private var viewModel = SearchViewModel()
@@ -35,7 +35,7 @@ struct EnterWordScreen: Screen {
             if viewModel.isLoading {
                 LoadingView()
             } else if !words.isEmpty {
-                ListView(elements: words) { word in
+                ListView(words) { word in
                     NavigationLink {
                         WordScreen(word: word)
                     } label: {
@@ -55,8 +55,8 @@ struct EnterWordScreen: Screen {
 
 // MARK: - PreviewProvider
 
-struct EnterWordScreen_Previews: PreviewProvider {
+struct SearchScreen_Previews: PreviewProvider {
     static var previews: some View {
-        EnterWordScreen()
+        SearchScreen()
     }
 }

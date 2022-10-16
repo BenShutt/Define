@@ -34,7 +34,7 @@ extension String {
         struct Error {
 
             static let title = "Error"
-            
+
             static func subtitle(word: String) -> String {
                 "Failed to load words for: '\(word)'"
             }

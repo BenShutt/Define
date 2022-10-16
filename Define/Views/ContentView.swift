@@ -13,7 +13,7 @@ struct ContentView: View {
     /// Root `NavigationStack`
     var body: some View {
         NavigationStack {
-            EnterWordScreen()
+            SearchScreen()
         }
     }
 }
