@@ -29,7 +29,6 @@ struct SearchScreen: Screen {
 
             if viewModel.isLoading {
                 LoadingView()
-
             } else if !words.isEmpty {
                 ListView(words) { word in
                     NavigationLink {
@@ -38,14 +37,12 @@ struct SearchScreen: Screen {
                         WordListItemView(word: word)
                     }
                 }
-
             } else if !viewModel.searchText.isEmpty {
                 SearchEmptyView(
                     lottie: .searchNoResults,
                     title: .SearchScreen.NoResults.title,
                     subtitle: .SearchScreen.NoResults.subtitle(viewModel.searchText)
                 )
-                
             } else {
                 SearchEmptyView(
                     lottie: .searchEmpty,
