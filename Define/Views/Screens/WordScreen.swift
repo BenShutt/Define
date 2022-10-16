@@ -10,11 +10,14 @@ import SwiftUI
 /// `View` to input a word to search for definitions
 struct WordScreen: Screen {
 
-    /// `Word` to define
-    var word: Word
+    /// Presentation mode
+    @Environment(\.dismiss) var dismiss
 
     /// Result of the `EntriesAPI`
     @State private var entriesResult: ModelResult<Entries>?
+
+    /// `Word` to define
+    var word: Word
 
     /// Loading while the `entriesResult` is `nil`
     var isLoading: Bool {
@@ -28,22 +31,23 @@ struct WordScreen: Screen {
 
     /// `View` of the screen
     var screenBody: some View {
-        ScrollView {
-            Text(word.title)
-                .h1()
-
+        Group {
             if isLoading {
                 LoadingView()
-            } else if !definitions.isEmpty {
-                DefinitionsView(definitions: definitions)
-            } else {
+            } else if definitions.isEmpty {
                 NoDefinitionsView(
                     word: word.word,
                     isAPIError: entriesResult?.failure != nil
                 )
+            } else {
+                StickyButtonScreen(buttonText: .WordScreen.saveButton) {
+                    // TODO on button tap
+                    dismiss()
+                } content: {
+                    DefinitionsView(word: word, definitions: definitions)
+                }
             }
         }
-        .padding(.margins)
         .onAppear {
             EntriesAPI(wordId: word.id).request { result in
                 entriesResult = result.modelResult()
@@ -63,16 +67,24 @@ struct WordScreen: Screen {
 /// Draws a list of definitions
 struct DefinitionsView: View {
 
+    /// Word to define
+    var word: Word
+
     /// The definitions
     var definitions: [String]
 
     /// Draw `View`
     var body: some View {
-        ForEach(values: definitions) { definition in
-            Text(definition)
-                .body()
-                .listItem()
-                .padding(.margins)
+        VStack(spacing: 0) {
+            Text(word.title)
+                .h1()
+
+            ListView(definitions) { definition in
+                Text(definition)
+                    .body()
+                    .listItem()
+                    .padding(.margins)
+            }
         }
     }
 }

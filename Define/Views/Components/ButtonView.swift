@@ -13,12 +13,12 @@ struct ButtonView: View {
     /// Button title text
     var text: String
 
-    /// On click closure
-    var onClick: () -> Void
+    /// On tap closure
+    var onTap: () -> Void
 
     /// Draw `View`
     var body: some View {
-        Button(action: onClick) {
+        Button(action: onTap) {
             Text(text)
                 .textStyle(.button)
                 .foregroundColor(Color.appWhite)
@@ -34,6 +34,6 @@ struct ButtonView: View {
 
 struct ButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonView(text: "CLICK ME!", onClick: {})
+        ButtonView(text: "TAP ME!", onTap: {})
     }
 }

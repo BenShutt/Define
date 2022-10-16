@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// App usage of `List`
-struct ListView<Element: Identifiable, Content: View>: View {
+struct ListView<Element, Content: View>: View {
 
     /// `Identifiable` elements to iterate over
     var elements: [Element]
@@ -16,12 +16,27 @@ struct ListView<Element: Identifiable, Content: View>: View {
     /// Map `Element` to `Content`
     @ViewBuilder var content: (Element) -> Content
 
+    /// Index elements tuple
+    ///
+    /// TODO, might need to rethink: https://stackoverflow.com/a/63145650
+    private var indexElements: [(index: Int, element: Element)] {
+        Array(zip(elements.indices, elements))
+    }
+
     /// Make `List` of `Element`s
     var body: some View {
-        List(elements) { element in
-            content(element)
-                .listRowInsets(.zero)
-                .listRowSeparator(.automatic)
+        List(indexElements, id: \.0) { indexElement in
+            VStack(spacing: 0) {
+                if indexElement.index > 0 {
+                    Rectangle() // Separator
+                        .fill(Color.appLightGray)
+                        .frame(height: 2)
+                }
+
+                content(indexElement.element)
+            }
+            .listRowInsets(.zero)
+            .listRowSeparator(.hidden)
         }
         .listStyle(.plain)
     }
