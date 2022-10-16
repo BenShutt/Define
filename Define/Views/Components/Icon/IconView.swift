@@ -1,5 +1,5 @@
 //
-//  Icon.swift
+//  IconView.swift
 //  Define
 //
 //  Created by Ben Shutt on 03/10/2022.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// Icon with a fixed color
-struct Icon: View {
+struct IconView: View {
 
     /// Image icon
     var image: Image

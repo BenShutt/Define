@@ -13,7 +13,7 @@ struct SearchIconView: View {
     /// Draw `View`
     var body: some View {
         IconContainerView(edge: .leading) {
-            Icon(
+            IconView(
                 image: .search,
                 foregroundColor: .appPrimary,
                 size: .iconSize

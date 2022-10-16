@@ -38,7 +38,7 @@ struct LogoView: View {
                         )
                     }
 
-                Icon(
+                IconView(
                     image: .search,
                     foregroundColor: .appPrimary,
                     size: iconSize(proxy)
