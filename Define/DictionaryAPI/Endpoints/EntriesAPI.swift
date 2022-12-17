@@ -10,15 +10,10 @@ import Alamofire
 import HTTPRequest
 
 /// Make `HTTPRequest` for the Dictionary entries API
-struct EntriesAPI: HTTPRequestable {
+struct EntriesAPI: DictionaryEndpoint {
 
     /// Word identifier to get entry for
     var wordId: String
-
-    /// Additional `HTTPHeaders`
-    var headers: HTTPHeaders {
-        HTTPHeaders([.appId, .appKey])
-    }
 
     /// Endpoint to hit
     var endpoint: String {
@@ -34,15 +29,5 @@ struct EntriesAPI: HTTPRequestable {
             .init(name: "fields", value: "definitions"),
             .init(name: "strictMatch", value: "true")
         ]
-    }
-
-    /// Make `HTTPRequest`
-    func httpRequest() throws -> HTTPRequest {
-        HTTPRequest(
-            method: .get,
-            urlComponents: .dictionaryAPI(endpoint: endpoint, queryItems: queryItems),
-            additionalHeaders: headers,
-            body: nil
-        )
     }
 }

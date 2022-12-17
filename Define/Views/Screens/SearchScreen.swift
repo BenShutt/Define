@@ -16,7 +16,8 @@ struct SearchScreen: Screen {
 
     /// `[Word]` returned from the API
     var words: [Word] {
-        viewModel.result.success?.results ?? []
+        (viewModel.result.success?.results ?? [])
+            .filter { $0.score >= 100 }
     }
 
     /// `View` of the screen
@@ -31,9 +32,7 @@ struct SearchScreen: Screen {
                 LoadingView()
             } else if !words.isEmpty {
                 ListView(words) { word in
-                    NavigationLink {
-                        WordScreen(word: word)
-                    } label: {
+                    NavigationLink(destination: WordScreen(word: word)) {
                         WordListItemView(word: word)
                     }
                 }

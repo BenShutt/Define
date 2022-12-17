@@ -108,6 +108,8 @@
 		B8E49C0D28DF99EA00F9CAC4 /* String+Localizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E49C0C28DF99EA00F9CAC4 /* String+Localizations.swift */; };
 		B8E49C0F28DF9AA500F9CAC4 /* EdgeInsets+Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E49C0E28DF9AA500F9CAC4 /* EdgeInsets+Values.swift */; };
 		B8E49C1128DFA60000F9CAC4 /* View+If.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E49C1028DFA60000F9CAC4 /* View+If.swift */; };
+		B8F86417294E7C14000EF55A /* DictionaryEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F86416294E7C14000EF55A /* DictionaryEndpoint.swift */; };
+		B8F8641A294E7F80000EF55A /* HTTPHeaders+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F86419294E7F80000EF55A /* HTTPHeaders+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -231,6 +233,8 @@
 		B8E49C0C28DF99EA00F9CAC4 /* String+Localizations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localizations.swift"; sourceTree = "<group>"; };
 		B8E49C0E28DF9AA500F9CAC4 /* EdgeInsets+Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EdgeInsets+Values.swift"; sourceTree = "<group>"; };
 		B8E49C1028DFA60000F9CAC4 /* View+If.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+If.swift"; sourceTree = "<group>"; };
+		B8F86416294E7C14000EF55A /* DictionaryEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryEndpoint.swift; sourceTree = "<group>"; };
+		B8F86419294E7F80000EF55A /* HTTPHeaders+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPHeaders+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,6 +334,7 @@
 				B8039A1B28D7B36C008CE7B4 /* Endpoints */,
 				B8039A0D28D7A298008CE7B4 /* DictionaryAPIKey.swift */,
 				B8039A0828D7A14C008CE7B4 /* URLComponents+DictionaryAPI.swift */,
+				B8F86416294E7C14000EF55A /* DictionaryEndpoint.swift */,
 			);
 			path = DictionaryAPI;
 			sourceTree = "<group>";
@@ -356,11 +361,11 @@
 		B8039A0F28D7A51F008CE7B4 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B8F86418294E7F6C000EF55A /* Alamofire */,
 				B89F179528E0F38200A96E35 /* Combine */,
 				B8C894EB28D905EE00975E25 /* SwiftUI */,
 				B888923F28EE332900DB76AB /* UIKit */,
 				B8039A2B28D7BDBF008CE7B4 /* DataRequestResult+Extensions.swift */,
-				B8039A2028D7B859008CE7B4 /* HTTPHeader+Extensions.swift */,
 				B8039A3428D7C78D008CE7B4 /* JSONDecoder+Extensions.swift */,
 				B8039A3628D7C803008CE7B4 /* JSONEncoder+Extensions.swift */,
 				B8B9B9E628EDED53006FCA76 /* NilCoalescingPrecedence.swift */,
@@ -609,6 +614,15 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		B8F86418294E7F6C000EF55A /* Alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				B8039A2028D7B859008CE7B4 /* HTTPHeader+Extensions.swift */,
+				B8F86419294E7F80000EF55A /* HTTPHeaders+Extensions.swift */,
+			);
+			path = Alamofire;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -792,6 +806,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8F8641A294E7F80000EF55A /* HTTPHeaders+Extensions.swift in Sources */,
 				B8039A3028D7C2FD008CE7B4 /* APIKey.swift in Sources */,
 				B89F179D28E0FABE00A96E35 /* AppDelegate.swift in Sources */,
 				B8B9BA0128EE30BF006FCA76 /* AppIcon.swift in Sources */,
@@ -853,6 +868,7 @@
 				B8D2A74628DF3AFE0096A020 /* TextStyle.swift in Sources */,
 				B8977F2628EF6EFA009BAD12 /* UIImage+Extensions.swift in Sources */,
 				B8039A1128D7A52A008CE7B4 /* URL+Components.swift in Sources */,
+				B8F86417294E7C14000EF55A /* DictionaryEndpoint.swift in Sources */,
 				B8039A0928D7A14C008CE7B4 /* URLComponents+DictionaryAPI.swift in Sources */,
 				B8B563E728EFFEC3004B80F0 /* View+Extensions.swift in Sources */,
 				B8E49C1128DFA60000F9CAC4 /* View+If.swift in Sources */,
