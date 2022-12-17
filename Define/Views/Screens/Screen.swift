@@ -14,8 +14,7 @@ protocol Screen: View {
     associatedtype ScreenBody: View
 
     /// The screens implementation of `body`
-    @ViewBuilder
-    var screenBody: ScreenBody { get }
+    @ViewBuilder var screenBody: ScreenBody { get }
 }
 
 // MARK: - Extensions
