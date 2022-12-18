@@ -36,8 +36,8 @@ struct ListView<Element, Content: View>: View {
             .listRowInsets(.zero)
             .listRowSeparator(.hidden)
         }
+        .scrollDismissesKeyboard(.immediately) // Working?
         .listStyle(.plain)
-        .scrollDismissesKeyboard(.interactively)
     }
 }
 
