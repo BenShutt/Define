@@ -26,9 +26,7 @@ struct ListView<Element, Content: View>: View {
         List(indexElements, id: \.0) { indexElement in
             VStack(spacing: 0) {
                 if indexElement.index > 0 {
-                    Rectangle() // Separator
-                        .fill(Color.appLightGray)
-                        .frame(height: 2)
+                    Separator()
                 }
 
                 content(indexElement.element)
