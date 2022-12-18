@@ -69,4 +69,9 @@ extension String {
             "Score: \(score)"
         }
     }
+
+    struct Misc {
+
+        static let dismiss = "Dismiss"
+    }
 }

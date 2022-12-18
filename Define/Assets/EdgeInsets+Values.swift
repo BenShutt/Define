@@ -10,5 +10,6 @@ import SwiftUI
 extension EdgeInsets {
 
     static let margins = EdgeInsets(vertical: .vMargin, horizontal: .hMargin)
-    static let largeMargins = EdgeInsets(CGFloat.large)
+    static let largeMargins = EdgeInsets(.large)
+    static let buttonPadding = EdgeInsets(vertical: .mediumLarge, horizontal: .large)
 }

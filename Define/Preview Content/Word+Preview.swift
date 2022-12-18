@@ -16,7 +16,7 @@ extension Word {
             label: "label",
             matchString: "matchString",
             matchType: "matchType",
-            score: 1.234_56,
+            score: 1.23456,
             word: "word"
         )
     }

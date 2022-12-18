@@ -23,7 +23,7 @@ struct ButtonView: View {
                 .textStyle(.button)
                 .foregroundColor(Color.appWhite)
                 .frame(maxWidth: .infinity)
-                .padding(.margins)
+                .padding(.buttonPadding)
         }
         .background(Color.appPrimary)
         .clipShape(Capsule())

@@ -11,13 +11,17 @@ import SwiftUI
 /// `View` to input a word to search for definitions
 struct SearchScreen: Screen {
 
+    /// Minimum score required
+    private static let scoreMin: Double = 50
+
     /// `SearchViewModel`
     @ObservedObject private var viewModel = SearchViewModel()
 
     /// `[Word]` returned from the API
     var words: [Word] {
         (viewModel.result.success?.results ?? [])
-            .filter { $0.score >= 100 }
+            .sorted()
+            .filter { $0.score >= Self.scoreMin }
     }
 
     /// `View` of the screen

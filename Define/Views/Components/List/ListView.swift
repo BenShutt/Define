@@ -17,8 +17,6 @@ struct ListView<Element, Content: View>: View {
     @ViewBuilder var content: (Element) -> Content
 
     /// Index elements tuple
-    ///
-    /// TODO, might need to rethink: https://stackoverflow.com/a/63145650
     private var indexElements: [(index: Int, element: Element)] {
         Array(zip(elements.indices, elements))
     }
@@ -39,6 +37,7 @@ struct ListView<Element, Content: View>: View {
             .listRowSeparator(.hidden)
         }
         .listStyle(.plain)
+        .scrollDismissesKeyboard(.interactively)
     }
 }
 
