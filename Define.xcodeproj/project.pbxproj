@@ -41,6 +41,9 @@
 		B879E9E928F0C5190094AA24 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B879E9E828F0C5190094AA24 /* TagView.swift */; };
 		B879E9EE28F0C7ED0094AA24 /* WordListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B879E9ED28F0C7ED0094AA24 /* WordListItemView.swift */; };
 		B879E9F028F0CA910094AA24 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B879E9EF28F0CA910094AA24 /* SearchViewModel.swift */; };
+		B891F8E22950FB6600A53582 /* ChevronView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B891F8E12950FB6600A53582 /* ChevronView.swift */; };
+		B891F8E42950FC4300A53582 /* Chevron.swift in Sources */ = {isa = PBXBuildFile; fileRef = B891F8E32950FC4300A53582 /* Chevron.swift */; };
+		B891F8E629530E6500A53582 /* CGRectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B891F8E529530E6500A53582 /* CGRectTests.swift */; };
 		B894FA1C28FC69FA00BC0BFA /* Word+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B894FA1B28FC69FA00BC0BFA /* Word+Preview.swift */; };
 		B894FA2128FC8A4B00BC0BFA /* StickyBottomScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B894FA2028FC8A4B00BC0BFA /* StickyBottomScreen.swift */; };
 		B894FA2428FC8D7A00BC0BFA /* StickyButtonScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B894FA2328FC8D7A00BC0BFA /* StickyButtonScreen.swift */; };
@@ -168,6 +171,9 @@
 		B879E9E828F0C5190094AA24 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		B879E9ED28F0C7ED0094AA24 /* WordListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListItemView.swift; sourceTree = "<group>"; };
 		B879E9EF28F0CA910094AA24 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		B891F8E12950FB6600A53582 /* ChevronView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChevronView.swift; sourceTree = "<group>"; };
+		B891F8E32950FC4300A53582 /* Chevron.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chevron.swift; sourceTree = "<group>"; };
+		B891F8E529530E6500A53582 /* CGRectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGRectTests.swift; sourceTree = "<group>"; };
 		B894FA1B28FC69FA00BC0BFA /* Word+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Word+Preview.swift"; sourceTree = "<group>"; };
 		B894FA2028FC8A4B00BC0BFA /* StickyBottomScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyBottomScreen.swift; sourceTree = "<group>"; };
 		B894FA2328FC8D7A00BC0BFA /* StickyButtonScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyButtonScreen.swift; sourceTree = "<group>"; };
@@ -316,6 +322,7 @@
 		B80399EC28D79A3B008CE7B4 /* DefineTests */ = {
 			isa = PBXGroup;
 			children = (
+				B891F8E529530E6500A53582 /* CGRectTests.swift */,
 				B80399ED28D79A3B008CE7B4 /* DefineTests.swift */,
 			);
 			path = DefineTests;
@@ -445,6 +452,15 @@
 				B8977F2528EF6EFA009BAD12 /* UIImage+Extensions.swift */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		B891F8E02950FB5500A53582 /* Chevron */ = {
+			isa = PBXGroup;
+			children = (
+				B891F8E32950FC4300A53582 /* Chevron.swift */,
+				B891F8E12950FB6600A53582 /* ChevronView.swift */,
+			);
+			path = Chevron;
 			sourceTree = "<group>";
 		};
 		B894FA2228FC8D6B00BC0BFA /* StickyScreen */ = {
@@ -601,6 +617,7 @@
 		B8D2A74028DF0E670096A020 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				B891F8E02950FB5500A53582 /* Chevron */,
 				B8B9B9DB28EC668C006FCA76 /* Gradient */,
 				B813BFFB28EB7ACA000C766C /* Icon */,
 				B879E9EA28F0C7110094AA24 /* List */,
@@ -818,6 +835,8 @@
 				B82A76C528DFAA7200DABFBE /* CapsuleBorder.swift in Sources */,
 				B8E49C0B28DF985500F9CAC4 /* CGFloat+Values.swift in Sources */,
 				B8977F2828EF7292009BAD12 /* CGSize+Extensions.swift in Sources */,
+				B891F8E42950FC4300A53582 /* Chevron.swift in Sources */,
+				B891F8E22950FB6600A53582 /* ChevronView.swift in Sources */,
 				B8D2A73E28DEEFE70096A020 /* Color+Values.swift in Sources */,
 				B84AD60C28FB01AF00C2D5AE /* ContentView.swift in Sources */,
 				B813BFFF28EB7BE6000C766C /* CrossIconView.swift in Sources */,
@@ -891,6 +910,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B891F8E629530E6500A53582 /* CGRectTests.swift in Sources */,
 				B80399EE28D79A3B008CE7B4 /* DefineTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

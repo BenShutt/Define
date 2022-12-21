@@ -24,6 +24,9 @@ extension CGFloat {
     /// 2pts
     static let shadowRadius: CGFloat = 2
 
+    /// 6pts
+    static let cornerRadius: CGFloat = 6
+
     // MARK: - Size
 
     /// 5pts
