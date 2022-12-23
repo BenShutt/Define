@@ -11,6 +11,25 @@ import SwiftUI
 /// View model wrapper of the `SearchAPI`
 class SearchViewModel: ObservableObject {
 
+    /// Search state
+    enum State {
+
+        /// Is loading results
+        case loading
+
+        /// Is showing non-empty list
+        case list
+
+        /// Empty list
+        case noResults
+
+        /// Text is empty
+        case empty
+    }
+
+    /// Minimum score required
+    private static let scoreMin: Double = 50
+
     /// Debounce throttle on the search
     private static let debounce: TimeInterval = .debounce
 
@@ -70,6 +89,27 @@ class SearchViewModel: ObservableObject {
             self?.isLoading = false
             self?.result = result.modelResult()
         }
+    }
+
+    // MARK: - State
+
+    /// `[Word]` returned from the API
+    var words: [Word] {
+        (result.success?.results ?? [])
+            .sorted()
+            .filter { $0.score >= Self.scoreMin }
+    }
+
+    /// Get `State`
+    var state: State {
+        if isLoading {
+            return .loading
+        } else if !words.isEmpty {
+            return .list
+        } else if !searchText.isEmpty {
+            return .noResults
+        }
+        return .empty
     }
 }
 

@@ -11,42 +11,39 @@ import SwiftUI
 /// `View` to input a word to search for definitions
 struct SearchScreen: Screen {
 
-    /// Minimum score required
-    private static let scoreMin: Double = 50
-
     /// `SearchViewModel`
     @ObservedObject private var viewModel = SearchViewModel()
-
-    /// `[Word]` returned from the API
-    var words: [Word] {
-        (viewModel.result.success?.results ?? [])
-            .sorted()
-            .filter { $0.score >= Self.scoreMin }
-    }
 
     /// `View` of the screen
     var screenBody: some View {
         VStack(spacing: 0) {
             SearchHeaderView(searchText: $viewModel.searchText)
+                .zIndex(1)
 
-            Spacer()
-                .frame(height: .large)
+            if viewModel.state != .list {
+                Spacer()
+                    .frame(height: .large)
+            }
 
-            if viewModel.isLoading {
+            switch viewModel.state {
+            case .loading:
                 LoadingView()
-            } else if !words.isEmpty {
-                ListView(words) { word in
+
+            case .list:
+                ListView(viewModel.words) { word in
                     AppNavigationLink(destination: WordScreen(word: word)) {
                         WordListItemView(word: word)
                     }
                 }
-            } else if !viewModel.searchText.isEmpty {
+
+            case .noResults:
                 SearchEmptyView(
                     lottie: .searchNoResults,
                     title: .SearchScreen.NoResults.title,
                     subtitle: .SearchScreen.NoResults.subtitle(viewModel.searchText)
                 )
-            } else {
+
+            case .empty:
                 SearchEmptyView(
                     lottie: .searchEmpty,
                     lottieTransform: .init(scaleX: 1.5, y: 1.5),
