@@ -96,6 +96,7 @@
 		B8B9BA0128EE30BF006FCA76 /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9BA0028EE30BF006FCA76 /* AppIcon.swift */; };
 		B8B9BA0328EE30D1006FCA76 /* AppIconSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9BA0228EE30D1006FCA76 /* AppIconSize.swift */; };
 		B8BBA16228E8EDF100222116 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BBA16128E8EDF100222116 /* ButtonView.swift */; };
+		B8BEC3CE2955D8FD00946196 /* AppNavigationLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BEC3CD2955D8FD00946196 /* AppNavigationLink.swift */; };
 		B8C25F9C294F7AAF001C8847 /* KeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C25F9B294F7AAF001C8847 /* KeyboardToolbar.swift */; };
 		B8C25FA0294F8D5D001C8847 /* Separator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C25F9F294F8D5D001C8847 /* Separator.swift */; };
 		B8C894E628D895E900975E25 /* LookUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C894E528D895E900975E25 /* LookUp.swift */; };
@@ -225,6 +226,7 @@
 		B8B9BA0028EE30BF006FCA76 /* AppIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIcon.swift; sourceTree = "<group>"; };
 		B8B9BA0228EE30D1006FCA76 /* AppIconSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconSize.swift; sourceTree = "<group>"; };
 		B8BBA16128E8EDF100222116 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		B8BEC3CD2955D8FD00946196 /* AppNavigationLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationLink.swift; sourceTree = "<group>"; };
 		B8C25F9B294F7AAF001C8847 /* KeyboardToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardToolbar.swift; sourceTree = "<group>"; };
 		B8C25F9F294F8D5D001C8847 /* Separator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Separator.swift; sourceTree = "<group>"; };
 		B8C894E528D895E900975E25 /* LookUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookUp.swift; sourceTree = "<group>"; };
@@ -621,6 +623,7 @@
 				B8B9B9DB28EC668C006FCA76 /* Gradient */,
 				B813BFFB28EB7ACA000C766C /* Icon */,
 				B879E9EA28F0C7110094AA24 /* List */,
+				B8BEC3CD2955D8FD00946196 /* AppNavigationLink.swift */,
 				B8BBA16128E8EDF100222116 /* ButtonView.swift */,
 				B8D2A74128DF3A250096A020 /* InputTextField.swift */,
 				B8E49C0828DF917E00F9CAC4 /* LoadingView.swift */,
@@ -830,6 +833,7 @@
 				B89F179D28E0FABE00A96E35 /* AppDelegate.swift in Sources */,
 				B8B9BA0128EE30BF006FCA76 /* AppIcon.swift in Sources */,
 				B8B9BA0328EE30D1006FCA76 /* AppIconSize.swift in Sources */,
+				B8BEC3CE2955D8FD00946196 /* AppNavigationLink.swift in Sources */,
 				B8B9B9DA28EC6210006FCA76 /* BlurView.swift in Sources */,
 				B8BBA16228E8EDF100222116 /* ButtonView.swift in Sources */,
 				B82A76C528DFAA7200DABFBE /* CapsuleBorder.swift in Sources */,

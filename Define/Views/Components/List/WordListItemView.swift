@@ -33,22 +33,26 @@ struct WordListItemView: View {
 
     /// Draw `View`
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            Text(word.title)
-                .h2()
+        HStack(spacing: .medium) {
+            VStack(alignment: .leading, spacing: 0) {
+                Text(word.title)
+                    .h2()
 
-            Spacer()
-                .frame(height: .small)
+                Spacer()
+                    .frame(height: .small)
 
-            Text(matchTypeText)
-                .body()
+                Text(matchTypeText)
+                    .body()
 
-            Spacer()
-                .frame(height: .medium)
+                Spacer()
+                    .frame(height: .medium)
 
-            TagView(text: scoreText)
+                TagView(text: scoreText)
+            }
+            .listItem()
+
+            ChevronView()
         }
-        .listItem()
         .padding(.large)
     }
 }

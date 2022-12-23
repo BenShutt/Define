@@ -36,7 +36,7 @@ struct SearchScreen: Screen {
                 LoadingView()
             } else if !words.isEmpty {
                 ListView(words) { word in
-                    NavigationLink(destination: WordScreen(word: word)) {
+                    AppNavigationLink(destination: WordScreen(word: word)) {
                         WordListItemView(word: word)
                     }
                 }
