@@ -31,6 +31,7 @@ struct StickyButtonScreen<Content: View>: View {
 // MARK: - PreviewProvider
 
 struct StickyButtonScreen_Previews: PreviewProvider {
+
     static var previews: some View {
         StickyButtonScreen(
             buttonText: "TAP ME!",

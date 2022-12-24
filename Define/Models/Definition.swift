@@ -8,7 +8,7 @@
 import Foundation
 
 /// Definition of a word
-struct Definition: JSONModel {
+struct Definition: JSONModel, Identifiable {
 
     /// Word to define
     var word: String
@@ -18,4 +18,9 @@ struct Definition: JSONModel {
 
     /// Date the word was saved
     var saveDate: Date
+
+    /// Identifier
+    var id: String {
+        word // TODO: Duplicate words?
+    }
 }

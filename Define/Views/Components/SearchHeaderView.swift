@@ -35,6 +35,7 @@ struct SearchHeaderView: View {
         .background(
             GradientBlurView()
                 .appShadow()
+                .ignoresSafeArea()
         )
     }
 }
@@ -42,6 +43,7 @@ struct SearchHeaderView: View {
 // MARK: - PreviewProvider
 
 struct SearchHeaderView_Previews: PreviewProvider {
+
     static var previews: some View {
         VStack {
             SearchHeaderView(searchText: .constant("Some search"))

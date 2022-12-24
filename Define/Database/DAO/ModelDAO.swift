@@ -20,10 +20,9 @@ protocol ModelDAO {
 extension ModelDAO {
 
     /// Get all `DBModel`s and map to its associated `DBModel.Model`
-    ///
-    /// - Parameter realm: `Realm`
-    /// - Returns: `[DBModel.Model]`
-    static func models(realm: Realm) -> [DBModel.Model] {
-        realm.objects(DBModel.self).map { $0.model }
+    static var models: [DBModel.Model] {
+        get throws {
+            try RealmDB.realm().objects(DBModel.self).map { $0.model }
+        }
     }
 }

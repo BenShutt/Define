@@ -60,6 +60,7 @@ struct WordListItemView: View {
 // MARK: - PreviewProvider
 
 struct WordListItemView_Previews: PreviewProvider {
+
     static var previews: some View {
         VStack {
             WordListItemView(word: .preview)

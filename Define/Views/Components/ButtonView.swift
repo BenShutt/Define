@@ -33,6 +33,7 @@ struct ButtonView: View {
 // MARK: - PreviewProvider
 
 struct ButtonView_Previews: PreviewProvider {
+
     static var previews: some View {
         ButtonView(text: "TAP ME!", onTap: {})
     }

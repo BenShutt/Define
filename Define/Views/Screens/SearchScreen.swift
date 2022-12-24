@@ -31,7 +31,7 @@ struct SearchScreen: Screen {
 
             case .list:
                 ListView(viewModel.words) { word in
-                    AppNavigationLink(destination: WordScreen(word: word)) {
+                    NavigationLink(value: NavigationRoute.word(word)) {
                         WordListItemView(word: word)
                     }
                 }
@@ -54,12 +54,14 @@ struct SearchScreen: Screen {
 
             Spacer()
         }
+        .toolbarBackground(.hidden, for: .navigationBar)
     }
 }
 
 // MARK: - PreviewProvider
 
 struct SearchScreen_Previews: PreviewProvider {
+
     static var previews: some View {
         SearchScreen()
     }

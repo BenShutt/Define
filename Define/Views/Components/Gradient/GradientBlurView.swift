@@ -23,13 +23,13 @@ struct GradientBlurView: View {
             )
             BlurView(style: .light)
         }
-        .ignoresSafeArea()
     }
 }
 
 // MARK: - PreviewProvider
 
 struct GradientBlurView_Previews: PreviewProvider {
+
     static var previews: some View {
         GradientBlurView()
     }

@@ -10,10 +10,14 @@ import SwiftUI
 /// Root app `View`
 struct ContentView: View {
 
+    /// `NavigationViewModel`
+    @StateObject var navigation = NavigationViewModel()
+
     /// Root `NavigationStack`
     var body: some View {
-        NavigationStack {
-            SearchScreen()
+        NavigationStack(path: $navigation.path) {
+            navigation.rootView
         }
+        .environmentObject(navigation)
     }
 }

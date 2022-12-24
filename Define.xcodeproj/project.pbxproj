@@ -55,6 +55,8 @@
 		B895886A295783810041A315 /* DefinitionDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8958869295783810041A315 /* DefinitionDAO.swift */; };
 		B895886D2957839E0041A315 /* ModelDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B895886C2957839E0041A315 /* ModelDAO.swift */; };
 		B8958872295788970041A315 /* RealmList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8958871295788970041A315 /* RealmList.swift */; };
+		B895887429578BFB0041A315 /* DefinitionsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B895887329578BFB0041A315 /* DefinitionsScreen.swift */; };
+		B8958876295790E30041A315 /* NavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8958875295790E30041A315 /* NavigationViewModel.swift */; };
 		B8977F2428EF600C009BAD12 /* View+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8977F2328EF600C009BAD12 /* View+Snapshot.swift */; };
 		B8977F2628EF6EFA009BAD12 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8977F2528EF6EFA009BAD12 /* UIImage+Extensions.swift */; };
 		B8977F2828EF7292009BAD12 /* CGSize+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8977F2728EF7291009BAD12 /* CGSize+Extensions.swift */; };
@@ -193,6 +195,8 @@
 		B8958869295783810041A315 /* DefinitionDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionDAO.swift; sourceTree = "<group>"; };
 		B895886C2957839E0041A315 /* ModelDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDAO.swift; sourceTree = "<group>"; };
 		B8958871295788970041A315 /* RealmList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmList.swift; sourceTree = "<group>"; };
+		B895887329578BFB0041A315 /* DefinitionsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionsScreen.swift; sourceTree = "<group>"; };
+		B8958875295790E30041A315 /* NavigationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewModel.swift; sourceTree = "<group>"; };
 		B8977F2328EF600C009BAD12 /* View+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Snapshot.swift"; sourceTree = "<group>"; };
 		B8977F2528EF6EFA009BAD12 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		B8977F2728EF7291009BAD12 /* CGSize+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+Extensions.swift"; sourceTree = "<group>"; };
@@ -643,6 +647,7 @@
 		B8C894ED28D908E900975E25 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				B8958875295790E30041A315 /* NavigationViewModel.swift */,
 				B879E9EF28F0CA910094AA24 /* SearchViewModel.swift */,
 			);
 			path = ViewModel;
@@ -663,6 +668,7 @@
 			isa = PBXGroup;
 			children = (
 				B894FA2228FC8D6B00BC0BFA /* StickyScreen */,
+				B895887329578BFB0041A315 /* DefinitionsScreen.swift */,
 				B8B563EA28F00391004B80F0 /* LaunchScreen.swift */,
 				B89F179328E0EBF100A96E35 /* Screen.swift */,
 				B8D2A73B28DEEFAE0096A020 /* SearchScreen.swift */,
@@ -908,6 +914,7 @@
 				B80399DD28D79A37008CE7B4 /* DefineApp.swift in Sources */,
 				B895886529577FEF0041A315 /* Definition.swift in Sources */,
 				B895886A295783810041A315 /* DefinitionDAO.swift in Sources */,
+				B895887429578BFB0041A315 /* DefinitionsScreen.swift in Sources */,
 				B8039A0E28D7A298008CE7B4 /* DictionaryAPIKey.swift in Sources */,
 				B8F86417294E7C14000EF55A /* DictionaryEndpoint.swift in Sources */,
 				B8B9B9D828EC603D006FCA76 /* EdgeInsets+Extensions.swift in Sources */,
@@ -938,6 +945,7 @@
 				B895886029577FA40041A315 /* MappedDBModel.swift in Sources */,
 				B8039A2428D7BC29008CE7B4 /* Metadata.swift in Sources */,
 				B895886D2957839E0041A315 /* ModelDAO.swift in Sources */,
+				B8958876295790E30041A315 /* NavigationViewModel.swift in Sources */,
 				B8B9B9E728EDED53006FCA76 /* NilCoalescingPrecedence.swift in Sources */,
 				B89F17A428E0FC9A00A96E35 /* OSLog+Extensions.swift in Sources */,
 				B89F179728E0F38D00A96E35 /* Publisher+Extensions.swift in Sources */,

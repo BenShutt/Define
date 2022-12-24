@@ -27,6 +27,7 @@ struct TagView: View {
 // MARK: - PreviewProvider
 
 struct TagView_Previews: PreviewProvider {
+
     static var previews: some View {
         TagView(text: "Adjective")
     }

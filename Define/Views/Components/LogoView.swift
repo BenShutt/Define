@@ -72,6 +72,7 @@ private struct LogoBorder: ViewModifier {
 // MARK: - PreviewProvider
 
 struct LogoView_Previews: PreviewProvider {
+
     static var previews: some View {
         LogoView(showBorder: true)
             .frame(120)

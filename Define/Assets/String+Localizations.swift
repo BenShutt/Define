@@ -18,6 +18,11 @@ extension String {
         static let prompt = "Enter word to search..."
     }
 
+    struct DefinitionsScreen {
+
+        static let title = "Definitions"
+    }
+
     struct SearchScreen {
 
         struct Empty {

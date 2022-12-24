@@ -9,7 +9,7 @@ import Combine
 import SwiftUI
 
 /// View model wrapper of the `SearchAPI`
-class SearchViewModel: ObservableObject {
+final class SearchViewModel: ObservableObject {
 
     /// Search state
     enum State {

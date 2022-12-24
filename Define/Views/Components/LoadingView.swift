@@ -30,6 +30,7 @@ struct LoadingView: View {
 // MARK: - PreviewProvider
 
 struct LoadingView_Previews: PreviewProvider {
+
     static var previews: some View {
         ZStack {
             Color.appWhite

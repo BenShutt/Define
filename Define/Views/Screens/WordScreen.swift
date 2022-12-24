@@ -10,8 +10,8 @@ import SwiftUI
 /// `View` to input a word to search for definitions
 struct WordScreen: Screen {
 
-    /// Presentation mode
-    @Environment(\.dismiss) var dismiss
+    /// `NavigationViewModel`
+    @EnvironmentObject var navigation: NavigationViewModel
 
     /// Result of the `EntriesAPI`
     @State private var entriesResult: ModelResult<Entries>?
@@ -41,8 +41,7 @@ struct WordScreen: Screen {
                 )
             } else {
                 StickyButtonScreen(buttonText: .WordScreen.saveButton) {
-                    // TODO on button tap
-                    dismiss()
+                    saveWord()
                 } content: {
                     DefinitionsView(word: word, definitions: definitions)
                 }
@@ -55,10 +54,21 @@ struct WordScreen: Screen {
         }
     }
 
-    /// Save the given `word`
-    /// - Parameter word: `Word`
-    private func saveWord(word: Word) {
-        UINotificationFeedbackGenerator().notificationOccurred(.success)
+    /// Save `word`
+    private func saveWord() {
+        DefinitionDAO.save(definition: Definition(
+            word: word.word,
+            definitions: definitions,
+            saveDate: Date()
+        )) { result in
+            switch result {
+            case .success:
+                UINotificationFeedbackGenerator().notificationOccurred(.success)
+                navigation.path = NavigationPath() // Pop to root
+            case .failure:
+                UINotificationFeedbackGenerator().notificationOccurred(.error)
+            }
+        }
     }
 }
 
@@ -125,6 +135,7 @@ private struct NoDefinitionsView: View {
 // MARK: - PreviewProvider
 
 struct WordScreen_Previews: PreviewProvider {
+
     static var previews: some View {
         WordScreen(word: .preview)
     }

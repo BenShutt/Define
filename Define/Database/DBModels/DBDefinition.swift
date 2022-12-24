@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 
 /// A database record for a `Definiton`
-class DBDefinition: Object, MappedDBModel {
+class DBDefinition: Object, MappedDBModel, Identifiable {
 
     /// The word
     @Persisted var word = ""
@@ -23,5 +23,10 @@ class DBDefinition: Object, MappedDBModel {
     /// Map to app model
     var model: Definition {
         Definition(word: word, definitions: Array(definitions), saveDate: saveDate)
+    }
+
+    /// Identifier
+    var id: String {
+        model.id
     }
 }

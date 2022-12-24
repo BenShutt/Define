@@ -27,6 +27,7 @@ struct LaunchScreen: Screen {
 // MARK: - PreviewProvider
 
 struct LaunchScreen_Previews: PreviewProvider {
+
     static var previews: some View {
         LaunchScreen()
     }

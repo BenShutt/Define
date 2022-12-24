@@ -70,6 +70,7 @@ struct InputTextField: View {
 // MARK: - PreviewProvider
 
 struct InputTextField_Previews: PreviewProvider {
+
     static var previews: some View {
         VStack {
             InputTextField(

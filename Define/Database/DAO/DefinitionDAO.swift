@@ -14,6 +14,11 @@ struct DefinitionDAO: ModelDAO {
     /// Read and write `DBDefinition` models to database
     typealias DBModel = DBDefinition
 
+    /// Get saved words
+    static var savedWords: [Definition] {
+        (try? models) ?? [] // Mask throw
+    }
+
     /// Save `definition`
     /// - Parameters:
     ///   - definition: `Definition`
