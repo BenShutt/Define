@@ -36,5 +36,6 @@ struct DefinitionScreen_Previews: PreviewProvider {
 
     static var previews: some View {
         DefinitionsScreen()
+            .environmentObject(WordsViewModel())
     }
 }

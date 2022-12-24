@@ -131,5 +131,7 @@ struct WordScreen_Previews: PreviewProvider {
 
     static var previews: some View {
         WordScreen(word: .preview)
+            .environmentObject(NavigationViewModel())
+            .environmentObject(WordsViewModel())
     }
 }
