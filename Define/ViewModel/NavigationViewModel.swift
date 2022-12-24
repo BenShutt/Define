@@ -24,28 +24,23 @@ final class NavigationViewModel: ObservableObject {
     @Published var path = NavigationPath()
 
     /// Get the root `View`
-    @ViewBuilder var rootView: some View {
+    /// - Parameter words: `WordsViewModel`
+    /// - Returns: `View`
+    @ViewBuilder func rootView(words: WordsViewModel) -> some View {
         Group {
-            if DefinitionDAO.savedWords.isEmpty {
+            if words.words.isEmpty {
                 SearchScreen()
             } else {
                 DefinitionsScreen()
             }
         }
         .navigationDestination(for: NavigationRoute.self) { route in
-            Self.destination(for: route)
-        }
-    }
-
-    /// Map to `View` for `route`
-    /// - Parameter route: `NavigationRoute`
-    /// - Returns: `View`
-    @ViewBuilder static func destination(for route: NavigationRoute) -> some View {
-        switch route {
-        case .search:
-            SearchScreen()
-        case let .word(word):
-            WordScreen(word: word)
+            switch route {
+            case .search:
+                SearchScreen()
+            case let .word(word):
+                WordScreen(word: word)
+            }
         }
     }
 }

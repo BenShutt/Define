@@ -6,18 +6,17 @@
 //
 
 import SwiftUI
-import RealmSwift
 
 /// Screen listing the user's saved definitions
 struct DefinitionsScreen: View {
 
-    /// `DBDefinition`s
-    @ObservedResults(DBDefinition.self) var definitions
+    /// `WordsViewModel`
+    @EnvironmentObject var words: WordsViewModel
 
     /// Draw view
     var body: some View {
-        List(definitions.map { $0.model }) { definition in
-            Text(definition.word)
+        List(words.words) { word in
+            Text(word.word)
         }
         .navigationTitle(String.DefinitionsScreen.title)
         .toolbar {

@@ -13,11 +13,15 @@ struct ContentView: View {
     /// `NavigationViewModel`
     @StateObject var navigation = NavigationViewModel()
 
+    /// `WordsViewModel`
+    @StateObject var words = WordsViewModel()
+
     /// Root `NavigationStack`
     var body: some View {
         NavigationStack(path: $navigation.path) {
-            navigation.rootView
+            navigation.rootView(words: words)
         }
         .environmentObject(navigation)
+        .environmentObject(words)
     }
 }

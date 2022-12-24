@@ -13,6 +13,9 @@ struct WordScreen: Screen {
     /// `NavigationViewModel`
     @EnvironmentObject var navigation: NavigationViewModel
 
+    /// `WordsViewModel`
+    @EnvironmentObject var words: WordsViewModel
+
     /// Result of the `EntriesAPI`
     @State private var entriesResult: ModelResult<Entries>?
 
@@ -56,19 +59,9 @@ struct WordScreen: Screen {
 
     /// Save `word`
     private func saveWord() {
-        DefinitionDAO.save(definition: Definition(
-            word: word.word,
-            definitions: definitions,
-            saveDate: Date()
-        )) { result in
-            switch result {
-            case .success:
-                UINotificationFeedbackGenerator().notificationOccurred(.success)
-                navigation.path = NavigationPath() // Pop to root
-            case .failure:
-                UINotificationFeedbackGenerator().notificationOccurred(.error)
-            }
-        }
+        words.words.append(word)
+        UINotificationFeedbackGenerator().notificationOccurred(.success)
+        navigation.path = NavigationPath() // Pop to root
     }
 }
 

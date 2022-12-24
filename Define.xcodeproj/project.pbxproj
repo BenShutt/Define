@@ -41,20 +41,15 @@
 		B879E9E928F0C5190094AA24 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B879E9E828F0C5190094AA24 /* TagView.swift */; };
 		B879E9EE28F0C7ED0094AA24 /* WordListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B879E9ED28F0C7ED0094AA24 /* WordListItemView.swift */; };
 		B879E9F028F0CA910094AA24 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B879E9EF28F0CA910094AA24 /* SearchViewModel.swift */; };
+		B889DEBE2957ACF50020E9C9 /* Array+RawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889DEBD2957ACF50020E9C9 /* Array+RawRepresentable.swift */; };
+		B889DEC12957AEF60020E9C9 /* WordsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889DEC02957AEF60020E9C9 /* WordsViewModel.swift */; };
 		B891F8E22950FB6600A53582 /* ChevronView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B891F8E12950FB6600A53582 /* ChevronView.swift */; };
 		B891F8E42950FC4300A53582 /* Chevron.swift in Sources */ = {isa = PBXBuildFile; fileRef = B891F8E32950FC4300A53582 /* Chevron.swift */; };
 		B891F8E629530E6500A53582 /* CGRectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B891F8E529530E6500A53582 /* CGRectTests.swift */; };
 		B894FA1C28FC69FA00BC0BFA /* Word+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B894FA1B28FC69FA00BC0BFA /* Word+Preview.swift */; };
 		B894FA2128FC8A4B00BC0BFA /* StickyBottomScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B894FA2028FC8A4B00BC0BFA /* StickyBottomScreen.swift */; };
 		B894FA2428FC8D7A00BC0BFA /* StickyButtonScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B894FA2328FC8D7A00BC0BFA /* StickyButtonScreen.swift */; };
-		B895885729577F260041A315 /* RealmDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = B895885629577F260041A315 /* RealmDB.swift */; };
-		B895886029577FA40041A315 /* MappedDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B895885F29577FA40041A315 /* MappedDBModel.swift */; };
-		B895886229577FB90041A315 /* DBDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B895886129577FB90041A315 /* DBDefinition.swift */; };
 		B895886529577FEF0041A315 /* Definition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B895886429577FEF0041A315 /* Definition.swift */; };
-		B8958868295781CC0041A315 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B8958867295781CC0041A315 /* RealmSwift */; };
-		B895886A295783810041A315 /* DefinitionDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8958869295783810041A315 /* DefinitionDAO.swift */; };
-		B895886D2957839E0041A315 /* ModelDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B895886C2957839E0041A315 /* ModelDAO.swift */; };
-		B8958872295788970041A315 /* RealmList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8958871295788970041A315 /* RealmList.swift */; };
 		B895887429578BFB0041A315 /* DefinitionsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B895887329578BFB0041A315 /* DefinitionsScreen.swift */; };
 		B8958876295790E30041A315 /* NavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8958875295790E30041A315 /* NavigationViewModel.swift */; };
 		B8977F2428EF600C009BAD12 /* View+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8977F2328EF600C009BAD12 /* View+Snapshot.swift */; };
@@ -182,19 +177,15 @@
 		B879E9E828F0C5190094AA24 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		B879E9ED28F0C7ED0094AA24 /* WordListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListItemView.swift; sourceTree = "<group>"; };
 		B879E9EF28F0CA910094AA24 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		B889DEBD2957ACF50020E9C9 /* Array+RawRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+RawRepresentable.swift"; sourceTree = "<group>"; };
+		B889DEC02957AEF60020E9C9 /* WordsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsViewModel.swift; sourceTree = "<group>"; };
 		B891F8E12950FB6600A53582 /* ChevronView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChevronView.swift; sourceTree = "<group>"; };
 		B891F8E32950FC4300A53582 /* Chevron.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chevron.swift; sourceTree = "<group>"; };
 		B891F8E529530E6500A53582 /* CGRectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGRectTests.swift; sourceTree = "<group>"; };
 		B894FA1B28FC69FA00BC0BFA /* Word+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Word+Preview.swift"; sourceTree = "<group>"; };
 		B894FA2028FC8A4B00BC0BFA /* StickyBottomScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyBottomScreen.swift; sourceTree = "<group>"; };
 		B894FA2328FC8D7A00BC0BFA /* StickyButtonScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyButtonScreen.swift; sourceTree = "<group>"; };
-		B895885629577F260041A315 /* RealmDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDB.swift; sourceTree = "<group>"; };
-		B895885F29577FA40041A315 /* MappedDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappedDBModel.swift; sourceTree = "<group>"; };
-		B895886129577FB90041A315 /* DBDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBDefinition.swift; sourceTree = "<group>"; };
 		B895886429577FEF0041A315 /* Definition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Definition.swift; sourceTree = "<group>"; };
-		B8958869295783810041A315 /* DefinitionDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionDAO.swift; sourceTree = "<group>"; };
-		B895886C2957839E0041A315 /* ModelDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDAO.swift; sourceTree = "<group>"; };
-		B8958871295788970041A315 /* RealmList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmList.swift; sourceTree = "<group>"; };
 		B895887329578BFB0041A315 /* DefinitionsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionsScreen.swift; sourceTree = "<group>"; };
 		B8958875295790E30041A315 /* NavigationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewModel.swift; sourceTree = "<group>"; };
 		B8977F2328EF600C009BAD12 /* View+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Snapshot.swift"; sourceTree = "<group>"; };
@@ -273,7 +264,6 @@
 			files = (
 				B8039A1428D7AAF7008CE7B4 /* HTTPRequest in Frameworks */,
 				B8A1232528E971EC00ACEC45 /* Lottie in Frameworks */,
-				B8958868295781CC0041A315 /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,7 +308,6 @@
 			isa = PBXGroup;
 			children = (
 				B8039A0A28D7A26E008CE7B4 /* Assets */,
-				B895885529577F0A0041A315 /* Database */,
 				B8039A0728D7A0DC008CE7B4 /* DictionaryAPI */,
 				B8039A0F28D7A51F008CE7B4 /* Extensions */,
 				B8039A2228D7BC1C008CE7B4 /* Models */,
@@ -397,6 +386,7 @@
 				B89F179528E0F38200A96E35 /* Combine */,
 				B8C894EB28D905EE00975E25 /* SwiftUI */,
 				B888923F28EE332900DB76AB /* UIKit */,
+				B889DEBD2957ACF50020E9C9 /* Array+RawRepresentable.swift */,
 				B8039A2B28D7BDBF008CE7B4 /* DataRequestResult+Extensions.swift */,
 				B8039A3428D7C78D008CE7B4 /* JSONDecoder+Extensions.swift */,
 				B8039A3628D7C803008CE7B4 /* JSONEncoder+Extensions.swift */,
@@ -493,26 +483,6 @@
 			path = StickyScreen;
 			sourceTree = "<group>";
 		};
-		B895885529577F0A0041A315 /* Database */ = {
-			isa = PBXGroup;
-			children = (
-				B895886B295783950041A315 /* DAO */,
-				B895885E29577F8C0041A315 /* DBModels */,
-				B895885629577F260041A315 /* RealmDB.swift */,
-				B8958871295788970041A315 /* RealmList.swift */,
-			);
-			path = Database;
-			sourceTree = "<group>";
-		};
-		B895885E29577F8C0041A315 /* DBModels */ = {
-			isa = PBXGroup;
-			children = (
-				B895886129577FB90041A315 /* DBDefinition.swift */,
-				B895885F29577FA40041A315 /* MappedDBModel.swift */,
-			);
-			path = DBModels;
-			sourceTree = "<group>";
-		};
 		B895886329577FDA0041A315 /* Dictionary */ = {
 			isa = PBXGroup;
 			children = (
@@ -522,15 +492,6 @@
 				B8039A2928D7BD54008CE7B4 /* Words.swift */,
 			);
 			path = Dictionary;
-			sourceTree = "<group>";
-		};
-		B895886B295783950041A315 /* DAO */ = {
-			isa = PBXGroup;
-			children = (
-				B8958869295783810041A315 /* DefinitionDAO.swift */,
-				B895886C2957839E0041A315 /* ModelDAO.swift */,
-			);
-			path = DAO;
 			sourceTree = "<group>";
 		};
 		B89F179528E0F38200A96E35 /* Combine */ = {
@@ -649,6 +610,7 @@
 			children = (
 				B8958875295790E30041A315 /* NavigationViewModel.swift */,
 				B879E9EF28F0CA910094AA24 /* SearchViewModel.swift */,
+				B889DEC02957AEF60020E9C9 /* WordsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -727,7 +689,6 @@
 			packageProductDependencies = (
 				B8039A1328D7AAF7008CE7B4 /* HTTPRequest */,
 				B8A1232428E971EC00ACEC45 /* Lottie */,
-				B8958867295781CC0041A315 /* RealmSwift */,
 			);
 			productName = Define;
 			productReference = B80399D928D79A37008CE7B4 /* Define.app */;
@@ -804,7 +765,6 @@
 			packageReferences = (
 				B8039A1228D7AAF7008CE7B4 /* XCRemoteSwiftPackageReference "HTTPRequest" */,
 				B8A1232328E971EC00ACEC45 /* XCRemoteSwiftPackageReference "lottie-ios" */,
-				B8958866295781CC0041A315 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = B80399DA28D79A37008CE7B4 /* Products */;
 			projectDirPath = "";
@@ -897,6 +857,7 @@
 				B8B9BA0128EE30BF006FCA76 /* AppIcon.swift in Sources */,
 				B8B9BA0328EE30D1006FCA76 /* AppIconSize.swift in Sources */,
 				B8BEC3CE2955D8FD00946196 /* AppNavigationLink.swift in Sources */,
+				B889DEBE2957ACF50020E9C9 /* Array+RawRepresentable.swift in Sources */,
 				B8B9B9DA28EC6210006FCA76 /* BlurView.swift in Sources */,
 				B8BBA16228E8EDF100222116 /* ButtonView.swift in Sources */,
 				B82A76C528DFAA7200DABFBE /* CapsuleBorder.swift in Sources */,
@@ -909,11 +870,9 @@
 				B813BFFF28EB7BE6000C766C /* CrossIconView.swift in Sources */,
 				B8A1235D28E97FB000ACEC45 /* CustomFont.swift in Sources */,
 				B8039A2C28D7BDBF008CE7B4 /* DataRequestResult+Extensions.swift in Sources */,
-				B895886229577FB90041A315 /* DBDefinition.swift in Sources */,
 				B8E28DC828EA0C37009BE8A2 /* Debug.swift in Sources */,
 				B80399DD28D79A37008CE7B4 /* DefineApp.swift in Sources */,
 				B895886529577FEF0041A315 /* Definition.swift in Sources */,
-				B895886A295783810041A315 /* DefinitionDAO.swift in Sources */,
 				B895887429578BFB0041A315 /* DefinitionsScreen.swift in Sources */,
 				B8039A0E28D7A298008CE7B4 /* DictionaryAPIKey.swift in Sources */,
 				B8F86417294E7C14000EF55A /* DictionaryEndpoint.swift in Sources */,
@@ -942,15 +901,11 @@
 				B8C894E628D895E900975E25 /* LookUp.swift in Sources */,
 				B8A1232728E971FD00ACEC45 /* LottieFile.swift in Sources */,
 				B8A1232228E9714600ACEC45 /* LottieView.swift in Sources */,
-				B895886029577FA40041A315 /* MappedDBModel.swift in Sources */,
 				B8039A2428D7BC29008CE7B4 /* Metadata.swift in Sources */,
-				B895886D2957839E0041A315 /* ModelDAO.swift in Sources */,
 				B8958876295790E30041A315 /* NavigationViewModel.swift in Sources */,
 				B8B9B9E728EDED53006FCA76 /* NilCoalescingPrecedence.swift in Sources */,
 				B89F17A428E0FC9A00A96E35 /* OSLog+Extensions.swift in Sources */,
 				B89F179728E0F38D00A96E35 /* Publisher+Extensions.swift in Sources */,
-				B895885729577F260041A315 /* RealmDB.swift in Sources */,
-				B8958872295788970041A315 /* RealmList.swift in Sources */,
 				B813BFF828EB6F30000C766C /* RoundedBorder.swift in Sources */,
 				B89F179428E0EBF100A96E35 /* Screen.swift in Sources */,
 				B8039A1F28D7B722008CE7B4 /* SearchAPI.swift in Sources */,
@@ -978,6 +933,7 @@
 				B879E9EE28F0C7ED0094AA24 /* WordListItemView.swift in Sources */,
 				B8039A2A28D7BD54008CE7B4 /* Words.swift in Sources */,
 				B84AD60A28FAFC9E00C2D5AE /* WordScreen.swift in Sources */,
+				B889DEC12957AEF60020E9C9 /* WordsViewModel.swift in Sources */,
 				B8A1235A28E97EF300ACEC45 /* WorkSans.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1318,14 +1274,6 @@
 				kind = branch;
 			};
 		};
-		B8958866295781CC0041A315 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-swift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.0.0;
-			};
-		};
 		B8A1232328E971EC00ACEC45 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios";
@@ -1341,11 +1289,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B8039A1228D7AAF7008CE7B4 /* XCRemoteSwiftPackageReference "HTTPRequest" */;
 			productName = HTTPRequest;
-		};
-		B8958867295781CC0041A315 /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B8958866295781CC0041A315 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = RealmSwift;
 		};
 		B8A1232428E971EC00ACEC45 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
