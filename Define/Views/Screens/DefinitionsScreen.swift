@@ -19,6 +19,7 @@ struct DefinitionsScreen: View {
             Text(word.word)
         }
         .navigationTitle(String.DefinitionsScreen.title)
+        .navigationBarTitleDisplayMode(.automatic)
         .toolbar {
             ToolbarItem {
                 NavigationLink(value: NavigationRoute.search) {

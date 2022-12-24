@@ -54,7 +54,7 @@ struct SearchScreen: Screen {
 
             Spacer()
         }
-        .toolbarBackground(.hidden, for: .navigationBar)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
