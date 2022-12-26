@@ -18,7 +18,7 @@ struct WordListItemView: View {
         let formatter = NumberFormatter()
         formatter.minimumFractionDigits = 0
         formatter.maximumFractionDigits = 3
-        return formatter.string(from: word.score as NSNumber) ?? "\(word.score)"
+        return formatter.numberString(from: word.score)
     }
 
     /// Text of score label

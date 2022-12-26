@@ -8,36 +8,21 @@
 import SwiftUI
 
 /// `NavigationLink` with default styling
-struct AppNavigationLink<Destination: View, Label: View>: View {
+struct AppNavigationLink<Value: Hashable, Label: View>: View {
 
-    /// `Destination`
-    @ViewBuilder var destination: () -> Destination
+    /// `Value`
+    var value: Value
 
     /// `Label`
     @ViewBuilder var label: () -> Label
 
     var body: some View {
         ZStack {
-            NavigationLink(destination: destination()) {
-                EmptyView()
-            }
-            .frame(width: 0)
-            .opacity(0)
+            NavigationLink(value: value) { EmptyView() }
+                .frame(width: 0)
+                .opacity(0)
 
             label()
         }
-    }
-}
-
-// MARK: - Extensions
-
-extension AppNavigationLink {
-
-    /// Initialize with `destination` and `label`
-    /// - Parameters:
-    ///   - destination: `Destination`
-    ///   - label: `Label` mapping
-    init(destination: Destination, label: @escaping () -> Label) {
-        self.init(destination: { destination }, label: label)
     }
 }

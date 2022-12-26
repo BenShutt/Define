@@ -10,23 +10,25 @@ import SwiftUI
 /// Screen listing the user's saved definitions
 struct DefinitionsScreen: View {
 
+    /// `NavigationViewModel`
+    @EnvironmentObject var navigation: NavigationViewModel
+
     /// `WordsViewModel`
     @EnvironmentObject var words: WordsViewModel
 
     /// Draw view
     var body: some View {
-        List(words.words) { word in
-            Text(word.word)
-        }
-        .navigationTitle(String.DefinitionsScreen.title)
-        .navigationBarTitleDisplayMode(.automatic)
-        .toolbar {
-            ToolbarItem {
-                NavigationLink(value: NavigationRoute.search) {
-                    Image(systemName: "plus")
+        StickyButtonScreen(buttonText: .DefinitionsScreen.addWordButton) {
+            navigation.path.append(NavigationRoute.search)
+        } content: {
+            ListView(words.words) { word in
+                AppNavigationLink(value: NavigationRoute.word(word.word)) {
+                    WordListItemView(word: word.word)
                 }
             }
         }
+        .navigationTitle(String.DefinitionsScreen.title)
+        .navigationBarTitleDisplayMode(.automatic)
     }
 }
 

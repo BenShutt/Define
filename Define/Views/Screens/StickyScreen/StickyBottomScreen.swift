@@ -23,7 +23,7 @@ struct StickyBottomScreen<Content: View, Bottom: View>: Screen {
                 .frame(maxHeight: .infinity)
             bottom()
                 .background(Color.appWhite)
-                .ignoresSafeArea()
+                .ignoresSafeArea(.keyboard)
                 .appShadow()
         }
     }

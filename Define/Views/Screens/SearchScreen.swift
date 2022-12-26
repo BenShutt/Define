@@ -5,7 +5,6 @@
 //  Created by Ben Shutt on 24/09/2022.
 //
 
-import UIKit
 import SwiftUI
 
 /// `View` to input a word to search for definitions
@@ -31,7 +30,7 @@ struct SearchScreen: Screen {
 
             case .list:
                 ListView(viewModel.words) { word in
-                    NavigationLink(value: NavigationRoute.word(word)) {
+                    AppNavigationLink(value: NavigationRoute.word(word)) {
                         WordListItemView(word: word)
                     }
                 }

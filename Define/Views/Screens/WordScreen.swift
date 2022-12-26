@@ -42,12 +42,14 @@ struct WordScreen: Screen {
                     word: word.word,
                     isAPIError: entriesResult?.failure != nil
                 )
-            } else {
+            } else if !words.contains(word) {
                 StickyButtonScreen(buttonText: .WordScreen.saveButton) {
                     saveWord()
                 } content: {
                     DefinitionsView(word: word, definitions: definitions)
                 }
+            } else {
+                DefinitionsView(word: word, definitions: definitions)
             }
         }
         .onAppear {
@@ -59,7 +61,7 @@ struct WordScreen: Screen {
 
     /// Save `word`
     private func saveWord() {
-        words.words.append(word)
+        words.words.append(SavedWord(word: word))
         UINotificationFeedbackGenerator().notificationOccurred(.success)
         navigation.path = NavigationPath() // Pop to root
     }

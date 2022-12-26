@@ -21,6 +21,7 @@ extension String {
     struct DefinitionsScreen {
 
         static let title = "Definitions"
+        static let addWordButton = "SEARCH NEW WORD"
     }
 
     struct SearchScreen {

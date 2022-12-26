@@ -6,7 +6,7 @@
 //
 
 import XCTest
-import UIKit
+import CoreGraphics
 
 /// Test insetting of a `CGRect`
 class CGRectTests: XCTestCase {

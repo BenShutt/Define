@@ -5,7 +5,6 @@
 //  Created by Ben Shutt on 04/10/2022.
 //
 
-import UIKit
 import SwiftUI
 
 /// A `UIViewRepresentable` wrapping a `UIVisualEffectView` with a `UIBlurEffect`
