@@ -63,6 +63,16 @@ extension String {
                 "Failed to load words for: '\(word)'"
             }
         }
+
+        struct DeleteAlert {
+
+            static let title = "Delete Word"
+            static let delete = "Delete"
+
+            static func subtitle(word: String) -> String {
+                "Are you sure you want to delete the word: '\(word)'"
+            }
+        }
     }
 
     struct WordListItemView {

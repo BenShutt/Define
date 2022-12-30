@@ -19,6 +19,9 @@ struct WordScreen: Screen {
     /// Result of the `EntriesAPI`
     @State private var entriesResult: ModelResult<Entries>?
 
+    /// Is presenting alert to delete word
+    @State private var showingDeleteWordAlert = false
+
     /// `Word` to define
     var word: Word
 
@@ -30,6 +33,11 @@ struct WordScreen: Screen {
     /// `Entries` for `word` returned from the API
     var definitions: [String] {
         entriesResult?.success?.definitions ?? []
+    }
+
+    /// Delete word message
+    var deleteMessage: String {
+        .WordScreen.DeleteAlert.subtitle(word: word.word)
     }
 
     /// `View` of the screen
@@ -57,11 +65,43 @@ struct WordScreen: Screen {
                 entriesResult = result.modelResult()
             }
         }
+        .toolbar {
+            Button(action: {
+                showingDeleteWordAlert = true
+            }, label: {
+                Image(systemName: "trash")
+            })
+        }
+        .alert(
+            Text(String.WordScreen.DeleteAlert.title),
+            isPresented: $showingDeleteWordAlert,
+            actions: {
+                Button(role: .destructive) {
+                    deleteWord()
+                } label: {
+                    Text(String.WordScreen.DeleteAlert.delete)
+                }
+            },
+            message: {
+                Text(deleteMessage)
+            }
+        )
     }
 
     /// Save `word`
     private func saveWord() {
-        words.words.append(SavedWord(word: word))
+        words.saveWord(word)
+        vibrateWithSuccessAndPopToRoot()
+    }
+
+    /// Delete `word`
+    private func deleteWord() {
+        guard words.deleteWord(word) else { return }
+        vibrateWithSuccessAndPopToRoot()
+    }
+
+    /// Vibrate with success and pop to root
+    private func vibrateWithSuccessAndPopToRoot() {
         UINotificationFeedbackGenerator().notificationOccurred(.success)
         navigation.path = NavigationPath() // Pop to root
     }
