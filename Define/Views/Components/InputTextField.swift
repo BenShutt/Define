@@ -25,6 +25,9 @@ struct InputTextField: View {
     /// Content of the input
     var contentType: UITextContentType?
 
+    /// On focus changed observer
+    var onFocusChanged: ((Bool) -> Void)?
+
     /// Tint color
     private var tintColor: Color {
         .appPrimary
@@ -60,10 +63,13 @@ struct InputTextField: View {
         .background(Color.appWhite)
         .shapeBorder(color: borderColor)
         .fixedSize(horizontal: false, vertical: true)
+        .keyboardToolbar(isFocused: $isFocused)
         .onTapGesture {
             isFocused = true
         }
-        .keyboardToolbar(isFocused: $isFocused)
+        .onChange(of: isFocused) { newValue in
+            onFocusChanged?(newValue)
+        }
     }
 }
 

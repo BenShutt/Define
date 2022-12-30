@@ -66,11 +66,14 @@ extension CGFloat {
 // MARK: - Double + Values
 
 extension Double {
+
     static let π: Double = .pi
 }
 
 // MARK: - TimeInterval + Values
 
 extension TimeInterval {
+
     static let debounce: TimeInterval = 1
+    static let accordion: TimeInterval = 0.1
 }

@@ -7,31 +7,56 @@
 
 import SwiftUI
 
+/// Header UI for searching
 struct SearchHeaderView: View {
 
+    /// Text of the searching
     @Binding var searchText: String
+
+    /// Is the field currently focused so the content is compressed
+    ///
+    /// - Note:
+    /// There are two states here to handle both the @FocusState and the animation.
+    /// The two should always be equivelent in value
+    @State private var isCompressed = false
+
+    /// Padding
+    var padding: EdgeInsets {
+        var padding: EdgeInsets = .largeMargins
+        if isCompressed {
+            padding.top = .medium
+        }
+        return padding
+    }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text(String.SearchHeaderView.title)
-                .h1()
+            if !isCompressed {
+                Text(String.SearchHeaderView.title)
+                    .h1()
 
-            Spacer()
-                .frame(height: .medium)
+                Spacer()
+                    .frame(height: .medium)
 
-            Text(String.SearchHeaderView.subtitle)
-                .body()
+                Text(String.SearchHeaderView.subtitle)
+                    .body()
 
-            Spacer()
-                .frame(height: .extraLarge)
+                Spacer()
+                    .frame(height: .extraLarge)
+            }
 
             InputTextField(
                 text: $searchText,
                 prompt: .SearchHeaderView.prompt,
-                image: .search
+                image: .search,
+                onFocusChanged: { newValue in
+                    withAnimation(.linear(duration: .accordion)) {
+                        isCompressed = newValue
+                    }
+                }
             )
         }
-        .padding(.largeMargins)
+        .padding(padding)
         .background(
             GradientBlurView()
                 .appShadow()
