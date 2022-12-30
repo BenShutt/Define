@@ -1,6 +1,6 @@
 //
-//  AppIcon.swift
-//  Define
+//  AppIconGenerator.swift
+//  AppIcon
 //
 //  Created by Ben Shutt on 05/10/2022.
 //
@@ -14,7 +14,7 @@ import SwiftUI
 ///
 /// - Note:
 /// `ImageRenderer` didn't support UI components like `BlurView`
-struct AppIcon {
+struct AppIconGenerator {
 
     /// Name of the directory to write app icon images in
     private static let directory = "DefineLogo"
@@ -40,6 +40,21 @@ struct AppIcon {
         return format
     }
 
+    /// Make directory URL
+    private static func makeDirectoryURL() throws -> URL {
+        let directoryURL = try directoryURL()
+
+        // Remove previous directory
+        if !FileManager.default.fileExists(atPath: directoryURL.path) {
+            try FileManager.default.createDirectory(
+                at: directoryURL,
+                withIntermediateDirectories: true
+            )
+        }
+
+        return directoryURL
+    }
+
     /// Resize image and write file to directory
     ///
     /// - Parameters:
@@ -54,50 +69,25 @@ struct AppIcon {
         let fileName = "\(appIconSize).png"
         let url = directoryURL.appendingPathComponent(fileName)
         let newImage = image.resize(to: .init(appIconSize.sizeInPx), format: graphicsFormat)
-        let pngData = try newImage.pngData() ?! AppIconError.pngData
+        guard let pngData = newImage.pngData() else { throw AppIconError.pngData }
         try pngData.write(to: url)
     }
 
-    /// Generate app icons
-    static func generate() throws {
-        let directoryURL = try directoryURL()
-
-        // Remove previous directory
-        if FileManager.default.fileExists(atPath: directoryURL.path) {
-            try FileManager.default.removeItem(at: directoryURL)
-        }
-
-        // Create directory
-        try FileManager.default.createDirectory(
-            at: directoryURL,
-            withIntermediateDirectories: true
-        )
+    /// Generate app images
+    /// - Parameter view: `AppIconView`
+    static func generate<AppIconView: View>(from view: AppIconView) throws {
+        let directoryURL = try makeDirectoryURL()
 
         // Make image from the largest
-        let logoImage = LogoView(showBorder: false)
-            .snapshot(size: .init(AppIconSize.max.sizeInPx))
+        let logoImage = view.snapshot(size: .init(AppIconSize.max.sizeInPx))
 
         // Resize and write all images
         try AppIconSize.all.forEach {
             try resizeAndWrite(image: logoImage, for: $0, to: directoryURL)
         }
 
-        // Generate launch screen images (WIP)
-        let containerSize: CGFloat = .Launch.containerSize * 3
-        let padding: CGFloat = .Launch.padding * 3
-        let launchScreenImage = LaunchScreen(containerSize: containerSize, padding: padding)
-            .screenBody
-            .snapshot(size: .init(containerSize))
-        try (1 ... 3).forEach { // multipliers: @1x, @2x, @3x
-            let size = AppIconSize(size: .Launch.containerSize, multiplier: $0)
-            try resizeAndWrite(image: launchScreenImage, for: size, to: directoryURL)
-        }
-
         // Log success
-        Logger.shared.log(
-            type: .info,
-            message: "Success, \(AppIcon.self) images written to \(directoryURL)"
-        )
+        print("Success, app icon images written to \(directoryURL)")
     }
 }
 

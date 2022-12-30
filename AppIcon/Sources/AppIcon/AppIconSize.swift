@@ -1,6 +1,6 @@
 //
 //  AppIconSize.swift
-//  Define
+//  AppIcon
 //
 //  Created by Ben Shutt on 05/10/2022.
 //
