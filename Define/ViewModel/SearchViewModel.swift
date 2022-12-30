@@ -96,8 +96,8 @@ final class SearchViewModel: ObservableObject {
     /// `[Word]` returned from the API
     var words: [Word] {
         (result.success?.results ?? [])
-            .sorted()
             .filter { $0.score >= Self.scoreMin }
+            .sorted(by: >)
     }
 
     /// Get `State`
