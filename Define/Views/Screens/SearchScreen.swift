@@ -11,7 +11,7 @@ import SwiftUI
 struct SearchScreen: Screen {
 
     /// `SearchViewModel`
-    @ObservedObject private var viewModel = SearchViewModel()
+    @StateObject private var viewModel = SearchViewModel()
 
     /// `View` of the screen
     var screenBody: some View {

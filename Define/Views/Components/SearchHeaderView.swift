@@ -10,7 +10,7 @@ import SwiftUI
 /// Header UI for searching
 struct SearchHeaderView: View {
 
-    /// Text of the searching
+    /// Text being searched
     @Binding var searchText: String
 
     /// Is the field currently focused so the content is compressed
@@ -49,9 +49,9 @@ struct SearchHeaderView: View {
                 text: $searchText,
                 prompt: .SearchHeaderView.prompt,
                 image: .search,
-                onFocusChanged: { newValue in
+                onFocusChanged: { isFocused in
                     withAnimation(.linear(duration: .accordion)) {
-                        isCompressed = newValue
+                        isCompressed = isFocused
                     }
                 }
             )
