@@ -21,7 +21,6 @@ extension Word {
         let resourceURL = Bundle.main.url(forResource: "hello", withExtension: "json")
         let url = try resourceURL ?! WordPreviewError.resourceURL
         let data = try Data(contentsOf: url)
-
         let words = try JSONDecoder().decode([Word].self, from: data)
         return try words.first ?! WordPreviewError.first
     }

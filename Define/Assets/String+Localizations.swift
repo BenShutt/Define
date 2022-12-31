@@ -26,6 +26,8 @@ extension String {
 
     struct SearchScreen {
 
+        static let title = "Search"
+
         struct Empty {
 
             static let title = "Start Your Search"

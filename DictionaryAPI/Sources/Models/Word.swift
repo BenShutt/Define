@@ -74,6 +74,11 @@ extension Word: Comparable {
 
 public extension Word {
 
+    /// Capitalized word
+    var title: String {
+        word.capitalized
+    }
+
     /// Definitions
     var definitions: [String] {
         meanings.flatMap { $0.definitions }.map { $0.definition }

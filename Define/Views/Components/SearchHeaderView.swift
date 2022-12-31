@@ -18,12 +18,12 @@ struct SearchHeaderView: View {
     /// - Note:
     /// There are two states here to handle both the @FocusState and the animation.
     /// The two should always be equivelent in value
-    @State private var isCompressed = false
+    @State private var isTextInputFocused = false
 
     /// Padding
     var padding: EdgeInsets {
         var padding: EdgeInsets = .largeMargins
-        if isCompressed {
+        if isTextInputFocused {
             padding.top = .medium
         }
         return padding
@@ -31,7 +31,7 @@ struct SearchHeaderView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            if !isCompressed {
+            if !isTextInputFocused {
                 Text(String.SearchHeaderView.title)
                     .h1()
 
@@ -51,7 +51,7 @@ struct SearchHeaderView: View {
                 image: .search,
                 onFocusChanged: { isFocused in
                     withAnimation(.linear(duration: .accordion)) {
-                        isCompressed = isFocused
+                        isTextInputFocused = isFocused
                     }
                 }
             )

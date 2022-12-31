@@ -42,7 +42,7 @@ struct WordScreen: Screen {
                 SearchEmptyView(
                     lottie: .searchNoResults,
                     title: .WordScreen.Empty.title,
-                    subtitle: .WordScreen.Empty.subtitle(word: word.word)
+                    subtitle: .WordScreen.Empty.subtitle(word: word.title)
                 )
             } else if !isWordSaved {
                 StickyButtonScreen(buttonText: .WordScreen.saveButton) {
@@ -54,7 +54,7 @@ struct WordScreen: Screen {
                 DefinitionsView(definitions: definitions)
             }
         }
-        .navigationTitle(word.word)
+        .navigationTitle(word.title)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             if isWordSaved {
@@ -76,7 +76,7 @@ struct WordScreen: Screen {
                 }
             },
             message: {
-                Text(String.WordScreen.DeleteAlert.subtitle(word: word.word))
+                Text(String.WordScreen.DeleteAlert.subtitle(word: word.title))
             }
         )
     }

@@ -18,7 +18,7 @@ struct WordListItemView: View {
     var body: some View {
         HStack(spacing: .medium) {
             VStack(alignment: .leading, spacing: 0) {
-                Text(word.word)
+                Text(word.title)
                     .h2()
 
                 if let origin = word.origin {
