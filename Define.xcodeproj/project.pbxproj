@@ -101,6 +101,7 @@
 		B8FF0DD329609E3E004C61B6 /* Bundle+Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FF0DD229609E3E004C61B6 /* Bundle+Key.swift */; };
 		B8FF0DD529609EF3004C61B6 /* UserDefaultKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FF0DD429609EF3004C61B6 /* UserDefaultKey.swift */; };
 		B8FF0DD82960ACCE004C61B6 /* SavedWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FF0DD72960ACCE004C61B6 /* SavedWord.swift */; };
+		B8FF0DDC2960B548004C61B6 /* MeaningListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FF0DDB2960B548004C61B6 /* MeaningListItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -219,6 +220,7 @@
 		B8FF0DD229609E3E004C61B6 /* Bundle+Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Key.swift"; sourceTree = "<group>"; };
 		B8FF0DD429609EF3004C61B6 /* UserDefaultKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKey.swift; sourceTree = "<group>"; };
 		B8FF0DD72960ACCE004C61B6 /* SavedWord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedWord.swift; sourceTree = "<group>"; };
+		B8FF0DDB2960B548004C61B6 /* MeaningListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeaningListItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -382,6 +384,7 @@
 			isa = PBXGroup;
 			children = (
 				B86471A928FB59F000716912 /* ListView.swift */,
+				B8FF0DDB2960B548004C61B6 /* MeaningListItemView.swift */,
 				B879E9ED28F0C7ED0094AA24 /* WordListItemView.swift */,
 			);
 			path = List;
@@ -793,6 +796,7 @@
 				B8B9B9E328EDE65F006FCA76 /* LogoView.swift in Sources */,
 				B8A1232728E971FD00ACEC45 /* LottieFile.swift in Sources */,
 				B8A1232228E9714600ACEC45 /* LottieView.swift in Sources */,
+				B8FF0DDC2960B548004C61B6 /* MeaningListItemView.swift in Sources */,
 				B8FF0DD129609DDF004C61B6 /* Migrations.swift in Sources */,
 				B8958876295790E30041A315 /* NavigationViewModel.swift in Sources */,
 				B8B9B9E728EDED53006FCA76 /* NilCoalescingPrecedence.swift in Sources */,

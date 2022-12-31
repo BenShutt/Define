@@ -80,3 +80,13 @@ public extension Word {
         meanings.flatMap { $0.definitions }.map { $0.definition }
     }
 }
+
+// MARK: - Meaning + Extensions
+
+public extension Word.Meaning {
+
+    /// Category (or type) of word
+    var category: String {
+        partOfSpeech.capitalized
+    }
+}

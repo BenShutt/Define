@@ -21,7 +21,7 @@ struct DefinitionsScreen: View {
         StickyButtonScreen(buttonText: .DefinitionsScreen.addWordButton) {
             navigation.path.append(NavigationRoute.search)
         } content: {
-            ListView(words.words) { word in
+            ListView(words.words) { _, word in
                 AppNavigationLink(value: NavigationRoute.word(word.word)) {
                     WordListItemView(word: word.word)
                 }

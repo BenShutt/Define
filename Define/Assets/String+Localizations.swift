@@ -44,6 +44,15 @@ extension String {
         }
     }
 
+    struct MeaningListItemView {
+
+        static let example = "Example:"
+
+        static func definitions(singular: Bool) -> String {
+            singular ? "Definition:" : "Definitions:"
+        }
+    }
+
     struct WordListItemView {
 
         static func nMore(_ count: Int) -> String {

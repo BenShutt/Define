@@ -25,11 +25,6 @@ struct WordScreen: Screen {
     /// `Word` to define
     var word: Word
 
-    /// Definitions for word
-    var definitions: [String] {
-        word.definitions
-    }
-
     /// Is the word currently saved
     var isWordSaved: Bool {
         words.contains(word)
@@ -38,7 +33,7 @@ struct WordScreen: Screen {
     /// `View` of the screen
     var screenBody: some View {
         Group {
-            if definitions.isEmpty {
+            if word.meanings.isEmpty {
                 SearchEmptyView(
                     lottie: .searchNoResults,
                     title: .WordScreen.Empty.title,
@@ -48,10 +43,10 @@ struct WordScreen: Screen {
                 StickyButtonScreen(buttonText: .WordScreen.saveButton) {
                     saveWord()
                 } content: {
-                    DefinitionsView(definitions: definitions)
+                    DefinitionsView(word: word)
                 }
             } else {
-                DefinitionsView(definitions: definitions)
+                DefinitionsView(word: word)
             }
         }
         .navigationTitle(word.title)
@@ -105,16 +100,20 @@ struct WordScreen: Screen {
 /// Draws a list of definitions
 struct DefinitionsView: View {
 
-    /// The definitions
-    var definitions: [String]
+    /// The word to define
+    var word: Word
 
     /// Draw `View`
     var body: some View {
-        ListView(definitions) { definition in
-            Text(definition)
-                .body()
-                .listItem()
-                .padding(.margins)
+        ListView(word.meanings) { index, meaning in
+            VStack(alignment: .leading, spacing: 0) {
+                if index > 0 {
+                    Spacer()
+                        .frame(height: .medium)
+                }
+
+                MeaningListItemView(meaning: meaning)
+            }
         }
     }
 }

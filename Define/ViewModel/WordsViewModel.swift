@@ -9,6 +9,10 @@ import SwiftUI
 import DictionaryAPI
 
 /// View model of the words database
+///
+/// - Note:
+/// The `Word` does not have an "id" field so we have to check equality via the word itself.
+/// This is a little inconvenient as a word can have multiple entities in the dictionary db.
 final class WordsViewModel: ObservableObject {
 
     /// `SavedWord` models to persist

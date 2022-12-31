@@ -14,7 +14,7 @@ struct ListView<Element, Content: View>: View {
     var elements: [Element]
 
     /// Map `Element` to `Content`
-    @ViewBuilder var content: (Element) -> Content
+    @ViewBuilder var content: (Int, Element) -> Content
 
     /// Index elements tuple
     private var indexElements: [(index: Int, element: Element)] {
@@ -29,7 +29,7 @@ struct ListView<Element, Content: View>: View {
                     Separator()
                 }
 
-                content(indexElement.element)
+                content(indexElement.index, indexElement.element)
             }
             .listRowInsets(.zero)
             .listRowSeparator(.hidden)
@@ -48,7 +48,7 @@ extension ListView {
     /// - Parameters:
     ///   - elements: `[Element]`
     ///   - content: View builder
-    init(_ elements: [Element], content: @escaping (Element) -> Content) {
+    init(_ elements: [Element], content: @escaping (Int, Element) -> Content) {
         self.init(elements: elements, content: content)
     }
 }

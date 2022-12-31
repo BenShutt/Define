@@ -29,7 +29,7 @@ struct SearchScreen: Screen {
                 LoadingView()
 
             case .list:
-                ListView(viewModel.words) { word in
+                ListView(viewModel.words) { _, word in
                     AppNavigationLink(value: NavigationRoute.word(word)) {
                         WordListItemView(word: word)
                     }

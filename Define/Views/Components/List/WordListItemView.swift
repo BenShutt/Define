@@ -16,7 +16,7 @@ struct WordListItemView: View {
 
     /// Parts of speech
     var partsOfSpeech: [String] {
-        Set(word.meanings.map { $0.partOfSpeech.capitalized }).sorted()
+        Set(word.meanings.map { $0.category }).sorted()
     }
 
     /// The first definition for preview
@@ -45,7 +45,7 @@ struct WordListItemView: View {
 
                 if nMore > 0 {
                     Text(String.WordListItemView.nMore(nMore))
-                        .body()
+                        .textStyle(.body)
                         .foregroundColor(.appBlue)
                 }
 
