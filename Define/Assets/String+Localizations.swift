@@ -13,8 +13,8 @@ extension String {
 
     struct SearchHeaderView {
 
-        static let title = "Look Up Word"
-        static let subtitle = "Defintions are provided by the Oxford Dictionaries API"
+        static let title = "Search Word"
+        static let subtitle = "Defintions are provided by the Free Dictionary API"
         static let prompt = "Enter word to search..."
     }
 

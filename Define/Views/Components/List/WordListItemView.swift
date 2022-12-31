@@ -16,7 +16,7 @@ struct WordListItemView: View {
 
     /// Parts of speech
     var partsOfSpeech: [String] {
-        word.meanings.map { $0.partOfSpeech }
+        Set(word.meanings.map { $0.partOfSpeech.capitalized }).sorted()
     }
 
     /// The first definition for preview
