@@ -12,7 +12,7 @@ import DictionaryAPI
 final class WordsViewModel: ObservableObject {
 
     /// `SavedWord` models to persist
-    @AppStorage("words") var words: [SavedWord] = []
+    @AppStorage(UserDefaultKey.words.rawValue) var words: [SavedWord] = []
 
     /// Contains `word`
     /// - Parameter word: `Word`

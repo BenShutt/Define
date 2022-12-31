@@ -17,7 +17,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: LaunchOptions? = nil
     ) -> Bool {
-        // TODO: Migrations
-        true
+        Migrations.execute()
+        return true
     }
 }

@@ -98,6 +98,9 @@
 		B8FF0DCB295F9882004C61B6 /* hello.json in Resources */ = {isa = PBXBuildFile; fileRef = B8FF0DCA295F9882004C61B6 /* hello.json */; };
 		B8FF0DCD29603C7B004C61B6 /* Completion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FF0DCC29603C7B004C61B6 /* Completion.swift */; };
 		B8FF0DCF29603EE0004C61B6 /* Result+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FF0DCE29603EE0004C61B6 /* Result+Extensions.swift */; };
+		B8FF0DD129609DDF004C61B6 /* Migrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FF0DD029609DDF004C61B6 /* Migrations.swift */; };
+		B8FF0DD329609E3E004C61B6 /* Bundle+Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FF0DD229609E3E004C61B6 /* Bundle+Key.swift */; };
+		B8FF0DD529609EF3004C61B6 /* UserDefaultKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FF0DD429609EF3004C61B6 /* UserDefaultKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -213,6 +216,9 @@
 		B8FF0DCA295F9882004C61B6 /* hello.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hello.json; sourceTree = "<group>"; };
 		B8FF0DCC29603C7B004C61B6 /* Completion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Completion.swift; sourceTree = "<group>"; };
 		B8FF0DCE29603EE0004C61B6 /* Result+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+Extensions.swift"; sourceTree = "<group>"; };
+		B8FF0DD029609DDF004C61B6 /* Migrations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Migrations.swift; sourceTree = "<group>"; };
+		B8FF0DD229609E3E004C61B6 /* Bundle+Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Key.swift"; sourceTree = "<group>"; };
+		B8FF0DD429609EF3004C61B6 /* UserDefaultKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -333,6 +339,7 @@
 				B89F179528E0F38200A96E35 /* Combine */,
 				B8C894EB28D905EE00975E25 /* SwiftUI */,
 				B889DEBD2957ACF50020E9C9 /* Array+RawRepresentable.swift */,
+				B8FF0DD229609E3E004C61B6 /* Bundle+Key.swift */,
 				B8B9B9E628EDED53006FCA76 /* NilCoalescingPrecedence.swift */,
 				B8A1E0AE295A3B4400D0FEF9 /* NumberFormatter+Extensions.swift */,
 				B89F17A328E0FC9A00A96E35 /* OSLog+Extensions.swift */,
@@ -481,6 +488,8 @@
 				B89F17A028E0FB8800A96E35 /* Logger */,
 				B8FF0DCC29603C7B004C61B6 /* Completion.swift */,
 				B8E28DC728EA0C37009BE8A2 /* Debug.swift */,
+				B8FF0DD029609DDF004C61B6 /* Migrations.swift */,
+				B8FF0DD429609EF3004C61B6 /* UserDefaultKey.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -746,6 +755,7 @@
 				B8BEC3CE2955D8FD00946196 /* AppNavigationLink.swift in Sources */,
 				B889DEBE2957ACF50020E9C9 /* Array+RawRepresentable.swift in Sources */,
 				B8B9B9DA28EC6210006FCA76 /* BlurView.swift in Sources */,
+				B8FF0DD329609E3E004C61B6 /* Bundle+Key.swift in Sources */,
 				B8BBA16228E8EDF100222116 /* ButtonView.swift in Sources */,
 				B82A76C528DFAA7200DABFBE /* CapsuleBorder.swift in Sources */,
 				B8E49C0B28DF985500F9CAC4 /* CGFloat+Values.swift in Sources */,
@@ -775,6 +785,7 @@
 				B8B9B9E328EDE65F006FCA76 /* LogoView.swift in Sources */,
 				B8A1232728E971FD00ACEC45 /* LottieFile.swift in Sources */,
 				B8A1232228E9714600ACEC45 /* LottieView.swift in Sources */,
+				B8FF0DD129609DDF004C61B6 /* Migrations.swift in Sources */,
 				B8958876295790E30041A315 /* NavigationViewModel.swift in Sources */,
 				B8B9B9E728EDED53006FCA76 /* NilCoalescingPrecedence.swift in Sources */,
 				B8A1E0AF295A3B4400D0FEF9 /* NumberFormatter+Extensions.swift in Sources */,
@@ -795,6 +806,7 @@
 				B8E49C0D28DF99EA00F9CAC4 /* String+Localizations.swift in Sources */,
 				B879E9E928F0C5190094AA24 /* TagView.swift in Sources */,
 				B8D2A74628DF3AFE0096A020 /* TextStyle.swift in Sources */,
+				B8FF0DD529609EF3004C61B6 /* UserDefaultKey.swift in Sources */,
 				B8B563E728EFFEC3004B80F0 /* View+Extensions.swift in Sources */,
 				B8E49C1128DFA60000F9CAC4 /* View+If.swift in Sources */,
 				B894FA1C28FC69FA00BC0BFA /* Word+Preview.swift in Sources */,
