@@ -44,6 +44,13 @@ extension String {
         }
     }
 
+    struct WordListItemView {
+
+        static func nMore(_ count: Int) -> String {
+            "+\(count) more"
+        }
+    }
+
     struct WordScreen {
 
         static let saveButton = "SAVE WORD"

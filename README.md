@@ -1,7 +1,12 @@
 # Define
 
 An iOS app used to search for the definitions of words and save them for later.
-It may be used while, say, reading to learn/remember new words. 
+It may be used while, say, reading to learn/remember new words.
+
+Example searching with language "en" for the word "define":
+```txt
+https://api.dictionaryapi.dev/api/v2/entries/en/define
+```
 
 ## Dictionary API
 

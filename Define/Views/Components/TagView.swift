@@ -13,13 +13,19 @@ struct TagView: View {
     /// `String` text
     var text: String
 
+    /// `Color` of the foreground
+    var foregroundColor: Color = .appBlack
+
+    /// `Color` of the background
+    var backgroundColor: Color = .appLightGray
+
     /// Draw `View`
     var body: some View {
         Text(text)
             .textStyle(.tag)
-            .foregroundColor(Color.appBlack)
+            .foregroundColor(foregroundColor)
             .padding(.smallMedium)
-            .background(Color.appLightOrange)
+            .background(backgroundColor)
             .clipShape(Capsule())
     }
 }
