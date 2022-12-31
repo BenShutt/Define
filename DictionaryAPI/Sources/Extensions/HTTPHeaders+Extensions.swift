@@ -1,6 +1,6 @@
 //
 //  HTTPHeaders+Extensions.swift
-//  Define
+//  DictionaryAPI
 //
 //  Created by Ben Shutt on 17/12/2022.
 //

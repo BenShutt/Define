@@ -1,6 +1,6 @@
 //
 //  Loggable.swift
-//  Define
+//  DictionaryAPI
 //
 //  Created by Ben Shutt on 25/09/2022.
 //
@@ -9,7 +9,7 @@ import Foundation
 import os
 
 /// Wrapper of an `OSLog` instance
-protocol Loggable {
+public protocol Loggable {
 
     /// `OSLog`
     var logger: OSLog { get }
@@ -17,7 +17,7 @@ protocol Loggable {
 
 // MARK: - Extensions
 
-extension Loggable {
+public extension Loggable {
 
     /// Log `message` of `type`
     ///

@@ -1,6 +1,6 @@
 //
 //  JSONDecoder+Extensions.swift
-//  Define
+//  DictionaryAPI
 //
 //  Created by Ben Shutt on 18/09/2022.
 //
@@ -12,12 +12,6 @@ extension JSONDecoder {
     static var `default`: JSONDecoder {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
-        return decoder
-    }
-
-    static var snakeCase: JSONDecoder {
-        let decoder = JSONDecoder.default
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
         return decoder
     }
 }

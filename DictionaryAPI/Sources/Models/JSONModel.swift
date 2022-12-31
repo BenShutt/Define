@@ -1,6 +1,6 @@
 //
 //  JSONModel.swift
-//  Define
+//  DictionaryAPI
 //
 //  Created by Ben Shutt on 18/09/2022.
 //
@@ -8,11 +8,11 @@
 import Foundation
 
 /// A `Codable` which can be represented as a JSON `String`
-protocol JSONModel: Codable, Equatable, Hashable, CustomStringConvertible {}
+public protocol JSONModel: Codable, Equatable, Hashable, CustomStringConvertible {}
 
 // MARK: - Extensions
 
-extension JSONModel {
+public extension JSONModel {
 
     /// Encode (pretty printed) JSON data as a `String`
     func jsonString() throws -> String {

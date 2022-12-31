@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import DictionaryAPI
 
 /// View model of the words database
 final class WordsViewModel: ObservableObject {

@@ -1,6 +1,7 @@
 excluded:
   - Carthage
   - Pods
+  - DictionaryAPI/.build
 disabled_rules:
   - file_header
   - identifier_name

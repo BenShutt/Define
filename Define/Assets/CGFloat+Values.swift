@@ -58,6 +58,7 @@ extension CGFloat {
     // MARK: - Launch
 
     struct Launch {
+
         static let containerSize: CGFloat = 200
         static let padding: CGFloat = 40
     }

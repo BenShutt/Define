@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import DictionaryAPI
 
 /// `ListItemView` for a `Word`
 struct WordListItemView: View {
@@ -13,41 +14,20 @@ struct WordListItemView: View {
     /// `Word`
     var word: Word
 
-    /// Score as a string
-    var score: String {
-        let formatter = NumberFormatter()
-        formatter.minimumFractionDigits = 0
-        formatter.maximumFractionDigits = 3
-        return formatter.numberString(from: word.score)
-    }
-
-    /// Text of score label
-    var scoreText: String {
-        .WordListItemView.score(score)
-    }
-
-    /// Text of match-type label
-    var matchTypeText: String {
-        .WordListItemView.matchType(word.matchType.capitalized)
-    }
-
     /// Draw `View`
     var body: some View {
         HStack(spacing: .medium) {
             VStack(alignment: .leading, spacing: 0) {
-                Text(word.title)
+                Text(word.word)
                     .h2()
 
-                Spacer()
-                    .frame(height: .small)
+                if let origin = word.origin {
+                    Spacer()
+                        .frame(height: .small)
 
-                Text(matchTypeText)
-                    .body()
-
-                Spacer()
-                    .frame(height: .medium)
-
-                TagView(text: scoreText)
+                    Text(origin)
+                        .body()
+                }
             }
             .listItem()
 

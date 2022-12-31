@@ -7,6 +7,8 @@
 
 import Combine
 import SwiftUI
+import DictionaryAPI
+import Alamofire
 
 /// View model wrapper of the `SearchAPI`
 final class SearchViewModel: ObservableObject {
@@ -46,7 +48,7 @@ final class SearchViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
 
     /// Result when there is no text to search
-    private static var emptyTextResult: ModelResult<Words> {
+    private static var emptyTextResult: ModelResult<[Word]> {
         .failure(SearchViewModelError.emptyText)
     }
 
@@ -84,20 +86,20 @@ final class SearchViewModel: ObservableObject {
     ///
     /// - Parameter word: `String`
     private func lookUp(word: String) {
-        SearchAPI(word: word).request { [weak self] result in
+        Completion.run(operation: {
+            try await EntriesAPI.request(word: word)
+        }, completion: { [weak self] result in
             guard word == self?.searchText else { return } // Outdated
             self?.isLoading = false
-            self?.result = result.modelResult()
-        }
+            self?.result = result
+        })
     }
 
     // MARK: - State
 
     /// `[Word]` returned from the API
     var words: [Word] {
-        (result.success?.results ?? [])
-            .filter { $0.score >= Self.scoreMin }
-            .sorted(by: >)
+        (result.success ?? []).sorted(by: <)
     }
 
     /// Get `State`

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import DictionaryAPI
 
 /// A nvaigatiion destination
 enum NavigationRoute: Hashable {

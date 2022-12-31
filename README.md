@@ -1,23 +1,18 @@
-This project is very much a WIP at this stage.
-
 # Define
 
-A simple iOS app that looks up the definitions of words and saves them for later.
-It can be used while, say, reading to learn about words that you may not have come across before.
+An iOS app used to search for the definitions of words and save them for later.
+It may be used while, say, reading to learn/remember new words. 
 
-## API
-The API that provides the definiton of words is the [Oxford Languages API](https://developer.oxforddictionaries.com/).
+## Dictionary API
 
-### API Key
-As the API key is private, a `dictionary-api-key.json` JSON file should be created in the project directory.
-I.e. the directory containing the `.xcodeproj` file.
+The API that provides the definitons of words is the (free) [Dictionary API](https://dictionaryapi.dev/).
 
-The JSON should be of the form:
-```json
-{
-    "app_id": "<your-app-id>",
-    "app_key": "<your-app-key>"
-}
-```
-This file is not checked in to Git.
-For now, this project should be run on a simulator.
+## Oxford Dictionary API
+
+The project previously used the [Oxford Languages API](https://developer.oxforddictionaries.com/).
+It was removed due to usage limitations. 
+Also, an API key and thus `dictionary-api-key.json` JSON file is no longer needed which simplifies things.
+
+## References 
+
+* [Dictionary API Github Repository](https://github.com/meetDeveloper/freeDictionaryAPI).

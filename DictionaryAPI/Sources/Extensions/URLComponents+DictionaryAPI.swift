@@ -1,6 +1,6 @@
 //
 //  URLComponents+DictionaryAPI.swift
-//  Define
+//  DictionaryAPI
 //
 //  Created by Ben Shutt on 18/09/2022.
 //
@@ -20,9 +20,9 @@ extension URLComponents {
     ) -> URLComponents {
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
-        urlComponents.host = "od-api.oxforddictionaries.com"
+        urlComponents.host = "api.dictionaryapi.dev"
         urlComponents.path = "/api/v2/\(endpoint)"
-        urlComponents.queryItems = queryItems
+        urlComponents.queryItems = queryItems.isEmpty ? nil : queryItems
         return urlComponents
     }
 }

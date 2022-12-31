@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import HTTPRequest
 
 /// Implementation of `UIApplicationDelegate`
 class AppDelegate: NSObject, UIApplicationDelegate {
@@ -18,11 +17,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: LaunchOptions? = nil
     ) -> Bool {
-        // Enable logging for debug
-        HTTPRequest.Configuration.shared.logging = Debug.isDebugging
-
-        // Check that the API key can be loaded from the filesystem or log an error
-        DictionaryAPIKey.checkKey()
-        return true
+        // TODO: Migrations
+        true
     }
 }

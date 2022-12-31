@@ -55,15 +55,6 @@ extension String {
             }
         }
 
-        struct Error {
-
-            static let title = "Error"
-
-            static func subtitle(word: String) -> String {
-                "Failed to load words for: '\(word)'"
-            }
-        }
-
         struct DeleteAlert {
 
             static let title = "Delete Word"
@@ -72,17 +63,6 @@ extension String {
             static func subtitle(word: String) -> String {
                 "Are you sure you want to delete the word: '\(word)'"
             }
-        }
-    }
-
-    struct WordListItemView {
-
-        static func matchType(_ matchType: String) -> String {
-            "Match Type: \(matchType)"
-        }
-
-        static func score(_ score: String) -> String {
-            "Score: \(score)"
         }
     }
 

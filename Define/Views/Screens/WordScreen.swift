@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import DictionaryAPI
 
 /// `View` to input a word to search for definitions
 struct WordScreen: Screen {
@@ -16,23 +17,15 @@ struct WordScreen: Screen {
     /// `WordsViewModel`
     @EnvironmentObject var words: WordsViewModel
 
-    /// Result of the `EntriesAPI`
-    @State private var entriesResult: ModelResult<Entries>?
-
     /// Is presenting alert to delete word
     @State private var showingDeleteWordAlert = false
 
     /// `Word` to define
     var word: Word
 
-    /// Loading while the `entriesResult` is `nil`
-    var isLoading: Bool {
-        entriesResult == nil
-    }
-
-    /// `Entries` for `word` returned from the API
+    /// Definitions for word
     var definitions: [String] {
-        entriesResult?.success?.definitions ?? []
+        word.definitions
     }
 
     /// Delete word message
@@ -40,17 +33,17 @@ struct WordScreen: Screen {
         .WordScreen.DeleteAlert.subtitle(word: word.word)
     }
 
+    /// Is the word currently saved
+    var isWordSaved: Bool {
+        words.contains(word)
+    }
+
     /// `View` of the screen
     var screenBody: some View {
         Group {
-            if isLoading {
-                LoadingView()
-            } else if definitions.isEmpty {
-                NoDefinitionsView(
-                    word: word.word,
-                    isAPIError: entriesResult?.failure != nil
-                )
-            } else if !words.contains(word) {
+            if definitions.isEmpty {
+                NoDefinitionsView(word: word.word)
+            } else if !isWordSaved {
                 StickyButtonScreen(buttonText: .WordScreen.saveButton) {
                     saveWord()
                 } content: {
@@ -60,17 +53,14 @@ struct WordScreen: Screen {
                 DefinitionsView(word: word, definitions: definitions)
             }
         }
-        .onAppear {
-            EntriesAPI(wordId: word.id).request { result in
-                entriesResult = result.modelResult()
-            }
-        }
         .toolbar {
-            Button(action: {
-                showingDeleteWordAlert = true
-            }, label: {
-                Image(systemName: "trash")
-            })
+            if isWordSaved {
+                Button(action: {
+                    showingDeleteWordAlert = true
+                }, label: {
+                    Image(systemName: "trash")
+                })
+            }
         }
         .alert(
             Text(String.WordScreen.DeleteAlert.title),
@@ -121,7 +111,7 @@ struct DefinitionsView: View {
     /// Draw `View`
     var body: some View {
         VStack(spacing: 0) {
-            Text(word.title)
+            Text(word.word)
                 .h1()
 
             ListView(definitions) { definition in
@@ -142,19 +132,14 @@ private struct NoDefinitionsView: View {
     /// Word that was searched
     var word: String
 
-    /// Was there an API error
-    var isAPIError: Bool
-
     /// Title text
     var title: String {
-        isAPIError ? .WordScreen.Error.title : .WordScreen.Empty.title
+        .WordScreen.Empty.title
     }
 
     /// Subtitle text
     var subtitle: String {
-        isAPIError ?
-            .WordScreen.Error.subtitle(word: word) :
-                .WordScreen.Empty.subtitle(word: word)
+        .WordScreen.Empty.subtitle(word: word)
     }
 
     /// Make a `SearchEmptyView`
