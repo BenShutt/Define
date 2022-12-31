@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Word: JSONModel, Identifiable {
+public struct Word: JSONModel {
 
     public var word: String
     public var phonetic: String?
@@ -16,10 +16,6 @@ public struct Word: JSONModel, Identifiable {
     public var meanings: [Meaning]
     public var license: License?
     // sourceUrls: [URL]?
-
-    public var id: String {
-        word // TODO: Duplicate words?
-    }
 }
 
 // MARK: - Word.Phonetic

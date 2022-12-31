@@ -18,7 +18,7 @@ final class WordsViewModel: ObservableObject {
     /// - Parameter word: `Word`
     /// - Returns: `Bool`
     func contains(_ word: Word) -> Bool {
-        words.contains { $0.word.id == word.id }
+        words.contains { $0.word.word == word.word }
     }
 
     /// Save the given `word`
@@ -32,7 +32,7 @@ final class WordsViewModel: ObservableObject {
     @discardableResult
     func deleteWord(_ word: Word) -> Bool {
         guard contains(word) else { return false }
-        words.removeAll { $0.word.id == word.id }
+        words.removeAll { $0.word.word == word.word }
         return true
     }
 }
