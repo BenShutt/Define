@@ -68,7 +68,6 @@
 		B8A1235428E97D1A00ACEC45 /* WorkSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8A1234228E97D1A00ACEC45 /* WorkSans-SemiBold.ttf */; };
 		B8A1235A28E97EF300ACEC45 /* WorkSans.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A1235928E97EF300ACEC45 /* WorkSans.swift */; };
 		B8A1235D28E97FB000ACEC45 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A1235C28E97FB000ACEC45 /* CustomFont.swift */; };
-		B8A1E0AF295A3B4400D0FEF9 /* NumberFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A1E0AE295A3B4400D0FEF9 /* NumberFormatter+Extensions.swift */; };
 		B8B563E728EFFEC3004B80F0 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B563E628EFFEC3004B80F0 /* View+Extensions.swift */; };
 		B8B563E928F00096004B80F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8B563E828F00096004B80F0 /* LaunchScreen.storyboard */; };
 		B8B563EB28F00391004B80F0 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B563EA28F00391004B80F0 /* LaunchScreen.swift */; };
@@ -89,7 +88,6 @@
 		B8D2A73E28DEEFE70096A020 /* Color+Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2A73D28DEEFE70096A020 /* Color+Values.swift */; };
 		B8D2A74228DF3A250096A020 /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2A74128DF3A250096A020 /* InputTextField.swift */; };
 		B8D2A74628DF3AFE0096A020 /* TextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2A74528DF3AFE0096A020 /* TextStyle.swift */; };
-		B8E28DC828EA0C37009BE8A2 /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E28DC728EA0C37009BE8A2 /* Debug.swift */; };
 		B8E28DCA28EA0F93009BE8A2 /* Image+Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E28DC928EA0F93009BE8A2 /* Image+Values.swift */; };
 		B8E49C0928DF917E00F9CAC4 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E49C0828DF917E00F9CAC4 /* LoadingView.swift */; };
 		B8E49C0B28DF985500F9CAC4 /* CGFloat+Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E49C0A28DF985500F9CAC4 /* CGFloat+Values.swift */; };
@@ -190,7 +188,6 @@
 		B8A1235928E97EF300ACEC45 /* WorkSans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSans.swift; sourceTree = "<group>"; };
 		B8A1235C28E97FB000ACEC45 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
 		B8A1235E28E9829B00ACEC45 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B8A1E0AE295A3B4400D0FEF9 /* NumberFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Extensions.swift"; sourceTree = "<group>"; };
 		B8B563E628EFFEC3004B80F0 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		B8B563E828F00096004B80F0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B8B563EA28F00391004B80F0 /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
@@ -210,7 +207,6 @@
 		B8D2A73D28DEEFE70096A020 /* Color+Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Values.swift"; sourceTree = "<group>"; };
 		B8D2A74128DF3A250096A020 /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
 		B8D2A74528DF3AFE0096A020 /* TextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyle.swift; sourceTree = "<group>"; };
-		B8E28DC728EA0C37009BE8A2 /* Debug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
 		B8E28DC928EA0F93009BE8A2 /* Image+Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Values.swift"; sourceTree = "<group>"; };
 		B8E49C0828DF917E00F9CAC4 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		B8E49C0A28DF985500F9CAC4 /* CGFloat+Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Values.swift"; sourceTree = "<group>"; };
@@ -350,7 +346,6 @@
 				B889DEBD2957ACF50020E9C9 /* Array+RawRepresentable.swift */,
 				B8FF0DD229609E3E004C61B6 /* Bundle+Key.swift */,
 				B8B9B9E628EDED53006FCA76 /* NilCoalescingPrecedence.swift */,
-				B8A1E0AE295A3B4400D0FEF9 /* NumberFormatter+Extensions.swift */,
 				B8FF0DCE29603EE0004C61B6 /* Result+Extensions.swift */,
 			);
 			path = Extensions;
@@ -488,7 +483,6 @@
 			isa = PBXGroup;
 			children = (
 				B8FF0DCC29603C7B004C61B6 /* Completion.swift */,
-				B8E28DC728EA0C37009BE8A2 /* Debug.swift */,
 				B8FF0DD029609DDF004C61B6 /* Migrations.swift */,
 				B8FF0DD429609EF3004C61B6 /* UserDefaultKey.swift */,
 			);
@@ -778,7 +772,6 @@
 				B84AD60C28FB01AF00C2D5AE /* ContentView.swift in Sources */,
 				B813BFFF28EB7BE6000C766C /* CrossIconView.swift in Sources */,
 				B8A1235D28E97FB000ACEC45 /* CustomFont.swift in Sources */,
-				B8E28DC828EA0C37009BE8A2 /* Debug.swift in Sources */,
 				B80399DD28D79A37008CE7B4 /* DefineApp.swift in Sources */,
 				B895887429578BFB0041A315 /* DefinitionsScreen.swift in Sources */,
 				B88491A22961FFB5009F6469 /* DefinitionView.swift in Sources */,
@@ -802,7 +795,6 @@
 				B8FF0DD129609DDF004C61B6 /* Migrations.swift in Sources */,
 				B8958876295790E30041A315 /* NavigationViewModel.swift in Sources */,
 				B8B9B9E728EDED53006FCA76 /* NilCoalescingPrecedence.swift in Sources */,
-				B8A1E0AF295A3B4400D0FEF9 /* NumberFormatter+Extensions.swift in Sources */,
 				B88491A02961FBAF009F6469 /* NumberView.swift in Sources */,
 				B89F179728E0F38D00A96E35 /* Publisher+Extensions.swift in Sources */,
 				B8FF0DCF29603EE0004C61B6 /* Result+Extensions.swift in Sources */,

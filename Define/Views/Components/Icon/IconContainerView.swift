@@ -24,8 +24,7 @@ struct IconContainerView<Body: View>: View {
     var edge: Edge
 
     /// Make content view
-    @ViewBuilder
-    var contentView: Body
+    @ViewBuilder var contentView: Body
 
     /// Leading padding
     var leadingPadding: CGFloat {

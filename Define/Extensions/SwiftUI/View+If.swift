@@ -15,8 +15,10 @@ extension View {
     ///   - condition: Condtion of the `if` statement
     ///   - transform: Mapping of `self` to some `View`
     /// - Returns: `View`
-    @ViewBuilder
-    func `if`<Transform: View>(_ condition: Bool, transform: (Self) -> Transform) -> some View {
+    @ViewBuilder func `if`<Transform: View>(
+        _ condition: Bool,
+        transform: (Self) -> Transform
+    ) -> some View {
         if condition {
             transform(self)
         } else {

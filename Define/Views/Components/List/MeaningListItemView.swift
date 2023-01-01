@@ -19,14 +19,7 @@ struct MeaningListItemView: View {
 
     /// Title of the definitions label
     private var definitionsTitle: String {
-        .MeaningListItemView.definitions(
-            count: meaning.definitions.count
-        )
-    }
-
-    /// Get the definitions
-    private var definitions: [Word.Meaning.Definition] {
-        meaning.definitions
+        .MeaningListItemView.definitions(count: meaning.definitions.count)
     }
 
     /// Draw `View`
@@ -46,10 +39,9 @@ struct MeaningListItemView: View {
             ForEach(meaning.definitions.zipped, id: \.index) { index, definition in
                 VStack(alignment: .leading, spacing: 0) {
                     if index > 0 {
-                        VSpacer(height: .medium)
                         Separator()
                             .opacity(0.5)
-                        VSpacer(height: .medium)
+                            .padding(.vertical, .medium)
                     }
 
                     DefinitionView(definition: definition)
