@@ -8,8 +8,6 @@
 import SwiftUI
 import DictionaryAPI
 
-// TODO: Remove cache, search each time
-
 /// `View` to input a word to search for definitions
 struct WordScreen: Screen {
 
