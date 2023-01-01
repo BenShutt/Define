@@ -36,15 +36,13 @@ struct SearchEmptyView: View {
             )
             .frame(width: 300, height: 100)
 
-            Spacer()
-                .frame(height: .large)
+            VSpacer(height: .large)
 
             Text(title)
                 .h1()
                 .multilineTextAlignment(.center)
 
-            Spacer()
-                .frame(height: .medium)
+            VSpacer(height: .medium)
 
             Text(subtitle)
                 .body()

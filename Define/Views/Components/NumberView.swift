@@ -38,10 +38,9 @@ struct NumberView_Previews: PreviewProvider {
             NumberView(number: 1)
             NumberView(number: 12)
             NumberView(number: 123)
-            NumberView(number: 1_234)
+            NumberView(number: 1234)
             NumberView(number: 12_345)
             NumberView(number: 123_456)
         }
-
     }
 }

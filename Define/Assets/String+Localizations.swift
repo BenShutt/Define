@@ -44,12 +44,17 @@ extension String {
         }
     }
 
+    struct DefinitionView {
+
+        static func example(_ example: String) -> String {
+            "Example: \(example)"
+        }
+    }
+
     struct MeaningListItemView {
 
-        static let example = "Example:"
-
-        static func definitions(singular: Bool) -> String {
-            singular ? "Definition:" : "Definitions:"
+        static func definitions(count: Int) -> String {
+            count == 1 ? "Definition" : "\(count) Definitions"
         }
     }
 

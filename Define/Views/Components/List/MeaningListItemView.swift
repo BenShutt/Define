@@ -11,37 +11,52 @@ import DictionaryAPI
 /// `ListItemView` for a `Meaning`
 struct MeaningListItemView: View {
 
+    /// Index of `Meaning` in `Word`
+    var number: Int
+
     /// `Meaning`
     var meaning: Word.Meaning
 
     /// Title of the definitions label
     private var definitionsTitle: String {
-        let isSingular = meaning.definitions.count == 1
-        return .MeaningListItemView.definitions(singular: isSingular)
+        .MeaningListItemView.definitions(
+            count: meaning.definitions.count
+        )
+    }
+
+    /// Get the definitions
+    private var definitions: [Word.Meaning.Definition] {
+        meaning.definitions
     }
 
     /// Draw `View`
     var body: some View {
-        VStack(alignment: .leading, spacing: .medium) {
-            Text(definitionsTitle)
-                .tag()
+        VStack(alignment: .leading, spacing: 0) {
+            HStack(alignment: .center, spacing: .large) {
+                Text(definitionsTitle)
+                    .h3()
 
-            ForEach(values: meaning.definitions) { definition in
-                VStack(alignment: .leading, spacing: .small) {
-                    Text(definition.definition)
-                        .body()
+                Spacer()
 
-                    if let example = definition.example, !example.isEmpty {
-                        Text(String.MeaningListItemView.example)
-                            .tag()
+                NumberView(number: number)
+            }
 
-                        Text(example)
-                            .textStyle(.tag)
-                            .foregroundColor(.appDarkGray)
+            VSpacer(height: .medium)
+
+            ForEach(meaning.definitions.zipped, id: \.index) { index, definition in
+                VStack(alignment: .leading, spacing: 0) {
+                    if index > 0 {
+                        VSpacer(height: .medium)
+                        Separator()
+                            .opacity(0.5)
+                        VSpacer(height: .medium)
                     }
+
+                    DefinitionView(definition: definition)
                 }
             }
 
+            VSpacer(height: .mediumLarge)
             TagView(text: meaning.category)
         }
         .listItem()
@@ -56,7 +71,7 @@ struct MeaningListItemView_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
             if let meaning = Word.preview.meanings.first {
-                MeaningListItemView(meaning: meaning)
+                MeaningListItemView(number: 1, meaning: meaning)
             }
         }
     }

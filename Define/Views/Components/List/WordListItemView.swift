@@ -49,8 +49,7 @@ struct WordListItemView: View {
                         .foregroundColor(.appBlue)
                 }
 
-                Spacer()
-                    .frame(height: .small)
+                VSpacer(height: .small)
 
                 if !partsOfSpeech.isEmpty {
                     HStack(spacing: .small) {

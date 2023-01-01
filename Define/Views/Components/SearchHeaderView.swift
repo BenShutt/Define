@@ -35,14 +35,12 @@ struct SearchHeaderView: View {
                 Text(String.SearchHeaderView.title)
                     .h1()
 
-                Spacer()
-                    .frame(height: .medium)
+                VSpacer(height: .medium)
 
                 Text(String.SearchHeaderView.subtitle)
                     .body()
 
-                Spacer()
-                    .frame(height: .extraLarge)
+                VSpacer(height: .extraLarge)
             }
 
             InputTextField(

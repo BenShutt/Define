@@ -16,14 +16,9 @@ struct ListView<Element, Content: View>: View {
     /// Map `Element` to `Content`
     @ViewBuilder var content: (Int, Element) -> Content
 
-    /// Index elements tuple
-    private var indexElements: [(index: Int, element: Element)] {
-        Array(zip(elements.indices, elements))
-    }
-
     /// Make `List` of `Element`s
     var body: some View {
-        List(indexElements, id: \.0) { indexElement in
+        List(elements.zipped, id: \.0) { indexElement in
             VStack(spacing: 0) {
                 if indexElement.index > 0 {
                     Separator()

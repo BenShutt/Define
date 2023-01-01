@@ -14,7 +14,7 @@ struct TagView: View {
     var text: String
 
     /// `Color` of the foreground
-    var foregroundColor: Color = .appBlack
+    var foregroundColor: Color = .appDarkGray
 
     /// `Color` of the background
     var backgroundColor: Color = .appLightGray

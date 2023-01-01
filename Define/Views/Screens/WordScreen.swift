@@ -107,12 +107,7 @@ struct DefinitionsView: View {
     var body: some View {
         ListView(word.meanings) { index, meaning in
             VStack(alignment: .leading, spacing: 0) {
-                if index > 0 {
-                    Spacer()
-                        .frame(height: .medium)
-                }
-
-                MeaningListItemView(meaning: meaning)
+                MeaningListItemView(number: index + 1, meaning: meaning)
             }
         }
     }

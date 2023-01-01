@@ -11,9 +11,11 @@ import SwiftUI
 enum TextStyle: String, CaseIterable, Hashable, Identifiable {
     case h1
     case h2
+    case h3
     case body
     case button
     case tag
+    case caption
 
     /// Identifier
     var id: Self { self }
@@ -23,9 +25,11 @@ enum TextStyle: String, CaseIterable, Hashable, Identifiable {
         switch self {
         case .h1: return 32
         case .h2: return 20
+        case .h3: return 16
         case .body: return 16
         case .button: return 16
         case .tag: return 12
+        case .caption: return 12
         }
     }
 
@@ -34,9 +38,11 @@ enum TextStyle: String, CaseIterable, Hashable, Identifiable {
         switch self {
         case .h1: return .bold
         case .h2: return .bold
+        case .h3: return .bold
         case .body: return .regular
         case .button: return .semiBold
         case .tag: return .semiBold
+        case .caption: return .light
         }
     }
 }
@@ -65,6 +71,12 @@ extension View {
             .foregroundColor(.appBlack)
     }
 
+    /// Standard `.h3` implementation
+    func h3() -> some View {
+        textStyle(.h3)
+            .foregroundColor(.appBlack)
+    }
+
     /// Standard `.body` implementation
     func body() -> some View {
         textStyle(.body)
@@ -75,6 +87,13 @@ extension View {
     func tag() -> some View {
         textStyle(.tag)
             .foregroundColor(Color.appDarkGray)
+    }
+
+    /// Standard `.caption` implementation
+    func caption() -> some View {
+        textStyle(.caption)
+            .foregroundColor(Color.appDarkGray)
+            .italic()
     }
 }
 

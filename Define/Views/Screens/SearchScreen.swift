@@ -20,8 +20,7 @@ struct SearchScreen: Screen {
                 .zIndex(1)
 
             if viewModel.state != .list {
-                Spacer()
-                    .frame(height: .large)
+                VSpacer(height: .large)
             }
 
             switch viewModel.state {
