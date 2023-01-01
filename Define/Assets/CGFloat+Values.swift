@@ -29,6 +29,9 @@ extension CGFloat {
 
     // MARK: - Size
 
+    /// 2pts
+    static let extraSmall: CGFloat = 2
+
     /// 5pts
     static let small: CGFloat = 5
 
