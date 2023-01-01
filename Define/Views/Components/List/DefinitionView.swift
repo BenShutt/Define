@@ -14,17 +14,12 @@ struct DefinitionView: View {
     /// Definition of a word
     var definition: Word.Meaning.Definition
 
-    /// Example
-    var example: String? {
-        definition.example?.trimmed.nilIfEmpty?.capitalized
-    }
-
     var body: some View {
         VStack(alignment: .leading, spacing: .small) {
-            Text(definition.definition.capitalized)
+            Text(definition.title)
                 .body()
 
-            if let example {
+            if let example = definition.exampleTitle {
                 Text(String.DefinitionView.example(example))
                     .caption()
             }

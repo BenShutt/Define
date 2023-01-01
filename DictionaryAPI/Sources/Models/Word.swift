@@ -81,12 +81,27 @@ public extension Word {
     }
 }
 
-// MARK: - Meaning + Extensions
+// MARK: - Word.Meaning + Extensions
 
 public extension Word.Meaning {
 
     /// Category (or type) of word
     var category: String {
         partOfSpeech.capitalized
+    }
+}
+
+// MARK: - Word.Meaning.Definition + Extensions
+
+public extension Word.Meaning.Definition {
+
+    /// Capitalized definition
+    var title: String {
+        definition.capitalized
+    }
+
+    /// Title of example
+    var exampleTitle: String? {
+        example?.trimmed.nilIfEmpty?.capitalized
     }
 }
