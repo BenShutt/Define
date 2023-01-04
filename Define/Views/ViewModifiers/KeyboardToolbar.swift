@@ -22,7 +22,8 @@ struct KeyboardToolbar: ViewModifier {
     /// - Returns: `View`
     func body(content: Content) -> some View {
         content.toolbar {
-            ToolbarItem(placement: .keyboard) {
+            ToolbarItemGroup(placement: .keyboard) {
+                Spacer()
                 Button(String.Misc.dismiss) {
                     isFocused.wrappedValue = false
                 }
