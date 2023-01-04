@@ -9,7 +9,7 @@ import Foundation
 import DictionaryAPI
 
 /// A saved word
-struct SavedWord: JSONModel, Identifiable {
+struct SavedWord: JSONModel, Identifiable, Comparable {
 
     /// `UUID`
     var id = UUID()
@@ -19,4 +19,10 @@ struct SavedWord: JSONModel, Identifiable {
 
     /// `Date`
     var savedDate = Date()
+
+    // MARK: - Comparable
+
+    static func < (lhs: SavedWord, rhs: SavedWord) -> Bool {
+        lhs.savedDate < rhs.savedDate
+    }
 }

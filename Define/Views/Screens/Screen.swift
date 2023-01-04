@@ -13,6 +13,9 @@ protocol Screen: View {
     /// Some `View`
     associatedtype ScreenBody: View
 
+    /// Get the `NavigationBarStyle`
+    var navigationBarStyle: NavigationBarStyle { get }
+
     /// The screens implementation of `body`
     @ViewBuilder var screenBody: ScreenBody { get }
 }
@@ -21,6 +24,11 @@ protocol Screen: View {
 
 extension Screen {
 
+    /// By default, return `.automatic`
+    var navigationBarStyle: NavigationBarStyle {
+        .white
+    }
+
     /// The `View` of the screen
     var body: some View {
         ZStack {
@@ -28,5 +36,8 @@ extension Screen {
                 .ignoresSafeArea()
             screenBody
         }
+        .toolbarBackground(navigationBarStyle.backgroundColor, for: .navigationBar)
+        .toolbarBackground(navigationBarStyle.backgroundVisibility, for: .navigationBar)
+        .navigationBarTitleDisplayMode(navigationBarStyle.titleDisplayMode)
     }
 }
