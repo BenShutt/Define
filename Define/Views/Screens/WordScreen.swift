@@ -22,7 +22,7 @@ struct WordScreen: Screen {
 
     /// `NavigationBarStyle`
     var navigationBarStyle: NavigationBarStyle {
-        NavigationBarStyle(title: word.title, titleDisplayMode: .inline)
+        NavigationBarStyle(title: word.title)
     }
 
     /// `Word` to define
