@@ -80,19 +80,14 @@ struct WordScreen: Screen {
     /// Save `word`
     private func saveWord() {
         words.saveWord(word)
-        vibrateWithSuccessAndPopToRoot()
+        UINotificationFeedbackGenerator().notificationOccurred(.success)
+        navigation.popToRoot()
     }
 
     /// Delete `word`
     private func deleteWord() {
         guard words.deleteWord(word) else { return }
-        vibrateWithSuccessAndPopToRoot()
-    }
-
-    /// Vibrate with success and pop to root
-    private func vibrateWithSuccessAndPopToRoot() {
-        UINotificationFeedbackGenerator().notificationOccurred(.success)
-        navigation.path = NavigationPath() // Pop to root
+        navigation.popToRoot()
     }
 }
 

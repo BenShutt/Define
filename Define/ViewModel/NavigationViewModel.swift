@@ -50,4 +50,9 @@ final class NavigationViewModel: ObservableObject {
     func push(_ route: NavigationRoute) {
         path.append(route)
     }
+
+    /// Pop to root screen
+    func popToRoot() {
+        path = NavigationPath()
+    }
 }
