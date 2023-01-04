@@ -24,7 +24,7 @@ struct WordScreen: Screen {
     var word: Word
 
     /// Is the word currently saved
-    var isWordSaved: Bool {
+    private var isWordSaved: Bool {
         words.contains(word)
     }
 

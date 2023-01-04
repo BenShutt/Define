@@ -8,7 +8,7 @@
 import SwiftUI
 import DictionaryAPI
 
-/// A nvaigatiion destination
+/// A navigation destination
 enum NavigationRoute: Hashable {
 
     /// Search word screen
