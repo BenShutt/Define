@@ -16,6 +16,11 @@ struct LaunchScreen: Screen {
     /// Size of the padding
     var padding: CGFloat = .Launch.padding
 
+    /// `NavigationBarStyle`
+    var navigationBarStyle: NavigationBarStyle {
+        .clear
+    }
+
     /// Draw `View`
     var screen: some View {
         LogoView(showBorder: true)

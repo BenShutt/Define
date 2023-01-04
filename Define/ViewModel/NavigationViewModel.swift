@@ -44,4 +44,10 @@ final class NavigationViewModel: ObservableObject {
             }
         }
     }
+
+    /// Push `route` on `path`
+    /// - Parameter route: `NavigationRoute`
+    func push(_ route: NavigationRoute) {
+        path.append(route)
+    }
 }

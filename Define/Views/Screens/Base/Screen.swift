@@ -24,20 +24,9 @@ protocol Screen: View {
 
 extension Screen {
 
-    /// By default, return `.white`
-    var navigationBarStyle: NavigationBarStyle {
-        .white
-    }
-
     /// The `View` of the screen
     var body: some View {
-        ZStack {
-            Color.appWhite
-                .ignoresSafeArea()
-            screen
-        }
-        .toolbarBackground(navigationBarStyle.backgroundColor, for: .navigationBar)
-        .toolbarBackground(navigationBarStyle.backgroundVisibility, for: .navigationBar)
-        .navigationBarTitleDisplayMode(navigationBarStyle.titleDisplayMode)
+        ScreenBody(content: { screen })
+            .navigationBarStyle(navigationBarStyle)
     }
 }

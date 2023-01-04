@@ -69,6 +69,8 @@
 		B8A1235A28E97EF300ACEC45 /* WorkSans.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A1235928E97EF300ACEC45 /* WorkSans.swift */; };
 		B8A1235D28E97FB000ACEC45 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A1235C28E97FB000ACEC45 /* CustomFont.swift */; };
 		B8A2A83D2965814600A16FEE /* NavigationBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A2A83C2965814600A16FEE /* NavigationBarStyle.swift */; };
+		B8A2A8422965C52000A16FEE /* ScreenBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A2A8412965C52000A16FEE /* ScreenBody.swift */; };
+		B8A2A8452965E42A00A16FEE /* WordListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A2A8442965E42A00A16FEE /* WordListView.swift */; };
 		B8B563E728EFFEC3004B80F0 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B563E628EFFEC3004B80F0 /* View+Extensions.swift */; };
 		B8B563E928F00096004B80F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8B563E828F00096004B80F0 /* LaunchScreen.storyboard */; };
 		B8B563EB28F00391004B80F0 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B563EA28F00391004B80F0 /* LaunchScreen.swift */; };
@@ -190,6 +192,8 @@
 		B8A1235C28E97FB000ACEC45 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
 		B8A1235E28E9829B00ACEC45 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8A2A83C2965814600A16FEE /* NavigationBarStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarStyle.swift; sourceTree = "<group>"; };
+		B8A2A8412965C52000A16FEE /* ScreenBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenBody.swift; sourceTree = "<group>"; };
+		B8A2A8442965E42A00A16FEE /* WordListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListView.swift; sourceTree = "<group>"; };
 		B8B563E628EFFEC3004B80F0 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		B8B563E828F00096004B80F0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B8B563EA28F00391004B80F0 /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
@@ -379,6 +383,7 @@
 			children = (
 				B813BFF628EB6F10000C766C /* ShapeBorder */,
 				B8C25F9B294F7AAF001C8847 /* KeyboardToolbar.swift */,
+				B8A2A83C2965814600A16FEE /* NavigationBarStyle.swift */,
 			);
 			path = ViewModifiers;
 			sourceTree = "<group>";
@@ -390,6 +395,7 @@
 				B86471A928FB59F000716912 /* ListView.swift */,
 				B8FF0DDB2960B548004C61B6 /* MeaningListItemView.swift */,
 				B879E9ED28F0C7ED0094AA24 /* WordListItemView.swift */,
+				B8A2A8442965E42A00A16FEE /* WordListView.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -467,6 +473,7 @@
 			isa = PBXGroup;
 			children = (
 				B89F179328E0EBF100A96E35 /* Screen.swift */,
+				B8A2A8412965C52000A16FEE /* ScreenBody.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -579,7 +586,6 @@
 			isa = PBXGroup;
 			children = (
 				B88491A529620353009F6469 /* IndexElement.swift */,
-				B8A2A83C2965814600A16FEE /* NavigationBarStyle.swift */,
 				B8FF0DD72960ACCE004C61B6 /* SavedWord.swift */,
 			);
 			path = Models;
@@ -813,6 +819,7 @@
 				B813BFF828EB6F30000C766C /* RoundedBorder.swift in Sources */,
 				B8FF0DD82960ACCE004C61B6 /* SavedWord.swift in Sources */,
 				B89F179428E0EBF100A96E35 /* Screen.swift in Sources */,
+				B8A2A8422965C52000A16FEE /* ScreenBody.swift in Sources */,
 				B8A1232A28E9744E00ACEC45 /* SearchEmptyView.swift in Sources */,
 				B8B9B9D628EC5C54006FCA76 /* SearchHeaderView.swift in Sources */,
 				B813BFFD28EB7BA1000C766C /* SearchIconView.swift in Sources */,
@@ -831,6 +838,7 @@
 				B88491A829620B1A009F6469 /* VSpacer.swift in Sources */,
 				B894FA1C28FC69FA00BC0BFA /* Word+Preview.swift in Sources */,
 				B879E9EE28F0C7ED0094AA24 /* WordListItemView.swift in Sources */,
+				B8A2A8452965E42A00A16FEE /* WordListView.swift in Sources */,
 				B84AD60A28FAFC9E00C2D5AE /* WordScreen.swift in Sources */,
 				B889DEC12957AEF60020E9C9 /* WordsViewModel.swift in Sources */,
 				B8A1235A28E97EF300ACEC45 /* WorkSans.swift in Sources */,

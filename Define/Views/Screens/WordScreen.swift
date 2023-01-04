@@ -20,6 +20,11 @@ struct WordScreen: Screen {
     /// Is presenting alert to delete word
     @State private var showingDeleteWordAlert = false
 
+    /// `NavigationBarStyle`
+    var navigationBarStyle: NavigationBarStyle {
+        NavigationBarStyle(title: word.title, titleDisplayMode: .inline)
+    }
+
     /// `Word` to define
     var word: Word
 
@@ -41,14 +46,12 @@ struct WordScreen: Screen {
                 StickyButton(buttonText: .WordScreen.saveButton) {
                     saveWord()
                 } content: {
-                    DefinitionsView(word: word)
+                    WordListView(word: word)
                 }
             } else {
-                DefinitionsView(word: word)
+                WordListView(word: word)
             }
         }
-        .navigationTitle(word.title)
-        .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             if isWordSaved {
                 Button(action: {
@@ -90,24 +93,6 @@ struct WordScreen: Screen {
     private func vibrateWithSuccessAndPopToRoot() {
         UINotificationFeedbackGenerator().notificationOccurred(.success)
         navigation.path = NavigationPath() // Pop to root
-    }
-}
-
-// MARK: - DefinitionsView
-
-/// Draws a list of definitions
-struct DefinitionsView: View {
-
-    /// The word to define
-    var word: Word
-
-    /// Draw `View`
-    var body: some View {
-        ListView(word.meanings) { index, meaning in
-            VStack(alignment: .leading, spacing: 0) {
-                MeaningListItemView(number: index + 1, meaning: meaning)
-            }
-        }
     }
 }
 

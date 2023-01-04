@@ -13,7 +13,7 @@ struct SearchScreen: Screen {
     /// `SearchViewModel`
     @StateObject private var viewModel = SearchViewModel()
 
-    /// Override `NavigationBarStyle`
+    /// `NavigationBarStyle`
     var navigationBarStyle: NavigationBarStyle {
         .clear
     }
@@ -54,9 +54,12 @@ struct SearchScreen: Screen {
                     subtitle: .SearchScreen.Empty.subtitle
                 )
             }
-
-            Spacer()
         }
+        .frame(
+            maxWidth: .infinity,
+            maxHeight: .infinity,
+            alignment: .topLeading
+        )
     }
 }
 

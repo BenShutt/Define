@@ -16,10 +16,15 @@ struct DefinitionsScreen: Screen {
     /// `WordsViewModel`
     @EnvironmentObject var words: WordsViewModel
 
+    /// `NavigationBarStyle`
+    var navigationBarStyle: NavigationBarStyle {
+        NavigationBarStyle(title: .DefinitionsScreen.title)
+    }
+
     /// Draw view
     var screen: some View {
         StickyButton(buttonText: .DefinitionsScreen.addWordButton) {
-            navigation.path.append(NavigationRoute.search)
+            navigation.push(.search)
         } content: {
             ListView(words.words) { _, word in
                 AppNavigationLink(value: NavigationRoute.word(word.word)) {
@@ -27,8 +32,6 @@ struct DefinitionsScreen: Screen {
                 }
             }
         }
-        .navigationTitle(String.DefinitionsScreen.title)
-        .navigationBarTitleDisplayMode(.automatic)
     }
 }
 

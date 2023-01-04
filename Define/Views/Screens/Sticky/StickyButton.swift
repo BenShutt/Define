@@ -37,9 +37,7 @@ struct StickyButton_Previews: PreviewProvider {
             buttonText: "TAP ME!",
             onButtonTap: {},
             content: {
-                ZStack {
-                    Color.appLightGray
-                        .ignoresSafeArea()
+                ScreenBody(backgroundColor: .appBlue.opacity(0.2)) {
                     Text("Test")
                         .h1()
                 }
