@@ -16,7 +16,17 @@ import DictionaryAPI
 final class WordsViewModel: ObservableObject {
 
     /// `SavedWord` models to persist
-    @AppStorage(UserDefaultKey.words.rawValue) var words: [SavedWord] = []
+    @AppStorage(UserDefaultKey.words.rawValue) private var savedWords: [SavedWord] = []
+
+    /// Get and set `savedWords`
+    var words: [SavedWord] {
+        get {
+            savedWords.sorted()
+        }
+        set {
+            savedWords = newValue
+        }
+    }
 
     /// Contains `word`
     /// - Parameter word: `Word`

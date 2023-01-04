@@ -12,6 +12,8 @@ Example searching with language "en" for the word "define":
 https://api.dictionaryapi.dev/api/v2/entries/en/define
 ```
 
+Link to [Dictionary API Github Repository](https://github.com/meetDeveloper/freeDictionaryAPI).
+
 ### Oxford Dictionary API
 
 The project previously used the [Oxford Languages API](https://developer.oxforddictionaries.com/).
@@ -23,7 +25,3 @@ This implementation can be found in the Git history.
 
 Primarily created to learn more about SwiftUI having nearly always developed with UIKit.
 But also creates a neat little helpful tool.
-
-## References 
-
-* [Dictionary API Github Repository](https://github.com/meetDeveloper/freeDictionaryAPI).
