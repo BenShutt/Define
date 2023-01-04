@@ -19,7 +19,7 @@ struct SearchHeaderView: View {
     ///
     /// - Note:
     /// There are two states here to handle both the @FocusState and the animation.
-    /// The two should always be equivelent in value
+    /// The two should always be equivalent in value
     @State private var isTextInputFocused = false
 
     /// Padding
