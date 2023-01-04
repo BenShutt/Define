@@ -29,7 +29,7 @@ struct WordScreen: Screen {
     }
 
     /// `View` of the screen
-    var screenBody: some View {
+    var screen: some View {
         Group {
             if word.meanings.isEmpty {
                 SearchEmptyView(
@@ -38,7 +38,7 @@ struct WordScreen: Screen {
                     subtitle: .WordScreen.Empty.subtitle(word: word.title)
                 )
             } else if !isWordSaved {
-                StickyButtonScreen(buttonText: .WordScreen.saveButton) {
+                StickyButton(buttonText: .WordScreen.saveButton) {
                     saveWord()
                 } content: {
                     DefinitionsView(word: word)

@@ -11,20 +11,20 @@ import SwiftUI
 protocol Screen: View {
 
     /// Some `View`
-    associatedtype ScreenBody: View
+    associatedtype Content: View
 
     /// Get the `NavigationBarStyle`
     var navigationBarStyle: NavigationBarStyle { get }
 
     /// The screens implementation of `body`
-    @ViewBuilder var screenBody: ScreenBody { get }
+    @ViewBuilder var screen: Content { get }
 }
 
 // MARK: - Extensions
 
 extension Screen {
 
-    /// By default, return `.automatic`
+    /// By default, return `.white`
     var navigationBarStyle: NavigationBarStyle {
         .white
     }
@@ -34,7 +34,7 @@ extension Screen {
         ZStack {
             Color.appWhite
                 .ignoresSafeArea()
-            screenBody
+            screen
         }
         .toolbarBackground(navigationBarStyle.backgroundColor, for: .navigationBar)
         .toolbarBackground(navigationBarStyle.backgroundVisibility, for: .navigationBar)

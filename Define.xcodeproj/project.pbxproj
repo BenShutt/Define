@@ -35,8 +35,8 @@
 		B891F8E42950FC4300A53582 /* Chevron.swift in Sources */ = {isa = PBXBuildFile; fileRef = B891F8E32950FC4300A53582 /* Chevron.swift */; };
 		B891F8E629530E6500A53582 /* CGRectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B891F8E529530E6500A53582 /* CGRectTests.swift */; };
 		B894FA1C28FC69FA00BC0BFA /* Word+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B894FA1B28FC69FA00BC0BFA /* Word+Preview.swift */; };
-		B894FA2128FC8A4B00BC0BFA /* StickyBottomScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B894FA2028FC8A4B00BC0BFA /* StickyBottomScreen.swift */; };
-		B894FA2428FC8D7A00BC0BFA /* StickyButtonScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B894FA2328FC8D7A00BC0BFA /* StickyButtonScreen.swift */; };
+		B894FA2128FC8A4B00BC0BFA /* StickyBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B894FA2028FC8A4B00BC0BFA /* StickyBottom.swift */; };
+		B894FA2428FC8D7A00BC0BFA /* StickyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B894FA2328FC8D7A00BC0BFA /* StickyButton.swift */; };
 		B895887429578BFB0041A315 /* DefinitionsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B895887329578BFB0041A315 /* DefinitionsScreen.swift */; };
 		B8958876295790E30041A315 /* NavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8958875295790E30041A315 /* NavigationViewModel.swift */; };
 		B89F179428E0EBF100A96E35 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89F179328E0EBF100A96E35 /* Screen.swift */; };
@@ -156,8 +156,8 @@
 		B891F8E32950FC4300A53582 /* Chevron.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chevron.swift; sourceTree = "<group>"; };
 		B891F8E529530E6500A53582 /* CGRectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGRectTests.swift; sourceTree = "<group>"; };
 		B894FA1B28FC69FA00BC0BFA /* Word+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Word+Preview.swift"; sourceTree = "<group>"; };
-		B894FA2028FC8A4B00BC0BFA /* StickyBottomScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyBottomScreen.swift; sourceTree = "<group>"; };
-		B894FA2328FC8D7A00BC0BFA /* StickyButtonScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyButtonScreen.swift; sourceTree = "<group>"; };
+		B894FA2028FC8A4B00BC0BFA /* StickyBottom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyBottom.swift; sourceTree = "<group>"; };
+		B894FA2328FC8D7A00BC0BFA /* StickyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyButton.swift; sourceTree = "<group>"; };
 		B895887329578BFB0041A315 /* DefinitionsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionsScreen.swift; sourceTree = "<group>"; };
 		B8958875295790E30041A315 /* NavigationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewModel.swift; sourceTree = "<group>"; };
 		B89F179328E0EBF100A96E35 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
@@ -403,13 +403,13 @@
 			path = Chevron;
 			sourceTree = "<group>";
 		};
-		B894FA2228FC8D6B00BC0BFA /* StickyScreen */ = {
+		B894FA2228FC8D6B00BC0BFA /* Sticky */ = {
 			isa = PBXGroup;
 			children = (
-				B894FA2028FC8A4B00BC0BFA /* StickyBottomScreen.swift */,
-				B894FA2328FC8D7A00BC0BFA /* StickyButtonScreen.swift */,
+				B894FA2028FC8A4B00BC0BFA /* StickyBottom.swift */,
+				B894FA2328FC8D7A00BC0BFA /* StickyButton.swift */,
 			);
-			path = StickyScreen;
+			path = Sticky;
 			sourceTree = "<group>";
 		};
 		B89F179528E0F38200A96E35 /* Combine */ = {
@@ -461,6 +461,14 @@
 				B8A1233A28E97D1900ACEC45 /* WorkSans-ThinItalic.ttf */,
 			);
 			path = FontFiles;
+			sourceTree = "<group>";
+		};
+		B8A2A83E2965BB4000A16FEE /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				B89F179328E0EBF100A96E35 /* Screen.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		B8B9B9DB28EC668C006FCA76 /* Gradient */ = {
@@ -527,10 +535,10 @@
 		B8D2A73F28DF0E620096A020 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				B894FA2228FC8D6B00BC0BFA /* StickyScreen */,
+				B8A2A83E2965BB4000A16FEE /* Base */,
+				B894FA2228FC8D6B00BC0BFA /* Sticky */,
 				B895887329578BFB0041A315 /* DefinitionsScreen.swift */,
 				B8B563EA28F00391004B80F0 /* LaunchScreen.swift */,
-				B89F179328E0EBF100A96E35 /* Screen.swift */,
 				B8D2A73B28DEEFAE0096A020 /* SearchScreen.swift */,
 				B84AD60928FAFC9E00C2D5AE /* WordScreen.swift */,
 			);
@@ -812,8 +820,8 @@
 				B879E9F028F0CA910094AA24 /* SearchViewModel.swift in Sources */,
 				B8C25FA0294F8D5D001C8847 /* Separator.swift in Sources */,
 				B813BFFA28EB7022000C766C /* ShapeBorder.swift in Sources */,
-				B894FA2128FC8A4B00BC0BFA /* StickyBottomScreen.swift in Sources */,
-				B894FA2428FC8D7A00BC0BFA /* StickyButtonScreen.swift in Sources */,
+				B894FA2128FC8A4B00BC0BFA /* StickyBottom.swift in Sources */,
+				B894FA2428FC8D7A00BC0BFA /* StickyButton.swift in Sources */,
 				B8E49C0D28DF99EA00F9CAC4 /* String+Localizations.swift in Sources */,
 				B879E9E928F0C5190094AA24 /* TagView.swift in Sources */,
 				B8D2A74628DF3AFE0096A020 /* TextStyle.swift in Sources */,

@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// Screen listing the user's saved definitions
-struct DefinitionsScreen: View {
+struct DefinitionsScreen: Screen {
 
     /// `NavigationViewModel`
     @EnvironmentObject var navigation: NavigationViewModel
@@ -17,8 +17,8 @@ struct DefinitionsScreen: View {
     @EnvironmentObject var words: WordsViewModel
 
     /// Draw view
-    var body: some View {
-        StickyButtonScreen(buttonText: .DefinitionsScreen.addWordButton) {
+    var screen: some View {
+        StickyButton(buttonText: .DefinitionsScreen.addWordButton) {
             navigation.path.append(NavigationRoute.search)
         } content: {
             ListView(words.words) { _, word in

@@ -19,7 +19,7 @@ struct SearchScreen: Screen {
     }
 
     /// `View` of the screen
-    var screenBody: some View {
+    var screen: some View {
         VStack(spacing: 0) {
             SearchHeaderView(searchText: $viewModel.searchText)
                 .zIndex(1)

@@ -1,5 +1,5 @@
 //
-//  StickyButtonScreen.swift
+//  StickyButton.swift
 //  Define
 //
 //  Created by Ben Shutt on 16/10/2022.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// `Screen` with sticky button content
-struct StickyButtonScreen<Content: View>: View {
+struct StickyButton<Content: View>: View {
 
     /// Button title text
     var buttonText: String
@@ -21,7 +21,7 @@ struct StickyButtonScreen<Content: View>: View {
 
     /// Draw `View`
     var body: some View {
-        StickyBottomScreen(content: content) {
+        StickyBottom(content: content) {
             ButtonView(text: buttonText, onTap: onButtonTap)
                 .padding(.largeMargins)
         }
@@ -30,10 +30,10 @@ struct StickyButtonScreen<Content: View>: View {
 
 // MARK: - PreviewProvider
 
-struct StickyButtonScreen_Previews: PreviewProvider {
+struct StickyButton_Previews: PreviewProvider {
 
     static var previews: some View {
-        StickyButtonScreen(
+        StickyButton(
             buttonText: "TAP ME!",
             onButtonTap: {},
             content: {
