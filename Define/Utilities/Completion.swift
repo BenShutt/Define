@@ -11,7 +11,7 @@ import DictionaryAPI
 // TODO: Surely can simplify/re-work
 struct Completion {
 
-    /// Run asynchronous functionality on detatched `Task` and complete on main
+    /// Run asynchronous functionality on detached `Task` and complete on main
     /// - Parameters:
     ///   - operation: Asynchronous functionality
     ///   - completion: Completion handler that runs on main
