@@ -39,7 +39,7 @@ struct SearchHeaderView: View {
 
                 VSpacer(height: .medium)
 
-                Text(String.SearchHeaderView.subtitle)
+                Text(.init(.SearchHeaderView.subtitle))
                     .body()
 
                 VSpacer(height: .extraLarge)

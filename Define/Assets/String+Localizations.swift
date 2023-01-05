@@ -14,7 +14,7 @@ extension String {
     struct SearchHeaderView {
 
         static let title = "Search Word"
-        static let subtitle = "Defintions are provided by the Free Dictionary API"
+        static let subtitle = "Definitions are provided by the [Free Dictionary API](https://dictionaryapi.dev/)"
         static let prompt = "Enter word to search..."
     }
 
