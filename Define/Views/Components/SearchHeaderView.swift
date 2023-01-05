@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-// TODO: Add hyperlink to "Free Dictionary API"
-
 /// Header UI for searching
 struct SearchHeaderView: View {
 

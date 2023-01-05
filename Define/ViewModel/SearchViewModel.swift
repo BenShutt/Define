@@ -11,7 +11,7 @@ import DictionaryAPI
 import Alamofire
 
 /// View model wrapper of the `SearchAPI`
-final class SearchViewModel: ObservableObject {
+@MainActor final class SearchViewModel: ObservableObject {
 
     /// Search state
     enum State {
@@ -73,26 +73,29 @@ final class SearchViewModel: ObservableObject {
         // Handle debounced changes to searchText
         searchTextPublisher
             .debounce(for: .seconds(Self.debounce), scheduler: DispatchQueue.main)
-            .sinkAndStore(in: &cancellables) { [weak self] value in
-                guard !value.isEmpty else { return }
-                guard value == self?.searchText else { return } // Outdated
-                self?.lookUp(word: value)
+            .sinkAndStore(in: &cancellables) { [weak self] word in
+                guard !word.isEmpty else { return }
+                guard word == self?.searchText else { return } // Outdated
+                self?.search(word: word)
             }
     }
 
-    // MARK: - API
-
-    /// Look up definitions for `word`
-    ///
+    /// Search for `word`
     /// - Parameter word: `String`
-    private func lookUp(word: String) {
-        Completion.run(operation: {
-            try await EntriesAPI.request(word: word)
-        }, completion: { [weak self] result in
-            guard word == self?.searchText else { return } // Outdated
-            self?.isLoading = false
-            self?.result = result
-        })
+    private func search(word: String) {
+        Task {
+            let result: ModelResult<[Word]>
+            do {
+                let words = try await EntriesAPI.request(word: word)
+                result = .success(words)
+            } catch {
+                result = .failure(error)
+            }
+
+            guard searchText == word else { return } // Outdated
+            isLoading = false
+            self.result = result
+        }
     }
 
     // MARK: - State
