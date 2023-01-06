@@ -10,7 +10,7 @@ import SwiftUI
 /// Circular number UI
 struct NumberView: View {
 
-    /// Nuber to draw
+    /// Number to draw
     var number: Int
 
     /// Draw body
