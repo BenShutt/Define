@@ -27,7 +27,7 @@ struct IconContainerView<Body: View>: View {
     @ViewBuilder var contentView: Body
 
     /// Leading padding
-    var leadingPadding: CGFloat {
+    private var leadingPadding: CGFloat {
         switch edge {
         case .leading: return .large
         case .trailing: return .medium
@@ -35,7 +35,7 @@ struct IconContainerView<Body: View>: View {
     }
 
     /// Trailing padding
-    var trailingPadding: CGFloat {
+    private var trailingPadding: CGFloat {
         switch edge {
         case .leading: return .medium
         case .trailing: return .large

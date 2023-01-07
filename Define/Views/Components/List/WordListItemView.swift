@@ -15,17 +15,17 @@ struct WordListItemView: View {
     var word: Word
 
     /// Parts of speech
-    var partsOfSpeech: [String] {
+    private var partsOfSpeech: [String] {
         Set(word.meanings.map { $0.category }).sorted()
     }
 
     /// The first definition for preview
-    var firstDefinition: String? {
+    private var firstDefinition: String? {
         word.definitions.first
     }
 
     /// The number of (extra) definitions not shown in preview
-    var nMore: Int {
+    private var nMore: Int {
         max(0, word.definitions.count - 1)
     }
 
