@@ -11,10 +11,10 @@ import SwiftUI
 struct ContentView: View {
 
     /// `NavigationViewModel`
-    @StateObject var navigation = NavigationViewModel()
+    @StateObject private var navigation = NavigationViewModel()
 
     /// `WordsViewModel`
-    @StateObject var words = WordsViewModel()
+    @StateObject private var words = WordsViewModel()
 
     /// Root `NavigationStack`
     var body: some View {
