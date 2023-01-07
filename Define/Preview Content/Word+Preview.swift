@@ -12,8 +12,7 @@ extension Word {
 
     /// Preview content for `Word`
     static var preview: Word {
-        guard let word = try? loadFromFile() else { fatalError("WordPreview") }
-        return word
+        try loadFromFile() ?!! fatalError("\(Word.self) used for preview threw an error")
     }
 
     /// Load `Word` from file
