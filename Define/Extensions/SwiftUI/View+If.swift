@@ -9,10 +9,10 @@ import SwiftUI
 
 extension View {
 
-    /// Implement a condtional modifier
+    /// Implement a conditional modifier
     ///
     /// - Parameters:
-    ///   - condition: Condtion of the `if` statement
+    ///   - condition: Condition of the `if` statement
     ///   - transform: Mapping of `self` to some `View`
     /// - Returns: `View`
     @ViewBuilder func `if`<Transform: View>(
