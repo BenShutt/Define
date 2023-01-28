@@ -13,8 +13,8 @@ typealias FocusStateBinding = FocusState<Bool>.Binding
 /// Add toolbar for keyboard
 struct KeyboardToolbar: ViewModifier {
 
-    /// Focus state of field
-    var isFocused: FocusStateBinding
+    /// Dismiss button tapped
+    var onDismiss: () -> Void
 
     /// Apply overlay of stroked `RoundedRectangle`
     ///
@@ -25,7 +25,7 @@ struct KeyboardToolbar: ViewModifier {
             ToolbarItemGroup(placement: .keyboard) {
                 Spacer()
                 Button(String.Misc.dismiss) {
-                    isFocused.wrappedValue = false
+                    onDismiss()
                 }
             }
         }
@@ -37,9 +37,9 @@ struct KeyboardToolbar: ViewModifier {
 extension View {
 
     /// Add `KeyboardToolbar` modifier
-    /// - Parameter isFocused: `FocusStateBinding`
+    /// - Parameter onDismiss: Dismiss tap handler
     /// - Returns: `View`
-    func keyboardToolbar(isFocused: FocusStateBinding) -> some View {
-        modifier(KeyboardToolbar(isFocused: isFocused))
+    func keyboardToolbar(onDismiss: @escaping () -> Void) -> some View {
+        modifier(KeyboardToolbar(onDismiss: onDismiss))
     }
 }

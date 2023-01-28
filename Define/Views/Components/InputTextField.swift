@@ -63,7 +63,9 @@ struct InputTextField: View {
         .background(Color.appWhite)
         .shapeBorder(color: borderColor)
         .fixedSize(horizontal: false, vertical: true)
-        .keyboardToolbar(isFocused: $isFocused)
+        .keyboardToolbar {
+            isFocused = false
+        }
         .onTapGesture {
             isFocused = true
         }
