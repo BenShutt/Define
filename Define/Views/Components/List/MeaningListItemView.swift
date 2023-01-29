@@ -43,7 +43,7 @@ struct MeaningListItemView: View {
             }
 
             VSpacer(height: .mediumLarge)
-            TagView(text: meaning.category)
+            WordCategoryView(category: meaning.category)
         }
         .listItem()
         .padding(.meaning)

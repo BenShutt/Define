@@ -14,10 +14,10 @@ struct TagView: View {
     var text: String
 
     /// `Color` of the foreground
-    var foregroundColor: Color = .appDarkGray
+    var foregroundColor: Color
 
     /// `Color` of the background
-    var backgroundColor: Color = .appLightGray
+    var backgroundColor: Color
 
     /// Draw `View`
     var body: some View {
@@ -27,14 +27,5 @@ struct TagView: View {
             .padding(.smallMedium)
             .background(backgroundColor)
             .clipShape(Capsule())
-    }
-}
-
-// MARK: - PreviewProvider
-
-struct TagView_Previews: PreviewProvider {
-
-    static var previews: some View {
-        TagView(text: "Adjective")
     }
 }

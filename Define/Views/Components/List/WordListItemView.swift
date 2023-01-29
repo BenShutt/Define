@@ -53,8 +53,8 @@ struct WordListItemView: View {
 
                 if !partsOfSpeech.isEmpty {
                     HStack(spacing: .small) {
-                        ForEach(values: partsOfSpeech) { partOfSpeech in
-                            TagView(text: partOfSpeech)
+                        ForEach(values: partsOfSpeech) {
+                            WordCategoryView(category: $0)
                         }
                     }
                 }
