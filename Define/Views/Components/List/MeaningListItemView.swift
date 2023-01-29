@@ -28,14 +28,14 @@ struct MeaningListItemView: View {
             Text(definitionsTitle)
                 .h3()
 
-            VSpacer(height: .medium)
+            VSpacer(height: .large)
 
             ForEach(meaning.definitions.zipped, id: \.index) { index, definition in
                 VStack(alignment: .leading, spacing: 0) {
                     if index > 0 {
                         Separator()
                             .opacity(0.5)
-                            .padding(.vertical, .medium)
+                            .padding(.vertical, .mediumLarge)
                     }
 
                     DefinitionView(definition: definition)
@@ -46,7 +46,7 @@ struct MeaningListItemView: View {
             TagView(text: meaning.category)
         }
         .listItem()
-        .padding(.large)
+        .padding(.meaning)
     }
 }
 
