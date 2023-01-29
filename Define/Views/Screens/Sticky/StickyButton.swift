@@ -13,6 +13,9 @@ struct StickyButton<Content: View>: View {
     /// Button title text
     var buttonText: String
 
+    /// Button image
+    var buttonImage: Image?
+
     /// On button tapped
     var onButtonTap: () -> Void
 
@@ -22,8 +25,12 @@ struct StickyButton<Content: View>: View {
     /// Draw `View`
     var body: some View {
         StickyBottom(content: content) {
-            ButtonView(text: buttonText, onTap: onButtonTap)
-                .padding(.largeMargins)
+            ButtonView(
+                text: buttonText,
+                image: buttonImage,
+                onTap: onButtonTap
+            )
+            .padding(.largeMargins)
         }
     }
 }

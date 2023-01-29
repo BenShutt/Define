@@ -23,7 +23,10 @@ struct DefinitionsScreen: Screen {
 
     /// Draw view
     var screen: some View {
-        StickyButton(buttonText: .DefinitionsScreen.addWordButton) {
+        StickyButton(
+            buttonText: .DefinitionsScreen.addWordButton,
+            buttonImage: .search
+        ) {
             navigation.push(.search)
         } content: {
             ListView(words.words) { _, word in
