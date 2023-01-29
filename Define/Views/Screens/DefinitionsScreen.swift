@@ -32,6 +32,18 @@ struct DefinitionsScreen: Screen {
                 }
             }
         }
+        .toolbar {
+            Button(action: {
+                navigation.push(.search)
+            }, label: {
+                Image.search
+                    .renderingMode(.template)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(22)
+                    .padding(.small)
+            })
+        }
     }
 }
 
