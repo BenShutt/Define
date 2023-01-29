@@ -60,8 +60,8 @@ extension String {
 
     struct WordListItemView {
 
-        static func nMore(_ count: Int) -> String {
-            "+\(count) more"
+        static func nMoreDefinitions(_ count: Int) -> String {
+            "+\(count) more definitions"
         }
     }
 

@@ -44,7 +44,7 @@ struct WordListItemView: View {
                 }
 
                 if nMore > 0 {
-                    Text(String.WordListItemView.nMore(nMore))
+                    Text(String.WordListItemView.nMoreDefinitions(nMore))
                         .textStyle(.body)
                         .foregroundColor(.appBlue)
                 }
