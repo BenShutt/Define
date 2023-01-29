@@ -67,7 +67,7 @@ extension String {
 
     struct WordScreen {
 
-        static let saveButton = "SAVE WORD"
+        static let saveButton = "REMEMBER WORD"
 
         struct Empty {
 

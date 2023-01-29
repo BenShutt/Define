@@ -43,7 +43,10 @@ struct WordScreen: Screen {
                     subtitle: .WordScreen.Empty.subtitle(word: word.title)
                 )
             } else if !isWordSaved {
-                StickyButton(buttonText: .WordScreen.saveButton) {
+                StickyButton(
+                    buttonText: .WordScreen.saveButton,
+                    buttonImage: Image(systemName: "plus")
+                ) {
                     saveWord()
                 } content: {
                     WordListView(word: word)
