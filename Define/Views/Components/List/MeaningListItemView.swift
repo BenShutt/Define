@@ -25,14 +25,8 @@ struct MeaningListItemView: View {
     /// Draw `View`
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            HStack(alignment: .center, spacing: .large) {
-                Text(definitionsTitle)
-                    .h3()
-
-                Spacer()
-
-                NumberView(number: number)
-            }
+            Text(definitionsTitle)
+                .h3()
 
             VSpacer(height: .medium)
 
