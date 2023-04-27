@@ -49,14 +49,9 @@ struct WordListItemView: View {
                         .foregroundColor(.appBlue)
                 }
 
-                VSpacer(height: .small)
-
                 if !partsOfSpeech.isEmpty {
-                    HStack(spacing: .small) {
-                        ForEach(values: partsOfSpeech) {
-                            WordCategoryView(category: $0)
-                        }
-                    }
+                    PartsOfSpeechView(partsOfSpeech: partsOfSpeech)
+                        .padding(.top, .small)
                 }
             }
             .listItem()
@@ -64,6 +59,23 @@ struct WordListItemView: View {
             ChevronView()
         }
         .padding(.large)
+    }
+}
+
+// MARK: - PartsOfSpeechView
+
+private struct PartsOfSpeechView: View {
+
+    var partsOfSpeech: [String]
+
+    var body: some View {
+        NoBounceScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: .small) {
+                ForEach(values: partsOfSpeech) {
+                    WordCategoryView(category: $0)
+                }
+            }
+        }
     }
 }
 

@@ -85,6 +85,8 @@
 		B8BEC3CE2955D8FD00946196 /* AppNavigationLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BEC3CD2955D8FD00946196 /* AppNavigationLink.swift */; };
 		B8C25F9C294F7AAF001C8847 /* KeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C25F9B294F7AAF001C8847 /* KeyboardToolbar.swift */; };
 		B8C25FA0294F8D5D001C8847 /* Separator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C25F9F294F8D5D001C8847 /* Separator.swift */; };
+		B8C43F3029FB0F6100F5E166 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = B8C43F2F29FB0F6100F5E166 /* Introspect */; };
+		B8C43F3229FB0F7500F5E166 /* NoBounceScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C43F3129FB0F7500F5E166 /* NoBounceScrollView.swift */; };
 		B8C894EA28D905BD00975E25 /* ForEach+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C894E928D905BD00975E25 /* ForEach+Extensions.swift */; };
 		B8D2A73C28DEEFAE0096A020 /* SearchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2A73B28DEEFAE0096A020 /* SearchScreen.swift */; };
 		B8D2A73E28DEEFE70096A020 /* Color+Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2A73D28DEEFE70096A020 /* Color+Values.swift */; };
@@ -205,6 +207,7 @@
 		B8BEC3CD2955D8FD00946196 /* AppNavigationLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationLink.swift; sourceTree = "<group>"; };
 		B8C25F9B294F7AAF001C8847 /* KeyboardToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardToolbar.swift; sourceTree = "<group>"; };
 		B8C25F9F294F8D5D001C8847 /* Separator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Separator.swift; sourceTree = "<group>"; };
+		B8C43F3129FB0F7500F5E166 /* NoBounceScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoBounceScrollView.swift; sourceTree = "<group>"; };
 		B8C894E928D905BD00975E25 /* ForEach+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ForEach+Extensions.swift"; sourceTree = "<group>"; };
 		B8D2A73B28DEEFAE0096A020 /* SearchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreen.swift; sourceTree = "<group>"; };
 		B8D2A73D28DEEFE70096A020 /* Color+Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Values.swift"; sourceTree = "<group>"; };
@@ -233,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8FF0DC9295F9528004C61B6 /* DictionaryAPI in Frameworks */,
+				B8C43F3029FB0F6100F5E166 /* Introspect in Frameworks */,
 				B8A1232528E971EC00ACEC45 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -557,6 +561,7 @@
 				B879E9E828F0C5190094AA24 /* TagView.swift */,
 				B88491A729620B1A009F6469 /* VSpacer.swift */,
 				B801A3DA2986D41400FAD316 /* WordCategoryView.swift */,
+				B8C43F3129FB0F7500F5E166 /* NoBounceScrollView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -597,6 +602,7 @@
 			packageProductDependencies = (
 				B8A1232428E971EC00ACEC45 /* Lottie */,
 				B8FF0DC8295F9528004C61B6 /* DictionaryAPI */,
+				B8C43F2F29FB0F6100F5E166 /* Introspect */,
 			);
 			productName = Define;
 			productReference = B80399D928D79A37008CE7B4 /* Define.app */;
@@ -672,6 +678,7 @@
 			mainGroup = B80399D028D79A36008CE7B4;
 			packageReferences = (
 				B8A1232328E971EC00ACEC45 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				B8C43F2E29FB0F6100F5E166 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
 			);
 			productRefGroup = B80399DA28D79A37008CE7B4 /* Products */;
 			projectDirPath = "";
@@ -812,6 +819,7 @@
 				B813BFFA28EB7022000C766C /* ShapeBorder.swift in Sources */,
 				B894FA2128FC8A4B00BC0BFA /* StickyBottom.swift in Sources */,
 				B894FA2428FC8D7A00BC0BFA /* StickyButton.swift in Sources */,
+				B8C43F3229FB0F7500F5E166 /* NoBounceScrollView.swift in Sources */,
 				B8E49C0D28DF99EA00F9CAC4 /* String+Localizations.swift in Sources */,
 				B879E9E928F0C5190094AA24 /* TagView.swift in Sources */,
 				B8D2A74628DF3AFE0096A020 /* TextStyle.swift in Sources */,
@@ -1169,6 +1177,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		B8C43F2E29FB0F6100F5E166 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1176,6 +1192,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B8A1232328E971EC00ACEC45 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		B8C43F2F29FB0F6100F5E166 /* Introspect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B8C43F2E29FB0F6100F5E166 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
+			productName = Introspect;
 		};
 		B8FF0DC8295F9528004C61B6 /* DictionaryAPI */ = {
 			isa = XCSwiftPackageProductDependency;
