@@ -11,8 +11,7 @@ import SwiftUI
 struct Separator: View {
 
     var body: some View {
-        Rectangle()
-            .fill(Color.appLightGray)
+        Color.appLightGray
             .frame(height: 2)
     }
 }
