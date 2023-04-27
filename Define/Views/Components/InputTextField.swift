@@ -51,7 +51,7 @@ struct InputTextField: View {
                 .tint(tintColor)
                 .accentColor(tintColor) // For cursor
                 .foregroundColor(tintColor)
-                .padding([.top, .bottom], .mediumLarge)
+                .padding(.vertical, .mediumLarge)
                 .frame(maxHeight: .infinity)
 
             if !text.isEmpty {

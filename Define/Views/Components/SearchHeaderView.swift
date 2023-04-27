@@ -38,8 +38,7 @@ struct SearchHeaderView: View {
                 Text(.init(.SearchHeaderView.subtitle))
                     .body()
                     .padding(.top, .medium)
-
-                VSpacer(height: .extraLarge)
+                    .padding(.bottom, .extraLarge)
             }
 
             InputTextField(
