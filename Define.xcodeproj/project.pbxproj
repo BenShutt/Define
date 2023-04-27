@@ -379,6 +379,7 @@
 		B82A76C328DFAA6400DABFBE /* ViewModifiers */ = {
 			isa = PBXGroup;
 			children = (
+				B894FA2228FC8D6B00BC0BFA /* Sticky */,
 				B813BFF628EB6F10000C766C /* ShapeBorder */,
 				B8C25F9B294F7AAF001C8847 /* KeyboardToolbar.swift */,
 				B8A2A83C2965814600A16FEE /* NavigationBarStyle.swift */,
@@ -540,7 +541,6 @@
 			isa = PBXGroup;
 			children = (
 				B8A2A83E2965BB4000A16FEE /* Base */,
-				B894FA2228FC8D6B00BC0BFA /* Sticky */,
 				B895887329578BFB0041A315 /* DefinitionsScreen.swift */,
 				B8B563EA28F00391004B80F0 /* LaunchScreen.swift */,
 				B8D2A73B28DEEFAE0096A020 /* SearchScreen.swift */,

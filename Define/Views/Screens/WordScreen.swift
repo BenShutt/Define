@@ -35,25 +35,11 @@ struct WordScreen: Screen {
 
     /// `View` of the screen
     var screen: some View {
-        Group {
-            if word.meanings.isEmpty {
-                SearchEmptyView(
-                    lottie: .searchNoResults,
-                    title: .WordScreen.Empty.title,
-                    subtitle: .WordScreen.Empty.subtitle(word: word.title)
-                )
-            } else if !isWordSaved {
-                StickyButton(
-                    buttonText: .WordScreen.saveButton,
-                    buttonImage: Image(systemName: "plus")
-                ) {
-                    saveWord()
-                } content: {
-                    WordListView(word: word)
-                }
-            } else {
-                WordListView(word: word)
-            }
+        WordContentView(
+            word: word,
+            isWordSaved: isWordSaved
+        ) {
+            saveWord()
         }
         .toolbar {
             if isWordSaved {
@@ -91,6 +77,34 @@ struct WordScreen: Screen {
     private func deleteWord() {
         guard words.deleteWord(word) else { return }
         navigation.popToRoot()
+    }
+}
+
+// MARK: - WordContentView
+
+private struct WordContentView: View {
+
+    var word: Word
+    var isWordSaved: Bool
+    var onSave: () -> Void
+
+    var body: some View {
+        if word.meanings.isEmpty {
+            SearchEmptyView(
+                lottie: .searchNoResults,
+                title: .WordScreen.Empty.title,
+                subtitle: .WordScreen.Empty.subtitle(word: word.title)
+            )
+        } else if !isWordSaved {
+            WordListView(word: word)
+                .modifier(StickyButton(
+                    title: .WordScreen.saveButton,
+                    image: Image(systemName: "plus"),
+                    onTap: onSave
+                ))
+        } else {
+            WordListView(word: word)
+        }
     }
 }
 

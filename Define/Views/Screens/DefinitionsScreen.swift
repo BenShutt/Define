@@ -23,18 +23,17 @@ struct DefinitionsScreen: Screen {
 
     /// Draw view
     var screen: some View {
-        StickyButton(
-            buttonText: .DefinitionsScreen.addWordButton,
-            buttonImage: .search
-        ) {
-            navigation.push(.search)
-        } content: {
-            ListView(words.words) { _, word in
-                AppNavigationLink(value: NavigationRoute.word(word.word)) {
-                    WordListItemView(word: word.word)
-                }
+        ListView(words.words) { _, word in
+            AppNavigationLink(value: NavigationRoute.word(word.word)) {
+                WordListItemView(word: word.word)
             }
         }
+        .modifier(StickyButton(
+            title: .DefinitionsScreen.addWordButton,
+            image: .search
+        ) {
+            navigation.push(.search)
+        })
         .toolbar {
             Button(action: {
                 navigation.push(.search)

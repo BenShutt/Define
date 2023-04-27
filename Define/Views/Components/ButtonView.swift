@@ -11,7 +11,7 @@ import SwiftUI
 struct ButtonView: View {
 
     /// Button title text
-    var text: String
+    var title: String
 
     /// Button image
     var image: Image?
@@ -31,7 +31,7 @@ struct ButtonView: View {
                         .frame(20)
                 }
 
-                Text(text)
+                Text(title)
                     .textStyle(.button)
                     .foregroundColor(Color.appWhite)
             }
@@ -49,6 +49,6 @@ struct ButtonView: View {
 struct ButtonView_Previews: PreviewProvider {
 
     static var previews: some View {
-        ButtonView(text: "TAP ME!", onTap: {})
+        ButtonView(title: "TAP ME!", onTap: {})
     }
 }
