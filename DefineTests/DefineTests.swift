@@ -43,3 +43,5 @@ class DefineTests: XCTestCase {
         }
     }
 }
+
+// swiftlint:enable empty_xctest_method

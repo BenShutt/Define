@@ -39,3 +39,5 @@ func ?!!<T>(
         onError()
     }
 }
+
+// swiftlint:enable static_operator operator_whitespace

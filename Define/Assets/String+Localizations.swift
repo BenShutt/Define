@@ -94,3 +94,5 @@ extension String {
         static let dismiss = "Dismiss"
     }
 }
+
+// swiftlint:enable nesting
