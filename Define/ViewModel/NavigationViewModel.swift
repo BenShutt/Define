@@ -8,6 +8,8 @@
 import SwiftUI
 import DictionaryAPI
 
+// MARK: - NavigationRoute
+
 /// A navigation destination
 enum NavigationRoute: Hashable {
 
@@ -18,32 +20,13 @@ enum NavigationRoute: Hashable {
     case word(Word)
 }
 
+// MARK: - NavigationViewModel
+
 /// View model for navigation
 final class NavigationViewModel: ObservableObject {
 
     /// `NavigationPath`
     @Published var path = NavigationPath()
-
-    /// Get the root `View`
-    /// - Parameter words: `WordsViewModel`
-    /// - Returns: `View`
-    @ViewBuilder func rootView(words: WordsViewModel) -> some View {
-        Group {
-            if words.words.isEmpty {
-                SearchScreen()
-            } else {
-                DefinitionsScreen()
-            }
-        }
-        .navigationDestination(for: NavigationRoute.self) { route in
-            switch route {
-            case .search:
-                SearchScreen()
-            case let .word(word):
-                WordScreen(word: word)
-            }
-        }
-    }
 
     /// Push `route` on `path`
     /// - Parameter route: `NavigationRoute`
@@ -54,5 +37,22 @@ final class NavigationViewModel: ObservableObject {
     /// Pop to root screen
     func popToRoot() {
         path = NavigationPath()
+    }
+}
+
+// MARK: - View + NavigationRoute
+
+extension View {
+
+    /// Add navigation destination handler to view
+    func navigate() -> some View {
+        navigationDestination(for: NavigationRoute.self) { route in
+            switch route {
+            case .search:
+                SearchScreen()
+            case let .word(word):
+                WordScreen(word: word)
+            }
+        }
     }
 }

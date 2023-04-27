@@ -28,6 +28,11 @@ final class WordsViewModel: ObservableObject {
         }
     }
 
+    /// Shorthand for `isEmpty` of `words`
+    var isEmpty: Bool {
+        words.isEmpty
+    }
+
     /// Contains `word`
     /// - Parameter word: `Word`
     /// - Returns: `Bool`

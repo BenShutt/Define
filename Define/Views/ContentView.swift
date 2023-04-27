@@ -19,9 +19,27 @@ struct ContentView: View {
     /// Root `NavigationStack`
     var body: some View {
         NavigationStack(path: $navigation.path) {
-            navigation.rootView(words: words)
+            RootView(hasWords: !words.isEmpty)
+                .navigate()
         }
         .environmentObject(navigation)
         .environmentObject(words)
+    }
+}
+
+// MARK: - RootView
+
+/// Define the root UI
+private struct RootView: View {
+
+    /// `Bool`
+    var hasWords: Bool
+
+    var body: some View {
+        if hasWords {
+            DefinitionsScreen()
+        } else {
+            SearchScreen()
+        }
     }
 }
