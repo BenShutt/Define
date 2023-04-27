@@ -21,38 +21,38 @@ struct SearchScreen: Screen {
     /// `View` of the screen
     var screen: some View {
         VStack(spacing: 0) {
-            SearchHeaderView(searchText: $viewModel.searchText)
+            SearchHeaderView(searchText: $viewModel.search)
                 .zIndex(1)
 
-            if viewModel.state != .list {
+            if viewModel.words.isEmpty {
                 VSpacer(height: .large)
             }
 
             switch viewModel.state {
-            case .loading:
-                LoadingView()
-
-            case .list:
-                ListView(viewModel.words) { _, word in
-                    AppNavigationLink(value: NavigationRoute.word(word)) {
-                        WordListItemView(word: word)
-                    }
-                }
-
-            case .noResults:
-                SearchEmptyView(
-                    lottie: .searchNoResults,
-                    title: .SearchScreen.NoResults.title,
-                    subtitle: .SearchScreen.NoResults.subtitle(viewModel.searchText)
-                )
-
-            case .empty:
+            case .emptySearch:
                 SearchEmptyView(
                     lottie: .searchEmpty,
                     lottieTransform: .init(scaleX: 1.5, y: 1.5),
                     title: .SearchScreen.Empty.title,
                     subtitle: .SearchScreen.Empty.subtitle
                 )
+
+            case .loading:
+                LoadingView()
+
+            case .failure:
+                SearchEmptyView(
+                    lottie: .searchNoResults,
+                    title: .SearchScreen.NoResults.title,
+                    subtitle: .SearchScreen.NoResults.subtitle(viewModel.search)
+                )
+
+            case let .success(words):
+                ListView(words) { _, word in
+                    AppNavigationLink(value: NavigationRoute.word(word)) {
+                        WordListItemView(word: word)
+                    }
+                }
             }
         }
         .frame(

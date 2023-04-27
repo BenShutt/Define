@@ -8,7 +8,6 @@
 import Combine
 import SwiftUI
 import DictionaryAPI
-import Alamofire
 
 /// View model wrapper of the `SearchAPI`
 @MainActor final class SearchViewModel: ObservableObject {
@@ -16,105 +15,92 @@ import Alamofire
     /// Search state
     enum State {
 
-        /// Is loading results
+        /// No text to search
+        case emptySearch
+
+        /// The search task is in progress
         case loading
 
-        /// Is showing non-empty list
-        case list
+        /// Failed to load search results
+        case failure(Error)
 
-        /// Empty list
-        case noResults
-
-        /// Text is empty
-        case empty
+        /// Successfully loaded words for search
+        case success([Word])
     }
 
-    /// Minimum score required
-    private static let scoreMin: Double = 50
+    /// The text being searched
+    @Published var search = ""
 
-    /// Debounce throttle on the search
-    private static let debounce: TimeInterval = .debounce
-
-    /// Text being searched
-    @Published var searchText = ""
-
-    /// Definitions of word
-    @Published private(set) var result = emptyTextResult
-
-    /// Is API loading
-    @Published private(set) var isLoading = false
+    /// The text being searched
+    @Published var state: State = .emptySearch
 
     /// `Set` of `AnyCancellable`
     private var cancellables = Set<AnyCancellable>()
 
-    /// Result when there is no text to search
-    private static var emptyTextResult: ModelResult<[Word]> {
-        .failure(SearchViewModelError.emptyText)
+    /// `[Word]` returned from the API
+    var words: [Word] {
+        guard case .success(let words) = state else { return [] }
+        return words.sorted(by: <)
     }
 
-    /// Publisher of `$searchText`
-    private var searchTextPublisher: AnyPublisher<String, Never> {
-        $searchText
+    /// Construct a publisher for the search text
+    private var searchPublisher: AnyPublisher<String, Never> {
+        $search
+            .map { $0.trimmed }
             .dropFirst()
             .removeDuplicates()
             .eraseToAnyPublisher()
     }
 
-    // MARK: - Init
+    /// Check if the given `search` is still valid
+    /// - Parameter search: `String`
+    /// - Returns: `Bool`
+    private func isSearchStillValid(_ search: String) -> Bool {
+        search.trimmed == self.search.trimmed
+    }
 
-    /// Initializer
+    /// Initialize setting up Combine publish events
     init() {
-        // Handle changes to searchText
-        searchTextPublisher.sinkAndStore(in: &cancellables) { [weak self] _ in
-            self?.isLoading = !(self?.searchText ?? "").isEmpty
-            self?.result = Self.emptyTextResult
-        }
-
-        // Handle debounced changes to searchText
-        searchTextPublisher
-            .debounce(for: .seconds(Self.debounce), scheduler: DispatchQueue.main)
-            .sinkAndStore(in: &cancellables) { [weak self] word in
-                guard !word.isEmpty else { return }
-                guard word == self?.searchText else { return } // Outdated
-                self?.search(word: word)
+        searchPublisher
+            .receive(on: RunLoop.main)
+            .sink { search in
+                self.state = search.isEmpty ? .emptySearch : .loading
             }
+            .store(in: &cancellables)
+
+        searchPublisher
+            .debounce(for: .milliseconds(500), scheduler: RunLoop.main)
+            .sink { search in
+                self.getWords(for: search)
+            }
+            .store(in: &cancellables)
     }
 
-    /// Search for `word`
-    /// - Parameter word: `String`
-    private func search(word: String) {
+    /// Fetch words from the API
+    /// - Parameter search: `Search`
+    private func getWords(for search: String) {
+        guard !search.isEmpty else { return }
+        guard isSearchStillValid(search) else { return }
+
         Task {
-            let result: ModelResult<[Word]>
             do {
-                let words = try await EntriesAPI.request(word: word)
-                result = .success(words)
+                let words = try await GetWords.request(word: search)
+                guard !words.isEmpty else { throw SearchViewModelError.noResults }
+                setState(.success(words), for: search)
             } catch {
-                result = .failure(error)
+                setState(.failure(error), for: search)
             }
-
-            guard searchText == word else { return } // Outdated
-            isLoading = false
-            self.result = result
         }
     }
 
-    // MARK: - State
-
-    /// `[Word]` returned from the API
-    var words: [Word] {
-        (result.success ?? []).sorted(by: <)
-    }
-
-    /// Get `State`
-    var state: State {
-        if isLoading {
-            return .loading
-        } else if !words.isEmpty {
-            return .list
-        } else if !searchText.isEmpty {
-            return .noResults
-        }
-        return .empty
+    /// Set `state` for the given `search`.
+    /// Does nothing if the `search` is out of date.
+    /// - Parameters:
+    ///   - state: `State`
+    ///   - search: `String`
+    private func setState(_ state: State, for search: String) {
+        guard isSearchStillValid(search) else { return }
+        self.state = state
     }
 }
 
@@ -123,6 +109,6 @@ import Alamofire
 /// Error with `SearchViewModel`
 enum SearchViewModelError: Error {
 
-    /// No text to search
-    case emptyText
+    /// No results found for the search
+    case noResults
 }

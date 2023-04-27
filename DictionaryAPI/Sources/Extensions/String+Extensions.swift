@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension String {
+public extension String {
 
     /// Trimming whitespaces and new lines
     var trimmed: String {

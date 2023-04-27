@@ -11,16 +11,14 @@ import SwiftUI
 struct ChevronView: View {
 
     var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: .cornerRadius)
-                .fill(Color.appLightGray)
-                .frame(32)
-
-            Chevron()
-                .stroke(style: StrokeStyle(lineWidth: 4, lineCap: .round))
-                .foregroundColor(Color.appPrimary)
-                .frame(width: 6, height: 14)
-        }
+        Chevron()
+            .stroke(style: StrokeStyle(lineWidth: 4, lineCap: .round))
+            .foregroundColor(Color.appPrimary)
+            .frame(width: 6, height: 14)
+            .padding(.horizontal, 13)
+            .padding(.vertical, 9)
+            .background(Color.appLightGray)
+            .cornerRadius(.cornerRadius)
     }
 }
 

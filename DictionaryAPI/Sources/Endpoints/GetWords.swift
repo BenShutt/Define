@@ -1,5 +1,5 @@
 //
-//  EntriesAPI.swift
+//  GetWords.swift
 //  DictionaryAPI
 //
 //  Created by Ben Shutt on 18/09/2022.
@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 
 /// Make `HTTPRequest` for the Dictionary entries API
-public struct EntriesAPI: JSONDataRequest {
+public struct GetWords: JSONDataRequest {
 
     /// Response model from the API
     public typealias ResponseBody = [Word]
@@ -25,12 +25,12 @@ public struct EntriesAPI: JSONDataRequest {
 
 // MARK: - Interface
 
-public extension EntriesAPI {
+public extension GetWords {
 
     /// Fetch definitions for `word`
     /// - Parameter word: `String`
     /// - Returns: `[Word]`
     static func request(word: String) async throws -> ResponseBody {
-        try await EntriesAPI(word: word).request()
+        try await GetWords(word: word).request()
     }
 }
