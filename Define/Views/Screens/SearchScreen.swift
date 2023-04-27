@@ -25,7 +25,8 @@ struct SearchScreen: Screen {
                 .zIndex(1)
 
             if viewModel.words.isEmpty {
-                VSpacer(height: .large)
+                Spacer()
+                    .frame(height: .large)
             }
 
             switch viewModel.state {

@@ -27,8 +27,7 @@ struct MeaningListItemView: View {
         VStack(alignment: .leading, spacing: 0) {
             Text(definitionsTitle)
                 .h3()
-
-            VSpacer(height: .large)
+                .padding(.bottom, .large)
 
             ForEach(meaning.definitions.zipped, id: \.index) { index, definition in
                 VStack(alignment: .leading, spacing: 0) {
