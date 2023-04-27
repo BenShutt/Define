@@ -379,8 +379,8 @@
 		B82A76C328DFAA6400DABFBE /* ViewModifiers */ = {
 			isa = PBXGroup;
 			children = (
-				B894FA2228FC8D6B00BC0BFA /* Sticky */,
 				B813BFF628EB6F10000C766C /* ShapeBorder */,
+				B894FA2228FC8D6B00BC0BFA /* Sticky */,
 				B8C25F9B294F7AAF001C8847 /* KeyboardToolbar.swift */,
 				B8A2A83C2965814600A16FEE /* NavigationBarStyle.swift */,
 			);
