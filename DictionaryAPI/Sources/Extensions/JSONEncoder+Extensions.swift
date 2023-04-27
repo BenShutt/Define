@@ -9,6 +9,12 @@ import Foundation
 
 extension JSONEncoder {
 
+    /// `JSONEncoder` for the API
+    static var api: JSONEncoder {
+        JSONEncoder()
+    }
+
+    /// `JSONEncoder` for pretty printing
     static var pretty: JSONEncoder {
         let encoder = JSONEncoder()
         encoder.dateEncodingStrategy = .iso8601

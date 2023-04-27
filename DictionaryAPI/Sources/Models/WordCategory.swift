@@ -9,6 +9,7 @@ import Foundation
 
 /// A category of word
 public enum WordCategory: String, CaseIterable, Identifiable {
+
     case adjective
     case noun
     case verb

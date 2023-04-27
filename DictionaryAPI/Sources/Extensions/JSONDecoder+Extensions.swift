@@ -9,7 +9,8 @@ import Foundation
 
 extension JSONDecoder {
 
-    static var `default`: JSONDecoder {
+    /// `JSONDecoder` for the API
+    static var api: JSONDecoder {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
         return decoder

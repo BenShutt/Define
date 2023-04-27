@@ -9,6 +9,12 @@ import Alamofire
 
 extension HTTPHeaders {
 
+    /// Append a `header`
+    /// - Parameter header: `HTTPHeader`
+    mutating func append(_ header: HTTPHeader) {
+        self = appending(header)
+    }
+
     /// Append `headers`
     /// - Parameter headers: The headers
     /// - Returns: HTTPHeaders
@@ -26,4 +32,18 @@ extension HTTPHeaders {
         }
         return allHeaders
     }
+}
+
+// MARK: HTTPHeader + Extensions
+
+extension HTTPHeader {
+
+    /// `"Accept: application/json"`
+    static let acceptJSON = HTTPHeader(
+        name: "Accept",
+        value: "application/json"
+    )
+
+    /// `"Content-Type: application/json"`
+    static let contentTypeJSON: HTTPHeader = .contentType("application/json")
 }
