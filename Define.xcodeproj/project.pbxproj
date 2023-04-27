@@ -100,7 +100,6 @@
 		B8E49C1128DFA60000F9CAC4 /* View+If.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E49C1028DFA60000F9CAC4 /* View+If.swift */; };
 		B8FF0DC9295F9528004C61B6 /* DictionaryAPI in Frameworks */ = {isa = PBXBuildFile; productRef = B8FF0DC8295F9528004C61B6 /* DictionaryAPI */; };
 		B8FF0DCB295F9882004C61B6 /* hello.json in Resources */ = {isa = PBXBuildFile; fileRef = B8FF0DCA295F9882004C61B6 /* hello.json */; };
-		B8FF0DCF29603EE0004C61B6 /* Result+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FF0DCE29603EE0004C61B6 /* Result+Extensions.swift */; };
 		B8FF0DD129609DDF004C61B6 /* Migrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FF0DD029609DDF004C61B6 /* Migrations.swift */; };
 		B8FF0DD329609E3E004C61B6 /* Bundle+Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FF0DD229609E3E004C61B6 /* Bundle+Key.swift */; };
 		B8FF0DD529609EF3004C61B6 /* UserDefaultKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FF0DD429609EF3004C61B6 /* UserDefaultKey.swift */; };
@@ -222,7 +221,6 @@
 		B8FF0DBC295F30D1004C61B6 /* AppIcon */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AppIcon; sourceTree = "<group>"; };
 		B8FF0DC4295F7927004C61B6 /* DictionaryAPI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DictionaryAPI; sourceTree = "<group>"; };
 		B8FF0DCA295F9882004C61B6 /* hello.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hello.json; sourceTree = "<group>"; };
-		B8FF0DCE29603EE0004C61B6 /* Result+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+Extensions.swift"; sourceTree = "<group>"; };
 		B8FF0DD029609DDF004C61B6 /* Migrations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Migrations.swift; sourceTree = "<group>"; };
 		B8FF0DD229609E3E004C61B6 /* Bundle+Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Key.swift"; sourceTree = "<group>"; };
 		B8FF0DD429609EF3004C61B6 /* UserDefaultKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKey.swift; sourceTree = "<group>"; };
@@ -351,7 +349,6 @@
 				B889DEBD2957ACF50020E9C9 /* Array+RawRepresentable.swift */,
 				B8FF0DD229609E3E004C61B6 /* Bundle+Key.swift */,
 				B8B9B9E628EDED53006FCA76 /* NilCoalescingPrecedence.swift */,
-				B8FF0DCE29603EE0004C61B6 /* Result+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -555,13 +552,13 @@
 				B8E49C0828DF917E00F9CAC4 /* LoadingView.swift */,
 				B8B9B9E228EDE65F006FCA76 /* LogoView.swift */,
 				B8A1232128E9714600ACEC45 /* LottieView.swift */,
+				B8C43F3129FB0F7500F5E166 /* NoBounceScrollView.swift */,
 				B8A1232928E9744E00ACEC45 /* SearchEmptyView.swift */,
 				B8B9B9D528EC5C54006FCA76 /* SearchHeaderView.swift */,
 				B8C25F9F294F8D5D001C8847 /* Separator.swift */,
 				B879E9E828F0C5190094AA24 /* TagView.swift */,
 				B88491A729620B1A009F6469 /* VSpacer.swift */,
 				B801A3DA2986D41400FAD316 /* WordCategoryView.swift */,
-				B8C43F3129FB0F7500F5E166 /* NoBounceScrollView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -805,7 +802,7 @@
 				B8A2A83D2965814600A16FEE /* NavigationBarStyle.swift in Sources */,
 				B8958876295790E30041A315 /* NavigationViewModel.swift in Sources */,
 				B8B9B9E728EDED53006FCA76 /* NilCoalescingPrecedence.swift in Sources */,
-				B8FF0DCF29603EE0004C61B6 /* Result+Extensions.swift in Sources */,
+				B8C43F3229FB0F7500F5E166 /* NoBounceScrollView.swift in Sources */,
 				B813BFF828EB6F30000C766C /* RoundedBorder.swift in Sources */,
 				B8FF0DD82960ACCE004C61B6 /* SavedWord.swift in Sources */,
 				B89F179428E0EBF100A96E35 /* Screen.swift in Sources */,
@@ -819,7 +816,6 @@
 				B813BFFA28EB7022000C766C /* ShapeBorder.swift in Sources */,
 				B894FA2128FC8A4B00BC0BFA /* StickyBottom.swift in Sources */,
 				B894FA2428FC8D7A00BC0BFA /* StickyButton.swift in Sources */,
-				B8C43F3229FB0F7500F5E166 /* NoBounceScrollView.swift in Sources */,
 				B8E49C0D28DF99EA00F9CAC4 /* String+Localizations.swift in Sources */,
 				B879E9E928F0C5190094AA24 /* TagView.swift in Sources */,
 				B8D2A74628DF3AFE0096A020 /* TextStyle.swift in Sources */,
