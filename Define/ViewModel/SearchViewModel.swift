@@ -32,7 +32,7 @@ import DictionaryAPI
     @Published var search = ""
 
     /// The text being searched
-    @Published var state: State = .emptySearch
+    @Published private(set) var state: State = .emptySearch
 
     /// `Set` of `AnyCancellable`
     private var cancellables = Set<AnyCancellable>()
