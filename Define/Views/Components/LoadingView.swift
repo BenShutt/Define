@@ -13,17 +13,11 @@ struct LoadingView: View {
     /// `Color` of indicator
     var color = Color.appDarkBlue
 
-    /// When `true`, set maxWidth and minWidth of the frame to `.infinity`
-    var infiniteFrame = false
-
     /// Customize a `ProgressView`
     var body: some View {
         ProgressView()
             .tint(color)
             .progressViewStyle(CircularProgressViewStyle())
-            .if(infiniteFrame) {
-                $0.frame(maxWidth: .infinity, maxHeight: .infinity)
-            }
     }
 }
 

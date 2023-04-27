@@ -12,7 +12,11 @@ extension Word {
 
     /// Preview content for `Word`
     static var preview: Word {
-        try loadFromFile() ?!! fatalError("\(Word.self) used for preview threw an error")
+        do {
+            return try loadFromFile()
+        } catch {
+            fatalError("\(Word.self) used for preview threw an error")
+        }
     }
 
     /// Load `Word` from file
