@@ -42,8 +42,8 @@ struct MeaningListItemView: View {
                 }
             }
 
-            VSpacer(height: .mediumLarge)
             WordCategoryView(category: meaning.category)
+                .padding(.top, .mediumLarge)
         }
         .listItem()
         .padding(.meaning)
