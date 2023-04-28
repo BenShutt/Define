@@ -24,7 +24,7 @@ struct ScrollVStack<Element: Identifiable, Content: View>: View {
                     content(element)
                 }
             }
-            .padding(.vertical, vPadding)
+            .padding(.vertical, vPadding) // TODO: Opinionated
         }
     }
 }

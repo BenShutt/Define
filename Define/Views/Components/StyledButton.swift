@@ -31,7 +31,7 @@ struct StyledButton: View {
                         .renderingMode(.template)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(size: .iconSize)
+                        .frame(size: .iconSmall)
                 }
 
                 Text(title)

@@ -20,7 +20,7 @@ struct CrossIconView: View {
                 IconView(
                     image: .cross,
                     foregroundColor: .appDarkGray,
-                    size: .iconSize
+                    size: .icon
                 )
             }
         }

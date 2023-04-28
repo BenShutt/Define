@@ -16,7 +16,7 @@ struct SearchIconView: View {
             IconView(
                 image: .search,
                 foregroundColor: .appDarkGray,
-                size: .iconSize
+                size: .icon
             )
         }
     }

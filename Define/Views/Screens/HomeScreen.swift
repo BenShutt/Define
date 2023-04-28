@@ -34,7 +34,8 @@ struct HomeScreen: Screen {
         ) {
             navigation.push(.search)
         }
-        .navigationBarHidden(true)
+        .toolbarBackground(Color.clear, for: .navigationBar)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

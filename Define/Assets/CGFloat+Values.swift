@@ -19,7 +19,10 @@ extension CGFloat {
     static let borderWidth: CGFloat = 1.5
 
     /// 20pts
-    static let iconSize: CGFloat = 22
+    static let icon: CGFloat = 22
+
+    /// 16pts
+    static let iconSmall: CGFloat = 16
 
     /// 6pts
     static let cornerRadius: CGFloat = 10
