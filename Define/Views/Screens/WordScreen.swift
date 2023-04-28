@@ -108,6 +108,22 @@ private struct WordContentView: View {
     }
 }
 
+// MARK: - WordListView
+
+/// `ListView` of `Word` meanings
+private struct WordListView: View {
+
+    /// The word to define
+    var word: Word
+
+    /// Draw `View`
+    var body: some View {
+        ListView(word.meanings) { index, meaning in
+            MeaningListItemView(number: index + 1, meaning: meaning)
+        }
+    }
+}
+
 // MARK: - PreviewProvider
 
 struct WordScreen_Previews: PreviewProvider {
