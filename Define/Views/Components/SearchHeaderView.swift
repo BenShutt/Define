@@ -46,7 +46,7 @@ struct SearchHeaderView: View {
                 prompt: .SearchHeaderView.prompt,
                 image: .search,
                 onFocusChanged: { isFocused in
-                    withAnimation(.linear(duration: .accordion)) {
+                    withAnimation(.linear(duration: 0.1)) {
                         isTextInputFocused = isFocused
                     }
                 }

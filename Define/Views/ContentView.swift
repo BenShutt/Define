@@ -37,7 +37,7 @@ private struct RootView: View {
 
     var body: some View {
         if hasWords {
-            DefinitionsScreen()
+            HomeScreen()
         } else {
             SearchScreen()
         }

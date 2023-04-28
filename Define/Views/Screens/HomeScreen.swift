@@ -1,5 +1,5 @@
 //
-//  DefinitionsScreen.swift
+//  HomeScreen.swift
 //  Define
 //
 //  Created by Ben Shutt on 24/12/2022.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// Screen listing the user's saved definitions
-struct DefinitionsScreen: Screen {
+struct HomeScreen: Screen {
 
     /// `NavigationViewModel`
     @EnvironmentObject var navigation: NavigationViewModel
@@ -49,10 +49,10 @@ struct DefinitionsScreen: Screen {
 
 // MARK: - PreviewProvider
 
-struct DefinitionScreen_Previews: PreviewProvider {
+struct HomeScreen_Previews: PreviewProvider {
 
     static var previews: some View {
-        DefinitionsScreen()
+        HomeScreen()
             .environmentObject(NavigationViewModel())
             .environmentObject(WordsViewModel())
     }

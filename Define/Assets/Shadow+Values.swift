@@ -6,46 +6,23 @@
 //
 
 import SwiftUI
+import CubeFoundationSwiftUI
 
-// MARK: Shadow
+// MARK: FigmaShadow + Values
 
-struct Shadow {
+extension FigmaShadow {
 
-    var color: Color
-    var radius: CGFloat
-    var x: CGFloat
-    var y: CGFloat
-}
-
-// MARK: Shadow + Values
-
-extension Shadow {
-
-    static let sticky = Shadow(
-        color: .appDarkGray.opacity(0.05),
-        radius: 15,
+    static let sticky = FigmaShadow(
         x: 0,
-        y: 2
+        y: 2,
+        blur: 15 * 2,
+        color: .appDarkGray.opacity(0.05)
     )
 
-    static let container = Shadow(
-        color: .appLightGray.opacity(0.08),
-        radius: 10,
+    static let container = FigmaShadow(
         x: 0,
-        y: 2
+        y: 2,
+        blur: 10 * 2,
+        color: .appLightGray.opacity(0.08)
     )
-}
-
-// MARK: View + Shadow
-
-extension View {
-
-    func shadow(_ shadow: Shadow) -> some View {
-        self.shadow(
-            color: shadow.color,
-            radius: shadow.radius,
-            x: shadow.x,
-            y: shadow.y
-        )
-    }
 }

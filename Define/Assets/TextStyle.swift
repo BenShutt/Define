@@ -27,7 +27,7 @@ enum TextStyle: String, CaseIterable, Hashable, Identifiable {
         case .h2: return 20
         case .h3: return 16
         case .body: return 16
-        case .button: return 18
+        case .button: return 16
         case .tag: return 12
         case .caption: return 12
         }
