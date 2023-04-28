@@ -9,6 +9,7 @@ import SwiftUI
 
 /// Set of `TextStyle`s (styles of text)
 enum TextStyle: String, CaseIterable, Hashable, Identifiable {
+
     case h1
     case h2
     case h3
