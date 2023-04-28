@@ -19,10 +19,7 @@ extension CGFloat {
     static let borderWidth: CGFloat = 1.5
 
     /// 20pts
-    static let iconSize: CGFloat = 20
-
-    /// 2pts
-    static let shadowRadius: CGFloat = 2
+    static let iconSize: CGFloat = 22
 
     /// 6pts
     static let cornerRadius: CGFloat = 6
@@ -57,14 +54,6 @@ extension CGFloat {
 
     /// Medium pts
     static let vMargin: CGFloat = .medium
-
-    // MARK: - Launch
-
-    struct Launch {
-
-        static let containerSize: CGFloat = 200
-        static let padding: CGFloat = 40
-    }
 }
 
 // MARK: - Double + Values

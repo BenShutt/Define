@@ -59,6 +59,10 @@ struct WordListItemView: View {
             ChevronView()
         }
         .padding(.large)
+        .background(Color.appWhite)
+        .cornerRadius(.cornerRadius)
+        .shadow(.container)
+        .padding(EdgeInsets.margins)
     }
 }
 
@@ -84,7 +88,7 @@ private struct PartsOfSpeechView: View {
 struct WordListItemView_Previews: PreviewProvider {
 
     static var previews: some View {
-        VStack {
+        ScreenBody {
             WordListItemView(word: .preview)
         }
     }

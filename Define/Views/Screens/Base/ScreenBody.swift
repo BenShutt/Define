@@ -11,7 +11,7 @@ import SwiftUI
 struct ScreenBody<Content: View>: View {
 
     /// Background color
-    var backgroundColor: Color = .appWhite
+    var backgroundColor: Color = .appLightGray
 
     /// Screen content view
     @ViewBuilder var content: () -> Content

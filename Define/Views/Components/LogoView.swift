@@ -40,7 +40,7 @@ struct LogoView: View {
 
                 IconView(
                     image: .search,
-                    foregroundColor: .appPrimary,
+                    foregroundColor: .appDarkGray,
                     size: iconSize(proxy)
                 )
             }
@@ -65,7 +65,7 @@ private struct LogoBorder: ViewModifier {
                 color: .clear,
                 cornerRadius: borderRadius
             ))
-            .appShadow()
+            .shadow(.container)
     }
 }
 
@@ -75,6 +75,6 @@ struct LogoView_Previews: PreviewProvider {
 
     static var previews: some View {
         LogoView(showBorder: true)
-            .frame(120)
+            .frame(size: 120)
     }
 }

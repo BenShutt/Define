@@ -21,7 +21,7 @@ struct DefinitionView: View {
 
             if let example = definition.exampleTitle {
                 Text(String.DefinitionView.example(example))
-                    .foregroundColor(.appLightBlue)
+                    .foregroundColor(.appBlue)
                     .caption()
             }
         }

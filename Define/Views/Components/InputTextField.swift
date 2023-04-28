@@ -30,7 +30,7 @@ struct InputTextField: View {
 
     /// Tint color
     private var tintColor: Color {
-        .appPrimary
+        .appDarkGray
     }
 
     /// Border color

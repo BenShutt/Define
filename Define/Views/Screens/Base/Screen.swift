@@ -13,9 +13,6 @@ protocol Screen: View {
     /// Some `View`
     associatedtype Content: View
 
-    /// Get the `NavigationBarStyle`
-    var navigationBarStyle: NavigationBarStyle { get }
-
     /// The screens implementation of `body`
     @ViewBuilder var screen: Content { get }
 }
@@ -26,7 +23,6 @@ extension Screen {
 
     /// The `View` of the screen
     var body: some View {
-        ScreenBody(content: { screen })
-            .navigationBarStyle(navigationBarStyle)
+        ScreenBody { screen }
     }
 }

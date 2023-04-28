@@ -1,5 +1,5 @@
 //
-//  ButtonView.swift
+//  StyledButton.swift
 //  Define
 //
 //  Created by Ben Shutt on 01/10/2022.
@@ -8,15 +8,18 @@
 import SwiftUI
 
 /// Button component
-struct ButtonView: View {
+struct StyledButton: View {
+
+    /// Color of the text and tint
+    private let foregroundColor: Color = .appDarkGray
 
     /// Button title text
     var title: String
 
-    /// Button image
+    /// Button image shown before the title
     var image: Image?
 
-    /// On tap closure
+    /// Closure called when the button is tapped
     var onTap: () -> Void
 
     /// Draw `View`
@@ -28,27 +31,27 @@ struct ButtonView: View {
                         .renderingMode(.template)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(20)
+                        .frame(size: .iconSize)
                 }
 
                 Text(title)
                     .textStyle(.button)
-                    .foregroundColor(Color.appWhite)
+                    .foregroundColor(foregroundColor)
             }
             .frame(maxWidth: .infinity)
             .padding(.buttonPadding)
-            .tint(.appWhite)
-            .background(Color.appPrimary)
+            .tint(foregroundColor)
+            .background(RadialGradient.button)
+            .clipShape(Capsule())
         }
-        .clipShape(Capsule())
     }
 }
 
 // MARK: - PreviewProvider
 
-struct ButtonView_Previews: PreviewProvider {
+struct StyledButton_Previews: PreviewProvider {
 
     static var previews: some View {
-        ButtonView(title: "TAP ME!", onTap: {})
+        StyledButton(title: "TAP ME!", onTap: {})
     }
 }

@@ -13,11 +13,6 @@ struct SearchScreen: Screen {
     /// `SearchViewModel`
     @StateObject private var viewModel = SearchViewModel()
 
-    /// `NavigationBarStyle`
-    var navigationBarStyle: NavigationBarStyle {
-        .clear
-    }
-
     /// `View` of the screen
     var screen: some View {
         VStack(spacing: 0) {
@@ -61,6 +56,8 @@ struct SearchScreen: Screen {
             maxHeight: .infinity,
             alignment: .topLeading
         )
+        .toolbarBackground(Color.clear, for: .navigationBar)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

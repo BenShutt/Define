@@ -20,11 +20,6 @@ struct WordScreen: Screen {
     /// Is presenting alert to delete word
     @State private var showingDeleteWordAlert = false
 
-    /// `NavigationBarStyle`
-    var navigationBarStyle: NavigationBarStyle {
-        NavigationBarStyle(title: word.title)
-    }
-
     /// `Word` to define
     var word: Word
 
@@ -41,6 +36,7 @@ struct WordScreen: Screen {
         ) {
             saveWord()
         }
+        .navigationTitle(word.title)
         .toolbar {
             if isWordSaved {
                 Button(action: {
@@ -97,11 +93,11 @@ private struct WordContentView: View {
             )
         } else if !isWordSaved {
             WordListView(word: word)
-                .modifier(StickyButton(
+                .stickyButton(
                     title: .WordScreen.saveButton,
                     image: Image(systemName: "plus"),
                     onTap: onSave
-                ))
+                )
         } else {
             WordListView(word: word)
         }

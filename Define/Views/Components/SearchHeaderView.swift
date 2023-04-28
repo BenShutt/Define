@@ -55,7 +55,7 @@ struct SearchHeaderView: View {
         .padding(padding)
         .background(
             GradientBlurView()
-                .appShadow()
+                .shadow(.sticky)
                 .ignoresSafeArea()
         )
     }

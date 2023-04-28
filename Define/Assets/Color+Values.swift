@@ -6,42 +6,14 @@
 //
 
 import SwiftUI
+import CubeFoundationSwiftUI
 
-/// Set of `Color`s used in this app
 extension Color {
 
-    static let appBlack = Color("appBlack")
-    static let appDarkBlue = Color("appDarkBlue")
-    static let appBlue = Color("appBlue")
-    static let appDarkGray = Color("appDarkGray")
-    static let appLightBlue = Color("appLightBlue")
-    static let appLightGray = Color("appLightGray")
-    static let appLightOrange = Color("appLightOrange")
-    static let appLightRed = Color("appLightRed")
-    static let appShadow = Color("appShadow")
-    static let appWhite = Color("appWhite")
-
-    // MARK: - Computed
-
-    static var appPrimary: Color {
-        appDarkBlue
-    }
-
-    static var appAccent: Color {
-        appLightBlue
-    }
-}
-
-// MARK: - [Color] + Values
-
-extension Array where Element == Color {
-
-    static let appBlue: [Color] = [.appBlue, .appDarkBlue]
-}
-
-// MARK: - Gradient + Values
-
-extension Gradient {
-
-    static let blue = Gradient(colors: .appBlue)
+    static let appWhite = Color(white255: 255)
+    static let appDarkGray = Color(white255: 12)
+    static let appLightGray = Color(white255: 243)
+    static let appMaize = Color(red255: 251, green: 236, blue: 93)
+    static let appYellow = Color(red255: 255, green: 234, blue: 0)
+    static let appBlue = Color(red255: 52, green: 152, blue: 219)
 }

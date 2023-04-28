@@ -19,7 +19,7 @@ struct CrossIconView: View {
             Button(action: onTap) {
                 IconView(
                     image: .cross,
-                    foregroundColor: .appPrimary,
+                    foregroundColor: .appDarkGray,
                     size: .iconSize
                 )
             }

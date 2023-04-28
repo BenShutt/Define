@@ -11,7 +11,7 @@ import SwiftUI
 struct LoadingView: View {
 
     /// `Color` of indicator
-    var color = Color.appDarkBlue
+    var color: Color = .appDarkGray
 
     /// Customize a `ProgressView`
     var body: some View {

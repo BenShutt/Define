@@ -24,7 +24,7 @@ struct LottieView: UIViewRepresentable {
     var transform: CGAffineTransform = .identity
 
     /// `AnimationView`
-    private let animationView = AnimationView()
+    private let animationView = LottieAnimationView()
 
     func makeUIView(context: UIViewRepresentableContext<LottieView>) -> UIView {
         let view = UIView(frame: .zero)

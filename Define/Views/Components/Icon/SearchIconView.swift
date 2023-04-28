@@ -15,7 +15,7 @@ struct SearchIconView: View {
         IconContainerView(edge: .leading) {
             IconView(
                 image: .search,
-                foregroundColor: .appPrimary,
+                foregroundColor: .appDarkGray,
                 size: .iconSize
             )
         }

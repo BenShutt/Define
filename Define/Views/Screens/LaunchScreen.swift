@@ -11,20 +11,15 @@ import SwiftUI
 struct LaunchScreen: Screen {
 
     /// Size of the container
-    var containerSize: CGFloat = .Launch.containerSize
+    var containerSize: CGFloat = 200
 
     /// Size of the padding
-    var padding: CGFloat = .Launch.padding
-
-    /// `NavigationBarStyle`
-    var navigationBarStyle: NavigationBarStyle {
-        .clear
-    }
+    var padding: CGFloat = 40
 
     /// Draw `View`
     var screen: some View {
         LogoView(showBorder: true)
-            .frame(containerSize - 2 * padding)
+            .frame(size: containerSize - 2 * padding)
             .padding(padding)
     }
 }

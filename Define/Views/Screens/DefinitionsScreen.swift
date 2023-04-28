@@ -16,11 +16,6 @@ struct DefinitionsScreen: Screen {
     /// `WordsViewModel`
     @EnvironmentObject var words: WordsViewModel
 
-    /// `NavigationBarStyle`
-    var navigationBarStyle: NavigationBarStyle {
-        NavigationBarStyle(title: .DefinitionsScreen.title)
-    }
-
     /// Draw view
     var screen: some View {
         ListView(words.words) { _, word in
@@ -28,12 +23,15 @@ struct DefinitionsScreen: Screen {
                 WordListItemView(word: word.word)
             }
         }
-        .modifier(StickyButton(
+        .stickyButton(
             title: .DefinitionsScreen.addWordButton,
             image: .search
         ) {
             navigation.push(.search)
-        })
+        }
+        .toolbarBackground(Color.appWhite, for: .navigationBar)
+        .toolbarBackground(.visible, for: .navigationBar)
+        .navigationTitle(String.DefinitionsScreen.title)
         .toolbar {
             Button(action: {
                 navigation.push(.search)
@@ -42,7 +40,7 @@ struct DefinitionsScreen: Screen {
                     .renderingMode(.template)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(22)
+                    .frame(size: .iconSize)
                     .padding(.small)
             })
         }

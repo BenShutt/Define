@@ -27,7 +27,7 @@ enum TextStyle: String, CaseIterable, Hashable, Identifiable {
         case .h2: return 20
         case .h3: return 16
         case .body: return 16
-        case .button: return 16
+        case .button: return 18
         case .tag: return 12
         case .caption: return 12
         }
@@ -40,7 +40,7 @@ enum TextStyle: String, CaseIterable, Hashable, Identifiable {
         case .h2: return .bold
         case .h3: return .bold
         case .body: return .regular
-        case .button: return .semiBold
+        case .button: return .bold
         case .tag: return .semiBold
         case .caption: return .light
         }
@@ -62,19 +62,19 @@ extension View {
     /// Standard `.h1` implementation
     func h1() -> some View {
         textStyle(.h1)
-            .foregroundColor(.appBlack)
+            .foregroundColor(.appDarkGray)
     }
 
     /// Standard `.h2` implementation
     func h2() -> some View {
         textStyle(.h2)
-            .foregroundColor(.appBlack)
+            .foregroundColor(.appDarkGray)
     }
 
     /// Standard `.h3` implementation
     func h3() -> some View {
         textStyle(.h3)
-            .foregroundColor(.appBlack)
+            .foregroundColor(.appDarkGray)
     }
 
     /// Standard `.body` implementation
@@ -86,13 +86,13 @@ extension View {
     /// Standard `.tag` implementation
     func tag() -> some View {
         textStyle(.tag)
-            .foregroundColor(Color.appDarkGray)
+            .foregroundColor(.appDarkGray)
     }
 
     /// Standard `.caption` implementation
     func caption() -> some View {
         textStyle(.caption)
-            .foregroundColor(Color.appDarkGray)
+            .foregroundColor(.appDarkGray)
             .italic()
     }
 }
@@ -104,9 +104,9 @@ struct TextStyle_Previews: PreviewProvider {
     static var previews: some View {
         VStack(alignment: .leading, spacing: .large) {
             ForEach(values: TextStyle.allCases) { textStyle in
-                Text(verbatim: "Text Preview (\(textStyle))")
+                Text(verbatim: "Text Preview - \(textStyle)")
                     .textStyle(textStyle)
-                    .foregroundColor(.appBlack)
+                    .foregroundColor(.appDarkGray)
             }
         }
     }

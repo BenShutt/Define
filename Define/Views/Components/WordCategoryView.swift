@@ -21,12 +21,7 @@ struct WordCategoryView: View {
 
     /// Background color
     var backgroundColor: Color {
-        switch wordCategory {
-        case .adjective: return .appLightOrange.opacity(0.6)
-        case .noun: return .appLightBlue.opacity(0.6)
-        case .verb: return .appLightRed.opacity(0.6)
-        default: return .appLightGray
-        }
+        .appLightGray
     }
 
     /// Draw view

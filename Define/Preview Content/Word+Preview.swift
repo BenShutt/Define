@@ -7,6 +7,7 @@
 
 import Foundation
 import DictionaryAPI
+import CubeFoundation
 
 extension Word {
 

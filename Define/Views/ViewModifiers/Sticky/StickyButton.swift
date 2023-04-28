@@ -22,7 +22,7 @@ struct StickyButton: ViewModifier {
     func body(content: Content) -> some View {
         content.modifier(
             StickyBottom {
-                ButtonView(
+                StyledButton(
                     title: title,
                     image: image,
                     onTap: onTap
@@ -30,6 +30,23 @@ struct StickyButton: ViewModifier {
                 .padding(.largeMargins)
             }
         )
+    }
+}
+
+// MARK: - View + StickyButton
+
+extension View {
+
+    func stickyButton(
+        title: String,
+        image: Image? = nil,
+        onTap: @escaping () -> Void
+    ) -> some View {
+        modifier(StickyButton(
+            title: title,
+            image: image,
+            onTap: onTap
+        ))
     }
 }
 
@@ -41,9 +58,9 @@ struct StickyButton_Previews: PreviewProvider {
         ScreenBody {
             Text("Test")
         }
-        .modifier(StickyButton(
+        .stickyButton(
             title: "TAP ME!",
             onTap: {}
-        ))
+        )
     }
 }
