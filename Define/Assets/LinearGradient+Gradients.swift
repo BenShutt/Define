@@ -9,14 +9,16 @@ import SwiftUI
 
 extension LinearGradient {
 
-    static let header = LinearGradient(
-        colors: [
-            .appWhite,
-            .appBlue.opacity(0.2)
-        ],
-        startPoint: .top,
-        endPoint: .bottom
-    )
+    static func header(color: Color) -> LinearGradient {
+        LinearGradient(
+            colors: [
+                .appWhite,
+                color.opacity(0.2)
+            ],
+            startPoint: .top,
+            endPoint: .bottom
+        )
+    }
 }
 
 extension RadialGradient {

@@ -1,5 +1,5 @@
 //
-//  HeaderView.swift
+//  TextHeaderView.swift
 //  Define
 //
 //  Created by Ben Shutt on 28/04/2023.
@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-/// Header view
-struct HeaderView: View {
+/// Header view with text
+struct TextHeaderView: View {
 
     /// Text for the title label
     var title: String
@@ -16,8 +16,18 @@ struct HeaderView: View {
     /// Optional text for the subtitle label
     var subtitle: String?
 
+    /// Gradient color
+    var color: Color
+
+    /// Top padding
+    var topPadding: CGFloat = .headerPadding
+
     var body: some View {
-        VStack(alignment: .leading, spacing: .medium) {
+        HeaderView(
+            spacing: .medium,
+            color: color,
+            topPadding: topPadding
+        ) {
             Text(verbatim: title)
                 .h1()
 
@@ -25,14 +35,6 @@ struct HeaderView: View {
                 Text(verbatim: subtitle)
                     .body()
             }
-        }
-        .multilineTextAlignment(.leading)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.extraLarge)
-        .background {
-            GradientBlurView()
-                .ignoresSafeArea()
-                .shadow(.sticky)
         }
     }
 }
@@ -44,9 +46,10 @@ struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
         ScreenBody {
             VStack {
-                HeaderView(
+                TextHeaderView(
                     title: .HomeScreen.title,
-                    subtitle: .HomeScreen.subtitle
+                    subtitle: .HomeScreen.subtitle,
+                    color: .appBlue
                 )
 
                 Spacer()

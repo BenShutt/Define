@@ -10,18 +10,26 @@ import SwiftUI
 /// `View` with sticky header content
 struct StickyHeader: ViewModifier {
 
-    /// Title of the header
+    /// Text for the title label
     var title: String
 
-    /// Optional subtitle of the header
+    /// Optional text for the subtitle label
     var subtitle: String?
+
+    /// Gradient color
+    var color: Color
+
+    /// Top padding
+    var topPadding: CGFloat = .headerPadding
 
     func body(content: Content) -> some View {
         content.modifier(
             StickyTop {
-                HeaderView(
+                TextHeaderView(
                     title: title,
-                    subtitle: subtitle
+                    subtitle: subtitle,
+                    color: color,
+                    topPadding: topPadding
                 )
             }
         )
@@ -34,11 +42,15 @@ extension View {
 
     func stickyHeader(
         title: String,
-        subtitle: String? = nil
+        subtitle: String? = nil,
+        color: Color,
+        topPadding: CGFloat = .headerPadding
     ) -> some View {
         modifier(StickyHeader(
             title: title,
-            subtitle: subtitle
+            subtitle: subtitle,
+            color: color,
+            topPadding: topPadding
         ))
     }
 }
@@ -53,7 +65,8 @@ struct StickyHeader_Previews: PreviewProvider {
         }
         .stickyHeader(
             title: "Title text",
-            subtitle: "More Subtitle text"
+            subtitle: "More Subtitle text",
+            color: .appBlue
         )
     }
 }

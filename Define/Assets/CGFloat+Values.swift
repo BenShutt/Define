@@ -54,6 +54,9 @@ extension CGFloat {
 
     /// Medium pts
     static let vMargin: CGFloat = .medium
+
+    /// Padding of headers
+    static let headerPadding: CGFloat = .extraLarge
 }
 
 // MARK: - Double + Values

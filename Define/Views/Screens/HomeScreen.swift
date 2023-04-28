@@ -25,7 +25,8 @@ struct HomeScreen: Screen {
         }
         .stickyHeader(
             title: .HomeScreen.title,
-            subtitle: .HomeScreen.subtitle
+            subtitle: .HomeScreen.subtitle,
+            color: .appGreen
         )
         .stickyButton(
             title: .HomeScreen.addWordButton,
@@ -34,7 +35,6 @@ struct HomeScreen: Screen {
             navigation.push(.search)
         }
         .navigationBarHidden(true)
-        .navigationTitle(String.HomeScreen.title) // For back menu
     }
 }
 

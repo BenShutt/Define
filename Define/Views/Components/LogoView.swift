@@ -31,7 +31,7 @@ struct LogoView: View {
     var body: some View {
         GeometryReader { proxy in
             ZStack {
-                GradientBlurView()
+                GradientBlurView(color: .appBlue)
                     .if(showBorder) {
                         $0.modifier(
                             LogoBorder(borderRadius: borderRadius(proxy))

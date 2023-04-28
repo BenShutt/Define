@@ -21,7 +21,7 @@ extension String {
     struct HomeScreen {
 
         static let title = "Your Words"
-        static let subtitle = "Search for a new word, or navigate what you have previously saved."
+        static let subtitle = "Search for a new word, or revisit what you have previously saved."
         static let addWordButton = "SEARCH FOR WORD"
     }
 

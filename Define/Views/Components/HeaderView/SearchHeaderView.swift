@@ -20,17 +20,12 @@ struct SearchHeaderView: View {
     /// The two should always be equivalent in value
     @State private var isTextInputFocused = false
 
-    /// Padding
-    var padding: EdgeInsets {
-        var padding: EdgeInsets = .largeMargins
-        if isTextInputFocused {
-            padding.top = .medium
-        }
-        return padding
-    }
-
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
+        HeaderView(
+            spacing: 0,
+            color: .appBlue,
+            topPadding: .medium
+        ) {
             if !isTextInputFocused {
                 Text(String.SearchHeaderView.title)
                     .h1()
@@ -52,12 +47,6 @@ struct SearchHeaderView: View {
                 }
             )
         }
-        .padding(padding)
-        .background(
-            GradientBlurView()
-                .shadow(.sticky)
-                .ignoresSafeArea()
-        )
     }
 }
 

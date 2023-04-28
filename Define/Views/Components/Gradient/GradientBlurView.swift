@@ -10,10 +10,13 @@ import SwiftUI
 /// Blurred linear gradient
 struct GradientBlurView: View {
 
+    /// Color to blur with gradient
+    var color: Color
+
     /// Draw `View`
     var body: some View {
         ZStack {
-            LinearGradient.header
+            LinearGradient.header(color: color)
             BlurView(style: .light)
         }
     }
@@ -24,6 +27,6 @@ struct GradientBlurView: View {
 struct GradientBlurView_Previews: PreviewProvider {
 
     static var previews: some View {
-        GradientBlurView()
+        GradientBlurView(color: .appBlue)
     }
 }

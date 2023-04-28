@@ -8,6 +8,8 @@
 import SwiftUI
 import DictionaryAPI
 
+// TODO: Make color from word
+
 /// `View` to input a word to search for definitions
 struct WordScreen: Screen {
 
@@ -36,7 +38,12 @@ struct WordScreen: Screen {
         ) {
             saveWord()
         }
-        .navigationTitle(word.title)
+        .stickyHeader(
+            title: word.word,
+            color: .appOrange,
+            topPadding: .medium
+        )
+        .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             if isWordSaved {
                 Button(action: {
