@@ -22,7 +22,7 @@ extension CGFloat {
     static let iconSize: CGFloat = 22
 
     /// 6pts
-    static let cornerRadius: CGFloat = 6
+    static let cornerRadius: CGFloat = 10
 
     // MARK: - Size
 

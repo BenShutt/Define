@@ -30,7 +30,7 @@ struct LottieView: UIViewRepresentable {
         let view = UIView(frame: .zero)
 
         animationView.transform = transform
-        animationView.animation = Animation.named(file.rawValue)
+        animationView.animation = LottieAnimation.named(file.rawValue)
         animationView.contentMode = contentMode
         animationView.loopMode = loopMode
         animationView.play()

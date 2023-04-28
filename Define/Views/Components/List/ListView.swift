@@ -31,6 +31,7 @@ struct ListView<Element, Content: View>: View {
             .listRowBackground(Color.clear)
         }
         .listStyle(.plain)
+        .buttonStyle(.borderless)
         .scrollDismissesKeyboard(.interactively)
     }
 }

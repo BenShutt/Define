@@ -18,32 +18,23 @@ struct HomeScreen: Screen {
 
     /// Draw view
     var screen: some View {
-        ListView(words.words) { _, word in
-            AppNavigationLink(value: NavigationRoute.word(word.word)) {
+        ScrollVStack(elements: words.words) { word in
+            NavigationLink(.word(word.word)) {
                 WordListItemView(word: word.word)
             }
         }
+        .stickyHeader(
+            title: .HomeScreen.title,
+            subtitle: .HomeScreen.subtitle
+        )
         .stickyButton(
-            title: .DefinitionsScreen.addWordButton,
+            title: .HomeScreen.addWordButton,
             image: .search
         ) {
             navigation.push(.search)
         }
-        .toolbarBackground(Color.appWhite, for: .navigationBar)
-        .toolbarBackground(.visible, for: .navigationBar)
-        .navigationTitle(String.DefinitionsScreen.title)
-        .toolbar {
-            Button(action: {
-                navigation.push(.search)
-            }, label: {
-                Image.search
-                    .renderingMode(.template)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(size: .iconSize)
-                    .padding(.small)
-            })
-        }
+        .navigationBarHidden(true)
+        .navigationTitle(String.HomeScreen.title) // For back menu
     }
 }
 

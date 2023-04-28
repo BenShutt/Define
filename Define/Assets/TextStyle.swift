@@ -81,7 +81,7 @@ extension View {
     /// Standard `.body` implementation
     func body() -> some View {
         textStyle(.body)
-            .foregroundColor(.appDarkGray)
+            .foregroundColor(.appGray)
     }
 
     /// Standard `.tag` implementation

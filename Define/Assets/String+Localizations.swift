@@ -14,14 +14,15 @@ extension String {
     struct SearchHeaderView {
 
         static let title = "Search Word"
-        static let subtitle = "Definitions are provided by the [Free Dictionary API](https://dictionaryapi.dev/)"
-        static let prompt = "Enter word to search..."
+        static let subtitle = "Definitions are provided by the [Free Dictionary API](https://dictionaryapi.dev/)."
+        static let prompt = "Enter a word..."
     }
 
-    struct DefinitionsScreen {
+    struct HomeScreen {
 
-        static let title = "Your Definitions"
-        static let addWordButton = "SEARCH NEW WORD"
+        static let title = "Your Words"
+        static let subtitle = "Search for a new word, or navigate what you have previously saved."
+        static let addWordButton = "SEARCH FOR WORD"
     }
 
     struct SearchScreen {
@@ -67,7 +68,7 @@ extension String {
 
     struct WordScreen {
 
-        static let saveButton = "REMEMBER WORD"
+        static let saveButton = "SAVE WORD"
 
         struct Empty {
 

@@ -12,10 +12,10 @@ extension LinearGradient {
     static let header = LinearGradient(
         colors: [
             .appWhite,
-            .appBlue
+            .appBlue.opacity(0.2)
         ],
-        startPoint: .topLeading,
-        endPoint: .bottomTrailing
+        startPoint: .top,
+        endPoint: .bottom
     )
 }
 

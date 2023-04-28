@@ -1,5 +1,5 @@
 //
-//  Shadow+Values.swift
+//  FigmaShadow+Values.swift
 //  Define
 //
 //  Created by Ben Shutt on 28/04/2023.

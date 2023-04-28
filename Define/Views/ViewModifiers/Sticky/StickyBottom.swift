@@ -26,18 +26,3 @@ struct StickyBottom<Bottom: View>: ViewModifier {
             }
     }
 }
-
-// MARK: - PreviewProvider
-
-struct StickyBottom_Previews: PreviewProvider {
-
-    static var previews: some View {
-        Rectangle()
-            .fill(.red)
-            .modifier(StickyBottom {
-                Rectangle()
-                    .fill(.green)
-                    .frame(height: 50)
-            })
-    }
-}

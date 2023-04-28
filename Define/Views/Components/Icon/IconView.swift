@@ -14,7 +14,7 @@ struct IconView: View {
     var image: Image
 
     /// Color to tint the image
-    var foregroundColor: Color
+    var foregroundColor: Color = .appDarkGray
 
     /// Content mode
     var contentMode: ContentMode = .fit
@@ -35,7 +35,7 @@ struct IconView: View {
             .aspectRatio(contentMode: contentMode)
             .foregroundColor(foregroundColor)
             .if(iconSize > 0) {
-                $0.frame(width: iconSize, height: iconSize)
+                $0.frame(size: iconSize)
             }
     }
 }

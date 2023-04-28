@@ -40,7 +40,7 @@ struct WordCategoryView_Previews: PreviewProvider {
 
     static var previews: some View {
         VStack {
-            ForEach(values: WordCategory.allCases) {
+            ForEach(WordCategory.allCases) {
                 WordCategoryView(category: $0.rawValue)
             }
         }
