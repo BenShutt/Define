@@ -104,7 +104,7 @@ struct TextStyle_Previews: PreviewProvider {
 
     static var previews: some View {
         VStack(alignment: .leading, spacing: .large) {
-            ForEach(values: TextStyle.allCases) { textStyle in
+            ForEach(TextStyle.allCases) { textStyle in
                 Text(verbatim: "Text Preview - \(textStyle)")
                     .textStyle(textStyle)
                     .foregroundColor(.appDarkGray)

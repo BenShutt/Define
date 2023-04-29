@@ -89,7 +89,6 @@
 		B8C25FA0294F8D5D001C8847 /* Separator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C25F9F294F8D5D001C8847 /* Separator.swift */; };
 		B8C43F3029FB0F6100F5E166 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = B8C43F2F29FB0F6100F5E166 /* Introspect */; };
 		B8C43F3229FB0F7500F5E166 /* NoBounceScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C43F3129FB0F7500F5E166 /* NoBounceScrollView.swift */; };
-		B8C894EA28D905BD00975E25 /* ForEach+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C894E928D905BD00975E25 /* ForEach+Extensions.swift */; };
 		B8D2A73C28DEEFAE0096A020 /* SearchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2A73B28DEEFAE0096A020 /* SearchScreen.swift */; };
 		B8D2A73E28DEEFE70096A020 /* Color+Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2A73D28DEEFE70096A020 /* Color+Values.swift */; };
 		B8D2A74228DF3A250096A020 /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2A74128DF3A250096A020 /* InputTextField.swift */; };
@@ -208,7 +207,6 @@
 		B8C25F9B294F7AAF001C8847 /* KeyboardToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardToolbar.swift; sourceTree = "<group>"; };
 		B8C25F9F294F8D5D001C8847 /* Separator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Separator.swift; sourceTree = "<group>"; };
 		B8C43F3129FB0F7500F5E166 /* NoBounceScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoBounceScrollView.swift; sourceTree = "<group>"; };
-		B8C894E928D905BD00975E25 /* ForEach+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ForEach+Extensions.swift"; sourceTree = "<group>"; };
 		B8D2A73B28DEEFAE0096A020 /* SearchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreen.swift; sourceTree = "<group>"; };
 		B8D2A73D28DEEFE70096A020 /* Color+Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Values.swift"; sourceTree = "<group>"; };
 		B8D2A74128DF3A250096A020 /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
@@ -518,7 +516,6 @@
 			children = (
 				B8A1235C28E97FB000ACEC45 /* CustomFont.swift */,
 				B8B9B9D728EC603D006FCA76 /* EdgeInsets+Extensions.swift */,
-				B8C894E928D905BD00975E25 /* ForEach+Extensions.swift */,
 				B8B563E628EFFEC3004B80F0 /* View+Extensions.swift */,
 			);
 			path = SwiftUI;
@@ -799,7 +796,6 @@
 				B8B9B9D828EC603D006FCA76 /* EdgeInsets+Extensions.swift in Sources */,
 				B8E49C0F28DF9AA500F9CAC4 /* EdgeInsets+Values.swift in Sources */,
 				B80E71FF29FBB578007CCE71 /* FigmaShadow+Values.swift in Sources */,
-				B8C894EA28D905BD00975E25 /* ForEach+Extensions.swift in Sources */,
 				B8B9B9DD28EC66AD006FCA76 /* GradientBlurView.swift in Sources */,
 				B80E720829FBEBF7007CCE71 /* HeaderView.swift in Sources */,
 				B895887429578BFB0041A315 /* HomeScreen.swift in Sources */,

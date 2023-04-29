@@ -72,7 +72,7 @@ private struct PartsOfSpeechView: View {
     var body: some View {
         NoBounceScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: .small) {
-                ForEach(values: partsOfSpeech) {
+                ForEach(partsOfSpeech, id: \.self) {
                     WordCategoryView(category: $0)
                 }
             }
