@@ -27,7 +27,7 @@ struct SearchHeaderView: View {
             topPadding: .medium
         ) {
             if !isTextInputFocused {
-                Text(String.SearchHeaderView.title)
+                Text(verbatim: .SearchHeaderView.title)
                     .h1()
 
                 Text(.init(.SearchHeaderView.subtitle))

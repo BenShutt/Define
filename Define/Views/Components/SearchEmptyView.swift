@@ -36,11 +36,11 @@ struct SearchEmptyView: View {
             )
             .frame(width: 300, height: 100)
 
-            Text(title)
+            Text(verbatim: title)
                 .h1()
                 .padding(.top, .large)
 
-            Text(subtitle)
+            Text(verbatim: subtitle)
                 .body()
                 .padding(.top, .medium)
         }

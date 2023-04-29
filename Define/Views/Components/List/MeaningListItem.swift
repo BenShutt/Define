@@ -22,7 +22,7 @@ struct MeaningListItem: View {
     /// Draw `View`
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text(definitionsTitle)
+            Text(verbatim: definitionsTitle)
                 .h3()
                 .padding(.bottom, .large)
 

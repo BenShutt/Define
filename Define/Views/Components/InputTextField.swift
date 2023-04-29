@@ -55,9 +55,9 @@ struct InputTextField: View {
                 .frame(maxHeight: .infinity)
 
             if !text.isEmpty {
-                CrossIconView(onTap: {
+                CrossIconView {
                     text = ""
-                })
+                }
             }
         }
         .background(Color.appWhite)

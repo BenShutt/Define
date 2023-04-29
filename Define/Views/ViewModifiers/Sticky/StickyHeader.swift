@@ -61,7 +61,7 @@ struct StickyHeader_Previews: PreviewProvider {
 
     static var previews: some View {
         ScreenBody {
-            Text("Test")
+            Text(verbatim: "Test")
         }
         .stickyHeader(
             title: "Title text",

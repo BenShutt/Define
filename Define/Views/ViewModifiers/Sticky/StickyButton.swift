@@ -56,7 +56,7 @@ struct StickyButton_Previews: PreviewProvider {
 
     static var previews: some View {
         ScreenBody {
-            Text("Test")
+            Text(verbatim: "Test")
         }
         .stickyButton(
             title: "TAP ME!",

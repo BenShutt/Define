@@ -12,3 +12,10 @@ extension Image {
     static let cross = Image("cross-32")
     static let search = Image("search")
 }
+
+// MARK: - System
+
+extension Image {
+
+    static let plus = Image(systemName: "plus")
+}

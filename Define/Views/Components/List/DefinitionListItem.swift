@@ -16,11 +16,11 @@ struct DefinitionListItem: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: .small) {
-            Text(definition.title)
+            Text(verbatim: definition.title)
                 .body()
 
             if let example = definition.exampleTitle {
-                Text(String.DefinitionView.example(example))
+                Text(verbatim: .DefinitionView.example(example))
                     .foregroundColor(.appBlue)
                     .caption()
             }

@@ -33,18 +33,18 @@ struct WordListItem: View {
     var body: some View {
         HStack(spacing: .large) {
             VStack(alignment: .leading, spacing: .small) {
-                Text(word.title)
+                Text(verbatim: word.title)
                     .h2()
 
                 if let firstDefinition {
-                    Text(firstDefinition)
+                    Text(verbatim: firstDefinition)
                         .lineLimit(3)
                         .truncationMode(.tail)
                         .body()
                 }
 
                 if nMore > 0 {
-                    Text(String.WordListItemView.nMoreDefinitions(nMore))
+                    Text(verbatim: .WordListItemView.nMoreDefinitions(nMore))
                         .textStyle(.body)
                         .foregroundColor(.appBlue)
                 }

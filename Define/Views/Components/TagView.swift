@@ -21,7 +21,7 @@ struct TagView: View {
 
     /// Draw `View`
     var body: some View {
-        Text(text)
+        Text(verbatim: text)
             .textStyle(.tag)
             .foregroundColor(foregroundColor)
             .padding(.vertical, .smallMedium)

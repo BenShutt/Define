@@ -34,7 +34,7 @@ struct StyledButton: View {
                         .frame(size: .iconSmall)
                 }
 
-                Text(title)
+                Text(verbatim: title)
                     .textStyle(.button)
                     .foregroundColor(foregroundColor)
             }

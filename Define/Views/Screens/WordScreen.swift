@@ -102,7 +102,7 @@ private struct WordContentView: View {
             }
             .stickyButton(
                 title: .WordScreen.saveButton,
-                image: Image(systemName: "plus"),
+                image: .plus,
                 onTap: onSave
             )
         } else {
