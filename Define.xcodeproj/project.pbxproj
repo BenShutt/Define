@@ -27,6 +27,8 @@
 		B80E722229FDAD60007CCE71 /* ShapeBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80E722129FDAD60007CCE71 /* ShapeBorder.swift */; };
 		B80E722429FDAD69007CCE71 /* CapsuleBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80E722329FDAD69007CCE71 /* CapsuleBorder.swift */; };
 		B80E722629FDB5C9007CCE71 /* RoundedRectangleBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80E722529FDB5C9007CCE71 /* RoundedRectangleBorder.swift */; };
+		B80E722929FDB8CC007CCE71 /* DateComponentsFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80E722829FDB8CC007CCE71 /* DateComponentsFormatter+Extensions.swift */; };
+		B80E722B29FDBBC1007CCE71 /* Calendar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80E722A29FDBBC1007CCE71 /* Calendar+Extensions.swift */; };
 		B813BFFD28EB7BA1000C766C /* SearchIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B813BFFC28EB7BA1000C766C /* SearchIconView.swift */; };
 		B813BFFF28EB7BE6000C766C /* CrossIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B813BFFE28EB7BE6000C766C /* CrossIconView.swift */; };
 		B813C00128EB7DB9000C766C /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B813C00028EB7DB9000C766C /* IconView.swift */; };
@@ -148,6 +150,8 @@
 		B80E722129FDAD60007CCE71 /* ShapeBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeBorder.swift; sourceTree = "<group>"; };
 		B80E722329FDAD69007CCE71 /* CapsuleBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleBorder.swift; sourceTree = "<group>"; };
 		B80E722529FDB5C9007CCE71 /* RoundedRectangleBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangleBorder.swift; sourceTree = "<group>"; };
+		B80E722829FDB8CC007CCE71 /* DateComponentsFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateComponentsFormatter+Extensions.swift"; sourceTree = "<group>"; };
+		B80E722A29FDBBC1007CCE71 /* Calendar+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+Extensions.swift"; sourceTree = "<group>"; };
 		B813BFFC28EB7BA1000C766C /* SearchIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchIconView.swift; sourceTree = "<group>"; };
 		B813BFFE28EB7BE6000C766C /* CrossIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossIconView.swift; sourceTree = "<group>"; };
 		B813C00028EB7DB9000C766C /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
@@ -349,8 +353,8 @@
 		B8039A0F28D7A51F008CE7B4 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B80E722729FDB8BE007CCE71 /* Foundation */,
 				B8C894EB28D905EE00975E25 /* SwiftUI */,
-				B8FF0DD229609E3E004C61B6 /* Bundle+Key.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -382,6 +386,16 @@
 				B80E722129FDAD60007CCE71 /* ShapeBorder.swift */,
 			);
 			path = ShapeBorder;
+			sourceTree = "<group>";
+		};
+		B80E722729FDB8BE007CCE71 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				B8FF0DD229609E3E004C61B6 /* Bundle+Key.swift */,
+				B80E722A29FDBBC1007CCE71 /* Calendar+Extensions.swift */,
+				B80E722829FDB8CC007CCE71 /* DateComponentsFormatter+Extensions.swift */,
+			);
+			path = Foundation;
 			sourceTree = "<group>";
 		};
 		B813BFFB28EB7ACA000C766C /* Icon */ = {
@@ -786,6 +800,7 @@
 				B89F179D28E0FABE00A96E35 /* AppDelegate.swift in Sources */,
 				B8B9B9DA28EC6210006FCA76 /* BlurView.swift in Sources */,
 				B8FF0DD329609E3E004C61B6 /* Bundle+Key.swift in Sources */,
+				B80E722B29FDBBC1007CCE71 /* Calendar+Extensions.swift in Sources */,
 				B80E722429FDAD69007CCE71 /* CapsuleBorder.swift in Sources */,
 				B8E49C0B28DF985500F9CAC4 /* CGFloat+Values.swift in Sources */,
 				B891F8E42950FC4300A53582 /* Chevron.swift in Sources */,
@@ -794,6 +809,7 @@
 				B84AD60C28FB01AF00C2D5AE /* ContentView.swift in Sources */,
 				B813BFFF28EB7BE6000C766C /* CrossIconView.swift in Sources */,
 				B8A1235D28E97FB000ACEC45 /* CustomFont.swift in Sources */,
+				B80E722929FDB8CC007CCE71 /* DateComponentsFormatter+Extensions.swift in Sources */,
 				B80399DD28D79A37008CE7B4 /* DefineApp.swift in Sources */,
 				B88491A22961FFB5009F6469 /* DefinitionListItem.swift in Sources */,
 				B8B9B9D828EC603D006FCA76 /* EdgeInsets+Extensions.swift in Sources */,

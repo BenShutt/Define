@@ -14,6 +14,9 @@ struct WordListItem: View {
     /// `Word`
     var word: Word
 
+    /// Caption text
+    var caption: String?
+
     /// Parts of speech
     private var partsOfSpeech: [String] {
         Set(word.meanings.map { $0.category }).sorted()
@@ -51,6 +54,12 @@ struct WordListItem: View {
 
                 if !partsOfSpeech.isEmpty {
                     PartsOfSpeechView(partsOfSpeech: partsOfSpeech)
+                        .padding(.top, .small)
+                }
+
+                if let caption {
+                    Text(verbatim: caption)
+                        .caption()
                         .padding(.top, .small)
                 }
             }

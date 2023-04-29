@@ -93,7 +93,7 @@ extension View {
     /// Standard `.caption` implementation
     func caption() -> some View {
         textStyle(.caption)
-            .foregroundColor(.appDarkGray)
+            .foregroundColor(.appGray)
             .italic()
     }
 }

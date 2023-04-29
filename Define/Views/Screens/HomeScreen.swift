@@ -21,7 +21,7 @@ struct HomeScreen: Screen {
         MarginedList(words.words, route: {
             .word($0.word)
         }, content: {
-            WordListItem(word: $0.word)
+            WordListItem(word: $0.word, caption: $0.addedSince)
         })
         .stickyHeader(
             title: .HomeScreen.title,

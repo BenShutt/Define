@@ -83,6 +83,15 @@ extension String {
         }
     }
 
+    struct SavedWord {
+
+        static let justNow = "Just Now"
+
+        static func addedAgo(_ interval: String) -> String {
+            "Added \(interval) ago"
+        }
+    }
+
     struct Misc {
 
         static let dismiss = "Dismiss"

@@ -21,7 +21,7 @@ final class WordsViewModel: ObservableObject {
     /// Get and set `savedWords`
     private(set) var words: [SavedWord] {
         get {
-            savedWords.sorted()
+            savedWords.sorted(by: >)
         }
         set {
             savedWords = newValue
