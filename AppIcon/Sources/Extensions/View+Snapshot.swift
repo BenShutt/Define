@@ -9,7 +9,7 @@ import SwiftUI
 
 extension View {
 
-    /// Snapshot `UIImage` from this SwiftUI `Viww` instance
+    /// Snapshot `UIImage` from this SwiftUI `View` instance
     ///
     /// - Warning:
     /// Should be called from the main thread
