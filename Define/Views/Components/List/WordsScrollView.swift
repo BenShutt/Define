@@ -33,9 +33,7 @@ struct WordsScrollView: View {
                 ForEach(words.zipped, id: \.0) { _, word in
                     NavigationLink(.word(word)) {
                         WordListItemView(word: word)
-                            .cornerRadius(.cornerRadius)
-                            .shadow(.container)
-                            .padding(margins)
+                            .margined(margins)
                     }
                 }
             }

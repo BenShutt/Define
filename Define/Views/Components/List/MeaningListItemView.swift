@@ -46,6 +46,7 @@ struct MeaningListItemView: View {
         }
         .listItem()
         .padding(.meaning)
+        .background(Color.appWhite)
     }
 }
 

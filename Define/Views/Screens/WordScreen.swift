@@ -39,7 +39,7 @@ struct WordScreen: Screen {
             saveWord()
         }
         .stickyHeader(
-            title: word.word,
+            title: word.title,
             color: .appOrange,
             topPadding: .medium
         )
@@ -123,6 +123,7 @@ private struct WordListView: View {
     var body: some View {
         ListView(word.meanings) { index, meaning in
             MeaningListItemView(number: index + 1, meaning: meaning)
+                .margined(.margins)
         }
     }
 }

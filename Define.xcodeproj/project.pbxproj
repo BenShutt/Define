@@ -86,7 +86,6 @@
 		B8B9B9E128EDC9FC006FCA76 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B80399E028D79A3B008CE7B4 /* Images.xcassets */; };
 		B8B9B9E328EDE65F006FCA76 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9B9E228EDE65F006FCA76 /* LogoView.swift */; };
 		B8BBA16228E8EDF100222116 /* StyledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BBA16128E8EDF100222116 /* StyledButton.swift */; };
-		B8BEC3CE2955D8FD00946196 /* AppNavigationLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BEC3CD2955D8FD00946196 /* AppNavigationLink.swift */; };
 		B8C25F9C294F7AAF001C8847 /* KeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C25F9B294F7AAF001C8847 /* KeyboardToolbar.swift */; };
 		B8C25FA0294F8D5D001C8847 /* Separator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C25F9F294F8D5D001C8847 /* Separator.swift */; };
 		B8C43F3029FB0F6100F5E166 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = B8C43F2F29FB0F6100F5E166 /* Introspect */; };
@@ -208,7 +207,6 @@
 		B8B9B9DC28EC66AD006FCA76 /* GradientBlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBlurView.swift; sourceTree = "<group>"; };
 		B8B9B9E228EDE65F006FCA76 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		B8BBA16128E8EDF100222116 /* StyledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledButton.swift; sourceTree = "<group>"; };
-		B8BEC3CD2955D8FD00946196 /* AppNavigationLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationLink.swift; sourceTree = "<group>"; };
 		B8C25F9B294F7AAF001C8847 /* KeyboardToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardToolbar.swift; sourceTree = "<group>"; };
 		B8C25F9F294F8D5D001C8847 /* Separator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Separator.swift; sourceTree = "<group>"; };
 		B8C43F3129FB0F7500F5E166 /* NoBounceScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoBounceScrollView.swift; sourceTree = "<group>"; };
@@ -572,7 +570,6 @@
 				B8B9B9DB28EC668C006FCA76 /* Gradient */,
 				B813BFFB28EB7ACA000C766C /* Icon */,
 				B879E9EA28F0C7110094AA24 /* List */,
-				B8BEC3CD2955D8FD00946196 /* AppNavigationLink.swift */,
 				B8BBA16128E8EDF100222116 /* StyledButton.swift */,
 				B8D2A74128DF3A250096A020 /* InputTextField.swift */,
 				B8E49C0828DF917E00F9CAC4 /* LoadingView.swift */,
@@ -790,7 +787,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B89F179D28E0FABE00A96E35 /* AppDelegate.swift in Sources */,
-				B8BEC3CE2955D8FD00946196 /* AppNavigationLink.swift in Sources */,
 				B8B9B9DA28EC6210006FCA76 /* BlurView.swift in Sources */,
 				B8FF0DD329609E3E004C61B6 /* Bundle+Key.swift in Sources */,
 				B8BBA16228E8EDF100222116 /* StyledButton.swift in Sources */,
