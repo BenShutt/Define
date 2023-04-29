@@ -18,7 +18,7 @@ struct LaunchScreen: Screen {
 
     /// Draw `View`
     var screen: some View {
-        LogoView(showBorder: true)
+        LogoView()
             .frame(size: containerSize - 2 * padding)
             .padding(padding)
     }

@@ -10,9 +10,6 @@ import SwiftUI
 /// View drawing the app logo
 struct LogoView: View {
 
-    /// Render border and shadow
-    var showBorder = true
-
     /// Corner radius of border relative to container size
     /// - Parameter proxy: `GeometryProxy`
     /// - Returns: `CGFloat`
@@ -32,11 +29,9 @@ struct LogoView: View {
         GeometryReader { proxy in
             ZStack {
                 GradientBlurView(color: .appBlue)
-                    .if(showBorder) {
-                        $0.modifier(
-                            LogoBorder(borderRadius: borderRadius(proxy))
-                        )
-                    }
+                    .modifier(
+                        LogoBorder(borderRadius: borderRadius(proxy))
+                    )
 
                 IconView(
                     image: .search,
@@ -72,7 +67,7 @@ private struct LogoBorder: ViewModifier {
 struct LogoView_Previews: PreviewProvider {
 
     static var previews: some View {
-        LogoView(showBorder: true)
+        LogoView()
             .frame(size: 120)
     }
 }

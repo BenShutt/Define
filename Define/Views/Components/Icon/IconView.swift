@@ -22,20 +22,22 @@ struct IconView: View {
     /// Size of the icon
     var size: CGFloat?
 
-    /// Get non-nullable `size` falling back on `-1`
-    private var iconSize: CGFloat {
-        size ?? -1
-    }
-
-    /// Draw `View`
-    var body: some View {
+    /// Make icon `View`
+    private var iconView: some View {
         image
             .renderingMode(.template)
             .resizable()
             .aspectRatio(contentMode: contentMode)
             .foregroundColor(foregroundColor)
-            .if(iconSize > 0) {
-                $0.frame(size: iconSize)
-            }
+    }
+
+    /// Draw `View`
+    var body: some View {
+        if let size {
+            iconView
+                .frame(size: size)
+        } else {
+            iconView
+        }
     }
 }
