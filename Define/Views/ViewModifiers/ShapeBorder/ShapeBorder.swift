@@ -36,15 +36,3 @@ extension ShapeBorder {
             .clipShape(shape)
     }
 }
-
-// MARK: - View + ShapeBorder
-
-extension View {
-
-    /// Apply `ShapeBorder` `ViewModifier`
-    /// - Parameter border: `Border`
-    /// - Returns: `View`
-    func shapeBorder<Border: ShapeBorder>(_ border: Border) -> some View {
-        modifier(border)
-    }
-}

@@ -26,6 +26,7 @@
 		B80E721F29FDA849007CCE71 /* IdentifiedElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80E721E29FDA849007CCE71 /* IdentifiedElement.swift */; };
 		B80E722229FDAD60007CCE71 /* ShapeBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80E722129FDAD60007CCE71 /* ShapeBorder.swift */; };
 		B80E722429FDAD69007CCE71 /* CapsuleBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80E722329FDAD69007CCE71 /* CapsuleBorder.swift */; };
+		B80E722629FDB5C9007CCE71 /* RoundedRectangleBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80E722529FDB5C9007CCE71 /* RoundedRectangleBorder.swift */; };
 		B813BFFD28EB7BA1000C766C /* SearchIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B813BFFC28EB7BA1000C766C /* SearchIconView.swift */; };
 		B813BFFF28EB7BE6000C766C /* CrossIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B813BFFE28EB7BE6000C766C /* CrossIconView.swift */; };
 		B813C00128EB7DB9000C766C /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B813C00028EB7DB9000C766C /* IconView.swift */; };
@@ -146,6 +147,7 @@
 		B80E721E29FDA849007CCE71 /* IdentifiedElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifiedElement.swift; sourceTree = "<group>"; };
 		B80E722129FDAD60007CCE71 /* ShapeBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeBorder.swift; sourceTree = "<group>"; };
 		B80E722329FDAD69007CCE71 /* CapsuleBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleBorder.swift; sourceTree = "<group>"; };
+		B80E722529FDB5C9007CCE71 /* RoundedRectangleBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangleBorder.swift; sourceTree = "<group>"; };
 		B813BFFC28EB7BA1000C766C /* SearchIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchIconView.swift; sourceTree = "<group>"; };
 		B813BFFE28EB7BE6000C766C /* CrossIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossIconView.swift; sourceTree = "<group>"; };
 		B813C00028EB7DB9000C766C /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
@@ -376,6 +378,7 @@
 			isa = PBXGroup;
 			children = (
 				B80E722329FDAD69007CCE71 /* CapsuleBorder.swift */,
+				B80E722529FDB5C9007CCE71 /* RoundedRectangleBorder.swift */,
 				B80E722129FDAD60007CCE71 /* ShapeBorder.swift */,
 			);
 			path = ShapeBorder;
@@ -817,6 +820,7 @@
 				B8FF0DD129609DDF004C61B6 /* Migrations.swift in Sources */,
 				B8958876295790E30041A315 /* NavigationViewModel.swift in Sources */,
 				B8C43F3229FB0F7500F5E166 /* NoBounceScrollView.swift in Sources */,
+				B80E722629FDB5C9007CCE71 /* RoundedRectangleBorder.swift in Sources */,
 				B8FF0DD82960ACCE004C61B6 /* SavedWord.swift in Sources */,
 				B89F179428E0EBF100A96E35 /* Screen.swift in Sources */,
 				B8A2A8422965C52000A16FEE /* ScreenBody.swift in Sources */,
