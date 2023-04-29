@@ -53,7 +53,7 @@ struct AppIconSize: Equatable, Hashable, Codable, Comparable, CustomStringConver
     /// Size in pts
     var size: CGFloat
 
-    /// Size multiper to apply
+    /// Size multiplier to apply
     var multiplier: Int
 
     /// Size in pixels (px)
