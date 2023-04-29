@@ -20,7 +20,7 @@ struct StickyHeader: ViewModifier {
     var color: Color
 
     /// Top padding
-    var topPadding: CGFloat = .headerPadding
+    var topPadding = EdgeInsets.header.top
 
     func body(content: Content) -> some View {
         content.modifier(
@@ -44,7 +44,7 @@ extension View {
         title: String,
         subtitle: String? = nil,
         color: Color,
-        topPadding: CGFloat = .headerPadding
+        topPadding: CGFloat = EdgeInsets.header.top
     ) -> some View {
         modifier(StickyHeader(
             title: title,

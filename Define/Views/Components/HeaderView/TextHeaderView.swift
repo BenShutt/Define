@@ -20,7 +20,7 @@ struct TextHeaderView: View {
     var color: Color
 
     /// Top padding
-    var topPadding: CGFloat = .headerPadding
+    var topPadding = EdgeInsets.header.top
 
     var body: some View {
         HeaderView(

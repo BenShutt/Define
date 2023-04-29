@@ -17,7 +17,14 @@ struct HeaderView<Content: View>: View {
     var color: Color
 
     /// Amount of top padding
-    var topPadding: CGFloat = .headerPadding
+    var topPadding = EdgeInsets.header.top
+
+    /// Padding of the content from the background
+    var padding: EdgeInsets {
+        var padding: EdgeInsets = .header
+        padding.top = topPadding
+        return padding
+    }
 
     /// Subview content
     @ViewBuilder var content: () -> Content
@@ -28,8 +35,7 @@ struct HeaderView<Content: View>: View {
         }
         .multilineTextAlignment(.leading)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding([.leading, .trailing, .bottom], .headerPadding)
-        .padding(.top, topPadding)
+        .padding(padding)
         .background {
             GradientBlurView(color: color)
                 .ignoresSafeArea()
