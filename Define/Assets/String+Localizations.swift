@@ -52,13 +52,6 @@ extension String {
         }
     }
 
-    struct MeaningListItemView {
-
-        static func definitions(count: Int) -> String {
-            count == 1 ? "Definition" : "\(count) Definitions"
-        }
-    }
-
     struct WordListItemView {
 
         static func nMoreDefinitions(_ count: Int) -> String {
