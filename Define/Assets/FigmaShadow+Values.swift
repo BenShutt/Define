@@ -21,8 +21,8 @@ extension FigmaShadow {
 
     static let container = FigmaShadow(
         x: 0,
-        y: 2,
-        blur: 10 * 2,
-        color: .appLightGray.opacity(0.08)
+        y: 0,
+        blur: 3 * 2,
+        color: .appGray.opacity(0.05)
     )
 }
