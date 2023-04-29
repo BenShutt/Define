@@ -1,5 +1,5 @@
 //
-//  MeaningListItemView.swift
+//  MeaningListItem.swift
 //  Define
 //
 //  Created by Ben Shutt on 31/12/2022.
@@ -9,7 +9,7 @@ import SwiftUI
 import DictionaryAPI
 
 /// `ListItemView` for a `Meaning`
-struct MeaningListItemView: View {
+struct MeaningListItem: View {
 
     /// `Meaning`
     var meaning: Word.Meaning
@@ -34,7 +34,7 @@ struct MeaningListItemView: View {
                             .padding(.vertical, .mediumLarge)
                     }
 
-                    DefinitionView(definition: definition)
+                    DefinitionListItem(definition: definition)
                 }
             }
 
@@ -49,12 +49,12 @@ struct MeaningListItemView: View {
 
 // MARK: - PreviewProvider
 
-struct MeaningListItemView_Previews: PreviewProvider {
+struct MeaningListItem_Previews: PreviewProvider {
 
     static var previews: some View {
         VStack {
             if let meaning = Word.preview.meanings.first {
-                MeaningListItemView(meaning: meaning)
+                MeaningListItem(meaning: meaning)
             }
         }
     }

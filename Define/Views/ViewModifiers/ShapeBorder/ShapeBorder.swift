@@ -2,7 +2,7 @@
 //  ShapeBorder.swift
 //  Define
 //
-//  Created by Ben Shutt on 03/10/2022.
+//  Created by Ben Shutt on 29/04/2023.
 //
 
 import SwiftUI
@@ -45,13 +45,5 @@ extension View {
     /// - Returns: `View`
     func shapeBorder<Border: ShapeBorder>(_ border: Border) -> some View {
         modifier(border)
-    }
-
-    /// Default shape border
-    ///
-    /// - Parameter color: `Color
-    /// - Returns: `View`
-    func shapeBorder(color: Color) -> some View {
-        shapeBorder(CapsuleBorder(color: color))
     }
 }

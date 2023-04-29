@@ -19,7 +19,7 @@ final class WordsViewModel: ObservableObject {
     @AppStorage(UserDefaultKey.words.rawValue) private var savedWords: [SavedWord] = []
 
     /// Get and set `savedWords`
-    var words: [SavedWord] {
+    private(set) var words: [SavedWord] {
         get {
             savedWords.sorted()
         }

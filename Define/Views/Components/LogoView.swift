@@ -61,10 +61,8 @@ private struct LogoBorder: ViewModifier {
     /// - Returns: `View`
     func body(content: Content) -> some View {
         content
-            .shapeBorder(RoundedBorder(
-                color: .clear,
-                cornerRadius: borderRadius
-            ))
+            .cornerRadius(.cornerRadius)
+            .compositingGroup()
             .shadow(.container)
     }
 }

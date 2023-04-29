@@ -18,20 +18,24 @@ struct HomeScreen: Screen {
 
     /// Draw view
     var screen: some View {
-        WordsScrollView(words: words.words.map { $0.word })
-            .stickyHeader(
-                title: .HomeScreen.title,
-                subtitle: .HomeScreen.subtitle,
-                color: .appGreen
-            )
-            .stickyButton(
-                title: .HomeScreen.addWordButton,
-                image: .search
-            ) {
-                navigation.push(.search)
-            }
-            .toolbarBackground(Color.clear, for: .navigationBar)
-            .navigationBarTitleDisplayMode(.inline)
+        MarginedList(words.words, route: {
+            .word($0.word)
+        }, content: {
+            WordListItem(word: $0.word)
+        })
+        .stickyHeader(
+            title: .HomeScreen.title,
+            subtitle: .HomeScreen.subtitle,
+            color: .appGreen
+        )
+        .stickyButton(
+            title: .HomeScreen.addWordButton,
+            image: .search
+        ) {
+            navigation.push(.search)
+        }
+        .toolbarBackground(Color.clear, for: .navigationBar)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

@@ -61,7 +61,7 @@ struct InputTextField: View {
             }
         }
         .background(Color.appWhite)
-        .shapeBorder(color: borderColor)
+        .capsuleBorder(color: borderColor)
         .fixedSize(horizontal: false, vertical: true)
         .keyboardToolbar {
             isFocused = false

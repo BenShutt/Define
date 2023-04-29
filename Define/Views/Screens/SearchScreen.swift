@@ -44,7 +44,11 @@ struct SearchScreen: Screen {
                 )
 
             case let .success(words):
-                WordsScrollView(words: words)
+                MarginedList(words.identified, route: {
+                    .word($0.element)
+                }, content: {
+                    WordListItem(word: $0.element)
+                })
             }
         }
         .frame(

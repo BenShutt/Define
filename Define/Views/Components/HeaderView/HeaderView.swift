@@ -19,15 +19,15 @@ struct HeaderView<Content: View>: View {
     /// Amount of top padding
     var topPadding = EdgeInsets.header.top
 
+    /// Subview content
+    @ViewBuilder var content: () -> Content
+
     /// Padding of the content from the background
     var padding: EdgeInsets {
         var padding: EdgeInsets = .header
         padding.top = topPadding
         return padding
     }
-
-    /// Subview content
-    @ViewBuilder var content: () -> Content
 
     var body: some View {
         VStack(alignment: .leading, spacing: spacing) {

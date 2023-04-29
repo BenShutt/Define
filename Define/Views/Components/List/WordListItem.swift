@@ -1,5 +1,5 @@
 //
-//  WordListItemView.swift
+//  WordListItem.swift
 //  Define
 //
 //  Created by Ben Shutt on 07/10/2022.
@@ -9,7 +9,7 @@ import SwiftUI
 import DictionaryAPI
 
 /// `ListItemView` for a `Word`
-struct WordListItemView: View {
+struct WordListItem: View {
 
     /// `Word`
     var word: Word
@@ -82,11 +82,11 @@ private struct PartsOfSpeechView: View {
 
 // MARK: - PreviewProvider
 
-struct WordListItemView_Previews: PreviewProvider {
+struct WordListItem_Previews: PreviewProvider {
 
     static var previews: some View {
         ScreenBody {
-            WordListItemView(word: .preview)
+            WordListItem(word: .preview)
         }
     }
 }

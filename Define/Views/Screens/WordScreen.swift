@@ -8,8 +8,6 @@
 import SwiftUI
 import DictionaryAPI
 
-// TODO: Make color from word
-
 /// `View` to input a word to search for definitions
 struct WordScreen: Screen {
 
@@ -20,7 +18,7 @@ struct WordScreen: Screen {
     @EnvironmentObject var words: WordsViewModel
 
     /// Is presenting alert to delete word
-    @State private var showingDeleteWordAlert = false
+    @State private var isPresentingDeleteWordAlert = false
 
     /// `Word` to define
     var word: Word
@@ -47,24 +45,24 @@ struct WordScreen: Screen {
         .toolbar {
             if isWordSaved {
                 Button(action: {
-                    showingDeleteWordAlert = true
+                    isPresentingDeleteWordAlert = true
                 }, label: {
                     Image(systemName: "trash")
                 })
             }
         }
         .alert(
-            Text(String.WordScreen.DeleteAlert.title),
-            isPresented: $showingDeleteWordAlert,
+            Text(verbatim: .WordScreen.DeleteAlert.title),
+            isPresented: $isPresentingDeleteWordAlert,
             actions: {
                 Button(role: .destructive) {
                     deleteWord()
                 } label: {
-                    Text(String.WordScreen.DeleteAlert.delete)
+                    Text(verbatim: .WordScreen.DeleteAlert.delete)
                 }
             },
             message: {
-                Text(String.WordScreen.DeleteAlert.subtitle(word: word.title))
+                Text(verbatim: .WordScreen.DeleteAlert.subtitle(word: word.title))
             }
         )
     }
@@ -99,31 +97,18 @@ private struct WordContentView: View {
                 subtitle: .WordScreen.Empty.subtitle(word: word.title)
             )
         } else if !isWordSaved {
-            WordListView(word: word)
-                .stickyButton(
-                    title: .WordScreen.saveButton,
-                    image: Image(systemName: "plus"),
-                    onTap: onSave
-                )
+            MarginedList(word.meanings.identified) {
+                MeaningListItem(meaning: $0.element)
+            }
+            .stickyButton(
+                title: .WordScreen.saveButton,
+                image: Image(systemName: "plus"),
+                onTap: onSave
+            )
         } else {
-            WordListView(word: word)
-        }
-    }
-}
-
-// MARK: - WordListView
-
-/// `ListView` of `Word` meanings
-private struct WordListView: View {
-
-    /// The word to define
-    var word: Word
-
-    /// Draw `View`
-    var body: some View {
-        ListView(word.meanings) { _, meaning in
-            MeaningListItemView(meaning: meaning)
-                .margined(.margins)
+            MarginedList(word.meanings.identified) {
+                MeaningListItem(meaning: $0.element)
+            }
         }
     }
 }

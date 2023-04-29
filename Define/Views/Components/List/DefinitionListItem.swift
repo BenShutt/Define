@@ -1,5 +1,5 @@
 //
-//  DefinitionView.swift
+//  DefinitionListItem.swift
 //  Define
 //
 //  Created by Ben Shutt on 01/01/2023.
@@ -9,7 +9,7 @@ import SwiftUI
 import DictionaryAPI
 
 /// Draw a definition with an example
-struct DefinitionView: View {
+struct DefinitionListItem: View {
 
     /// Definition of a word
     var definition: Word.Meaning.Definition
@@ -31,11 +31,11 @@ struct DefinitionView: View {
 
 // MARK: - PreviewProvider
 
-struct DefinitionView_Previews: PreviewProvider {
+struct DefinitionListItem_Previews: PreviewProvider {
 
     static var previews: some View {
         if let definition = Word.preview.meanings.first?.definitions.first {
-            DefinitionView(definition: definition)
+            DefinitionListItem(definition: definition)
         }
     }
 }

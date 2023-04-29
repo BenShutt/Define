@@ -2,7 +2,7 @@
 //  CapsuleBorder.swift
 //  Define
 //
-//  Created by Ben Shutt on 03/10/2022.
+//  Created by Ben Shutt on 29/04/2023.
 //
 
 import SwiftUI
@@ -16,5 +16,18 @@ struct CapsuleBorder: ShapeBorder {
     /// The shape to draw
     var shape: some InsettableShape {
         Capsule()
+    }
+}
+
+// MARK: - View + CapsuleBorder
+
+extension View {
+
+    /// Capsule border
+    ///
+    /// - Parameter color: `Color
+    /// - Returns: `View`
+    func capsuleBorder(color: Color) -> some View {
+        shapeBorder(CapsuleBorder(color: color))
     }
 }
