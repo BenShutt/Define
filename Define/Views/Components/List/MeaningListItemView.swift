@@ -11,9 +11,6 @@ import DictionaryAPI
 /// `ListItemView` for a `Meaning`
 struct MeaningListItemView: View {
 
-    /// Index of `Meaning` in `Word`
-    var number: Int
-
     /// `Meaning`
     var meaning: Word.Meaning
 
@@ -57,7 +54,7 @@ struct MeaningListItemView_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
             if let meaning = Word.preview.meanings.first {
-                MeaningListItemView(number: 1, meaning: meaning)
+                MeaningListItemView(meaning: meaning)
             }
         }
     }

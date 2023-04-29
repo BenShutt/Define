@@ -121,8 +121,8 @@ private struct WordListView: View {
 
     /// Draw `View`
     var body: some View {
-        ListView(word.meanings) { index, meaning in
-            MeaningListItemView(number: index + 1, meaning: meaning)
+        ListView(word.meanings) { _, meaning in
+            MeaningListItemView(meaning: meaning)
                 .margined(.margins)
         }
     }
