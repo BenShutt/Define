@@ -60,9 +60,6 @@ struct WordListItemView: View {
         }
         .padding(.large)
         .background(Color.appWhite)
-        .cornerRadius(.cornerRadius)
-        .shadow(.container)
-        .padding(EdgeInsets.margins)
     }
 }
 

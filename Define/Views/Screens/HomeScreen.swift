@@ -18,24 +18,20 @@ struct HomeScreen: Screen {
 
     /// Draw view
     var screen: some View {
-        ScrollVStack(elements: words.words) { word in
-            NavigationLink(.word(word.word)) {
-                WordListItemView(word: word.word)
+        WordsScrollView(words: words.words.map { $0.word })
+            .stickyHeader(
+                title: .HomeScreen.title,
+                subtitle: .HomeScreen.subtitle,
+                color: .appGreen
+            )
+            .stickyButton(
+                title: .HomeScreen.addWordButton,
+                image: .search
+            ) {
+                navigation.push(.search)
             }
-        }
-        .stickyHeader(
-            title: .HomeScreen.title,
-            subtitle: .HomeScreen.subtitle,
-            color: .appGreen
-        )
-        .stickyButton(
-            title: .HomeScreen.addWordButton,
-            image: .search
-        ) {
-            navigation.push(.search)
-        }
-        .toolbarBackground(Color.clear, for: .navigationBar)
-        .navigationBarTitleDisplayMode(.inline)
+            .toolbarBackground(Color.clear, for: .navigationBar)
+            .navigationBarTitleDisplayMode(.inline)
     }
 }
 

@@ -44,11 +44,7 @@ struct SearchScreen: Screen {
                 )
 
             case let .success(words):
-                ListView(words) { _, word in
-                    AppNavigationLink(value: NavigationRoute.word(word)) {
-                        WordListItemView(word: word)
-                    }
-                }
+                WordsScrollView(words: words)
             }
         }
         .frame(
