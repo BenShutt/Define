@@ -16,6 +16,9 @@ protocol ShapeBorder: ViewModifier {
     /// Stroked border color
     var color: Color { get }
 
+    /// Width of the border
+    var borderWidth: CGFloat { get }
+
     /// Make a new shape
     var shape: BorderShape { get }
 }
@@ -24,13 +27,12 @@ protocol ShapeBorder: ViewModifier {
 
 extension ShapeBorder {
 
-    /// Apply overlay of stroked `RoundedRectangle`
-    ///
+    /// Apply overlay of stroked `shape`
     /// - Parameter content: `Content`
     /// - Returns: `View`
     func body(content: Content) -> some View {
         content
-            .overlay(shape.strokeBorder(color, lineWidth: .borderWidth))
+            .overlay(shape.strokeBorder(color, lineWidth: borderWidth))
             .clipShape(shape)
     }
 }
@@ -40,7 +42,6 @@ extension ShapeBorder {
 extension View {
 
     /// Apply `ShapeBorder` `ViewModifier`
-    ///
     /// - Parameter border: `Border`
     /// - Returns: `View`
     func shapeBorder<Border: ShapeBorder>(_ border: Border) -> some View {

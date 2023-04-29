@@ -21,7 +21,16 @@ struct WordCategoryView: View {
 
     /// Background color
     var backgroundColor: Color {
-        .appLightGray
+        guard let wordCategory else { return .appLightGray}
+        switch wordCategory {
+        case .adjective: return .appBlue
+        case .adverb: return .appPurple
+        case .interjection: return .appOrange
+        case .noun: return .appYellow
+        case .numeral: return .appGreen
+        case .pronoun: return .appPink
+        case .verb: return .appRed
+        }
     }
 
     /// Draw view

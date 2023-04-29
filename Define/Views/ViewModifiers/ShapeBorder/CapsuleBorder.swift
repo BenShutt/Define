@@ -13,6 +13,9 @@ struct CapsuleBorder: ShapeBorder {
     /// `Color` of the border
     var color: Color
 
+    /// `CGFloat` width of the border
+    var borderWidth: CGFloat
+
     /// The shape to draw
     var shape: some InsettableShape {
         Capsule()
@@ -24,10 +27,17 @@ struct CapsuleBorder: ShapeBorder {
 extension View {
 
     /// Capsule border
-    ///
-    /// - Parameter color: `Color
-    /// - Returns: `View`
-    func capsuleBorder(color: Color) -> some View {
-        shapeBorder(CapsuleBorder(color: color))
+    /// - Parameters:
+    ///   - color: `Color`
+    ///   - borderWidth: `CGFloat`
+    /// - Returns: `View
+    func capsuleBorder(
+        color: Color,
+        borderWidth: CGFloat = .borderWidth
+    ) -> some View {
+        shapeBorder(CapsuleBorder(
+            color: color,
+            borderWidth: borderWidth
+        ))
     }
 }

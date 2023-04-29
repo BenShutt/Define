@@ -11,9 +11,12 @@ import Foundation
 public enum WordCategory: String, CaseIterable, Identifiable {
 
     case adjective
-    case noun
-    case verb
+    case adverb
     case interjection
+    case noun
+    case numeral
+    case pronoun
+    case verb
 
     public var id: Self { self }
 }

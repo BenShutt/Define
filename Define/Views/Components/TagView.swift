@@ -26,7 +26,7 @@ struct TagView: View {
             .foregroundColor(foregroundColor)
             .padding(.vertical, .smallMedium)
             .padding(.horizontal, .medium)
-            .background(backgroundColor)
-            .clipShape(Capsule())
+            .background(GradientBlurView(color: backgroundColor))
+            .capsuleBorder(color: .appLightGray, borderWidth: 1)
     }
 }
