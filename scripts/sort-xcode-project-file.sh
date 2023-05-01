@@ -17,7 +17,7 @@ XCODE_PROJECT_FILE_NAME="Define.xcodeproj"
 SCRIPT_DIR="$(cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd)"
 
 # Name of script to sort files
-SORT_SCRIPT_NAME="reorder-xcode-project-file-alphabetically"
+SORT_SCRIPT_NAME="reorder-xcode-project-file-alphabetically.pl"
 
 # Path to project file
 PROJECT_FILE_PATH="${SCRIPT_DIR}/../${XCODE_PROJECT_FILE_NAME}/project.pbxproj"
