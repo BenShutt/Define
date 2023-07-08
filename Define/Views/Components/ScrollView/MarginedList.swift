@@ -50,7 +50,7 @@ private extension View {
     /// - Parameter margins: `EdgeInsets`
     /// - Returns: `View`
     func margined(_ margins: EdgeInsets) -> some View {
-        self.roundedRectangleBorder(color: .appGray.opacity(0.25), borderWidth: 1)
+        self.roundedRectangleBorder(color: .appGray.opacity(0.15), borderWidth: 1)
             .compositingGroup()
             .shadow(.container)
             .padding(margins)

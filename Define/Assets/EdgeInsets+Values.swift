@@ -13,5 +13,5 @@ extension EdgeInsets {
     static let largeMargins = EdgeInsets(.large)
     static let meaning = EdgeInsets(vertical: .extraLarge, horizontal: .large)
     static let buttonPadding = EdgeInsets(vertical: .mediumLarge, horizontal: .large)
-    static let header = EdgeInsets(vertical: .mediumLarge, horizontal: .extraLarge)
+    static let header = EdgeInsets(vertical: .large, horizontal: .extraLarge)
 }
