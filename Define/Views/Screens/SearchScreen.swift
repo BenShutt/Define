@@ -18,11 +18,7 @@ struct SearchScreen: Screen {
         VStack(spacing: 0) {
             SearchHeaderView(searchText: $viewModel.search)
                 .zIndex(1)
-
-            if viewModel.words.isEmpty {
-                Spacer()
-                    .frame(height: .large)
-            }
+                .padding(.bottom, viewModel.words.isEmpty ? .large : 0)
 
             switch viewModel.state {
             case .emptySearch:

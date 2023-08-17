@@ -29,7 +29,7 @@ struct StyledButton: View {
                     image
                         .renderingMode(.template)
                         .resizable()
-                        .aspectRatio(contentMode: .fit)
+                        .scaledToFit()
                         .frame(size: .iconSmall)
                 }
 
