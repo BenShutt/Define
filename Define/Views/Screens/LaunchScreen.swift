@@ -16,7 +16,6 @@ struct LaunchScreen: Screen {
     /// Size of the padding
     var padding: CGFloat = 40
 
-    /// Draw `View`
     var screen: some View {
         LogoView()
             .frame(size: containerSize - 2 * padding)

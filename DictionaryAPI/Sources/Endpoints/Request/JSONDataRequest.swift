@@ -24,7 +24,8 @@ public protocol JSONDataRequest {
     /// `URLQueryItem`s
     var queryItems: [URLQueryItem] { get }
 
-    /// Additional `HTTPHeaders`
+    /// Additional `HTTPHeaders`.
+    /// Some headers are set by default, additional ones can be added here
     var additionalHeaders: HTTPHeaders { get }
 }
 
@@ -42,7 +43,7 @@ public extension JSONDataRequest {
         []
     }
 
-    /// Defaults to `.acceptJSON`
+    /// Defaults to empty
     var additionalHeaders: HTTPHeaders {
         []
     }
@@ -51,19 +52,17 @@ public extension JSONDataRequest {
 
     /// Get the base HTTP headers
     private var headers: HTTPHeaders {
-        get async {
-            var headers: HTTPHeaders = .default
-            headers.append(.acceptJSON)
-            if let requestBody = self as? RequestBody {
-                headers.append(requestBody.contentType)
-            }
-            return headers
+        var headers: HTTPHeaders = .default
+        headers.append(.acceptJSON)
+        if let requestBody = self as? RequestBody {
+            headers.append(requestBody.contentType)
         }
+        return headers
     }
 
     /// Map to `URLRequest`
     private var urlRequest: URLRequest {
-        get async throws {
+        get throws {
             var request = try URLRequest(
                 url: URLComponents.dictionaryAPI(
                     endpoint: endpoint,
@@ -72,7 +71,7 @@ public extension JSONDataRequest {
                 method: method
             )
             request.timeoutInterval = 45
-            request.headers = await headers.appending(additionalHeaders)
+            request.headers = headers.appending(additionalHeaders)
             if let requestBody = self as? RequestBody {
                 request.httpBody = try requestBody.body
             }

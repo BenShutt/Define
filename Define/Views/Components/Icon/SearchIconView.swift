@@ -10,7 +10,6 @@ import SwiftUI
 /// Search icon with gradient background
 struct SearchIconView: View {
 
-    /// Draw `View`
     var body: some View {
         IconContainerView(edge: .leading) {
             IconView(

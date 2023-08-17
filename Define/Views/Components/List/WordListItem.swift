@@ -32,7 +32,6 @@ struct WordListItem: View {
         max(0, word.definitions.count - 1)
     }
 
-    /// Draw `View`
     var body: some View {
         HStack(spacing: .large) {
             VStack(alignment: .leading, spacing: .small) {

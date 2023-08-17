@@ -42,7 +42,6 @@ struct IconContainerView<Body: View>: View {
         }
     }
 
-    /// Draw `View`
     var body: some View {
         contentView
             .padding(.leading, leadingPadding)

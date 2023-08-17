@@ -31,7 +31,6 @@ struct IconView: View {
             .foregroundColor(foregroundColor)
     }
 
-    /// Draw `View`
     var body: some View {
         if let size {
             iconView

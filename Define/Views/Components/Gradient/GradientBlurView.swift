@@ -13,7 +13,6 @@ struct GradientBlurView: View {
     /// Color to blur with gradient
     var color: Color
 
-    /// Draw `View`
     var body: some View {
         ZStack {
             LinearGradient.header(color: color)

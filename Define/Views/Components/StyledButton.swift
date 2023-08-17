@@ -22,7 +22,6 @@ struct StyledButton: View {
     /// Closure called when the button is tapped
     var onTap: () -> Void
 
-    /// Draw `View`
     var body: some View {
         Button(action: onTap) {
             HStack(spacing: .medium) {

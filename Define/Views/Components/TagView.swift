@@ -19,7 +19,6 @@ struct TagView: View {
     /// `Color` of the background
     var backgroundColor: Color
 
-    /// Draw `View`
     var body: some View {
         Text(verbatim: text)
             .textStyle(.tag)

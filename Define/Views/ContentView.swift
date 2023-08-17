@@ -10,10 +10,10 @@ import SwiftUI
 /// Root app `View`
 struct ContentView: View {
 
-    /// `NavigationViewModel`
+    /// Storage of the `NavigationViewModel` environment instance
     @StateObject private var navigation = NavigationViewModel()
 
-    /// `WordsViewModel`
+    /// Storage of the `WordsViewModel` environment instance
     @StateObject private var words = WordsViewModel()
 
     /// Root `NavigationStack`
@@ -32,7 +32,6 @@ struct ContentView: View {
 /// Define the root UI
 private struct RootView: View {
 
-    /// `Bool`
     var hasWords: Bool
 
     var body: some View {

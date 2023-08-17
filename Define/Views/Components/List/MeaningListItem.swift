@@ -14,7 +14,6 @@ struct MeaningListItem: View {
     /// `Meaning`
     var meaning: Word.Meaning
 
-    /// Draw `View`
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             ForEach(meaning.definitions.zipped, id: \.index) { index, definition in

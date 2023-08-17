@@ -26,7 +26,6 @@ struct SearchEmptyView: View {
     /// Subtitle text
     var subtitle: String
 
-    /// Draw `View`
     var body: some View {
         VStack(alignment: .center, spacing: 0) {
             LottieView(

@@ -11,13 +11,14 @@ extension JSONEncoder {
 
     /// `JSONEncoder` for the API
     static var api: JSONEncoder {
-        JSONEncoder()
+        let encoder = JSONEncoder()
+        encoder.dateEncodingStrategy = .iso8601
+        return encoder
     }
 
     /// `JSONEncoder` for pretty printing
     static var pretty: JSONEncoder {
-        let encoder = JSONEncoder()
-        encoder.dateEncodingStrategy = .iso8601
+        let encoder = JSONEncoder.api
         encoder.outputFormatting = [.prettyPrinted, .sortedKeys, .withoutEscapingSlashes]
         return encoder
     }

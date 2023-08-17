@@ -24,7 +24,6 @@ struct LogoView: View {
         min(proxy.size.width, proxy.size.height) * 0.5
     }
 
-    /// Draw `View`
     var body: some View {
         GeometryReader { proxy in
             ZStack {
