@@ -22,6 +22,9 @@ struct ContentView: View {
             RootView(hasWords: !words.isEmpty)
                 .navigate()
         }
+        .onAppear {
+            PushNotificationManager.requestRemoteNotificationPermission()
+        }
         .environmentObject(navigation)
         .environmentObject(words)
     }
