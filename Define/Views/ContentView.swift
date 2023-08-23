@@ -11,7 +11,7 @@ import SwiftUI
 struct ContentView: View {
 
     /// Storage of the `NavigationViewModel` environment instance
-    @StateObject private var navigation = NavigationViewModel()
+    @StateObject private var navigation: NavigationViewModel = .shared
 
     /// Storage of the `WordsViewModel` environment instance
     @StateObject private var words = WordsViewModel()

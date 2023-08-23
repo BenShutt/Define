@@ -7,11 +7,13 @@
 
 import UIKit
 import UserNotifications
+import DictionaryAPI
 
 /// Manage push notifications
 struct PushNotificationManager {
 
     private static let remindAfterDays = 3
+    private static let wordUserInfoKey = "word"
 
     // MARK: - Authorization
 
@@ -45,16 +47,21 @@ struct PushNotificationManager {
     /// - Parameter response: `UNNotificationResponse`
     static func didReceive(response: UNNotificationResponse) {
         let userInfo = response.notification.request.content.userInfo
-        print(userInfo) // TODO
+        if let word = userInfo[wordUserInfoKey] as? Word {
+            NavigationViewModel.shared.push(.word(word))
+        }
     }
 
     // MARK: - Local Notification
 
-    static func remind(word: String, in days: Int) {
+    /// Send a local push notification to remind the user about a word in `remindAfterDays` days
+    /// - Parameter word: The word to remind the user about
+    static func remind(word: Word) {
         let content = UNMutableNotificationContent()
-        content.title = .Push.title(word: word)
+        content.title = .Push.title(word: word.word)
         content.subtitle = .Push.subtitle
         content.sound = .default
+        content.userInfo[wordUserInfoKey] = word
 
         let date = Calendar.current.date(
             byAdding: .day,
@@ -67,7 +74,6 @@ struct PushNotificationManager {
             from: date
         )
 
-        // show this notification five seconds from now
         let trigger = UNCalendarNotificationTrigger(
             dateMatching: dateComponents,
             repeats: false
