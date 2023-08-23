@@ -12,8 +12,11 @@ extension Bundle {
     /// Fixed app keys in the `Info.plist`
     enum Key: String {
 
-        /// App version
+        /// Version of the app
         case appVersion = "CFBundleShortVersionString"
+
+        /// Name of the app
+        case appName = "CFBundleName"
     }
 
     /// Object for `key` casting to `T`
@@ -35,5 +38,10 @@ extension Bundle {
     /// Value for `Key.appVersion`
     var appVersion: String? {
         value(forKey: .appVersion)
+    }
+
+    /// Value for `Key.appName`
+    var appName: String? {
+        value(forKey: .appName)
     }
 }

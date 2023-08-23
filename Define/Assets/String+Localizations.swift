@@ -11,6 +11,13 @@ import Foundation
 
 extension String {
 
+    struct WelcomeScreen {
+
+        static func title(appName: String) -> String {
+            "Welcome to \(appName)"
+        }
+    }
+
     struct SearchHeaderView {
 
         static let title = "Search Word"
