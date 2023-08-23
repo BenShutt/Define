@@ -13,6 +13,9 @@ enum UserDefaultKey: String {
     /// Version number of the app
     case appVersion
 
+    /// Has seen the welcome screen
+    case hasSeenWelcome
+
     /// The user's saved words
     case words
 }

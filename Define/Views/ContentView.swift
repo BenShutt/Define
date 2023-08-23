@@ -10,11 +10,24 @@ import SwiftUI
 /// Root app `View`
 struct ContentView: View {
 
+    /// Has the user seen the welcome screen
+    private static var hasSeenWelcome: Bool {
+        get {
+            UserDefaults.standard.value(for: .hasSeenWelcome) ?? false
+        }
+        set {
+            UserDefaults.standard.set(newValue, for: .hasSeenWelcome)
+        }
+    }
+
     /// Storage of the `NavigationViewModel` environment instance
     @StateObject private var navigation: NavigationViewModel = .shared
 
     /// Storage of the `WordsViewModel` environment instance
     @StateObject private var words = WordsViewModel()
+
+    /// Are we presenting the welcome screen
+    @State private var isPresentingWelcome = hasSeenWelcome
 
     /// Root `NavigationStack`
     var body: some View {
@@ -25,6 +38,14 @@ struct ContentView: View {
         .onAppear {
             PushNotificationManager.requestRemoteNotificationPermission()
         }
+        .sheet(
+            isPresented: $isPresentingWelcome,
+            onDismiss: {
+                Self.hasSeenWelcome = true
+            }, content: {
+                WelcomeScreen()
+            }
+        )
         .environmentObject(navigation)
         .environmentObject(words)
     }
