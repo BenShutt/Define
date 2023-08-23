@@ -103,6 +103,15 @@ extension String {
 
         static let dismiss = "Dismiss"
     }
+
+    struct Push {
+
+        static func title(word: String) -> String {
+            "Word Reminder 🕔: \(word)"
+        }
+
+        static let subtitle = "Hopefully this helps your remember it"
+    }
 }
 
 // swiftlint:enable nesting

@@ -11,6 +11,8 @@ import UserNotifications
 /// Manage push notifications
 struct PushNotificationManager {
 
+    private static let remindAfterDays = 3
+
     // MARK: - Authorization
 
     /// Request permission to send this device remote push notification
@@ -48,15 +50,26 @@ struct PushNotificationManager {
 
     // MARK: - Local Notification
 
-    static func remind(in days: Int) {
+    static func remind(word: String, in days: Int) {
         let content = UNMutableNotificationContent()
-        content.title = "Feed the cat"
-        content.subtitle = "It looks hungry"
+        content.title = .Push.title(word: word)
+        content.subtitle = .Push.subtitle
         content.sound = .default
+
+        let date = Calendar.current.date(
+            byAdding: .day,
+            value: remindAfterDays,
+            to: Date()
+        ) ?? Date()
+
+        let dateComponents = Calendar.current.dateComponents(
+            in: .current,
+            from: date
+        )
 
         // show this notification five seconds from now
         let trigger = UNCalendarNotificationTrigger(
-            dateMatching: <#T##DateComponents#>,
+            dateMatching: dateComponents,
             repeats: false
         )
 
