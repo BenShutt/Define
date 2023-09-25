@@ -22,7 +22,6 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
 
         // Configure push notifications
         UNUserNotificationCenter.current().delegate = self
-
         return true
     }
 
