@@ -6,10 +6,10 @@
 //
 
 import Foundation
-import Alamofire
+import DataRequest
 
 /// Make `HTTPRequest` for the Dictionary entries API
-public struct GetWords: JSONDataRequest {
+public struct GetWords: Endpoint {
 
     /// Response model from the API
     public typealias ResponseBody = [Word]

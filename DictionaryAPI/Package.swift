@@ -17,14 +17,14 @@ let package = Package(
     ],
     dependencies: [
         .package(
-            url: "https://github.com/Alamofire/Alamofire.git",
-            .upToNextMajor(from: "5.0.0")
+            url: "https://github.com/BenShutt/DataRequest.git",
+            branch: "main"
         )
     ],
     targets: [
         .target(
             name: "DictionaryAPI",
-            dependencies: ["Alamofire"],
+            dependencies: ["DataRequest"],
             path: "Sources"
         ),
         .testTarget(

@@ -27,3 +27,16 @@ public extension JSONModel {
         (try? jsonString()) ?? "\(type(of: self))"
     }
 }
+
+// MARK: - JSONEncoder + Extensions
+
+private extension JSONEncoder {
+
+    /// `JSONEncoder` for pretty printing
+    static var pretty: JSONEncoder {
+        let encoder = JSONEncoder()
+        encoder.dateEncodingStrategy = .iso8601
+        encoder.outputFormatting = [.prettyPrinted, .sortedKeys, .withoutEscapingSlashes]
+        return encoder
+    }
+}
