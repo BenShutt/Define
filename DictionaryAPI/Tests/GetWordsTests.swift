@@ -11,6 +11,7 @@ import DictionaryAPI
 final class GetWordsTests: XCTestCase {
 
     func test() async throws {
-        _ = try await GetWords.request(word: "hello")
+        print("extraBoldItalic".uppercasedFirstCharacter)
+        _ = try await GetWords(word: "hello").request()
     }
 }

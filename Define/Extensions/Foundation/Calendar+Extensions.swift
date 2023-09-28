@@ -21,4 +21,17 @@ extension Calendar {
             to: to
         ).minute ?? 0
     }
+
+    /// Add `value` days to `date`
+    /// - Parameters:
+    ///   - value: Amount of days
+    ///   - date: Date to add days to
+    /// - Returns: Outputted date
+    func addingDays(_ value: Int, to date: Date) -> Date {
+        self.date(
+            byAdding: .day,
+            value: value,
+            to: date
+        ) ?? date
+    }
 }

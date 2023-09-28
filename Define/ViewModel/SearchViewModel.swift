@@ -84,7 +84,7 @@ import DictionaryAPI
 
         Task {
             do {
-                let words = try await GetWords.request(word: search)
+                let words = try await GetWords(word: search).request()
                 guard !words.isEmpty else { throw SearchViewModelError.noResults }
                 setState(.success(words), for: search)
             } catch {

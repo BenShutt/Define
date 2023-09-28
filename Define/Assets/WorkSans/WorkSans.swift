@@ -30,6 +30,6 @@ enum WorkSans: String, CustomFont {
     case thinItalic
 
     var fontName: String {
-        "WorkSans-\(rawValue.capitalized)"
+        "WorkSans-\(rawValue.uppercasedFirstCharacter)"
     }
 }

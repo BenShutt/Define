@@ -57,51 +57,22 @@ public extension Word.Meaning {
     }
 }
 
+// MARK: - Word + Identifiable
+
+extension Word: Identifiable {
+
+    /// Words do not have ID properties, so we use the word itself.
+    /// - Warning It does mean that if the same search returns multiple words from the API only one can be saved
+    public var id: String {
+        word.lowercased()
+    }
+}
+
 // MARK: - Word + Extensions
 
 extension Word: Comparable {
 
     public static func < (lhs: Word, rhs: Word) -> Bool {
         lhs.word < rhs.word
-    }
-}
-
-// MARK: - Word + Extensions
-
-public extension Word {
-
-    /// Capitalized word
-    var title: String {
-        word.capitalized
-    }
-
-    /// Definitions
-    var definitions: [String] {
-        meanings.flatMap { $0.definitions }.map { $0.definition }
-    }
-}
-
-// MARK: - Word.Meaning + Extensions
-
-public extension Word.Meaning {
-
-    /// Category (or type) of word
-    var category: String {
-        partOfSpeech.capitalized
-    }
-}
-
-// MARK: - Word.Meaning.Definition + Extensions
-
-public extension Word.Meaning.Definition {
-
-    /// Capitalized definition
-    var title: String {
-        definition.capitalized
-    }
-
-    /// Title of example
-    var exampleTitle: String? {
-        example?.trimmed.nilIfEmpty?.capitalized
     }
 }

@@ -10,7 +10,8 @@ import SwiftUI
 /// Root app `View`
 struct ContentView: View {
 
-    /// Has the user seen the welcome screen
+    /// Has the user seen the welcome screen.
+    /// - Note Using `UserDefaults` directly rather than `@AppStorage` for static access
     private static var hasSeenWelcome: Bool {
         get {
             UserDefaults.standard.value(for: .hasSeenWelcome) ?? false

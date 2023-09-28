@@ -9,6 +9,8 @@ import UIKit
 import UserNotifications
 import DictionaryAPI
 
+typealias UserInfo = [AnyHashable: Any]
+
 /// Manage push notifications
 struct PushNotificationManager {
 

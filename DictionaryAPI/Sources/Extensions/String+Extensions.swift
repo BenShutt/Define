@@ -18,4 +18,11 @@ public extension String {
     var nilIfEmpty: String? {
         isEmpty ? nil : self
     }
+
+    /// Returns a new string with only the first character uppercased.
+    /// This is different to `.capitalized` which also lowercases the other characters.
+    var uppercasedFirstCharacter: String {
+        guard let first else { return self }
+        return first.uppercased() + dropFirst(1)
+    }
 }

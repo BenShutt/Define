@@ -33,6 +33,8 @@
 		B813BFFF28EB7BE6000C766C /* CrossIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B813BFFE28EB7BE6000C766C /* CrossIconView.swift */; };
 		B813C00128EB7DB9000C766C /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B813C00028EB7DB9000C766C /* IconView.swift */; };
 		B813C00328EB7F7D000C766C /* IconContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B813C00228EB7F7D000C766C /* IconContainerView.swift */; };
+		B818266F2AC5C57A00C6CCC7 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = B818266E2AC5C57A00C6CCC7 /* Localizable.xcstrings */; };
+		B81826712AC5CA2700C6CCC7 /* Word+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81826702AC5CA2700C6CCC7 /* Word+View.swift */; };
 		B84AD60A28FAFC9E00C2D5AE /* WordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84AD60928FAFC9E00C2D5AE /* WordScreen.swift */; };
 		B84AD60C28FB01AF00C2D5AE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84AD60B28FB01AF00C2D5AE /* ContentView.swift */; };
 		B879E9E928F0C5190094AA24 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B879E9E828F0C5190094AA24 /* TagView.swift */; };
@@ -97,6 +99,7 @@
 		B8D2A73E28DEEFE70096A020 /* Color+Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2A73D28DEEFE70096A020 /* Color+Values.swift */; };
 		B8D2A74228DF3A250096A020 /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2A74128DF3A250096A020 /* InputTextField.swift */; };
 		B8D2A74628DF3AFE0096A020 /* TextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2A74528DF3AFE0096A020 /* TextStyle.swift */; };
+		B8DAF91D2AC332FF00514808 /* ReminderNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DAF91C2AC332FF00514808 /* ReminderNotification.swift */; };
 		B8E28DCA28EA0F93009BE8A2 /* Image+Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E28DC928EA0F93009BE8A2 /* Image+Values.swift */; };
 		B8E49C0928DF917E00F9CAC4 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E49C0828DF917E00F9CAC4 /* LoadingView.swift */; };
 		B8E49C0B28DF985500F9CAC4 /* CGFloat+Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E49C0A28DF985500F9CAC4 /* CGFloat+Values.swift */; };
@@ -158,6 +161,8 @@
 		B813BFFE28EB7BE6000C766C /* CrossIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossIconView.swift; sourceTree = "<group>"; };
 		B813C00028EB7DB9000C766C /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
 		B813C00228EB7F7D000C766C /* IconContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconContainerView.swift; sourceTree = "<group>"; };
+		B818266E2AC5C57A00C6CCC7 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		B81826702AC5CA2700C6CCC7 /* Word+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Word+View.swift"; sourceTree = "<group>"; };
 		B84AD60928FAFC9E00C2D5AE /* WordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordScreen.swift; sourceTree = "<group>"; };
 		B84AD60B28FB01AF00C2D5AE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B879E9E828F0C5190094AA24 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
@@ -220,6 +225,7 @@
 		B8D2A73D28DEEFE70096A020 /* Color+Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Values.swift"; sourceTree = "<group>"; };
 		B8D2A74128DF3A250096A020 /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
 		B8D2A74528DF3AFE0096A020 /* TextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyle.swift; sourceTree = "<group>"; };
+		B8DAF91C2AC332FF00514808 /* ReminderNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderNotification.swift; sourceTree = "<group>"; };
 		B8E28DC928EA0F93009BE8A2 /* Image+Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Values.swift"; sourceTree = "<group>"; };
 		B8E49C0828DF917E00F9CAC4 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		B8E49C0A28DF985500F9CAC4 /* CGFloat+Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Values.swift"; sourceTree = "<group>"; };
@@ -359,6 +365,7 @@
 			children = (
 				B80E722729FDB8BE007CCE71 /* Foundation */,
 				B8C894EB28D905EE00975E25 /* SwiftUI */,
+				B81826702AC5CA2700C6CCC7 /* Word+View.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -518,6 +525,7 @@
 			isa = PBXGroup;
 			children = (
 				B80399E028D79A3B008CE7B4 /* Images.xcassets */,
+				B818266E2AC5C57A00C6CCC7 /* Localizable.xcstrings */,
 			);
 			path = XCAssets;
 			sourceTree = "<group>";
@@ -525,10 +533,10 @@
 		B8C894E428D895DE00975E25 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				B8DAF91B2AC332ED00514808 /* PushNotifications */,
 				B8FF0DD029609DDF004C61B6 /* Migrations.swift */,
 				B8FF0DD429609EF3004C61B6 /* UserDefaultKey.swift */,
 				B80E721729FD5306007CCE71 /* WordColor.swift */,
-				B8994CAD2A8EC4C2000BE101 /* PushNotificationManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -571,8 +579,8 @@
 				B895887329578BFB0041A315 /* HomeScreen.swift */,
 				B8B563EA28F00391004B80F0 /* LaunchScreen.swift */,
 				B8D2A73B28DEEFAE0096A020 /* SearchScreen.swift */,
-				B84AD60928FAFC9E00C2D5AE /* WordScreen.swift */,
 				B8E762B32A95F2E6006E168E /* WelcomeScreen.swift */,
+				B84AD60928FAFC9E00C2D5AE /* WordScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -597,6 +605,15 @@
 				B801A3DA2986D41400FAD316 /* WordCategoryView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		B8DAF91B2AC332ED00514808 /* PushNotifications */ = {
+			isa = PBXGroup;
+			children = (
+				B8994CAD2A8EC4C2000BE101 /* PushNotificationManager.swift */,
+				B8DAF91C2AC332FF00514808 /* ReminderNotification.swift */,
+			);
+			path = PushNotifications;
 			sourceTree = "<group>";
 		};
 		B8FF0DC7295F9528004C61B6 /* Frameworks */ = {
@@ -736,6 +753,7 @@
 				B8FF0DCB295F9882004C61B6 /* hello.json in Resources */,
 				B8B9B9E128EDC9FC006FCA76 /* Images.xcassets in Resources */,
 				B8B563E928F00096004B80F0 /* LaunchScreen.storyboard in Resources */,
+				B818266F2AC5C57A00C6CCC7 /* Localizable.xcstrings in Resources */,
 				B80399E428D79A3B008CE7B4 /* Preview Assets.xcassets in Resources */,
 				B8A1232028E9712300ACEC45 /* searchEmpty.json in Resources */,
 				B8A1231F28E9712300ACEC45 /* searchNoResults.json in Resources */,
@@ -803,7 +821,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8994CAE2A8EC4C2000BE101 /* PushNotificationManager.swift in Sources */,
 				B89F179D28E0FABE00A96E35 /* AppDelegate.swift in Sources */,
 				B8B9B9DA28EC6210006FCA76 /* BlurView.swift in Sources */,
 				B8FF0DD329609E3E004C61B6 /* Bundle+Key.swift in Sources */,
@@ -835,7 +852,6 @@
 				B8B563EB28F00391004B80F0 /* LaunchScreen.swift in Sources */,
 				B80E720629FBB972007CCE71 /* LinearGradient+Gradients.swift in Sources */,
 				B8E49C0928DF917E00F9CAC4 /* LoadingView.swift in Sources */,
-				B8E762B42A95F2E6006E168E /* WelcomeScreen.swift in Sources */,
 				B8B9B9E328EDE65F006FCA76 /* LogoView.swift in Sources */,
 				B8A1232728E971FD00ACEC45 /* LottieFile.swift in Sources */,
 				B8A1232228E9714600ACEC45 /* LottieView.swift in Sources */,
@@ -844,6 +860,8 @@
 				B8FF0DD129609DDF004C61B6 /* Migrations.swift in Sources */,
 				B8958876295790E30041A315 /* NavigationViewModel.swift in Sources */,
 				B8C43F3229FB0F7500F5E166 /* NoBounceScrollView.swift in Sources */,
+				B8994CAE2A8EC4C2000BE101 /* PushNotificationManager.swift in Sources */,
+				B8DAF91D2AC332FF00514808 /* ReminderNotification.swift in Sources */,
 				B80E722629FDB5C9007CCE71 /* RoundedRectangleBorder.swift in Sources */,
 				B8FF0DD82960ACCE004C61B6 /* SavedWord.swift in Sources */,
 				B89F179428E0EBF100A96E35 /* Screen.swift in Sources */,
@@ -866,7 +884,9 @@
 				B8D2A74628DF3AFE0096A020 /* TextStyle.swift in Sources */,
 				B8FF0DD529609EF3004C61B6 /* UserDefaultKey.swift in Sources */,
 				B8B563E728EFFEC3004B80F0 /* View+Extensions.swift in Sources */,
+				B8E762B42A95F2E6006E168E /* WelcomeScreen.swift in Sources */,
 				B894FA1C28FC69FA00BC0BFA /* Word+Preview.swift in Sources */,
+				B81826712AC5CA2700C6CCC7 /* Word+View.swift in Sources */,
 				B801A3DB2986D41400FAD316 /* WordCategoryView.swift in Sources */,
 				B80E721829FD5306007CCE71 /* WordColor.swift in Sources */,
 				B879E9EE28F0C7ED0094AA24 /* WordListItem.swift in Sources */,
@@ -1036,6 +1056,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Define/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Define;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1049,6 +1070,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.benshutt.Define;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1070,6 +1092,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Define/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Define;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1083,6 +1106,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.benshutt.Define;
 				PRODUCT_NAME = "$(TARGET_NAME)";

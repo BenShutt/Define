@@ -1,3 +1,3 @@
 # Dictionary API
 
-Swift package wrapping the Dictionary API.
+Swift package library wrapping the Dictionary API.

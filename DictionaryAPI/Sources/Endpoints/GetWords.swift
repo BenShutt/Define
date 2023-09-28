@@ -17,20 +17,13 @@ public struct GetWords: Endpoint {
     /// Word to get definition for
     public var word: String
 
+    /// Public member-wise initializer
+    public init(word: String) {
+        self.word = word
+    }
+
     /// Endpoint to hit
     public var endpoint: String {
         "entries/\(String.language)/\(word)"
-    }
-}
-
-// MARK: - Interface
-
-public extension GetWords {
-
-    /// Fetch definitions for `word`
-    /// - Parameter word: `String`
-    /// - Returns: `[Word]`
-    static func request(word: String) async throws -> ResponseBody {
-        try await GetWords(word: word).request()
     }
 }

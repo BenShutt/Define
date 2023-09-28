@@ -17,8 +17,14 @@ struct WordScreen: Screen {
     /// `WordsViewModel`
     @EnvironmentObject var words: WordsViewModel
 
+    /// Is the notification request reminding the user about this word pending (due in the future)
+    @State private var isReminderPending = false
+
     /// Is presenting alert to delete word
     @State private var isPresentingDeleteWordAlert = false
+
+    /// Is presenting alert to remind word
+    @State private var isPresentingReminderAlert = false
 
     /// `Word` to define
     var word: Word
@@ -45,6 +51,12 @@ struct WordScreen: Screen {
         .toolbar {
             if isWordSaved {
                 Button(action: {
+                    onReminder()
+                }, label: {
+                    Image(systemName: isReminderPending ? "checkmark" : "clock")
+                })
+
+                Button(action: {
                     isPresentingDeleteWordAlert = true
                 }, label: {
                     Image(systemName: "trash")
@@ -65,6 +77,30 @@ struct WordScreen: Screen {
                 Text(verbatim: .WordScreen.DeleteAlert.subtitle(word: word.title))
             }
         )
+        .alert(
+            Text("word_reminder_delete_title"),
+            isPresented: $isPresentingReminderAlert,
+            actions: {
+                Button(role: .destructive) {
+                    ReminderNotification.removePendingRequest(word: word)
+                    updateReminder()
+                } label: {
+                    Text("delete")
+                }
+
+                Button(role: .cancel) {
+                    // Do nothing
+                } label: {
+                    Text("cancel")
+                }
+            },
+            message: {
+                Text("word_reminder_delete_subtitle \(word.title)")
+            }
+        )
+        .onAppear {
+            updateReminder()
+        }
     }
 
     /// Save `word`
@@ -76,8 +112,26 @@ struct WordScreen: Screen {
 
     /// Delete `word`
     private func deleteWord() {
-        guard words.deleteWord(word) else { return }
+        words.deleteWord(word)
         navigation.popToRoot()
+    }
+
+    /// Handle reminder button tap
+    private func onReminder() {
+        if isReminderPending {
+            isPresentingReminderAlert = true
+        } else {
+            ReminderNotification.scheduleRequest(word: word)
+            updateReminder()
+        }
+    }
+
+    /// Update the reminder UI
+    private func updateReminder() {
+        Task { @MainActor in
+            let pendingRequest = await ReminderNotification.pendingRequest(word: word)
+            isReminderPending = pendingRequest != nil
+        }
     }
 }
 
