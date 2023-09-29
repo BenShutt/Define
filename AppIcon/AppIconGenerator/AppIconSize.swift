@@ -1,6 +1,6 @@
 //
 //  AppIconSize.swift
-//  AppIcon
+//  AppIconGenerator
 //
 //  Created by Ben Shutt on 05/10/2022.
 //
@@ -42,22 +42,14 @@ struct AppIconSize: Equatable, Hashable, Codable, Comparable, CustomStringConver
         .init(size: 1024, multiplier: 1)
     ]
 
-    /// Max `AppIconSize`
-    static var max: AppIconSize {
-        guard let appIconSize = AppIconSize.all.max() else {
-            fatalError("\(AppIconSize.self)")
-        }
-        return appIconSize
-    }
-
-    /// Size in pts
+    /// Size of the image
     var size: CGFloat
 
     /// Size multiplier to apply
     var multiplier: Int
 
-    /// Size in pixels (px)
-    var sizeInPx: CGFloat {
+    /// Scaled size
+    var scaledSize: CGFloat {
         size * CGFloat(multiplier)
     }
 
@@ -82,7 +74,7 @@ struct AppIconSize: Equatable, Hashable, Codable, Comparable, CustomStringConver
     // MARK: - Comparable
 
     static func < (lhs: AppIconSize, rhs: AppIconSize) -> Bool {
-        lhs.sizeInPx < rhs.sizeInPx
+        lhs.scaledSize < rhs.scaledSize
     }
 
     // MARK: - CustomStringConvertible

@@ -15,7 +15,7 @@
       "location" : "https://github.com/3sidedcube/cubefoundation-ios.git",
       "state" : {
         "branch" : "develop",
-        "revision" : "7c6ceba17a28daf95fe856f36477be2f23da7225"
+        "revision" : "b9d44aff2dbfd1912a21c56bcd2c6d489ee396f4"
       }
     },
     {
@@ -32,8 +32,17 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/airbnb/lottie-ios",
       "state" : {
-        "revision" : "b4bd0604ded9574807f41b4004b57dd1226a30a4",
-        "version" : "3.5.0"
+        "revision" : "5197d6f06c00753ca299d8424c8e089c6a372f3c",
+        "version" : "4.3.2"
+      }
+    },
+    {
+      "identity" : "swift-argument-parser",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-argument-parser.git",
+      "state" : {
+        "revision" : "8f4d2753f0e4778c76d5f05ad16c74f707390531",
+        "version" : "1.2.3"
       }
     },
     {
@@ -41,8 +50,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/siteline/SwiftUI-Introspect.git",
       "state" : {
-        "revision" : "c18951c747ab62af7c15e17a81bd37d4fd5a9979",
-        "version" : "0.2.3"
+        "revision" : "121c146fe591b1320238d054ae35c81ffa45f45a",
+        "version" : "0.12.0"
       }
     }
   ],

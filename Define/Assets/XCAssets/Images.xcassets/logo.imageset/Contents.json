@@ -1,19 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "appIcon-200.png",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "appIcon-200@2x.png",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "filename" : "appIcon-200@3x.png",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "appIcon-1024.png",
+      "idiom" : "universal"
     }
   ],
   "info" : {

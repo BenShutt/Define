@@ -83,14 +83,13 @@
 		B8A2A8422965C52000A16FEE /* ScreenBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A2A8412965C52000A16FEE /* ScreenBody.swift */; };
 		B8B563E728EFFEC3004B80F0 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B563E628EFFEC3004B80F0 /* View+Extensions.swift */; };
 		B8B563E928F00096004B80F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8B563E828F00096004B80F0 /* LaunchScreen.storyboard */; };
-		B8B563EB28F00391004B80F0 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B563EA28F00391004B80F0 /* LaunchScreen.swift */; };
 		B8B9B9D628EC5C54006FCA76 /* SearchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9B9D528EC5C54006FCA76 /* SearchHeaderView.swift */; };
 		B8B9B9D828EC603D006FCA76 /* EdgeInsets+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9B9D728EC603D006FCA76 /* EdgeInsets+Extensions.swift */; };
-		B8B9B9DA28EC6210006FCA76 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9B9D928EC6210006FCA76 /* BlurView.swift */; };
-		B8B9B9DD28EC66AD006FCA76 /* GradientBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9B9DC28EC66AD006FCA76 /* GradientBlurView.swift */; };
 		B8B9B9E128EDC9FC006FCA76 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B80399E028D79A3B008CE7B4 /* Images.xcassets */; };
-		B8B9B9E328EDE65F006FCA76 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9B9E228EDE65F006FCA76 /* LogoView.swift */; };
 		B8BBA16228E8EDF100222116 /* StyledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BBA16128E8EDF100222116 /* StyledButton.swift */; };
+		B8BFDC6C2AC77D04009E1F83 /* AppIcon in Frameworks */ = {isa = PBXBuildFile; productRef = B8BFDC6B2AC77D04009E1F83 /* AppIcon */; };
+		B8BFDC6F2AC77FED009E1F83 /* GradientBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BFDC6E2AC77FED009E1F83 /* GradientBlurView.swift */; };
+		B8BFDC712AC7800C009E1F83 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BFDC702AC7800C009E1F83 /* BlurView.swift */; };
 		B8C25F9C294F7AAF001C8847 /* KeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C25F9B294F7AAF001C8847 /* KeyboardToolbar.swift */; };
 		B8C25FA0294F8D5D001C8847 /* Separator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C25F9F294F8D5D001C8847 /* Separator.swift */; };
 		B8C43F3029FB0F6100F5E166 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = B8C43F2F29FB0F6100F5E166 /* Introspect */; };
@@ -211,13 +210,11 @@
 		B8A2A8412965C52000A16FEE /* ScreenBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenBody.swift; sourceTree = "<group>"; };
 		B8B563E628EFFEC3004B80F0 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		B8B563E828F00096004B80F0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B8B563EA28F00391004B80F0 /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
 		B8B9B9D528EC5C54006FCA76 /* SearchHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHeaderView.swift; sourceTree = "<group>"; };
 		B8B9B9D728EC603D006FCA76 /* EdgeInsets+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EdgeInsets+Extensions.swift"; sourceTree = "<group>"; };
-		B8B9B9D928EC6210006FCA76 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
-		B8B9B9DC28EC66AD006FCA76 /* GradientBlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBlurView.swift; sourceTree = "<group>"; };
-		B8B9B9E228EDE65F006FCA76 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		B8BBA16128E8EDF100222116 /* StyledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledButton.swift; sourceTree = "<group>"; };
+		B8BFDC6E2AC77FED009E1F83 /* GradientBlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBlurView.swift; sourceTree = "<group>"; };
+		B8BFDC702AC7800C009E1F83 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		B8C25F9B294F7AAF001C8847 /* KeyboardToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardToolbar.swift; sourceTree = "<group>"; };
 		B8C25F9F294F8D5D001C8847 /* Separator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Separator.swift; sourceTree = "<group>"; };
 		B8C43F3129FB0F7500F5E166 /* NoBounceScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoBounceScrollView.swift; sourceTree = "<group>"; };
@@ -247,6 +244,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8BFDC6C2AC77D04009E1F83 /* AppIcon in Frameworks */,
 				B80E720229FBB67B007CCE71 /* CubeFoundation in Frameworks */,
 				B80E720429FBB67B007CCE71 /* CubeFoundationSwiftUI in Frameworks */,
 				B8FF0DC9295F9528004C61B6 /* DictionaryAPI in Frameworks */,
@@ -512,15 +510,6 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
-		B8B9B9DB28EC668C006FCA76 /* Gradient */ = {
-			isa = PBXGroup;
-			children = (
-				B8B9B9D928EC6210006FCA76 /* BlurView.swift */,
-				B8B9B9DC28EC66AD006FCA76 /* GradientBlurView.swift */,
-			);
-			path = Gradient;
-			sourceTree = "<group>";
-		};
 		B8B9B9DE28EDC6E4006FCA76 /* XCAssets */ = {
 			isa = PBXGroup;
 			children = (
@@ -528,6 +517,15 @@
 				B818266E2AC5C57A00C6CCC7 /* Localizable.xcstrings */,
 			);
 			path = XCAssets;
+			sourceTree = "<group>";
+		};
+		B8BFDC6D2AC77FDD009E1F83 /* GradientBlurView */ = {
+			isa = PBXGroup;
+			children = (
+				B8BFDC702AC7800C009E1F83 /* BlurView.swift */,
+				B8BFDC6E2AC77FED009E1F83 /* GradientBlurView.swift */,
+			);
+			path = GradientBlurView;
 			sourceTree = "<group>";
 		};
 		B8C894E428D895DE00975E25 /* Utilities */ = {
@@ -577,7 +575,6 @@
 			children = (
 				B8A2A83E2965BB4000A16FEE /* Base */,
 				B895887329578BFB0041A315 /* HomeScreen.swift */,
-				B8B563EA28F00391004B80F0 /* LaunchScreen.swift */,
 				B8D2A73B28DEEFAE0096A020 /* SearchScreen.swift */,
 				B8E762B32A95F2E6006E168E /* WelcomeScreen.swift */,
 				B84AD60928FAFC9E00C2D5AE /* WordScreen.swift */,
@@ -589,14 +586,13 @@
 			isa = PBXGroup;
 			children = (
 				B891F8E02950FB5500A53582 /* Chevron */,
-				B8B9B9DB28EC668C006FCA76 /* Gradient */,
+				B8BFDC6D2AC77FDD009E1F83 /* GradientBlurView */,
 				B80E721229FC09A9007CCE71 /* HeaderView */,
 				B813BFFB28EB7ACA000C766C /* Icon */,
 				B879E9EA28F0C7110094AA24 /* List */,
 				B80E721929FD9546007CCE71 /* ScrollView */,
 				B8D2A74128DF3A250096A020 /* InputTextField.swift */,
 				B8E49C0828DF917E00F9CAC4 /* LoadingView.swift */,
-				B8B9B9E228EDE65F006FCA76 /* LogoView.swift */,
 				B8A1232128E9714600ACEC45 /* LottieView.swift */,
 				B8A1232928E9744E00ACEC45 /* SearchEmptyView.swift */,
 				B8C25F9F294F8D5D001C8847 /* Separator.swift */,
@@ -656,6 +652,7 @@
 				B8C43F2F29FB0F6100F5E166 /* Introspect */,
 				B80E720129FBB67B007CCE71 /* CubeFoundation */,
 				B80E720329FBB67B007CCE71 /* CubeFoundationSwiftUI */,
+				B8BFDC6B2AC77D04009E1F83 /* AppIcon */,
 			);
 			productName = Define;
 			productReference = B80399D928D79A37008CE7B4 /* Define.app */;
@@ -822,7 +819,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B89F179D28E0FABE00A96E35 /* AppDelegate.swift in Sources */,
-				B8B9B9DA28EC6210006FCA76 /* BlurView.swift in Sources */,
+				B8BFDC712AC7800C009E1F83 /* BlurView.swift in Sources */,
 				B8FF0DD329609E3E004C61B6 /* Bundle+Key.swift in Sources */,
 				B80E722B29FDBBC1007CCE71 /* Calendar+Extensions.swift in Sources */,
 				B80E722429FDAD69007CCE71 /* CapsuleBorder.swift in Sources */,
@@ -839,7 +836,7 @@
 				B8B9B9D828EC603D006FCA76 /* EdgeInsets+Extensions.swift in Sources */,
 				B8E49C0F28DF9AA500F9CAC4 /* EdgeInsets+Values.swift in Sources */,
 				B80E71FF29FBB578007CCE71 /* FigmaShadow+Values.swift in Sources */,
-				B8B9B9DD28EC66AD006FCA76 /* GradientBlurView.swift in Sources */,
+				B8BFDC6F2AC77FED009E1F83 /* GradientBlurView.swift in Sources */,
 				B80E720829FBEBF7007CCE71 /* HeaderView.swift in Sources */,
 				B895887429578BFB0041A315 /* HomeScreen.swift in Sources */,
 				B813C00328EB7F7D000C766C /* IconContainerView.swift in Sources */,
@@ -849,10 +846,8 @@
 				B88491A629620353009F6469 /* IndexElement.swift in Sources */,
 				B8D2A74228DF3A250096A020 /* InputTextField.swift in Sources */,
 				B8C25F9C294F7AAF001C8847 /* KeyboardToolbar.swift in Sources */,
-				B8B563EB28F00391004B80F0 /* LaunchScreen.swift in Sources */,
 				B80E720629FBB972007CCE71 /* LinearGradient+Gradients.swift in Sources */,
 				B8E49C0928DF917E00F9CAC4 /* LoadingView.swift in Sources */,
-				B8B9B9E328EDE65F006FCA76 /* LogoView.swift in Sources */,
 				B8A1232728E971FD00ACEC45 /* LottieFile.swift in Sources */,
 				B8A1232228E9714600ACEC45 /* LottieView.swift in Sources */,
 				B80E721B29FD9578007CCE71 /* MarginedList.swift in Sources */,
@@ -1245,7 +1240,7 @@
 			repositoryURL = "https://github.com/airbnb/lottie-ios";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
+				minimumVersion = 4.0.0;
 			};
 		};
 		B8C43F2E29FB0F6100F5E166 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
@@ -1273,6 +1268,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B8A1232328E971EC00ACEC45 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		B8BFDC6B2AC77D04009E1F83 /* AppIcon */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AppIcon;
 		};
 		B8C43F2F29FB0F6100F5E166 /* Introspect */ = {
 			isa = XCSwiftPackageProductDependency;
