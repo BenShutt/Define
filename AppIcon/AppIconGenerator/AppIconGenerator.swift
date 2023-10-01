@@ -29,33 +29,14 @@ struct AppIconGenerator {
         AppIcon(size: size.scaledSize, isContainer: false)
     }
 
+    // TODO: Is resizing down better quality? SFSymbol seems a little blurry
     /// Generate app images
     @MainActor func generate() async throws {
         try AppIconSize.all.forEach { size in
             let renderer = ImageRenderer(content: view(size: size))
             renderer.scale = 1
             renderer.proposedSize = .init(width: size.scaledSize, height: size.scaledSize)
-            let image = try renderer.cgImage ?! AppIconError.cgImage
-
-            let destination = try CGImageDestinationCreateWithURL(
-                url(appIconSize: size) as CFURL,
-                UTType.png.identifier as CFString,
-                1,
-                nil
-            ) ?! AppIconError.destination
-
-            CGImageDestinationAddImage(destination, image, nil)
-            guard CGImageDestinationFinalize(destination) else {
-                throw AppIconError.finalize
-            }
+            try renderer.write(to: url(appIconSize: size), fileType: .png)
         }
     }
-}
-
-// MARK: - AppIconError
-
-enum AppIconError: Error {
-    case cgImage
-    case destination
-    case finalize
 }
