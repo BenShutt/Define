@@ -12,7 +12,7 @@ public struct AppIcon: View {
     public var size: CGFloat
     public var isContainer: Bool
 
-    public init(size: CGFloat, isContainer: Bool) {
+    public init(size: CGFloat, isContainer: Bool = true) {
         self.size = size
         self.isContainer = isContainer
     }
@@ -58,5 +58,5 @@ private struct Container: ViewModifier {
 // MARK: - Preview
 
 #Preview {
-    AppIcon(size: 200, isContainer: true)
+    AppIcon(size: 200)
 }

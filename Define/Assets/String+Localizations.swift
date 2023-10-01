@@ -13,8 +13,14 @@ extension String {
 
     struct WelcomeScreen {
 
-        static func title(appName: String) -> String {
-            "Welcome to \(appName)"
+        static let title = "Welcome 👋"
+        
+        static func subtitle(appName: String) -> String {
+            """
+            \(appName) strives to be as simple as possible to help you remember new words and \
+            improve your vocabulary. Just search and save for later. \
+            Hope it helps!
+            """
         }
     }
 
@@ -102,6 +108,7 @@ extension String {
     struct Misc {
 
         static let dismiss = "Dismiss"
+        static let `continue` = "Continue"
     }
 
     struct Push {
