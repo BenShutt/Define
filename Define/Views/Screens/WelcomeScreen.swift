@@ -11,24 +11,30 @@ import AppIcon
 struct WelcomeScreen: Screen {
 
     @Environment(\.dismiss) var dismiss
+    @State private var animationValue = 0
+
+    private var appName: String {
+        Bundle.main.appName ?? ""
+    }
 
     var screen: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 0) {
-                WelcomeHeaderView(color: .appBlue)
-                    .frame(maxWidth: .infinity)
+                WelcomeHeaderView(
+                    animationValue: $animationValue,
+                    color: .appBlue
+                )
+                .frame(maxWidth: .infinity)
 
-                Text(verbatim: .WelcomeScreen.title)
+                Text(verbatim: .WelcomeScreen.title(appName: appName))
                     .h1()
                     .padding(.top, 2 * .extraLarge)
                     .padding(.horizontal, .hMargin)
 
-                if let appName = Bundle.main.appName {
-                    Text(verbatim: .WelcomeScreen.subtitle(appName: appName))
-                        .body()
-                        .padding(.top, .large)
-                        .padding(.horizontal, .hMargin)
-                }
+                Text(verbatim: .WelcomeScreen.subtitle(appName: appName))
+                    .body()
+                    .padding(.top, .large)
+                    .padding(.horizontal, .hMargin)
             }
             .multilineTextAlignment(.leading)
             .padding(.bottom, .vMargin)
@@ -40,7 +46,13 @@ struct WelcomeScreen: Screen {
         ) {
             dismiss()
         }
+        .task(onAppear)
         .interactiveDismissDisabled()
+    }
+
+    @Sendable private func onAppear() async {
+        try? await Task.sleep(for: .seconds(1)) // Mask throw
+        animationValue = max(animationValue, 1)
     }
 }
 
@@ -50,6 +62,8 @@ private struct WelcomeHeaderView: View {
 
     private let backgroundHeight: CGFloat = 200
     private let iconHeight: CGFloat = 150
+
+    @Binding var animationValue: Int
     var color: Color
 
     var body: some View {
@@ -63,11 +77,17 @@ private struct WelcomeHeaderView: View {
                 endPoint: .bottom
             )
             .frame(height: backgroundHeight)
+            .background(Color.appWhite)
             .clipShape(CurvedBottom())
-            .shadow(.container)
+            .compositingGroup()
+            .shadow(radius: 5)
 
-            AppIcon(size: iconHeight, color: color)
-                .padding(.top, backgroundHeight - iconHeight * 0.75)
+            AppIcon(
+                size: iconHeight,
+                color: color,
+                animationValue: $animationValue
+            )
+            .padding(.top, backgroundHeight - iconHeight * 0.75)
         }
     }
 }

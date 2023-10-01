@@ -30,7 +30,7 @@ struct HomeScreen: Screen {
         )
         .stickyButton(
             title: .HomeScreen.addWordButton,
-            image: .search
+            image: Image(systemName: "magnifyingglass")
         ) {
             navigation.push(.search)
         }

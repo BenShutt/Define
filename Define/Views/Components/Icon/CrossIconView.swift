@@ -17,7 +17,7 @@ struct CrossIconView: View {
         IconContainerView(edge: .trailing) {
             Button(action: onTap) {
                 IconView(
-                    image: .cross,
+                    image: Image(systemName: "xmark.circle.fill"),
                     foregroundColor: .appDarkGray,
                     size: .icon
                 )

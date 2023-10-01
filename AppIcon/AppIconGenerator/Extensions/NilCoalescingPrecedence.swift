@@ -7,6 +7,8 @@
 
 import Foundation
 
+// swiftlint:disable operator_whitespace static_operator
+
 infix operator ?!: NilCoalescingPrecedence
 
 /// Throws the right hand side error if the left hand side optional is `nil`.
@@ -16,3 +18,5 @@ func ?!<T>(value: T?, error: @autoclosure () -> Error) throws -> T {
     }
     return value
 }
+
+// swiftlint:enable operator_whitespace static_operator

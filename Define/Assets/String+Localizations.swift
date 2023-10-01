@@ -13,7 +13,9 @@ extension String {
 
     struct WelcomeScreen {
 
-        static let title = "Welcome 👋"
+        static func title(appName: String) -> String {
+            "Welcome to \(appName) 👋"
+        }
 
         static func subtitle(appName: String) -> String {
             """

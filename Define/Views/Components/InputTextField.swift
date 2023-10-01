@@ -84,7 +84,7 @@ struct InputTextField_Previews: PreviewProvider {
             InputTextField(
                 text: .constant("The value"),
                 prompt: "Enter value...",
-                image: .search,
+                image: Image(systemName: "magnifyingglass"),
                 contentType: .name
             )
             Spacer()

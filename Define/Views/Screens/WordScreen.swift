@@ -156,7 +156,7 @@ private struct WordContentView: View {
             }
             .stickyButton(
                 title: .WordScreen.saveButton,
-                image: .plus, // TODO: Use SFSymbols
+                image: Image(systemName: "plus"),
                 onTap: onSave
             )
         } else {

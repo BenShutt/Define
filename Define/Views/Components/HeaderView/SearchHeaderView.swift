@@ -39,7 +39,7 @@ struct SearchHeaderView: View {
             InputTextField(
                 text: $searchText,
                 prompt: .SearchHeaderView.prompt,
-                image: .search,
+                image: Image(systemName: "magnifyingglass"),
                 onFocusChanged: { isFocused in
                     withAnimation(.linear(duration: 0.1)) {
                         isTextInputFocused = isFocused

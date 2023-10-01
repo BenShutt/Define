@@ -26,11 +26,11 @@ enum TextStyle: String, CaseIterable, Hashable, Identifiable {
         switch self {
         case .h1: return 32
         case .h2: return 20
-        case .h3: return 16
-        case .body: return 16
-        case .button: return 16
-        case .tag: return 12
-        case .caption: return 12
+        case .h3: return 18
+        case .body: return 18
+        case .button: return 18
+        case .tag: return 14
+        case .caption: return 14
         }
     }
 
