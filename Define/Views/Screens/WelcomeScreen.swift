@@ -10,7 +10,7 @@ import AppIcon
 
 struct WelcomeScreen: Screen {
 
-    @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var navigation: NavigationViewModel
     @State private var animationValue = 0
 
     private var appName: String {
@@ -44,15 +44,12 @@ struct WelcomeScreen: Screen {
             title: .Misc.continueButton,
             image: Image(systemName: "arrow.forward")
         ) {
-            dismiss()
+            navigation.push(.search)
         }
-        .task(onAppear)
-        .interactiveDismissDisabled()
-    }
-
-    @Sendable private func onAppear() async {
-        try? await Task.sleep(for: .seconds(1)) // Mask throw
-        animationValue = max(animationValue, 1)
+        .task {
+            try? await Task.sleep(for: .seconds(1)) // Mask throw
+            animationValue = max(animationValue, 1)
+        }
     }
 }
 
@@ -115,8 +112,6 @@ private struct CurvedBottom: Shape {
 // MARK: - PreviewProvider
 
 #Preview {
-    Color.white
-        .sheet(isPresented: .constant(true), content: {
-            WelcomeScreen()
-        })
+    WelcomeScreen()
+        .environmentObject(NavigationViewModel.shared) // TODO: Why singleton?
 }
