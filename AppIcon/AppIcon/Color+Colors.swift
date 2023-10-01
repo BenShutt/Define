@@ -13,4 +13,3 @@ extension Color {
     static let appBlue = Color(red: 52/255, green: 152/255, blue: 219/255)
     static let appDarkGray = Color(white: 12/255)
 }
-

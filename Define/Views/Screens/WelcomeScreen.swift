@@ -35,8 +35,10 @@ struct WelcomeScreen: Screen {
         }
         .ignoresSafeArea(.all, edges: .top)
         .stickyButton(title: .Misc.continue) {
+            PushNotificationManager.requestRemoteNotificationPermission()
             dismiss()
         }
+        .interactiveDismissDisabled()
     }
 }
 

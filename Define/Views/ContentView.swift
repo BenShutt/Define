@@ -28,16 +28,17 @@ struct ContentView: View {
     @StateObject private var words = WordsViewModel()
 
     /// Are we presenting the welcome screen
-    @State private var isPresentingWelcome = hasSeenWelcome
+    @State private var isPresentingWelcome = !hasSeenWelcome
 
     /// Root `NavigationStack`
     var body: some View {
         NavigationStack(path: $navigation.path) {
             RootView(hasWords: !words.isEmpty)
                 .navigate()
-        }
-        .onAppear {
-            PushNotificationManager.requestRemoteNotificationPermission()
+                .onAppear {
+                    guard Self.hasSeenWelcome else { return }
+                    PushNotificationManager.requestRemoteNotificationPermission()
+                }
         }
         .sheet(
             isPresented: $isPresentingWelcome,

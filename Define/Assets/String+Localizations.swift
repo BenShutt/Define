@@ -14,7 +14,7 @@ extension String {
     struct WelcomeScreen {
 
         static let title = "Welcome 👋"
-        
+
         static func subtitle(appName: String) -> String {
             """
             \(appName) strives to be as simple as possible to help you remember new words and \
