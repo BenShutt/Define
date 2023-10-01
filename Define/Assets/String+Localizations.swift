@@ -108,7 +108,7 @@ extension String {
     struct Misc {
 
         static let dismiss = "Dismiss"
-        static let `continue` = "Continue"
+        static let continueButton = "CONTINUE"
     }
 
     struct Push {

@@ -44,6 +44,7 @@ struct ContentView: View {
             isPresented: $isPresentingWelcome,
             onDismiss: {
                 Self.hasSeenWelcome = true
+                PushNotificationManager.requestRemoteNotificationPermission()
             }, content: {
                 WelcomeScreen()
             }
