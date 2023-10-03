@@ -21,12 +21,6 @@ public extension Endpoint {
         []
     }
 
-    var decoder: DataDecoder {
-        let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .iso8601
-        return decoder
-    }
-
     var urlComponents: URLComponents {
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
@@ -34,5 +28,11 @@ public extension Endpoint {
         urlComponents.path = "/api/v2/\(endpoint)"
         urlComponents.queryItems = queryItems.isEmpty ? nil : queryItems
         return urlComponents
+    }
+
+    var decoder: DataDecoder {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        return decoder
     }
 }
