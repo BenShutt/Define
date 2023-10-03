@@ -24,6 +24,6 @@ public struct GetWords: Endpoint {
 
     /// Endpoint to hit
     public var endpoint: String {
-        "entries/\(String.language)/\(word)"
+        "entries/en/\(word)" // Fixed language for now
     }
 }
