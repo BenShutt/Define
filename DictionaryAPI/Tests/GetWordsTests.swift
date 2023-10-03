@@ -10,8 +10,15 @@ import DictionaryAPI
 
 final class GetWordsTests: XCTestCase {
 
-    func test() async throws {
-        print("extraBoldItalic".uppercasedFirstCharacter)
+    func testSuccess() async throws {
         _ = try await GetWords(word: "hello").request()
+    }
+
+    func testFailure() async throws {
+        do {
+            _ = try await GetWords(word: "look").request() // Missing "look"?
+        } catch {
+            XCTAssertEqual(error.responseCode, 404)
+        }
     }
 }
