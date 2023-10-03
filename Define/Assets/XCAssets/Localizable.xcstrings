@@ -34,6 +34,17 @@
         }
       }
     },
+    "reference_found" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Found in the device dictionary"
+          }
+        }
+      }
+    },
     "word_reminder_delete_subtitle %@" : {
       "extractionState" : "manual",
       "localizations" : {

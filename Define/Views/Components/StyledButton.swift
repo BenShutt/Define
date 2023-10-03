@@ -10,6 +10,9 @@ import SwiftUI
 /// Button component
 struct StyledButton: View {
 
+    /// Size of the SF Symbol
+    static let iconSize: CGFloat = 20
+
     /// Color of the text and tint
     private let foregroundColor: Color = .appDarkGray
 
@@ -27,7 +30,7 @@ struct StyledButton: View {
             HStack(spacing: .medium) {
                 Image(systemName: systemName)
                     .renderingMode(.template)
-                    .font(.system(size: 20, weight: .bold))
+                    .font(.system(size: Self.iconSize, weight: .bold))
 
                 Text(verbatim: title)
                     .textStyle(.button)

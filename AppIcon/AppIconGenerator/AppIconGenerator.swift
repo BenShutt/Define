@@ -22,7 +22,7 @@ struct AppIconGenerator {
     private func url(fileName: String) -> URL {
         directoryURL.appendingPathComponent("\(fileName).png")
     }
-    
+
     /// Write SwiftUI view to file
     /// - Parameters:
     ///   - content: View to render
