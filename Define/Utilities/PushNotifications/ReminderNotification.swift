@@ -9,6 +9,8 @@ import SwiftUI
 import UserNotifications
 import DictionaryAPI
 
+// TODO: Sync this file with the PushNotificationManager
+
 /// Wraps the logic of reminder push notifications
 final class ReminderNotification: ObservableObject {
 

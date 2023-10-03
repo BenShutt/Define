@@ -17,11 +17,11 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: LaunchOptions? = nil
     ) -> Bool {
-        // Run any migrations before launching the app
-        Migrations.execute()
-
         // Configure push notifications
         UNUserNotificationCenter.current().delegate = self
+
+        // Run any migrations before launching the app
+        Migrations.execute()
         return true
     }
 
@@ -31,11 +31,10 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
         _ application: UIApplication,
         didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data
     ) {
-        let token = deviceToken
+        let apnsToken = deviceToken
             .map { String(format: "%02.2hhx", $0) }
             .joined()
-
-        log("APNs token: \(token)")
+        log("APNs token: \(apnsToken)")
     }
 
     func application(
