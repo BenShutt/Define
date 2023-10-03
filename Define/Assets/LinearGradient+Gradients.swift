@@ -19,17 +19,14 @@ extension LinearGradient {
             endPoint: .bottom
         )
     }
-}
 
-extension RadialGradient {
-
-    static let button = RadialGradient(
+    static let button = LinearGradient(
         colors: [
+            Color.appYellow,
             Color.appMaize,
             Color.appYellow
         ],
-        center: .center,
-        startRadius: 0,
-        endRadius: 2 * .π
+        startPoint: .topLeading,
+        endPoint: .bottomTrailing
     )
 }

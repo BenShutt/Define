@@ -10,6 +10,7 @@ import CubeFoundationSwiftUI
 
 extension Color {
 
+    static let appBlack = Color(white255: 0)
     static let appWhite = Color(white255: 255)
     static let appDarkGray = Color(white255: 12)
     static let appGray = Color(white255: 122)

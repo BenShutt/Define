@@ -36,8 +36,10 @@ struct StyledButton: View {
             .frame(maxWidth: .infinity)
             .padding(.buttonPadding)
             .tint(foregroundColor)
-            .background(RadialGradient.button)
+            .background(LinearGradient.button)
             .clipShape(Capsule())
+            .compositingGroup()
+            .shadow(color: .appBlack.opacity(0.2), radius: 3)
         }
     }
 }
