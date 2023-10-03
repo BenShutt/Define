@@ -28,24 +28,16 @@ public struct AppIcon: View {
 
     public var body: some View {
         ZStack {
-            RadialGradient(
-                colors: [
-                    .appIconWhite,
-                    color
-                ],
-                center: .center,
-                startRadius: size * 0.15,
-                endRadius: size * 0.9
-            )
+            AppIconGradient(color: color)
 
             Image(systemName: "magnifyingglass")
-                .font(.system(size: size * 0.6, weight: .black))
+                .font(.system(size: size * 0.6, weight: .bold))
                 .foregroundColor(Color.appIconDarkGray)
                 .modifier(SymbolAnimator(value: $animationValue))
         }
-        .background(Color.appIconWhite)
         .frame(width: size, height: size)
         .modifier(Container(
+            color: color,
             size: size,
             isContainer: isContainer
         ))
@@ -56,15 +48,28 @@ public struct AppIcon: View {
 
 private struct Container: ViewModifier {
 
+    var color: Color
     var size: CGFloat
     var isContainer: Bool
+
+    private var shape: some InsettableShape {
+        RoundedRectangle(cornerRadius: size * 0.2)
+    }
 
     func body(content: Content) -> some View {
         if isContainer {
             content
-                .clipShape(RoundedRectangle(cornerRadius: size * 0.2))
+                .clipShape(shape)
+                .overlay {
+                    shape
+                        .strokeBorder(lineWidth: 2)
+                        .foregroundStyle(color.opacity(0.1))
+                }
                 .compositingGroup()
-                .shadow(color: .appIconBlack.opacity(0.25), radius: size * 0.1)
+                .shadow(
+                    color: .appIconBlack.opacity(0.25),
+                    radius: size * 0.05
+                )
         } else {
             content
         }
@@ -78,7 +83,7 @@ private struct SymbolAnimator<Value: Equatable>: ViewModifier {
     @Binding var value: Value
 
     func body(content: Content) -> some View {
-        if #available(iOS 17, *) {
+        if #available(iOS 17, macOS 14, *) {
             content.symbolEffect(.bounce, value: value)
         } else {
             content

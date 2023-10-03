@@ -23,11 +23,13 @@ struct Main: AsyncParsableCommand {
     }
 
     mutating func run() async throws {
+#if canImport(Cocoa)
         try FileManager.default.createDirectory(
             at: directoryURL,
             withIntermediateDirectories: true
         )
         try await AppIconGenerator(directoryURL: directoryURL).generate()
         print("Success, app icon images written to '\(directoryURL)'")
+#endif
     }
 }

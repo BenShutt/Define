@@ -42,15 +42,25 @@ struct AppIconSize: Equatable, Hashable, Codable, Comparable, CustomStringConver
         .init(size: 1024, multiplier: 1)
     ]
 
+    /// Get the max `AppIconSize`
+    static var max: AppIconSize {
+        AppIconSize.all.max()! // Rare scenario where force unwrap is OK
+    }
+
     /// Size of the image
-    var size: CGFloat
+    private let size: CGFloat
 
     /// Size multiplier to apply
-    var multiplier: Int
+    private let multiplier: Int
 
-    /// Scaled size
-    var scaledSize: CGFloat {
+    /// Multiplied size
+    var multipliedSize: CGFloat {
         size * CGFloat(multiplier)
+    }
+
+    /// Multiplied `CGSize`
+    var multipliedCGSize: CGSize {
+        CGSize(width: multipliedSize, height: multipliedSize)
     }
 
     /// Format `size` as `String`
@@ -74,7 +84,7 @@ struct AppIconSize: Equatable, Hashable, Codable, Comparable, CustomStringConver
     // MARK: - Comparable
 
     static func < (lhs: AppIconSize, rhs: AppIconSize) -> Bool {
-        lhs.scaledSize < rhs.scaledSize
+        lhs.multipliedSize < rhs.multipliedSize
     }
 
     // MARK: - CustomStringConvertible
