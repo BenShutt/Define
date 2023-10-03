@@ -10,8 +10,8 @@ import AppIcon
 
 struct WelcomeScreen: Screen {
 
-    @EnvironmentObject var navigation: NavigationViewModel
     @State private var animationValue = 0
+    var onContinue: () -> Void
 
     private var appName: String {
         Bundle.main.appName ?? ""
@@ -42,9 +42,9 @@ struct WelcomeScreen: Screen {
         .ignoresSafeArea(.all, edges: .top)
         .stickyButton(
             title: .Misc.continueButton,
-            image: Image(systemName: "arrow.forward")
+            systemName: "arrow.forward"
         ) {
-            navigation.push(.search)
+            onContinue()
         }
         .task {
             try? await Task.sleep(for: .seconds(1)) // Mask throw
@@ -112,6 +112,5 @@ private struct CurvedBottom: Shape {
 // MARK: - PreviewProvider
 
 #Preview {
-    WelcomeScreen()
-        .environmentObject(NavigationViewModel.shared) // TODO: Why singleton?
+    WelcomeScreen {}
 }

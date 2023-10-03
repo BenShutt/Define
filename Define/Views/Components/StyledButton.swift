@@ -16,8 +16,8 @@ struct StyledButton: View {
     /// Button title text
     var title: String
 
-    /// Button image shown before the title
-    var image: Image?
+    /// SF Symbol name
+    var systemName: String
 
     /// Closure called when the button is tapped
     var onTap: () -> Void
@@ -25,13 +25,9 @@ struct StyledButton: View {
     var body: some View {
         Button(action: onTap) {
             HStack(spacing: .medium) {
-                if let image {
-                    image
-                        .renderingMode(.template)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(size: .iconSmall)
-                }
+                Image(systemName: systemName)
+                    .renderingMode(.template)
+                    .font(.system(size: 20, weight: .bold))
 
                 Text(verbatim: title)
                     .textStyle(.button)
@@ -51,6 +47,6 @@ struct StyledButton: View {
 struct StyledButton_Previews: PreviewProvider {
 
     static var previews: some View {
-        StyledButton(title: "TAP ME!", onTap: {})
+        StyledButton(title: "TAP ME!", systemName: "plus", onTap: {})
     }
 }

@@ -26,7 +26,7 @@ enum NavigationRoute: Hashable {
 final class NavigationViewModel: ObservableObject {
 
     /// Shared static singleton for use outside of SwiftUI views
-    static let shared = NavigationViewModel()
+    static let shared = NavigationViewModel() // TODO: Why singleton?
 
     /// `NavigationPath`
     @Published var path = NavigationPath()

@@ -13,8 +13,8 @@ struct StickyButton: ViewModifier {
     /// Button title text
     var title: String
 
-    /// Button image
-    var image: Image?
+    /// SF Symbol name
+    var systemName: String
 
     /// On button tapped
     var onTap: () -> Void
@@ -24,7 +24,7 @@ struct StickyButton: ViewModifier {
             StickyBottom {
                 StyledButton(
                     title: title,
-                    image: image,
+                    systemName: systemName,
                     onTap: onTap
                 )
                 .padding(.largeMargins)
@@ -39,12 +39,12 @@ extension View {
 
     func stickyButton(
         title: String,
-        image: Image? = nil,
+        systemName: String,
         onTap: @escaping () -> Void
     ) -> some View {
         modifier(StickyButton(
             title: title,
-            image: image,
+            systemName: systemName,
             onTap: onTap
         ))
     }
@@ -60,6 +60,7 @@ struct StickyButton_Previews: PreviewProvider {
         }
         .stickyButton(
             title: "TAP ME!",
+            systemName: "plus",
             onTap: {}
         )
     }

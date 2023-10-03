@@ -13,6 +13,9 @@ struct SearchScreen: Screen {
     /// `SearchViewModel`
     @StateObject private var viewModel = SearchViewModel()
 
+    /// `WordsViewModel`
+    @EnvironmentObject var words: WordsViewModel
+
     /// `View` of the screen
     var screen: some View {
         VStack(spacing: 0) {
@@ -54,6 +57,7 @@ struct SearchScreen: Screen {
         )
         .toolbarBackground(Color.clear, for: .navigationBar)
         .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(words.isEmpty)
     }
 }
 

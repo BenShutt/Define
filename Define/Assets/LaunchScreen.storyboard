@@ -16,19 +16,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="d9l-pd-QDW">
-                                <rect key="frame" x="95" y="328.66666666666669" width="200" height="200.00000000000006"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="C8y-Q3-Eaj"/>
-                                    <constraint firstAttribute="height" constant="200" id="EPZ-b5-VfY"/>
-                                </constraints>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="d9l-pd-QDW">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="d9l-pd-QDW" firstAttribute="centerY" secondItem="Bcu-3y-fUS" secondAttribute="centerY" id="NQm-6a-gg2"/>
-                            <constraint firstItem="d9l-pd-QDW" firstAttribute="centerX" secondItem="Bcu-3y-fUS" secondAttribute="centerX" id="XOf-Vx-Cyk"/>
+                            <constraint firstItem="d9l-pd-QDW" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="5Bk-Yq-A8P"/>
+                            <constraint firstAttribute="trailing" secondItem="d9l-pd-QDW" secondAttribute="trailing" id="5Lt-4g-HqJ"/>
+                            <constraint firstAttribute="bottom" secondItem="d9l-pd-QDW" secondAttribute="bottom" id="Rav-7h-oOY"/>
+                            <constraint firstItem="d9l-pd-QDW" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="ZgV-MA-ZRx"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -38,6 +36,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo" width="1024" height="1024"/>
+        <image name="LaunchScreen" width="1290" height="2796"/>
     </resources>
 </document>

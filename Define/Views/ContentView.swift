@@ -19,7 +19,7 @@ struct ContentView: View {
     /// Root `NavigationStack`
     var body: some View {
         NavigationStack(path: $navigation.path) {
-            RootView(hasWords: !words.isEmpty)
+            RootView()
                 .navigate()
         }
         .environmentObject(navigation)
@@ -32,32 +32,26 @@ struct ContentView: View {
 /// Define the root UI
 private struct RootView: View {
 
-    /// Has the user seen the welcome screen.
-    /// - Note Using `UserDefaults` directly rather than `@AppStorage` for static access
-    private var hasSeenWelcome: Bool {
-        get {
-            UserDefaults.standard.value(for: .hasSeenWelcome) ?? false
-        }
-        set {
-            UserDefaults.standard.set(newValue, for: .hasSeenWelcome)
-        }
-    }
+    /// `NavigationViewModel`
+    @EnvironmentObject var navigation: NavigationViewModel
 
-    var hasWords: Bool
+    /// `WordsViewModel`
+    @EnvironmentObject var words: WordsViewModel
+
+    /// Has the user seen the welcome screen
+    @AppStorage(UserDefaultKey.hasSeenWelcome.rawValue) var hasSeenWelcome = false
 
     var body: some View {
         if !hasSeenWelcome {
-            WelcomeScreen()
-        } else if hasWords {
+            WelcomeScreen {
+                hasSeenWelcome = true
+                navigation.push(.search)
+                PushNotificationManager.requestRemoteNotificationPermission()
+            }
+        } else if !words.isEmpty {
             HomeScreen()
-                .onAppear {
-                    PushNotificationManager.requestRemoteNotificationPermission()
-                }
         } else {
             SearchScreen()
-                .onAppear {
-                    PushNotificationManager.requestRemoteNotificationPermission()
-                }
         }
     }
 }

@@ -21,9 +21,6 @@ extension CGFloat {
     /// 20pts
     static let icon: CGFloat = 22
 
-    /// 16pts
-    static let iconSmall: CGFloat = 16
-
     /// 6pts
     static let cornerRadius: CGFloat = 10
 
