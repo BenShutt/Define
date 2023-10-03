@@ -23,6 +23,10 @@ struct SearchScreen: Screen {
                 .zIndex(1)
                 .padding(.bottom, viewModel.words.isEmpty ? .large : 0)
 
+            if viewModel.inReferenceLibrary {
+                ReferenceLibraryCard(word: viewModel.search) // TODO
+            }
+
             switch viewModel.state {
             case .emptySearch:
                 SearchEmptyView(
