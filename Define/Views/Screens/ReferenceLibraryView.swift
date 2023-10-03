@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// TODO: Make screen with sticky button - rename file
+
 struct ReferenceLibraryView: UIViewControllerRepresentable {
 
     var term: String

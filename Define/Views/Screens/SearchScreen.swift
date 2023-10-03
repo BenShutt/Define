@@ -10,11 +10,19 @@ import SwiftUI
 /// `View` to input a word to search for definitions
 struct SearchScreen: Screen {
 
+    /// `NavigationViewModel`
+    @EnvironmentObject var navigation: NavigationViewModel
+
     /// `SearchViewModel`
     @StateObject private var viewModel = SearchViewModel()
 
     /// `WordsViewModel`
     @EnvironmentObject var words: WordsViewModel
+
+    /// Shorthand to get searched term
+    private var search: String {
+        viewModel.search
+    }
 
     /// `View` of the screen
     var screen: some View {
@@ -24,7 +32,11 @@ struct SearchScreen: Screen {
                 .padding(.bottom, viewModel.words.isEmpty ? .large : 0)
 
             if viewModel.inReferenceLibrary {
-                ReferenceLibraryCard(word: viewModel.search) // TODO
+                Button(action: {
+                    navigation.push(.referenceLibrary(term: search))
+                }, label: {
+                    ReferenceLibraryCard(word: search) // TODO: Padding
+                })
             }
 
             switch viewModel.state {
@@ -65,11 +77,10 @@ struct SearchScreen: Screen {
     }
 }
 
-// MARK: - PreviewProvider
+// MARK: - Preview
 
-struct SearchScreen_Previews: PreviewProvider {
-
-    static var previews: some View {
-        SearchScreen()
-    }
+#Preview {
+    SearchScreen()
+        .environmentObject(NavigationViewModel())
+        .environmentObject(WordsViewModel())
 }
