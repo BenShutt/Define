@@ -18,9 +18,6 @@ enum NavigationRoute: Hashable {
 
     /// Word detail screen (definitions)
     case word(Word)
-
-    /// Reference library screen
-    case referenceLibrary(term: String)
 }
 
 // MARK: - NavigationViewModel
@@ -55,8 +52,6 @@ extension View {
                 SearchScreen()
             case let .word(word):
                 WordScreen(word: word)
-            case let .referenceLibrary(term: term):
-                ReferenceLibraryView(term: term)
             }
         }
     }

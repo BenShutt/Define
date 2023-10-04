@@ -19,6 +19,9 @@ struct SearchScreen: Screen {
     /// `SearchViewModel`
     @StateObject private var viewModel = SearchViewModel()
 
+    /// Is the reference library been presented
+    @State private var isPresentingReferenceLibrary = false
+
     /// When true, add padding to the search state UI
     private var statePadding: Bool {
         viewModel.inReferenceLibrary || viewModel.words.isEmpty
@@ -32,7 +35,7 @@ struct SearchScreen: Screen {
 
             if viewModel.inReferenceLibrary {
                 Button(action: {
-                    navigation.push(.referenceLibrary(term: viewModel.search))
+                    isPresentingReferenceLibrary = true
                 }, label: {
                     ReferenceLibraryCard(word: viewModel.search)
                 })
@@ -51,6 +54,16 @@ struct SearchScreen: Screen {
         .toolbarBackground(Color.clear, for: .navigationBar)
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(words.isEmpty)
+        .sheet(isPresented: $isPresentingReferenceLibrary) {
+            ReferenceLibraryScreen(term: viewModel.search) {
+                isPresentingReferenceLibrary = false
+                words.saveWord(
+                    .init(word: viewModel.search),
+                    source: .referenceLibrary
+                )
+                navigation.popToRoot()
+            }
+        }
     }
 }
 

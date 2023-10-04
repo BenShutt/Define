@@ -41,10 +41,13 @@ final class WordsViewModel: ObservableObject {
     }
 
     /// Save the given `word`
-    /// - Parameter word: `Word`
-    func saveWord(_ word: Word) {
-        words.append(SavedWord(word: word))
+    /// - Parameters:
+    ///   - word: `Word`
+    ///   - source: `SavedWord.Source`
+    func saveWord(_ word: Word, source: SavedWord.Source) {
+        words.append(SavedWord(word: word, source: source))
         ReminderNotification.scheduleRequest(word: word)
+        UINotificationFeedbackGenerator().notificationOccurred(.success)
     }
 
     /// Delete the given `word`

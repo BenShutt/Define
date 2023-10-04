@@ -105,8 +105,7 @@ struct WordScreen: Screen {
 
     /// Save `word`
     private func saveWord() {
-        words.saveWord(word)
-        UINotificationFeedbackGenerator().notificationOccurred(.success)
+        words.saveWord(word, source: .api)
         navigation.popToRoot()
     }
 
@@ -172,7 +171,7 @@ private struct WordContentView: View {
 struct WordScreen_Previews: PreviewProvider {
 
     static var previews: some View {
-        WordScreen(word: .preview)
+        WordScreen(word: .init(word: "hello"))
             .environmentObject(NavigationViewModel())
             .environmentObject(WordsViewModel())
     }

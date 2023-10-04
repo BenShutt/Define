@@ -68,11 +68,20 @@ extension Word: Identifiable {
     }
 }
 
-// MARK: - Word + Extensions
+// MARK: - Word + Comparable
 
 extension Word: Comparable {
 
     public static func < (lhs: Word, rhs: Word) -> Bool {
         lhs.word < rhs.word
+    }
+}
+
+// MARK: - Word + Extensions
+
+public extension Word {
+
+    init(word: String) {
+        self.init(word: word, meanings: [])
     }
 }

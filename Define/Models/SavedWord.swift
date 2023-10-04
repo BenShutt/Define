@@ -11,11 +11,24 @@ import DictionaryAPI
 /// A saved word
 struct SavedWord: JSONModel, Identifiable, Comparable {
 
+    /// Where the word was saved from
+    enum Source: String, Codable {
+
+        /// Fetched from the API
+        case api
+
+        /// Fetched from device dictionary
+        case referenceLibrary
+    }
+
     /// `UUID`
     var id = UUID()
 
     /// The word that was saved
     var word: Word
+
+    /// `Source` of the word
+    var source: Source
 
     /// `Date`
     var savedDate = Date()
