@@ -53,5 +53,4 @@ struct ReferenceLibraryCard: View {
 
 #Preview {
     ReferenceLibraryCard(word: "Hey")
-        .padding(EdgeInsets.margins)
 }

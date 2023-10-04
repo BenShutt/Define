@@ -45,6 +45,17 @@
         }
       }
     },
+    "search_api_failure" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No results found in the online dictionary"
+          }
+        }
+      }
+    },
     "word_reminder_delete_subtitle %@" : {
       "extractionState" : "manual",
       "localizations" : {

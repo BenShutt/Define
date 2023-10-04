@@ -19,22 +19,29 @@ struct SearchScreen: Screen {
     /// `SearchViewModel`
     @StateObject private var viewModel = SearchViewModel()
 
+    /// When true, add padding to the search state UI
+    private var statePadding: Bool {
+        viewModel.inReferenceLibrary || viewModel.words.isEmpty
+    }
+
     /// `View` of the screen
     var screen: some View {
         VStack(spacing: 0) {
             SearchHeaderView(searchText: $viewModel.search)
                 .zIndex(1)
 
-            if viewModel.inReferenceLibrary || true { // TODO
+            if viewModel.inReferenceLibrary {
                 Button(action: {
                     navigation.push(.referenceLibrary(term: viewModel.search))
                 }, label: {
                     ReferenceLibraryCard(word: viewModel.search)
                 })
-                .padding(EdgeInsets.margins)
+                .padding(.horizontal, .hMargin)
+                .padding(.top, .large)
             }
 
             SearchStateView(viewModel: viewModel)
+                .padding(.top, statePadding ? .large : 0)
         }
         .frame(
             maxWidth: .infinity,
@@ -62,19 +69,23 @@ private struct SearchStateView: View {
                 title: .SearchScreen.Empty.title,
                 subtitle: .SearchScreen.Empty.subtitle
             )
-            .padding(.top, .large)
 
         case .loading:
             LoadingView()
-                .padding(.top, .large)
 
         case .failure:
-            SearchEmptyView(
-                lottie: .searchNoResults,
-                title: .SearchScreen.NoResults.title,
-                subtitle: .SearchScreen.NoResults.subtitle(viewModel.search)
-            )
-            .padding(.top, .large)
+            if !viewModel.inReferenceLibrary {
+                SearchEmptyView(
+                    lottie: .searchNoResults,
+                    title: .SearchScreen.NoResults.title,
+                    subtitle: .SearchScreen.NoResults.subtitle(viewModel.search)
+                )
+            } else {
+                Text("search_api_failure")
+                    .body()
+                    .padding(.horizontal, .large)
+                    .multilineTextAlignment(.center)
+            }
 
         case let .success(words):
             MarginedList(words.identified, route: {

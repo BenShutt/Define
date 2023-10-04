@@ -67,14 +67,18 @@ import DictionaryAPI
         searchPublisher
             .receive(on: RunLoop.main)
             .sink { search in
+                self.inReferenceLibrary = false
                 self.state = search.isEmpty ? .emptySearch : .loading
-                self.inReferenceLibrary = Self.dictionaryHasDefinition(term: search)
             }
             .store(in: &cancellables)
 
         searchPublisher
             .debounce(for: .milliseconds(500), scheduler: RunLoop.main)
             .sink { search in
+                guard !search.isEmpty else { return }
+                guard self.isSearchStillValid(search) else { return }
+
+                self.inReferenceLibrary = Self.dictionaryHasDefinition(term: search)
                 self.getWords(for: search)
             }
             .store(in: &cancellables)
@@ -91,9 +95,6 @@ import DictionaryAPI
     /// Fetch words from the API
     /// - Parameter search: `Search`
     private func getWords(for search: String) {
-        guard !search.isEmpty else { return }
-        guard isSearchStillValid(search) else { return }
-
         Task {
             do {
                 let words = try await GetWords(word: search).request()
