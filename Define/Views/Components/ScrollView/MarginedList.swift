@@ -16,9 +16,6 @@ struct MarginedList<Element: Identifiable, Content: View>: View {
     /// Elements to layout
     var elements: [Element]
 
-    /// Route to navigate to on tap
-    var route: ((Element) -> NavigationRoute)?
-
     /// Subview content
     @ViewBuilder var content: (Element) -> Content
 
@@ -26,15 +23,8 @@ struct MarginedList<Element: Identifiable, Content: View>: View {
         ScrollView {
             LazyVStack(spacing: 0) {
                 ForEach(elements) { element in
-                    if let route {
-                        NavigationLink(route(element)) {
-                            content(element)
-                                .margined(margins)
-                        }
-                    } else {
-                        content(element)
-                            .margined(margins)
-                    }
+                    content(element)
+                        .margined(margins)
                 }
             }
             .marginedStack(margins)
@@ -70,19 +60,15 @@ private extension View {
 extension MarginedList {
 
     /// Initialize omitting the argument label
-    ///
     /// - Parameters:
     ///   - elements: `[Element]`
-    ///   - route: Navigated route
     ///   - content: Content view
     init(
         _ elements: [Element],
-        route: ((Element) -> NavigationRoute)? = nil,
         content: @escaping (Element) -> Content
     ) {
         self.init(
             elements: elements,
-            route: route,
             content: content
         )
     }

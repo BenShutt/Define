@@ -18,16 +18,12 @@ struct ScreenBody<Content: View>: View {
 
     /// Draw base screen body
     var body: some View {
-        ZStack {
-            backgroundColor
-                .ignoresSafeArea()
-
-            VStack(spacing: 0) {
-                content()
-                Spacer(minLength: 0)
+        content()
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background {
+                backgroundColor
+                    .ignoresSafeArea()
             }
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 

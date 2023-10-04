@@ -101,11 +101,11 @@ private struct SearchStateView: View {
             }
 
         case let .success(words):
-            MarginedList(words.identified, route: {
-                .word($0.element)
-            }, content: {
-                WordListItem(word: $0.element)
-            })
+            MarginedList(words.identified) { indexElement in
+                NavigationLink(.word(indexElement.element)) {
+                    WordListItem(word: indexElement.element)
+                }
+            }
         }
     }
 }

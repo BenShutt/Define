@@ -150,8 +150,8 @@ private struct WordContentView: View {
                 subtitle: .WordScreen.Empty.subtitle(word: word.title)
             )
         } else if !isWordSaved {
-            MarginedList(word.meanings.identified) {
-                MeaningListItem(meaning: $0.element)
+            MarginedList(word.meanings.identified) { indexElement in
+                MeaningListItem(meaning: indexElement.element)
             }
             .stickyButton(
                 title: .WordScreen.saveButton,
@@ -159,8 +159,8 @@ private struct WordContentView: View {
                 onTap: onSave
             )
         } else {
-            MarginedList(word.meanings.identified) {
-                MeaningListItem(meaning: $0.element)
+            MarginedList(word.meanings.identified) { indexElement in
+                MeaningListItem(meaning: indexElement.element)
             }
         }
     }
