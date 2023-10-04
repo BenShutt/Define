@@ -42,7 +42,7 @@ struct StyledButton: View {
             .background(LinearGradient.button)
             .clipShape(Capsule())
             .compositingGroup()
-            .shadow(color: .appBlack.opacity(0.2), radius: 3)
+            .shadow(.container)
         }
     }
 }

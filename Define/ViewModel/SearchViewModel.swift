@@ -84,7 +84,8 @@ import DictionaryAPI
     /// - Parameter term: `String`
     /// - Returns: `Bool`
     static func dictionaryHasDefinition(term: String) -> Bool {
-        UIReferenceLibraryViewController.dictionaryHasDefinition(forTerm: term)
+        guard !term.isEmpty else { return false }
+        return UIReferenceLibraryViewController.dictionaryHasDefinition(forTerm: term)
     }
 
     /// Fetch words from the API
