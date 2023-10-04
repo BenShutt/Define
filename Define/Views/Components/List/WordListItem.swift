@@ -93,8 +93,7 @@ private struct PartsOfSpeechView: View {
 struct WordListItem_Previews: PreviewProvider {
 
     static var previews: some View {
-        ScreenBody {
-            WordListItem(word: .preview)
-        }
+        WordListItem(word: .preview)
+            .screen()
     }
 }

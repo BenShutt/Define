@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// `View` to input a word to search for definitions
-struct SearchScreen: Screen {
+struct SearchScreen: View {
 
     /// `NavigationViewModel`
     @EnvironmentObject var navigation: NavigationViewModel
@@ -27,8 +27,7 @@ struct SearchScreen: Screen {
         viewModel.inReferenceLibrary || viewModel.words.isEmpty
     }
 
-    /// `View` of the screen
-    var screen: some View {
+    var body: some View {
         VStack(spacing: 0) {
             SearchHeaderView(searchText: $viewModel.search)
                 .zIndex(1)
@@ -51,6 +50,7 @@ struct SearchScreen: Screen {
             maxHeight: .infinity,
             alignment: .topLeading
         )
+        .screen()
         .toolbarBackground(Color.clear, for: .navigationBar)
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(words.isEmpty)

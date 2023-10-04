@@ -60,13 +60,12 @@ extension View {
 struct StickyHeader_Previews: PreviewProvider {
 
     static var previews: some View {
-        ScreenBody {
-            Text(verbatim: "Test")
-        }
-        .stickyHeader(
-            title: "Title text",
-            subtitle: "More Subtitle text",
-            color: .appBlue
-        )
+        Text(verbatim: "Test")
+            .screen()
+            .stickyHeader(
+                title: "Title text",
+                subtitle: "More Subtitle text",
+                color: .appBlue
+            )
     }
 }

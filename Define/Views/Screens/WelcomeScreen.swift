@@ -8,7 +8,7 @@
 import SwiftUI
 import AppIcon
 
-struct WelcomeScreen: Screen {
+struct WelcomeScreen: View {
 
     @State private var animationValue = 0
     var onContinue: () -> Void
@@ -17,7 +17,7 @@ struct WelcomeScreen: Screen {
         Bundle.main.appName ?? ""
     }
 
-    var screen: some View {
+    var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 0) {
                 WelcomeHeaderView(
@@ -40,6 +40,7 @@ struct WelcomeScreen: Screen {
             .padding(.bottom, .vMargin)
         }
         .ignoresSafeArea(.all, edges: .top)
+        .screen()
         .stickyButton(
             title: .Misc.continueButton,
             systemName: "arrow.forward"

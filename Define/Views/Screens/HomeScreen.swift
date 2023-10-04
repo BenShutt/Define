@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// Screen listing the user's saved definitions
-struct HomeScreen: Screen {
+struct HomeScreen: View {
 
     /// `NavigationViewModel`
     @EnvironmentObject var navigation: NavigationViewModel
@@ -16,13 +16,13 @@ struct HomeScreen: Screen {
     /// `WordsViewModel`
     @EnvironmentObject var words: WordsViewModel
 
-    /// Draw view
-    var screen: some View {
+    var body: some View {
         MarginedList(words.words, route: {
             .word($0.word)
         }, content: {
             WordListItem(word: $0.word, caption: $0.addedSince)
         })
+        .screen()
         .stickyHeader(
             title: .HomeScreen.title,
             subtitle: .HomeScreen.subtitle,

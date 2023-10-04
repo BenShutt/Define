@@ -44,16 +44,11 @@ struct TextHeaderView: View {
 struct HeaderView_Previews: PreviewProvider {
 
     static var previews: some View {
-        ScreenBody {
-            VStack {
-                TextHeaderView(
-                    title: .HomeScreen.title,
-                    subtitle: .HomeScreen.subtitle,
-                    color: .appBlue
-                )
-
-                Spacer()
-            }
-        }
+        TextHeaderView(
+            title: .HomeScreen.title,
+            subtitle: .HomeScreen.subtitle,
+            color: .appBlue
+        )
+        .screen()
     }
 }

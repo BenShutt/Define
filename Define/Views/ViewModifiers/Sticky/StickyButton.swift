@@ -55,13 +55,12 @@ extension View {
 struct StickyButton_Previews: PreviewProvider {
 
     static var previews: some View {
-        ScreenBody {
-            Text(verbatim: "Test")
-        }
-        .stickyButton(
-            title: "TAP ME!",
-            systemName: "plus",
-            onTap: {}
-        )
+        Text(verbatim: "Test")
+            .screen()
+            .stickyButton(
+                title: "TAP ME!",
+                systemName: "plus",
+                onTap: {}
+            )
     }
 }

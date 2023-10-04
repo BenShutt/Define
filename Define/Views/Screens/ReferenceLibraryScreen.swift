@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct ReferenceLibraryScreen: Screen {
+struct ReferenceLibraryScreen: View {
 
     var term: String
     var onWordSaved: () -> Void
 
-    var screen: some View {
+    var body: some View {
         ReferenceLibraryView(term: term)
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .screen()
             .stickyButton(
                 title: .WordScreen.saveButton,
                 systemName: "plus"

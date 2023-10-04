@@ -9,7 +9,7 @@ import SwiftUI
 import DictionaryAPI
 
 /// `View` to input a word to search for definitions
-struct WordScreen: Screen {
+struct WordScreen: View {
 
     /// `NavigationViewModel`
     @EnvironmentObject var navigation: NavigationViewModel
@@ -34,14 +34,14 @@ struct WordScreen: Screen {
         words.contains(word)
     }
 
-    /// `View` of the screen
-    var screen: some View {
+    var body: some View {
         WordContentView(
             word: word,
             isWordSaved: isWordSaved
         ) {
             saveWord()
         }
+        .screen()
         .stickyHeader(
             title: word.title,
             color: WordColor(word: word.word).color,
