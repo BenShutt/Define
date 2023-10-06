@@ -30,6 +30,8 @@ struct ScreenBody<Content: View>: View {
 // MARK: - Screen
 
 /// An app screen
+/// - Note: The reason for a `ViewModifier` over a protocol is we might want to add
+/// properties before or after
 struct Screen: ViewModifier {
 
     var backgroundColor: Color

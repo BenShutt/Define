@@ -17,9 +17,19 @@ extension Word {
     }
 
     /// Localized subtitle
-    /// - Note:`LocalizedStringResource` instead of `LocalizedStringKey`
-    /// for use of `String(localized:)`
-    var subtitle: LocalizedStringResource? {
+    var subtitle: LocalizedStringKey? {
+        guard let definition = definitions.first else { return nil }
+        return "word_subtitle \(definition)"
+    }
+
+    /// Localized overflow
+    var nMore: LocalizedStringKey? {
+        guard definitions.count > 1 else { return nil }
+        return "word_more_definitions \(definitions.count - 1)"
+    }
+
+    /// Localized notification subtitle
+    var notificationSubtitle: Localization? {
         guard let definition = definitions.first else { return nil }
         if definitions.count > 1 {
             return "word_subtitle_more \(definition) \(definitions.count - 1)"
@@ -34,6 +44,11 @@ extension Word {
             .flatMap { $0.definitions }
             .map { $0.title }
             .compactMap { $0.trimmed.nilIfEmpty } // TODO: Decode property wrapper?
+    }
+
+    /// Parts of speech
+    var partsOfSpeech: [String] {
+        Set(meanings.map { $0.category }).sorted()
     }
 }
 

@@ -67,13 +67,6 @@ extension String {
         }
     }
 
-    struct WordListItemView {
-
-        static func nMoreDefinitions(_ count: Int) -> String {
-            "+\(count) more definitions"
-        }
-    }
-
     struct WordScreen {
 
         static let saveButton = "SAVE WORD"

@@ -56,6 +56,29 @@
         }
       }
     },
+    "word_more_definitions %lld" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "+%lld more definition"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "+%lld more definitions"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "word_reminder_delete_subtitle %@" : {
       "extractionState" : "manual",
       "localizations" : {

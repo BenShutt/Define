@@ -17,42 +17,27 @@ struct WordListItem: View {
     /// Caption text
     var caption: String?
 
-    /// Parts of speech
-    private var partsOfSpeech: [String] {
-        Set(word.meanings.map { $0.category }).sorted()
-    }
-
-    /// The first definition for preview
-    private var firstDefinition: String? {
-        word.definitions.first
-    }
-
-    /// The number of (extra) definitions not shown in preview
-    private var nMore: Int {
-        max(0, word.definitions.count - 1)
-    }
-
     var body: some View {
         HStack(spacing: .large) {
             VStack(alignment: .leading, spacing: .small) {
                 Text(verbatim: word.title)
                     .h2()
 
-                if let firstDefinition {
-                    Text(verbatim: firstDefinition)
+                if let subtitle = word.subtitle {
+                    Text(subtitle)
                         .lineLimit(3)
                         .truncationMode(.tail)
                         .body()
                 }
 
-                if nMore > 0 {
-                    Text(verbatim: .WordListItemView.nMoreDefinitions(nMore))
+                if let nMore = word.nMore {
+                    Text(nMore)
                         .textStyle(.body)
                         .foregroundColor(.appBlue)
                 }
 
-                if !partsOfSpeech.isEmpty {
-                    PartsOfSpeechView(partsOfSpeech: partsOfSpeech)
+                if !word.partsOfSpeech.isEmpty {
+                    PartsOfSpeechView(partsOfSpeech: word.partsOfSpeech)
                         .padding(.top, .small)
                 }
 

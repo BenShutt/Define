@@ -34,7 +34,9 @@ final class ReminderNotification: ObservableObject {
     static func scheduleRequest(word: Word) {
         let content = UNMutableNotificationContent()
         content.title = word.title
-        // TODO: content.subtitle
+        if let subtitle = word.notificationSubtitle {
+            content.subtitle = subtitle.value
+        }
         content.sound = .default
 
         let date = Calendar.current.addingDays(remindAfterDays, to: Date())
