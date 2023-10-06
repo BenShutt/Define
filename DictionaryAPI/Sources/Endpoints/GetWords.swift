@@ -26,4 +26,11 @@ public struct GetWords: Endpoint {
     public var endpoint: String {
         "entries/en/\(word)" // Fixed language for now
     }
+
+    /// Get `Word`s and validate the models
+    public func requestAndValidate() async throws -> [Word] {
+        var words = try await request()
+        try words.validate()
+        return words
+    }
 }

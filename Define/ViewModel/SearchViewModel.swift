@@ -97,7 +97,7 @@ import DictionaryAPI
     private func getWords(for search: String) {
         Task {
             do {
-                let words = try await GetWords(word: search).request()
+                let words = try await GetWords(word: search).requestAndValidate()
                 guard !words.isEmpty else { throw SearchViewModelError.noResults }
                 setState(.success(words), for: search)
             } catch {

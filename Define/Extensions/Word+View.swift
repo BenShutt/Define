@@ -43,7 +43,6 @@ extension Word {
         meanings
             .flatMap { $0.definitions }
             .map { $0.title }
-            .compactMap { $0.trimmed.nilIfEmpty } // TODO: Decode property wrapper?
     }
 
     /// Parts of speech
@@ -73,6 +72,6 @@ extension Word.Meaning.Definition {
 
     /// Title of example
     var exampleTitle: String? {
-        example?.trimmed.localizedCapitalized.nilIfEmpty // TODO: Decode property wrapper?
+        example?.localizedCapitalized
     }
 }

@@ -7,8 +7,12 @@
 
 import Foundation
 
-public struct License: JSONModel {
+public struct License: JSONModel, Validated {
 
     public var name: String
     public var url: URL?
+
+    public mutating func validate() throws {
+        try name.validate()
+    }
 }

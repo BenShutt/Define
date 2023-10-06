@@ -11,12 +11,13 @@ import DictionaryAPI
 final class GetWordsTests: XCTestCase {
 
     func testSuccess() async throws {
-        _ = try await GetWords(word: "hello").request()
+        _ = try await GetWords(word: "hello").requestAndValidate()
     }
 
     func testFailure() async throws {
         do {
-            _ = try await GetWords(word: "look").request() // Missing "look"?
+            // The API seems to be missing "look"?
+            _ = try await GetWords(word: "look").requestAndValidate()
         } catch {
             XCTAssertEqual(error.responseCode, 404)
         }
