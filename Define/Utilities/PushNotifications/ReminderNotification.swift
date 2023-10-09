@@ -54,7 +54,7 @@ final class ReminderNotification: ObservableObject {
             }
         }
     }
-    
+
     /// Get the `Word` from the given `notification`
     /// - Parameters:
     ///   - notification: `Notification`

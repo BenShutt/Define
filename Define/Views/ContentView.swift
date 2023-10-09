@@ -17,19 +17,13 @@ struct ContentView: View {
     /// Storage of the `WordsViewModel` environment instance
     @StateObject private var words = WordsViewModel()
 
-    /// The word to present
-    @State private var presentedWord: Word?
-
     /// Root `NavigationStack`
     var body: some View {
         NavigationStack(path: $navigation.path) {
             RootView()
                 .navigate()
                 .onReminderDidReceive(words: words) { word in // TODO: Handle app opened from PN
-                    presentedWord = word
-                }
-                .sheet(item: $presentedWord) { word in
-                    WordScreen(word: word)
+                    navigation.push(.word(word))
                 }
         }
         .environmentObject(navigation)
