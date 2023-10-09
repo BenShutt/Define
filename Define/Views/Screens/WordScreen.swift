@@ -44,7 +44,6 @@ struct WordScreen: View {
         .screen()
         .stickyHeader(
             title: word.title,
-            color: WordColor(word: word.word).color,
             topPadding: .medium
         )
         .navigationBarTitleDisplayMode(.inline)

@@ -16,16 +16,12 @@ struct TextHeaderView: View {
     /// Optional text for the subtitle label
     var subtitle: String?
 
-    /// Gradient color
-    var color: Color
-
     /// Top padding
     var topPadding = EdgeInsets.header.top
 
     var body: some View {
         HeaderView(
             spacing: .medium,
-            color: color,
             topPadding: topPadding
         ) {
             Text(verbatim: title)
@@ -46,8 +42,7 @@ struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
         TextHeaderView(
             title: .HomeScreen.title,
-            subtitle: .HomeScreen.subtitle,
-            color: .appBlue
+            subtitle: .HomeScreen.subtitle
         )
         .screen()
     }

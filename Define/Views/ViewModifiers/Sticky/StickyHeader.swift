@@ -16,9 +16,6 @@ struct StickyHeader: ViewModifier {
     /// Optional text for the subtitle label
     var subtitle: String?
 
-    /// Gradient color
-    var color: Color
-
     /// Top padding
     var topPadding = EdgeInsets.header.top
 
@@ -28,7 +25,6 @@ struct StickyHeader: ViewModifier {
                 TextHeaderView(
                     title: title,
                     subtitle: subtitle,
-                    color: color,
                     topPadding: topPadding
                 )
             }
@@ -43,13 +39,11 @@ extension View {
     func stickyHeader(
         title: String,
         subtitle: String? = nil,
-        color: Color,
         topPadding: CGFloat = EdgeInsets.header.top
     ) -> some View {
         modifier(StickyHeader(
             title: title,
             subtitle: subtitle,
-            color: color,
             topPadding: topPadding
         ))
     }
@@ -64,8 +58,7 @@ struct StickyHeader_Previews: PreviewProvider {
             .screen()
             .stickyHeader(
                 title: "Title text",
-                subtitle: "More Subtitle text",
-                color: .appBlue
+                subtitle: "More Subtitle text"
             )
     }
 }

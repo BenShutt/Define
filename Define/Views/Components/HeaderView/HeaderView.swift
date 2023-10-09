@@ -13,9 +13,6 @@ struct HeaderView<Content: View>: View {
     /// Vertical stack spacing
     var spacing: CGFloat
 
-    /// Color for gradient
-    var color: Color
-
     /// Amount of top padding
     var topPadding = EdgeInsets.header.top
 
@@ -37,8 +34,9 @@ struct HeaderView<Content: View>: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(padding)
         .background {
-            GradientBlurView(color: color)
+            GradientBlurView(color: .appBlue)
                 .ignoresSafeArea()
+                .compositingGroup()
                 .shadow(.sticky)
         }
     }

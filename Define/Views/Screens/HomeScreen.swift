@@ -26,8 +26,7 @@ struct HomeScreen: View {
         .screen()
         .stickyHeader(
             title: .HomeScreen.title,
-            subtitle: .HomeScreen.subtitle,
-            color: .appGreen
+            subtitle: .HomeScreen.subtitle
         )
         .stickyButton(
             title: .HomeScreen.addWordButton,

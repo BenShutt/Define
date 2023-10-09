@@ -9,6 +9,8 @@ import SwiftUI
 import CryptoKit
 import CubeFoundationSwiftUI
 
+// TODO: Unused
+
 /// Map a word to a color
 struct WordColor {
 

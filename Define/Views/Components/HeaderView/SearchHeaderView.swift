@@ -21,11 +21,7 @@ struct SearchHeaderView: View {
     @State private var isTextInputFocused = false
 
     var body: some View {
-        HeaderView(
-            spacing: 0,
-            color: .appBlue,
-            topPadding: .medium
-        ) {
+        HeaderView(spacing: 0, topPadding: .medium) {
             if !isTextInputFocused {
                 Text(verbatim: .SearchHeaderView.title)
                     .h1()
