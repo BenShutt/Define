@@ -58,12 +58,19 @@ final class ReminderNotification: ObservableObject {
     /// Get the pending `UNNotificationRequest` for `word` or `nil` if it is not pending
     /// - Parameter word: `Word` to remind of
     /// - Returns: The notification request
-    static func pendingRequest(word: Word) async -> UNNotificationRequest? {
+    private static func pendingRequest(word: Word) async -> UNNotificationRequest? {
         let notificationId = notificationId(for: word)
         let center = UNUserNotificationCenter.current()
         return await center.pendingNotificationRequests().first { request in
             request.identifier == notificationId
         }
+    }
+    
+    /// Is there a pending notification request for the given `word`
+    /// - Parameter word: `Word`
+    /// - Returns: `Bool`
+    static func isScheduled(word: Word) async -> Bool {
+        await pendingRequest(word: word) != nil
     }
 
     /// Remove the request for `word`

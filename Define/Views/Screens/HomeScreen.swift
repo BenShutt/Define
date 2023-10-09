@@ -55,15 +55,34 @@ private struct WordRow: View {
         switch word.source {
         case .api:
             NavigationLink(.word(word.word)) {
-                WordListItem(word: word.word, caption: word.addedSince)
+                ListItem(word: word)
             }
 
         case .referenceLibrary:
             Button(action: {
                 selectedWord = word
             }, label: {
-                WordListItem(word: word.word, caption: word.addedSince)
+                ListItem(word: word)
             })
+        }
+    }
+}
+
+// MARK: - ListItem
+
+private struct ListItem: View {
+
+    @State private var isScheduled = false
+    var word: SavedWord
+
+    var body: some View {
+        WordListItem(
+            word: word.word,
+            caption: word.addedSince,
+            isScheduled: isScheduled
+        )
+        .task {
+            isScheduled = await ReminderNotification.isScheduled(word: word.word)
         }
     }
 }

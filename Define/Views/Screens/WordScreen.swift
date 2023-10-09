@@ -82,7 +82,9 @@ struct WordScreen: View {
             actions: {
                 Button(role: .destructive) {
                     ReminderNotification.removePendingRequest(word: word)
-                    updateReminder()
+                    Task {
+                        await updateReminder()
+                    }
                 } label: {
                     Text("delete")
                 }
@@ -97,8 +99,8 @@ struct WordScreen: View {
                 Text("word_reminder_delete_subtitle \(word.title)")
             }
         )
-        .onAppear {
-            updateReminder()
+        .task {
+            await updateReminder()
         }
     }
 
@@ -120,16 +122,15 @@ struct WordScreen: View {
             isPresentingReminderAlert = true
         } else {
             ReminderNotification.scheduleRequest(word: word)
-            updateReminder()
+            Task {
+                await updateReminder()
+            }
         }
     }
 
     /// Update the reminder UI
-    private func updateReminder() {
-        Task { @MainActor in
-            let pendingRequest = await ReminderNotification.pendingRequest(word: word)
-            isReminderPending = pendingRequest != nil
-        }
+    private func updateReminder() async {
+        isReminderPending = await ReminderNotification.isScheduled(word: word)
     }
 }
 
