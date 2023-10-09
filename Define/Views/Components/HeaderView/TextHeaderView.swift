@@ -16,14 +16,11 @@ struct TextHeaderView: View {
     /// Optional text for the subtitle label
     var subtitle: String?
 
-    /// Top padding
-    var topPadding = EdgeInsets.header.top
+    /// Amount of padding
+    var padding = EdgeInsets.header
 
     var body: some View {
-        HeaderView(
-            spacing: .medium,
-            topPadding: topPadding
-        ) {
+        HeaderView(spacing: .medium, padding: padding) {
             Text(verbatim: title)
                 .h1()
 

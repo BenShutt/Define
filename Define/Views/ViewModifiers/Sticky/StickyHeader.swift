@@ -16,8 +16,8 @@ struct StickyHeader: ViewModifier {
     /// Optional text for the subtitle label
     var subtitle: String?
 
-    /// Top padding
-    var topPadding = EdgeInsets.header.top
+    /// Amount of padding
+    var padding: EdgeInsets
 
     func body(content: Content) -> some View {
         content.modifier(
@@ -25,7 +25,7 @@ struct StickyHeader: ViewModifier {
                 TextHeaderView(
                     title: title,
                     subtitle: subtitle,
-                    topPadding: topPadding
+                    padding: padding
                 )
             }
         )
@@ -39,12 +39,12 @@ extension View {
     func stickyHeader(
         title: String,
         subtitle: String? = nil,
-        topPadding: CGFloat = EdgeInsets.header.top
+        padding: EdgeInsets = EdgeInsets.header
     ) -> some View {
         modifier(StickyHeader(
             title: title,
             subtitle: subtitle,
-            topPadding: topPadding
+            padding: padding
         ))
     }
 }

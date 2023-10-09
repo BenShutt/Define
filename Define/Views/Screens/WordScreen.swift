@@ -34,6 +34,14 @@ struct WordScreen: View, WordReminderObserver {
         words.contains(word)
     }
 
+    /// Padding for the header view
+    private var headerPadding: EdgeInsets {
+        var padding: EdgeInsets = .header
+        padding.top = .small
+        padding.bottom = .small
+        return padding
+    }
+
     var body: some View {
         WordContentView(
             word: word,
@@ -42,24 +50,32 @@ struct WordScreen: View, WordReminderObserver {
             saveWord()
         }
         .screen()
-        .stickyHeader(
-            title: word.title,
-            topPadding: .medium
-        )
+        .modifier(StickyTop {
+            HeaderView(spacing: 0, padding: headerPadding) {}
+        })
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
-            if isWordSaved {
-                Button(action: {
-                    onReminderTapped()
-                }, label: {
-                    Image(systemName: isReminderScheduled ? "checkmark" : "clock")
-                })
+            ToolbarItem(placement: .principal) {
+                Text(verbatim: word.title)
+                    .h2()
+            }
 
-                Button(action: {
-                    isPresentingDeleteWordAlert = true
-                }, label: {
-                    Image(systemName: "trash")
-                })
+            if isWordSaved {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button(action: {
+                        onReminderTapped()
+                    }, label: {
+                        Image(systemName: isReminderScheduled ? "checkmark" : "clock")
+                    })
+                }
+
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button(action: {
+                        isPresentingDeleteWordAlert = true
+                    }, label: {
+                        Image(systemName: "trash")
+                    })
+                }
             }
         }
         .alert(

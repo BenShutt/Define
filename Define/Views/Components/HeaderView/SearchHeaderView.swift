@@ -20,8 +20,15 @@ struct SearchHeaderView: View {
     /// The two should always be equivalent in value
     @State private var isTextInputFocused = false
 
+    /// Update the top padding of the header
+    private var padding: EdgeInsets {
+        var padding: EdgeInsets = .header
+        padding.top = .medium
+        return padding
+    }
+
     var body: some View {
-        HeaderView(spacing: 0, topPadding: .medium) {
+        HeaderView(spacing: 0, padding: padding) {
             if !isTextInputFocused {
                 Text(verbatim: .SearchHeaderView.title)
                     .h1()

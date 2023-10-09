@@ -13,18 +13,11 @@ struct HeaderView<Content: View>: View {
     /// Vertical stack spacing
     var spacing: CGFloat
 
-    /// Amount of top padding
-    var topPadding = EdgeInsets.header.top
+    /// Amount of padding
+    var padding = EdgeInsets.header
 
     /// Subview content
     @ViewBuilder var content: () -> Content
-
-    /// Padding of the content from the background
-    var padding: EdgeInsets {
-        var padding: EdgeInsets = .header
-        padding.top = topPadding
-        return padding
-    }
 
     var body: some View {
         VStack(alignment: .leading, spacing: spacing) {
