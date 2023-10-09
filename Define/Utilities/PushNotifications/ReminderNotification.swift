@@ -9,16 +9,14 @@ import SwiftUI
 import UserNotifications
 import DictionaryAPI
 
-// TODO: Sync this file with the PushNotificationManager
-
 /// Wraps the logic of reminder push notifications
 final class ReminderNotification: ObservableObject {
 
     /// Number of days to wait before sending the word reminder push notification
-    private static let remindAfterDays = 3
+    static let remindAfterDays = 3
 
     /// The user info key for the word
-    private static let wordKey = "\(ReminderNotification.self).word"
+    static let wordIdKey = "\(ReminderNotification.self).wordId"
 
     /// Shorthand to get the current notification center
     private static let center: UNUserNotificationCenter = .current()
@@ -30,13 +28,6 @@ final class ReminderNotification: ObservableObject {
         "word_reminder_\(word.id)"
     }
 
-    /// Get `Word` from the user info of the given PN
-    /// - Parameter notification: `Notification`
-    /// - Returns: `Word` or `nil` if not found
-    static func word(from notification: Notification) -> Word? {
-        notification.userInfo?[wordKey] as? Word
-    }
-
     /// Send a local push notification to remind the user about a word
     /// - Parameter word: The word to remind the user about
     static func scheduleRequest(word: Word) {
@@ -46,7 +37,7 @@ final class ReminderNotification: ObservableObject {
             content.subtitle = subtitle.value
         }
         content.sound = .default
-        content.userInfo[wordKey] = word
+        content.userInfo[wordIdKey] = word.id
 
         let date = Calendar.current.addingDays(remindAfterDays, to: Date())
         let dateComponents = Calendar.current.dateComponents(
@@ -72,7 +63,7 @@ final class ReminderNotification: ObservableObject {
     static func pendingRequest(word: Word) async -> UNNotificationRequest? {
         let notificationId = notificationId(for: word)
         return await center.pendingNotificationRequests().first { request in
-             request.identifier == notificationId
+            request.identifier == notificationId
         }
     }
 
@@ -82,5 +73,23 @@ final class ReminderNotification: ObservableObject {
         center.removePendingNotificationRequests(
             withIdentifiers: [ notificationId(for: word) ]
         )
+    }
+}
+
+// MARK: - View + ReminderNotification
+
+extension View {
+
+    func onReminderReceived(
+        words: WordsViewModel,
+        perform action: @escaping (Word) -> Void
+    ) -> some View {
+        onReceive { notification in
+            let wordIdKey = ReminderNotification.wordIdKey
+            let wordId = notification.userInfo?[wordIdKey] as? String
+            let word = words.words.first { $0.word.id == wordId }
+            guard let word else { return }
+            action(word.word)
+        }
     }
 }

@@ -81,6 +81,7 @@
 		B8A1235428E97D1A00ACEC45 /* WorkSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8A1234228E97D1A00ACEC45 /* WorkSans-SemiBold.ttf */; };
 		B8A1235A28E97EF300ACEC45 /* WorkSans.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A1235928E97EF300ACEC45 /* WorkSans.swift */; };
 		B8A1235D28E97FB000ACEC45 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A1235C28E97FB000ACEC45 /* CustomFont.swift */; };
+		B8AD58812AD45F070054403E /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = B8AD58802AD45F070054403E /* SwiftUIIntrospect */; };
 		B8B563E728EFFEC3004B80F0 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B563E628EFFEC3004B80F0 /* View+Extensions.swift */; };
 		B8B563E928F00096004B80F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8B563E828F00096004B80F0 /* LaunchScreen.storyboard */; };
 		B8B9B9D628EC5C54006FCA76 /* SearchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9B9D528EC5C54006FCA76 /* SearchHeaderView.swift */; };
@@ -92,7 +93,6 @@
 		B8BFDC712AC7800C009E1F83 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BFDC702AC7800C009E1F83 /* BlurView.swift */; };
 		B8C25F9C294F7AAF001C8847 /* KeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C25F9B294F7AAF001C8847 /* KeyboardToolbar.swift */; };
 		B8C25FA0294F8D5D001C8847 /* Separator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C25F9F294F8D5D001C8847 /* Separator.swift */; };
-		B8C43F3029FB0F6100F5E166 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = B8C43F2F29FB0F6100F5E166 /* Introspect */; };
 		B8C43F3229FB0F7500F5E166 /* NoBounceScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C43F3129FB0F7500F5E166 /* NoBounceScrollView.swift */; };
 		B8C5ACAE2ACCAE6200595772 /* ReferenceLibraryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C5ACAD2ACCAE6200595772 /* ReferenceLibraryCard.swift */; };
 		B8C5ACB22ACCBA7D00595772 /* ReferenceLibraryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C5ACB12ACCBA7D00595772 /* ReferenceLibraryScreen.swift */; };
@@ -249,8 +249,8 @@
 				B8BFDC6C2AC77D04009E1F83 /* AppIcon in Frameworks */,
 				B80E720229FBB67B007CCE71 /* CubeFoundation in Frameworks */,
 				B80E720429FBB67B007CCE71 /* CubeFoundationSwiftUI in Frameworks */,
+				B8AD58812AD45F070054403E /* SwiftUIIntrospect in Frameworks */,
 				B8FF0DC9295F9528004C61B6 /* DictionaryAPI in Frameworks */,
-				B8C43F3029FB0F6100F5E166 /* Introspect in Frameworks */,
 				B8A1232528E971EC00ACEC45 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -644,10 +644,10 @@
 			packageProductDependencies = (
 				B8A1232428E971EC00ACEC45 /* Lottie */,
 				B8FF0DC8295F9528004C61B6 /* DictionaryAPI */,
-				B8C43F2F29FB0F6100F5E166 /* Introspect */,
 				B80E720129FBB67B007CCE71 /* CubeFoundation */,
 				B80E720329FBB67B007CCE71 /* CubeFoundationSwiftUI */,
 				B8BFDC6B2AC77D04009E1F83 /* AppIcon */,
+				B8AD58802AD45F070054403E /* SwiftUIIntrospect */,
 			);
 			productName = Define;
 			productReference = B80399D928D79A37008CE7B4 /* Define.app */;
@@ -723,8 +723,8 @@
 			mainGroup = B80399D028D79A36008CE7B4;
 			packageReferences = (
 				B8A1232328E971EC00ACEC45 /* XCRemoteSwiftPackageReference "lottie-ios" */,
-				B8C43F2E29FB0F6100F5E166 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
 				B80E720029FBB67B007CCE71 /* XCRemoteSwiftPackageReference "cubefoundation-ios" */,
+				B8AD587F2AD45F070054403E /* XCRemoteSwiftPackageReference "swiftui-introspect" */,
 			);
 			productRefGroup = B80399DA28D79A37008CE7B4 /* Products */;
 			projectDirPath = "";
@@ -1241,12 +1241,12 @@
 				minimumVersion = 4.0.0;
 			};
 		};
-		B8C43F2E29FB0F6100F5E166 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
+		B8AD587F2AD45F070054403E /* XCRemoteSwiftPackageReference "swiftui-introspect" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect.git";
+			repositoryURL = "https://github.com/siteline/swiftui-introspect.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.2.3;
+				minimumVersion = 1.1.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -1267,14 +1267,14 @@
 			package = B8A1232328E971EC00ACEC45 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
 		};
+		B8AD58802AD45F070054403E /* SwiftUIIntrospect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B8AD587F2AD45F070054403E /* XCRemoteSwiftPackageReference "swiftui-introspect" */;
+			productName = SwiftUIIntrospect;
+		};
 		B8BFDC6B2AC77D04009E1F83 /* AppIcon */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = AppIcon;
-		};
-		B8C43F2F29FB0F6100F5E166 /* Introspect */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B8C43F2E29FB0F6100F5E166 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
-			productName = Introspect;
 		};
 		B8FF0DC8295F9528004C61B6 /* DictionaryAPI */ = {
 			isa = XCSwiftPackageProductDependency;

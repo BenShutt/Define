@@ -28,6 +28,9 @@ import DictionaryAPI
         case success([Word])
     }
 
+    /// Niumber of milliseconds to debounce the search
+    private let debounceMilliseconds = 500
+
     /// The text being searched
     @Published var search = ""
 
@@ -73,12 +76,13 @@ import DictionaryAPI
             .store(in: &cancellables)
 
         searchPublisher
-            .debounce(for: .milliseconds(500), scheduler: RunLoop.main)
+            .debounce(for: .milliseconds(debounceMilliseconds), scheduler: RunLoop.main)
             .sink { search in
                 guard !search.isEmpty else { return }
                 guard self.isSearchStillValid(search) else { return }
 
                 self.inReferenceLibrary = Self.dictionaryHasDefinition(term: search)
+                print("[FOUND] \(self.inReferenceLibrary) \(search)")
                 self.getWords(for: search)
             }
             .store(in: &cancellables)

@@ -7,6 +7,8 @@
 
 import UIKit
 
+// TODO: Localizations
+
 /// Implementation of `UIApplicationDelegate`
 class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 

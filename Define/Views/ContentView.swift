@@ -25,9 +25,8 @@ struct ContentView: View {
         NavigationStack(path: $navigation.path) {
             RootView()
                 .navigate()
-                .onReceive { notification in // TODO: Handle app opened from PN
-                    let word = ReminderNotification.word(from: notification)
-                    guard let word else { return }
+                .onReminderReceived(words: words) { word in // TODO: Handle app opened from PN
+                    presentedWord = word
                 }
                 .sheet(item: $presentedWord) { word in
                     WordScreen(word: word)
