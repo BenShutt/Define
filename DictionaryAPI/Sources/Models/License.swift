@@ -14,5 +14,6 @@ public struct License: JSONModel, Validated {
 
     public mutating func validate() throws {
         try name.validate()
+        // url already validated
     }
 }
