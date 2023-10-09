@@ -17,16 +17,24 @@ final class ReminderNotification: ObservableObject {
     /// Number of days to wait before sending the word reminder push notification
     private static let remindAfterDays = 3
 
+    /// The user info key for the word
+    private static let wordKey = "\(ReminderNotification.self).word"
+
     /// Shorthand to get the current notification center
-    private static var center: UNUserNotificationCenter {
-        .current()
-    }
+    private static let center: UNUserNotificationCenter = .current()
 
     /// Identifier of the push notification request
     /// - Parameter word: `Word` that is scheduled
     /// - Returns: Identifier
     private static func notificationId(for word: Word) -> String {
         "word_reminder_\(word.id)"
+    }
+
+    /// Get `Word` from the user info of the given PN
+    /// - Parameter notification: `Notification`
+    /// - Returns: `Word` or `nil` if not found
+    static func word(from notification: Notification) -> Word? {
+        notification.userInfo?[wordKey] as? Word
     }
 
     /// Send a local push notification to remind the user about a word
@@ -38,6 +46,7 @@ final class ReminderNotification: ObservableObject {
             content.subtitle = subtitle.value
         }
         content.sound = .default
+        content.userInfo[wordKey] = word
 
         let date = Calendar.current.addingDays(remindAfterDays, to: Date())
         let dateComponents = Calendar.current.dateComponents(

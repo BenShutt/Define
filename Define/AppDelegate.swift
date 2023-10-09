@@ -34,6 +34,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
         let apnsToken = deviceToken
             .map { String(format: "%02.2hhx", $0) }
             .joined()
+
         log("APNs token: \(apnsToken)")
     }
 

@@ -5,7 +5,7 @@
 //  Created by Ben Shutt on 17/08/2023.
 //
 
-import UIKit
+import SwiftUI
 import UserNotifications
 import DictionaryAPI
 
@@ -58,5 +58,29 @@ struct PushNotificationManager {
 extension Notification.Name {
 
     /// Push notification received
-    static let didReceive = Notification.Name(rawValue: "didReceive")
+    static let didReceive = Notification.Name(
+        rawValue: "\(PushNotificationManager.self).didReceive"
+    )
+}
+
+// MARK: - View + Notification.Name
+
+extension View {
+
+    /// Perform an action when a PN is received from a view
+    /// - Parameters:
+    ///   - center: The notification center
+    ///   - object: The object
+    ///   - action: Action to perform
+    /// - Returns: A view
+    func onReceive(
+        center: NotificationCenter = .default,
+        object: AnyObject? = nil,
+        perform action: @escaping (Notification) -> Void
+    ) -> some View {
+        onReceive(
+            center.publisher(for: .didReceive, object: object),
+            perform: action
+        )
+    }
 }

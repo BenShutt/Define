@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import DictionaryAPI
 
 /// Root app `View`
 struct ContentView: View {
@@ -16,11 +17,21 @@ struct ContentView: View {
     /// Storage of the `WordsViewModel` environment instance
     @StateObject private var words = WordsViewModel()
 
+    /// The word to present
+    @State private var presentedWord: Word?
+
     /// Root `NavigationStack`
     var body: some View {
         NavigationStack(path: $navigation.path) {
             RootView()
                 .navigate()
+                .onReceive { notification in // TODO: Handle app opened from PN
+                    let word = ReminderNotification.word(from: notification)
+                    guard let word else { return }
+                }
+                .sheet(item: $presentedWord) { word in
+                    WordScreen(word: word)
+                }
         }
         .environmentObject(navigation)
         .environmentObject(words)
@@ -39,7 +50,7 @@ private struct RootView: View {
     @EnvironmentObject var words: WordsViewModel
 
     /// Has the user seen the welcome screen
-    @AppStorage(UserDefaultKey.hasSeenWelcome.rawValue) var hasSeenWelcome = false
+    @AppStorage(UserDefaultKey.hasSeenWelcome.rawValue) private var hasSeenWelcome = false
 
     var body: some View {
         if !hasSeenWelcome {
