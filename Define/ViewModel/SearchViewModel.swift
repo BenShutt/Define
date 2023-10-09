@@ -82,7 +82,6 @@ import DictionaryAPI
                 guard self.isSearchStillValid(search) else { return }
 
                 self.inReferenceLibrary = Self.dictionaryHasDefinition(term: search)
-                print("[FOUND] \(self.inReferenceLibrary) \(search)")
                 self.getWords(for: search)
             }
             .store(in: &cancellables)

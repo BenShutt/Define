@@ -18,9 +18,6 @@ final class ReminderNotification: ObservableObject {
     /// The user info key for the word
     static let wordIdKey = "\(ReminderNotification.self).wordId"
 
-    /// Shorthand to get the current notification center
-    private static let center: UNUserNotificationCenter = .current()
-
     /// Identifier of the push notification request
     /// - Parameter word: `Word` that is scheduled
     /// - Returns: Identifier
@@ -34,27 +31,28 @@ final class ReminderNotification: ObservableObject {
         let content = UNMutableNotificationContent()
         content.title = word.title
         if let subtitle = word.notificationSubtitle {
-            content.subtitle = subtitle.value
+            content.body = subtitle.value
         }
         content.sound = .default
         content.userInfo[wordIdKey] = word.id
 
         let date = Calendar.current.addingDays(remindAfterDays, to: Date())
-        let dateComponents = Calendar.current.dateComponents(
-            in: .current,
-            from: date
-        )
+        let dateComponents = Calendar.current.dateTimeComponents(from: date)
 
         let trigger = UNCalendarNotificationTrigger(
             dateMatching: dateComponents,
             repeats: false
         )
 
-        center.add(UNNotificationRequest(
+        UNUserNotificationCenter.current().add(UNNotificationRequest(
             identifier: notificationId(for: word),
             content: content,
             trigger: trigger
-        ))
+        )) { error in
+            if let error {
+                print("[\(ReminderNotification.self)] \(error)")
+            }
+        }
     }
 
     /// Get the pending `UNNotificationRequest` for `word` or `nil` if it is not pending
@@ -62,6 +60,7 @@ final class ReminderNotification: ObservableObject {
     /// - Returns: The notification request
     static func pendingRequest(word: Word) async -> UNNotificationRequest? {
         let notificationId = notificationId(for: word)
+        let center = UNUserNotificationCenter.current()
         return await center.pendingNotificationRequests().first { request in
             request.identifier == notificationId
         }
@@ -70,7 +69,7 @@ final class ReminderNotification: ObservableObject {
     /// Remove the request for `word`
     /// - Parameter word: `Word` to remind of
     static func removePendingRequest(word: Word) {
-        center.removePendingNotificationRequests(
+        UNUserNotificationCenter.current().removePendingNotificationRequests(
             withIdentifiers: [ notificationId(for: word) ]
         )
     }
