@@ -38,7 +38,12 @@ struct PushNotificationManager {
     static func willPresent(
         notification: UNNotification
     ) -> UNNotificationPresentationOptions {
-        [.list, .banner, .badge, .sound]
+        NotificationCenter.default.post(
+            name: .willPresent,
+            object: nil,
+            userInfo: notification.request.content.userInfo
+        )
+        return [.list, .banner, .badge, .sound]
     }
 
     /// Called on `userNotificationCenter(_:didReceive:)`
@@ -57,7 +62,12 @@ struct PushNotificationManager {
 
 extension Notification.Name {
 
-    /// Push notification received
+    /// Push notification will present
+    static let willPresent = Notification.Name(
+        rawValue: "\(PushNotificationManager.self).willPresent"
+    )
+
+    /// Push notification did received
     static let didReceive = Notification.Name(
         rawValue: "\(PushNotificationManager.self).didReceive"
     )
@@ -69,17 +79,19 @@ extension View {
 
     /// Perform an action when a PN is received from a view
     /// - Parameters:
+    ///   - name: Notification name
     ///   - center: The notification center
     ///   - object: The object
     ///   - action: Action to perform
     /// - Returns: A view
     func onReceive(
+        _ name: Notification.Name,
         center: NotificationCenter = .default,
         object: AnyObject? = nil,
         perform action: @escaping (Notification) -> Void
     ) -> some View {
         onReceive(
-            center.publisher(for: .didReceive, object: object),
+            center.publisher(for: name, object: object),
             perform: action
         )
     }

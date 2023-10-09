@@ -54,6 +54,19 @@ final class ReminderNotification: ObservableObject {
             }
         }
     }
+    
+    /// Get the `Word` from the given `notification`
+    /// - Parameters:
+    ///   - notification: `Notification`
+    ///   - words: `WordsViewModel`
+    /// - Returns: `Word` if found, otherwise `nil`
+    static func word(
+        from notification: Notification,
+        words: WordsViewModel
+    ) -> Word? {
+        let wordId = notification.userInfo?[wordIdKey] as? String
+        return words.words.first { $0.word.id == wordId }?.word
+    }
 
     /// Get the pending `UNNotificationRequest` for `word` or `nil` if it is not pending
     /// - Parameter word: `Word` to remind of
@@ -86,16 +99,25 @@ final class ReminderNotification: ObservableObject {
 
 extension View {
 
-    func onReminderReceived(
+    func onReminderDidReceive(
         words: WordsViewModel,
         perform action: @escaping (Word) -> Void
     ) -> some View {
-        onReceive { notification in
-            let wordIdKey = ReminderNotification.wordIdKey
-            let wordId = notification.userInfo?[wordIdKey] as? String
-            let word = words.words.first { $0.word.id == wordId }
+        onReceive(.didReceive) { notification in
+            let word = ReminderNotification.word(from: notification, words: words)
             guard let word else { return }
-            action(word.word)
+            action(word)
+        }
+    }
+
+    func onReminderWillPresent(
+        words: WordsViewModel,
+        perform action: @escaping (Word) -> Void
+    ) -> some View {
+        onReceive(.willPresent) { notification in
+            let word = ReminderNotification.word(from: notification, words: words)
+            guard let word else { return }
+            action(word)
         }
     }
 }

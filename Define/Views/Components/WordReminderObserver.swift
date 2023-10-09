@@ -46,7 +46,7 @@ extension View {
         task {
             await observer.updateReminder(word: word)
         }
-        .onReminderReceived(words: words) { _ in
+        .onReminderWillPresent(words: words) { _ in
             observer.updateReminderAsync(word: word)
         }
     }

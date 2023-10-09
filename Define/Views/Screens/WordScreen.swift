@@ -50,7 +50,7 @@ struct WordScreen: View, WordReminderObserver {
         .toolbar {
             if isWordSaved {
                 Button(action: {
-                    onReminder()
+                    onReminderTapped()
                 }, label: {
                     Image(systemName: isReminderScheduled ? "checkmark" : "clock")
                 })
@@ -117,7 +117,7 @@ struct WordScreen: View, WordReminderObserver {
     }
 
     /// Handle reminder button tap
-    private func onReminder() {
+    private func onReminderTapped() {
         if isReminderScheduled {
             isPresentingReminderAlert = true
         } else {
