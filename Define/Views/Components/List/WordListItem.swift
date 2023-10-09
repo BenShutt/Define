@@ -35,8 +35,7 @@ struct WordListItem: View {
 
                 if let nMore = word.nMore {
                     Text(nMore)
-                        .textStyle(.body)
-                        .foregroundColor(.appBlue)
+                        .caption(textColor: .appBlue)
                 }
 
                 if !word.partsOfSpeech.isEmpty {

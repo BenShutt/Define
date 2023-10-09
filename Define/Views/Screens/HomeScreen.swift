@@ -70,20 +70,23 @@ private struct WordRow: View {
 
 // MARK: - ListItem
 
-private struct ListItem: View {
+private struct ListItem: View, WordReminderObserver {
 
-    @State private var isScheduled = false
+    @EnvironmentObject var words: WordsViewModel
+    @State var isReminderScheduled = false // Protocol
     var word: SavedWord
 
     var body: some View {
         WordListItem(
             word: word.word,
             caption: word.addedSince,
-            isScheduled: isScheduled
+            isScheduled: isReminderScheduled
         )
-        .task {
-            isScheduled = await ReminderNotification.isScheduled(word: word.word)
-        }
+        .observeWordReminder(
+            observer: self,
+            word: word.word,
+            words: words
+        )
     }
 }
 

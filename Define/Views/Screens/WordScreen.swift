@@ -9,7 +9,7 @@ import SwiftUI
 import DictionaryAPI
 
 /// `View` to input a word to search for definitions
-struct WordScreen: View {
+struct WordScreen: View, WordReminderObserver {
 
     /// `NavigationViewModel`
     @EnvironmentObject var navigation: NavigationViewModel
@@ -18,7 +18,7 @@ struct WordScreen: View {
     @EnvironmentObject var words: WordsViewModel
 
     /// Is the notification request reminding the user about this word pending (due in the future)
-    @State private var isReminderPending = false
+    @State var isReminderScheduled = false // Protocol
 
     /// Is presenting alert to delete word
     @State private var isPresentingDeleteWordAlert = false
@@ -52,7 +52,7 @@ struct WordScreen: View {
                 Button(action: {
                     onReminder()
                 }, label: {
-                    Image(systemName: isReminderPending ? "checkmark" : "clock")
+                    Image(systemName: isReminderScheduled ? "checkmark" : "clock")
                 })
 
                 Button(action: {
@@ -82,9 +82,7 @@ struct WordScreen: View {
             actions: {
                 Button(role: .destructive) {
                     ReminderNotification.removePendingRequest(word: word)
-                    Task {
-                        await updateReminder()
-                    }
+                    updateReminderAsync(word: word)
                 } label: {
                     Text("delete")
                 }
@@ -99,9 +97,11 @@ struct WordScreen: View {
                 Text("word_reminder_delete_subtitle \(word.title)")
             }
         )
-        .task {
-            await updateReminder()
-        }
+        .observeWordReminder(
+            observer: self,
+            word: word,
+            words: words
+        )
     }
 
     /// Save `word`
@@ -118,19 +118,12 @@ struct WordScreen: View {
 
     /// Handle reminder button tap
     private func onReminder() {
-        if isReminderPending {
+        if isReminderScheduled {
             isPresentingReminderAlert = true
         } else {
             ReminderNotification.scheduleRequest(word: word)
-            Task {
-                await updateReminder()
-            }
+            updateReminderAsync(word: word)
         }
-    }
-
-    /// Update the reminder UI
-    private func updateReminder() async {
-        isReminderPending = await ReminderNotification.isScheduled(word: word)
     }
 }
 

@@ -91,9 +91,10 @@ extension View {
     }
 
     /// Standard `.caption` implementation
-    func caption() -> some View {
+    /// - Parameter textColor: Text color, defaults to `.appGray`
+    func caption(textColor: Color = .appGray) -> some View {
         textStyle(.caption)
-            .foregroundColor(.appGray)
+            .foregroundColor(textColor)
             .italic()
     }
 }

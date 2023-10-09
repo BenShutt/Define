@@ -83,6 +83,7 @@
 		B8A1235D28E97FB000ACEC45 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A1235C28E97FB000ACEC45 /* CustomFont.swift */; };
 		B8AD58812AD45F070054403E /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = B8AD58802AD45F070054403E /* SwiftUIIntrospect */; };
 		B8AD58832AD471350054403E /* InformationSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AD58822AD471350054403E /* InformationSheet.swift */; };
+		B8AD58852AD47FC00054403E /* WordReminderObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AD58842AD47FC00054403E /* WordReminderObserver.swift */; };
 		B8B563E728EFFEC3004B80F0 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B563E628EFFEC3004B80F0 /* View+Extensions.swift */; };
 		B8B563E928F00096004B80F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8B563E828F00096004B80F0 /* LaunchScreen.storyboard */; };
 		B8B9B9D628EC5C54006FCA76 /* SearchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9B9D528EC5C54006FCA76 /* SearchHeaderView.swift */; };
@@ -211,6 +212,7 @@
 		B8A1235C28E97FB000ACEC45 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
 		B8A1235E28E9829B00ACEC45 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8AD58822AD471350054403E /* InformationSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationSheet.swift; sourceTree = "<group>"; };
+		B8AD58842AD47FC00054403E /* WordReminderObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordReminderObserver.swift; sourceTree = "<group>"; };
 		B8B563E628EFFEC3004B80F0 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		B8B563E828F00096004B80F0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B8B9B9D528EC5C54006FCA76 /* SearchHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHeaderView.swift; sourceTree = "<group>"; };
@@ -251,9 +253,9 @@
 				B8BFDC6C2AC77D04009E1F83 /* AppIcon in Frameworks */,
 				B80E720229FBB67B007CCE71 /* CubeFoundation in Frameworks */,
 				B80E720429FBB67B007CCE71 /* CubeFoundationSwiftUI in Frameworks */,
-				B8AD58812AD45F070054403E /* SwiftUIIntrospect in Frameworks */,
 				B8FF0DC9295F9528004C61B6 /* DictionaryAPI in Frameworks */,
 				B8A1232528E971EC00ACEC45 /* Lottie in Frameworks */,
+				B8AD58812AD45F070054403E /* SwiftUIIntrospect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,10 +528,10 @@
 			isa = PBXGroup;
 			children = (
 				B8DAF91B2AC332ED00514808 /* PushNotifications */,
+				B803D5E12AD0922E00E7CF41 /* Localization.swift */,
 				B8FF0DD029609DDF004C61B6 /* Migrations.swift */,
 				B8FF0DD429609EF3004C61B6 /* UserDefaultKey.swift */,
 				B80E721729FD5306007CCE71 /* WordColor.swift */,
-				B803D5E12AD0922E00E7CF41 /* Localization.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -587,6 +589,7 @@
 				B813BFFB28EB7ACA000C766C /* Icon */,
 				B879E9EA28F0C7110094AA24 /* List */,
 				B80E721929FD9546007CCE71 /* ScrollView */,
+				B8AD58822AD471350054403E /* InformationSheet.swift */,
 				B8D2A74128DF3A250096A020 /* InputTextField.swift */,
 				B8E49C0828DF917E00F9CAC4 /* LoadingView.swift */,
 				B8A1232128E9714600ACEC45 /* LottieView.swift */,
@@ -596,7 +599,7 @@
 				B8BBA16128E8EDF100222116 /* StyledButton.swift */,
 				B879E9E828F0C5190094AA24 /* TagView.swift */,
 				B801A3DA2986D41400FAD316 /* WordCategoryView.swift */,
-				B8AD58822AD471350054403E /* InformationSheet.swift */,
+				B8AD58842AD47FC00054403E /* WordReminderObserver.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -824,7 +827,6 @@
 				B8E49C0B28DF985500F9CAC4 /* CGFloat+Values.swift in Sources */,
 				B891F8E42950FC4300A53582 /* Chevron.swift in Sources */,
 				B891F8E22950FB6600A53582 /* ChevronView.swift in Sources */,
-				B8AD58832AD471350054403E /* InformationSheet.swift in Sources */,
 				B8D2A73E28DEEFE70096A020 /* Color+Values.swift in Sources */,
 				B84AD60C28FB01AF00C2D5AE /* ContentView.swift in Sources */,
 				B813BFFF28EB7BE6000C766C /* CrossIconView.swift in Sources */,
@@ -842,10 +844,12 @@
 				B813C00128EB7DB9000C766C /* IconView.swift in Sources */,
 				B80E721F29FDA849007CCE71 /* IdentifiedElement.swift in Sources */,
 				B88491A629620353009F6469 /* IndexElement.swift in Sources */,
+				B8AD58832AD471350054403E /* InformationSheet.swift in Sources */,
 				B8D2A74228DF3A250096A020 /* InputTextField.swift in Sources */,
 				B8C25F9C294F7AAF001C8847 /* KeyboardToolbar.swift in Sources */,
 				B80E720629FBB972007CCE71 /* LinearGradient+Gradients.swift in Sources */,
 				B8E49C0928DF917E00F9CAC4 /* LoadingView.swift in Sources */,
+				B803D5E22AD0922E00E7CF41 /* Localization.swift in Sources */,
 				B8A1232728E971FD00ACEC45 /* LottieFile.swift in Sources */,
 				B8A1232228E9714600ACEC45 /* LottieView.swift in Sources */,
 				B80E721B29FD9578007CCE71 /* MarginedList.swift in Sources */,
@@ -880,11 +884,11 @@
 				B8B563E728EFFEC3004B80F0 /* View+Extensions.swift in Sources */,
 				B8E762B42A95F2E6006E168E /* WelcomeScreen.swift in Sources */,
 				B894FA1C28FC69FA00BC0BFA /* Word+Preview.swift in Sources */,
-				B803D5E22AD0922E00E7CF41 /* Localization.swift in Sources */,
 				B81826712AC5CA2700C6CCC7 /* Word+View.swift in Sources */,
 				B801A3DB2986D41400FAD316 /* WordCategoryView.swift in Sources */,
 				B80E721829FD5306007CCE71 /* WordColor.swift in Sources */,
 				B879E9EE28F0C7ED0094AA24 /* WordListItem.swift in Sources */,
+				B8AD58852AD47FC00054403E /* WordReminderObserver.swift in Sources */,
 				B84AD60A28FAFC9E00C2D5AE /* WordScreen.swift in Sources */,
 				B889DEC12957AEF60020E9C9 /* WordsViewModel.swift in Sources */,
 				B8A1235A28E97EF300ACEC45 /* WorkSans.swift in Sources */,
