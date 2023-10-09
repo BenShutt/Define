@@ -17,8 +17,11 @@ struct WordListItem: View {
     /// Caption text
     var caption: String?
 
+    /// Is there a reminder PN scheduled for this word
+    var isScheduled = false
+
     var body: some View {
-        HStack(spacing: .large) {
+        HStack(spacing: .medium) {
             VStack(alignment: .leading, spacing: .small) {
                 Text(verbatim: word.title)
                     .h2()
@@ -51,6 +54,11 @@ struct WordListItem: View {
 
             ChevronView()
         }
+        .overlay(alignment: .topTrailing, content: {
+            if isScheduled {
+                ReminderView(word: word)
+            }
+        })
         .padding(.large)
         .background(Color.appWhite)
     }
@@ -73,12 +81,38 @@ private struct PartsOfSpeechView: View {
     }
 }
 
+// MARK: - ReminderView
+
+private struct ReminderView: View {
+
+    var word: Word
+    @State private var isPresentingReminderInformation = false
+
+    var body: some View {
+        Button(action: {
+            isPresentingReminderInformation = true
+        }, label: {
+            Image(systemName: "clock")
+                .font(.system(size: 16, weight: .regular))
+                .foregroundColor(Color.appDarkGray)
+                .padding(16)
+                .offset(x: 16, y: -16)
+        })
+        .sheet(isPresented: $isPresentingReminderInformation) {
+            InformationSheet(
+                title: "reminder_sheet_title",
+                subtitle: "reminder_sheet_subtitle \(word.title)"
+            )
+        }
+    }
+}
+
 // MARK: - PreviewProvider
 
 struct WordListItem_Previews: PreviewProvider {
 
     static var previews: some View {
-        WordListItem(word: .preview)
+        WordListItem(word: .preview, isScheduled: true)
             .screen()
     }
 }

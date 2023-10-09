@@ -45,6 +45,28 @@
         }
       }
     },
+    "reminder_sheet_subtitle %@" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You are due to be reminded about the word '%@' via push notification."
+          }
+        }
+      }
+    },
+    "reminder_sheet_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reminder Notification"
+          }
+        }
+      }
+    },
     "search_api_failure" : {
       "extractionState" : "manual",
       "localizations" : {
