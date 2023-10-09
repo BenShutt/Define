@@ -65,7 +65,7 @@ final class ReminderNotification: ObservableObject {
             request.identifier == notificationId
         }
     }
-    
+
     /// Is there a pending notification request for the given `word`
     /// - Parameter word: `Word`
     /// - Returns: `Bool`
