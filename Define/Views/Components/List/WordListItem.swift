@@ -53,11 +53,11 @@ struct WordListItem: View {
 
             ChevronView()
         }
-        .overlay(alignment: .topTrailing, content: {
+        .overlay(alignment: .topTrailing) {
             if isScheduled {
                 ReminderView(word: word)
             }
-        })
+        }
         .padding(.large)
         .background(Color.appWhite)
     }
