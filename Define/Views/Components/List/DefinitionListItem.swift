@@ -11,21 +11,40 @@ import DictionaryAPI
 /// Draw a definition with an example
 struct DefinitionListItem: View {
 
-    /// Definition of a word
+    @State private var isExpanded = false
     var definition: Word.Meaning.Definition
 
-    var body: some View {
-        VStack(alignment: .leading, spacing: .small) {
-            Text(verbatim: definition.title)
-                .body()
+    private var example: String? {
+        definition.exampleTitle
+    }
 
-            if let example = definition.exampleTitle {
-                Text(verbatim: .DefinitionView.example(example))
-                    .foregroundColor(.appBlue)
-                    .caption()
+    var body: some View {
+        Button(action: {
+            withAnimation {
+                isExpanded.toggle()
             }
-        }
-        .listItem()
+        }, label: {
+            HStack(spacing: .medium) {
+                VStack(alignment: .leading, spacing: .small) {
+                    Text(verbatim: definition.title)
+                        .body()
+
+                    if let example, isExpanded {
+                        Text(verbatim: .DefinitionView.example(example))
+                            .foregroundColor(.appBlue)
+                            .caption()
+                    }
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+
+                if example != nil {
+                    Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
+                        .font(.system(size: 12))
+                        .foregroundColor(Color.appDarkGray)
+                }
+            }
+            .listItem()
+        })
     }
 }
 
@@ -35,7 +54,12 @@ struct DefinitionListItem_Previews: PreviewProvider {
 
     static var previews: some View {
         if let definition = Word.preview.meanings.first?.definitions.first {
-            DefinitionListItem(definition: definition)
+            VStack {
+                DefinitionListItem(definition: definition)
+                Spacer()
+            }
+            .padding()
+            .screen()
         }
     }
 }

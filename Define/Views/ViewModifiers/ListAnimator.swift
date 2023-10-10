@@ -30,7 +30,7 @@ struct ListAnimator: ViewModifier {
             .offset(y: offsetY)
             .task {
                 guard !appearedItems.contains(index) else { return }
-                _ = withAnimation(.linear(duration: 1).delay(delay)) {
+                _ = withAnimation(.linear(duration: 0.5).delay(delay)) {
                     appearedItems.insert(index)
                 }
             }
