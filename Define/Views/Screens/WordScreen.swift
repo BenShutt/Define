@@ -37,8 +37,8 @@ struct WordScreen: View, WordReminderObserver {
     /// Padding for the header view
     private var headerPadding: EdgeInsets {
         var padding: EdgeInsets = .header
-        padding.top = .small
-        padding.bottom = .small
+        padding.top = .extraSmall
+        padding.bottom = .extraSmall
         return padding
     }
 
@@ -159,8 +159,8 @@ private struct WordContentView: View {
                 subtitle: .WordScreen.Empty.subtitle(word: word.title)
             )
         } else if !isWordSaved {
-            MarginedList(word.meanings.identified) { indexElement in
-                MeaningListItem(meaning: indexElement.element)
+            MarginedList(word.meanings.identified, isAnimated: true) { item in
+                MeaningListItem(meaning: item.element)
             }
             .stickyButton(
                 title: .WordScreen.saveButton,
@@ -168,8 +168,8 @@ private struct WordContentView: View {
                 onTap: onSave
             )
         } else {
-            MarginedList(word.meanings.identified) { indexElement in
-                MeaningListItem(meaning: indexElement.element)
+            MarginedList(word.meanings.identified, isAnimated: true) { item in
+                MeaningListItem(meaning: item.element)
             }
         }
     }
@@ -180,8 +180,10 @@ private struct WordContentView: View {
 struct WordScreen_Previews: PreviewProvider {
 
     static var previews: some View {
-        WordScreen(word: .init(word: "hello"))
-            .environmentObject(NavigationViewModel())
-            .environmentObject(WordsViewModel())
+        NavigationStack {
+            WordScreen(word: .init(word: "hello"))
+        }
+        .environmentObject(NavigationViewModel())
+        .environmentObject(WordsViewModel())
     }
 }

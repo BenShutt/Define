@@ -16,15 +16,27 @@ struct MarginedList<Element: Identifiable, Content: View>: View {
     /// Elements to layout
     var elements: [Element]
 
+    /// Should the list be animated
+    var isAnimated: Bool
+
+    /// The items that have appeared
+    @State private var appearedItems: Set<Int> = []
+
     /// Subview content
     @ViewBuilder var content: (Element) -> Content
 
     var body: some View {
         ScrollView {
-            LazyVStack(spacing: 0) {
-                ForEach(elements) { element in
+            VStack(spacing: 0) {
+                ForEach(elements.zipped, id: \.0) { index, element in
                     content(element)
                         .margined(margins)
+                        .if(isAnimated) { content in
+                            content.modifier(ListAnimator(
+                                appearedItems: $appearedItems,
+                                index: index
+                            ))
+                        }
                 }
             }
             .marginedStack(margins)
@@ -62,13 +74,16 @@ extension MarginedList {
     /// Initialize omitting the argument label
     /// - Parameters:
     ///   - elements: `[Element]`
+    ///   - isAnimated: Animate the list items
     ///   - content: Content view
     init(
         _ elements: [Element],
+        isAnimated: Bool = false,
         content: @escaping (Element) -> Content
     ) {
         self.init(
             elements: elements,
+            isAnimated: isAnimated,
             content: content
         )
     }

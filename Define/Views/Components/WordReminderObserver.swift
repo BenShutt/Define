@@ -17,7 +17,7 @@ protocol WordReminderObserver: View {
 }
 
 extension WordReminderObserver {
-    
+
     /// Update the local state in an asynchronous context
     /// - Parameter word: `Word` to check is scheduled
     func updateReminder(word: Word) async {
