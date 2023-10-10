@@ -15,7 +15,7 @@ struct WordListItem: View {
     var word: Word
 
     /// Caption text
-    var caption: String?
+    var caption: LocalizedStringKey?
 
     /// Is there a reminder PN scheduled for this word
     var isScheduled = false
@@ -44,7 +44,7 @@ struct WordListItem: View {
                 }
 
                 if let caption {
-                    Text(verbatim: caption)
+                    Text(caption)
                         .caption()
                         .padding(.top, .small)
                 }

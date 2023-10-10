@@ -5,7 +5,7 @@
 //  Created by Ben Shutt on 26/12/2022.
 //
 
-import Foundation
+import SwiftUI
 import DictionaryAPI
 
 /// A saved word
@@ -45,15 +45,13 @@ struct SavedWord: JSONModel, Identifiable, Comparable {
 extension SavedWord {
 
     /// Formatted string of how long ago the word was saved
-    var addedSince: String {
+    var addedSince: LocalizedStringKey {
         guard Calendar.current.minutes(from: savedDate, to: .now) > 0 else {
-            return .SavedWord.justNow
+            return "added_just_now"
         }
 
         let formatter = DateComponentsFormatter.timeInterval
-        return .SavedWord.addedAgo(formatter.string(
-            from: savedDate,
-            to: .now
-        ) ?? "")
+        let formatted = formatter.string(from: savedDate, to: .now) ?? ""
+        return "added \(formatted)"
     }
 }
