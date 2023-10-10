@@ -84,12 +84,26 @@ private struct PartsOfSpeechView: View {
 
 private struct ReminderView: View {
 
+    struct TimeRemaining: Identifiable {
+        var value: String
+        var id: String { value }
+
+        init(to date: Date) {
+            let formatter = DateComponentsFormatter.timeInterval
+            value = formatter.string(from: .now, to: date) ?? ""
+        }
+    }
+
     var word: Word
-    @State private var isPresentingReminderInformation = false
+    @State private var timeRemaining: TimeRemaining?
 
     var body: some View {
         Button(action: {
-            isPresentingReminderInformation = true
+            Task {
+                let triggerDate = await ReminderNotification.nextTriggerDate(for: word)
+                guard let triggerDate else { return }
+                timeRemaining = TimeRemaining(to: triggerDate)
+            }
         }, label: {
             Image(systemName: "clock")
                 .font(.system(size: 16, weight: .regular))
@@ -97,10 +111,10 @@ private struct ReminderView: View {
                 .padding(16)
                 .offset(x: 16, y: -16)
         })
-        .sheet(isPresented: $isPresentingReminderInformation) {
+        .sheet(item: $timeRemaining) { timeRemaining in
             InformationSheet(
                 title: "reminder_sheet_title",
-                subtitle: "reminder_sheet_subtitle \(word.title)"
+                subtitle: "reminder_sheet_subtitle \(word.title) \(timeRemaining.value)"
             )
         }
     }

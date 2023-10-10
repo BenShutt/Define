@@ -40,7 +40,7 @@ struct InformationSheet: View {
             .multilineTextAlignment(.leading)
             .padding(.margins)
             .frame(maxWidth: .infinity)
-            .padding(.vertical, .vMargin)
+            .padding(.vertical, .small)
         }
         .presentationDetents([.fraction(0.25), .fraction(0.75)])
     }
@@ -53,7 +53,7 @@ struct InformationSheet: View {
         .sheet(isPresented: .constant(true)) {
             InformationSheet(
                 title: "reminder_sheet_title",
-                subtitle: "reminder_sheet_subtitle \("word")"
+                subtitle: "reminder_sheet_subtitle \("word") \("1 day")"
             )
         }
 }

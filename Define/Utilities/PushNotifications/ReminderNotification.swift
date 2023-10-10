@@ -16,7 +16,7 @@ final class ReminderNotification: ObservableObject {
     static let remindAfterDays = 3
 
     /// The user info key for the word
-    static let wordIdKey = "\(ReminderNotification.self).wordId"
+    static let wordIdKey = "\(ReminderNotification.self).word.id"
 
     /// Identifier of the push notification request
     /// - Parameter word: `Word` that is scheduled
@@ -71,7 +71,7 @@ final class ReminderNotification: ObservableObject {
     /// Get the pending `UNNotificationRequest` for `word` or `nil` if it is not pending
     /// - Parameter word: `Word` to remind of
     /// - Returns: The notification request
-    private static func pendingRequest(word: Word) async -> UNNotificationRequest? {
+    static func pendingRequest(word: Word) async -> UNNotificationRequest? {
         let notificationId = notificationId(for: word)
         let center = UNUserNotificationCenter.current()
         return await center.pendingNotificationRequests().first { request in
@@ -79,11 +79,14 @@ final class ReminderNotification: ObservableObject {
         }
     }
 
-    /// Is there a pending notification request for the given `word`
+    /// Get the next trigger date for the given `word`
     /// - Parameter word: `Word`
-    /// - Returns: `Bool`
-    static func isScheduled(word: Word) async -> Bool {
-        await pendingRequest(word: word) != nil
+    /// - Returns: `Date`
+    static func nextTriggerDate(for word: Word) async -> Date? {
+        let pendingRequest = await pendingRequest(word: word)
+        guard let trigger = pendingRequest?.trigger else { return nil }
+        guard let calendarTrigger = trigger as? UNCalendarNotificationTrigger else { return nil }
+        return calendarTrigger.nextTriggerDate()
     }
 
     /// Remove the request for `word`

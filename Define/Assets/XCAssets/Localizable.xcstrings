@@ -67,13 +67,12 @@
         }
       }
     },
-    "reminder_sheet_subtitle %@" : {
-      "extractionState" : "manual",
+    "reminder_sheet_subtitle %@ %@" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "You are due to be reminded about the word '%@' via push notification."
+            "value" : "You are due to be reminded about the word '%1$@' via push notification in %2$@."
           }
         }
       }
