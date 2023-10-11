@@ -13,7 +13,7 @@ struct ListAnimator: ViewModifier {
     var index: Int
 
     private var delay: TimeInterval {
-        TimeInterval(index) * 0.25
+        TimeInterval(index) * 0.15
     }
 
     private var opacity: CGFloat {
@@ -21,7 +21,7 @@ struct ListAnimator: ViewModifier {
     }
 
     private var offsetY: CGFloat {
-        appearedItems.contains(index) ? 0 : -20
+        appearedItems.contains(index) ? 0 : -30
     }
 
     func body(content: Content) -> some View {
@@ -30,7 +30,7 @@ struct ListAnimator: ViewModifier {
             .offset(y: offsetY)
             .task {
                 guard !appearedItems.contains(index) else { return }
-                _ = withAnimation(.linear(duration: 0.5).delay(delay)) {
+                _ = withAnimation(.linear(duration: 0.25).delay(delay)) {
                     appearedItems.insert(index)
                 }
             }
@@ -58,7 +58,7 @@ private struct PreviewView: View {
             VStack(spacing: 0) {
                 ForEach(colors.zipped, id: \.0) { index, color in
                     color
-                        .frame(height: 100)
+                        .frame(height: 200)
                         .frame(maxWidth: .infinity)
                         .clipShape(RoundedRectangle(cornerRadius: 5))
                         .compositingGroup()
