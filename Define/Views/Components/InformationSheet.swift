@@ -52,7 +52,7 @@ struct InformationSheet: View {
     Color.appWhite
         .sheet(isPresented: .constant(true)) {
             InformationSheet(
-                title: "reminder_sheet_title",
+                title: "reminder_sheet_title \("word")",
                 subtitle: "reminder_sheet_subtitle \("word") \("1 day")"
             )
         }

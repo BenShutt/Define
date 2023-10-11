@@ -77,13 +77,13 @@
         }
       }
     },
-    "reminder_sheet_title" : {
+    "reminder_sheet_title %@" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Reminder Notification"
+            "value" : "%@ Reminder"
           }
         }
       }

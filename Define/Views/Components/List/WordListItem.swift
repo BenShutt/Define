@@ -113,7 +113,7 @@ private struct ReminderView: View {
         })
         .sheet(item: $timeRemaining) { timeRemaining in
             InformationSheet(
-                title: "reminder_sheet_title",
+                title: "reminder_sheet_title \(word.title)",
                 subtitle: "reminder_sheet_subtitle \(word.title) \(timeRemaining.value)"
             )
         }
