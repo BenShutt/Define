@@ -8,9 +8,10 @@
 
 import Foundation
 
-// TODO: Could be a @propertyWrapper. Verbosity comes from optional and array types.
-
 /// A model that is validated
+///
+/// # Enhancement
+/// Could be a @propertyWrapper. Verbosity comes from optional and array types.
 public protocol Validated {
 
     /// Validate the model, throwing on invalid

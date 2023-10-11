@@ -83,7 +83,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ Reminder"
+            "value" : "'%@' Reminder"
           }
         }
       }

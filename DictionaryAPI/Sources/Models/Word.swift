@@ -18,20 +18,6 @@ public struct Word: JSONModel, Validated {
     }
 }
 
-// MARK: - Word.Phonetic
-
-public extension Word {
-
-    struct Phonetic: JSONModel, Validated {
-
-        public var text: String?
-
-        public mutating func validate() throws {
-            try text?.validate()
-        }
-    }
-}
-
 // MARK: - Word.Meaning
 
 public extension Word {
