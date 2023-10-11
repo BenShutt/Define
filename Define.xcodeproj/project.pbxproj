@@ -22,7 +22,6 @@
 		B80E720A29FBEE57007CCE71 /* StickyTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80E720929FBEE57007CCE71 /* StickyTop.swift */; };
 		B80E720C29FBEF34007CCE71 /* StickyHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80E720B29FBEF34007CCE71 /* StickyHeader.swift */; };
 		B80E721429FC09B8007CCE71 /* TextHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80E721329FC09B8007CCE71 /* TextHeaderView.swift */; };
-		B80E721829FD5306007CCE71 /* WordColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80E721729FD5306007CCE71 /* WordColor.swift */; };
 		B80E721B29FD9578007CCE71 /* MarginedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80E721A29FD9578007CCE71 /* MarginedList.swift */; };
 		B80E721F29FDA849007CCE71 /* IdentifiedElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80E721E29FDA849007CCE71 /* IdentifiedElement.swift */; };
 		B80E722229FDAD60007CCE71 /* ShapeBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80E722129FDAD60007CCE71 /* ShapeBorder.swift */; };
@@ -153,7 +152,6 @@
 		B80E720929FBEE57007CCE71 /* StickyTop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyTop.swift; sourceTree = "<group>"; };
 		B80E720B29FBEF34007CCE71 /* StickyHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeader.swift; sourceTree = "<group>"; };
 		B80E721329FC09B8007CCE71 /* TextHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextHeaderView.swift; sourceTree = "<group>"; };
-		B80E721729FD5306007CCE71 /* WordColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordColor.swift; sourceTree = "<group>"; };
 		B80E721A29FD9578007CCE71 /* MarginedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarginedList.swift; sourceTree = "<group>"; };
 		B80E721E29FDA849007CCE71 /* IdentifiedElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifiedElement.swift; sourceTree = "<group>"; };
 		B80E722129FDAD60007CCE71 /* ShapeBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeBorder.swift; sourceTree = "<group>"; };
@@ -534,7 +532,6 @@
 				B803D5E12AD0922E00E7CF41 /* Localization.swift */,
 				B8FF0DD029609DDF004C61B6 /* Migrations.swift */,
 				B8FF0DD429609EF3004C61B6 /* UserDefaultKey.swift */,
-				B80E721729FD5306007CCE71 /* WordColor.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -890,7 +887,6 @@
 				B894FA1C28FC69FA00BC0BFA /* Word+Preview.swift in Sources */,
 				B81826712AC5CA2700C6CCC7 /* Word+View.swift in Sources */,
 				B801A3DB2986D41400FAD316 /* WordCategoryView.swift in Sources */,
-				B80E721829FD5306007CCE71 /* WordColor.swift in Sources */,
 				B879E9EE28F0C7ED0094AA24 /* WordListItem.swift in Sources */,
 				B8AD58852AD47FC00054403E /* WordReminderObserver.swift in Sources */,
 				B84AD60A28FAFC9E00C2D5AE /* WordScreen.swift in Sources */,
