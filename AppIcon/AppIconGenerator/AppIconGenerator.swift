@@ -40,7 +40,7 @@ struct AppIconGenerator {
             width: size.width / scaleFactor,
             height: size.height / scaleFactor
         )
-        let nsImage = try nsImage ?! AppIconGeneratorError.nsImage
+        let nsImage = try renderer.nsImage ?! AppIconGeneratorError.nsImage
         try nsImage.resize(to: size).writePNG(to: url)
     }
 
