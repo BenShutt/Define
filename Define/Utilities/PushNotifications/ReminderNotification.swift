@@ -29,7 +29,7 @@ final class ReminderNotification: ObservableObject {
     /// - Parameter word: The word to remind the user about
     static func scheduleRequest(word: Word) {
         let content = UNMutableNotificationContent()
-        content.title = word.title
+        content.title = word.notificationTitle.value // TODO: Fix localization
         if let subtitle = word.notificationSubtitle {
             content.body = subtitle.value
         }

@@ -11,10 +11,10 @@ import SwiftUI
 struct StickyHeader: ViewModifier {
 
     /// Text for the title label
-    var title: String
+    var title: LocalizedStringKey
 
     /// Optional text for the subtitle label
-    var subtitle: String?
+    var subtitle: LocalizedStringKey?
 
     /// Amount of padding
     var padding: EdgeInsets
@@ -37,8 +37,8 @@ struct StickyHeader: ViewModifier {
 extension View {
 
     func stickyHeader(
-        title: String,
-        subtitle: String? = nil,
+        title: LocalizedStringKey,
+        subtitle: LocalizedStringKey? = nil,
         padding: EdgeInsets = EdgeInsets.header
     ) -> some View {
         modifier(StickyHeader(
@@ -49,16 +49,13 @@ extension View {
     }
 }
 
-// MARK: - PreviewProvider
+// MARK: - Preview
 
-struct StickyHeader_Previews: PreviewProvider {
-
-    static var previews: some View {
-        Text(verbatim: "Test")
-            .screen()
-            .stickyHeader(
-                title: "Title text",
-                subtitle: "More Subtitle text"
-            )
-    }
+#Preview {
+    Text("Preview")
+        .screen()
+        .stickyHeader(
+            title: "Preview Title",
+            subtitle: "Preview subtitle"
+        )
 }

@@ -120,12 +120,9 @@ private struct ReminderView: View {
     }
 }
 
-// MARK: - PreviewProvider
+// MARK: - Preview
 
-struct WordListItem_Previews: PreviewProvider {
-
-    static var previews: some View {
-        WordListItem(word: .preview, isScheduled: true)
-            .screen()
-    }
+#Preview {
+    WordListItem(word: .preview, isScheduled: true)
+        .screen()
 }

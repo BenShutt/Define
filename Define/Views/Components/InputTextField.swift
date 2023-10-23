@@ -17,7 +17,7 @@ struct InputTextField: View {
     @Binding var text: String
 
     /// Placeholder text
-    var prompt: String
+    var prompt: LocalizedStringKey
 
     /// Leading image icon
     var image: Image
@@ -75,20 +75,17 @@ struct InputTextField: View {
     }
 }
 
-// MARK: - PreviewProvider
+// MARK: - Preview
 
-struct InputTextField_Previews: PreviewProvider {
-
-    static var previews: some View {
-        VStack {
-            InputTextField(
-                text: .constant("The value"),
-                prompt: "Enter value...",
-                image: Image(systemName: "magnifyingglass"),
-                contentType: .name
-            )
-            Spacer()
-        }
-        .padding(.margins)
+#Preview {
+    VStack {
+        InputTextField(
+            text: .constant("The value"),
+            prompt: "Enter value...",
+            image: Image(systemName: "magnifyingglass"),
+            contentType: .name
+        )
+        Spacer()
     }
+    .padding(.margins)
 }

@@ -17,7 +17,7 @@ struct StyledButton: View {
     private let foregroundColor: Color = .appDarkGray
 
     /// Button title text
-    var title: String
+    var title: LocalizedStringKey
 
     /// SF Symbol name
     var systemName: String
@@ -32,7 +32,7 @@ struct StyledButton: View {
                     .renderingMode(.template)
                     .font(.system(size: Self.iconSize, weight: .bold))
 
-                Text(verbatim: title)
+                Text(title)
                     .textStyle(.button)
                     .foregroundColor(foregroundColor)
             }
@@ -47,11 +47,12 @@ struct StyledButton: View {
     }
 }
 
-// MARK: - PreviewProvider
+// MARK: - Preview
 
-struct StyledButton_Previews: PreviewProvider {
-
-    static var previews: some View {
-        StyledButton(title: "TAP ME!", systemName: "plus", onTap: {})
-    }
+#Preview {
+    StyledButton(
+        title: "PREVIEW BUTTON",
+        systemName: "plus",
+        onTap: {}
+    )
 }

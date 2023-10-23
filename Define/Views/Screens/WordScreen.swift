@@ -79,17 +79,17 @@ struct WordScreen: View, WordReminderObserver {
             }
         }
         .alert(
-            Text(verbatim: .WordScreen.DeleteAlert.title),
+            Text("word_delete_title"),
             isPresented: $isPresentingDeleteWordAlert,
             actions: {
                 Button(role: .destructive) {
                     deleteWord()
                 } label: {
-                    Text(verbatim: .WordScreen.DeleteAlert.delete)
+                    Text("word_delete_button")
                 }
             },
             message: {
-                Text(verbatim: .WordScreen.DeleteAlert.subtitle(word: word.title))
+                Text("word_delete_subtitle \(word.title)")
             }
         )
         .alert(
@@ -155,15 +155,15 @@ private struct WordContentView: View {
         if word.meanings.isEmpty {
             SearchEmptyView(
                 lottie: .searchNoResults,
-                title: .WordScreen.Empty.title,
-                subtitle: .WordScreen.Empty.subtitle(word: word.title)
+                title: "word_empty_title",
+                subtitle: "word_empty_subtitle \(word.title)"
             )
         } else if !isWordSaved {
             MarginedList(word.meanings.identified, isAnimated: true) { item in
                 MeaningListItem(meaning: item.element)
             }
             .stickyButton(
-                title: .WordScreen.saveButton,
+                title: "word_save_button",
                 systemName: "plus",
                 onTap: onSave
             )
@@ -175,15 +175,12 @@ private struct WordContentView: View {
     }
 }
 
-// MARK: - PreviewProvider
+// MARK: - Preview
 
-struct WordScreen_Previews: PreviewProvider {
-
-    static var previews: some View {
-        NavigationStack {
-            WordScreen(word: .init(word: "hello"))
-        }
-        .environmentObject(NavigationViewModel())
-        .environmentObject(WordsViewModel())
+#Preview {
+    NavigationStack {
+        WordScreen(word: .init(word: "hello"))
     }
+    .environmentObject(NavigationViewModel())
+    .environmentObject(WordsViewModel())
 }

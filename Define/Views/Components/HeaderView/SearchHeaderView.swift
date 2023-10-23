@@ -30,10 +30,11 @@ struct SearchHeaderView: View {
     var body: some View {
         HeaderView(spacing: 0, padding: padding) {
             if !isTextInputFocused {
-                Text(verbatim: .SearchHeaderView.title)
+                Text("search_header_title")
                     .h1()
 
-                Text(.init(.SearchHeaderView.subtitle))
+                // TODO: Markdown
+                Text("search_header_subtitle")
                     .body()
                     .padding(.top, .medium)
                     .padding(.bottom, .extraLarge)
@@ -41,7 +42,7 @@ struct SearchHeaderView: View {
 
             InputTextField(
                 text: $searchText,
-                prompt: .SearchHeaderView.prompt,
+                prompt: "search_header_prompt",
                 image: Image(systemName: "magnifyingglass"),
                 onFocusChanged: { isFocused in
                     withAnimation(.linear(duration: 0.1)) {
@@ -53,14 +54,11 @@ struct SearchHeaderView: View {
     }
 }
 
-// MARK: - PreviewProvider
+// MARK: - Preview
 
-struct SearchHeaderView_Previews: PreviewProvider {
-
-    static var previews: some View {
-        VStack {
-            SearchHeaderView(searchText: .constant("Some search"))
-            Spacer()
-        }
+#Preview {
+    VStack {
+        SearchHeaderView(searchText: .constant("Some search"))
+        Spacer()
     }
 }

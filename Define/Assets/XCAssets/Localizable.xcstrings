@@ -34,6 +34,28 @@
         }
       }
     },
+    "continue_button" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CONTINUE"
+          }
+        }
+      }
+    },
+    "definition_example %@" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Example: %@"
+          }
+        }
+      }
+    },
     "delete" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -45,13 +67,46 @@
         }
       }
     },
-    "notification_reminder_title %@" : {
+    "dismiss" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "🕔 Word Reminder: %@"
+            "value" : "Dismiss"
+          }
+        }
+      }
+    },
+    "home_button" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SEARCH FOR WORD"
+          }
+        }
+      }
+    },
+    "home_subtitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search for a new word, or revisit what you have previously saved."
+          }
+        }
+      }
+    },
+    "home_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your Words"
           }
         }
       }
@@ -63,6 +118,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Found in the device dictionary"
+          }
+        }
+      }
+    },
+    "reminder_push_title %@" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🕔 Reminder: %@"
           }
         }
       }
@@ -95,6 +161,171 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "No results found in the online dictionary"
+          }
+        }
+      }
+    },
+    "search_empty_subtitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter a word into the search field to look up its definition"
+          }
+        }
+      }
+    },
+    "search_empty_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start Your Search"
+          }
+        }
+      }
+    },
+    "search_header_prompt" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter a word..."
+          }
+        }
+      }
+    },
+    "search_header_subtitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Definitions are provided by the [Free Dictionary API](https://dictionaryapi.dev/)."
+          }
+        }
+      }
+    },
+    "search_header_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search Word"
+          }
+        }
+      }
+    },
+    "search_no_results_subtitle %@" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No definitions found for: '%@'"
+          }
+        }
+      }
+    },
+    "search_no_results_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Results"
+          }
+        }
+      }
+    },
+    "search_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search"
+          }
+        }
+      }
+    },
+    "welcome_subtitle %@" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ strives to be as simple as possible to help you remember new words and improve your vocabulary. Just search and save for later. Hope it helps!"
+          }
+        }
+      }
+    },
+    "welcome_title %@" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welcome to %@ 👋"
+          }
+        }
+      }
+    },
+    "word_delete_button" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete"
+          }
+        }
+      }
+    },
+    "word_delete_subtitle %@" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are you sure you want to delete the word: '%@'"
+          }
+        }
+      }
+    },
+    "word_delete_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete Word"
+          }
+        }
+      }
+    },
+    "word_empty_subtitle %@" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No definitions were found for: '%@'"
+          }
+        }
+      }
+    },
+    "word_empty_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Definitions"
           }
         }
       }
@@ -140,6 +371,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Delete Reminder"
+          }
+        }
+      }
+    },
+    "word_save_button" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAVE WORD"
           }
         }
       }

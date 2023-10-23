@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ReferenceLibraryCard: View {
 
-    var word: String
+    var term: String
 
     private var shape: some InsettableShape {
         RoundedRectangle(cornerRadius: .cornerRadius)
@@ -21,7 +21,7 @@ struct ReferenceLibraryCard: View {
                 .font(.system(size: 40, weight: .bold))
 
             VStack(alignment: .leading, spacing: .small) {
-                Text(verbatim: word)
+                Text(verbatim: term)
                     .foregroundStyle(Color.appWhite)
                     .h3()
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -52,5 +52,5 @@ struct ReferenceLibraryCard: View {
 // MARK: - Preview
 
 #Preview {
-    ReferenceLibraryCard(word: "Hey")
+    ReferenceLibraryCard(term: "Hey")
 }

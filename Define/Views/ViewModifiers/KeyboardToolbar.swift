@@ -24,7 +24,7 @@ struct KeyboardToolbar: ViewModifier {
         content.toolbar {
             ToolbarItemGroup(placement: .keyboard) {
                 Spacer()
-                Button(String.Misc.dismiss) {
+                Button("dismiss") {
                     onDismiss()
                 }
             }

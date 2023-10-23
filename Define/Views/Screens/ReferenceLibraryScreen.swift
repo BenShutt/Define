@@ -16,7 +16,7 @@ struct ReferenceLibraryScreen: View {
         ReferenceLibraryView(term: term)
             .screen()
             .stickyButton(
-                title: .WordScreen.saveButton,
+                title: "word_save_button",
                 systemName: "plus"
             ) {
                 onWordSaved()

@@ -99,17 +99,14 @@ extension View {
     }
 }
 
-// MARK: - PreviewProvider
+// MARK: - Preview
 
-struct TextStyle_Previews: PreviewProvider {
-
-    static var previews: some View {
-        VStack(alignment: .leading, spacing: .large) {
-            ForEach(TextStyle.allCases) { textStyle in
-                Text(verbatim: "Text Preview - \(textStyle)")
-                    .textStyle(textStyle)
-                    .foregroundColor(.appDarkGray)
-            }
+#Preview {
+    VStack(alignment: .leading, spacing: .large) {
+        ForEach(TextStyle.allCases) { textStyle in
+            Text(verbatim: textStyle.rawValue.capitalized)
+                .textStyle(textStyle)
+                .foregroundColor(.appDarkGray)
         }
     }
 }

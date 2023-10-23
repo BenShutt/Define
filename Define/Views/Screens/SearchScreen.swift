@@ -36,7 +36,7 @@ struct SearchScreen: View {
                 Button(action: {
                     isPresentingReferenceLibrary = true
                 }, label: {
-                    ReferenceLibraryCard(word: viewModel.search)
+                    ReferenceLibraryCard(term: viewModel.search)
                 })
                 .padding(.horizontal, .hMargin)
                 .padding(.top, .large)
@@ -79,8 +79,8 @@ private struct SearchStateView: View {
             SearchEmptyView(
                 lottie: .searchEmpty,
                 lottieTransform: .init(scaleX: 1.5, y: 1.5),
-                title: .SearchScreen.Empty.title,
-                subtitle: .SearchScreen.Empty.subtitle
+                title: "search_empty_title",
+                subtitle: "search_empty_subtitle"
             )
 
         case .loading:
@@ -90,8 +90,8 @@ private struct SearchStateView: View {
             if !viewModel.inReferenceLibrary {
                 SearchEmptyView(
                     lottie: .searchNoResults,
-                    title: .SearchScreen.NoResults.title,
-                    subtitle: .SearchScreen.NoResults.subtitle(viewModel.search)
+                    title: "search_no_results_title",
+                    subtitle: "search_no_results_subtitle \(viewModel.search)"
                 )
             } else {
                 Text("search_api_failure")

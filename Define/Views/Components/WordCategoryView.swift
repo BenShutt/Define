@@ -43,15 +43,12 @@ struct WordCategoryView: View {
     }
 }
 
-// MARK: - PreviewProvider
+// MARK: - Preview
 
-struct WordCategoryView_Previews: PreviewProvider {
-
-    static var previews: some View {
-        VStack {
-            ForEach(WordCategory.allCases) {
-                WordCategoryView(category: $0.rawValue)
-            }
+#Preview {
+    VStack {
+        ForEach(WordCategory.allCases) {
+            WordCategoryView(category: $0.rawValue)
         }
     }
 }

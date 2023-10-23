@@ -27,11 +27,11 @@ struct HomeScreen: View {
         }
         .screen()
         .stickyHeader(
-            title: .HomeScreen.title,
-            subtitle: .HomeScreen.subtitle
+            title: "home_title",
+            subtitle: "home_subtitle"
         )
         .stickyButton(
-            title: .HomeScreen.addWordButton,
+            title: "home_button",
             systemName: "magnifyingglass"
         ) {
             navigation.push(.search)
@@ -92,13 +92,10 @@ private struct ListItem: View, WordReminderObserver {
     }
 }
 
-// MARK: - PreviewProvider
+// MARK: - Preview
 
-struct HomeScreen_Previews: PreviewProvider {
-
-    static var previews: some View {
-        HomeScreen()
-            .environmentObject(NavigationViewModel())
-            .environmentObject(WordsViewModel())
-    }
+#Preview {
+    HomeScreen()
+        .environmentObject(NavigationViewModel())
+        .environmentObject(WordsViewModel())
 }

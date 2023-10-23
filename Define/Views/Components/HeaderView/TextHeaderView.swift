@@ -11,36 +11,33 @@ import SwiftUI
 struct TextHeaderView: View {
 
     /// Text for the title label
-    var title: String
+    var title: LocalizedStringKey
 
     /// Optional text for the subtitle label
-    var subtitle: String?
+    var subtitle: LocalizedStringKey?
 
     /// Amount of padding
     var padding = EdgeInsets.header
 
     var body: some View {
         HeaderView(spacing: .medium, padding: padding) {
-            Text(verbatim: title)
+            Text(title)
                 .h1()
 
             if let subtitle {
-                Text(verbatim: subtitle)
+                Text(subtitle)
                     .body()
             }
         }
     }
 }
 
-// MARK: - PreviewProvider
+// MARK: - Preview
 
-struct HeaderView_Previews: PreviewProvider {
-
-    static var previews: some View {
-        TextHeaderView(
-            title: .HomeScreen.title,
-            subtitle: .HomeScreen.subtitle
-        )
-        .screen()
-    }
+#Preview {
+    TextHeaderView(
+        title: "Preview Title",
+        subtitle: "Preview subtitle"
+    )
+    .screen()
 }

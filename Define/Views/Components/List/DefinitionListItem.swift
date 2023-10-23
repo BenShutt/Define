@@ -30,7 +30,7 @@ struct DefinitionListItem: View {
                         .body()
 
                     if let example, isExpanded {
-                        Text(verbatim: .DefinitionView.example(example))
+                        Text("definition_example \(example)")
                             .foregroundColor(.appBlue)
                             .caption()
                     }
@@ -48,18 +48,15 @@ struct DefinitionListItem: View {
     }
 }
 
-// MARK: - PreviewProvider
+// MARK: - Preview
 
-struct DefinitionListItem_Previews: PreviewProvider {
-
-    static var previews: some View {
+#Preview {
+    VStack {
         if let definition = Word.preview.meanings.first?.definitions.first {
-            VStack {
-                DefinitionListItem(definition: definition)
-                Spacer()
-            }
-            .padding()
-            .screen()
+            DefinitionListItem(definition: definition)
         }
+        Spacer()
     }
+    .padding()
+    .screen()
 }

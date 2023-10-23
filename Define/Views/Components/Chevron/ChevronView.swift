@@ -22,11 +22,8 @@ struct ChevronView: View {
     }
 }
 
-// MARK: - PreviewProvider
+// MARK: - Preview
 
-struct ChevronView_Previews: PreviewProvider {
-
-    static var previews: some View {
-        ChevronView()
-    }
+#Preview {
+    ChevronView()
 }

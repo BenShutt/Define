@@ -37,15 +37,12 @@ struct MeaningListItem: View {
     }
 }
 
-// MARK: - PreviewProvider
+// MARK: - Preview
 
-struct MeaningListItem_Previews: PreviewProvider {
-
-    static var previews: some View {
-        VStack {
-            if let meaning = Word.preview.meanings.first {
-                MeaningListItem(meaning: meaning)
-            }
+#Preview {
+    VStack {
+        if let meaning = Word.preview.meanings.first {
+            MeaningListItem(meaning: meaning)
         }
     }
 }

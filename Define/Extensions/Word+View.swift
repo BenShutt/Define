@@ -28,6 +28,11 @@ extension Word {
         return "word_more_definitions \(definitions.count - 1)"
     }
 
+    /// Localized notification title
+    var notificationTitle: Localization {
+        "reminder_push_title \(title)"
+    }
+
     /// Localized notification subtitle
     var notificationSubtitle: Localization? {
         guard let definition = definitions.first else { return nil }

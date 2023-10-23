@@ -21,10 +21,10 @@ struct SearchEmptyView: View {
     var lottieTransform: CGAffineTransform = .identity
 
     /// Title text
-    var title: String
+    var title: LocalizedStringKey
 
     /// Subtitle text
-    var subtitle: String
+    var subtitle: LocalizedStringKey
 
     var body: some View {
         VStack(alignment: .center, spacing: 0) {
@@ -35,11 +35,11 @@ struct SearchEmptyView: View {
             )
             .frame(width: 300, height: 100)
 
-            Text(verbatim: title)
+            Text(title)
                 .h1()
                 .padding(.top, .large)
 
-            Text(verbatim: subtitle)
+            Text(subtitle)
                 .body()
                 .padding(.top, .medium)
         }

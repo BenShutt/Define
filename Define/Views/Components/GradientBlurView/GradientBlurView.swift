@@ -21,11 +21,8 @@ struct GradientBlurView: View {
     }
 }
 
-// MARK: - PreviewProvider
+// MARK: - Preview
 
-struct GradientBlurView_Previews: PreviewProvider {
-
-    static var previews: some View {
-        GradientBlurView(color: .appBlue)
-    }
+#Preview {
+    GradientBlurView(color: .appBlue)
 }

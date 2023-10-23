@@ -26,12 +26,12 @@ struct WelcomeScreen: View {
                 )
                 .frame(maxWidth: .infinity)
 
-                Text(verbatim: .WelcomeScreen.title(appName: appName))
+                Text("welcome_title \(appName)")
                     .h1()
                     .padding(.top, 2 * .extraLarge)
                     .padding(.horizontal, .hMargin)
 
-                Text(verbatim: .WelcomeScreen.subtitle(appName: appName))
+                Text("welcome_subtitle \(appName)")
                     .body()
                     .padding(.top, .large)
                     .padding(.horizontal, .hMargin)
@@ -42,7 +42,7 @@ struct WelcomeScreen: View {
         .ignoresSafeArea(.all, edges: .top)
         .screen()
         .stickyButton(
-            title: .Misc.continueButton,
+            title: "continue_button",
             systemName: "arrow.forward"
         ) {
             onContinue()
@@ -110,7 +110,7 @@ private struct CurvedBottom: Shape {
     }
 }
 
-// MARK: - PreviewProvider
+// MARK: - Preview
 
 #Preview {
     WelcomeScreen {}

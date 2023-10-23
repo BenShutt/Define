@@ -21,15 +21,9 @@ struct LoadingView: View {
     }
 }
 
-// MARK: - PreviewProvider
+// MARK: - Preview
 
-struct LoadingView_Previews: PreviewProvider {
-
-    static var previews: some View {
-        ZStack {
-            Color.appWhite
-                .ignoresSafeArea()
-            LoadingView()
-        }
-    }
+#Preview {
+    LoadingView()
+        .screen()
 }

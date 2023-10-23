@@ -11,7 +11,7 @@ import SwiftUI
 struct StickyButton: ViewModifier {
 
     /// Button title text
-    var title: String
+    var title: LocalizedStringKey
 
     /// SF Symbol name
     var systemName: String
@@ -38,7 +38,7 @@ struct StickyButton: ViewModifier {
 extension View {
 
     func stickyButton(
-        title: String,
+        title: LocalizedStringKey,
         systemName: String,
         onTap: @escaping () -> Void
     ) -> some View {
@@ -50,17 +50,14 @@ extension View {
     }
 }
 
-// MARK: - PreviewProvider
+// MARK: - Preview
 
-struct StickyButton_Previews: PreviewProvider {
-
-    static var previews: some View {
-        Text(verbatim: "Test")
-            .screen()
-            .stickyButton(
-                title: "TAP ME!",
-                systemName: "plus",
-                onTap: {}
-            )
-    }
+#Preview {
+    Text("Preview")
+        .screen()
+        .stickyButton(
+            title: "PREVIEW BUTTON",
+            systemName: "plus",
+            onTap: {}
+        )
 }

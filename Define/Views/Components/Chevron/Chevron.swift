@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// TODO: SFSymbol?
+
 /// A chevron shape
 struct Chevron: Shape {
 
@@ -22,18 +24,11 @@ struct Chevron: Shape {
     }
 }
 
-// MARK: - PreviewProvider
+// MARK: - Preview
 
-struct ChevronProvider_Previews: PreviewProvider {
-
-    private static var width: CGFloat = 50
-    private static var height: CGFloat { width * 2.5 }
-    private static var lineWidth: CGFloat { width / 2 }
-
-    static var previews: some View {
-        Chevron()
-            .stroke(style: StrokeStyle(lineWidth: lineWidth, lineCap: .round))
-            .foregroundColor(.red)
-            .frame(width: width, height: height)
-    }
+#Preview {
+    Chevron()
+        .stroke(style: StrokeStyle(lineWidth: 50 / 2, lineCap: .round))
+        .foregroundColor(.red)
+        .frame(width: 50, height: 50 * 2.5)
 }
