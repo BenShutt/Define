@@ -19,7 +19,7 @@ public struct LaunchScreen: View {
                 .ignoresSafeArea()
 
             AppIcon(
-                size: 200,
+                size: 150,
                 color: .appIconBlue,
                 isContainer: true
             )

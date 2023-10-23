@@ -103,9 +103,7 @@ struct WordScreen: View, WordReminderObserver {
                     Text("delete")
                 }
 
-                Button(role: .cancel) {
-                    // Do nothing
-                } label: {
+                Button(role: .cancel) {} label: {
                     Text("cancel")
                 }
             },
