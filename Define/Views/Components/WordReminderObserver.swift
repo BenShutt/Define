@@ -8,6 +8,8 @@
 import SwiftUI
 import DictionaryAPI
 
+// TODO: Perhaps we only need to pass in a @Binding, protocol not needed?
+
 /// A view which should redraw when a reminder PN is received.
 /// The view should also ensure it's UI correctly reflects the pending notification requests.
 protocol WordReminderObserver: View {
