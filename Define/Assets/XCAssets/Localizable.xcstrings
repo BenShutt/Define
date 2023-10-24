@@ -122,13 +122,24 @@
         }
       }
     },
+    "reminder_push_subtitle %@ %d" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ (+%d more)"
+          }
+        }
+      }
+    },
     "reminder_push_title %@" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "🕔 Reminder: %@"
+            "value" : "%@ 🕔"
           }
         }
       }

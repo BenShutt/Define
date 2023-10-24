@@ -22,7 +22,7 @@ struct ContentView: View {
         NavigationStack(path: $navigation.path) {
             RootView()
                 .navigate()
-                .onReminderDidReceive(words: words) { word in // TODO: Handle app opened from PN (local OK?)
+                .onReminderDidReceive(words: words) { word in
                     navigation.push(.word(word))
                 }
         }

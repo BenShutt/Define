@@ -7,24 +7,14 @@
 
 import SwiftUI
 
-protocol LocalizationArgument: LosslessStringConvertible {}
-extension String: LocalizationArgument {} // %@
-extension Int: LocalizationArgument {} // %lld
+// MARK: - Localization
 
 /// Typically we'd use `LocalizedStringKey` , this is used for legacy APIs like
 /// setting the `title` of a `UNMutableNotificationContent`
 struct Localization {
 
     let key: String
-    let arguments: [LocalizationArgument]
-
-    var interpolatedKey: String {
-        var value = key
-        arguments.forEach { argument in
-            value += " \(argument)"
-        }
-        return value
-    }
+    let arguments: [Any]
 
     var value: String {
         NSString.localizedUserNotificationString(
@@ -44,7 +34,7 @@ extension Localization: ExpressibleByStringInterpolation {
     }
 
     init(stringInterpolation: StringInterpolation) {
-        key = stringInterpolation.key.trimmed
+        key = stringInterpolation.key
         arguments = stringInterpolation.arguments
         assert(!key.isEmpty)
     }
@@ -53,7 +43,7 @@ extension Localization: ExpressibleByStringInterpolation {
     struct StringInterpolation: StringInterpolationProtocol {
 
         var key = ""
-        var arguments: [LocalizationArgument] = []
+        var arguments: [Any] = []
 
         init(literalCapacity: Int, interpolationCount: Int) {
             key.reserveCapacity(literalCapacity)
@@ -61,12 +51,16 @@ extension Localization: ExpressibleByStringInterpolation {
         }
 
         mutating func appendLiteral(_ literal: String) {
-            key.append(literal)
+            key.append(literal.trimmed)
         }
 
-        mutating func appendInterpolation<Argument: LocalizationArgument>(
-            _ value: Argument
-        ) {
+        mutating func appendInterpolation(_ value: Int) {
+            key += " %d"
+            arguments.append(value)
+        }
+
+        mutating func appendInterpolation(_ value: String) {
+            key += " %@"
             arguments.append(value)
         }
     }

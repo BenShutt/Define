@@ -8,6 +8,8 @@
 import XCTest
 @testable import Define
 
+// TODO: Run tests on simulator
+
 /// Test `Localization`
 class LocalizationTests: XCTestCase {
 
@@ -16,10 +18,9 @@ class LocalizationTests: XCTestCase {
         let string = "argument"
         let localization: Localization = "my_key \(int) \(string)"
 
-        XCTAssertEqual(localization.key, "my_key")
+        XCTAssertEqual(localization.key, "my_key %lld %@")
         XCTAssertEqual(localization.arguments.count, 2)
         XCTAssertEqual(localization.arguments[0] as? Int, int)
         XCTAssertEqual(localization.arguments[1] as? String, string)
-        XCTAssertEqual(localization.interpolatedKey, "my_key \(int) \(string)")
     }
 }
