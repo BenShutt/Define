@@ -11,11 +11,11 @@ import Combine
 struct ReceiveTimer: ViewModifier {
 
     let timer: Publishers.Autoconnect<Timer.TimerPublisher>
-    var onReceive: () -> Void
+    var onReceive: () async -> Void
 
     init(
         timeInterval: TimeInterval,
-        onReceive: @escaping () -> Void
+        onReceive: @escaping () async -> Void
     ) {
         timer = Timer.publish(every: timeInterval).autoconnect()
         self.onReceive = onReceive
@@ -24,10 +24,12 @@ struct ReceiveTimer: ViewModifier {
     func body(content: Content) -> some View {
         content
             .onReceive(timer) { _ in
-                onReceive()
+                Task {
+                    await onReceive()
+                }
             }
-            .onAppear {
-                onReceive()
+            .task {
+                await onReceive()
             }
     }
 }
@@ -38,7 +40,7 @@ extension View {
 
     func onReceiveTimer(
         timeInterval: TimeInterval = 60,
-        onReceive: @escaping () -> Void
+        onReceive: @escaping () async -> Void
     ) -> some View {
         modifier(ReceiveTimer(
             timeInterval: timeInterval,

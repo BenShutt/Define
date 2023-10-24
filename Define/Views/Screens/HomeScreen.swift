@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-// TODO: Time based UI needs to refresh
-
 /// Screen listing the user's saved definitions
 struct HomeScreen: View {
 

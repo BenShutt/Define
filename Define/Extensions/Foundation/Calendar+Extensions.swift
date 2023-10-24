@@ -29,8 +29,8 @@ extension Calendar {
     /// - Returns: Outputted date
     func addingDays(_ value: Int, to date: Date) -> Date {
         self.date(
-            byAdding: .day,
-            value: value,
+            byAdding: .minute,
+            value: 5,
             to: date
         ) ?? date
     }
