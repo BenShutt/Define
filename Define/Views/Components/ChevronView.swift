@@ -11,14 +11,18 @@ import SwiftUI
 struct ChevronView: View {
 
     var body: some View {
-        Chevron()
-            .stroke(style: StrokeStyle(lineWidth: 4, lineCap: .round))
+        Image(systemName: "chevron.right")
+            .resizable()
+            .scaledToFit()
+            .fontWeight(.black)
             .foregroundColor(Color.appDarkGray)
-            .frame(width: 6, height: 14)
-            .padding(.horizontal, 13)
+            .frame(width: 16, height: 16)
+            .padding(.horizontal, 9)
             .padding(.vertical, 9)
             .background(Color.appLightGray)
             .cornerRadius(.cornerRadius)
+            .compositingGroup()
+            .shadow(color: .appBlack.opacity(0.15), radius: 1)
     }
 }
 
