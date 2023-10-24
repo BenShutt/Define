@@ -20,8 +20,13 @@ struct WordListItem: View {
     /// Is there a reminder PN scheduled for this word
     var isScheduled = false
 
+    /// Are there any parts of speech
+    private var hasCategories: Bool {
+        !word.partsOfSpeech.isEmpty
+    }
+
     var body: some View {
-        HStack(spacing: .medium) {
+        HStack(spacing: .mediumLarge) {
             VStack(alignment: .leading, spacing: .small) {
                 Text(verbatim: word.title)
                     .h2()
@@ -38,15 +43,15 @@ struct WordListItem: View {
                         .caption(textColor: .appBlue)
                 }
 
-                if !word.partsOfSpeech.isEmpty {
+                if hasCategories {
                     PartsOfSpeechView(partsOfSpeech: word.partsOfSpeech)
-                        .padding(.top, .small)
+                        .padding(.top, .medium)
                 }
 
                 if let caption {
                     Text(caption)
                         .caption()
-                        .padding(.top, .small)
+                        .padding(.top, hasCategories ? .small : .medium)
                 }
             }
             .listItem()
@@ -121,6 +126,10 @@ private struct ReminderView: View {
 // MARK: - Preview
 
 #Preview {
-    WordListItem(word: .preview, isScheduled: true)
-        .screen()
+    WordListItem(
+        word: .preview,
+        caption: "Preview caption",
+        isScheduled: true
+    )
+    .screen()
 }
