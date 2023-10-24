@@ -33,7 +33,6 @@ struct SearchHeaderView: View {
                 Text("search_header_title")
                     .h1()
 
-                // TODO: Markdown
                 Text("search_header_subtitle")
                     .body()
                     .padding(.top, .medium)
