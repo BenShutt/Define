@@ -75,17 +75,19 @@ private struct WordRow: View {
 private struct ListItem: View, WordReminderObserver {
 
     @EnvironmentObject var words: WordsViewModel
-    @State private var addedSince: String?
+    @State private var addedSince: LocalizedStringKey?
     @State var isReminderScheduled = false // Protocol
     var word: SavedWord
 
     var body: some View {
         WordListItem(
             word: word.word,
-            caption: word.addedSince,
+            caption: addedSince,
             isScheduled: isReminderScheduled
         )
-        .modifier(TimeRedraw())
+        .modifier(ReceiveTimer {
+            addedSince = word.addedSince
+        })
         .observeWordReminder(
             observer: self,
             word: word.word,
