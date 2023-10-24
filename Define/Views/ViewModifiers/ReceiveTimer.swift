@@ -14,7 +14,7 @@ struct ReceiveTimer: ViewModifier {
     var onReceive: () -> Void
 
     init(
-        timeInterval: TimeInterval = 60,
+        timeInterval: TimeInterval,
         onReceive: @escaping () -> Void
     ) {
         timer = Timer.publish(every: timeInterval).autoconnect()
@@ -32,7 +32,22 @@ struct ReceiveTimer: ViewModifier {
     }
 }
 
-// MARK: - Extensions
+// MARK: - View + Extensions
+
+extension View {
+
+    func onReceiveTimer(
+        timeInterval: TimeInterval = 60,
+        onReceive: @escaping () -> Void
+    ) -> some View {
+        modifier(ReceiveTimer(
+            timeInterval: timeInterval,
+            onReceive: onReceive
+        ))
+    }
+}
+
+// MARK: - Timer + Extensions
 
 private extension Timer {
 

@@ -85,9 +85,9 @@ private struct ListItem: View, WordReminderObserver {
             caption: addedSince,
             isScheduled: isReminderScheduled
         )
-        .modifier(ReceiveTimer {
+        .onReceiveTimer {
             addedSince = word.addedSince
-        })
+        }
         .observeWordReminder(
             observer: self,
             word: word.word,
