@@ -35,7 +35,7 @@ final class ReminderNotification: ObservableObject {
         content.sound = .default
         content.userInfo = UserInfo(identifier: identifier)
 
-        let date = Calendar.current.addingDays(remindAfterDays, to: Date())
+        let date = Calendar.current.adding(.day, value: remindAfterDays, to: Date())
         let dateComponents = Calendar.current.dateTimeComponents(from: date)
 
         let trigger = UNCalendarNotificationTrigger(

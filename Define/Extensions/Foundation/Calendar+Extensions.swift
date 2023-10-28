@@ -9,32 +9,6 @@ import Foundation
 
 extension Calendar {
 
-    /// Get the number of minutes from `from` to `to`
-    /// - Parameters:
-    ///   - from: `Date` from
-    ///   - to: `Date` to
-    /// - Returns: `Int` number of minutes
-    func minutes(from: Date, to: Date) -> Int {
-        dateComponents(
-            [.minute],
-            from: from,
-            to: to
-        ).minute ?? 0
-    }
-
-    /// Add `value` days to `date`
-    /// - Parameters:
-    ///   - value: Amount of days
-    ///   - date: Date to add days to
-    /// - Returns: Outputted date
-    func addingDays(_ value: Int, to date: Date) -> Date {
-        self.date(
-            byAdding: .day,
-            value: value,
-            to: date
-        ) ?? date
-    }
-
     /// Get ISO8601 formatted string date components (not including milliseconds)
     /// - Parameter date: `Date`
     /// - Returns: `DateComponents`
@@ -43,5 +17,30 @@ extension Calendar {
             [.year, .month, .day, .hour, .minute, .second],
             from: date
         )
+    }
+    
+    /// Shorthand to add `value` amount of `component` to `date` and default to `date` on `nil`
+    /// - Parameters:
+    ///   - component: `Calendar.Component`
+    ///   - value: `Int`
+    ///   - date: `Date`
+    /// - Returns: `Date`
+    func adding(
+        _ component: Calendar.Component,
+        value: Int,
+        to date: Date
+    ) -> Date {
+        self.date(
+            byAdding: component,
+            value: value,
+            to: date
+        ) ?? date
+    }
+
+    /// Set time components to midnight (start of day)
+    /// - Parameter date: `Date`
+    /// - Returns: `Date`
+    func startOfDay(of date: Date) -> Date {
+        self.date(bySettingHour: 0, minute: 0, second: 0, of: date) ?? date
     }
 }
