@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-// TODO: First responder (test)
-
 /// `View` to input a word to search for definitions
 struct SearchScreen: View {
 
