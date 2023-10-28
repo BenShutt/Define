@@ -8,8 +8,6 @@
 import XCTest
 @testable import Define
 
-// TODO: Run tests on simulator
-
 /// Test `Localization`
 class LocalizationTests: XCTestCase {
 
