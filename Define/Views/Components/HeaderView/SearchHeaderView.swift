@@ -17,6 +17,7 @@ struct SearchHeaderView: View {
     ///
     /// - Note:
     /// There are two states here to handle both the @FocusState and the animation.
+    /// The @FocusState is on the InputTextField and this is the animation property.
     /// The two should always be equivalent in value
     @State private var isTextInputFocused = false
 

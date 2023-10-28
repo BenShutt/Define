@@ -26,24 +26,20 @@ class AppDelegate: NSObject, UIApplicationDelegate,
         return true
     }
 
-    // MARK: - Push Notifications
+    // MARK: - Remote Notifications
 
     func application(
         _ application: UIApplication,
         didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data
     ) {
-        let apnsToken = deviceToken
-            .map { String(format: "%02.2hhx", $0) }
-            .joined()
-
-        Self.log("APNs token: \(apnsToken)")
+        PushNotificationManager.didRegisterForRemoteNotifications(with: deviceToken)
     }
 
     func application(
         _ application: UIApplication,
         didFailToRegisterForRemoteNotificationsWithError error: Error
     ) {
-        Self.log("\(#function) \(error)")
+        PushNotificationManager.didFailToRegisterForRemoteNotifications(with: error)
     }
 
     // MARK: - UNUserNotificationCenterDelegate

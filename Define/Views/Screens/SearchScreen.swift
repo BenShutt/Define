@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-// TODO: First responder
+// TODO: First responder (test)
 
 /// `View` to input a word to search for definitions
 struct SearchScreen: View {
@@ -24,6 +24,9 @@ struct SearchScreen: View {
     /// Is the reference library been presented
     @State private var isPresentingReferenceLibrary = false
 
+    /// Is the search field focused
+    @FocusState private var isSearchFocused: Bool
+
     /// When true, add padding to the search state UI
     private var statePadding: Bool {
         viewModel.inReferenceLibrary || viewModel.words.isEmpty
@@ -32,6 +35,7 @@ struct SearchScreen: View {
     var body: some View {
         VStack(spacing: 0) {
             SearchHeaderView(searchText: $viewModel.search)
+                .focused($isSearchFocused) // Become first responder
                 .zIndex(1)
 
             if viewModel.inReferenceLibrary {
@@ -65,6 +69,9 @@ struct SearchScreen: View {
                 )
                 navigation.popToRoot()
             }
+        }
+        .onAppear {
+            isSearchFocused = true
         }
     }
 }

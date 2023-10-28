@@ -30,6 +30,20 @@ struct PushNotificationManager: Logger {
         }
     }
 
+    // MARK: - Remote Notifications
+
+    static func didRegisterForRemoteNotifications(with deviceToken: Data) {
+        let apnsToken = deviceToken
+            .map { String(format: "%02.2hhx", $0) }
+            .joined()
+
+        log("APNs token: \(apnsToken)")
+    }
+
+    static func didFailToRegisterForRemoteNotifications(with error: Error) {
+        log("\(#function) \(error)")
+    }
+
     // MARK: - UNNotificationCenter
 
     /// Called on `userNotificationCenter(_:willPresent:)`
