@@ -55,6 +55,11 @@ extension Localization: ExpressibleByStringInterpolation {
         }
 
         mutating func appendInterpolation(_ value: Int) {
+            key += " %lld"
+            arguments.append(value)
+        }
+
+        mutating func appendInterpolation(_ value: Int8) {
             key += " %d"
             arguments.append(value)
         }

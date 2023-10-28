@@ -139,7 +139,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ 🕔"
+            "value" : "🕔 Reminder: %@"
           }
         }
       }

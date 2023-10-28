@@ -93,7 +93,8 @@ private struct ReminderView: View {
     var word: Word
 
     private func updateTimeRemaining() async {
-        let triggerDate = await ReminderNotification.nextTriggerDate(for: word)
+        let identifier = ReminderNotification.identifier(for: word)
+        let triggerDate = await NotificationRequestManager.nextTriggerDate(with: identifier)
         if let triggerDate {
             timeRemaining = TimeRemaining(toDate: triggerDate)
         }
@@ -116,9 +117,7 @@ private struct ReminderView: View {
                 title: "reminder_sheet_title \(word.title)",
                 subtitle: "reminder_sheet_subtitle \(word.title) \(timeRemaining.id)"
             )
-            .onReceiveTimer {
-                await updateTimeRemaining()
-            }
+            // No ReceiveTimer here, causes unexpected expansion of modal
         }
     }
 }

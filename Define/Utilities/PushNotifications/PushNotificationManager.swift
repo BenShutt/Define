@@ -13,7 +13,7 @@ import DictionaryAPI
 typealias UserInfo = [AnyHashable: Any]
 
 /// Manage push notifications
-struct PushNotificationManager {
+struct PushNotificationManager: Logger {
 
     // MARK: - Authorization
 
@@ -23,9 +23,9 @@ struct PushNotificationManager {
         UNUserNotificationCenter.current().requestAuthorization(
             options: options
         ) { granted, error in
-            print("Push notification authorization: \(granted)")
+            log("Push notification authorization: \(granted)")
             if let error {
-                print("Push notification authorization error: \(error)")
+                log("Push notification authorization error: \(error)")
             }
         }
     }
@@ -49,11 +49,10 @@ struct PushNotificationManager {
     /// Called on `userNotificationCenter(_:didReceive:)`
     /// - Parameter response: `UNNotificationResponse`
     static func didReceive(response: UNNotificationResponse) {
-        let userInfo = response.notification.request.content.userInfo
         NotificationCenter.default.post(
             name: .didReceive,
             object: nil,
-            userInfo: userInfo
+            userInfo: response.notification.request.content.userInfo
         )
     }
 }

@@ -37,7 +37,8 @@ extension Word {
     var notificationSubtitle: Localization? {
         guard let definition = definitions.first else { return nil }
         if definitions.count > 1 {
-            return "reminder_push_subtitle \(definition) \(definitions.count - 1)" // TODO: Fix
+            let d = Int8(definitions.count - 1) // TODO: Fix
+            return "reminder_push_subtitle \(definition) \(d)"
         } else {
             return "word_subtitle \(definition)"
         }

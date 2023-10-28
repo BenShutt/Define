@@ -37,6 +37,7 @@
 		B81826712AC5CA2700C6CCC7 /* Word+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81826702AC5CA2700C6CCC7 /* Word+View.swift */; };
 		B84AD60A28FAFC9E00C2D5AE /* WordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84AD60928FAFC9E00C2D5AE /* WordScreen.swift */; };
 		B84AD60C28FB01AF00C2D5AE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84AD60B28FB01AF00C2D5AE /* ContentView.swift */; };
+		B868F23A2AECCC13003765F8 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868F2392AECCC13003765F8 /* Logger.swift */; };
 		B86BA87E2AE79C8B00C638CD /* ReceiveTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86BA87D2AE79C8B00C638CD /* ReceiveTimer.swift */; };
 		B86BA8802AE7AA2600C638CD /* TimeRemaining.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86BA87F2AE7AA2600C638CD /* TimeRemaining.swift */; };
 		B879E9E928F0C5190094AA24 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B879E9E828F0C5190094AA24 /* TagView.swift */; };
@@ -52,6 +53,7 @@
 		B894FA2428FC8D7A00BC0BFA /* StickyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B894FA2328FC8D7A00BC0BFA /* StickyButton.swift */; };
 		B895887429578BFB0041A315 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B895887329578BFB0041A315 /* HomeScreen.swift */; };
 		B8958876295790E30041A315 /* NavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8958875295790E30041A315 /* NavigationViewModel.swift */; };
+		B896B9AD2AEA2EEF0043DA18 /* NotificationRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B896B9AC2AEA2EEF0043DA18 /* NotificationRequestManager.swift */; };
 		B8994CAE2A8EC4C2000BE101 /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8994CAD2A8EC4C2000BE101 /* PushNotificationManager.swift */; };
 		B89F179428E0EBF100A96E35 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89F179328E0EBF100A96E35 /* Screen.swift */; };
 		B89F179D28E0FABE00A96E35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89F179C28E0FABE00A96E35 /* AppDelegate.swift */; };
@@ -167,6 +169,7 @@
 		B81826702AC5CA2700C6CCC7 /* Word+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Word+View.swift"; sourceTree = "<group>"; };
 		B84AD60928FAFC9E00C2D5AE /* WordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordScreen.swift; sourceTree = "<group>"; };
 		B84AD60B28FB01AF00C2D5AE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B868F2392AECCC13003765F8 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		B86BA87D2AE79C8B00C638CD /* ReceiveTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveTimer.swift; sourceTree = "<group>"; };
 		B86BA87F2AE7AA2600C638CD /* TimeRemaining.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRemaining.swift; sourceTree = "<group>"; };
 		B879E9E828F0C5190094AA24 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
@@ -182,6 +185,7 @@
 		B894FA2328FC8D7A00BC0BFA /* StickyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyButton.swift; sourceTree = "<group>"; };
 		B895887329578BFB0041A315 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		B8958875295790E30041A315 /* NavigationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewModel.swift; sourceTree = "<group>"; };
+		B896B9AC2AEA2EEF0043DA18 /* NotificationRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationRequestManager.swift; sourceTree = "<group>"; };
 		B8994CAD2A8EC4C2000BE101 /* PushNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
 		B89F179328E0EBF100A96E35 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		B89F179C28E0FABE00A96E35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -430,6 +434,7 @@
 				B8C25F9B294F7AAF001C8847 /* KeyboardToolbar.swift */,
 				B8E336562AD5BABF00374E4A /* ListAnimator.swift */,
 				B86BA87D2AE79C8B00C638CD /* ReceiveTimer.swift */,
+				B8AD58842AD47FC00054403E /* WordReminderObserver.swift */,
 			);
 			path = ViewModifiers;
 			sourceTree = "<group>";
@@ -521,9 +526,10 @@
 			children = (
 				B8DAF91B2AC332ED00514808 /* PushNotifications */,
 				B803D5E12AD0922E00E7CF41 /* Localization.swift */,
+				B868F2392AECCC13003765F8 /* Logger.swift */,
 				B8FF0DD029609DDF004C61B6 /* Migrations.swift */,
-				B8FF0DD429609EF3004C61B6 /* UserDefaultKey.swift */,
 				B86BA87F2AE7AA2600C638CD /* TimeRemaining.swift */,
+				B8FF0DD429609EF3004C61B6 /* UserDefaultKey.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -591,7 +597,6 @@
 				B8BBA16128E8EDF100222116 /* StyledButton.swift */,
 				B879E9E828F0C5190094AA24 /* TagView.swift */,
 				B801A3DA2986D41400FAD316 /* WordCategoryView.swift */,
-				B8AD58842AD47FC00054403E /* WordReminderObserver.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -599,6 +604,7 @@
 		B8DAF91B2AC332ED00514808 /* PushNotifications */ = {
 			isa = PBXGroup;
 			children = (
+				B896B9AC2AEA2EEF0043DA18 /* NotificationRequestManager.swift */,
 				B8994CAD2A8EC4C2000BE101 /* PushNotificationManager.swift */,
 				B8DAF91C2AC332FF00514808 /* ReminderNotification.swift */,
 			);
@@ -839,11 +845,10 @@
 				B8D2A74228DF3A250096A020 /* InputTextField.swift in Sources */,
 				B8C25F9C294F7AAF001C8847 /* KeyboardToolbar.swift in Sources */,
 				B80E720629FBB972007CCE71 /* LinearGradient+Gradients.swift in Sources */,
-				B86BA8802AE7AA2600C638CD /* TimeRemaining.swift in Sources */,
 				B8E336572AD5BABF00374E4A /* ListAnimator.swift in Sources */,
 				B8E49C0928DF917E00F9CAC4 /* LoadingView.swift in Sources */,
 				B803D5E22AD0922E00E7CF41 /* Localization.swift in Sources */,
-				B86BA87E2AE79C8B00C638CD /* ReceiveTimer.swift in Sources */,
+				B868F23A2AECCC13003765F8 /* Logger.swift in Sources */,
 				B8A1232728E971FD00ACEC45 /* LottieFile.swift in Sources */,
 				B8A1232228E9714600ACEC45 /* LottieView.swift in Sources */,
 				B80E721B29FD9578007CCE71 /* MarginedList.swift in Sources */,
@@ -851,7 +856,9 @@
 				B8FF0DD129609DDF004C61B6 /* Migrations.swift in Sources */,
 				B8958876295790E30041A315 /* NavigationViewModel.swift in Sources */,
 				B8C43F3229FB0F7500F5E166 /* NoBounceScrollView.swift in Sources */,
+				B896B9AD2AEA2EEF0043DA18 /* NotificationRequestManager.swift in Sources */,
 				B8994CAE2A8EC4C2000BE101 /* PushNotificationManager.swift in Sources */,
+				B86BA87E2AE79C8B00C638CD /* ReceiveTimer.swift in Sources */,
 				B8C5ACAE2ACCAE6200595772 /* ReferenceLibraryCard.swift in Sources */,
 				B8C5ACB22ACCBA7D00595772 /* ReferenceLibraryScreen.swift in Sources */,
 				B8DAF91D2AC332FF00514808 /* ReminderNotification.swift in Sources */,
@@ -873,6 +880,7 @@
 				B879E9E928F0C5190094AA24 /* TagView.swift in Sources */,
 				B80E721429FC09B8007CCE71 /* TextHeaderView.swift in Sources */,
 				B8D2A74628DF3AFE0096A020 /* TextStyle.swift in Sources */,
+				B86BA8802AE7AA2600C638CD /* TimeRemaining.swift in Sources */,
 				B8FF0DD529609EF3004C61B6 /* UserDefaultKey.swift in Sources */,
 				B8B563E728EFFEC3004B80F0 /* View+Extensions.swift in Sources */,
 				B8E762B42A95F2E6006E168E /* WelcomeScreen.swift in Sources */,

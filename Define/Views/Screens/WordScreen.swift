@@ -9,7 +9,7 @@ import SwiftUI
 import DictionaryAPI
 
 /// `View` to input a word to search for definitions
-struct WordScreen: View, WordReminderObserver {
+struct WordScreen: View {
 
     /// `NavigationViewModel`
     @EnvironmentObject var navigation: NavigationViewModel
@@ -18,7 +18,7 @@ struct WordScreen: View, WordReminderObserver {
     @EnvironmentObject var words: WordsViewModel
 
     /// Is the notification request reminding the user about this word pending (due in the future)
-    @State var isReminderScheduled = false // Protocol
+    @State private var isReminderScheduled = false
 
     /// Is presenting alert to delete word
     @State private var isPresentingDeleteWordAlert = false
@@ -98,7 +98,6 @@ struct WordScreen: View, WordReminderObserver {
             actions: {
                 Button(role: .destructive) {
                     ReminderNotification.removePendingRequest(word: word)
-                    updateReminderAsync(word: word)
                 } label: {
                     Text("delete")
                 }
@@ -111,11 +110,10 @@ struct WordScreen: View, WordReminderObserver {
                 Text("word_reminder_delete_subtitle \(word.title)")
             }
         )
-        .observeWordReminder(
-            observer: self,
-            word: word,
-            words: words
-        )
+        .modifier(WordReminderObserver(
+            isReminderScheduled: $isReminderScheduled,
+            word: word
+        ))
     }
 
     /// Save `word`
@@ -136,7 +134,6 @@ struct WordScreen: View, WordReminderObserver {
             isPresentingReminderAlert = true
         } else {
             ReminderNotification.scheduleRequest(word: word)
-            updateReminderAsync(word: word)
         }
     }
 }

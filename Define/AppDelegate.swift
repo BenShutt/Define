@@ -8,7 +8,8 @@
 import UIKit
 
 /// Implementation of `UIApplicationDelegate`
-class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+class AppDelegate: NSObject, UIApplicationDelegate,
+    UNUserNotificationCenterDelegate, Logger {
 
     /// Lauch options dictionary
     typealias LaunchOptions = [UIApplication.LaunchOptionsKey: Any]
@@ -35,14 +36,14 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
             .map { String(format: "%02.2hhx", $0) }
             .joined()
 
-        log("APNs token: \(apnsToken)")
+        Self.log("APNs token: \(apnsToken)")
     }
 
     func application(
         _ application: UIApplication,
         didFailToRegisterForRemoteNotificationsWithError error: Error
     ) {
-        log("\(#function) \(error)")
+        Self.log("\(#function) \(error)")
     }
 
     // MARK: - UNUserNotificationCenterDelegate
@@ -59,11 +60,5 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
         didReceive response: UNNotificationResponse
     ) async {
         PushNotificationManager.didReceive(response: response)
-    }
-
-    // MARK: - Logging
-
-    private func log(_ message: String) {
-        print("[\(Self.self)] \(message)")
     }
 }
