@@ -30,6 +30,7 @@ struct WordListItem: View {
             VStack(alignment: .leading, spacing: .small) {
                 Text(verbatim: word.title)
                     .h2()
+                    .padding(.bottom, .small)
 
                 if let subtitle = word.subtitle {
                     Text(subtitle)
@@ -40,7 +41,7 @@ struct WordListItem: View {
 
                 if let nMore = word.nMore {
                     Text(nMore)
-                        .caption(textColor: .appBlue)
+                        .caption()
                 }
 
                 if hasCategories {

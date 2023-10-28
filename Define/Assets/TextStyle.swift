@@ -27,7 +27,7 @@ enum TextStyle: String, CaseIterable, Hashable, Identifiable {
         case .h1: return 32
         case .h2: return 20
         case .h3: return 18
-        case .body: return 18
+        case .body: return 16
         case .button: return 18
         case .tag: return 14
         case .caption: return 14
@@ -38,8 +38,8 @@ enum TextStyle: String, CaseIterable, Hashable, Identifiable {
     var font: WorkSans {
         switch self {
         case .h1: return .bold
-        case .h2: return .bold
-        case .h3: return .bold
+        case .h2: return .semiBold
+        case .h3: return .semiBold
         case .body: return .regular
         case .button: return .bold
         case .tag: return .semiBold
@@ -87,7 +87,7 @@ extension View {
     /// Standard `.tag` implementation
     func tag() -> some View {
         textStyle(.tag)
-            .foregroundColor(.appDarkGray)
+            .foregroundColor(.appGray)
     }
 
     /// Standard `.caption` implementation
