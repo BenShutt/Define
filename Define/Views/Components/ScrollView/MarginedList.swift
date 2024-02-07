@@ -46,7 +46,7 @@ struct MarginedList<Element: Identifiable, Content: View>: View {
 
 // MARK: View + Extensions
 
-private extension View {
+extension View {
 
     /// Wrap in a margined container
     /// - Parameter margins: `EdgeInsets`

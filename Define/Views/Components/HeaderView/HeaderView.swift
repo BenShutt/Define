@@ -27,10 +27,19 @@ struct HeaderView<Content: View>: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(padding)
         .background {
-            GradientBlurView(color: .appBlue)
-                .ignoresSafeArea()
-                .compositingGroup()
-                .shadow(.sticky)
+            HeaderBackground()
         }
+    }
+}
+
+// MARK: - HeaderBackground
+
+struct HeaderBackground: View {
+
+    var body: some View {
+        GradientBlurView(color: .appBlue)
+            .ignoresSafeArea()
+            .compositingGroup()
+            .shadow(.sticky)
     }
 }

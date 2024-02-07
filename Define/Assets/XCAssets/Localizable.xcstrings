@@ -45,6 +45,50 @@
         }
       }
     },
+    "date_group_last_month" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Last Month"
+          }
+        }
+      }
+    },
+    "date_group_last_week" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Last Week"
+          }
+        }
+      }
+    },
+    "date_group_other" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Other"
+          }
+        }
+      }
+    },
+    "date_group_today" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Today"
+          }
+        }
+      }
+    },
     "definition_example %@" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -78,6 +122,9 @@
         }
       }
     },
+    "Enter value..." : {
+
+    },
     "home_button" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -110,6 +157,18 @@
           }
         }
       }
+    },
+    "Preview" : {
+
+    },
+    "PREVIEW BUTTON" : {
+
+    },
+    "Preview caption" : {
+
+    },
+    "Preview Title" : {
+
     },
     "reference_found" : {
       "extractionState" : "manual",

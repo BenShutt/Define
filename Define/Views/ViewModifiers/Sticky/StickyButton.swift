@@ -27,7 +27,8 @@ struct StickyButton: ViewModifier {
                     systemName: systemName,
                     onTap: onTap
                 )
-                .padding(.largeMargins)
+                .padding(.horizontal, .large)
+                .padding(.vertical, .vMargin)
             }
         )
     }

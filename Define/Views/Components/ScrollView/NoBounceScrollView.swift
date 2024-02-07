@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SwiftUIIntrospect
 
 /// A `ScrollView` which uses Introspect to disable bounces on the `UIScrollView`
 struct NoBounceScrollView<Content: View>: View {
@@ -21,14 +20,19 @@ struct NoBounceScrollView<Content: View>: View {
             showsIndicators: showsIndicators,
             content: content
         )
-        .introspect(.scrollView, on: .iOS(.v16, .v17)) { scrollView in
-            if axes.contains(.vertical) {
-                scrollView.alwaysBounceVertical = false
-            }
+        .modifier(BounceBehavior())
+    }
+}
 
-            if axes.contains(.horizontal) {
-                scrollView.alwaysBounceHorizontal = false
-            }
+// MARK: - BounceBehavior
+
+private struct BounceBehavior: ViewModifier {
+
+    func body(content: Content) -> some View {
+        if #available(iOS 16.4, *) {
+            content.scrollBounceBehavior(.basedOnSize)
+        } else {
+            content
         }
     }
 }

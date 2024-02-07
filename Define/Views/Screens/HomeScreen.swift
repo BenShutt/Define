@@ -9,6 +9,7 @@ import SwiftUI
 
 /// Screen listing the user's saved definitions
 struct HomeScreen: View {
+    typealias DateGroups = [(group: DateGroup, savedWords: [SavedWord])]
 
     /// `NavigationViewModel`
     @EnvironmentObject var navigation: NavigationViewModel
@@ -19,27 +20,103 @@ struct HomeScreen: View {
     /// The word to show in a presented reference library modal
     @State private var selectedWord: SavedWord?
 
+    /// Group words into groups by date
+    private var groups: DateGroups {
+        DateGroup.group(words.words, keyPath: \.savedDate)
+    }
+
     var body: some View {
-        MarginedList(words.words) { word in
-            WordRow(selectedWord: $selectedWord, word: word)
+        ScrollView {
+            LazyVStack(spacing: 0) {
+                ForEach(groups, id: \.0) { group, savedWords in
+                    WordsGroup(
+                        selectedWord: $selectedWord,
+                        group: group,
+                        savedWords: savedWords
+                    )
+                }
+            }
+            .marginedStack(.margins)
         }
         .screen()
-        .stickyHeader(
-            title: "home_title",
-            subtitle: "home_subtitle"
-        )
         .stickyButton(
             title: "home_button",
             systemName: "magnifyingglass"
         ) {
             navigation.push(.search)
         }
-        .toolbarBackground(Color.clear, for: .navigationBar)
-        .navigationBarTitleDisplayMode(.inline)
+        .navigationBar(
+            title: "home_title",
+            titleDisplayMode: .automatic,
+            buttons: [
+                .init(imageName: "list.bullet.circle.fill") {
+                    // TODO
+                }
+            ]
+        )
         .sheet(item: $selectedWord) { savedWord in
             ReferenceLibraryScreen(term: savedWord.word.word) {
                 selectedWord = nil
             }
+        }
+    }
+}
+
+struct AdaptiveHeader: ViewModifier {
+
+    var isScrolled: Bool
+
+    /// Padding for the header view
+    private var headerPadding: EdgeInsets {
+        var padding: EdgeInsets = .header
+        padding.top = .extraSmall
+        padding.bottom = .extraSmall
+        return padding
+    }
+
+    func body(content: Content) -> some View {
+        content
+            .modifier(StickyTop {
+                HeaderView(
+                    spacing: 0,
+                    padding: headerPadding,
+                    content: {}
+                ).opacity(isScrolled ? 1 : 0)
+            })
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                if isScrolled {
+                    ToolbarItem(placement: .principal) {
+                        Text("home_title")
+                            .h2()
+                    }
+                }
+            }
+    }
+}
+
+// MARK: - WordSection
+
+private struct WordsGroup: View {
+
+    @Binding var selectedWord: SavedWord?
+    var group: DateGroup
+    var savedWords: [SavedWord]
+
+    var body: some View {
+        Text(group.title)
+            .h2()
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .multilineTextAlignment(.leading)
+            .padding(.horizontal, .hMargin)
+            .padding(.top, .large)
+
+        ForEach(savedWords) { savedWord in
+            WordRow(
+                selectedWord: $selectedWord,
+                word: savedWord
+            )
+            .margined(.margins)
         }
     }
 }
