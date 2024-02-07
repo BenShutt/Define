@@ -41,7 +41,7 @@ struct HomeScreen: View {
                     )
                 }
             }
-            .marginedStack(.margins)
+            .marginedStack(.marginedStack)
         }
         .stickyButton(
             title: "home_button",
@@ -78,7 +78,7 @@ private struct WordsGroup: View {
                 selectedWord: $selectedWord,
                 word: savedWord
             )
-            .margined(.margins)
+            .margined(.marginedStack)
         }
     }
 }
