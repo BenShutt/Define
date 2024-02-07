@@ -7,6 +7,7 @@
 
 import SwiftUI
 import DictionaryAPI
+import NavigationBar
 
 /// `View` to input a word to search for definitions
 struct WordScreen: View {

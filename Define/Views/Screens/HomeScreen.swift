@@ -9,6 +9,8 @@ import SwiftUI
 
 /// Screen listing the user's saved definitions
 struct HomeScreen: View {
+
+    /// Map `DateGroup` to its `SavedWord`s
     typealias DateGroups = [(group: DateGroup, savedWords: [SavedWord])]
 
     /// `NavigationViewModel`
@@ -26,7 +28,10 @@ struct HomeScreen: View {
     }
 
     var body: some View {
-        ScrollView {
+        NavigationScreen(
+            title: "home_title",
+            subtitle: "home_subtitle"
+        ) {
             LazyVStack(spacing: 0) {
                 ForEach(groups, id: \.0) { group, savedWords in
                     WordsGroup(
@@ -38,60 +43,17 @@ struct HomeScreen: View {
             }
             .marginedStack(.margins)
         }
-        .screen()
         .stickyButton(
             title: "home_button",
             systemName: "magnifyingglass"
         ) {
             navigation.push(.search)
         }
-        .navigationBar(
-            title: "home_title",
-            titleDisplayMode: .automatic,
-            buttons: [
-                .init(imageName: "list.bullet.circle.fill") {
-                    // TODO
-                }
-            ]
-        )
         .sheet(item: $selectedWord) { savedWord in
             ReferenceLibraryScreen(term: savedWord.word.word) {
                 selectedWord = nil
             }
         }
-    }
-}
-
-struct AdaptiveHeader: ViewModifier {
-
-    var isScrolled: Bool
-
-    /// Padding for the header view
-    private var headerPadding: EdgeInsets {
-        var padding: EdgeInsets = .header
-        padding.top = .extraSmall
-        padding.bottom = .extraSmall
-        return padding
-    }
-
-    func body(content: Content) -> some View {
-        content
-            .modifier(StickyTop {
-                HeaderView(
-                    spacing: 0,
-                    padding: headerPadding,
-                    content: {}
-                ).opacity(isScrolled ? 1 : 0)
-            })
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                if isScrolled {
-                    ToolbarItem(placement: .principal) {
-                        Text("home_title")
-                            .h2()
-                    }
-                }
-            }
     }
 }
 
