@@ -7,7 +7,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Added: %@ ago"
+            "value" : "Added %@ ago"
           }
         }
       }
@@ -18,7 +18,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Added: Just Now"
+            "value" : "Added Just Now"
           }
         }
       }
