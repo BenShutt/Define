@@ -32,6 +32,8 @@ struct NavigationScreen<Content: View>: View {
                         NavigationBarBackground()
                     }
                 )
+                .compositingGroup()
+                .shadow(.sticky)
             })
     }
 }
