@@ -39,20 +39,15 @@ struct WordListItem: View {
                         .body()
                 }
 
-                if let nMore = word.nMore {
-                    Text(nMore)
+                if let caption {
+                    Text(caption)
                         .caption()
+                        .padding(.top, hasCategories ? .small : .medium)
                 }
 
                 if hasCategories {
                     PartsOfSpeechView(partsOfSpeech: word.partsOfSpeech)
                         .padding(.top, .medium)
-                }
-
-                if let caption {
-                    Text(caption)
-                        .caption()
-                        .padding(.top, hasCategories ? .small : .medium)
                 }
             }
             .listItem()

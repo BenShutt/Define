@@ -67,10 +67,11 @@ private struct WordsGroup: View {
 
     var body: some View {
         Text(group.title)
-            .h2()
+            .h3()
             .frame(maxWidth: .infinity, alignment: .leading)
             .multilineTextAlignment(.leading)
             .padding(.horizontal, .hMargin)
+            .padding(.horizontal, .large) // Further inset
             .padding(.top, .large)
 
         ForEach(savedWords) { savedWord in

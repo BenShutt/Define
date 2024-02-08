@@ -16,16 +16,15 @@ extension Word {
         word.localizedCapitalized
     }
 
+    // TODO: Plural variation seemed not to work here in the assets
     /// Localized subtitle
     var subtitle: LocalizedStringKey? {
         guard let definition = definitions.first else { return nil }
-        return "word_subtitle \(definition)"
-    }
-
-    /// Localized overflow
-    var nMore: LocalizedStringKey? {
-        guard definitions.count > 1 else { return nil }
-        return "word_more_definitions \(definitions.count - 1)"
+        if definitions.count == 1 {
+            return "word_subtitle_one \(definition)"
+        } else {
+            return "word_subtitle \(definition) \(definitions.count)"
+        }
     }
 
     /// Localized notification title
@@ -40,7 +39,7 @@ extension Word {
             let d = Int8(definitions.count - 1) // TODO: Fix
             return "reminder_push_subtitle \(definition) \(d)"
         } else {
-            return "word_subtitle \(definition)"
+            return "word_subtitle_one \(definition)"
         }
     }
 

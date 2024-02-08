@@ -456,36 +456,24 @@
         }
       }
     },
-    "word_subtitle %@" : {
+    "word_subtitle %@ %lld" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ (+%lld more)"
+          }
+        }
+      }
+    },
+    "word_subtitle_one %@" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@"
-          }
-        }
-      }
-    },
-    "word_subtitle_more %@ %lld" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%@ (+%lld more definition)"
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%@ (+%lld more definitions)"
-                }
-              }
-            }
           }
         }
       }
