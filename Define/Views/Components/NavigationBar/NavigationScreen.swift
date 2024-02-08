@@ -27,11 +27,12 @@ struct NavigationScreen<Content: View>: View {
                     },
                     largeNavigationBar: {
                         LargeNavigationBar(title: title, subtitle: subtitle)
-                    },
-                    background: {
-                        NavigationBarBackground()
                     }
                 )
+                .background {
+                    NavigationBarBackground()
+                        .ignoresSafeArea(edges: .top)
+                }
                 .compositingGroup()
                 .shadow(.sticky)
             })

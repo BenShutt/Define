@@ -9,7 +9,7 @@ import SwiftUI
 
 /// Custom view used for navigation bar UI.
 /// The view transitions from a large to small state as the scroll offset increases.
-public struct NavigationBar<SmallContent: View, LargeContent: View, Background: View>: View {
+public struct NavigationBar<SmallContent: View, LargeContent: View>: View {
 
     /// Critical scroll offset in Y for the different states
     private let maxOffsetY: CGFloat = 100
@@ -23,11 +23,9 @@ public struct NavigationBar<SmallContent: View, LargeContent: View, Background: 
     /// Make the large navigation bar content
     @ViewBuilder public var largeNavigationBar: () -> LargeContent
 
-    /// Make the  navigation bar background content
-    @ViewBuilder public var background: () -> Background
-
     /// Value in `[0, 1]` from not scrolled to fully scrolled (respectively)
     private var progress: CGFloat {
+        // TODO: Handle bounce the other way
         max(0, min(maxOffsetY, offsetY)) / maxOffsetY
     }
 
@@ -49,13 +47,11 @@ public struct NavigationBar<SmallContent: View, LargeContent: View, Background: 
     public init(
         offsetY: CGFloat,
         smallNavigationBar: @escaping () -> SmallContent,
-        largeNavigationBar: @escaping () -> LargeContent,
-        background: @escaping () -> Background
+        largeNavigationBar: @escaping () -> LargeContent
     ) {
         self.offsetY = offsetY
         self.smallNavigationBar = smallNavigationBar
         self.largeNavigationBar = largeNavigationBar
-        self.background = background
     }
 
     public var body: some View {
@@ -69,10 +65,6 @@ public struct NavigationBar<SmallContent: View, LargeContent: View, Background: 
                 .modifier(ClippedHeight { maxHeight in
                     maxHeight * (1 - progress)
                 })
-        }
-        .background {
-            background()
-                .ignoresSafeArea(edges: .top)
         }
     }
 }
