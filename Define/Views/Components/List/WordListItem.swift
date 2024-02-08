@@ -104,7 +104,7 @@ private struct ReminderView: View {
         }, label: {
             Image(systemName: "clock")
                 .font(.system(size: 16, weight: .regular))
-                .foregroundColor(Color.appDarkGray)
+                .foregroundColor(Color.appGray)
                 .padding(16)
                 .offset(x: 16, y: -16)
         })

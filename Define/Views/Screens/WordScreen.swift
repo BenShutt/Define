@@ -9,6 +9,8 @@ import SwiftUI
 import DictionaryAPI
 import NavigationBar
 
+// TODO: Spacing should be the same between meanings and words (home and here)
+
 /// `View` to input a word to search for definitions
 struct WordScreen: View {
 
