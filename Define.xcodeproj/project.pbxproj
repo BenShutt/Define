@@ -404,9 +404,9 @@
 		B80E721929FD9546007CCE71 /* ScrollView */ = {
 			isa = PBXGroup;
 			children = (
-				B832D65C2C24652500FF3EFE /* OffsetScrollView.swift */,
 				B80E721A29FD9578007CCE71 /* MarginedList.swift */,
 				B8C43F3129FB0F7500F5E166 /* NoBounceScrollView.swift */,
+				B832D65C2C24652500FF3EFE /* OffsetScrollView.swift */,
 			);
 			path = ScrollView;
 			sourceTree = "<group>";
@@ -447,9 +447,9 @@
 			children = (
 				B80E722029FDAD57007CCE71 /* ShapeBorder */,
 				B894FA2228FC8D6B00BC0BFA /* Sticky */,
+				B832D65B2C24652500FF3EFE /* ClippedHeight.swift */,
 				B8C25F9B294F7AAF001C8847 /* KeyboardToolbar.swift */,
 				B8E336562AD5BABF00374E4A /* ListAnimator.swift */,
-				B832D65B2C24652500FF3EFE /* ClippedHeight.swift */,
 				B86BA87D2AE79C8B00C638CD /* ReceiveTimer.swift */,
 				B8AD58842AD47FC00054403E /* WordReminderObserver.swift */,
 			);
@@ -470,8 +470,8 @@
 			isa = PBXGroup;
 			children = (
 				B894FA2028FC8A4B00BC0BFA /* StickyBottom.swift */,
-				B832D65D2C24652500FF3EFE /* StickyTop.swift */,
 				B894FA2328FC8D7A00BC0BFA /* StickyButton.swift */,
+				B832D65D2C24652500FF3EFE /* StickyTop.swift */,
 			);
 			path = Sticky;
 			sourceTree = "<group>";
@@ -556,8 +556,8 @@
 			children = (
 				B8A1235C28E97FB000ACEC45 /* CustomFont.swift */,
 				B8B9B9D728EC603D006FCA76 /* EdgeInsets+Extensions.swift */,
-				B832D65F2C24652500FF3EFE /* View+SizeChanged.swift */,
 				B8B563E628EFFEC3004B80F0 /* View+Extensions.swift */,
+				B832D65F2C24652500FF3EFE /* View+SizeChanged.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -634,9 +634,9 @@
 			isa = PBXGroup;
 			children = (
 				B8F834CA2B73DC0F00D0C5D2 /* LargeNavigationBar.swift */,
+				B832D6592C24652500FF3EFE /* NavigationBar.swift */,
 				B8F834CF2B73E40700D0C5D2 /* NavigationBarBackground.swift */,
 				B8F834CD2B73DC9700D0C5D2 /* NavigationScreen.swift */,
-				B832D6592C24652500FF3EFE /* NavigationBar.swift */,
 				B8F834C92B73DC0F00D0C5D2 /* SmallNavigationBar.swift */,
 			);
 			path = NavigationBar;
@@ -843,12 +843,12 @@
 			files = (
 				B89F179D28E0FABE00A96E35 /* AppDelegate.swift in Sources */,
 				B8BFDC712AC7800C009E1F83 /* BlurView.swift in Sources */,
-				B832D6622C24654A00FF3EFE /* OffsetScrollView.swift in Sources */,
 				B8FF0DD329609E3E004C61B6 /* Bundle+Key.swift in Sources */,
 				B8E49C0B28DF985500F9CAC4 /* CGFloat+Values.swift in Sources */,
 				B80E722B29FDBBC1007CCE71 /* Calendar+Extensions.swift in Sources */,
 				B80E722429FDAD69007CCE71 /* CapsuleBorder.swift in Sources */,
 				B891F8E22950FB6600A53582 /* ChevronView.swift in Sources */,
+				B832D6642C2466BF00FF3EFE /* ClippedHeight.swift in Sources */,
 				B8D2A73E28DEEFE70096A020 /* Color+Values.swift in Sources */,
 				B84AD60C28FB01AF00C2D5AE /* ContentView.swift in Sources */,
 				B813BFFF28EB7BE6000C766C /* CrossIconView.swift in Sources */,
@@ -881,11 +881,13 @@
 				B80E721B29FD9578007CCE71 /* MarginedList.swift in Sources */,
 				B8FF0DDC2960B548004C61B6 /* MeaningListItem.swift in Sources */,
 				B8FF0DD129609DDF004C61B6 /* Migrations.swift in Sources */,
+				B832D6652C2466C700FF3EFE /* NavigationBar.swift in Sources */,
 				B8F834D02B73E40700D0C5D2 /* NavigationBarBackground.swift in Sources */,
 				B8F834CE2B73DC9700D0C5D2 /* NavigationScreen.swift in Sources */,
 				B8958876295790E30041A315 /* NavigationViewModel.swift in Sources */,
 				B8C43F3229FB0F7500F5E166 /* NoBounceScrollView.swift in Sources */,
 				B896B9AD2AEA2EEF0043DA18 /* NotificationRequestManager.swift in Sources */,
+				B832D6622C24654A00FF3EFE /* OffsetScrollView.swift in Sources */,
 				B8994CAE2A8EC4C2000BE101 /* PushNotificationManager.swift in Sources */,
 				B86BA87E2AE79C8B00C638CD /* ReceiveTimer.swift in Sources */,
 				B8C5ACAE2ACCAE6200595772 /* ReferenceLibraryCard.swift in Sources */,
@@ -900,21 +902,19 @@
 				B8D2A73C28DEEFAE0096A020 /* SearchScreen.swift in Sources */,
 				B879E9F028F0CA910094AA24 /* SearchViewModel.swift in Sources */,
 				B8C25FA0294F8D5D001C8847 /* Separator.swift in Sources */,
-				B832D6612C24653800FF3EFE /* View+SizeChanged.swift in Sources */,
 				B80E722229FDAD60007CCE71 /* ShapeBorder.swift in Sources */,
 				B8F834CB2B73DC0F00D0C5D2 /* SmallNavigationBar.swift in Sources */,
 				B894FA2128FC8A4B00BC0BFA /* StickyBottom.swift in Sources */,
 				B894FA2428FC8D7A00BC0BFA /* StickyButton.swift in Sources */,
+				B832D6632C24668200FF3EFE /* StickyTop.swift in Sources */,
 				B8BBA16228E8EDF100222116 /* StyledButton.swift in Sources */,
 				B879E9E928F0C5190094AA24 /* TagView.swift in Sources */,
 				B8D2A74628DF3AFE0096A020 /* TextStyle.swift in Sources */,
 				B86BA8802AE7AA2600C638CD /* TimeRemaining.swift in Sources */,
-				B832D6652C2466C700FF3EFE /* NavigationBar.swift in Sources */,
 				B8B732E42AEFA1790017F713 /* TitleHeaderView.swift in Sources */,
 				B8FF0DD529609EF3004C61B6 /* UserDefaultKey.swift in Sources */,
-				B832D6642C2466BF00FF3EFE /* ClippedHeight.swift in Sources */,
-				B832D6632C24668200FF3EFE /* StickyTop.swift in Sources */,
 				B8B563E728EFFEC3004B80F0 /* View+Extensions.swift in Sources */,
+				B832D6612C24653800FF3EFE /* View+SizeChanged.swift in Sources */,
 				B8E762B42A95F2E6006E168E /* WelcomeScreen.swift in Sources */,
 				B894FA1C28FC69FA00BC0BFA /* Word+Preview.swift in Sources */,
 				B81826712AC5CA2700C6CCC7 /* Word+View.swift in Sources */,
