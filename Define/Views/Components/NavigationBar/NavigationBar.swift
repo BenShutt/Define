@@ -9,19 +9,19 @@ import SwiftUI
 
 /// Custom view used for navigation bar UI.
 /// The view transitions from a large to small state as the scroll offset increases.
-public struct NavigationBar<SmallContent: View, LargeContent: View>: View {
+struct NavigationBar<SmallContent: View, LargeContent: View>: View {
 
     /// Critical scroll offset in Y for the different states
     private let maxOffsetY: CGFloat = 100
 
     /// The content offset in Y of the scroll view
-    public var offsetY: CGFloat
+    var offsetY: CGFloat
 
     /// Make the small navigation bar content
-    @ViewBuilder public var smallNavigationBar: () -> SmallContent
+    @ViewBuilder var smallNavigationBar: () -> SmallContent
 
     /// Make the large navigation bar content
-    @ViewBuilder public var largeNavigationBar: () -> LargeContent
+    @ViewBuilder var largeNavigationBar: () -> LargeContent
 
     /// Value in `[0, 1]` from not scrolled to fully scrolled (respectively)
     private var progress: CGFloat {
@@ -44,17 +44,7 @@ public struct NavigationBar<SmallContent: View, LargeContent: View>: View {
         min(0, max(-offsetY, -maxOffsetY))
     }
 
-    public init(
-        offsetY: CGFloat,
-        smallNavigationBar: @escaping () -> SmallContent,
-        largeNavigationBar: @escaping () -> LargeContent
-    ) {
-        self.offsetY = offsetY
-        self.smallNavigationBar = smallNavigationBar
-        self.largeNavigationBar = largeNavigationBar
-    }
-
-    public var body: some View {
+    var body: some View {
         ZStack(alignment: .top) {
             smallNavigationBar()
                 .opacity(smallOpacity)

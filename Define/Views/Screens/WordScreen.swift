@@ -7,7 +7,6 @@
 
 import SwiftUI
 import DictionaryAPI
-import NavigationBar
 
 // TODO: Spacing should be the same between meanings and words (home and here)
 
@@ -53,9 +52,9 @@ struct WordScreen: View {
             saveWord()
         }
         .screen()
-        .modifier(StickyTop {
+        .stickyTop {
             HeaderView(spacing: 0, padding: headerPadding) {}
-        })
+        }
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .principal) {

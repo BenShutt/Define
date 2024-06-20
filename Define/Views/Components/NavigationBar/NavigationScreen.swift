@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import NavigationBar
 
 struct NavigationScreen<Content: View>: View {
 
@@ -17,25 +16,28 @@ struct NavigationScreen<Content: View>: View {
     @ViewBuilder var content: () -> Content
 
     var body: some View {
-        OffsetScrollView(offset: $offset, content: content)
-            .screen()
-            .modifier(StickyTop {
-                NavigationBar(
-                    offsetY: offset.y,
-                    smallNavigationBar: {
-                        SmallNavigationBar(title: title)
-                    },
-                    largeNavigationBar: {
-                        LargeNavigationBar(title: title, subtitle: subtitle)
-                    }
-                )
-                .background {
-                    NavigationBarBackground()
-                        .ignoresSafeArea(edges: .top)
+        OffsetScrollView(
+            onOffsetChange: { offset = $0 },
+            content: content
+        )
+        .screen()
+        .stickyTop {
+            NavigationBar(
+                offsetY: offset.y,
+                smallNavigationBar: {
+                    SmallNavigationBar(title: title)
+                },
+                largeNavigationBar: {
+                    LargeNavigationBar(title: title, subtitle: subtitle)
                 }
-                .compositingGroup()
-                .shadow(.sticky)
-            })
+            )
+            .background {
+                NavigationBarBackground()
+                    .ignoresSafeArea(edges: .top)
+            }
+            .compositingGroup()
+            .shadow(.sticky)
+        }
     }
 }
 

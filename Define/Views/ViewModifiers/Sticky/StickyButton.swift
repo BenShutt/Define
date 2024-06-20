@@ -20,17 +20,15 @@ struct StickyButton: ViewModifier {
     var onTap: () -> Void
 
     func body(content: Content) -> some View {
-        content.modifier(
-            StickyBottom {
-                StyledButton(
-                    title: title,
-                    systemName: systemName,
-                    onTap: onTap
-                )
-                .padding(.horizontal, .large)
-                .padding(.vertical, .vMargin)
-            }
-        )
+        content.stickyBottom {
+            StyledButton(
+                title: title,
+                systemName: systemName,
+                onTap: onTap
+            )
+            .padding(.horizontal, .large)
+            .padding(.vertical, .vMargin)
+        }
     }
 }
 

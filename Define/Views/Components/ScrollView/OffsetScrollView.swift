@@ -7,22 +7,23 @@
 
 import SwiftUI
 
-// TODO: Is a @Binding less performant than a closure?
-public struct OffsetScrollView<Content: View>: View {
+/// A `ScrollView` that fires a closure when its offset updates
+///
+/// # Reference
+/// https://www.swiftbysundell.com/articles/observing-swiftui-scrollview-content-offset/
+struct OffsetScrollView<Content: View>: View {
 
+    /// Coordinate space of the scroll view
     private let coordinateSpace = "\(Self.self)"
-    @Binding public var offset: CGPoint
-    @ViewBuilder public var content: () -> Content
 
-    public init(
-        offset: Binding<CGPoint>,
-        content: @escaping () -> Content
-    ) {
-        self._offset = offset
-        self.content = content
-    }
+    /// Closure than executes when the offset changes
+    /// - Note: More performant than observing the `onChange` of an offset `@Binding`
+    var onOffsetChange: (CGPoint) -> Void
 
-    public var body: some View {
+    /// The content of the scroll view
+    @ViewBuilder var content: () -> Content
+
+    var body: some View {
         ScrollView {
             content()
                 .background(
@@ -31,7 +32,7 @@ public struct OffsetScrollView<Content: View>: View {
         }
         .coordinateSpace(name: coordinateSpace)
         .onPreferenceChange(ScrollOffset.self) { value in
-            offset = value
+            onOffsetChange(value)
         }
     }
 }
@@ -39,7 +40,6 @@ public struct OffsetScrollView<Content: View>: View {
 // MARK: - GeometryView
 
 private struct GeometryView: View {
-
     var coordinateSpace: String
 
     var body: some View {
@@ -58,7 +58,6 @@ private struct GeometryView: View {
 // MARK: - ScrollOffset
 
 private struct ScrollOffset: PreferenceKey {
-
     static let defaultValue: CGPoint = .zero
     static func reduce(value: inout CGPoint, nextValue: () -> CGPoint) {}
 }

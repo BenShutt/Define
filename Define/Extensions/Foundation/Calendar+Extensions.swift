@@ -18,7 +18,7 @@ extension Calendar {
             from: date
         )
     }
-    
+
     /// Shorthand to add `value` amount of `component` to `date` and default to `date` on `nil`
     /// - Parameters:
     ///   - component: `Calendar.Component`
@@ -40,7 +40,7 @@ extension Calendar {
     /// Set time components to midnight (start of day)
     /// - Parameter date: `Date`
     /// - Returns: `Date`
-    func startOfDay(of date: Date) -> Date {
+    func startOfDay(of date: Date) -> Date { // TODO: Think this already exists
         self.date(bySettingHour: 0, minute: 0, second: 0, of: date) ?? date
     }
 }
