@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct AppIconGradient: View {
-
     var color: Color = .appIconBlue
     var start: CGFloat = 0.25
     var end: CGFloat = 0.75
@@ -17,8 +16,8 @@ struct AppIconGradient: View {
         GeometryReader { metrics in
             RadialGradient.make(
                 color: color,
-                startRadius: metrics.size.width * start,
-                endRadius: metrics.size.width * end
+                startRadius: metrics.size.min * start,
+                endRadius: metrics.size.min * end
             )
             .background(Color.appIconWhite)
         }

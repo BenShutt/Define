@@ -33,13 +33,13 @@ struct Main: AsyncParsableCommand {
             fileName: "AppIcon",
             width: 1024,
             height: 1024,
-            content: AppIcon(size: 1024, isContainer: false) // TODO: Make sep views for the flag
+            content: AppIcon()
         )
         .renderAndWrite(in: directoryURL)
 
         try ImageToWrite(
             fileName: "LaunchScreen",
-            width: 1290, // iPhone 15 Pro Max sizing
+            width: 1290, // iPhone 15 Pro Max
             height: 2796,
             content: LaunchScreen()
         )
@@ -60,7 +60,8 @@ struct Main: AsyncParsableCommand {
     func renderAndWrite(in directoryURL: URL) throws {
         let url = directoryURL.appendingPathComponent("\(fileName).png")
         let renderer = PNGRenderer(width: width, height: height)
-        let data = try renderer.pngData(of: content)
+        let view = content.frame(width: width, height: height)
+        let data = try renderer.pngData(of: view)
         try data.write(to: url, options: .atomic)
     }
 }

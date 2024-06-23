@@ -8,9 +8,8 @@
 import SwiftUI
 
 public extension RadialGradient {
-
     static func make(
-        color: Color = .appIconBlue,
+        color: Color,
         startRadius: CGFloat,
         endRadius: CGFloat
     ) -> RadialGradient {

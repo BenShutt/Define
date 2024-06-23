@@ -1,15 +1,16 @@
 //
 //  View+SizeChanged.swift
-//  NavigationBar
+//  AppIcon
 //
 //  Created by Ben Shutt on 07/11/2023.
 //
 
 import SwiftUI
 
-extension View {
-
-    func onSizeChanged(_ action: @escaping (CGSize) -> Void) -> some View {
+public extension View {
+    func onSizeChanged(
+        _ action: @escaping (CGSize) -> Void
+    ) -> some View {
         background(
             GeometryReader { proxy in
                 Color.clear.preference(
@@ -27,7 +28,6 @@ extension View {
 // MARK: - SizePreferenceKey
 
 struct SizePreferenceKey: PreferenceKey {
-
     static var defaultValue: CGSize = .zero
     static func reduce(value: inout CGSize, nextValue: () -> CGSize) {}
 }

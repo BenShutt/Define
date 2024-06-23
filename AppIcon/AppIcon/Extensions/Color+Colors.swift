@@ -8,7 +8,6 @@
 import SwiftUI
 
 public extension Color {
-
     static let appIconWhite = Color(white: 255 / 255)
     static let appIconBlack = Color(white: 0 / 255)
     static let appIconBlue = Color(red: 52 / 255, green: 152 / 255, blue: 219 / 255)
