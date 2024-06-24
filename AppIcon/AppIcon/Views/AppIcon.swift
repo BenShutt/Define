@@ -29,7 +29,6 @@ public struct AppIcon: View {
                     .foregroundColor(Color.appIconDarkGray)
                     .bounceSymbol(animationValue)
             }
-
     }
 }
 

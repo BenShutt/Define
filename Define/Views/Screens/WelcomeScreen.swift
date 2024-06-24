@@ -21,7 +21,7 @@ struct WelcomeScreen: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 0) {
                 WelcomeHeaderView(
-                    animationValue: $animationValue,
+                    animationValue: animationValue,
                     color: .appBlue
                 )
                 .frame(maxWidth: .infinity)
@@ -61,7 +61,7 @@ private struct WelcomeHeaderView: View {
     private let backgroundHeight: CGFloat = 200
     private let iconHeight: CGFloat = 150
 
-    @Binding var animationValue: Int
+    var animationValue: Int
     var color: Color
 
     var body: some View {
@@ -81,10 +81,10 @@ private struct WelcomeHeaderView: View {
             .shadow(radius: 5)
 
             AppIcon(
-                size: iconHeight,
                 color: color,
-                animationValue: $animationValue
+                animationValue: animationValue
             )
+            .frame(width: iconHeight, height: iconHeight)
             .padding(.top, backgroundHeight - iconHeight * 0.75)
         }
     }
