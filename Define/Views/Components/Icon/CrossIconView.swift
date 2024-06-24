@@ -14,14 +14,41 @@ struct CrossIconView: View {
     var onTap: () -> Void
 
     var body: some View {
-        IconContainerView(edge: .trailing) {
-            Button(action: onTap) {
-                IconView(
-                    image: Image(systemName: "xmark.circle.fill"),
-                    foregroundColor: .appDarkGray,
-                    size: .icon
-                )
-            }
+        Button(action: onTap) {
+            CrossIcon()
         }
+        .iconContainer(edge: .trailing)
+    }
+}
+
+// MARK: - CrossIcon
+
+struct CrossIcon: View {
+    var size: CGFloat = .icon
+
+    var body: some View {
+        IconView(
+            image: Image(systemName: "xmark.circle.fill"),
+            foregroundColor: .appDarkGray,
+            size: size
+        )
+    }
+}
+
+// MARK: - CrossButton
+
+struct CrossButton: View {
+    private let size: CGFloat = .icon
+    var action: () -> Void
+
+    var touchAreaPadding: CGFloat {
+        max(0, .minTouchArea - size) * 0.5
+    }
+
+    var body: some View {
+        Button(action: action, label: {
+            CrossIcon(size: size)
+                .padding(touchAreaPadding)
+        })
     }
 }

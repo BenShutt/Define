@@ -25,6 +25,7 @@ struct LargeNavigationBar: View {
         .multilineTextAlignment(.leading)
         .frame(maxWidth: .infinity)
         .padding(.horizontal, .hMargin)
-        .padding(.vertical, .vMargin)
+        .padding(.top, .vMargin)
+        .padding(.bottom, .vMargin + .small)
     }
 }

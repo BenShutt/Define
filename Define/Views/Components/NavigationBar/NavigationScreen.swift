@@ -40,6 +40,8 @@ struct NavigationScreen<Content: View>: View {
     }
 }
 
+// MARK: - Preview
+
 #Preview {
     NavigationScreen(
         title: "home_title",

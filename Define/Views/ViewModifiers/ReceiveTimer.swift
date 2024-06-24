@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-struct ReceiveTimer: ViewModifier {
+private struct ReceiveTimer: ViewModifier {
     let timer: Publishers.Autoconnect<Timer.TimerPublisher>
     var onReceive: () async -> Void
 

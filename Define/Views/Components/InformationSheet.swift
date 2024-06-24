@@ -14,22 +14,13 @@ struct InformationSheet: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Button(action: {
-                dismiss()
-            }, label: {
-                Image(systemName: "xmark.app.fill")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(size: 26)
-                    .padding(5) // Adding tap area
-                    .offset(x: 5) // For padding offset
-                    .foregroundStyle(Color.appDarkGray)
-            })
-            .frame(maxWidth: .infinity, alignment: .trailing)
+            HStack(spacing: .medium) {
+                Text(title)
+                    .h2()
+                    .frame(maxWidth: .infinity, alignment: .leading)
 
-            Text(title)
-                .h2()
-                .padding(.top, .small)
+                CrossButton(action: dismiss.callAsFunction)
+            }
 
             Text(subtitle)
                 .body()

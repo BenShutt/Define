@@ -10,12 +10,11 @@ import SwiftUI
 /// Search icon with gradient background
 struct SearchIconView: View {
     var body: some View {
-        IconContainerView(edge: .leading) {
-            IconView(
-                image: Image(systemName: "magnifyingglass"),
-                foregroundColor: .appDarkGray,
-                size: .icon
-            )
-        }
+        IconView(
+            image: Image(systemName: "magnifyingglass"),
+            foregroundColor: .appDarkGray,
+            size: .icon
+        )
+        .iconContainer(edge: .leading)
     }
 }

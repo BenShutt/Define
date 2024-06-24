@@ -48,7 +48,7 @@ private struct PreviewView: View {
         Button(action: {
             isPresenting = true
         }, label: {
-            Text("PRESENT")
+            Text("continue_button")
         })
         .sheet(isPresented: $isPresenting) {
             Color.blue

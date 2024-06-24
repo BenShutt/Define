@@ -1,5 +1,5 @@
 //
-//  IconContainerView.swift
+//  IconContainer.swift
 //  Define
 //
 //  Created by Ben Shutt on 03/10/2022.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// Container of an icon view
-struct IconContainerView<Body: View>: View {
+struct IconContainer: ViewModifier {
 
     /// Horizontal edge
     enum Edge {
@@ -22,9 +22,6 @@ struct IconContainerView<Body: View>: View {
 
     /// Edge
     var edge: Edge
-
-    /// Make content view
-    @ViewBuilder var contentView: Body
 
     /// Leading padding
     private var leadingPadding: CGFloat {
@@ -42,9 +39,17 @@ struct IconContainerView<Body: View>: View {
         }
     }
 
-    var body: some View {
-        contentView
+    func body(content: Content) -> some View {
+        content
             .padding(.leading, leadingPadding)
             .padding(.trailing, trailingPadding)
+    }
+}
+
+// MARK: - View + IconContainer
+
+extension View {
+    func iconContainer(edge: IconContainer.Edge) -> some View {
+        modifier(IconContainer(edge: edge))
     }
 }

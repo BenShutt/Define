@@ -18,11 +18,17 @@ extension CGFloat {
     /// 1.5pts
     static let borderWidth: CGFloat = 1.5
 
-    /// 20pts
+    /// 22pts
     static let icon: CGFloat = 22
 
-    /// 6pts
+    /// 34pts
+    static let iconLarge: CGFloat = 34
+
+    /// 10pts
     static let cornerRadius: CGFloat = 10
+
+    /// 44pts - minimum accessible touch area required
+    static let minTouchArea: CGFloat = 44
 
     // MARK: - Size
 
@@ -35,10 +41,10 @@ extension CGFloat {
     /// 7.5pts
     static let smallMedium: CGFloat = 7.5
 
-    /// 10pts
+    /// 15pts
     static let medium: CGFloat = 15
 
-    /// 15pts
+    /// 17.5pts
     static let mediumLarge: CGFloat = 17.5
 
     /// 20pts

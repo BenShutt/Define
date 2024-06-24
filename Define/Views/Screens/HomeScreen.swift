@@ -23,7 +23,7 @@ struct HomeScreen: View {
     @State private var selectedWord: SavedWord?
 
     /// Group words into groups by date
-    private var groups: DateGroups {
+    private var groups: DateGroups { // TODO: Performance
         DateGroup.group(words.words, keyPath: \.savedDate)
     }
 
@@ -60,7 +60,6 @@ struct HomeScreen: View {
 // MARK: - WordSection
 
 private struct WordsGroup: View {
-
     @Binding var selectedWord: SavedWord?
     var group: DateGroup
     var savedWords: [SavedWord]
@@ -87,7 +86,6 @@ private struct WordsGroup: View {
 // MARK: - WordRow
 
 private struct WordRow: View {
-
     @Binding var selectedWord: SavedWord?
     var word: SavedWord
 
@@ -111,7 +109,6 @@ private struct WordRow: View {
 // MARK: - ListItem
 
 private struct ListItem: View {
-
     @EnvironmentObject var words: WordsViewModel
     @State private var addedSince: LocalizedStringKey?
     @State private var isReminderScheduled = false
