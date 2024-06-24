@@ -10,7 +10,6 @@ import DictionaryAPI
 
 /// Draw a definition with an example
 struct DefinitionListItem: View {
-
     @State private var isExpanded = false
     var definition: Word.Meaning.Definition
 

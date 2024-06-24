@@ -143,7 +143,6 @@ struct WordScreen: View {
 // MARK: - WordContentView
 
 private struct WordContentView: View {
-
     var word: Word
     var isWordSaved: Bool
     var onSave: () -> Void

@@ -28,7 +28,7 @@ import DictionaryAPI
         case success([Word])
     }
 
-    /// Niumber of milliseconds to debounce the search
+    /// Number of milliseconds to debounce the search
     private let debounceMilliseconds = 500
 
     /// The text being searched

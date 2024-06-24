@@ -9,7 +9,6 @@ import Foundation
 
 /// WordSans custom font caes
 enum WorkSans: String, CustomFont {
-
     case black
     case blackItalic
     case bold

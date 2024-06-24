@@ -10,13 +10,11 @@ import Alamofire
 import DataRequest
 
 public protocol Endpoint: DecodableRequest {
-
     var endpoint: String { get }
     var queryItems: [URLQueryItem] { get }
 }
 
 public extension Endpoint {
-
     var queryItems: [URLQueryItem] {
         []
     }

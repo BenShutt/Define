@@ -9,7 +9,6 @@ import SwiftUI
 import Combine
 
 struct ReceiveTimer: ViewModifier {
-
     let timer: Publishers.Autoconnect<Timer.TimerPublisher>
     var onReceive: () async -> Void
 
@@ -37,7 +36,6 @@ struct ReceiveTimer: ViewModifier {
 // MARK: - View + Extensions
 
 extension View {
-
     func onReceiveTimer(
         timeInterval: TimeInterval = 60,
         onReceive: @escaping () async -> Void
@@ -52,7 +50,6 @@ extension View {
 // MARK: - Timer + Extensions
 
 private extension Timer {
-
     static func publish(every timeInterval: TimeInterval) -> TimerPublisher {
         publish(
             every: timeInterval,

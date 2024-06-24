@@ -12,7 +12,6 @@ import SwiftUI
 /// Typically we'd use `LocalizedStringKey` , this is used for legacy APIs like
 /// setting the `title` of a `UNMutableNotificationContent`
 struct Localization {
-
     let key: String
     let arguments: [Any]
 
@@ -27,7 +26,6 @@ struct Localization {
 // MARK: - ExpressibleByStringInterpolation
 
 extension Localization: ExpressibleByStringInterpolation {
-
     init(stringLiteral value: String) {
         key = value
         arguments = []

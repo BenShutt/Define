@@ -8,7 +8,6 @@
 import Foundation
 
 struct TimeRemaining: Identifiable {
-
     var fromDate = Date()
     var toDate: Date
 

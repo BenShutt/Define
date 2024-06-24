@@ -48,7 +48,6 @@ enum DateGroup: Int, Equatable, Hashable, Comparable {
 // MARK: DateGroup + SwiftUI
 
 extension DateGroup {
-
     var title: LocalizedStringKey {
         switch self {
         case .today: "date_group_today"

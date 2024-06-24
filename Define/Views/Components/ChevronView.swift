@@ -9,7 +9,6 @@ import SwiftUI
 
 /// `View` drawing a chevron
 struct ChevronView: View {
-
     var body: some View {
         Image(systemName: "chevron.right")
             .resizable()

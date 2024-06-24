@@ -8,7 +8,6 @@
 import SwiftUI
 
 extension LinearGradient {
-
     static func header(color: Color) -> LinearGradient {
         LinearGradient(
             colors: [

@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ReferenceLibraryScreen: View {
-
     var term: String
     var onWordSaved: () -> Void
 
@@ -27,7 +26,6 @@ struct ReferenceLibraryScreen: View {
 // MARK: - ReferenceLibraryView
 
 private struct ReferenceLibraryView: UIViewControllerRepresentable {
-
     var term: String
 
     func makeUIViewController(context: Context) -> some UIViewController {

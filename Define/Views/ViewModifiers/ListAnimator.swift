@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ListAnimator: ViewModifier {
-
     @Binding var appearedItems: Set<Int>
     var index: Int
 
@@ -40,7 +39,6 @@ struct ListAnimator: ViewModifier {
 // MARK: - Preview
 
 private struct PreviewView: View {
-
     @State private var appearedItems: Set<Int> = []
 
     private var random: Double {

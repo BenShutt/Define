@@ -9,7 +9,6 @@ import SwiftUI
 import AppIcon
 
 struct WelcomeScreen: View {
-
     @State private var animationValue = 0
     var onContinue: () -> Void
 
@@ -57,7 +56,6 @@ struct WelcomeScreen: View {
 // MARK: - WelcomeHeaderView
 
 private struct WelcomeHeaderView: View {
-
     private let backgroundHeight: CGFloat = 200
     private let iconHeight: CGFloat = 150
 
@@ -93,7 +91,6 @@ private struct WelcomeHeaderView: View {
 // MARK: - WelcomeHeaderShape
 
 private struct CurvedBottom: Shape {
-
     private let yScale: CGFloat = 0.8
 
     func path(in rect: CGRect) -> Path {

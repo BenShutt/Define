@@ -12,7 +12,6 @@ import DictionaryAPI
 /// - Pending notification requests updates
 /// - Push notification will be presented
 struct WordReminderObserver: ViewModifier {
-
     @EnvironmentObject var words: WordsViewModel
     @Binding var isReminderScheduled: Bool
     var word: Word

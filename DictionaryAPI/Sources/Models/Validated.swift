@@ -33,7 +33,6 @@ extension String: Validated {
 // MARK: - Array + Validation
 
 extension Array: Validated where Element: Validated {
-
     public mutating func validate() throws {
         for i in indices {
             try self[i].validate()

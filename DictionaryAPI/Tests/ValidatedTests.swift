@@ -9,7 +9,6 @@ import XCTest
 import DictionaryAPI
 
 final class ValidatedTests: XCTestCase {
-
     func test() throws {
         var elements = ["zero", " one", " two ", " three \n"]
         try elements.validate()

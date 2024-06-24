@@ -8,7 +8,6 @@
 import SwiftUI
 
 extension EdgeInsets {
-
     static let margins = EdgeInsets(vertical: .vMargin, horizontal: .hMargin)
     static let largeMargins = EdgeInsets(.large)
     static let meaning = EdgeInsets(vertical: .large, horizontal: .large)

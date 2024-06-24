@@ -9,7 +9,6 @@ import SwiftUI
 
 /// Separator line
 struct Separator: View {
-
     var body: some View {
         Color.appLightGray
             .frame(height: 2)

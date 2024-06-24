@@ -9,7 +9,6 @@ import XCTest
 import DictionaryAPI
 
 final class StringTests: XCTestCase {
-
     func test() async throws {
         XCTAssertEqual(
             "extraBoldItalic".uppercasedFirstCharacter,

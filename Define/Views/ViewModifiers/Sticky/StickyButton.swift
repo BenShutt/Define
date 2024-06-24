@@ -35,7 +35,6 @@ struct StickyButton: ViewModifier {
 // MARK: - View + StickyButton
 
 extension View {
-
     func stickyButton(
         title: LocalizedStringKey,
         systemName: String,

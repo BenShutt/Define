@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ReferenceLibraryCard: View {
-
     var term: String
 
     private var shape: some InsettableShape {

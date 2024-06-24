@@ -10,7 +10,6 @@ import Foundation
 protocol Logger {}
 
 extension Logger {
-
     static func log(_ message: String) {
         print("[\(Self.self)] \(message)")
     }

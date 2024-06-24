@@ -8,7 +8,6 @@
 import Foundation
 
 public struct Word: JSONModel, Validated {
-
     public var word: String
     public var meanings: [Meaning]
 
@@ -21,9 +20,7 @@ public struct Word: JSONModel, Validated {
 // MARK: - Word.Meaning
 
 public extension Word {
-
     struct Meaning: JSONModel, Validated {
-
         public var partOfSpeech: String
         public var definitions: [Definition]
 
@@ -37,9 +34,7 @@ public extension Word {
 // MARK: - Word.Meaning.Definition
 
 public extension Word.Meaning {
-
     struct Definition: JSONModel, Validated {
-
         public var definition: String
         public var example: String?
 
@@ -64,7 +59,6 @@ extension Word: Identifiable {
 // MARK: - Word + Comparable
 
 extension Word: Comparable {
-
     public static func < (lhs: Word, rhs: Word) -> Bool {
         lhs.word < rhs.word
     }
@@ -73,7 +67,6 @@ extension Word: Comparable {
 // MARK: - Word + Extensions
 
 public extension Word {
-
     init(word: String) {
         self.init(word: word, meanings: [])
     }

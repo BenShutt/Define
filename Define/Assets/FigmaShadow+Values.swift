@@ -9,7 +9,6 @@ import SwiftUI
 import CubeFoundationSwiftUI
 
 extension FigmaShadow {
-
     static let sticky = FigmaShadow(
         x: 0,
         y: 2,

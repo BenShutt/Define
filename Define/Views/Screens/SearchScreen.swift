@@ -77,7 +77,6 @@ struct SearchScreen: View {
 // MARK: - SearchStateView
 
 private struct SearchStateView: View {
-
     @ObservedObject var viewModel: SearchViewModel
 
     var body: some View {

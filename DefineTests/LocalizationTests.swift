@@ -10,7 +10,6 @@ import XCTest
 
 /// Test `Localization`
 class LocalizationTests: XCTestCase {
-
     func testExpressibleByStringInterpolation() {
         let int = 123
         let string = "argument"

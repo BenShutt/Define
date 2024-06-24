@@ -9,7 +9,6 @@ import Foundation
 import Alamofire
 
 extension Error {
-
     var responseCode: Int? {
         (self as? AFError)?.responseCode
     }

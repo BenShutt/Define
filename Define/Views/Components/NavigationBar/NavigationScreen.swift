@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct NavigationScreen<Content: View>: View {
-
     var title: LocalizedStringKey
     var subtitle: LocalizedStringKey
 

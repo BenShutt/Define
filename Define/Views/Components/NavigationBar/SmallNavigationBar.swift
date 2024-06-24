@@ -9,7 +9,6 @@ import SwiftUI
 
 /// View for the small navigation bar state
 struct SmallNavigationBar: View {
-
     var title: LocalizedStringKey
 
     var body: some View {

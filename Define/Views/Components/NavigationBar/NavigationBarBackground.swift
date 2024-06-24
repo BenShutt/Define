@@ -9,7 +9,6 @@ import SwiftUI
 
 /// Background view of the navigation bar
 struct NavigationBarBackground: View {
-
     var body: some View {
         LinearGradient(
             colors: [

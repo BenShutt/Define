@@ -33,7 +33,6 @@ struct ScreenBody<Content: View>: View {
 /// - Note: The reason for a `ViewModifier` over a protocol is we might want to add
 /// properties before or after
 struct Screen: ViewModifier {
-
     var backgroundColor: Color
 
     func body(content: Content) -> some View {
@@ -44,7 +43,6 @@ struct Screen: ViewModifier {
 // MARK: - View + Screen
 
 extension View {
-
     func screen(backgroundColor: Color = .appLightGray) -> some View {
         modifier(Screen(backgroundColor: backgroundColor))
     }

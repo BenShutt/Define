@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct InformationSheet: View {
-
     @Environment(\.dismiss) var dismiss
     var title: LocalizedStringKey
     var subtitle: LocalizedStringKey

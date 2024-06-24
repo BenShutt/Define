@@ -9,7 +9,6 @@ import SwiftUI
 
 /// View for the large navigation bar state
 struct LargeNavigationBar: View {
-
     var title: LocalizedStringKey
     var subtitle: LocalizedStringKey
 

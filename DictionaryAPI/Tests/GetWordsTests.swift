@@ -9,7 +9,6 @@ import XCTest
 import DictionaryAPI
 
 final class GetWordsTests: XCTestCase {
-
     func testSuccess() async throws {
         _ = try await GetWords(word: "hello").requestAndValidate()
     }

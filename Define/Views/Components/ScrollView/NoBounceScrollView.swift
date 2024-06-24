@@ -11,7 +11,6 @@ import SwiftUI
 
 /// A `ScrollView` which uses Introspect to disable bounces on the `UIScrollView`
 struct NoBounceScrollView<Content: View>: View {
-
     var axes: Axis.Set
     var showsIndicators: Bool
     @ViewBuilder var content: () -> Content
@@ -29,7 +28,6 @@ struct NoBounceScrollView<Content: View>: View {
 // MARK: - BounceBehavior
 
 private struct BounceBehavior: ViewModifier {
-
     func body(content: Content) -> some View {
         if #available(iOS 16.4, *) {
             content.scrollBounceBehavior(.basedOnSize)
@@ -42,7 +40,6 @@ private struct BounceBehavior: ViewModifier {
 // MARK: - Extensions
 
 extension NoBounceScrollView {
-
     init(
         _ axes: Axis.Set = .vertical,
         showsIndicators: Bool = true,

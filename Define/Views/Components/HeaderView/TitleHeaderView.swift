@@ -9,7 +9,6 @@ import SwiftUI
 
 /// Header view with only a title
 struct TitleHeaderView: ViewModifier {
-
     var title: LocalizedStringKey
 
     private var padding: EdgeInsets {
