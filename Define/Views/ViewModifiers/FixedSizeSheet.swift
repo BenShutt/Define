@@ -20,12 +20,13 @@ private struct FixedSizeSheet: ViewModifier {
             content
                 .onSizeChanged { contentHeight = $0.height }
         }
+        .scrollDisabled(contentHeight <= maxHeight)
         .scrollBounceBasedOnSize()
         .frame(height: height)
         .fixedSize(horizontal: false, vertical: true)
         .presentationDetents([.height(height)])
         .presentationDragIndicator(.visible)
-        .padding(.top) // For presentation drag indicator
+        .padding(.top, 5) // For presentation drag indicator
     }
 }
 
@@ -35,4 +36,28 @@ extension View {
     func fixedSizeSheet(maxHeight: CGFloat = 450) -> some View {
         modifier(FixedSizeSheet(maxHeight: maxHeight))
     }
+}
+
+// MARK: - Preview
+
+private struct PreviewView: View {
+    @State private var isPresenting = false
+    private let height: CGFloat = 800
+
+    var body: some View {
+        Button(action: {
+            isPresenting = true
+        }, label: {
+            Text("PRESENT")
+        })
+        .sheet(isPresented: $isPresenting) {
+            Color.blue
+                .frame(height: height)
+                .fixedSizeSheet(maxHeight: 450)
+        }
+    }
+}
+
+#Preview {
+    PreviewView()
 }

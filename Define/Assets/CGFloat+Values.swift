@@ -60,5 +60,6 @@ extension CGFloat {
 
 extension Double {
 
+    /// π
     static let π: Double = .pi
 }
