@@ -49,6 +49,6 @@ struct TitleHeaderView: ViewModifier {
     NavigationStack {
         Color.clear
             .screen()
-            .modifier(TitleHeaderView(title: "Preview Title"))
+            .modifier(TitleHeaderView(title: "home_title"))
     }
 }

@@ -122,9 +122,6 @@
         }
       }
     },
-    "Enter value..." : {
-
-    },
     "home_button" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -157,18 +154,6 @@
           }
         }
       }
-    },
-    "Preview" : {
-
-    },
-    "PREVIEW BUTTON" : {
-
-    },
-    "Preview caption" : {
-
-    },
-    "Preview Title" : {
-
     },
     "reference_found" : {
       "extractionState" : "manual",

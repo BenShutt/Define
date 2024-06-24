@@ -175,7 +175,7 @@ private struct WordContentView: View {
 
 #Preview {
     NavigationStack {
-        WordScreen(word: .init(word: "hello"))
+        WordScreen(word: .init(word: "Preview"))
     }
     .environmentObject(NavigationViewModel())
     .environmentObject(WordsViewModel())

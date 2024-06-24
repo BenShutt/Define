@@ -51,10 +51,10 @@ extension View {
 // MARK: - Preview
 
 #Preview {
-    Text("Preview")
+    Text("search_title")
         .screen()
         .stickyButton(
-            title: "PREVIEW BUTTON",
+            title: "continue_button",
             systemName: "plus",
             onTap: {}
         )

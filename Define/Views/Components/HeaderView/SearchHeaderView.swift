@@ -57,8 +57,8 @@ struct SearchHeaderView: View {
 // MARK: - Preview
 
 #Preview {
-    VStack {
-        SearchHeaderView(searchText: .constant("Some search"))
+    VStack(spacing: 0) {
+        SearchHeaderView(searchText: .constant(""))
         Spacer()
     }
 }

@@ -51,5 +51,5 @@ struct ReferenceLibraryCard: View {
 // MARK: - Preview
 
 #Preview {
-    ReferenceLibraryCard(term: "Hey")
+    ReferenceLibraryCard(term: "Preview")
 }

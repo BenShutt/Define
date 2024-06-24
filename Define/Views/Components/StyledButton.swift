@@ -51,7 +51,7 @@ struct StyledButton: View {
 
 #Preview {
     StyledButton(
-        title: "PREVIEW BUTTON",
+        title: "continue_button",
         systemName: "plus",
         onTap: {}
     )

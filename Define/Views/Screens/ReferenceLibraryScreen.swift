@@ -45,6 +45,6 @@ private struct ReferenceLibraryView: UIViewControllerRepresentable {
 #Preview {
     Color.appWhite
         .sheet(isPresented: .constant(true)) {
-            ReferenceLibraryScreen(term: "hello") {}
+            ReferenceLibraryScreen(term: "Preview") {}
         }
 }

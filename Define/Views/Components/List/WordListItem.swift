@@ -122,7 +122,7 @@ private struct ReminderView: View {
 #Preview {
     WordListItem(
         word: .preview,
-        caption: "Preview caption",
+        caption: "added_just_now",
         isScheduled: true
     )
     .screen()

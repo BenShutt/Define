@@ -81,7 +81,7 @@ struct InputTextField: View {
     VStack {
         InputTextField(
             text: .constant("The value"),
-            prompt: "Enter value...",
+            prompt: "search_header_prompt",
             image: Image(systemName: "magnifyingglass"),
             contentType: .name
         )
