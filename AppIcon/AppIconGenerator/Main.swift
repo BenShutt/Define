@@ -60,8 +60,7 @@ struct Main: AsyncParsableCommand {
     func renderAndWrite(in directoryURL: URL) throws {
         let url = directoryURL.appendingPathComponent("\(fileName).png")
         let renderer = PNGRenderer(width: width, height: height)
-        let view = content.frame(width: width, height: height)
-        let data = try renderer.pngData(of: view)
+        let data = try renderer.pngData(of: content)
         try data.write(to: url, options: .atomic)
     }
 }

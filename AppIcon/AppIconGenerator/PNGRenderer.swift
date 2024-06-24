@@ -16,7 +16,8 @@ import SwiftUI
     var height: CGFloat
 
     func pngData(of content: some View) throws -> Data {
-        let renderer = ImageRenderer(content: content)
+        let view = content.frame(width: width, height: height)
+        let renderer = ImageRenderer(content: view)
         renderer.scale = scale
         renderer.proposedSize = .init(width: width, height: height)
         let pngData = renderer.pngData()
