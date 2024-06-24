@@ -36,11 +36,4 @@ extension Calendar {
             to: date
         ) ?? date
     }
-
-    /// Set time components to midnight (start of day)
-    /// - Parameter date: `Date`
-    /// - Returns: `Date`
-    func startOfDay(of date: Date) -> Date { // TODO: Think this already exists
-        self.date(bySettingHour: 0, minute: 0, second: 0, of: date) ?? date
-    }
 }

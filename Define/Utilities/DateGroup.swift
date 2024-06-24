@@ -18,7 +18,7 @@ enum DateGroup: Int, Equatable, Hashable, Comparable {
     }
 
     private static func group(for date: Date) -> DateGroup {
-        let today = Calendar.current.startOfDay(of: Date())
+        let today = Calendar.current.startOfDay(for: Date())
         guard date < today else { return .today }
 
         let lastWeek = Calendar.current.adding(.weekOfYear, value: -1, to: today)
