@@ -83,6 +83,7 @@ private struct WelcomeHeaderView: View {
                 animationValue: animationValue
             )
             .frame(width: iconHeight, height: iconHeight)
+            .appIconContainer(color: color)
             .padding(.top, backgroundHeight - iconHeight * 0.75)
         }
     }

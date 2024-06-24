@@ -21,7 +21,7 @@ public struct LaunchScreen: View {
             .ignoresSafeArea()
             .onSizeChanged { appIconSize = $0.min * 0.4 }
             .overlay {
-                AppIcon()
+                AppIcon(color: color)
                     .frame(width: appIconSize, height: appIconSize)
                     .appIconContainer(color: color)
             }

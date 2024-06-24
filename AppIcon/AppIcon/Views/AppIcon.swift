@@ -32,13 +32,6 @@ public struct AppIcon: View {
     }
 }
 
-extension AppIcon {
-    static func make(size: CGFloat) -> some View {
-        AppIcon()
-            .frame(width: size, height: size)
-    }
-}
-
 // MARK: - Preview
 
 #Preview {
