@@ -88,6 +88,8 @@
 		B8AD58812AD45F070054403E /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = B8AD58802AD45F070054403E /* SwiftUIIntrospect */; };
 		B8AD58832AD471350054403E /* InformationSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AD58822AD471350054403E /* InformationSheet.swift */; };
 		B8AD58852AD47FC00054403E /* WordReminderObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AD58842AD47FC00054403E /* WordReminderObserver.swift */; };
+		B8B05F142C29716A00F2A9A8 /* BasedOnSizeScrollBounceBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B05F132C29716A00F2A9A8 /* BasedOnSizeScrollBounceBehavior.swift */; };
+		B8B05F162C29748400F2A9A8 /* FixedSizeSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B05F152C29748400F2A9A8 /* FixedSizeSheet.swift */; };
 		B8B563E728EFFEC3004B80F0 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B563E628EFFEC3004B80F0 /* View+Extensions.swift */; };
 		B8B563E928F00096004B80F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8B563E828F00096004B80F0 /* LaunchScreen.storyboard */; };
 		B8B732E42AEFA1790017F713 /* TitleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B732E32AEFA1790017F713 /* TitleHeaderView.swift */; };
@@ -100,7 +102,6 @@
 		B8BFDC712AC7800C009E1F83 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BFDC702AC7800C009E1F83 /* BlurView.swift */; };
 		B8C25F9C294F7AAF001C8847 /* KeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C25F9B294F7AAF001C8847 /* KeyboardToolbar.swift */; };
 		B8C25FA0294F8D5D001C8847 /* Separator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C25F9F294F8D5D001C8847 /* Separator.swift */; };
-		B8C43F3229FB0F7500F5E166 /* NoBounceScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C43F3129FB0F7500F5E166 /* NoBounceScrollView.swift */; };
 		B8C5ACAE2ACCAE6200595772 /* ReferenceLibraryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C5ACAD2ACCAE6200595772 /* ReferenceLibraryCard.swift */; };
 		B8C5ACB22ACCBA7D00595772 /* ReferenceLibraryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C5ACB12ACCBA7D00595772 /* ReferenceLibraryScreen.swift */; };
 		B8D2A73C28DEEFAE0096A020 /* SearchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2A73B28DEEFAE0096A020 /* SearchScreen.swift */; };
@@ -226,6 +227,8 @@
 		B8A1235E28E9829B00ACEC45 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8AD58822AD471350054403E /* InformationSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationSheet.swift; sourceTree = "<group>"; };
 		B8AD58842AD47FC00054403E /* WordReminderObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordReminderObserver.swift; sourceTree = "<group>"; };
+		B8B05F132C29716A00F2A9A8 /* BasedOnSizeScrollBounceBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasedOnSizeScrollBounceBehavior.swift; sourceTree = "<group>"; };
+		B8B05F152C29748400F2A9A8 /* FixedSizeSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedSizeSheet.swift; sourceTree = "<group>"; };
 		B8B563E628EFFEC3004B80F0 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		B8B563E828F00096004B80F0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B8B732E32AEFA1790017F713 /* TitleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleHeaderView.swift; sourceTree = "<group>"; };
@@ -236,7 +239,6 @@
 		B8BFDC702AC7800C009E1F83 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		B8C25F9B294F7AAF001C8847 /* KeyboardToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardToolbar.swift; sourceTree = "<group>"; };
 		B8C25F9F294F8D5D001C8847 /* Separator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Separator.swift; sourceTree = "<group>"; };
-		B8C43F3129FB0F7500F5E166 /* NoBounceScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoBounceScrollView.swift; sourceTree = "<group>"; };
 		B8C5ACAD2ACCAE6200595772 /* ReferenceLibraryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceLibraryCard.swift; sourceTree = "<group>"; };
 		B8C5ACB12ACCBA7D00595772 /* ReferenceLibraryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceLibraryScreen.swift; sourceTree = "<group>"; };
 		B8D2A73B28DEEFAE0096A020 /* SearchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreen.swift; sourceTree = "<group>"; };
@@ -403,7 +405,6 @@
 			isa = PBXGroup;
 			children = (
 				B80E721A29FD9578007CCE71 /* MarginedList.swift */,
-				B8C43F3129FB0F7500F5E166 /* NoBounceScrollView.swift */,
 				B832D65C2C24652500FF3EFE /* OffsetScrollView.swift */,
 			);
 			path = ScrollView;
@@ -450,6 +451,8 @@
 				B8E336562AD5BABF00374E4A /* ListAnimator.swift */,
 				B86BA87D2AE79C8B00C638CD /* ReceiveTimer.swift */,
 				B8AD58842AD47FC00054403E /* WordReminderObserver.swift */,
+				B8B05F132C29716A00F2A9A8 /* BasedOnSizeScrollBounceBehavior.swift */,
+				B8B05F152C29748400F2A9A8 /* FixedSizeSheet.swift */,
 			);
 			path = ViewModifiers;
 			sourceTree = "<group>";
@@ -853,7 +856,9 @@
 				B80E722929FDB8CC007CCE71 /* DateComponentsFormatter+Extensions.swift in Sources */,
 				B868F23C2AECDD88003765F8 /* DateGroup.swift in Sources */,
 				B80399DD28D79A37008CE7B4 /* DefineApp.swift in Sources */,
+				B8B05F142C29716A00F2A9A8 /* BasedOnSizeScrollBounceBehavior.swift in Sources */,
 				B88491A22961FFB5009F6469 /* DefinitionListItem.swift in Sources */,
+				B8B05F162C29748400F2A9A8 /* FixedSizeSheet.swift in Sources */,
 				B8B9B9D828EC603D006FCA76 /* EdgeInsets+Extensions.swift in Sources */,
 				B8E49C0F28DF9AA500F9CAC4 /* EdgeInsets+Values.swift in Sources */,
 				B80E71FF29FBB578007CCE71 /* FigmaShadow+Values.swift in Sources */,
@@ -882,7 +887,6 @@
 				B8F834D02B73E40700D0C5D2 /* NavigationBarBackground.swift in Sources */,
 				B8F834CE2B73DC9700D0C5D2 /* NavigationScreen.swift in Sources */,
 				B8958876295790E30041A315 /* NavigationViewModel.swift in Sources */,
-				B8C43F3229FB0F7500F5E166 /* NoBounceScrollView.swift in Sources */,
 				B896B9AD2AEA2EEF0043DA18 /* NotificationRequestManager.swift in Sources */,
 				B832D6622C24654A00FF3EFE /* OffsetScrollView.swift in Sources */,
 				B8994CAE2A8EC4C2000BE101 /* PushNotificationManager.swift in Sources */,

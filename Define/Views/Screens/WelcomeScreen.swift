@@ -38,6 +38,7 @@ struct WelcomeScreen: View {
             .multilineTextAlignment(.leading)
             .padding(.bottom, .vMargin)
         }
+        .scrollBounceBasedOnSize()
         .ignoresSafeArea(.all, edges: .top)
         .screen()
         .stickyButton(

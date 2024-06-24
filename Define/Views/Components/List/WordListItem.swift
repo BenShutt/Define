@@ -67,24 +67,23 @@ struct WordListItem: View {
 // MARK: - PartsOfSpeechView
 
 private struct PartsOfSpeechView: View {
-
     var partsOfSpeech: [String]
 
     var body: some View {
-        NoBounceScrollView(.horizontal, showsIndicators: false) {
+        ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: .small) {
                 ForEach(partsOfSpeech, id: \.self) {
                     WordCategoryView(category: $0)
                 }
             }
         }
+        .scrollBounceBasedOnSize()
     }
 }
 
 // MARK: - ReminderView
 
 private struct ReminderView: View {
-
     @State private var timeRemaining: TimeRemaining?
     var word: Word
 
