@@ -7,11 +7,8 @@
 
 import SwiftUI
 
-/// `Binding` to a `FocusState` with a `Bool`
-typealias FocusStateBinding = FocusState<Bool>.Binding
-
 /// Add toolbar for keyboard
-struct KeyboardToolbar: ViewModifier {
+private struct KeyboardToolbar: ViewModifier {
 
     /// Dismiss button tapped
     var onDismiss: () -> Void
