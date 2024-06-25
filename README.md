@@ -25,3 +25,11 @@ This implementation can be found in the Git history.
 
 Primarily created to learn more about SwiftUI having nearly always developed with UIKit.
 But also creates a neat little helpful tool.
+
+## Reference Library
+
+Apple provides a [UIReferenceLibraryViewController](https://developer.apple.com/documentation/uikit/uireferencelibraryviewcontroller) which would be perfectly suited, if not for:
+
+> A UIReferenceLibraryViewController object should not be used to display wordlists, create a standalone dictionary app, or republish the content in any form.
+
+Alas, given that this app is intended to supplement rather than replace.
