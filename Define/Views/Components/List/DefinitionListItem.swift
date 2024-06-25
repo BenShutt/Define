@@ -19,7 +19,7 @@ struct DefinitionListItem: View {
                 isExpanded.toggle()
             }
         }, label: {
-            DefinitionContentView(
+            DefinitionView(
                 isExpanded: isExpanded,
                 definition: definition
             )
@@ -28,9 +28,9 @@ struct DefinitionListItem: View {
     }
 }
 
-// MARK: - DefinitionContentView
+// MARK: - DefinitionView
 
-private struct DefinitionContentView: View {
+private struct DefinitionView: View {
     var isExpanded: Bool
     var definition: Word.Meaning.Definition
 
@@ -56,6 +56,7 @@ private struct DefinitionContentView: View {
                     .foregroundStyle(Color.appDarkGray)
             }
         }
+        .padding(.margins)
     }
 }
 

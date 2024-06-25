@@ -19,18 +19,9 @@ struct WordCategoryView: View {
         WordCategory(rawValue: category.lowercased())
     }
 
-    /// Background color
-    var backgroundColor: Color {
-        guard let wordCategory else { return .appLightGray }
-        return switch wordCategory {
-        case .adjective: .appBlue
-        case .adverb: .appPurple
-        case .interjection: .appOrange
-        case .noun: .appYellow
-        case .numeral: .appGreen
-        case .pronoun: .appPink
-        case .verb: .appRed
-        }
+    /// Background color of the capsule
+    private var backgroundColor: Color {
+        wordCategory?.backgroundColor ?? .appLightGray
     }
 
     /// Draw view
@@ -40,6 +31,22 @@ struct WordCategoryView: View {
             foregroundColor: .appDarkGray,
             backgroundColor: backgroundColor
         )
+    }
+}
+
+// MARK: - WordCategory + Color
+
+extension WordCategory {
+    var backgroundColor: Color {
+        switch self {
+        case .adjective: .appBlue
+        case .adverb: .appPurple
+        case .interjection: .appOrange
+        case .noun: .appYellow
+        case .numeral: .appGreen
+        case .pronoun: .appPink
+        case .verb: .appRed
+        }
     }
 }
 

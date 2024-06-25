@@ -11,24 +11,26 @@ import DictionaryAPI
 struct MeaningListItem: View {
     var meaning: Word.Meaning
 
+    private var wordCategory: WordCategory? {
+        WordCategory(rawValue: meaning.category.lowercased())
+    }
+
     var body: some View {
         VStack(spacing: 0) {
-            ForEach(meaning.definitions.zipped, id: \.0) { index, definition in
-                VStack(spacing: 0) {
-                    if index > 0 {
-                        Separator(color: .separator.opacity(0.5))
-                            .padding(.vertical, .mediumLarge)
-                    }
+            Text(meaning.category)
+                .textStyle(.h4, fill: .center)
+                .padding(.medium)
+                .background(GradientBlurView(
+                    color: wordCategory?.backgroundColor ?? .appLightGray
+                ))
 
+            ForEach(meaning.definitions.zipped, id: \.0) { _, definition in
+                VStack(spacing: 0) {
+                    Separator(color: .separator)
                     DefinitionListItem(definition: definition)
                 }
             }
-
-            WordCategoryView(category: meaning.category)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.top, .mediumLarge)
         }
-        .padding(.meaning)
         .background(Color.appWhite)
     }
 }
