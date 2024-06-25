@@ -14,7 +14,7 @@ struct ChevronView: View {
             .resizable()
             .scaledToFit()
             .fontWeight(.black)
-            .foregroundColor(Color.appDarkGray)
+            .foregroundStyle(Color.appDarkGray)
             .frame(width: 16, height: 16)
             .padding(.horizontal, 9)
             .padding(.vertical, 9)

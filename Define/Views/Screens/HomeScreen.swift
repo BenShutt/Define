@@ -87,7 +87,7 @@ private struct WordsSectionHeader: View {
                 .frame(minWidth: .hMargin, maxWidth: .infinity)
 
             Text(title)
-                .h4()
+                .textStyle(.h4)
 
             Separator(color: separatorColor)
                 .frame(minWidth: .hMargin, maxWidth: .infinity)

@@ -46,23 +46,22 @@ struct InputTextField: View {
             TextField(prompt, text: $text)
                 .focused($isFocused)
                 .textContentType(contentType)
-                .textStyle(.body)
-                .lineLimit(1)
+                .textStyle(
+                    .body,
+                    lineLimit: 1,
+                    textColor: tintColor,
+                    fill: .leading
+                )
                 .tint(tintColor)
                 .accentColor(tintColor) // For cursor
-                .foregroundColor(tintColor)
                 .padding(.vertical, .mediumLarge)
-                .frame(maxHeight: .infinity)
 
             if !text.isEmpty {
-                CrossIconView {
-                    text = ""
-                }
+                CrossIconView { text = "" }
             }
         }
         .background(Color.appWhite)
         .capsuleBorder(color: borderColor)
-        .fixedSize(horizontal: false, vertical: true)
         .keyboardToolbar {
             isFocused = false
         }

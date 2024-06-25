@@ -33,12 +33,12 @@ enum WorkSans: String {
 
 extension View {
 
-    /// Apply a custom `font` with the given `size`
+    /// Apply a custom `workSans` font with the given `size`
     /// - Parameters:
-    ///   - font: `Font`
-    ///   - size: `CGFloat`
-    /// - Returns: `View`
-    func customFont(_ customFont: WorkSans, size: CGFloat) -> some View {
-        font(.custom(customFont.rawValue, size: size))
+    ///   - workSans: `WorkSans` case of font
+    ///   - size: `CGFloat` size of font
+    /// - Returns: Modified `View`
+    func workSans(_ workSans: WorkSans, size: CGFloat) -> some View {
+        font(.custom(workSans.rawValue, size: size))
     }
 }

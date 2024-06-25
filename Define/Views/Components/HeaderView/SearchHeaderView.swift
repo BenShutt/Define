@@ -32,10 +32,10 @@ struct SearchHeaderView: View {
         HeaderView(spacing: 0, padding: padding) {
             if !isTextInputFocused {
                 Text("search_header_title")
-                    .h1()
+                    .textStyle(.h1, fill: .leading)
 
                 Text("search_header_subtitle")
-                    .body()
+                    .textStyle(.body, fill: .leading)
                     .padding(.top, .medium)
                     .padding(.bottom, .extraLarge)
             }

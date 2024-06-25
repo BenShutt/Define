@@ -93,9 +93,8 @@ private struct SearchStateView: View {
                 )
             } else {
                 Text("search_api_failure")
-                    .body()
+                    .textStyle(.body)
                     .padding(.horizontal, .large)
-                    .multilineTextAlignment(.center)
             }
 
         case let .success(words):

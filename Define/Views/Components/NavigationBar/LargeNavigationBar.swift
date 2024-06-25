@@ -15,15 +15,11 @@ struct LargeNavigationBar: View {
     var body: some View {
         VStack(alignment: .leading, spacing: .smallMedium) {
             Text(title)
-                .h1()
-                .frame(maxWidth: .infinity, alignment: .leading)
+                .textStyle(.h1, fill: .leading)
 
             Text(subtitle)
-                .body()
-                .frame(maxWidth: .infinity, alignment: .leading)
+                .textStyle(.body, fill: .leading)
         }
-        .multilineTextAlignment(.leading)
-        .frame(maxWidth: .infinity)
         .padding(.horizontal, .hMargin)
         .padding(.top, .vMargin)
         .padding(.bottom, .vMargin + .small)

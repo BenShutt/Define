@@ -26,7 +26,7 @@ struct TitleHeaderView: ViewModifier {
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     Text(title)
-                        .h2()
+                        .textStyle(.h2)
                 }
             }
             .toolbarBackground(

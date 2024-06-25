@@ -23,19 +23,17 @@ struct WelcomeScreen: View {
                     animationValue: animationValue,
                     color: .appBlue
                 )
-                .frame(maxWidth: .infinity)
 
                 Text("welcome_title \(appName)")
-                    .h1()
+                    .textStyle(.h1, fill: .leading)
                     .padding(.top, 2 * .extraLarge)
                     .padding(.horizontal, .hMargin)
 
                 Text("welcome_subtitle \(appName)")
-                    .body()
+                    .textStyle(.body, fill: .leading)
                     .padding(.top, .large)
                     .padding(.horizontal, .hMargin)
             }
-            .multilineTextAlignment(.leading)
             .padding(.bottom, .vMargin)
         }
         .scrollBounceBasedOnSize()
@@ -73,6 +71,7 @@ private struct WelcomeHeaderView: View {
                 startPoint: .top,
                 endPoint: .bottom
             )
+            .frame(maxWidth: .infinity)
             .frame(height: backgroundHeight)
             .background(Color.appWhite)
             .clipShape(CurvedBottom())

@@ -10,19 +10,18 @@ import SwiftUI
 /// Tag capsule
 struct TagView: View {
 
-    /// `String` text
+    /// Title of the tag
     var text: String
 
-    /// `Color` of the foreground
+    /// Color of the foreground
     var foregroundColor: Color
 
-    /// `Color` of the background
+    /// Color of the background
     var backgroundColor: Color
 
     var body: some View {
         Text(verbatim: text)
-            .textStyle(.tag)
-            .foregroundColor(foregroundColor)
+            .textStyle(.tag, textColor: foregroundColor)
             .padding(.vertical, .smallMedium)
             .padding(.horizontal, .medium)
             .background(GradientBlurView(color: backgroundColor))

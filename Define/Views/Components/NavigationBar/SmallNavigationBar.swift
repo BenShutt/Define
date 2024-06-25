@@ -13,8 +13,7 @@ struct SmallNavigationBar: View {
 
     var body: some View {
         Text(title)
-            .h3()
-            .multilineTextAlignment(.center)
+            .textStyle(.h3)
             .frame(maxWidth: .infinity)
             .padding(.horizontal, .hMargin)
             .padding(.vertical, .vMargin)

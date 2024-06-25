@@ -55,7 +55,7 @@ struct WordScreen: View {
         .toolbar {
             ToolbarItem(placement: .principal) {
                 Text(verbatim: word.title)
-                    .h2()
+                    .textStyle(.h2)
             }
 
             if isWordSaved {

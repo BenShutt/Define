@@ -20,11 +20,10 @@ struct HeaderView<Content: View>: View {
     @ViewBuilder var content: () -> Content
 
     var body: some View {
-        VStack(alignment: .leading, spacing: spacing) {
+        VStack(spacing: spacing) {
             content()
         }
-        .multilineTextAlignment(.leading)
-        .frame(maxWidth: .infinity, alignment: .leading)
+        .frame(maxWidth: .infinity)
         .padding(padding)
         .background {
             HeaderBackground()

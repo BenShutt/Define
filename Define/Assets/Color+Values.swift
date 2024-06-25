@@ -24,6 +24,8 @@ extension Color {
     static let appRed = Color(red255: 215, green: 0, blue: 64)
 }
 
+// MARK: - Color + Computed
+
 extension Color {
     static let separator: Color = .appLightGray
     static let screenBackground: Color = .appLightGray

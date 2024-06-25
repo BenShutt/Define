@@ -15,12 +15,11 @@ struct MeaningListItem: View {
     var meaning: Word.Meaning
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            ForEach(meaning.definitions.zipped, id: \.index) { index, definition in
-                VStack(alignment: .leading, spacing: 0) {
+        VStack(spacing: 0) {
+            ForEach(meaning.definitions.zipped, id: \.0) { index, definition in
+                VStack(spacing: 0) {
                     if index > 0 {
-                        Separator()
-                            .opacity(0.5)
+                        Separator(color: .separator.opacity(0.5))
                             .padding(.vertical, .mediumLarge)
                     }
 
@@ -29,9 +28,9 @@ struct MeaningListItem: View {
             }
 
             WordCategoryView(category: meaning.category)
+                .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.top, .mediumLarge)
         }
-        .listItem()
         .padding(.meaning)
         .background(Color.appWhite)
     }

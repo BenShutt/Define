@@ -16,19 +16,16 @@ struct InformationSheet: View {
         VStack(alignment: .leading, spacing: 0) {
             HStack(spacing: .medium) {
                 Text(title)
-                    .h2()
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .textStyle(.h2, fill: .leading)
 
                 CrossButton(action: dismiss.callAsFunction)
             }
 
             Text(subtitle)
-                .body()
+                .textStyle(.body, fill: .leading)
                 .padding(.top, .smallMedium)
         }
-        .multilineTextAlignment(.leading)
         .padding(.margins)
-        .frame(maxWidth: .infinity)
         .padding(.vertical, .small)
         .fixedSizeSheet()
     }

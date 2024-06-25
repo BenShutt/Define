@@ -37,6 +37,7 @@ struct NavigationScreen<Content: View>: View {
             .compositingGroup()
             .shadow(.sticky)
         }
+        .toolbar(.hidden, for: .navigationBar)
     }
 }
 

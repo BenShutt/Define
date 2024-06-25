@@ -37,7 +37,6 @@ struct DefinitionListItem: View {
 // MARK: - DefinitionContentView
 
 private struct DefinitionContentView: View {
-
     var isExpanded: Bool
     var definition: Word.Meaning.Definition
 
@@ -47,25 +46,22 @@ private struct DefinitionContentView: View {
 
     var body: some View {
         HStack(spacing: .medium) {
-            VStack(alignment: .leading, spacing: .small) {
+            VStack(spacing: .small) {
                 Text(verbatim: definition.title)
-                    .body()
+                    .textStyle(.body, fill: .leading)
 
                 if let example, isExpanded {
                     Text("definition_example \(example)")
-                        .foregroundColor(.appBlue)
-                        .caption()
+                        .textStyle(.caption, textColor: .appBlue, fill: .leading)
                 }
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
 
             if example != nil {
                 Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
                     .font(.system(size: 12))
-                    .foregroundColor(Color.appDarkGray)
+                    .foregroundStyle(Color.appDarkGray)
             }
         }
-        .listItem()
     }
 }
 

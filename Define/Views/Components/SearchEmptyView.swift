@@ -27,7 +27,7 @@ struct SearchEmptyView: View {
     var subtitle: LocalizedStringKey
 
     var body: some View {
-        VStack(alignment: .center, spacing: 0) {
+        VStack(spacing: 0) {
             LottieView(
                 file: lottie,
                 loopMode: loopMode,
@@ -36,14 +36,13 @@ struct SearchEmptyView: View {
             .frame(width: 300, height: 100)
 
             Text(title)
-                .h1()
+                .textStyle(.h1, fill: .center)
                 .padding(.top, .large)
 
             Text(subtitle)
-                .body()
+                .textStyle(.body, fill: .center)
                 .padding(.top, .medium)
         }
-        .multilineTextAlignment(.center)
         .padding(.margins)
     }
 }

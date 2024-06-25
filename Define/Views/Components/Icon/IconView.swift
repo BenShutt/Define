@@ -28,7 +28,7 @@ struct IconView: View {
             .renderingMode(.template)
             .resizable()
             .aspectRatio(contentMode: contentMode)
-            .foregroundColor(foregroundColor)
+            .foregroundStyle(foregroundColor)
     }
 
     var body: some View {

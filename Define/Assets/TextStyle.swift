@@ -18,92 +18,92 @@ enum TextStyle: String, CaseIterable, Hashable, Identifiable {
     case tag
     case caption
 
-    /// Identifier
     var id: Self { self }
 
     /// Get size of the font
-    var fontSize: CGFloat {
+    private var fontSize: CGFloat {
         switch self {
-        case .h1: return 32
-        case .h2: return 20
-        case .h3: return 18
-        case .h4: return 16
-        case .body: return 16
-        case .button: return 18
-        case .tag: return 14
-        case .caption: return 14
+        case .h1: 32
+        case .h2: 20
+        case .h3: 18
+        case .h4: 16
+        case .body: 16
+        case .button: 18
+        case .tag: 14
+        case .caption: 14
         }
     }
 
     /// Get name and weight of the font
-    var font: WorkSans {
+    private var font: WorkSans {
         switch self {
-        case .h1: return .bold
-        case .h2: return .semiBold
-        case .h3: return .semiBold
-        case .h4: return .semiBold
-        case .body: return .regular
-        case .button: return .bold
-        case .tag: return .semiBold
-        case .caption: return .light
+        case .h1: .bold
+        case .h2: .semiBold
+        case .h3: .semiBold
+        case .h4: .semiBold
+        case .body: .regular
+        case .button: .bold
+        case .tag: .semiBold
+        case .caption: .light
         }
+    }
+
+    /// Default text color
+    private var defaultTextColor: Color {
+        switch self {
+        case .h1: return .appDarkGray
+        case .h2: return .appDarkGray
+        case .h3: return .appDarkGray
+        case .h4: return .appDarkGray
+        case .body: return .appGray
+        case .button: return .appDarkGray
+        case .tag: return .appGray
+        case .caption: return .appGray
+        }
+    }
+
+    /// Is the text style italic
+    private var italic: Bool {
+        self == .caption
+    }
+
+    /// Make a styled text
+    /// - Parameters:
+    ///   - lineLimit: Number of lines to limit to, defaults to `nil`
+    ///   - textColor: Override text color, defaults to text style's default
+    ///   - fill: Fill parent width and set text alignment, defaults to `nil`
+    /// - Returns: A styled text
+    func styledText(
+        lineLimit: Int?,
+        textColor: Color?,
+        fill: TextAlignment?
+    ) -> StyledText {
+        StyledText(
+            font: font,
+            fontSize: fontSize,
+            italic: italic,
+            lintLimit: lineLimit,
+            foregroundColor: textColor ?? defaultTextColor,
+            maxWidth: fill != nil ? .infinity : nil,
+            textAlignment: fill ?? .center
+        )
     }
 }
 
 // MARK: - View + TextStyle
 
 extension View {
-
-    /// Apply `textStyle`
-    /// 
-    /// - Parameter textStyle: `TextStyle`
-    /// - Returns: `View`
-    func textStyle(_ textStyle: TextStyle) -> some View {
-        customFont(textStyle.font, size: textStyle.fontSize)
-    }
-
-    /// Standard `.h1` implementation
-    func h1() -> some View {
-        textStyle(.h1)
-            .foregroundColor(.appDarkGray)
-    }
-
-    /// Standard `.h2` implementation
-    func h2() -> some View {
-        textStyle(.h2)
-            .foregroundColor(.appDarkGray)
-    }
-
-    /// Standard `.h3` implementation
-    func h3() -> some View {
-        textStyle(.h3)
-            .foregroundColor(.appDarkGray)
-    }
-
-    /// Standard `.h4` implementation
-    func h4() -> some View {
-        textStyle(.h4)
-            .foregroundColor(.appDarkGray)
-    }
-
-    /// Standard `.body` implementation
-    func body() -> some View {
-        textStyle(.body)
-            .foregroundColor(.appGray)
-    }
-
-    /// Standard `.tag` implementation
-    func tag() -> some View {
-        textStyle(.tag)
-            .foregroundColor(.appGray)
-    }
-
-    /// Standard `.caption` implementation
-    /// - Parameter textColor: Text color, defaults to `.appGray`
-    func caption(textColor: Color = .appGray) -> some View {
-        textStyle(.caption)
-            .foregroundColor(textColor)
-            .italic()
+    func textStyle(
+        _ textStyle: TextStyle,
+        lineLimit: Int? = nil,
+        textColor: Color? = nil,
+        fill: TextAlignment? = nil
+    ) -> some View {
+        modifier(textStyle.styledText(
+            lineLimit: lineLimit,
+            textColor: textColor,
+            fill: fill
+        ))
     }
 }
 
@@ -114,7 +114,6 @@ extension View {
         ForEach(TextStyle.allCases) { textStyle in
             Text(verbatim: textStyle.rawValue.capitalized)
                 .textStyle(textStyle)
-                .foregroundColor(.appDarkGray)
         }
     }
 }

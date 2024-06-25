@@ -34,7 +34,7 @@ struct StyledButton: View {
 
                 Text(title)
                     .textStyle(.button)
-                    .foregroundColor(foregroundColor)
+                    .foregroundStyle(foregroundColor)
             }
             .frame(maxWidth: .infinity)
             .padding(.buttonPadding)

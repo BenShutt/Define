@@ -19,23 +19,26 @@ struct ReferenceLibraryCard: View {
             Image(systemName: "text.book.closed.fill")
                 .font(.system(size: 40, weight: .bold))
 
-            VStack(alignment: .leading, spacing: .small) {
+            VStack(spacing: .small) {
                 Text(verbatim: term)
-                    .foregroundStyle(Color.appWhite)
-                    .h3()
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .textStyle(
+                        .h3,
+                        textColor: .appWhite,
+                        fill: .leading
+                    )
 
                 Text("reference_found")
-                    .foregroundStyle(Color.appWhite.opacity(0.8))
-                    .body()
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .textStyle(
+                        .body,
+                        textColor: .appWhite.opacity(0.8),
+                        fill: .leading
+                    )
             }
 
             Image(systemName: "chevron.right")
                 .font(.system(size: StyledButton.iconSize, weight: .bold))
+                .foregroundStyle(Color.appWhite)
         }
-        .multilineTextAlignment(.leading)
-        .foregroundStyle(Color.appWhite)
         .padding(EdgeInsets.largeMargins)
         .background(LinearGradient.reference)
         .clipShape(shape)

@@ -27,21 +27,19 @@ struct WordListItem: View {
 
     var body: some View {
         HStack(spacing: .mediumLarge) {
-            VStack(alignment: .leading, spacing: .small) {
+            VStack(spacing: .small) {
                 Text(verbatim: word.title)
-                    .h3()
+                    .textStyle(.h3, fill: .leading)
                     .padding(.bottom, .small)
 
                 if let subtitle = word.subtitle {
                     Text(subtitle)
-                        .lineLimit(3)
-                        .truncationMode(.tail)
-                        .body()
+                        .textStyle(.body, lineLimit: 3, fill: .leading)
                 }
 
                 if let caption {
                     Text(caption)
-                        .caption()
+                        .textStyle(.caption, fill: .leading)
                         .padding(.top, hasCategories ? .small : .medium)
                 }
 
@@ -50,7 +48,6 @@ struct WordListItem: View {
                         .padding(.top, .medium)
                 }
             }
-            .listItem()
 
             ChevronView()
         }
@@ -78,6 +75,7 @@ private struct PartsOfSpeechView: View {
             }
         }
         .scrollBounceBasedOnSize()
+        .frame(maxWidth: .infinity)
     }
 }
 
@@ -103,7 +101,7 @@ private struct ReminderView: View {
         }, label: {
             Image(systemName: "clock")
                 .font(.system(size: 16, weight: .regular))
-                .foregroundColor(Color.appGray)
+                .foregroundStyle(Color.appGray)
                 .padding(16)
                 .offset(x: 16, y: -16)
         })
