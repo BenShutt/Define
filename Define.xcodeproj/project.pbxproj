@@ -112,7 +112,6 @@
 		B8E336572AD5BABF00374E4A /* ListAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E336562AD5BABF00374E4A /* ListAnimator.swift */; };
 		B8E49C0928DF917E00F9CAC4 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E49C0828DF917E00F9CAC4 /* LoadingView.swift */; };
 		B8E49C0B28DF985500F9CAC4 /* CGFloat+Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E49C0A28DF985500F9CAC4 /* CGFloat+Values.swift */; };
-		B8E49C0F28DF9AA500F9CAC4 /* EdgeInsets+Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E49C0E28DF9AA500F9CAC4 /* EdgeInsets+Values.swift */; };
 		B8E762B42A95F2E6006E168E /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E762B32A95F2E6006E168E /* WelcomeScreen.swift */; };
 		B8F834CB2B73DC0F00D0C5D2 /* SmallNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F834C92B73DC0F00D0C5D2 /* SmallNavigationBar.swift */; };
 		B8F834CC2B73DC0F00D0C5D2 /* LargeNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F834CA2B73DC0F00D0C5D2 /* LargeNavigationBar.swift */; };
@@ -250,7 +249,6 @@
 		B8E336562AD5BABF00374E4A /* ListAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAnimator.swift; sourceTree = "<group>"; };
 		B8E49C0828DF917E00F9CAC4 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		B8E49C0A28DF985500F9CAC4 /* CGFloat+Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Values.swift"; sourceTree = "<group>"; };
-		B8E49C0E28DF9AA500F9CAC4 /* EdgeInsets+Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EdgeInsets+Values.swift"; sourceTree = "<group>"; };
 		B8E762B32A95F2E6006E168E /* WelcomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
 		B8F834C92B73DC0F00D0C5D2 /* SmallNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallNavigationBar.swift; sourceTree = "<group>"; };
 		B8F834CA2B73DC0F00D0C5D2 /* LargeNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargeNavigationBar.swift; sourceTree = "<group>"; };
@@ -371,7 +369,6 @@
 				B8B9B9DE28EDC6E4006FCA76 /* XCAssets */,
 				B8E49C0A28DF985500F9CAC4 /* CGFloat+Values.swift */,
 				B8D2A73D28DEEFE70096A020 /* Color+Values.swift */,
-				B8E49C0E28DF9AA500F9CAC4 /* EdgeInsets+Values.swift */,
 				B80E71FE29FBB578007CCE71 /* FigmaShadow+Values.swift */,
 				B8B563E828F00096004B80F0 /* LaunchScreen.storyboard */,
 				B80E720529FBB972007CCE71 /* LinearGradient+Gradients.swift */,
@@ -867,7 +864,6 @@
 				B80399DD28D79A37008CE7B4 /* DefineApp.swift in Sources */,
 				B88491A22961FFB5009F6469 /* DefinitionListItem.swift in Sources */,
 				B8B9B9D828EC603D006FCA76 /* EdgeInsets+Extensions.swift in Sources */,
-				B8E49C0F28DF9AA500F9CAC4 /* EdgeInsets+Values.swift in Sources */,
 				B80E71FF29FBB578007CCE71 /* FigmaShadow+Values.swift in Sources */,
 				B8B05F162C29748400F2A9A8 /* FixedSizeSheet.swift in Sources */,
 				B8BFDC6F2AC77FED009E1F83 /* GradientBlurView.swift in Sources */,

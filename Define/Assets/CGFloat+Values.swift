@@ -69,3 +69,11 @@ extension Double {
     /// π
     static let π: Double = .pi
 }
+
+// MARK: - EdgeInsets + Values
+
+extension EdgeInsets {
+    static let margins = EdgeInsets(vertical: .vMargin, horizontal: .hMargin)
+    static let header = EdgeInsets(vertical: .large, horizontal: .extraLarge)
+    static let marginedStack = EdgeInsets(vertical: .smallMedium, horizontal: .hMargin)
+}

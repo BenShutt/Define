@@ -26,10 +26,10 @@ extension Color {
 
     // MARK: - Computed
 
-    static let appDefault: Color = .appIconDefault // Alias
+    static let `default`: Color = .appIconDefault // Alias
     static let border: Color = .appGray.opacity(0.15)
     static let separator: Color = .appLightGray
     static let screenBackground: Color = .appFaintGray
-    static let appShadowHeavy: Color = .appIconShadowHeavy // Alias
+    static let shadowHeavy: Color = .appIconShadowHeavy // Alias
     static let shadowLight: Color = .appGray.opacity(0.06)
 }

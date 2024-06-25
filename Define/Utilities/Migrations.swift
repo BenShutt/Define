@@ -45,7 +45,7 @@ struct Migrations {
     ///   - oldVersion: `String` old version
     ///   - newVersion: `String` new version
     private static func handleMigrations(
-        from oldVersion: String?, 
+        from oldVersion: String?,
         to newVersion: String
     ) {
         // Handle migrations from old version to new version

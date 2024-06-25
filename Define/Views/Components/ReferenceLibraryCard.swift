@@ -38,10 +38,10 @@ struct ReferenceLibraryCard: View {
             }
 
             Image(systemName: "chevron.right")
-                .systemImage(size: StyledButton.iconSize, weight: .bold)
+                .systemImage(size: .icon, weight: .bold)
                 .foregroundStyle(Color.appWhite)
         }
-        .padding(EdgeInsets.largeMargins)
+        .padding(.large)
         .background(LinearGradient.reference)
         .clipShape(shape)
         .overlay {
