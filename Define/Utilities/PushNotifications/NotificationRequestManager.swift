@@ -36,9 +36,7 @@ struct NotificationRequestManager: Logger {
     /// - Parameter identifier: The identifier
     /// - Returns: The notification request or nil
     static func pendingRequest(with identifier: String) async -> UNNotificationRequest? {
-        await center.pendingNotificationRequests().first { request in
-            request.identifier == identifier
-        }
+        await pendingRequests.first { $0.identifier == identifier }
     }
 
     /// Get the next trigger date with the given identifier
@@ -103,7 +101,6 @@ private extension Notification.Name {
 // MARK: - View + Extensions
 
 extension View {
-
     func onPendingRequestsReceived(
         perform action: @escaping ([String]) -> Void
     ) -> some View {
