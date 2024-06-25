@@ -19,7 +19,7 @@ struct HomeScreen: View {
     @State private var selectedWord: SavedWord?
 
     /// Group words into groups by date
-    private var groups: DateGroups { // TODO: Performance
+    private var groups: DateGroups { // TODO: Performance, add to view-model
         DateGroup.group(words.words, keyPath: \.savedDate)
     }
 
@@ -28,9 +28,9 @@ struct HomeScreen: View {
             title: "home_title",
             subtitle: "home_subtitle"
         ) {
-            LazyVStack(spacing: 0) {
+            LazyVStack(spacing: 0, pinnedViews: .sectionHeaders) {
                 ForEach(groups, id: \.0) { group, savedWords in
-                    WordsGroup(
+                    WordsSection(
                         selectedWord: $selectedWord,
                         group: group,
                         savedWords: savedWords
@@ -53,29 +53,48 @@ struct HomeScreen: View {
     }
 }
 
-// MARK: - WordSection
+// MARK: - WordsSection
 
-private struct WordsGroup: View {
+private struct WordsSection: View {
     @Binding var selectedWord: SavedWord?
     var group: DateGroup
     var savedWords: [SavedWord]
 
     var body: some View {
-        Text(group.title)
-            .h3()
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .multilineTextAlignment(.leading)
-            .padding(.horizontal, .hMargin)
-            .padding(.horizontal, .large) // Further inset
-            .padding(.top, .large)
+        Section(content: {
+            ForEach(savedWords) { savedWord in
+                WordRow(
+                    selectedWord: $selectedWord,
+                    word: savedWord
+                )
+                .margined(.marginedStack)
+            }
+        }, header: {
+            WordsSectionHeader(title: group.title)
+        })
+    }
+}
 
-        ForEach(savedWords) { savedWord in
-            WordRow(
-                selectedWord: $selectedWord,
-                word: savedWord
-            )
-            .margined(.marginedStack)
+// MARK: - WordsSectionHeader
+
+private struct WordsSectionHeader: View {
+    var title: LocalizedStringKey
+    private let separatorColor: Color = .appGray.opacity(0.1)
+
+    var body: some View {
+        HStack(spacing: .large) {
+            Separator(color: separatorColor)
+                .frame(minWidth: .hMargin, maxWidth: .infinity)
+
+            Text(title)
+                .h3()
+
+            Separator(color: separatorColor)
+                .frame(minWidth: .hMargin, maxWidth: .infinity)
         }
+        .padding(.horizontal, .hMargin)
+        .padding(.vertical, .smallMedium)
+        .background(Color.screenBackground)
     }
 }
 

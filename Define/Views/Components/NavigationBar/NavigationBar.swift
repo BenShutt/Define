@@ -52,9 +52,10 @@ struct NavigationBar<SmallContent: View, LargeContent: View>: View {
             largeNavigationBar()
                 .opacity(largeOpacity)
                 .offset(y: largeOffset)
-                .modifier(ClippedHeight { maxHeight in
-                    maxHeight * (1 - progress)
-                })
+                .clippedHeight { contentHeight in
+                    contentHeight * (1 - progress)
+                }
         }
+        .fixedSize(horizontal: false, vertical: true)
     }
 }

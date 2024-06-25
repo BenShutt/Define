@@ -23,3 +23,8 @@ extension Color {
     static let appPink = Color(red255: 222, green: 49, blue: 99)
     static let appRed = Color(red255: 215, green: 0, blue: 64)
 }
+
+extension Color {
+    static let separator: Color = .appLightGray
+    static let screenBackground: Color = .appLightGray
+}

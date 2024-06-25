@@ -7,14 +7,8 @@
 
 import SwiftUI
 
-// MARK: - Screen
-
 /// An app screen
-/// - Note: The reason for a `ViewModifier` over a protocol is we might want to add
-/// properties before or after
 private struct Screen: ViewModifier {
-
-    /// Screen background color
     var backgroundColor: Color
 
     func body(content: Content) -> some View {
@@ -30,7 +24,7 @@ private struct Screen: ViewModifier {
 // MARK: - View + Screen
 
 extension View {
-    func screen(backgroundColor: Color = .appLightGray) -> some View {
+    func screen(backgroundColor: Color = .screenBackground) -> some View {
         modifier(Screen(backgroundColor: backgroundColor))
     }
 }

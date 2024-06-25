@@ -7,10 +7,12 @@
 
 import SwiftUI
 
-/// Separator line
+/// Horizontal separator line
 struct Separator: View {
+    var color: Color = .separator
+
     var body: some View {
-        Color.appLightGray
+        color
             .frame(height: 2)
     }
 }

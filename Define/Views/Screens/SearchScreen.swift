@@ -44,12 +44,8 @@ struct SearchScreen: View {
 
             SearchStateView(viewModel: viewModel)
                 .padding(.top, statePadding ? .large : 0)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         }
-        .frame(
-            maxWidth: .infinity,
-            maxHeight: .infinity,
-            alignment: .topLeading
-        )
         .screen()
         .toolbarBackground(Color.clear, for: .navigationBar)
         .navigationBarTitleDisplayMode(.inline)

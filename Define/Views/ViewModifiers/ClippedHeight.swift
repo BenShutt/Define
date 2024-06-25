@@ -8,29 +8,32 @@
 import SwiftUI
 
 /// Clips a view (with a fixed vertical size) by the height scale factor
-struct ClippedHeight: ViewModifier {
+private struct ClippedHeight: ViewModifier {
 
     /// The maximum height of the content
-    @State private var maxHeight: CGFloat = 0
-
-    /// Alignment of the content when added a an overlay
-    var alignment: Alignment = .top
+    @State private var height: CGFloat = 0
 
     /// Map the maximum height to the clipped height (scaling)
-    var scaledHeight: (CGFloat) -> CGFloat
+    var clippedHeight: (CGFloat) -> CGFloat
 
     func body(content: Content) -> some View {
         Color.clear
-            .overlay(alignment: alignment) {
+            .overlay(alignment: .top) {
                 content
                     .fixedSize(horizontal: false, vertical: true)
-                    .onSizeChanged { size in
-                        if size.height < 500 { // TODO!
-                            maxHeight = max(maxHeight, size.height)
-                        }
-                    }
+                    .onSizeChanged { height = $0.height }
             }
-            .frame(height: scaledHeight(maxHeight))
+            .frame(height: clippedHeight(height))
             .clipped()
+    }
+}
+
+// MARK: - View + ClippedHeight
+
+extension View {
+    func clippedHeight(
+        _ clippedHeight: @escaping (CGFloat) -> CGFloat
+    ) -> some View {
+        modifier(ClippedHeight(clippedHeight: clippedHeight))
     }
 }
