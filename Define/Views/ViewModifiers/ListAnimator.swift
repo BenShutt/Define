@@ -28,7 +28,7 @@ private struct ListAnimator: ViewModifier {
         content
             .opacity(opacity)
             .offset(y: offsetY)
-            .task {
+            .onAppear {
                 guard isEnabled, !appearedItems.contains(index) else { return }
                 _ = withAnimation(.linear(duration: 0.25).delay(delay)) {
                     appearedItems.insert(index)
@@ -55,6 +55,26 @@ extension View {
 
 // MARK: - Preview
 
+private struct PreviewColorView: View {
+    var index: Int
+    var color: Color
+
+    var body: some View {
+        color
+            .frame(height: 200)
+            .frame(maxWidth: .infinity)
+            .clipShape(.rect(cornerRadius: .small))
+            .padding(5)
+            .overlay {
+                Text(index, format: .number)
+                    .textStyle(.h1, textColor: .appDarkGray)
+                    .padding(5)
+                    .background(Color.appLightGray)
+                    .clipShape(.rect(cornerRadius: .small))
+            }
+    }
+}
+
 private struct PreviewView: View {
     @State private var appearedItems: Set<Int> = []
 
@@ -64,15 +84,9 @@ private struct PreviewView: View {
 
     var body: some View {
         ScrollView {
-            VStack(spacing: 0) {
+            LazyVStack(spacing: 0) {
                 ForEach(colors.zipped, id: \.0) { index, color in
-                    color
-                        .frame(height: 200)
-                        .frame(maxWidth: .infinity)
-                        .clipShape(RoundedRectangle(cornerRadius: 5))
-                        .compositingGroup()
-                        .shadow(.container)
-                        .padding(5)
+                    PreviewColorView(index: index, color: color)
                         .listAnimator(
                             appearedItems: $appearedItems,
                             index: index
@@ -82,8 +96,6 @@ private struct PreviewView: View {
         }
     }
 }
-
-// MARK: - Preview
 
 #Preview {
     PreviewView()

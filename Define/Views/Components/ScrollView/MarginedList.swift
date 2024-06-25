@@ -27,7 +27,7 @@ struct MarginedList<Element: Identifiable, Content: View>: View {
 
     var body: some View {
         ScrollView {
-            LazyVStack(spacing: 0) {
+            VStack(spacing: 0) { // TODO: Not LazyVStack due to ListAnimator
                 ForEach(elements.zipped, id: \.0) { index, element in
                     content(element)
                         .margined(margins)

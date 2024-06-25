@@ -183,7 +183,10 @@ private struct WordContentView: View {
                 subtitle: "word_empty_subtitle \(word.title)"
             )
         } else if !isWordSaved {
-            MarginedList(word.meanings.identified, isAnimated: true) { item in
+            MarginedList(
+                word.meanings.identified,
+                isAnimated: true
+            ) { item in
                 MeaningListItem(meaning: item.element)
             }
             .stickyButton(
@@ -192,7 +195,10 @@ private struct WordContentView: View {
                 onTap: onSave
             )
         } else {
-            MarginedList(word.meanings.identified, isAnimated: true) { item in
+            MarginedList(
+                word.meanings.identified,
+                isAnimated: true
+            ) { item in
                 MeaningListItem(meaning: item.element)
             }
         }
