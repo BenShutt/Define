@@ -81,7 +81,7 @@ private struct PartsOfSpeechView: View {
 
 // MARK: - ReminderView
 
-private struct ReminderView: View {
+@MainActor private struct ReminderView: View {
     @State private var timeRemaining: TimeRemaining?
     var word: Word
 

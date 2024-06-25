@@ -10,7 +10,7 @@ import UserNotifications
 import DictionaryAPI
 
 /// Wraps the logic of reminder push notifications
-final class ReminderNotification: ObservableObject {
+@MainActor final class ReminderNotification: ObservableObject {
 
     /// Number of days to wait before sending the word reminder push notification
     static let remindAfterDays = 3
@@ -91,7 +91,7 @@ private extension UserInfo {
 // MARK: - View + Extensions
 
 extension View {
-    func onReminderDidReceive(
+    @MainActor func onReminderDidReceive(
         words: WordsViewModel,
         perform action: @escaping (Word) -> Void
     ) -> some View {
@@ -102,7 +102,7 @@ extension View {
         }
     }
 
-    func onReminderWillPresent(
+    @MainActor func onReminderWillPresent(
         words: WordsViewModel,
         perform action: @escaping (Word) -> Void
     ) -> some View {
