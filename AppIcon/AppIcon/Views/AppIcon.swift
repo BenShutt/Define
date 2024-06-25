@@ -13,7 +13,7 @@ public struct AppIcon: View {
     public var animationValue: Int
 
     public init(
-        color: Color = .appIconBlue,
+        color: Color = .appIconDefault,
         animationValue: Int = 0
     ) {
         self.color = color

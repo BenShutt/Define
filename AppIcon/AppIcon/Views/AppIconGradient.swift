@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AppIconGradient: View {
-    var color: Color = .appIconBlue
+    var color: Color = .appIconDefault
     var start: CGFloat = 0.25
     var end: CGFloat = 0.75
 

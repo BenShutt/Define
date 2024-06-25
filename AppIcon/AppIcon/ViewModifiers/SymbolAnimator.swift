@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@available(iOS, deprecated: 17, message: "No longer needed")
 private struct SymbolAnimator<Value: Equatable>: ViewModifier {
     var value: Value
 

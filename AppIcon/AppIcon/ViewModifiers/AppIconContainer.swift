@@ -21,12 +21,12 @@ private struct AppIconContainer: ViewModifier {
             .clipShape(shape)
             .overlay {
                 shape
-                    .strokeBorder(lineWidth: 2)
-                    .foregroundStyle(color.opacity(0.1))
+                    .strokeBorder(lineWidth: size * 0.02)
+                    .foregroundStyle(color.opacity(0.25))
             }
             .compositingGroup()
             .shadow(
-                color: .appIconBlack.opacity(0.25),
+                color: .appIconShadowHeavy,
                 radius: size * 0.05
             )
     }
@@ -35,7 +35,15 @@ private struct AppIconContainer: ViewModifier {
 // MARK: - View + AppIconContainer
 
 public extension View {
-    func appIconContainer(color: Color) -> some View {
+    func appIconContainer(color: Color = .appIconDefault) -> some View {
         modifier(AppIconContainer(color: color))
     }
+}
+
+// MARK: - Preview
+
+#Preview {
+    AppIcon()
+        .frame(width: 300, height: 300)
+        .appIconContainer()
 }

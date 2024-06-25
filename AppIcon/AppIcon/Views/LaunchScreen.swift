@@ -11,12 +11,12 @@ public struct LaunchScreen: View {
     @State private var appIconSize: CGFloat = 0
     public var color: Color
 
-    public init(color: Color = .appIconBlue) {
+    public init(color: Color = .appIconDefault) {
         self.color = color
     }
 
     public var body: some View {
-        AppIconGradient(end: 1)
+        AppIconGradient(color: color, end: 1)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .ignoresSafeArea()
             .onSizeChanged { appIconSize = $0.min * 0.4 }
