@@ -84,7 +84,6 @@
 		B8A1235428E97D1A00ACEC45 /* WorkSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8A1234228E97D1A00ACEC45 /* WorkSans-SemiBold.ttf */; };
 		B8A1235A28E97EF300ACEC45 /* WorkSans.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A1235928E97EF300ACEC45 /* WorkSans.swift */; };
 		B8A1235D28E97FB000ACEC45 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A1235C28E97FB000ACEC45 /* CustomFont.swift */; };
-		B8AD58812AD45F070054403E /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = B8AD58802AD45F070054403E /* SwiftUIIntrospect */; };
 		B8AD58832AD471350054403E /* InformationSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AD58822AD471350054403E /* InformationSheet.swift */; };
 		B8AD58852AD47FC00054403E /* WordReminderObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AD58842AD47FC00054403E /* WordReminderObserver.swift */; };
 		B8B05F142C29716A00F2A9A8 /* BasedOnSizeScrollBounceBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B05F132C29716A00F2A9A8 /* BasedOnSizeScrollBounceBehavior.swift */; };
@@ -277,7 +276,6 @@
 				B80E720429FBB67B007CCE71 /* CubeFoundationSwiftUI in Frameworks */,
 				B8FF0DC9295F9528004C61B6 /* DictionaryAPI in Frameworks */,
 				B8A1232528E971EC00ACEC45 /* Lottie in Frameworks */,
-				B8AD58812AD45F070054403E /* SwiftUIIntrospect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -686,7 +684,6 @@
 				B80E720329FBB67B007CCE71 /* CubeFoundationSwiftUI */,
 				B8FF0DC8295F9528004C61B6 /* DictionaryAPI */,
 				B8A1232428E971EC00ACEC45 /* Lottie */,
-				B8AD58802AD45F070054403E /* SwiftUIIntrospect */,
 			);
 			productName = Define;
 			productReference = B80399D928D79A37008CE7B4 /* Define.app */;
@@ -1322,11 +1319,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B8A1232328E971EC00ACEC45 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
-		};
-		B8AD58802AD45F070054403E /* SwiftUIIntrospect */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B8AD587F2AD45F070054403E /* XCRemoteSwiftPackageReference "swiftui-introspect" */;
-			productName = SwiftUIIntrospect;
 		};
 		B8BFDC6B2AC77D04009E1F83 /* AppIcon */ = {
 			isa = XCSwiftPackageProductDependency;
