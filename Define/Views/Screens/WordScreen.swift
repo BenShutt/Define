@@ -21,8 +21,8 @@ struct WordScreen: View {
     /// Is presenting alert to delete word
     @State private var isPresentingDeleteWordAlert = false
 
-    /// Is presenting alert to remind word
-    @State private var isPresentingReminderAlert = false
+    /// Is presenting alert to delete word reminder
+    @State private var isPresentingDeleteWordReminderAlert = false
 
     /// `Word` to define
     var word: Word
@@ -76,36 +76,18 @@ struct WordScreen: View {
                 }
             }
         }
-        .alert(
-            Text("word_delete_title"),
+        .deleteWordAlert(
+            word: word,
             isPresented: $isPresentingDeleteWordAlert,
-            actions: {
-                Button(role: .destructive) {
-                    deleteWord()
-                } label: {
-                    Text("word_delete_button")
-                }
-            },
-            message: {
-                Text("word_delete_subtitle \(word.title)")
+            onDelete: {
+                deleteWord()
             }
         )
-        .alert(
-            Text("word_reminder_delete_title"),
-            isPresented: $isPresentingReminderAlert,
-            actions: {
-                Button(role: .destructive) {
-                    ReminderNotification.removePendingRequest(word: word)
-                } label: {
-                    Text("delete")
-                }
-
-                Button(role: .cancel) {} label: {
-                    Text("cancel")
-                }
-            },
-            message: {
-                Text("word_reminder_delete_subtitle \(word.title)")
+        .deleteWordReminderAlert(
+            word: word,
+            isPresented: $isPresentingDeleteWordReminderAlert,
+            onDelete: {
+                ReminderNotification.removePendingRequest(word: word)
             }
         )
         .modifier(WordReminderObserver(
@@ -129,10 +111,60 @@ struct WordScreen: View {
     /// Handle reminder button tap
     private func onReminderTapped() {
         if isReminderScheduled {
-            isPresentingReminderAlert = true
+            isPresentingDeleteWordReminderAlert = true
         } else {
             ReminderNotification.scheduleRequest(word: word)
         }
+    }
+}
+
+// MARK: - Alerts
+
+private extension View {
+    func deleteWordAlert(
+        word: Word,
+        isPresented: Binding<Bool>,
+        onDelete: @escaping () -> Void
+    ) -> some View {
+        alert(
+            Text("word_delete_title"),
+            isPresented: isPresented,
+            actions: {
+                Button(role: .destructive) {
+                    onDelete()
+                } label: {
+                    Text("word_delete_button")
+                }
+            },
+            message: {
+                Text("word_delete_subtitle \(word.title)")
+            }
+        )
+    }
+
+    func deleteWordReminderAlert(
+        word: Word,
+        isPresented: Binding<Bool>,
+        onDelete: @escaping () -> Void
+    ) -> some View {
+        alert(
+            Text("word_reminder_delete_title"),
+            isPresented: isPresented,
+            actions: {
+                Button(role: .destructive) {
+                    onDelete()
+                } label: {
+                    Text("delete")
+                }
+
+                Button(role: .cancel) {} label: {
+                    Text("cancel")
+                }
+            },
+            message: {
+                Text("word_reminder_delete_subtitle \(word.title)")
+            }
+        )
     }
 }
 

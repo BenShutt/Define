@@ -13,6 +13,7 @@ extension Color {
     static let appWhite = Color(white255: 255)
     static let appDarkGray = Color(white255: 12)
     static let appGray = Color(white255: 122)
+    static let appFaintGray = Color(white255: 250)
     static let appLightGray = Color(white255: 245)
     static let appMaize = Color(red255: 251, green: 236, blue: 93)
     static let appYellow = Color(red255: 255, green: 234, blue: 0)
@@ -27,6 +28,7 @@ extension Color {
 // MARK: - Color + Computed
 
 extension Color {
+    static let border: Color = .appGray.opacity(0.15)
     static let separator: Color = .appLightGray
-    static let screenBackground: Color = .appLightGray
+    static let screenBackground: Color = .appFaintGray
 }

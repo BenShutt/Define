@@ -25,7 +25,7 @@ public struct AppIcon: View {
             .onSizeChanged { size = $0.min }
             .overlay {
                 Image(systemName: "magnifyingglass")
-                    .font(.system(size: size * 0.6, weight: .heavy))
+                    .systemImage(size: size * 0.6, weight: .heavy)
                     .foregroundStyle(Color.appIconDarkGray)
                     .bounceSymbol(animationValue)
             }

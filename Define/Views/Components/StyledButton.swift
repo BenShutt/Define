@@ -30,7 +30,7 @@ struct StyledButton: View {
             HStack(spacing: .medium) {
                 Image(systemName: systemName)
                     .renderingMode(.template)
-                    .font(.system(size: Self.iconSize, weight: .bold))
+                    .systemImage(size: Self.iconSize, weight: .bold)
 
                 Text(title)
                     .textStyle(.button)

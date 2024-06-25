@@ -31,12 +31,11 @@ struct MarginedList<Element: Identifiable, Content: View>: View {
                 ForEach(elements.zipped, id: \.0) { index, element in
                     content(element)
                         .margined(margins)
-                        .if(isAnimated) { content in
-                            content.modifier(ListAnimator(
-                                appearedItems: $appearedItems,
-                                index: index
-                            ))
-                        }
+                        .listAnimator(
+                            appearedItems: $appearedItems,
+                            index: index,
+                            isEnabled: isAnimated
+                        )
                 }
             }
             .marginedStack(margins)
@@ -52,7 +51,7 @@ extension View {
     /// - Parameter margins: `EdgeInsets`
     /// - Returns: `View`
     func margined(_ margins: EdgeInsets) -> some View {
-        self.roundedRectangleBorder(color: .appGray.opacity(0.15), borderWidth: 1)
+        roundedRectangleBorder(color: .border, borderWidth: 1)
             .compositingGroup()
             .shadow(.container)
             .padding(margins)
@@ -62,7 +61,7 @@ extension View {
     /// - Parameter margins: `EdgeInsets`
     /// - Returns: `View`
     func marginedStack(_ margins: EdgeInsets) -> some View {
-        self.padding(.top, margins.top)
+        padding(.top, margins.top)
             .padding(.bottom, margins.bottom)
     }
 }

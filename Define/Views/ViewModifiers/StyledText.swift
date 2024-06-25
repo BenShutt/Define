@@ -10,7 +10,6 @@ import SwiftUI
 struct StyledText: ViewModifier {
     var font: WorkSans
     var fontSize: CGFloat
-    var italic = false
     var truncationMode: Text.TruncationMode = .tail
     var lintLimit: Int?
     var foregroundColor: Color
@@ -28,7 +27,6 @@ struct StyledText: ViewModifier {
     func body(content: Content) -> some View {
         content
             .workSans(font, size: fontSize)
-            .italic(italic)
             .truncationMode(.tail)
             .lineLimit(lintLimit)
             .foregroundStyle(foregroundColor)

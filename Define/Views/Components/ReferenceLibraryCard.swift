@@ -17,7 +17,7 @@ struct ReferenceLibraryCard: View {
     var body: some View {
         HStack(spacing: .large) {
             Image(systemName: "text.book.closed.fill")
-                .font(.system(size: 40, weight: .bold))
+                .systemImage(size: 40, weight: .bold)
 
             VStack(spacing: .small) {
                 Text(verbatim: term)
@@ -36,7 +36,7 @@ struct ReferenceLibraryCard: View {
             }
 
             Image(systemName: "chevron.right")
-                .font(.system(size: StyledButton.iconSize, weight: .bold))
+                .systemImage(size: StyledButton.iconSize, weight: .bold)
                 .foregroundStyle(Color.appWhite)
         }
         .padding(EdgeInsets.largeMargins)

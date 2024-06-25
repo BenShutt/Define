@@ -23,12 +23,12 @@ enum TextStyle: String, CaseIterable, Hashable, Identifiable {
     /// Get size of the font
     private var fontSize: CGFloat {
         switch self {
-        case .h1: 32
+        case .h1: 26
         case .h2: 20
         case .h3: 18
         case .h4: 16
         case .body: 16
-        case .button: 18
+        case .button: 16
         case .tag: 14
         case .caption: 14
         }
@@ -44,7 +44,7 @@ enum TextStyle: String, CaseIterable, Hashable, Identifiable {
         case .body: .regular
         case .button: .bold
         case .tag: .semiBold
-        case .caption: .light
+        case .caption: .lightItalic // Italic
         }
     }
 
@@ -62,11 +62,6 @@ enum TextStyle: String, CaseIterable, Hashable, Identifiable {
         }
     }
 
-    /// Is the text style italic
-    private var italic: Bool {
-        self == .caption
-    }
-
     /// Make a styled text
     /// - Parameters:
     ///   - lineLimit: Number of lines to limit to, defaults to `nil`
@@ -81,7 +76,6 @@ enum TextStyle: String, CaseIterable, Hashable, Identifiable {
         StyledText(
             font: font,
             fontSize: fontSize,
-            italic: italic,
             lintLimit: lineLimit,
             foregroundColor: textColor ?? defaultTextColor,
             maxWidth: fill != nil ? .infinity : nil,
@@ -110,9 +104,9 @@ extension View {
 // MARK: - Preview
 
 #Preview {
-    VStack(alignment: .leading, spacing: .large) {
+    VStack(alignment: .leading, spacing: .medium) {
         ForEach(TextStyle.allCases) { textStyle in
-            Text(verbatim: textStyle.rawValue.capitalized)
+            Text(verbatim: "Preview: " + textStyle.rawValue)
                 .textStyle(textStyle)
         }
     }

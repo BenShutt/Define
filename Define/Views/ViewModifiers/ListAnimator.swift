@@ -7,20 +7,21 @@
 
 import SwiftUI
 
-struct ListAnimator: ViewModifier {
+private struct ListAnimator: ViewModifier {
     @Binding var appearedItems: Set<Int>
     var index: Int
+    var isEnabled: Bool
 
     private var delay: TimeInterval {
         TimeInterval(index) * 0.15
     }
 
     private var opacity: CGFloat {
-        appearedItems.contains(index) ? 1 : 0
+        !isEnabled || appearedItems.contains(index) ? 1 : 0
     }
 
     private var offsetY: CGFloat {
-        appearedItems.contains(index) ? 0 : -30
+        !isEnabled || appearedItems.contains(index) ? 0 : -30
     }
 
     func body(content: Content) -> some View {
@@ -28,11 +29,27 @@ struct ListAnimator: ViewModifier {
             .opacity(opacity)
             .offset(y: offsetY)
             .task {
-                guard !appearedItems.contains(index) else { return }
+                guard isEnabled, !appearedItems.contains(index) else { return }
                 _ = withAnimation(.linear(duration: 0.25).delay(delay)) {
                     appearedItems.insert(index)
                 }
             }
+    }
+}
+
+// MARK: - View + ListAnimator
+
+extension View {
+    func listAnimator(
+        appearedItems: Binding<Set<Int>>,
+        index: Int,
+        isEnabled: Bool = true
+    ) -> some View {
+        modifier(ListAnimator(
+            appearedItems: appearedItems,
+            index: index,
+            isEnabled: isEnabled
+        ))
     }
 }
 
@@ -41,14 +58,8 @@ struct ListAnimator: ViewModifier {
 private struct PreviewView: View {
     @State private var appearedItems: Set<Int> = []
 
-    private var random: Double {
-        .random(in: 0...1)
-    }
-
     private var colors: [Color] {
-        (0..<20).map { _ in
-            Color(red: random, green: random, blue: random)
-        }
+        (0..<20).map { _ in .random() }
     }
 
     var body: some View {
@@ -62,10 +73,10 @@ private struct PreviewView: View {
                         .compositingGroup()
                         .shadow(.container)
                         .padding(5)
-                        .modifier(ListAnimator(
+                        .listAnimator(
                             appearedItems: $appearedItems,
                             index: index
-                        ))
+                        )
                 }
             }
         }

@@ -8,10 +8,7 @@
 import SwiftUI
 import DictionaryAPI
 
-/// `ListItemView` for a `Meaning`
 struct MeaningListItem: View {
-
-    /// `Meaning`
     var meaning: Word.Meaning
 
     var body: some View {

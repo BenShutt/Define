@@ -14,23 +14,17 @@ struct DefinitionListItem: View {
     var definition: Word.Meaning.Definition
 
     var body: some View {
-        if definition.exampleTitle != nil {
-            Button(action: {
-                withAnimation {
-                    isExpanded.toggle()
-                }
-            }, label: {
-                DefinitionContentView(
-                    isExpanded: isExpanded,
-                    definition: definition
-                )
-            })
-        } else {
+        Button(action: {
+            withAnimation {
+                isExpanded.toggle()
+            }
+        }, label: {
             DefinitionContentView(
                 isExpanded: isExpanded,
                 definition: definition
             )
-        }
+        })
+        .disabled(definition.exampleTitle == nil)
     }
 }
 
@@ -58,7 +52,7 @@ private struct DefinitionContentView: View {
 
             if example != nil {
                 Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
-                    .font(.system(size: 12))
+                    .systemImage(size: 12)
                     .foregroundStyle(Color.appDarkGray)
             }
         }

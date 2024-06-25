@@ -45,8 +45,7 @@ struct WelcomeScreen: View {
         ) {
             onContinue()
         }
-        .task {
-            try? await Task.sleep(for: .seconds(1)) // Mask throw
+        .onAppear {
             animationValue = max(animationValue, 1)
         }
     }
@@ -55,7 +54,7 @@ struct WelcomeScreen: View {
 // MARK: - WelcomeHeaderView
 
 private struct WelcomeHeaderView: View {
-    private let backgroundHeight: CGFloat = 200
+    private let backgroundHeight: CGFloat = 250
     private let iconHeight: CGFloat = 150
 
     var animationValue: Int
