@@ -126,7 +126,7 @@ private struct WordRow: View {
 // MARK: - ListItem
 
 private struct ListItem: View {
-    @EnvironmentObject var words: WordsViewModel
+    @EnvironmentObject private var words: WordsViewModel
     @State private var addedSince: LocalizedStringKey? // TODO: View model?
     @State private var isReminderScheduled = false
     var word: SavedWord
