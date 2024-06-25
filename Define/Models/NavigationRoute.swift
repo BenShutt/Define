@@ -36,14 +36,3 @@ extension View {
         }
     }
 }
-
-// MARK: - NavigationLink + NavigationRoute
-
-extension NavigationLink where Destination == Never {
-    init(
-        _ route: NavigationRoute,
-        @ViewBuilder label: @escaping () -> Label
-    ) {
-        self.init(value: route, label: label)
-    }
-}

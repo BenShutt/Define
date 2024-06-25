@@ -69,6 +69,7 @@ struct SearchScreen: View {
 // MARK: - SearchStateView
 
 private struct SearchStateView: View {
+    @Environment(\.push) private var push
     @ObservedObject var viewModel: SearchViewModel
 
     var body: some View {
@@ -99,9 +100,11 @@ private struct SearchStateView: View {
 
         case let .success(words):
             MarginedList(words.identified) { indexElement in
-                NavigationLink(.word(indexElement.element)) {
+                Button(action: {
+                    push(.word(indexElement.element))
+                }, label: {
                     WordListItem(word: indexElement.element)
-                }
+                })
             }
         }
     }

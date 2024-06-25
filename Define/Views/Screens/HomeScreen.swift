@@ -12,9 +12,6 @@ struct HomeScreen: View {
     @EnvironmentObject private var words: WordsViewModel
     @Environment(\.push) private var push
 
-    /// Map `DateGroup` to its `SavedWord`s
-    typealias DateGroups = [(group: DateGroup, savedWords: [SavedWord])]
-
     /// The word to show in a presented reference library modal
     @State private var selectedWord: SavedWord?
 
@@ -101,15 +98,18 @@ private struct WordsSectionHeader: View {
 // MARK: - WordRow
 
 private struct WordRow: View {
+    @Environment(\.push) private var push
     @Binding var selectedWord: SavedWord?
     var word: SavedWord
 
     var body: some View {
         switch word.source {
         case .api:
-            NavigationLink(.word(word.word)) {
+            Button(action: {
+                push(.word(word.word))
+            }, label: {
                 ListItem(word: word)
-            }
+            })
 
         case .referenceLibrary:
             Button(action: {

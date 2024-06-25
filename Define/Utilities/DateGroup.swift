@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/// Map `DateGroup` to its `SavedWord`s
+typealias DateGroups = [(group: DateGroup, savedWords: [SavedWord])]
+
 enum DateGroup: Int, Equatable, Hashable, Comparable {
     case today
     case lastWeek
@@ -39,9 +42,7 @@ enum DateGroup: Int, Equatable, Hashable, Comparable {
                 let group = group(for: element[keyPath: keyPath])
                 map[group, default: []] += [element]
             }
-            .sorted { lhs, rhs in
-                lhs.key < rhs.key
-            }
+            .sorted { $0.key < $1.key }
     }
 }
 
