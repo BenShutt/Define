@@ -29,7 +29,7 @@ struct WordListItem: View {
         HStack(spacing: .mediumLarge) {
             VStack(alignment: .leading, spacing: .small) {
                 Text(verbatim: word.title)
-                    .h2()
+                    .h3()
                     .padding(.bottom, .small)
 
                 if let subtitle = word.subtitle {

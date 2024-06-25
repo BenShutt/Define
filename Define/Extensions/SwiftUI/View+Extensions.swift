@@ -9,10 +9,11 @@ import SwiftUI
 
 extension View {
 
+    // TODO: Delete file
+
     /// Configure for list item
     func listItem() -> some View {
-        self.frame(maxWidth: .infinity, alignment: .leading)
-            .fixedSize(horizontal: false, vertical: true)
+        frame(maxWidth: .infinity, alignment: .leading)
             .multilineTextAlignment(.leading)
     }
 }

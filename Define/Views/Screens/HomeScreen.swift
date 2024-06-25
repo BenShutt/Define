@@ -82,12 +82,12 @@ private struct WordsSectionHeader: View {
     private let separatorColor: Color = .appGray.opacity(0.1)
 
     var body: some View {
-        HStack(spacing: .large) {
+        HStack(spacing: .extraLarge) {
             Separator(color: separatorColor)
                 .frame(minWidth: .hMargin, maxWidth: .infinity)
 
             Text(title)
-                .h3()
+                .h4()
 
             Separator(color: separatorColor)
                 .frame(minWidth: .hMargin, maxWidth: .infinity)

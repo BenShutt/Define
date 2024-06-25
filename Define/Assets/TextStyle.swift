@@ -12,6 +12,7 @@ enum TextStyle: String, CaseIterable, Hashable, Identifiable {
     case h1
     case h2
     case h3
+    case h4
     case body
     case button
     case tag
@@ -26,6 +27,7 @@ enum TextStyle: String, CaseIterable, Hashable, Identifiable {
         case .h1: return 32
         case .h2: return 20
         case .h3: return 18
+        case .h4: return 16
         case .body: return 16
         case .button: return 18
         case .tag: return 14
@@ -39,6 +41,7 @@ enum TextStyle: String, CaseIterable, Hashable, Identifiable {
         case .h1: return .bold
         case .h2: return .semiBold
         case .h3: return .semiBold
+        case .h4: return .semiBold
         case .body: return .regular
         case .button: return .bold
         case .tag: return .semiBold
@@ -74,6 +77,12 @@ extension View {
     /// Standard `.h3` implementation
     func h3() -> some View {
         textStyle(.h3)
+            .foregroundColor(.appDarkGray)
+    }
+
+    /// Standard `.h4` implementation
+    func h4() -> some View {
+        textStyle(.h4)
             .foregroundColor(.appDarkGray)
     }
 
