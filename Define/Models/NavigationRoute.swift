@@ -8,8 +8,6 @@
 import SwiftUI
 import DictionaryAPI
 
-// MARK: - NavigationRoute
-
 /// A navigation destination
 enum NavigationRoute: Hashable {
 
