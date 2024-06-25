@@ -52,7 +52,7 @@ extension Word {
 
     /// Parts of speech
     var partsOfSpeech: [String] {
-        Set(meanings.map { $0.category }).sorted()
+        Set(meanings.map { $0.partOfSpeechTitle }).sorted()
     }
 }
 
@@ -60,9 +60,14 @@ extension Word {
 
 extension Word.Meaning {
 
-    /// Category (or type) of word
-    var category: String {
+    /// Capitalized part of speech
+    var partOfSpeechTitle: String {
         partOfSpeech.localizedCapitalized
+    }
+
+    /// Category (or type) of word
+    var category: WordCategory? {
+        WordCategory(value: partOfSpeech)
     }
 }
 

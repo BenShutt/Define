@@ -11,17 +11,13 @@ import DictionaryAPI
 struct MeaningListItem: View {
     var meaning: Word.Meaning
 
-    private var wordCategory: WordCategory? {
-        WordCategory(rawValue: meaning.category.lowercased())
-    }
-
     var body: some View {
         VStack(spacing: 0) {
-            Text(meaning.category)
+            Text(meaning.partOfSpeechTitle)
                 .textStyle(.h4, fill: .center)
                 .padding(.medium)
                 .background(GradientBlurView(
-                    color: wordCategory?.backgroundColor ?? .appLightGray
+                    color: meaning.category?.backgroundColor ?? .appLightGray
                 ))
 
             ForEach(meaning.definitions.zipped, id: \.0) { _, definition in

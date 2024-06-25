@@ -17,5 +17,9 @@ public enum WordCategory: String, CaseIterable, Identifiable {
     case pronoun
     case verb
 
+    public init?(value: String) {
+        self.init(rawValue: value.lowercased())
+    }
+
     public var id: Self { self }
 }
