@@ -13,7 +13,7 @@ struct LargeNavigationBar: View {
     var subtitle: LocalizedStringKey
 
     var body: some View {
-        VStack(alignment: .leading, spacing: .small) {
+        VStack(alignment: .leading, spacing: .smallMedium) {
             Text(title)
                 .h1()
                 .frame(maxWidth: .infinity, alignment: .leading)

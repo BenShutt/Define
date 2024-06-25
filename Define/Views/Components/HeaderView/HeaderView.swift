@@ -35,7 +35,6 @@ struct HeaderView<Content: View>: View {
 // MARK: - HeaderBackground
 
 struct HeaderBackground: View {
-
     var body: some View {
         GradientBlurView(color: .appBlue)
             .ignoresSafeArea()

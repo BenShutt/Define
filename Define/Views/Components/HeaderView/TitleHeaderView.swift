@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// TODO: Clean up headers
+
 /// Header view with only a title
 struct TitleHeaderView: ViewModifier {
     var title: LocalizedStringKey
