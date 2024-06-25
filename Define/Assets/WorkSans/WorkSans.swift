@@ -5,10 +5,10 @@
 //  Created by Ben Shutt on 02/10/2022.
 //
 
-import Foundation
+import SwiftUI
 
 /// WordSans custom font caes
-enum WorkSans: String, CustomFont {
+enum WorkSans: String {
     case black = "WorkSans-Black"
     case blackItalic = "WorkSans-BlackItalic"
     case bold = "WorkSans-Bold"
@@ -27,6 +27,18 @@ enum WorkSans: String, CustomFont {
     case semiBoldItalic = "WorkSans-SemiBoldItalic"
     case thin = "WorkSans-Thin"
     case thinItalic = "WorkSans-ThinItalic"
+}
 
-    var fontName: String { rawValue }
+// MARK: - View + WorkSans
+
+extension View {
+
+    /// Apply a custom `font` with the given `size`
+    /// - Parameters:
+    ///   - font: `Font`
+    ///   - size: `CGFloat`
+    /// - Returns: `View`
+    func customFont(_ customFont: WorkSans, size: CGFloat) -> some View {
+        font(.custom(customFont.rawValue, size: size))
+    }
 }

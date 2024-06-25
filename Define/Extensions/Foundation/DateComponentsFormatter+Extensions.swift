@@ -16,13 +16,13 @@ extension DateComponentsFormatter {
     /// `59s -> 59 seconds`
     /// `60s -> 1 minute`
     /// `124s -> 2 minutes` (4 seconds dropped)
-    static var timeInterval: DateComponentsFormatter {
+    static let timeInterval = {
         let formatter = DateComponentsFormatter()
         formatter.allowedUnits = .all
         formatter.unitsStyle = .full
         formatter.maximumUnitCount = 1
         return formatter
-    }
+    }()
 }
 
 // MARK: - NSCalendar.Unit + Values

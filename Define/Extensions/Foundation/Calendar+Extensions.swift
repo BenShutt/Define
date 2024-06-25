@@ -9,16 +9,6 @@ import Foundation
 
 extension Calendar {
 
-    /// Get ISO8601 formatted string date components (not including milliseconds)
-    /// - Parameter date: `Date`
-    /// - Returns: `DateComponents`
-    func dateTimeComponents(from date: Date) -> DateComponents {
-        dateComponents(
-            [.year, .month, .day, .hour, .minute, .second],
-            from: date
-        )
-    }
-
     /// Shorthand to add `value` amount of `component` to `date` and default to `date` on `nil`
     /// - Parameters:
     ///   - component: `Calendar.Component`
