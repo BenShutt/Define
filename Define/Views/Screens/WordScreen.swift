@@ -12,12 +12,8 @@ import DictionaryAPI
 
 /// `View` to input a word to search for definitions
 struct WordScreen: View {
-
-    /// `NavigationViewModel`
-    @EnvironmentObject var navigation: NavigationViewModel
-
-    /// `WordsViewModel`
-    @EnvironmentObject var words: WordsViewModel
+    @EnvironmentObject private var words: WordsViewModel
+    @Environment(\.popToRoot) private var popToRoot
 
     /// Is the notification request reminding the user about this word pending (due in the future)
     @State private var isReminderScheduled = false
@@ -121,13 +117,13 @@ struct WordScreen: View {
     /// Save `word`
     private func saveWord() {
         words.saveWord(word, source: .api)
-        navigation.popToRoot()
+        popToRoot()
     }
 
     /// Delete `word`
     private func deleteWord() {
         words.deleteWord(word)
-        navigation.popToRoot()
+        popToRoot()
     }
 
     /// Handle reminder button tap
@@ -177,6 +173,5 @@ private struct WordContentView: View {
     NavigationStack {
         WordScreen(word: .init(word: "Preview"))
     }
-    .environmentObject(NavigationViewModel())
     .environmentObject(WordsViewModel())
 }

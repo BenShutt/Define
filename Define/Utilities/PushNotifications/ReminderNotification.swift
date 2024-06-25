@@ -74,7 +74,6 @@ final class ReminderNotification: ObservableObject {
 // MARK: - UserInfo + Extensions
 
 private extension UserInfo {
-
     private static let key = "identifier"
 
     init(identifier: String) {
@@ -89,7 +88,6 @@ private extension UserInfo {
 // MARK: - View + Extensions
 
 extension View {
-
     func onReminderDidReceive(
         words: WordsViewModel,
         perform action: @escaping (Word) -> Void

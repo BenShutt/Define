@@ -9,15 +9,11 @@ import SwiftUI
 
 /// Screen listing the user's saved definitions
 struct HomeScreen: View {
+    @EnvironmentObject private var words: WordsViewModel
+    @Environment(\.push) private var push
 
     /// Map `DateGroup` to its `SavedWord`s
     typealias DateGroups = [(group: DateGroup, savedWords: [SavedWord])]
-
-    /// `NavigationViewModel`
-    @EnvironmentObject var navigation: NavigationViewModel
-
-    /// `WordsViewModel`
-    @EnvironmentObject var words: WordsViewModel
 
     /// The word to show in a presented reference library modal
     @State private var selectedWord: SavedWord?
@@ -47,7 +43,7 @@ struct HomeScreen: View {
             title: "home_button",
             systemName: "magnifyingglass"
         ) {
-            navigation.push(.search)
+            push(.search)
         }
         .sheet(item: $selectedWord) { savedWord in
             ReferenceLibraryScreen(term: savedWord.word.word) {
@@ -134,6 +130,5 @@ private struct ListItem: View {
 
 #Preview {
     HomeScreen()
-        .environmentObject(NavigationViewModel())
         .environmentObject(WordsViewModel())
 }

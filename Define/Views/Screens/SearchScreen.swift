@@ -9,12 +9,8 @@ import SwiftUI
 
 /// `View` to input a word to search for definitions
 struct SearchScreen: View {
-
-    /// `NavigationViewModel`
-    @EnvironmentObject var navigation: NavigationViewModel
-
-    /// `WordsViewModel`
-    @EnvironmentObject var words: WordsViewModel
+    @EnvironmentObject private var words: WordsViewModel
+    @Environment(\.popToRoot) private var popToRoot
 
     /// `SearchViewModel`
     @StateObject private var viewModel = SearchViewModel()
@@ -65,7 +61,7 @@ struct SearchScreen: View {
                     .init(word: viewModel.search),
                     source: .referenceLibrary
                 )
-                navigation.popToRoot()
+                popToRoot()
             }
         }
         .onAppear {
@@ -120,6 +116,5 @@ private struct SearchStateView: View {
 
 #Preview {
     SearchScreen()
-        .environmentObject(NavigationViewModel())
         .environmentObject(WordsViewModel())
 }

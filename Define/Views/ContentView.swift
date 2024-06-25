@@ -10,24 +10,12 @@ import DictionaryAPI
 
 /// Root app `View`
 struct ContentView: View {
+    @EnvironmentObject private var words: WordsViewModel
 
-    /// Storage of the `NavigationViewModel` environment instance
-    @StateObject private var navigation = NavigationViewModel()
-
-    /// Storage of the `WordsViewModel` environment instance
-    @StateObject private var words = WordsViewModel()
-
-    /// Root `NavigationStack`
     var body: some View {
-        NavigationStack(path: $navigation.path) {
+        RootNavigationStack {
             RootView()
-                .navigate()
-                .onReminderDidReceive(words: words) { word in
-                    navigation.push(.word(word))
-                }
         }
-        .environmentObject(navigation)
-        .environmentObject(words)
     }
 }
 
@@ -35,27 +23,28 @@ struct ContentView: View {
 
 /// Define the root UI
 private struct RootView: View {
-
-    /// `NavigationViewModel`
-    @EnvironmentObject var navigation: NavigationViewModel
-
-    /// `WordsViewModel`
-    @EnvironmentObject var words: WordsViewModel
+    @EnvironmentObject private var words: WordsViewModel
+    @Environment(\.push) private var push
 
     /// Has the user seen the welcome screen
     @AppStorage(UserDefaultKey.hasSeenWelcome.rawValue) private var hasSeenWelcome = false
 
     var body: some View {
-        if !hasSeenWelcome {
-            WelcomeScreen {
-                hasSeenWelcome = true
-                navigation.push(.search)
-                PushNotificationManager.requestRemoteNotificationPermission()
+        Group {
+            if !hasSeenWelcome {
+                WelcomeScreen {
+                    hasSeenWelcome = true
+                    push(.search)
+                    PushNotificationManager.requestRemoteNotificationPermission()
+                }
+            } else if !words.isEmpty {
+                HomeScreen()
+            } else {
+                SearchScreen()
             }
-        } else if !words.isEmpty {
-            HomeScreen()
-        } else {
-            SearchScreen()
+        }
+        .onReminderDidReceive(words: words) { word in
+            push(.word(word))
         }
     }
 }

@@ -54,7 +54,6 @@
 		B894FA2128FC8A4B00BC0BFA /* StickyBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B894FA2028FC8A4B00BC0BFA /* StickyBottom.swift */; };
 		B894FA2428FC8D7A00BC0BFA /* StickyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B894FA2328FC8D7A00BC0BFA /* StickyButton.swift */; };
 		B895887429578BFB0041A315 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B895887329578BFB0041A315 /* HomeScreen.swift */; };
-		B8958876295790E30041A315 /* NavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8958875295790E30041A315 /* NavigationViewModel.swift */; };
 		B896B9AD2AEA2EEF0043DA18 /* NotificationRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B896B9AC2AEA2EEF0043DA18 /* NotificationRequestManager.swift */; };
 		B8994CAE2A8EC4C2000BE101 /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8994CAD2A8EC4C2000BE101 /* PushNotificationManager.swift */; };
 		B89F179428E0EBF100A96E35 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89F179328E0EBF100A96E35 /* Screen.swift */; };
@@ -108,6 +107,8 @@
 		B8D2A73E28DEEFE70096A020 /* Color+Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2A73D28DEEFE70096A020 /* Color+Values.swift */; };
 		B8D2A74228DF3A250096A020 /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2A74128DF3A250096A020 /* InputTextField.swift */; };
 		B8D2A74628DF3AFE0096A020 /* TextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2A74528DF3AFE0096A020 /* TextStyle.swift */; };
+		B8D780392C29BF28006D25EF /* RootNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D780382C29BF28006D25EF /* RootNavigationStack.swift */; };
+		B8D7803C2C29BF62006D25EF /* NavigationRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7803B2C29BF62006D25EF /* NavigationRoute.swift */; };
 		B8DAF91D2AC332FF00514808 /* ReminderNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DAF91C2AC332FF00514808 /* ReminderNotification.swift */; };
 		B8E336572AD5BABF00374E4A /* ListAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E336562AD5BABF00374E4A /* ListAnimator.swift */; };
 		B8E49C0928DF917E00F9CAC4 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E49C0828DF917E00F9CAC4 /* LoadingView.swift */; };
@@ -194,7 +195,6 @@
 		B894FA2028FC8A4B00BC0BFA /* StickyBottom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyBottom.swift; sourceTree = "<group>"; };
 		B894FA2328FC8D7A00BC0BFA /* StickyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyButton.swift; sourceTree = "<group>"; };
 		B895887329578BFB0041A315 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
-		B8958875295790E30041A315 /* NavigationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewModel.swift; sourceTree = "<group>"; };
 		B896B9AC2AEA2EEF0043DA18 /* NotificationRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationRequestManager.swift; sourceTree = "<group>"; };
 		B8994CAD2A8EC4C2000BE101 /* PushNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
 		B89F179328E0EBF100A96E35 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
@@ -245,6 +245,8 @@
 		B8D2A73D28DEEFE70096A020 /* Color+Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Values.swift"; sourceTree = "<group>"; };
 		B8D2A74128DF3A250096A020 /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
 		B8D2A74528DF3AFE0096A020 /* TextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyle.swift; sourceTree = "<group>"; };
+		B8D780382C29BF28006D25EF /* RootNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationStack.swift; sourceTree = "<group>"; };
+		B8D7803B2C29BF62006D25EF /* NavigationRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRoute.swift; sourceTree = "<group>"; };
 		B8DAF91C2AC332FF00514808 /* ReminderNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderNotification.swift; sourceTree = "<group>"; };
 		B8E336562AD5BABF00374E4A /* ListAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAnimator.swift; sourceTree = "<group>"; };
 		B8E49C0828DF917E00F9CAC4 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -565,7 +567,6 @@
 		B8C894ED28D908E900975E25 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				B8958875295790E30041A315 /* NavigationViewModel.swift */,
 				B879E9EF28F0CA910094AA24 /* SearchViewModel.swift */,
 				B889DEC02957AEF60020E9C9 /* WordsViewModel.swift */,
 			);
@@ -599,6 +600,7 @@
 		B8D2A74028DF0E670096A020 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				B8D7803A2C29BF34006D25EF /* Navigation */,
 				B8BFDC6D2AC77FDD009E1F83 /* GradientBlurView */,
 				B80E721229FC09A9007CCE71 /* HeaderView */,
 				B813BFFB28EB7ACA000C766C /* Icon */,
@@ -618,6 +620,14 @@
 				B801A3DA2986D41400FAD316 /* WordCategoryView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		B8D7803A2C29BF34006D25EF /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				B8D780382C29BF28006D25EF /* RootNavigationStack.swift */,
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 		B8DAF91B2AC332ED00514808 /* PushNotifications */ = {
@@ -648,6 +658,7 @@
 				B80E721E29FDA849007CCE71 /* IdentifiedElement.swift */,
 				B88491A529620353009F6469 /* IndexElement.swift */,
 				B8FF0DD72960ACCE004C61B6 /* SavedWord.swift */,
+				B8D7803B2C29BF62006D25EF /* NavigationRoute.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -883,14 +894,15 @@
 				B80E721B29FD9578007CCE71 /* MarginedList.swift in Sources */,
 				B8FF0DDC2960B548004C61B6 /* MeaningListItem.swift in Sources */,
 				B8FF0DD129609DDF004C61B6 /* Migrations.swift in Sources */,
+				B8D7803C2C29BF62006D25EF /* NavigationRoute.swift in Sources */,
 				B832D6652C2466C700FF3EFE /* NavigationBar.swift in Sources */,
 				B8F834D02B73E40700D0C5D2 /* NavigationBarBackground.swift in Sources */,
 				B8F834CE2B73DC9700D0C5D2 /* NavigationScreen.swift in Sources */,
-				B8958876295790E30041A315 /* NavigationViewModel.swift in Sources */,
 				B896B9AD2AEA2EEF0043DA18 /* NotificationRequestManager.swift in Sources */,
 				B832D6622C24654A00FF3EFE /* OffsetScrollView.swift in Sources */,
 				B8994CAE2A8EC4C2000BE101 /* PushNotificationManager.swift in Sources */,
 				B86BA87E2AE79C8B00C638CD /* ReceiveTimer.swift in Sources */,
+				B8D780392C29BF28006D25EF /* RootNavigationStack.swift in Sources */,
 				B8C5ACAE2ACCAE6200595772 /* ReferenceLibraryCard.swift in Sources */,
 				B8C5ACB22ACCBA7D00595772 /* ReferenceLibraryScreen.swift in Sources */,
 				B8DAF91D2AC332FF00514808 /* ReminderNotification.swift in Sources */,

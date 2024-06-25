@@ -7,17 +7,21 @@
 
 import SwiftUI
 
-/// `App` implementation
+/// Main `App` implementation
 @main
 struct DefineApp: App {
 
     /// `AppDelegate`
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
+    /// Storage of the `WordsViewModel` environment instance
+    @StateObject private var words = WordsViewModel()
+
     /// Make `Scene`
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(words)
         }
     }
 }

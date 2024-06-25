@@ -1,8 +1,8 @@
 //
-//  NavigationViewModel.swift
+//  NavigationRoute.swift
 //  Define
 //
-//  Created by Ben Shutt on 24/12/2022.
+//  Created by Ben Shutt on 24/06/2024.
 //
 
 import SwiftUI
@@ -20,32 +20,12 @@ enum NavigationRoute: Hashable {
     case word(Word)
 }
 
-// MARK: - NavigationViewModel
-
-/// View model for navigation
-final class NavigationViewModel: ObservableObject {
-
-    /// `NavigationPath`
-    @Published var path = NavigationPath()
-
-    /// Push `route` on `path`
-    /// - Parameter route: `NavigationRoute`
-    func push(_ route: NavigationRoute) {
-        path.append(route)
-    }
-
-    /// Pop to root screen
-    func popToRoot() {
-        path = NavigationPath()
-    }
-}
-
 // MARK: - View + NavigationRoute
 
 extension View {
 
     /// Add navigation destination handler to view
-    func navigate() -> some View {
+    func navigateRoutes() -> some View {
         navigationDestination(for: NavigationRoute.self) { route in
             switch route {
             case .search:
