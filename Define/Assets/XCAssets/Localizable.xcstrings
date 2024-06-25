@@ -193,7 +193,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "You will be reminded about the word '%1$@' by a push notification in %2$@."
+            "value" : "You will be reminded about the word '%1$@' with a push notification in %2$@."
           }
         }
       }
