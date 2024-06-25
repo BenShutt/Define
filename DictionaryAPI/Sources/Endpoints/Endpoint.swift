@@ -9,6 +9,8 @@ import Foundation
 import Alamofire
 import DataRequest
 
+// TODO: If words like "look" do not return results, rethink the API
+
 public protocol Endpoint: DecodableRequest {
     var endpoint: String { get }
     var queryItems: [URLQueryItem] { get }

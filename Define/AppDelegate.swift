@@ -7,6 +7,8 @@
 
 import UIKit
 
+// TODO: Add Analytics/Crashlytics if used in production
+
 /// Implementation of `UIApplicationDelegate`
 class AppDelegate: NSObject, UIApplicationDelegate,
     UNUserNotificationCenterDelegate, Logger {

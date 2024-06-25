@@ -8,10 +8,11 @@
 import SwiftUI
 import DictionaryAPI
 
+// TODO: Add info page (possibly a tab)
+// Version, Rate, Report, Donate, Export, Color Scheme?
+
 /// Root app `View`
 struct ContentView: View {
-    @EnvironmentObject private var words: WordsViewModel
-
     var body: some View {
         RootNavigationStack {
             RootView()

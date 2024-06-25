@@ -16,7 +16,7 @@ enum NavigationRoute: Hashable {
     /// Search word screen
     case search
 
-    /// Word detail screen (definitions)
+    /// Word detail screen (meanings and their definitions)
     case word(Word)
 }
 

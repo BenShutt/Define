@@ -8,6 +8,8 @@
 import Foundation
 import DataRequest
 
+// TODO: Other languages
+
 /// Make `HTTPRequest` for the Dictionary entries API
 public struct GetWords: Endpoint {
 

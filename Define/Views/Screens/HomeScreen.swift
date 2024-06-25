@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// TODO: Add collapsable UI
+
 /// Screen listing the user's saved definitions
 struct HomeScreen: View {
     @EnvironmentObject private var words: WordsViewModel

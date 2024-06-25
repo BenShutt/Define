@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// TODO: Improve NavigationBar re-use and consistency
+
 /// Custom view used for navigation bar UI.
 /// The view transitions from a large to small state as the scroll offset increases.
 struct NavigationBar<SmallContent: View, LargeContent: View>: View {
@@ -25,7 +27,7 @@ struct NavigationBar<SmallContent: View, LargeContent: View>: View {
 
     /// Value in `[0, 1]` from not scrolled to fully scrolled (respectively)
     private var progress: CGFloat {
-        // TODO: Handle bounce the other way
+        // TODO: Fix bounce the other way
         max(0, min(maxOffsetY, offsetY)) / maxOffsetY
     }
 

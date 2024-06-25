@@ -44,21 +44,21 @@ enum TextStyle: String, CaseIterable, Hashable, Identifiable {
         case .body: .regular
         case .button: .bold
         case .tag: .semiBold
-        case .caption: .lightItalic // Italic
+        case .caption: .lightItalic // Italic applied via font
         }
     }
 
     /// Default text color
     private var defaultTextColor: Color {
         switch self {
-        case .h1: return .appDarkGray
-        case .h2: return .appDarkGray
-        case .h3: return .appDarkGray
-        case .h4: return .appDarkGray
-        case .body: return .appGray
-        case .button: return .appDarkGray
-        case .tag: return .appGray
-        case .caption: return .appGray
+        case .h1: .appDarkGray
+        case .h2: .appDarkGray
+        case .h3: .appDarkGray
+        case .h4: .appDarkGray
+        case .body: .appGray
+        case .button: .appDarkGray
+        case .tag: .appGray
+        case .caption: .appGray
         }
     }
 

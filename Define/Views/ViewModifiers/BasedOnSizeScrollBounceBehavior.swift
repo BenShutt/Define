@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@available(iOS, deprecated: 16.4, message: "No longer needed")
 private struct BasedOnSizeScrollBounceBehavior: ViewModifier {
     func body(content: Content) -> some View {
         if #available(iOS 16.4, *) {

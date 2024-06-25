@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// TODO: Improve UI
+
 /// `View` drawing a chevron
 struct ChevronView: View {
     var body: some View {

@@ -8,6 +8,8 @@
 import SwiftUI
 import DictionaryAPI
 
+// TODO: Migrate to SwiftData
+
 /// A saved word
 struct SavedWord: JSONModel, Identifiable, Comparable {
 

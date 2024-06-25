@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import Alamofire
 import DictionaryAPI
 
 final class GetWordsTests: XCTestCase {
@@ -20,5 +21,13 @@ final class GetWordsTests: XCTestCase {
         } catch {
             XCTAssertEqual(error.responseCode, 404)
         }
+    }
+}
+
+// MARK: - Error + Alamofire
+
+private extension Error {
+    var responseCode: Int? {
+        (self as? AFError)?.responseCode
     }
 }
