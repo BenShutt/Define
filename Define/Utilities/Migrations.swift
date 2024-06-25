@@ -23,11 +23,11 @@ struct Migrations {
     /// Check the previous app version against the current app version and perform
     /// migrations accordingly
     static func execute() {
-        // Get appVersion the app was last launched with
-        let previousAppVersion = appVersion
-
         // Get the current appVersion
         guard let currentAppVersion = Bundle.main.appVersion else { return }
+
+        // Get appVersion the app was last launched with
+        let previousAppVersion = appVersion
 
         // Persist the current appVersion
         appVersion = currentAppVersion
@@ -40,7 +40,6 @@ struct Migrations {
     }
 
     /// Migrate from `oldVersion` to `newVersion`
-    ///
     /// - Parameters:
     ///   - oldVersion: `String` old version
     ///   - newVersion: `String` new version
