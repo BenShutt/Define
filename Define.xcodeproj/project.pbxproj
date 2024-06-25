@@ -447,14 +447,14 @@
 			children = (
 				B80E722029FDAD57007CCE71 /* ShapeBorder */,
 				B894FA2228FC8D6B00BC0BFA /* Sticky */,
+				B8B05F132C29716A00F2A9A8 /* BasedOnSizeScrollBounceBehavior.swift */,
 				B832D65B2C24652500FF3EFE /* ClippedHeight.swift */,
+				B8B05F152C29748400F2A9A8 /* FixedSizeSheet.swift */,
 				B813C00228EB7F7D000C766C /* IconContainer.swift */,
 				B8C25F9B294F7AAF001C8847 /* KeyboardToolbar.swift */,
 				B8E336562AD5BABF00374E4A /* ListAnimator.swift */,
 				B86BA87D2AE79C8B00C638CD /* ReceiveTimer.swift */,
 				B8AD58842AD47FC00054403E /* WordReminderObserver.swift */,
-				B8B05F132C29716A00F2A9A8 /* BasedOnSizeScrollBounceBehavior.swift */,
-				B8B05F152C29748400F2A9A8 /* FixedSizeSheet.swift */,
 			);
 			path = ViewModifiers;
 			sourceTree = "<group>";
@@ -600,11 +600,11 @@
 		B8D2A74028DF0E670096A020 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				B8D7803A2C29BF34006D25EF /* Navigation */,
 				B8BFDC6D2AC77FDD009E1F83 /* GradientBlurView */,
 				B80E721229FC09A9007CCE71 /* HeaderView */,
 				B813BFFB28EB7ACA000C766C /* Icon */,
 				B879E9EA28F0C7110094AA24 /* List */,
+				B8D7803A2C29BF34006D25EF /* Navigation */,
 				B8F834C82B73DBFB00D0C5D2 /* NavigationBar */,
 				B80E721929FD9546007CCE71 /* ScrollView */,
 				B891F8E12950FB6600A53582 /* ChevronView.swift */,
@@ -657,8 +657,8 @@
 			children = (
 				B80E721E29FDA849007CCE71 /* IdentifiedElement.swift */,
 				B88491A529620353009F6469 /* IndexElement.swift */,
-				B8FF0DD72960ACCE004C61B6 /* SavedWord.swift */,
 				B8D7803B2C29BF62006D25EF /* NavigationRoute.swift */,
+				B8FF0DD72960ACCE004C61B6 /* SavedWord.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -853,6 +853,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B89F179D28E0FABE00A96E35 /* AppDelegate.swift in Sources */,
+				B8B05F142C29716A00F2A9A8 /* BasedOnSizeScrollBounceBehavior.swift in Sources */,
 				B8BFDC712AC7800C009E1F83 /* BlurView.swift in Sources */,
 				B8FF0DD329609E3E004C61B6 /* Bundle+Key.swift in Sources */,
 				B8E49C0B28DF985500F9CAC4 /* CGFloat+Values.swift in Sources */,
@@ -867,12 +868,11 @@
 				B80E722929FDB8CC007CCE71 /* DateComponentsFormatter+Extensions.swift in Sources */,
 				B868F23C2AECDD88003765F8 /* DateGroup.swift in Sources */,
 				B80399DD28D79A37008CE7B4 /* DefineApp.swift in Sources */,
-				B8B05F142C29716A00F2A9A8 /* BasedOnSizeScrollBounceBehavior.swift in Sources */,
 				B88491A22961FFB5009F6469 /* DefinitionListItem.swift in Sources */,
-				B8B05F162C29748400F2A9A8 /* FixedSizeSheet.swift in Sources */,
 				B8B9B9D828EC603D006FCA76 /* EdgeInsets+Extensions.swift in Sources */,
 				B8E49C0F28DF9AA500F9CAC4 /* EdgeInsets+Values.swift in Sources */,
 				B80E71FF29FBB578007CCE71 /* FigmaShadow+Values.swift in Sources */,
+				B8B05F162C29748400F2A9A8 /* FixedSizeSheet.swift in Sources */,
 				B8BFDC6F2AC77FED009E1F83 /* GradientBlurView.swift in Sources */,
 				B80E720829FBEBF7007CCE71 /* HeaderView.swift in Sources */,
 				B895887429578BFB0041A315 /* HomeScreen.swift in Sources */,
@@ -894,18 +894,18 @@
 				B80E721B29FD9578007CCE71 /* MarginedList.swift in Sources */,
 				B8FF0DDC2960B548004C61B6 /* MeaningListItem.swift in Sources */,
 				B8FF0DD129609DDF004C61B6 /* Migrations.swift in Sources */,
-				B8D7803C2C29BF62006D25EF /* NavigationRoute.swift in Sources */,
 				B832D6652C2466C700FF3EFE /* NavigationBar.swift in Sources */,
 				B8F834D02B73E40700D0C5D2 /* NavigationBarBackground.swift in Sources */,
+				B8D7803C2C29BF62006D25EF /* NavigationRoute.swift in Sources */,
 				B8F834CE2B73DC9700D0C5D2 /* NavigationScreen.swift in Sources */,
 				B896B9AD2AEA2EEF0043DA18 /* NotificationRequestManager.swift in Sources */,
 				B832D6622C24654A00FF3EFE /* OffsetScrollView.swift in Sources */,
 				B8994CAE2A8EC4C2000BE101 /* PushNotificationManager.swift in Sources */,
 				B86BA87E2AE79C8B00C638CD /* ReceiveTimer.swift in Sources */,
-				B8D780392C29BF28006D25EF /* RootNavigationStack.swift in Sources */,
 				B8C5ACAE2ACCAE6200595772 /* ReferenceLibraryCard.swift in Sources */,
 				B8C5ACB22ACCBA7D00595772 /* ReferenceLibraryScreen.swift in Sources */,
 				B8DAF91D2AC332FF00514808 /* ReminderNotification.swift in Sources */,
+				B8D780392C29BF28006D25EF /* RootNavigationStack.swift in Sources */,
 				B80E722629FDB5C9007CCE71 /* RoundedRectangleBorder.swift in Sources */,
 				B8FF0DD82960ACCE004C61B6 /* SavedWord.swift in Sources */,
 				B89F179428E0EBF100A96E35 /* Screen.swift in Sources */,
