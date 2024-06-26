@@ -39,7 +39,6 @@ extension Localization: ExpressibleByStringInterpolation {
 
     /// Usage: `<key> <arg1> <arg2>`
     struct StringInterpolation: StringInterpolationProtocol {
-
         var key = ""
         var arguments: [Any] = []
 
