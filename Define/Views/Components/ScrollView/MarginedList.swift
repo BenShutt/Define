@@ -51,7 +51,7 @@ extension View {
     /// - Parameter margins: `EdgeInsets`
     /// - Returns: `View`
     func margined(_ margins: EdgeInsets) -> some View {
-        roundedRectangleBorder(color: .border, borderWidth: 1)
+        roundedRectangleBorder(color: .border, borderWidth: .borderWidth)
             .compositingGroup()
             .shadow(.container)
             .padding(margins)

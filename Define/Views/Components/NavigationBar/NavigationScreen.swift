@@ -20,6 +20,7 @@ struct NavigationScreen<Content: View>: View {
             content: content
         )
         .screen()
+        .toolbar(.hidden, for: .navigationBar)
         .stickyTop {
             NavigationBar(
                 offsetY: offset.y,
@@ -37,7 +38,6 @@ struct NavigationScreen<Content: View>: View {
             .compositingGroup()
             .shadow(.sticky)
         }
-        .toolbar(.hidden, for: .navigationBar)
     }
 }
 

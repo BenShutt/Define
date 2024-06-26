@@ -48,6 +48,7 @@ struct SearchScreen: View {
         }
         .screen()
         .toolbarBackground(Color.clear, for: .navigationBar)
+        .toolbar(.visible, for: .navigationBar)
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(words.isEmpty)
         .sheet(isPresented: $isPresentingReferenceLibrary) {

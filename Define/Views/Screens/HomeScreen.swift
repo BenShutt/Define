@@ -110,22 +110,22 @@ private struct WordRow: View {
             Button(action: {
                 push(.word(word.word))
             }, label: {
-                ListItem(word: word)
+                HomeListItem(word: word)
             })
 
         case .referenceLibrary:
             Button(action: {
                 selectedWord = word
             }, label: {
-                ListItem(word: word)
+                HomeListItem(word: word)
             })
         }
     }
 }
 
-// MARK: - ListItem
+// MARK: - HomeListItem
 
-private struct ListItem: View {
+private struct HomeListItem: View {
     @EnvironmentObject private var words: WordsViewModel
     @State private var addedSince: LocalizedStringKey? // TODO: View model?
     @State private var isReminderScheduled = false

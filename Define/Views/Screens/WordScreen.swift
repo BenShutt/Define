@@ -32,14 +32,6 @@ struct WordScreen: View {
         words.contains(word)
     }
 
-    /// Padding for the header view
-    private var headerPadding: EdgeInsets {
-        var padding: EdgeInsets = .header
-        padding.top = .extraSmall
-        padding.bottom = .extraSmall
-        return padding
-    }
-
     var body: some View {
         WordContentView(
             word: word,
@@ -48,9 +40,7 @@ struct WordScreen: View {
             saveWord()
         }
         .screen()
-        .stickyTop {
-            HeaderView(spacing: 0, padding: headerPadding) {}
-        }
+        .toolbar(.visible, for: .navigationBar)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .principal) {
@@ -75,6 +65,9 @@ struct WordScreen: View {
                     })
                 }
             }
+        }
+        .stickyTop {
+            HeaderView(spacing: 0, padding: .headerPadding) {}
         }
         .deleteWordAlert(
             word: word,

@@ -8,9 +8,6 @@
 import SwiftUI
 import DictionaryAPI
 
-// TODO: Add info page (possibly a tab)
-// Version, Rate, Report, Donate, Export, Color Scheme?
-
 /// Root app `View`
 struct ContentView: View {
     var body: some View {

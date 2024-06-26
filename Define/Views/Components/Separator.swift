@@ -13,6 +13,6 @@ struct Separator: View {
 
     var body: some View {
         color
-            .frame(height: 2)
+            .frame(height: .separator)
     }
 }

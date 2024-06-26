@@ -39,6 +39,7 @@ struct WelcomeScreen: View {
         .scrollBounceBasedOnSize()
         .ignoresSafeArea(.all, edges: .top)
         .screen()
+        .toolbar(.hidden, for: .navigationBar)
         .stickyButton(
             title: "continue_button",
             systemName: "arrow.forward"

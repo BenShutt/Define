@@ -7,12 +7,22 @@
 
 import SwiftUI
 
-struct AppIconGradient: View {
-    var color: Color = .appIconDefault
-    var start: CGFloat = 0.25
-    var end: CGFloat = 0.75
+public struct AppIconGradient: View {
+    public var color: Color
+    public var start: CGFloat
+    public var end: CGFloat
 
-    var body: some View {
+    public init(
+        color: Color = .appIconDefault,
+        start: CGFloat = 0.25,
+        end: CGFloat = 0.75
+    ) {
+        self.color = color
+        self.start = start
+        self.end = end
+    }
+
+    public var body: some View {
         GeometryReader { metrics in
             RadialGradient.make(
                 color: color,

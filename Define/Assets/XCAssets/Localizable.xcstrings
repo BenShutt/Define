@@ -23,6 +23,16 @@
         }
       }
     },
+    "app_version %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App Version - %@"
+          }
+        }
+      }
+    },
     "cancel" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -122,6 +132,46 @@
         }
       }
     },
+    "donate_subtitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This project was made for free but has some running costs. Your help would be greatly appreciated!"
+          }
+        }
+      }
+    },
+    "donate_title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Donate"
+          }
+        }
+      }
+    },
+    "export_subtitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Export a list of your words as a JSON."
+          }
+        }
+      }
+    },
+    "export_title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Export Words"
+          }
+        }
+      }
+    },
     "home_button" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -151,6 +201,36 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Your Words"
+          }
+        }
+      }
+    },
+    "info_title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Info"
+          }
+        }
+      }
+    },
+    "rate_app_subtitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Let us know what you think of our app!"
+          }
+        }
+      }
+    },
+    "rate_app_title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rate App"
           }
         }
       }
@@ -205,6 +285,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "'%@' Reminder"
+          }
+        }
+      }
+    },
+    "report_issue_subtitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Report an issue you are having with the app."
+          }
+        }
+      }
+    },
+    "report_issue_title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Report Issue"
           }
         }
       }
@@ -304,6 +404,46 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Search"
+          }
+        }
+      }
+    },
+    "settings_subtitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Update your iOS app settings such as notifications."
+          }
+        }
+      }
+    },
+    "settings_title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App Settings"
+          }
+        }
+      }
+    },
+    "theme_subtitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configure your app's color theme."
+          }
+        }
+      }
+    },
+    "theme_title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Color Theme"
           }
         }
       }
