@@ -33,10 +33,14 @@ public extension JSONModel {
 private extension JSONEncoder {
 
     /// `JSONEncoder` for pretty printing
-    static var pretty: JSONEncoder {
+    static let pretty = {
         let encoder = JSONEncoder()
         encoder.dateEncodingStrategy = .iso8601
-        encoder.outputFormatting = [.prettyPrinted, .sortedKeys, .withoutEscapingSlashes]
+        encoder.outputFormatting = [
+            .prettyPrinted,
+            .sortedKeys,
+            .withoutEscapingSlashes
+        ]
         return encoder
-    }
+    }()
 }

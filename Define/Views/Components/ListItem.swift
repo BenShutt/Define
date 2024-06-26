@@ -28,7 +28,7 @@ struct SimpleListItem: View {
 
 struct ListItem<Leading: View>: View {
     var title: LocalizedStringKey
-    var subtitle: LocalizedStringKey
+    var subtitle: LocalizedStringKey?
     var margins: EdgeInsets = .zero
     @ViewBuilder var leading: () -> Leading
 
@@ -40,8 +40,10 @@ struct ListItem<Leading: View>: View {
                 Text(title)
                     .textStyle(.h4, fill: .leading)
 
-                Text(subtitle)
-                    .textStyle(.body, fill: .leading)
+                if let subtitle {
+                    Text(subtitle)
+                        .textStyle(.body, fill: .leading)
+                }
             }
 
             ChevronView()

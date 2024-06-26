@@ -13,7 +13,7 @@ import DictionaryAPI
 typealias UserInfo = [AnyHashable: Any]
 
 /// Manage push notifications
-struct PushNotificationManager: Logger {
+struct PushNotificationManager {
 
     // MARK: - Authorization
 
@@ -23,9 +23,9 @@ struct PushNotificationManager: Logger {
         UNUserNotificationCenter.current().requestAuthorization(
             options: options
         ) { granted, error in
-            log("Push notification authorization: \(granted)")
+            logger.info("Push notification authorization: \(granted)")
             if let error {
-                log("Push notification authorization error: \(error)")
+                log(error: error)
             }
         }
     }
@@ -37,11 +37,11 @@ struct PushNotificationManager: Logger {
             .map { String(format: "%02.2hhx", $0) }
             .joined()
 
-        log("APNs token: \(apnsToken)")
+        logger.info("APNs token: \(apnsToken)")
     }
 
     static func didFailToRegisterForRemoteNotifications(with error: Error) {
-        log("\(#function) \(error)")
+        logger.info("\(#function) \(error.localizedDescription)")
     }
 
     // MARK: - UNNotificationCenter

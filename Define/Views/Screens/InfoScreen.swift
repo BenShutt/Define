@@ -26,6 +26,9 @@ struct InfoScreen: View {
         ScrollView {
             LazyVStack(spacing: .vMargin) {
                 ThemeListItem()
+                    .button {
+                        // TODO
+                    }
 
                 SimpleListItem(
                     title: "donate_title",
@@ -73,7 +76,7 @@ struct InfoScreen: View {
 
                 if let appVersion = Bundle.main.appVersion {
                     Text("app_version \(appVersion)")
-                        .textStyle(.body)
+                        .textStyle(.body, fill: .center)
                 }
             }
             .padding(.horizontal, .hMargin)
@@ -96,7 +99,7 @@ struct InfoScreen: View {
 // MARK: - ThemeListItem
 
 struct ThemeListItem: View {
-    private let shape = Circle()
+    private let shape = RoundedRectangle(cornerRadius: .cornerRadius)
 
     var body: some View {
         ListItem(
@@ -107,8 +110,14 @@ struct ThemeListItem: View {
                     .frame(width: 50, height: 50)
                     .clipShape(shape)
                     .overlay {
-                        shape
-                            .strokeBorder(Color.appBlue, lineWidth: .borderWidth)
+                        shape.strokeBorder(
+                            Color.appBlue.opacity(0.4),
+                            lineWidth: .borderWidth
+                        )
+                    }
+                    .overlay {
+                        Text(verbatim: "B") // TODO
+                            .textStyle(.h2)
                     }
             }
         )

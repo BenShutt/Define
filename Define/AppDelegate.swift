@@ -10,8 +10,7 @@ import UIKit
 // TODO: Add Analytics/Crashlytics if used in production
 
 /// Implementation of `UIApplicationDelegate`
-class AppDelegate: NSObject, UIApplicationDelegate,
-    UNUserNotificationCenterDelegate, Logger {
+class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     /// Lauch options dictionary
     typealias LaunchOptions = [UIApplication.LaunchOptionsKey: Any]

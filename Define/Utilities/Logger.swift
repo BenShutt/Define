@@ -6,15 +6,15 @@
 //
 
 import Foundation
+import OSLog
 
-protocol Logger {}
+let logCategory = Bundle.main.appName ?? "Define"
 
-extension Logger {
-    static func log(_ message: String) {
-        print("[\(Self.self)] \(message)")
-    }
+let logger = Logger(
+    subsystem: Bundle.main.bundleIdentifier ?? logCategory,
+    category: logCategory
+)
 
-    static func log(_ error: Error) {
-        log(error.localizedDescription)
-    }
+func log(error: Error) {
+    logger.error("\(error.localizedDescription)")
 }

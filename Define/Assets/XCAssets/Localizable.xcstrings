@@ -147,7 +147,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Donate"
+            "value" : "Say Thanks"
           }
         }
       }
@@ -157,7 +157,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Export a list of your words as a JSON."
+            "value" : "Export a list of your saved words as a JSON file."
           }
         }
       }

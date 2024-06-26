@@ -9,7 +9,7 @@ import SwiftUI
 import UserNotifications
 
 /// Manage notification requests
-struct NotificationRequestManager: Logger {
+struct NotificationRequestManager {
 
     /// The notification center to operate on
     private static let center: UNUserNotificationCenter = .current()
@@ -19,7 +19,7 @@ struct NotificationRequestManager: Logger {
     static func add(_ request: UNNotificationRequest) {
         center.add(request) { error in
             if let error {
-                log(error)
+                log(error: error)
             } else {
                 postNotification()
             }
