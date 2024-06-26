@@ -7,41 +7,31 @@
 
 import Foundation
 
-public struct Word: JSONModel, Validated {
+public struct Word: JSONModel {
     public var word: String
     public var meanings: [Meaning]
 
-    public mutating func validate() throws {
-        try word.validate()
-        try meanings.validate()
+    public init(word: String, meanings: [Meaning] = []) {
+        self.word = word
+        self.meanings = meanings
     }
 }
 
 // MARK: - Word.Meaning
 
 public extension Word {
-    struct Meaning: JSONModel, Validated {
+    struct Meaning: JSONModel {
         public var partOfSpeech: String
         public var definitions: [Definition]
-
-        public mutating func validate() throws {
-            try partOfSpeech.validate()
-            try definitions.validate()
-        }
     }
 }
 
 // MARK: - Word.Meaning.Definition
 
 public extension Word.Meaning {
-    struct Definition: JSONModel, Validated {
+    struct Definition: JSONModel {
         public var definition: String
         public var example: String?
-
-        public mutating func validate() throws {
-            try definition.validate()
-            try example?.validate()
-        }
     }
 }
 
@@ -64,10 +54,37 @@ extension Word: Comparable {
     }
 }
 
-// MARK: - Word + Extensions
+// MARK: - Meaning + Extensions
 
-public extension Word {
-    init(word: String) {
-        self.init(word: word, meanings: [])
+public extension Word.Meaning {
+    var category: PartOfSpeech? {
+        PartOfSpeech(value: partOfSpeech)
+    }
+}
+
+// MARK: - Word + Validated
+
+extension Word: Validated {
+    public mutating func validate() throws {
+        try word.validate()
+        try meanings.validate()
+    }
+}
+
+// MARK: - Word.Meaning + Validated
+
+extension Word.Meaning: Validated {
+    public mutating func validate() throws {
+        try partOfSpeech.validate()
+        try definitions.validate()
+    }
+}
+
+// MARK: - Word.Meaning.Definition + Validated
+
+extension Word.Meaning.Definition: Validated {
+    public mutating func validate() throws {
+        try definition.validate()
+        try example?.validate()
     }
 }

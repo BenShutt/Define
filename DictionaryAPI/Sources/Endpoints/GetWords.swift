@@ -16,17 +16,24 @@ public struct GetWords: Endpoint {
     /// Response model from the API
     public typealias ResponseBody = [Word]
 
+    /// Code of the language to get the word in
+    public var languageCode: String
+
     /// Word to get definition for
     public var word: String
 
     /// Public member-wise initializer
-    public init(word: String) {
+    public init(
+        languageCode: String = "en",
+        word: String
+    ) {
+        self.languageCode = languageCode
         self.word = word
     }
 
     /// Endpoint to hit
     public var endpoint: String {
-        "entries/en/\(word)" // Fixed language for now
+        "entries/\(languageCode)/\(word)"
     }
 
     /// Get `Word`s and validate the models

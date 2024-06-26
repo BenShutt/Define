@@ -64,11 +64,6 @@ extension Word.Meaning {
     var partOfSpeechTitle: String {
         partOfSpeech.localizedCapitalized
     }
-
-    /// Category (or type) of word
-    var category: WordCategory? {
-        WordCategory(value: partOfSpeech)
-    }
 }
 
 // MARK: - Word.Meaning.Definition + Extensions

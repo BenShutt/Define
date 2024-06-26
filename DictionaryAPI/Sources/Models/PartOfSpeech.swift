@@ -1,5 +1,5 @@
 //
-//  WordCategory.swift
+//  PartOfSpeech.swift
 //  DictionaryAPI
 //
 //  Created by Ben Shutt on 29/01/2023.
@@ -8,7 +8,7 @@
 import Foundation
 
 /// A category of word
-public enum WordCategory: String, CaseIterable, Identifiable {
+public enum PartOfSpeech: String, CaseIterable, Identifiable {
     case adjective
     case adverb
     case interjection
@@ -17,9 +17,9 @@ public enum WordCategory: String, CaseIterable, Identifiable {
     case pronoun
     case verb
 
+    public var id: Self { self }
+
     public init?(value: String) {
         self.init(rawValue: value.lowercased())
     }
-
-    public var id: Self { self }
 }

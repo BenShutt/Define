@@ -70,7 +70,7 @@ private struct PartsOfSpeechView: View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: .small) {
                 ForEach(partsOfSpeech, id: \.self) {
-                    WordCategoryView(category: $0)
+                    PartOfSpeechView(partOfSpeech: $0)
                 }
             }
         }

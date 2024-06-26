@@ -1,5 +1,5 @@
 //
-//  WordCategoryView.swift
+//  PartOfSpeechView.swift
 //  Define
 //
 //  Created by Ben Shutt on 29/01/2023.
@@ -9,34 +9,30 @@ import SwiftUI
 import DictionaryAPI
 
 /// Capsule for a part of speech (category)
-struct WordCategoryView: View {
+struct PartOfSpeechView: View {
 
     /// Part of speech
-    var category: String
-
-    /// Map `category` to `WordCategory`
-    var wordCategory: WordCategory? {
-        WordCategory(rawValue: category.lowercased())
-    }
+    var partOfSpeech: String
 
     /// Background color of the capsule
     private var backgroundColor: Color {
-        wordCategory?.backgroundColor ?? .appLightGray
+        let partOfSpeech = PartOfSpeech(value: partOfSpeech)
+        return partOfSpeech?.backgroundColor ?? .appLightGray
     }
 
     /// Draw view
     var body: some View {
         TagView(
-            text: category,
+            text: partOfSpeech,
             foregroundColor: .appDarkGray,
             backgroundColor: backgroundColor
         )
     }
 }
 
-// MARK: - WordCategory + Color
+// MARK: - PartOfSpeech + Color
 
-extension WordCategory {
+extension PartOfSpeech {
     var backgroundColor: Color {
         switch self {
         case .adjective: .appBlue
@@ -54,8 +50,8 @@ extension WordCategory {
 
 #Preview {
     VStack {
-        ForEach(WordCategory.allCases) {
-            WordCategoryView(category: $0.rawValue)
+        ForEach(PartOfSpeech.allCases) {
+            PartOfSpeechView(partOfSpeech: $0.rawValue)
         }
     }
 }
