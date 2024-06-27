@@ -12,7 +12,7 @@ import ArgumentParser
 @main
 struct Main: AsyncParsableCommand {
     static let configuration = CommandConfiguration(
-        abstract: "Generate images from SwiftUI views"
+        abstract: "Generate images from their SwiftUI views"
     )
 
     @Option(help: "The file path of the directory to write the images to")
@@ -32,16 +32,16 @@ struct Main: AsyncParsableCommand {
         try PNGImage(
             directoryURL: directoryURL,
             fileName: "AppIcon",
-            width: 1024,
-            height: 1024
+            width: .appIconSize,
+            height: .appIconSize
         )
         .renderAndWrite(content: AppIcon())
 
         try PNGImage(
             directoryURL: directoryURL,
             fileName: "LaunchScreen",
-            width: 1290, // iPhone 15 Pro Max
-            height: 2796
+            width: .launchScreenWidth,
+            height: .launchScreenHeight
         )
         .renderAndWrite(content: LaunchScreen())
 
