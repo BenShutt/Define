@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TabAppearance {
     var selectedForegroundColor: Color = .appBlue
-    var foregroundColor: Color = .appDarkGray
+    var foregroundColor: Color = .appGray.opacity(0.75)
     var backgroundColor: Color = .appWhite
     var textStyle: TextStyle = .h4
 
@@ -43,7 +43,7 @@ struct TabAppearance {
         UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
 
         // UITabBarItem
-        guard let font = TextStyle.h4.uiFont else { return }
+        guard let font = textStyle.uiFont else { return }
         UITabBarItem.appearance().setTitleTextAttributes(
             [NSAttributedString.Key.font: font],
             for: .normal

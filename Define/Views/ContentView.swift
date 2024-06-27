@@ -34,7 +34,7 @@ struct OnboardingView: View {
     }
 
     var body: some View {
-        if hasSeenWelcome {
+        if !hasSeenWelcome {
             WelcomeScreen(onContinue: onContinue)
                 .transition(.move(edge: .bottom).combined(with: .opacity))
         }

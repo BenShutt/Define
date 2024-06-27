@@ -27,7 +27,7 @@ private struct AppIconContainer: ViewModifier {
             .compositingGroup()
             .shadow(
                 color: .appIconShadowHeavy,
-                radius: size * 0.05
+                radius: size * 0.1
             )
     }
 }

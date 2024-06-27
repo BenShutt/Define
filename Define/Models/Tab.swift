@@ -22,14 +22,14 @@ enum Tab: Identifiable, CaseIterable {
 
     var selectedSystemName: String {
         switch self {
-        case .home: "house.fill"
+        case .home: "house.circle.fill"
         case .info: "info.circle.fill"
         }
     }
 
     var systemName: String {
         switch self {
-        case .home: "house"
+        case .home: "house.circle"
         case .info: "info.circle"
         }
     }
@@ -48,10 +48,14 @@ private struct TabModifier: ViewModifier {
     var tab: Tab
     var isSelected: Bool
 
+    private var systemName: String {
+        isSelected ? tab.selectedSystemName : tab.systemName
+    }
+
     func body(content: Content) -> some View {
         content
             .tabItem {
-                Image(isSelected ? tab.selectedSystemName : tab.systemName)
+                Image(systemName: systemName)
                 Text(tab.title)
             }
             .tag(tab)

@@ -24,7 +24,7 @@ struct WelcomeScreen: View {
                     color: .appBlue
                 )
 
-                Text("welcome_title \(appName)")
+                Text("welcome_title")
                     .textStyle(.h1, fill: .leading)
                     .padding(.top, 2 * .extraLarge)
                     .padding(.horizontal, .hMargin)
@@ -76,7 +76,7 @@ private struct WelcomeHeaderView: View {
             .background(Color.appWhite)
             .clipShape(CurvedBottom())
             .compositingGroup()
-            .shadow(radius: 5)
+            .shadow(.sticky)
 
             AppIcon(
                 color: color,

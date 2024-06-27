@@ -195,7 +195,14 @@
       }
     },
     "home_tab" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Home"
+          }
+        }
+      }
     },
     "home_title" : {
       "extractionState" : "manual",
@@ -209,7 +216,14 @@
       }
     },
     "info_tab" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Info"
+          }
+        }
+      }
     },
     "info_title" : {
       "localizations" : {
@@ -465,13 +479,12 @@
         }
       }
     },
-    "welcome_title %@" : {
-      "extractionState" : "manual",
+    "welcome_title" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Welcome to %@ 👋"
+            "value" : "Welcome 👋"
           }
         }
       }
