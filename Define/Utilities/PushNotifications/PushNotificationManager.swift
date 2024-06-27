@@ -18,7 +18,10 @@ struct PushNotificationManager {
     // MARK: - Authorization
 
     /// Request permission to send this device remote push notification
-    static func requestRemoteNotificationPermission() {
+    /// - Parameter completion: Completion called on request
+    static func requestRemoteNotificationPermission(
+        completion: @escaping (Bool) -> Void
+    ) {
         let options: UNAuthorizationOptions = [.alert, .badge, .sound]
         UNUserNotificationCenter.current().requestAuthorization(
             options: options
@@ -27,6 +30,7 @@ struct PushNotificationManager {
             if let error {
                 log(error: error)
             }
+            completion(granted && error == nil)
         }
     }
 

@@ -62,6 +62,11 @@ enum TextStyle: String, CaseIterable, Hashable, Identifiable {
         }
     }
 
+    /// Map to `UIFont`
+    var uiFont: UIFont? {
+        UIFont(name: font.rawValue, size: fontSize)
+    }
+
     /// Make a styled text
     /// - Parameters:
     ///   - lineLimit: Number of lines to limit to, defaults to `nil`

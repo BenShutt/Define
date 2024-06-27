@@ -194,6 +194,9 @@
         }
       }
     },
+    "home_tab" : {
+
+    },
     "home_title" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -204,6 +207,9 @@
           }
         }
       }
+    },
+    "info_tab" : {
+
     },
     "info_title" : {
       "localizations" : {

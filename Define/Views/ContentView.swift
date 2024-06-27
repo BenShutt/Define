@@ -8,41 +8,35 @@
 import SwiftUI
 import DictionaryAPI
 
-/// Root app `View`
 struct ContentView: View {
     var body: some View {
-        RootNavigationStack {
-            RootView()
-        }
+        AppTabView()
+            .overlay {
+                OnboardingView()
+            }
     }
 }
 
-// MARK: - RootView
+// MARK: - OnboardingView
 
-/// Define the root UI
-private struct RootView: View {
-    @EnvironmentObject private var words: WordsViewModel
-    @Environment(\.push) private var push
+struct OnboardingView: View {
 
     /// Has the user seen the welcome screen
     @AppStorage(UserDefaultKey.hasSeenWelcome.rawValue) private var hasSeenWelcome = false
 
-    var body: some View {
-        Group {
-            if !hasSeenWelcome {
-                WelcomeScreen {
-                    hasSeenWelcome = true
-                    push(.search)
-                    PushNotificationManager.requestRemoteNotificationPermission()
-                }
-            } else if !words.isEmpty {
-                HomeScreen()
-            } else {
-                SearchScreen()
+    private func onContinue() {
+        PushNotificationManager.requestRemoteNotificationPermission { _ in
+            // TODO: Check if works when already accepted
+            withAnimation {
+                hasSeenWelcome = true
             }
         }
-        .onReminderDidReceive(words: words) { word in
-            push(.word(word))
+    }
+
+    var body: some View {
+        if hasSeenWelcome {
+            WelcomeScreen(onContinue: onContinue)
+                .transition(.move(edge: .bottom).combined(with: .opacity))
         }
     }
 }
