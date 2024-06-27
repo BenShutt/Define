@@ -70,7 +70,7 @@ import DictionaryAPI
     /// Remove the request for `word`
     /// - Parameter word: `Word` to remind of
     static func removePendingRequest(word: Word) {
-        NotificationRequestManager.removePending(with: [identifier(for: word)])
+        NotificationRequestManager.removeRequests(with: [identifier(for: word)])
     }
 }
 

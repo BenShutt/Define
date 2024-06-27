@@ -15,7 +15,7 @@ struct NotificationRequestManager {
     private static let center: UNUserNotificationCenter = .current()
 
     /// Add a notification request
-    /// - Parameter request: The request
+    /// - Parameter request: The request to add
     static func add(_ request: UNNotificationRequest) {
         center.add(request) { error in
             if let error {
@@ -26,6 +26,7 @@ struct NotificationRequestManager {
         }
     }
 
+    /// Get all of the pending requests
     static var pendingRequests: [UNNotificationRequest] {
         get async {
             await center.pendingNotificationRequests()
@@ -40,18 +41,18 @@ struct NotificationRequestManager {
     }
 
     /// Get the next trigger date with the given identifier
-    /// - Parameter identifier: The identifier
+    /// - Warning: Requires that the pending request has a calendar trigger
+    /// - Parameter identifier: The identifier of the request
     /// - Returns: The next trigger date or nil
     static func nextTriggerDate(with identifier: String) async -> Date? {
         let pendingRequest = await pendingRequest(with: identifier)
         guard let trigger = pendingRequest?.trigger else { return nil }
-        guard let calendarTrigger = trigger as? UNCalendarNotificationTrigger else { return nil }
-        return calendarTrigger.nextTriggerDate()
+        return (trigger as? UNCalendarNotificationTrigger)?.nextTriggerDate()
     }
 
     /// Remove the pending requests with the given identifiers
     /// - Parameter identifiers: The identifiers of the pending requests to remove
-    static func removePending(with identifiers: [String]) {
+    static func removeRequests(with identifiers: [String]) {
         center.removePendingNotificationRequests(withIdentifiers: identifiers)
         postNotification()
     }
