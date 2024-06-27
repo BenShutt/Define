@@ -29,38 +29,22 @@ struct Main: AsyncParsableCommand {
             withIntermediateDirectories: true
         )
 
-        try ImageToWrite(
+        try PNGImage(
+            directoryURL: directoryURL,
             fileName: "AppIcon",
             width: 1024,
-            height: 1024,
-            content: AppIcon()
+            height: 1024
         )
-        .renderAndWrite(in: directoryURL)
+        .renderAndWrite(content: AppIcon())
 
-        try ImageToWrite(
+        try PNGImage(
+            directoryURL: directoryURL,
             fileName: "LaunchScreen",
             width: 1290, // iPhone 15 Pro Max
-            height: 2796,
-            content: LaunchScreen()
+            height: 2796
         )
-        .renderAndWrite(in: directoryURL)
+        .renderAndWrite(content: LaunchScreen())
 
         print("Success, images written to '\(directoryURL)'")
-    }
-}
-
-// MARK: - ImageToWrite
-
-@MainActor private struct ImageToWrite<Content: View> {
-    var fileName: String
-    var width: CGFloat
-    var height: CGFloat
-    var content: Content
-
-    func renderAndWrite(in directoryURL: URL) throws {
-        let url = directoryURL.appendingPathComponent("\(fileName).png")
-        let renderer = PNGRenderer(width: width, height: height)
-        let data = try renderer.pngData(of: content)
-        try data.write(to: url, options: .atomic)
     }
 }

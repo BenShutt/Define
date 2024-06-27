@@ -38,7 +38,7 @@ private extension ImageRenderer {
     @MainActor func pngData() -> Data? {
 #if os(iOS)
         uiImage?.pngData()
-#elseif canImport(Cocoa)
+#elseif os(macOS)
         guard let tiff = nsImage?.tiffRepresentation else { return nil }
         guard let tiffData = NSBitmapImageRep(data: tiff) else { return nil }
         return tiffData.representation(using: .png, properties: [:])

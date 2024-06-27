@@ -8,5 +8,7 @@
 import SwiftUI
 
 public extension CGSize {
+
+    /// Returns the minimum of the `width` and the `height`
     var min: CGFloat { Swift.min(width, height) }
 }

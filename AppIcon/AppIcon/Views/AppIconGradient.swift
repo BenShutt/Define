@@ -24,8 +24,12 @@ public struct AppIconGradient: View {
 
     public var body: some View {
         GeometryReader { metrics in
-            RadialGradient.make(
-                color: color,
+            RadialGradient(
+                colors: [
+                    color.opacity(0.05),
+                    color.opacity(1)
+                ],
+                center: .center,
                 startRadius: metrics.size.min * start,
                 endRadius: metrics.size.min * end
             )
