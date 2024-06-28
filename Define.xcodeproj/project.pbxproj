@@ -109,8 +109,6 @@
 		B8BFDC712AC7800C009E1F83 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BFDC702AC7800C009E1F83 /* BlurView.swift */; };
 		B8C25F9C294F7AAF001C8847 /* KeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C25F9B294F7AAF001C8847 /* KeyboardToolbar.swift */; };
 		B8C25FA0294F8D5D001C8847 /* Separator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C25F9F294F8D5D001C8847 /* Separator.swift */; };
-		B8C5ACAE2ACCAE6200595772 /* ReferenceLibraryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C5ACAD2ACCAE6200595772 /* ReferenceLibraryCard.swift */; };
-		B8C5ACB22ACCBA7D00595772 /* ReferenceLibraryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C5ACB12ACCBA7D00595772 /* ReferenceLibraryScreen.swift */; };
 		B8D2A73C28DEEFAE0096A020 /* SearchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2A73B28DEEFAE0096A020 /* SearchScreen.swift */; };
 		B8D2A73E28DEEFE70096A020 /* Color+Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2A73D28DEEFE70096A020 /* Color+Values.swift */; };
 		B8D2A74228DF3A250096A020 /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2A74128DF3A250096A020 /* InputTextField.swift */; };
@@ -255,8 +253,6 @@
 		B8BFDC702AC7800C009E1F83 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		B8C25F9B294F7AAF001C8847 /* KeyboardToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardToolbar.swift; sourceTree = "<group>"; };
 		B8C25F9F294F8D5D001C8847 /* Separator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Separator.swift; sourceTree = "<group>"; };
-		B8C5ACAD2ACCAE6200595772 /* ReferenceLibraryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceLibraryCard.swift; sourceTree = "<group>"; };
-		B8C5ACB12ACCBA7D00595772 /* ReferenceLibraryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceLibraryScreen.swift; sourceTree = "<group>"; };
 		B8D2A73B28DEEFAE0096A020 /* SearchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreen.swift; sourceTree = "<group>"; };
 		B8D2A73D28DEEFE70096A020 /* Color+Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Values.swift"; sourceTree = "<group>"; };
 		B8D2A74128DF3A250096A020 /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
@@ -606,7 +602,6 @@
 			children = (
 				B895887329578BFB0041A315 /* HomeScreen.swift */,
 				B86FB8192C2C7F1D00687528 /* InfoScreen.swift */,
-				B8C5ACB12ACCBA7D00595772 /* ReferenceLibraryScreen.swift */,
 				B89F179328E0EBF100A96E35 /* Screen.swift */,
 				B8D2A73B28DEEFAE0096A020 /* SearchScreen.swift */,
 				B8E762B32A95F2E6006E168E /* WelcomeScreen.swift */,
@@ -632,7 +627,6 @@
 				B8E49C0828DF917E00F9CAC4 /* LoadingView.swift */,
 				B8A1232128E9714600ACEC45 /* LottieView.swift */,
 				B801A3DA2986D41400FAD316 /* PartOfSpeechView.swift */,
-				B8C5ACAD2ACCAE6200595772 /* ReferenceLibraryCard.swift */,
 				B8A1232928E9744E00ACEC45 /* SearchEmptyView.swift */,
 				B8C25F9F294F8D5D001C8847 /* Separator.swift */,
 				B8BBA16128E8EDF100222116 /* StyledButton.swift */,
@@ -929,10 +923,8 @@
 				B801A3DB2986D41400FAD316 /* PartOfSpeechView.swift in Sources */,
 				B8994CAE2A8EC4C2000BE101 /* PushNotificationManager.swift in Sources */,
 				B86BA87E2AE79C8B00C638CD /* ReceiveTimer.swift in Sources */,
-				B8C5ACAE2ACCAE6200595772 /* ReferenceLibraryCard.swift in Sources */,
 				B88506F42C2D80450072E1CE /* TabAppearance.swift in Sources */,
 				B88506F22C2D7E9F0072E1CE /* AppTabView.swift in Sources */,
-				B8C5ACB22ACCBA7D00595772 /* ReferenceLibraryScreen.swift in Sources */,
 				B8DAF91D2AC332FF00514808 /* WordReminder.swift in Sources */,
 				B8D780392C29BF28006D25EF /* RootNavigationStack.swift in Sources */,
 				B80E722629FDB5C9007CCE71 /* RoundedRectangleBorder.swift in Sources */,

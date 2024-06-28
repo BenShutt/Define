@@ -34,9 +34,6 @@ import DictionaryAPI
     /// The text being searched
     @Published var search = ""
 
-    /// Can the definition be found in the reference library
-    @Published private(set) var inReferenceLibrary = false
-
     /// The text being searched
     @Published private(set) var state: State = .emptySearch
 
@@ -69,7 +66,6 @@ import DictionaryAPI
         searchPublisher
             .receive(on: DispatchQueue.main)
             .sink { [weak self] search in
-                self?.inReferenceLibrary = false
                 self?.state = search.isEmpty ? .emptySearch : .loading
             }
             .store(in: &cancellables)
@@ -80,18 +76,9 @@ import DictionaryAPI
                 scheduler: DispatchQueue.main
             )
             .sink { [weak self] search in
-                self?.inReferenceLibrary = Self.dictionaryHasDefinition(term: search)
                 Task { await self?.getWords(for: search) }
             }
             .store(in: &cancellables)
-    }
-
-    /// Can the `term` be found in the reference library
-    /// - Parameter term: `String`
-    /// - Returns: `Bool`
-    static func dictionaryHasDefinition(term: String) -> Bool {
-        guard !term.isEmpty else { return false }
-        return UIReferenceLibraryViewController.dictionaryHasDefinition(forTerm: term)
     }
 
     /// Fetch words from the API

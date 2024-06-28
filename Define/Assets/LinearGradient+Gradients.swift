@@ -28,14 +28,4 @@ extension LinearGradient {
         startPoint: .topLeading,
         endPoint: .bottomTrailing
     )
-
-    static let reference = LinearGradient(
-        colors: [
-            Color.appBlack,
-            Color.appDarkGray,
-            Color.appBlack
-        ],
-        startPoint: .topLeading,
-        endPoint: .bottomTrailing
-    )
 }

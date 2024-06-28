@@ -329,17 +329,6 @@
         }
       }
     },
-    "search_api_failure" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No results found in the online dictionary"
-          }
-        }
-      }
-    },
     "search_empty_subtitle" : {
       "extractionState" : "manual",
       "localizations" : {

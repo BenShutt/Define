@@ -131,7 +131,7 @@ struct WordScreen: View {
 
     /// Add the word
     private func addWord() {
-        let savedWord = SavedWord(word: word, source: .api)
+        let savedWord = SavedWord(word: word)
         words.addWord(savedWord)
         addWordReminder(savedWord: savedWord)
         UINotificationFeedbackGenerator().notificationOccurred(.success)

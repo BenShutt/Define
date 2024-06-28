@@ -15,15 +15,12 @@ struct SearchScreen: View {
     /// `SearchViewModel`
     @StateObject private var viewModel = SearchViewModel()
 
-    /// Is the reference library been presented
-    @State private var isPresentingReferenceLibrary = false
-
     /// Is the search field focused
     @FocusState private var isSearchFocused: Bool
 
     /// When true, add padding to the search state UI
     private var statePadding: Bool {
-        viewModel.inReferenceLibrary || viewModel.words.isEmpty
+        viewModel.words.isEmpty
     }
 
     var body: some View {
@@ -31,16 +28,6 @@ struct SearchScreen: View {
             SearchHeaderView(searchText: $viewModel.search)
                 .focused($isSearchFocused) // Become first responder
                 .zIndex(1)
-
-            if viewModel.inReferenceLibrary {
-                Button(action: {
-                    isPresentingReferenceLibrary = true
-                }, label: {
-                    ReferenceLibraryCard(term: viewModel.search)
-                })
-                .padding(.horizontal, .hMargin)
-                .padding(.top, .large)
-            }
 
             SearchStateView(viewModel: viewModel)
                 .padding(.top, statePadding ? .large : 0)
@@ -51,17 +38,6 @@ struct SearchScreen: View {
         .toolbar(.visible, for: .navigationBar)
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(words.isEmpty)
-        .sheet(isPresented: $isPresentingReferenceLibrary) {
-            ReferenceLibraryScreen(term: viewModel.search) {
-                isPresentingReferenceLibrary = false
-                let savedWord = SavedWord(
-                    word: .init(word: viewModel.search),
-                    source: .referenceLibrary
-                )
-                words.addWord(savedWord)
-                popToRoot()
-            }
-        }
         .onAppear {
             isSearchFocused = true
         }
@@ -88,17 +64,11 @@ private struct SearchStateView: View {
             LoadingView()
 
         case .failure:
-            if !viewModel.inReferenceLibrary {
-                SearchEmptyView(
-                    lottie: .searchNoResults,
-                    title: "search_no_results_title",
-                    subtitle: "search_no_results_subtitle \(viewModel.search)"
-                )
-            } else {
-                Text("search_api_failure")
-                    .textStyle(.body)
-                    .padding(.horizontal, .large)
-            }
+            SearchEmptyView(
+                lottie: .searchNoResults,
+                title: "search_no_results_title",
+                subtitle: "search_no_results_subtitle \(viewModel.search)"
+            )
 
         case let .success(words):
             MarginedList(words.identified) { indexElement in

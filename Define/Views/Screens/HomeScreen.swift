@@ -14,9 +14,6 @@ struct HomeScreen: View {
     @EnvironmentObject private var words: WordsViewModel
     @Environment(\.push) private var push
 
-    /// The word to show in a presented reference library modal
-    @State private var selectedWord: SavedWord?
-
     /// Group words into groups by date
     private var groups: DateGroups { // TODO: Performance, add to view-model
         DateGroup.group(words.words, keyPath: \.savedDate)
@@ -30,7 +27,6 @@ struct HomeScreen: View {
             LazyVStack(spacing: 0, pinnedViews: .sectionHeaders) {
                 ForEach(groups, id: \.0) { group, savedWords in
                     WordsSection(
-                        selectedWord: $selectedWord,
                         group: group,
                         savedWords: savedWords
                     )
@@ -44,28 +40,24 @@ struct HomeScreen: View {
         ) {
             push(.search)
         }
-        .sheet(item: $selectedWord) { savedWord in
-            ReferenceLibraryScreen(term: savedWord.word.word) {
-                selectedWord = nil
-            }
-        }
     }
 }
 
 // MARK: - WordsSection
 
 private struct WordsSection: View {
-    @Binding var selectedWord: SavedWord?
+    @Environment(\.push) private var push
     var group: DateGroup
     var savedWords: [SavedWord]
 
     var body: some View {
         Section(content: {
             ForEach(savedWords) { savedWord in
-                WordRow(
-                    selectedWord: $selectedWord,
-                    word: savedWord
-                )
+                Button(action: {
+                    push(.word(savedWord.word))
+                }, label: {
+                    WordListItem(word: savedWord.word)
+                })
                 .margined(.marginedStack)
             }
         }, header: {
@@ -94,32 +86,6 @@ private struct WordsSectionHeader: View {
         .padding(.horizontal, .hMargin)
         .padding(.vertical, .smallMedium)
         .background(Color.screenBackground)
-    }
-}
-
-// MARK: - WordRow
-
-private struct WordRow: View {
-    @Environment(\.push) private var push
-    @Binding var selectedWord: SavedWord?
-    var word: SavedWord
-
-    var body: some View {
-        switch word.source {
-        case .api:
-            Button(action: {
-                push(.word(word.word))
-            }, label: {
-                WordListItem(word: word.word)
-            })
-
-        case .referenceLibrary:
-            Button(action: {
-                selectedWord = word
-            }, label: {
-                WordListItem(word: word.word)
-            })
-        }
     }
 }
 
