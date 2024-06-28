@@ -17,7 +17,6 @@ private struct WordReminderObserver: ViewModifier {
     private func update() async {
         guard let savedWordId else { return }
         let identifier = WordReminder.identifier(for: savedWordId)
-        print("identifier \(identifier)")
         reminderDate = await manager.nextTriggerDate(with: identifier)
     }
 

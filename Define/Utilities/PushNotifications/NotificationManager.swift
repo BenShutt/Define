@@ -16,11 +16,7 @@ import UserNotifications
     /// - Added (successfully)
     /// - Removed
     /// - Resolved (i.e. notification is received)
-    @Published private(set) var identifiers: Set<String> = [] {
-        didSet {
-            print("identifiers count \(identifiers.count)")
-        }
-    }
+    @Published private(set) var identifiers: Set<String> = []
 
     /// The notification center to query (shorthand)
     private let center: UNUserNotificationCenter = .current()
@@ -82,9 +78,7 @@ import UserNotifications
     /// Update identifiers of pending notification requests
     func updateIdentifiers() {
         Task {
-            let req = await requests()
-            print("requests count \(req.count)")
-            identifiers = Set(req.map { $0.identifier })
+            identifiers = Set(await requests().map { $0.identifier })
         }
     }
 }
