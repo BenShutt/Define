@@ -353,9 +353,9 @@
 			isa = PBXGroup;
 			children = (
 				B80399E328D79A3B008CE7B4 /* Preview Assets.xcassets */,
+				B88506F92C2E09310072E1CE /* PreviewColorView.swift */,
 				B894FA1B28FC69FA00BC0BFA /* Word+Preview.swift */,
 				B8FF0DCA295F9882004C61B6 /* hello.json */,
-				B88506F92C2E09310072E1CE /* PreviewColorView.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -465,10 +465,10 @@
 				B813C00228EB7F7D000C766C /* IconContainer.swift */,
 				B8C25F9B294F7AAF001C8847 /* KeyboardToolbar.swift */,
 				B8E336562AD5BABF00374E4A /* ListAnimator.swift */,
+				B88506F72C2DFA6A0072E1CE /* OnboardingModifier.swift */,
 				B86BA87D2AE79C8B00C638CD /* ReceiveTimer.swift */,
 				B84E8CA92C2AE7BB0044FEDE /* StyledText.swift */,
 				B88506F52C2DF3000072E1CE /* TabRequest.swift */,
-				B88506F72C2DFA6A0072E1CE /* OnboardingModifier.swift */,
 			);
 			path = ViewModifiers;
 			sourceTree = "<group>";
@@ -562,8 +562,8 @@
 				B803D5E12AD0922E00E7CF41 /* Localization.swift */,
 				B868F2392AECCC13003765F8 /* Logger.swift */,
 				B8FF0DD029609DDF004C61B6 /* Migrations.swift */,
-				B8FF0DD429609EF3004C61B6 /* UserDefaultKey.swift */,
 				B88506F32C2D80450072E1CE /* TabAppearance.swift */,
+				B8FF0DD429609EF3004C61B6 /* UserDefaultKey.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -593,8 +593,8 @@
 				B8D2A74028DF0E670096A020 /* Components */,
 				B8D2A73F28DF0E620096A020 /* Screens */,
 				B82A76C328DFAA6400DABFBE /* ViewModifiers */,
-				B84AD60B28FB01AF00C2D5AE /* ContentView.swift */,
 				B88506F12C2D7E9F0072E1CE /* AppTabView.swift */,
+				B84AD60B28FB01AF00C2D5AE /* ContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -871,6 +871,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B89F179D28E0FABE00A96E35 /* AppDelegate.swift in Sources */,
+				B88506F22C2D7E9F0072E1CE /* AppTabView.swift in Sources */,
 				B8B05F142C29716A00F2A9A8 /* BasedOnSizeScrollBounceBehavior.swift in Sources */,
 				B8BFDC712AC7800C009E1F83 /* BlurView.swift in Sources */,
 				B8FF0DD329609E3E004C61B6 /* Bundle+Key.swift in Sources */,
@@ -887,13 +888,11 @@
 				B868F23C2AECDD88003765F8 /* DateGroup.swift in Sources */,
 				B80399DD28D79A37008CE7B4 /* DefineApp.swift in Sources */,
 				B88491A22961FFB5009F6469 /* DefinitionListItem.swift in Sources */,
-				B88506FA2C2E09310072E1CE /* PreviewColorView.swift in Sources */,
 				B8B9B9D828EC603D006FCA76 /* EdgeInsets+Extensions.swift in Sources */,
 				B80E71FF29FBB578007CCE71 /* FigmaShadow+Values.swift in Sources */,
 				B8B05F162C29748400F2A9A8 /* FixedSizeSheet.swift in Sources */,
 				B8BFDC6F2AC77FED009E1F83 /* GradientBlurView.swift in Sources */,
 				B80E720829FBEBF7007CCE71 /* HeaderView.swift in Sources */,
-				B88506F62C2DF3000072E1CE /* TabRequest.swift in Sources */,
 				B895887429578BFB0041A315 /* HomeScreen.swift in Sources */,
 				B813C00328EB7F7D000C766C /* IconContainer.swift in Sources */,
 				B813C00128EB7DB9000C766C /* IconView.swift in Sources */,
@@ -904,7 +903,6 @@
 				B8D2A74228DF3A250096A020 /* InputTextField.swift in Sources */,
 				B8C25F9C294F7AAF001C8847 /* KeyboardToolbar.swift in Sources */,
 				B8F834CC2B73DC0F00D0C5D2 /* LargeNavigationBar.swift in Sources */,
-				B88506F82C2DFA6A0072E1CE /* OnboardingModifier.swift in Sources */,
 				B80E720629FBB972007CCE71 /* LinearGradient+Gradients.swift in Sources */,
 				B8E336572AD5BABF00374E4A /* ListAnimator.swift in Sources */,
 				B86FB81C2C2C841D00687528 /* ListItem.swift in Sources */,
@@ -918,17 +916,15 @@
 				B8FF0DD129609DDF004C61B6 /* Migrations.swift in Sources */,
 				B832D6652C2466C700FF3EFE /* NavigationBar.swift in Sources */,
 				B8F834D02B73E40700D0C5D2 /* NavigationBarBackground.swift in Sources */,
-				B88506F02C2D7BC90072E1CE /* Tab.swift in Sources */,
 				B8D7803C2C29BF62006D25EF /* NavigationRoute.swift in Sources */,
 				B8F834CE2B73DC9700D0C5D2 /* NavigationScreen.swift in Sources */,
 				B896B9AD2AEA2EEF0043DA18 /* NotificationManager.swift in Sources */,
 				B832D6622C24654A00FF3EFE /* OffsetScrollView.swift in Sources */,
+				B88506F82C2DFA6A0072E1CE /* OnboardingModifier.swift in Sources */,
 				B801A3DB2986D41400FAD316 /* PartOfSpeechView.swift in Sources */,
+				B88506FA2C2E09310072E1CE /* PreviewColorView.swift in Sources */,
 				B8994CAE2A8EC4C2000BE101 /* PushNotificationManager.swift in Sources */,
 				B86BA87E2AE79C8B00C638CD /* ReceiveTimer.swift in Sources */,
-				B88506F42C2D80450072E1CE /* TabAppearance.swift in Sources */,
-				B88506F22C2D7E9F0072E1CE /* AppTabView.swift in Sources */,
-				B8DAF91D2AC332FF00514808 /* WordReminder.swift in Sources */,
 				B8D780392C29BF28006D25EF /* RootNavigationStack.swift in Sources */,
 				B80E722629FDB5C9007CCE71 /* RoundedRectangleBorder.swift in Sources */,
 				B8FF0DD82960ACCE004C61B6 /* SavedWord.swift in Sources */,
@@ -937,7 +933,6 @@
 				B8B9B9D628EC5C54006FCA76 /* SearchHeaderView.swift in Sources */,
 				B813BFFD28EB7BA1000C766C /* SearchIconView.swift in Sources */,
 				B8D2A73C28DEEFAE0096A020 /* SearchScreen.swift in Sources */,
-				B80258E32C2ED8490058048C /* WordReminderRouter.swift in Sources */,
 				B879E9F028F0CA910094AA24 /* SearchViewModel.swift in Sources */,
 				B8C25FA0294F8D5D001C8847 /* Separator.swift in Sources */,
 				B80E722229FDAD60007CCE71 /* ShapeBorder.swift in Sources */,
@@ -947,17 +942,22 @@
 				B832D6632C24668200FF3EFE /* StickyTop.swift in Sources */,
 				B8BBA16228E8EDF100222116 /* StyledButton.swift in Sources */,
 				B84E8CAA2C2AE7BB0044FEDE /* StyledText.swift in Sources */,
+				B88506F02C2D7BC90072E1CE /* Tab.swift in Sources */,
+				B88506F42C2D80450072E1CE /* TabAppearance.swift in Sources */,
+				B88506F62C2DF3000072E1CE /* TabRequest.swift in Sources */,
 				B879E9E928F0C5190094AA24 /* TagView.swift in Sources */,
 				B8D2A74628DF3AFE0096A020 /* TextStyle.swift in Sources */,
 				B8B732E42AEFA1790017F713 /* TitleHeaderView.swift in Sources */,
 				B8FF0DD529609EF3004C61B6 /* UserDefaultKey.swift in Sources */,
-				B8DBE7932C2F5B4600A06DE3 /* WordSavedView.swift in Sources */,
 				B86FB81E2C2C84B000687528 /* View+Extensions.swift in Sources */,
 				B8E762B42A95F2E6006E168E /* WelcomeScreen.swift in Sources */,
 				B894FA1C28FC69FA00BC0BFA /* Word+Preview.swift in Sources */,
 				B81826712AC5CA2700C6CCC7 /* Word+View.swift in Sources */,
 				B879E9EE28F0C7ED0094AA24 /* WordListItem.swift in Sources */,
+				B8DAF91D2AC332FF00514808 /* WordReminder.swift in Sources */,
 				B8AD58852AD47FC00054403E /* WordReminderObserver.swift in Sources */,
+				B80258E32C2ED8490058048C /* WordReminderRouter.swift in Sources */,
+				B8DBE7932C2F5B4600A06DE3 /* WordSavedView.swift in Sources */,
 				B84AD60A28FAFC9E00C2D5AE /* WordScreen.swift in Sources */,
 				B889DEC12957AEF60020E9C9 /* WordsViewModel.swift in Sources */,
 				B8A1235A28E97EF300ACEC45 /* WorkSans.swift in Sources */,
