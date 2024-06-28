@@ -25,6 +25,10 @@ struct HomeScreen: View {
             subtitle: "home_subtitle"
         ) {
             LazyVStack(spacing: 0, pinnedViews: .sectionHeaders) {
+                if !groups.isEmpty {
+                    SearchButton()
+                }
+
                 ForEach(groups, id: \.0) { group, savedWords in
                     WordsSection(
                         group: group,
@@ -92,8 +96,6 @@ private struct WordsSectionHeader: View {
 // MARK: - HomeEmptyView
 
 struct HomeEmptyView: View {
-    @Environment(\.push) private var push
-
     var body: some View {
         VStack(spacing: .large) {
             SearchEmptyView(
@@ -103,14 +105,24 @@ struct HomeEmptyView: View {
                 padding: .zero
             )
 
-            StyledButton(
-                title: "search_button",
-                systemName: "magnifyingglass",
-                maxWidth: nil,
-                onTap: { push(.search) }
-            )
+            SearchButton()
         }
         .padding(.extraLarge * 2)
+    }
+}
+
+// MARK: - SearchButton
+
+private struct SearchButton: View {
+    @Environment(\.push) private var push
+
+    var body: some View {
+        StyledButton(
+            title: "search_button",
+            systemName: "magnifyingglass",
+            maxWidth: nil,
+            onTap: { push(.search) }
+        )
     }
 }
 
