@@ -422,7 +422,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Update your iOS app settings such as notifications."
+            "value" : "Update the app's iOS settings such as notifications."
           }
         }
       }
