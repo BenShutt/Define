@@ -13,11 +13,11 @@ struct InfoScreen: View {
     @Environment(\.openURL) private var openURL
 
     private var settingsURL: URL? {
-        URL(string: UIApplicationOpenNotificationSettingsURLString)
+        URL(string: UIApplication.openSettingsURLString)
     }
 
     private var appStoreURL: URL? {
-        nil // TODO
+        nil // TODO: Add if used in production
     }
 
     var body: some View {
