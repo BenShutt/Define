@@ -33,27 +33,27 @@ import DictionaryAPI
         words.isEmpty
     }
 
+    // TODO: Clean up Word IDs (different to SavedWord IDs)
+    func word(for id: SavedWordID) -> SavedWord? {
+        words.first { $0.id == id }
+    }
+
     /// Contains `word`
     /// - Parameter word: `Word`
     /// - Returns: `Bool`
     func contains(_ word: Word) -> Bool {
-        words.contains { $0.word.id == word.id }
+        words.contains { $0.word == word }
     }
 
-    /// Save the given `word`
-    /// - Parameters:
-    ///   - word: `Word`
-    ///   - source: `SavedWord.Source`
-    func saveWord(_ word: Word, source: SavedWord.Source) {
-        words.append(SavedWord(word: word, source: source))
-        ReminderNotification.scheduleRequest(word: word)
-        UINotificationFeedbackGenerator().notificationOccurred(.success)
+    /// Add the saved word
+    /// - Parameter savedWord: Saved word to add
+    func addWord(_ savedWord: SavedWord) {
+        words.append(savedWord)
     }
 
-    /// Delete the given `word`
-    /// - Parameter word: `Word`
-    func deleteWord(_ word: Word) {
-        ReminderNotification.removePendingRequest(word: word)
-        words.removeAll { $0.word.id == word.id }
+    /// Remove the saved word
+    /// - Parameter savedWord: Saved word to remove
+    func removeWord(_ savedWord: SavedWord) {
+        words.removeAll { $0.id == savedWord.id }
     }
 }

@@ -110,40 +110,16 @@ private struct WordRow: View {
             Button(action: {
                 push(.word(word.word))
             }, label: {
-                HomeListItem(word: word)
+                WordListItem(word: word.word)
             })
 
         case .referenceLibrary:
             Button(action: {
                 selectedWord = word
             }, label: {
-                HomeListItem(word: word)
+                WordListItem(word: word.word)
             })
         }
-    }
-}
-
-// MARK: - HomeListItem
-
-private struct HomeListItem: View {
-    @EnvironmentObject private var words: WordsViewModel
-    @State private var addedSince: LocalizedStringKey? // TODO: View model?
-    @State private var isReminderScheduled = false
-    var word: SavedWord
-
-    var body: some View {
-        WordListItem(
-            word: word.word,
-            caption: addedSince,
-            isScheduled: isReminderScheduled
-        )
-        .onReceiveTimer {
-            addedSince = word.addedSince
-        }
-        .modifier(WordReminderObserver(
-            isReminderScheduled: $isReminderScheduled,
-            word: word.word
-        ))
     }
 }
 
@@ -151,5 +127,5 @@ private struct HomeListItem: View {
 
 #Preview {
     HomeScreen()
-        .environmentObject(WordsViewModel())
+        .environmentObjects()
 }

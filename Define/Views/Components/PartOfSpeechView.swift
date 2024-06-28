@@ -16,8 +16,7 @@ struct PartOfSpeechView: View {
 
     /// Background color of the capsule
     private var backgroundColor: Color {
-        let partOfSpeech = PartOfSpeech(value: partOfSpeech)
-        return partOfSpeech?.backgroundColor ?? .appLightGray
+        PartOfSpeech(value: partOfSpeech)?.backgroundColor ?? .appLightGray
     }
 
     /// Draw view

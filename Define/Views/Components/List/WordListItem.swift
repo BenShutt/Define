@@ -10,19 +10,18 @@ import DictionaryAPI
 
 /// `ListItemView` for a `Word`
 struct WordListItem: View {
-
-    /// `Word`
+    @EnvironmentObject private var words: WordsViewModel
+    @State private var addedSince: LocalizedStringKey?
     var word: Word
-
-    /// Caption text
-    var caption: LocalizedStringKey?
-
-    /// Is there a reminder PN scheduled for this word
-    var isScheduled = false
 
     /// Are there any parts of speech
     private var hasCategories: Bool {
         !word.partsOfSpeech.isEmpty
+    }
+
+    /// Get the saved word, if exists
+    private var savedWord: SavedWord? {
+        words.words.first { $0.word == word }
     }
 
     var body: some View {
@@ -37,10 +36,9 @@ struct WordListItem: View {
                         .textStyle(.body, lineLimit: 3, fill: .leading)
                 }
 
-                if let caption {
-                    Text(caption)
+                if let addedSince {
+                    Text(addedSince)
                         .textStyle(.caption, fill: .leading)
-                        .padding(.top, hasCategories ? .small : .medium)
                 }
 
                 if hasCategories {
@@ -52,12 +50,15 @@ struct WordListItem: View {
             ChevronView()
         }
         .overlay(alignment: .topTrailing) {
-            if isScheduled {
-                ReminderView(word: word)
+            if let savedWord {
+                WordReminderView(savedWord: savedWord)
             }
         }
         .padding(.large)
         .background(Color.appWhite)
+        .onReceiveTimer {
+            addedSince = savedWord?.addedSince
+        }
     }
 }
 
@@ -79,49 +80,10 @@ private struct PartsOfSpeechView: View {
     }
 }
 
-// MARK: - ReminderView
-
-@MainActor private struct ReminderView: View {
-    @State private var timeRemaining: TimeRemaining?
-    var word: Word
-
-    private func updateTimeRemaining() async {
-        let identifier = ReminderNotification.identifier(for: word)
-        let triggerDate = await NotificationRequestManager.nextTriggerDate(with: identifier)
-        if let triggerDate {
-            timeRemaining = TimeRemaining(toDate: triggerDate)
-        }
-    }
-
-    var body: some View {
-        Button(action: {
-            Task {
-                await updateTimeRemaining()
-            }
-        }, label: {
-            Image(systemName: "clock")
-                .systemImage(size: 16)
-                .foregroundStyle(Color.appGray)
-                .padding(16)
-                .offset(x: 16, y: -16)
-        })
-        .sheet(item: $timeRemaining) { timeRemaining in
-            InformationSheet(
-                title: "reminder_sheet_title \(word.title)",
-                subtitle: "reminder_sheet_subtitle \(word.title) \(timeRemaining.id)"
-            )
-            // No ReceiveTimer here, causes unexpected expansion of modal
-        }
-    }
-}
-
 // MARK: - Preview
 
 #Preview {
-    WordListItem(
-        word: .preview,
-        caption: "added_just_now",
-        isScheduled: true
-    )
-    .screen()
+    WordListItem(word: .preview)
+        .screen()
+        .environmentObjects()
 }

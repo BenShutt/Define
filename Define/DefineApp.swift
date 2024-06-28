@@ -10,18 +10,28 @@ import SwiftUI
 /// Main `App` implementation
 @main
 struct DefineApp: App {
-
-    /// `AppDelegate`
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
-    /// Storage of the `WordsViewModel` environment instance
-    @StateObject private var words = WordsViewModel()
+    @StateObject private var words = WordsViewModel() // TODO: Rename
+    @StateObject private var notificationManager = NotificationManager()
+    @StateObject private var tabRequestPublisher = TabRequestPublisher()
 
-    /// Make `Scene`
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(words)
+                .environmentObject(notificationManager)
+                .environmentObject(tabRequestPublisher)
         }
+    }
+}
+
+// MARK: - View + EnvironmentObjects
+
+extension View {
+    @MainActor func environmentObjects() -> some View {
+        self.environmentObject(WordsViewModel())
+            .environmentObject(NotificationManager())
+            .environmentObject(TabRequestPublisher())
     }
 }

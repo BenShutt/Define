@@ -35,14 +35,11 @@ public extension Word.Meaning {
     }
 }
 
-// MARK: - Word + Identifiable
+// MARK: - Word + Equatable
 
-extension Word: Identifiable {
-
-    /// Words do not have ID properties, so we use the word itself.
-    /// - Warning It does mean that if the same search returns multiple words from the API only one can be saved
-    public var id: String {
-        word.lowercased()
+extension Word: Equatable {
+    public static func == (lhs: Word, rhs: Word) -> Bool {
+        lhs.word.caseInsensitiveCompare(rhs.word) == .orderedSame
     }
 }
 

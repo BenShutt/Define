@@ -54,10 +54,11 @@ struct SearchScreen: View {
         .sheet(isPresented: $isPresentingReferenceLibrary) {
             ReferenceLibraryScreen(term: viewModel.search) {
                 isPresentingReferenceLibrary = false
-                words.saveWord(
-                    .init(word: viewModel.search),
+                let savedWord = SavedWord(
+                    word: .init(word: viewModel.search),
                     source: .referenceLibrary
                 )
+                words.addWord(savedWord)
                 popToRoot()
             }
         }
@@ -115,5 +116,5 @@ private struct SearchStateView: View {
 
 #Preview {
     SearchScreen()
-        .environmentObject(WordsViewModel())
+        .environmentObjects()
 }

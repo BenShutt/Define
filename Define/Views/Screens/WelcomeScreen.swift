@@ -10,7 +10,7 @@ import AppIcon
 
 struct WelcomeScreen: View {
     @State private var animationValue = 0
-    var onContinue: () -> Void
+    var onContinue: (Bool) -> Void
 
     private var appName: String {
         Bundle.main.appName ?? ""
@@ -44,7 +44,9 @@ struct WelcomeScreen: View {
             title: "continue_button",
             systemName: "arrow.forward"
         ) {
-            onContinue()
+            PushNotificationManager.requestRemoteNotificationPermission { granted in
+                onContinue(granted)
+            }
         }
         .onAppear {
             animationValue = max(animationValue, 1)
@@ -111,5 +113,5 @@ private struct CurvedBottom: Shape {
 // MARK: - Preview
 
 #Preview {
-    WelcomeScreen {}
+    WelcomeScreen { _ in }
 }

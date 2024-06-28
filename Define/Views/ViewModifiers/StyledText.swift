@@ -12,9 +12,9 @@ struct StyledText: ViewModifier {
     var fontSize: CGFloat
     var truncationMode: Text.TruncationMode = .tail
     var lintLimit: Int?
+    var textAlignment: TextAlignment = .center
     var foregroundColor: Color
     var maxWidth: CGFloat?
-    var textAlignment: TextAlignment = .center
 
     var alignment: Alignment {
         switch textAlignment {
@@ -27,10 +27,10 @@ struct StyledText: ViewModifier {
     func body(content: Content) -> some View {
         content
             .workSans(font, size: fontSize)
-            .truncationMode(.tail)
+            .truncationMode(truncationMode)
             .lineLimit(lintLimit)
+            .multilineTextAlignment(textAlignment)
             .foregroundStyle(foregroundColor)
             .frame(maxWidth: maxWidth, alignment: alignment)
-            .multilineTextAlignment(textAlignment)
     }
 }

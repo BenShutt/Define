@@ -13,10 +13,11 @@ import DictionaryAPI
 /// `View` to input a word to search for definitions
 struct WordScreen: View {
     @EnvironmentObject private var words: WordsViewModel
+    @EnvironmentObject private var manager: NotificationManager
     @Environment(\.popToRoot) private var popToRoot
 
-    /// Is the notification request reminding the user about this word pending (due in the future)
-    @State private var isReminderScheduled = false
+    /// The date the notification request reminding the user about this word is due
+    @State private var reminderDate: Date?
 
     /// Is presenting alert to delete word
     @State private var isPresentingDeleteWordAlert = false
@@ -27,18 +28,27 @@ struct WordScreen: View {
     /// `Word` to define
     var word: Word
 
+    /// Get the saved word
+    private var savedWord: SavedWord? {
+        words.words.first { $0.word == word }
+    }
+
     /// Is the word currently saved
     private var isWordSaved: Bool {
-        words.contains(word)
+        savedWord != nil
+    }
+
+    /// System name of the image for the reminder image
+    private var reminderSystemName: String {
+        reminderDate != nil ? "checkmark" : "clock"
     }
 
     var body: some View {
         WordContentView(
             word: word,
-            isWordSaved: isWordSaved
-        ) {
-            saveWord()
-        }
+            isWordSaved: isWordSaved,
+            onSave: addWord
+        )
         .screen()
         .toolbar(.visible, for: .navigationBar)
         .navigationBarTitleDisplayMode(.inline)
@@ -48,12 +58,12 @@ struct WordScreen: View {
                     .textStyle(.h2)
             }
 
-            if isWordSaved {
+            if let savedWord {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(action: {
-                        onReminderTapped()
+                        onReminderTapped(savedWord: savedWord)
                     }, label: {
-                        Image(systemName: isReminderScheduled ? "checkmark" : "clock")
+                        Image(systemName: reminderSystemName)
                     })
                 }
 
@@ -73,41 +83,67 @@ struct WordScreen: View {
             word: word,
             isPresented: $isPresentingDeleteWordAlert,
             onDelete: {
-                deleteWord()
+                guard let savedWord else { return }
+                removeWord(savedWord: savedWord)
             }
         )
         .deleteWordReminderAlert(
             word: word,
             isPresented: $isPresentingDeleteWordReminderAlert,
             onDelete: {
-                ReminderNotification.removePendingRequest(word: word)
+                guard let savedWord else { return }
+                removeWordReminder(savedWordId: savedWord.id)
             }
         )
-        .modifier(WordReminderObserver(
-            isReminderScheduled: $isReminderScheduled,
-            word: word
-        ))
+        .observeWordReminders(
+            reminderDate: $reminderDate,
+            savedWordId: savedWord?.id
+        )
     }
 
-    /// Save `word`
-    private func saveWord() {
-        words.saveWord(word, source: .api)
-        popToRoot()
-    }
-
-    /// Delete `word`
-    private func deleteWord() {
-        words.deleteWord(word)
-        popToRoot()
-    }
+    // MARK: - Buttons
 
     /// Handle reminder button tap
-    private func onReminderTapped() {
-        if isReminderScheduled {
+    /// - Parameter savedWord: The saved word
+    private func onReminderTapped(savedWord: SavedWord) {
+        if reminderDate != nil {
             isPresentingDeleteWordReminderAlert = true
         } else {
-            ReminderNotification.scheduleRequest(word: word)
+            addWordReminder(savedWord: savedWord)
         }
+    }
+
+    // MARK: - Add/Remove WordReminder
+
+    /// Add a word reminder notification
+    /// - Parameter savedWord: Saved word to add a reminder for
+    private func addWordReminder(savedWord: SavedWord) {
+        WordReminder.addRequest(for: savedWord, on: manager)
+    }
+
+    /// Remove a word reminder notification
+    /// - Parameter savedWord: Saved word to remove a reminder for
+    private func removeWordReminder(savedWordId: SavedWordID) {
+        WordReminder.removeRequest(for: savedWordId, on: manager)
+    }
+
+    // MARK: - Add/Remove SavedWord
+
+    /// Add the word
+    private func addWord() {
+        let savedWord = SavedWord(word: word, source: .api)
+        words.addWord(savedWord)
+        addWordReminder(savedWord: savedWord)
+        UINotificationFeedbackGenerator().notificationOccurred(.success)
+        popToRoot()
+    }
+
+    /// Remove the word
+    /// - Parameter savedWord: The saved word to remove
+    private func removeWord(savedWord: SavedWord) {
+        words.removeWord(savedWord)
+        removeWordReminder(savedWordId: savedWord.id)
+        popToRoot()
     }
 }
 
@@ -204,5 +240,5 @@ private struct WordContentView: View {
     NavigationStack {
         WordScreen(word: .init(word: "Preview"))
     }
-    .environmentObject(WordsViewModel())
+    .environmentObjects()
 }

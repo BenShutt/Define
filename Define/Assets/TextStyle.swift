@@ -82,9 +82,9 @@ enum TextStyle: String, CaseIterable, Hashable, Identifiable {
             font: font,
             fontSize: fontSize,
             lintLimit: lineLimit,
+            textAlignment: fill ?? .center,
             foregroundColor: textColor ?? defaultTextColor,
-            maxWidth: fill != nil ? .infinity : nil,
-            textAlignment: fill ?? .center
+            maxWidth: fill != nil ? .infinity : nil
         )
     }
 }

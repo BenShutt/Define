@@ -9,9 +9,6 @@ import SwiftUI
 import UserNotifications
 import DictionaryAPI
 
-/// PN payload
-typealias UserInfo = [AnyHashable: Any]
-
 /// Manage push notifications
 struct PushNotificationManager {
 
@@ -22,14 +19,11 @@ struct PushNotificationManager {
     static func requestRemoteNotificationPermission(
         completion: @escaping (Bool) -> Void
     ) {
-        let options: UNAuthorizationOptions = [.alert, .badge, .sound]
         UNUserNotificationCenter.current().requestAuthorization(
-            options: options
+            options: [.alert, .badge, .sound]
         ) { granted, error in
             logger.info("Push notification authorization: \(granted)")
-            if let error {
-                log(error: error)
-            }
+            if let error { log(error: error) }
             completion(granted && error == nil)
         }
     }
@@ -45,7 +39,7 @@ struct PushNotificationManager {
     }
 
     static func didFailToRegisterForRemoteNotifications(with error: Error) {
-        logger.info("\(#function) \(error.localizedDescription)")
+        log(error: error)
     }
 
     // MARK: - UNNotificationCenter

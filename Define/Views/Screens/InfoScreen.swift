@@ -8,8 +8,6 @@
 import SwiftUI
 import AppIcon
 
-// TODO: Use info page (possibly a tab)
-
 struct InfoScreen: View {
     @EnvironmentObject private var words: WordsViewModel
     @Environment(\.openURL) private var openURL
@@ -130,5 +128,5 @@ struct ThemeListItem: View {
     NavigationStack {
         InfoScreen()
     }
-    .environmentObject(WordsViewModel())
+    .environmentObjects()
 }

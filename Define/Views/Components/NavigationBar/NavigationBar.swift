@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-// TODO: Improve NavigationBar re-use and consistency
+// TODO: Improve NavigationBar re-use and consistency (i.e. clean up headers)
 
 /// Custom view used for navigation bar UI.
 /// The view transitions from a large to small state as the scroll offset increases.

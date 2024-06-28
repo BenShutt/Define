@@ -22,13 +22,9 @@ private struct ReceiveTimer: ViewModifier {
 
     func body(content: Content) -> some View {
         content
+            .task { await onReceive() }
             .onReceive(timer) { _ in
-                Task {
-                    await onReceive()
-                }
-            }
-            .task {
-                await onReceive()
+                Task { await onReceive() }
             }
     }
 }
