@@ -53,7 +53,6 @@ import DictionaryAPI
     private var searchPublisher: AnyPublisher<String, Never> {
         $search
             .map { $0.trimmed }
-            .dropFirst()
             .removeDuplicates()
             .eraseToAnyPublisher()
     }
@@ -62,27 +61,27 @@ import DictionaryAPI
     /// - Parameter search: `String`
     /// - Returns: `Bool`
     private func isSearchStillValid(_ search: String) -> Bool {
-        search.trimmed == self.search.trimmed
+        search.caseInsensitiveCompare(self.search.trimmed) == .orderedSame
     }
 
     /// Initialize setting up Combine publish events
     init() {
         searchPublisher
-            .receive(on: RunLoop.main)
-            .sink { search in
-                self.inReferenceLibrary = false
-                self.state = search.isEmpty ? .emptySearch : .loading
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] search in
+                self?.inReferenceLibrary = false
+                self?.state = search.isEmpty ? .emptySearch : .loading
             }
             .store(in: &cancellables)
 
         searchPublisher
-            .debounce(for: .milliseconds(debounceMilliseconds), scheduler: RunLoop.main)
-            .sink { search in
-                guard !search.isEmpty else { return }
-                guard self.isSearchStillValid(search) else { return }
-
-                self.inReferenceLibrary = Self.dictionaryHasDefinition(term: search)
-                self.getWords(for: search)
+            .debounce(
+                for: .milliseconds(debounceMilliseconds),
+                scheduler: DispatchQueue.main
+            )
+            .sink { [weak self] search in
+                self?.inReferenceLibrary = Self.dictionaryHasDefinition(term: search)
+                Task { await self?.getWords(for: search) }
             }
             .store(in: &cancellables)
     }
@@ -97,24 +96,19 @@ import DictionaryAPI
 
     /// Fetch words from the API
     /// - Parameter search: `Search`
-    private func getWords(for search: String) {
-        Task {
-            do {
-                let words = try await GetWords(word: search).requestAndValidate()
-                guard !words.isEmpty else { throw SearchViewModelError.noResults }
-                setState(.success(words), for: search)
-            } catch {
-                setState(.failure(error), for: search)
-            }
+    private func getWords(for search: String) async {
+        var state: State
+        do {
+            guard !search.isEmpty else { return }
+            guard isSearchStillValid(search) else { return }
+            let words = try await GetWords(word: search).requestAndValidate()
+            guard !words.isEmpty else { throw SearchViewModelError.noResults }
+            state = .success(words)
+        } catch {
+            log(error: error)
+            state = .failure(error)
         }
-    }
 
-    /// Set `state` for the given `search`.
-    /// Does nothing if the `search` is out of date.
-    /// - Parameters:
-    ///   - state: `State`
-    ///   - search: `String`
-    private func setState(_ state: State, for search: String) {
         guard isSearchStillValid(search) else { return }
         self.state = state
     }
