@@ -12,7 +12,7 @@ import DictionaryAPI
 private struct WordReminderObserver: ViewModifier {
     @EnvironmentObject private var manager: NotificationManager
     @Binding var reminderDate: Date?
-    var savedWordId: SavedWordID
+    var savedWordId: SavedWordId
 
     private func update() async {
         let identifier = WordReminder.identifier(for: savedWordId)
@@ -31,9 +31,9 @@ private struct WordReminderObserver: ViewModifier {
 // MARK: - View + WordReminderObserver
 
 extension View {
-    @ViewBuilder func observeWordReminder(
+    func observeWordReminder(
         reminderDate: Binding<Date?>,
-        savedWordId: SavedWordID
+        savedWordId: SavedWordId
     ) -> some View {
         modifier(WordReminderObserver(
             reminderDate: reminderDate,

@@ -101,7 +101,7 @@ struct WordScreen: View {
 
     /// Remove a word reminder notification
     /// - Parameter savedWord: Saved word to remove a reminder for
-    private func removeWordReminder(savedWordId: SavedWordID) {
+    private func removeWordReminder(savedWordId: SavedWordId) {
         WordReminder.removeRequest(for: savedWordId, on: manager)
     }
 

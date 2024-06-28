@@ -10,13 +10,13 @@ import DictionaryAPI
 
 // TODO: Migrate to SwiftData
 
-typealias SavedWordID = UUID
+typealias SavedWordId = UUID
 
 /// A saved word
 struct SavedWord: JSONModel, Identifiable, Comparable {
 
     /// `UUID`
-    var id = SavedWordID()
+    var id = SavedWordId()
 
     /// The word that was saved
     var word: Word

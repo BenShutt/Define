@@ -34,7 +34,7 @@ import DictionaryAPI
     }
 
     // TODO: Clean up Word IDs (different to SavedWord IDs)
-    func word(for id: SavedWordID) -> SavedWord? {
+    func word(for id: SavedWordId) -> SavedWord? {
         words.first { $0.id == id }
     }
 

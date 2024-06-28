@@ -21,14 +21,14 @@ struct WordReminder {
     /// Identifier of the notification request
     /// - Parameter id: ID of the saved word
     /// - Returns: Notification identifier
-    static func identifier(for id: SavedWordID) -> String {
+    static func identifier(for id: SavedWordId) -> String {
         "word_reminder_\(id.uuidString.lowercased())"
     }
 
     /// Get the ID of the saved word from the notification user info payload
     /// - Parameter notification: Notification received
     /// - Returns: The ID of the saved word or nil
-    static func savedWordId(from notification: Notification) -> SavedWordID? {
+    static func savedWordId(from notification: Notification) -> SavedWordId? {
         let uuidString = notification.userInfo?[userInfoKey] as? String
         guard let uuidString else { return nil }
         return UUID(uuidString: uuidString)
@@ -81,7 +81,7 @@ struct WordReminder {
     ///   - word: Saved word to schedule a notification for
     ///   - manager: Notification manager of requests
     @MainActor static func removeRequest(
-        for wordId: SavedWordID,
+        for wordId: SavedWordId,
         on manager: NotificationManager
     ) {
         manager.remove(identifiers: [identifier(for: wordId)])
