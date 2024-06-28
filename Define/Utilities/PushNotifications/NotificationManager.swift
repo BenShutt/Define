@@ -69,8 +69,9 @@ import UserNotifications
     /// Remove the pending notification requests with the given identifiers
     /// - Parameter identifiers: The identifiers of the pending notification requests to remove
     func remove(identifiers: [String]) {
+        // Caution: This executes asynchronously on a secondary thread
         center.removePendingNotificationRequests(withIdentifiers: identifiers)
-        updateIdentifiers() // TODO: Runs in background
+        updateIdentifiers()
     }
 
     // MARK: - Update
