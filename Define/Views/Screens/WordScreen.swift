@@ -238,7 +238,7 @@ private struct WordContentView: View {
 
 #Preview {
     NavigationStack {
-        WordScreen(word: .init(word: "Preview"))
+        WordScreen(word: "Preview")
     }
     .environmentObjects()
 }

@@ -51,6 +51,15 @@ extension Word: Comparable {
     }
 }
 
+// MARK: - Word + ExpressibleByStringLiteral
+
+extension Word: ExpressibleByStringLiteral {
+    public init(stringLiteral value: StringLiteralType) {
+        word = value
+        meanings = []
+    }
+}
+
 // MARK: - Meaning + Extensions
 
 public extension Word.Meaning {
