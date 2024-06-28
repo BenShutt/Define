@@ -123,4 +123,3 @@ private struct TimeRemaining: Identifiable {
         formattedString
     }
 }
-
