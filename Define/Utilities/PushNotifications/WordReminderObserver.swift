@@ -12,10 +12,9 @@ import DictionaryAPI
 private struct WordReminderObserver: ViewModifier {
     @EnvironmentObject private var manager: NotificationManager
     @Binding var reminderDate: Date?
-    var savedWordId: SavedWordID?
+    var savedWordId: SavedWordID
 
     private func update() async {
-        guard let savedWordId else { return }
         let identifier = WordReminder.identifier(for: savedWordId)
         reminderDate = await manager.nextTriggerDate(with: identifier)
     }
@@ -32,14 +31,40 @@ private struct WordReminderObserver: ViewModifier {
 // MARK: - View + WordReminderObserver
 
 extension View {
-    @ViewBuilder func observeWordReminders(
+    @ViewBuilder func observeWordReminder(
         reminderDate: Binding<Date?>,
-        savedWordId: SavedWordID? // Can be nil
+        savedWordId: SavedWordID
     ) -> some View {
         modifier(WordReminderObserver(
             reminderDate: reminderDate,
             savedWordId: savedWordId
         ))
+    }
+}
+
+// MARK: - WordReminderButton
+
+struct WordReminderButton: View {
+
+    /// The date the notification request reminding the user about this word is due
+    @State private var reminderDate: Date?
+
+    /// Word that has been saved
+    var savedWord: SavedWord
+
+    /// Called when the button is tapped
+    var onTap: (Bool) -> Void
+
+    var body: some View {
+        Button(action: {
+            onTap(reminderDate != nil)
+        }, label: {
+            Image(systemName: reminderDate != nil ? "checkmark" : "clock")
+                .observeWordReminder(
+                    reminderDate: $reminderDate,
+                    savedWordId: savedWord.id
+                )
+        })
     }
 }
 
@@ -68,7 +93,7 @@ struct WordReminderView: View {
         .disabled(reminderDate == nil)
         .compositingGroup()
         .opacity(reminderDate == nil ? 0 : 1)
-        .observeWordReminders(
+        .observeWordReminder(
             reminderDate: $reminderDate,
             savedWordId: savedWord.id
         )
@@ -98,3 +123,4 @@ private struct TimeRemaining: Identifiable {
         formattedString
     }
 }
+

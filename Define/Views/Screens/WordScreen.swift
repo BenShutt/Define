@@ -16,9 +16,6 @@ struct WordScreen: View {
     @EnvironmentObject private var manager: NotificationManager
     @Environment(\.popToRoot) private var popToRoot
 
-    /// The date the notification request reminding the user about this word is due
-    @State private var reminderDate: Date?
-
     /// Is presenting alert to delete word
     @State private var isPresentingDeleteWordAlert = false
 
@@ -38,11 +35,6 @@ struct WordScreen: View {
         savedWord != nil
     }
 
-    /// System name of the image for the reminder image
-    private var reminderSystemName: String {
-        reminderDate != nil ? "checkmark" : "clock"
-    }
-
     var body: some View {
         WordContentView(
             word: word,
@@ -60,11 +52,13 @@ struct WordScreen: View {
 
             if let savedWord {
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button(action: {
-                        onReminderTapped(savedWord: savedWord)
-                    }, label: {
-                        Image(systemName: reminderSystemName)
-                    })
+                    WordReminderButton(savedWord: savedWord) { hasReminder in
+                        if hasReminder {
+                            isPresentingDeleteWordReminderAlert = true
+                        } else {
+                            addWordReminder(savedWord: savedWord)
+                        }
+                    }
                 }
 
                 ToolbarItem(placement: .topBarTrailing) {
@@ -95,22 +89,6 @@ struct WordScreen: View {
                 removeWordReminder(savedWordId: savedWord.id)
             }
         )
-        .observeWordReminders(
-            reminderDate: $reminderDate,
-            savedWordId: savedWord?.id
-        )
-    }
-
-    // MARK: - Buttons
-
-    /// Handle reminder button tap
-    /// - Parameter savedWord: The saved word
-    private func onReminderTapped(savedWord: SavedWord) {
-        if reminderDate != nil {
-            isPresentingDeleteWordReminderAlert = true
-        } else {
-            addWordReminder(savedWord: savedWord)
-        }
     }
 
     // MARK: - Add/Remove WordReminder
