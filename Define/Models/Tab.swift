@@ -20,17 +20,10 @@ enum Tab: Identifiable, CaseIterable {
         }
     }
 
-    var selectedSystemName: String {
+    var imageSystemName: String {
         switch self {
-        case .home: "house.circle.fill"
-        case .info: "info.circle.fill"
-        }
-    }
-
-    var systemName: String {
-        switch self {
-        case .home: "house.circle"
-        case .info: "info.circle"
+        case .home: "house"
+        case .info: "info"
         }
     }
 
@@ -46,16 +39,11 @@ enum Tab: Identifiable, CaseIterable {
 
 private struct TabModifier: ViewModifier {
     var tab: Tab
-    var isSelected: Bool
-
-    private var systemName: String {
-        isSelected ? tab.selectedSystemName : tab.systemName
-    }
 
     func body(content: Content) -> some View {
         content
             .tabItem {
-                Image(systemName: systemName)
+                Image(systemName: tab.imageSystemName)
                 Text(tab.title)
             }
             .tag(tab)
@@ -65,7 +53,7 @@ private struct TabModifier: ViewModifier {
 // MARK: - View + TabModifier
 
 extension View {
-    func tab(_ tab: Tab, isSelected: Bool) -> some View {
-        modifier(TabModifier(tab: tab, isSelected: isSelected))
+    func tab(_ tab: Tab) -> some View {
+        modifier(TabModifier(tab: tab))
     }
 }

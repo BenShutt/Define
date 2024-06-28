@@ -189,6 +189,11 @@ private struct WordContentView: View {
                 title: "word_empty_title",
                 subtitle: "word_empty_subtitle \(word.title)"
             )
+            .frame(
+                maxWidth: .infinity,
+                maxHeight: .infinity,
+                alignment: .top
+            )
         } else if !isWordSaved {
             MarginedList(
                 word.meanings.identified,
@@ -202,11 +207,15 @@ private struct WordContentView: View {
                 onTap: onSave
             )
         } else {
-            MarginedList(
-                word.meanings.identified,
-                isAnimated: true
-            ) { item in
-                MeaningListItem(meaning: item.element)
+            VStack(spacing: 0) {
+                WordSavedView(word: word.word)
+                Separator(color: .appDarkGray.opacity(0.1))
+                MarginedList(
+                    word.meanings.identified,
+                    isAnimated: true
+                ) { item in
+                    MeaningListItem(meaning: item.element)
+                }
             }
         }
     }

@@ -19,6 +19,9 @@ struct StyledButton: View {
     /// SF Symbol name
     var systemName: String
 
+    /// Width of the text
+    var maxWidth: CGFloat? = .infinity
+
     /// Closure called when the button is tapped
     var onTap: () -> Void
 
@@ -33,7 +36,7 @@ struct StyledButton: View {
                     .textStyle(.button)
                     .foregroundStyle(foregroundColor)
             }
-            .frame(maxWidth: .infinity)
+            .frame(maxWidth: maxWidth)
             .padding(.vertical, .mediumLarge)
             .padding(.horizontal, .large)
             .tint(foregroundColor)
@@ -51,6 +54,7 @@ struct StyledButton: View {
     StyledButton(
         title: "continue_button",
         systemName: "plus",
+        maxWidth: nil,
         onTap: {}
     )
 }

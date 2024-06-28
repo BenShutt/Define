@@ -51,7 +51,7 @@ extension View {
 // MARK: - Preview
 
 #Preview {
-    Text("search_title")
+    Text(verbatim: "Preview")
         .screen()
         .stickyButton(
             title: "continue_button",

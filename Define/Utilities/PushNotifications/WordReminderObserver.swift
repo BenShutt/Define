@@ -55,11 +55,16 @@ struct WordReminderButton: View {
     /// Called when the button is tapped
     var onTap: (Bool) -> Void
 
+    /// Name of the image based on the reminder date
+    private var systemName: String {
+        reminderDate != nil ? "checkmark" : "clock"
+    }
+
     var body: some View {
         Button(action: {
             onTap(reminderDate != nil)
         }, label: {
-            Image(systemName: reminderDate != nil ? "checkmark" : "clock")
+            Image(systemName: systemName)
                 .observeWordReminder(
                     reminderDate: $reminderDate,
                     savedWordId: savedWord.id

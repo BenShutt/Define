@@ -34,12 +34,12 @@ struct HomeScreen: View {
             }
             .marginedStack(.marginedStack)
         }
-        .stickyButton(
-            title: "home_button",
-            systemName: "magnifyingglass"
-        ) {
-            push(.search)
+        .overlay {
+            if groups.isEmpty {
+                HomeEmptyView()
+            }
         }
+        .toolbar(.visible, for: .tabBar)
     }
 }
 
@@ -86,6 +86,31 @@ private struct WordsSectionHeader: View {
         .padding(.horizontal, .hMargin)
         .padding(.vertical, .smallMedium)
         .background(Color.screenBackground)
+    }
+}
+
+// MARK: - HomeEmptyView
+
+struct HomeEmptyView: View {
+    @Environment(\.push) private var push
+
+    var body: some View {
+        VStack(spacing: .large) {
+            SearchEmptyView(
+                lottie: .searchNoResults,
+                title: "home_empty_title",
+                subtitle: "home_empty_subtitle",
+                padding: .zero
+            )
+
+            StyledButton(
+                title: "search_button",
+                systemName: "magnifyingglass",
+                maxWidth: nil,
+                onTap: { push(.search) }
+            )
+        }
+        .padding(.extraLarge * 2)
     }
 }
 

@@ -9,10 +9,8 @@ import SwiftUI
 
 /// `View` to input a word to search for definitions
 struct SearchScreen: View {
-    @EnvironmentObject private var words: WordsViewModel
-    @Environment(\.popToRoot) private var popToRoot
 
-    /// `SearchViewModel`
+    /// Observable encapsulating search logic
     @StateObject private var viewModel = SearchViewModel()
 
     /// Is the search field focused
@@ -35,9 +33,8 @@ struct SearchScreen: View {
         }
         .screen()
         .toolbarBackground(Color.clear, for: .navigationBar)
-        .toolbar(.visible, for: .navigationBar)
         .navigationBarTitleDisplayMode(.inline)
-        .navigationBarBackButtonHidden(words.isEmpty)
+        .toolbar(.visible, for: .navigationBar)
         .onAppear {
             isSearchFocused = true
         }

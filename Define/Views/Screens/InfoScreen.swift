@@ -82,6 +82,7 @@ struct InfoScreen: View {
         }
         .screen()
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar(.visible, for: .navigationBar)
         .toolbar {
             ToolbarItem(placement: .principal) {
                 Text("info_title")
@@ -91,6 +92,7 @@ struct InfoScreen: View {
         .stickyTop {
             HeaderView(spacing: 0, padding: .headerPadding) {}
         }
+        .toolbar(.visible, for: .tabBar)
     }
 }
 

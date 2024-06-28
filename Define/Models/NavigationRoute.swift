@@ -16,6 +16,16 @@ enum NavigationRoute: Hashable {
 
     /// Word detail screen (meanings and their definitions)
     case word(Word)
+
+    /// Map to a respective view
+    @ViewBuilder var screen: some View {
+        switch self {
+        case .search:
+            SearchScreen()
+        case let .word(word):
+            WordScreen(word: word)
+        }
+    }
 }
 
 // MARK: - View + NavigationRoute
@@ -25,12 +35,8 @@ extension View {
     /// Add navigation destination handler to view
     func navigateRoutes() -> some View {
         navigationDestination(for: NavigationRoute.self) { route in
-            switch route {
-            case .search:
-                SearchScreen()
-            case let .word(word):
-                WordScreen(word: word)
-            }
+            route.screen
+                .toolbar(.hidden, for: .tabBar)
         }
     }
 }

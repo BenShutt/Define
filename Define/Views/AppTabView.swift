@@ -17,12 +17,14 @@ struct AppTabView: View {
     var body: some View {
         TabView(selection: $selectedTab) {
             ForEach(Tab.allCases) { tab in
-                RootNavigationStack { tab.screen }
-                    .observeTabRequests(tab: tab)
-                    .tab(tab, isSelected: selectedTab == tab)
+                RootNavigationStack {
+                    tab.screen
+                        .observeTabRequests(tab: tab)
+                }
+                .tab(tab)
             }
         }
+        .observeRootTabRequests(selectedTab: $selectedTab)
         .routeWordReminders()
-        .environment(\.selectTab, .init { selectedTab = $0 })
     }
 }

@@ -24,37 +24,12 @@ struct TabRequest {
     var action: Action
 }
 
-// MARK: - SelectTab
-
-/// Invoke a closure to select a tab
-struct SelectTab {
-    var action: (Tab) -> Void
-
-    func callAsFunction(_ tab: Tab) {
-        action(tab)
-    }
-}
-
-private struct SelectTabKey: EnvironmentKey {
-    static let defaultValue: SelectTab = .init { _ in }
-}
-
-extension EnvironmentValues {
-    var selectTab: SelectTab {
-        get { self[SelectTabKey.self] }
-        set { self[SelectTabKey.self] = newValue }
-    }
-}
-
 // MARK: - TabRequestPublisher
 
 /// Environment for tab requests
 @MainActor class TabRequestPublisher: ObservableObject {
 
-    /// Environment used to select a tab
-    @Environment(\.selectTab) private var selectTab
-
-    /// A tab request to publish, observers will resolve
+    /// A tab request to publish
     @Published var request: TabRequest?
 
     /// Publish a new `TabRequest`
@@ -65,20 +40,36 @@ extension EnvironmentValues {
         tab: Tab,
         action: @escaping TabRequest.Action
     ) {
-        // Select the tab.
-        // This must be set before onReceive so that the view is loaded if
-        // it hasn't been already.
-        selectTab(tab)
-
         // Publish the action to be handled by the tab
         request = TabRequest(tab: tab, action: action)
     }
 }
 
-// MARK: - TabRequestObserver
+// MARK: - RootObserver
+
+/// Observe the tab requests with the tab binding and handle accordingly
+///
+/// This is separate from `TabObserver` because the SwiftUI of a tab is
+/// is not in memory until it is selected. Therefore, it will not receive onReceive events.
+/// We select the tab on the root `TabView` and the request is resolved on first load.
+private struct RootObserver: ViewModifier {
+    @EnvironmentObject private var publisher: TabRequestPublisher
+    @Binding var selectedTab: Tab
+
+    func body(content: Content) -> some View {
+        content
+            .onReceive(publisher.$request) { request in
+                if let request {
+                    selectedTab = request.tab
+                }
+            }
+    }
+}
+
+// MARK: - TabObserver
 
 /// Observe the tab requests with the navigation environments and handle accordingly
-private struct TabRequestObserver: ViewModifier {
+private struct TabObserver: ViewModifier {
     @EnvironmentObject private var publisher: TabRequestPublisher
     @Environment(\.push) private var push
     @Environment(\.popToRoot) private var popToRoot
@@ -87,9 +78,9 @@ private struct TabRequestObserver: ViewModifier {
     func body(content: Content) -> some View {
         content
             .onReceive(publisher.$request) { request in
-                guard let request, tab == request.tab else { return }
-                request.action(push, popToRoot)
-                publisher.request = nil // Mark resolved
+                if let request, tab == request.tab {
+                    request.action(push, popToRoot)
+                }
             }
     }
 }
@@ -97,7 +88,11 @@ private struct TabRequestObserver: ViewModifier {
 // MARK: - View + TabRequestObserver
 
 extension View {
+    func observeRootTabRequests(selectedTab: Binding<Tab>) -> some View {
+        modifier(RootObserver(selectedTab: selectedTab))
+    }
+
     func observeTabRequests(tab: Tab) -> some View {
-        modifier(TabRequestObserver(tab: tab))
+        modifier(TabObserver(tab: tab))
     }
 }

@@ -26,6 +26,9 @@ struct SearchEmptyView: View {
     /// Subtitle text
     var subtitle: LocalizedStringKey
 
+    /// Padding to add to stack
+    var padding: EdgeInsets = .margins
+
     var body: some View {
         VStack(spacing: 0) {
             LottieView(
@@ -43,6 +46,6 @@ struct SearchEmptyView: View {
                 .textStyle(.body, fill: .center)
                 .padding(.top, .medium)
         }
-        .padding(.margins)
+        .padding(padding)
     }
 }
