@@ -21,7 +21,6 @@ struct LargeNavigationBar: View {
                 .textStyle(.body, fill: .leading)
         }
         .padding(.horizontal, .hMargin)
-        .padding(.top, .vMargin)
-        .padding(.bottom, .vMargin + .small)
+        .padding(.vertical, .vMargin + .small)
     }
 }
