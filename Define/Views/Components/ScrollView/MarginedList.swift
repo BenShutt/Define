@@ -40,6 +40,7 @@ struct MarginedList<Element: Identifiable, Content: View>: View {
             }
             .marginedStack(margins)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 

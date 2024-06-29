@@ -28,8 +28,11 @@ struct SearchScreen: View {
                 .zIndex(1)
 
             SearchStateView(viewModel: viewModel)
-                .padding(.top, statePadding ? .large : 0)
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+                .frame(
+                    maxWidth: .infinity,
+                    maxHeight: .infinity,
+                    alignment: .top
+                )
         }
         .screen()
         .toolbarBackground(Color.clear, for: .navigationBar)
@@ -59,6 +62,7 @@ private struct SearchStateView: View {
 
         case .loading:
             LoadingView()
+                .padding(.top, .large)
 
         case .failure:
             SearchEmptyView(

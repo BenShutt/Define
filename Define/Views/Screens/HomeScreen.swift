@@ -24,25 +24,25 @@ struct HomeScreen: View {
             title: "home_title",
             subtitle: "home_subtitle"
         ) {
-            LazyVStack(spacing: 0, pinnedViews: .sectionHeaders) {
-                if !groups.isEmpty {
-                    SearchButton()
-                }
-
-                ForEach(groups, id: \.0) { group, savedWords in
-                    WordsSection(
-                        group: group,
-                        savedWords: savedWords
-                    )
-                }
-            }
-            .marginedStack(.marginedStack)
-        }
-        .overlay {
             if groups.isEmpty {
                 HomeEmptyView()
+            } else {
+                LazyVStack(spacing: 0, pinnedViews: .sectionHeaders) {
+                    ForEach(groups, id: \.0) { group, savedWords in
+                        WordsSection(
+                            group: group,
+                            savedWords: savedWords
+                        )
+                    }
+                }
+                .marginedStack(.marginedStack)
             }
         }
+        .stickyButton(
+            title: "search_button",
+            systemName: "magnifyingglass",
+            onTap: { push(.search) }
+        )
         .toolbar(.visible, for: .tabBar)
     }
 }
@@ -78,9 +78,6 @@ private struct WordsSectionHeader: View {
 
     var body: some View {
         HStack(spacing: .extraLarge) {
-            Separator(color: separatorColor)
-                .frame(minWidth: .hMargin, maxWidth: .infinity)
-
             Text(title)
                 .textStyle(.h4)
 
@@ -97,31 +94,10 @@ private struct WordsSectionHeader: View {
 
 struct HomeEmptyView: View {
     var body: some View {
-        VStack(spacing: .large) {
-            SearchEmptyView(
-                lottie: .searchNoResults,
-                title: "home_empty_title",
-                subtitle: "home_empty_subtitle",
-                padding: .zero
-            )
-
-            SearchButton()
-        }
-        .padding(.extraLarge * 2)
-    }
-}
-
-// MARK: - SearchButton
-
-private struct SearchButton: View {
-    @Environment(\.push) private var push
-
-    var body: some View {
-        StyledButton(
-            title: "search_button",
-            systemName: "magnifyingglass",
-            maxWidth: nil,
-            onTap: { push(.search) }
+        SearchEmptyView(
+            lottie: .searchNoResults,
+            title: "home_empty_title",
+            subtitle: "home_empty_subtitle"
         )
     }
 }

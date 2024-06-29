@@ -27,7 +27,12 @@ struct SearchEmptyView: View {
     var subtitle: LocalizedStringKey
 
     /// Padding to add to stack
-    var padding: EdgeInsets = .margins
+    var padding: EdgeInsets = .init(
+        top: .large + .vMargin,
+        leading: .hMargin,
+        bottom: .vMargin,
+        trailing: .hMargin
+    )
 
     var body: some View {
         VStack(spacing: 0) {

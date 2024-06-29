@@ -189,11 +189,6 @@ private struct WordContentView: View {
                 title: "word_empty_title",
                 subtitle: "word_empty_subtitle \(word.title)"
             )
-            .frame(
-                maxWidth: .infinity,
-                maxHeight: .infinity,
-                alignment: .top
-            )
         } else if !isWordSaved {
             MarginedList(
                 word.meanings.identified,

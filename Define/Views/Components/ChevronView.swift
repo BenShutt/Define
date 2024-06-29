@@ -11,19 +11,15 @@ import SwiftUI
 
 /// `View` drawing a chevron
 struct ChevronView: View {
+    private let size: CGFloat = 24
+
     var body: some View {
         Image(systemName: "chevron.right")
-            .resizable()
-            .scaledToFit()
-            .fontWeight(.black)
+            .systemImage(size: size * 2 / 3, weight: .heavy)
             .foregroundStyle(Color.appDarkGray)
-            .frame(width: 16, height: 16)
-            .padding(.horizontal, 9)
-            .padding(.vertical, 9)
-            .background(Color.appLightGray)
-            .cornerRadius(.cornerRadius)
-            .compositingGroup()
-            .shadow(color: .appBlack.opacity(0.15), radius: 1)
+            .frame(width: size, height: size)
+            .background(Color.appFaintGray)
+            .clipShape(.rect(cornerRadius: size / 4))
     }
 }
 
