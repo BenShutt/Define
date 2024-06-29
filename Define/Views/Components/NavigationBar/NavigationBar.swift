@@ -59,5 +59,11 @@ struct NavigationBar<SmallContent: View, LargeContent: View>: View {
                 }
         }
         .fixedSize(horizontal: false, vertical: true)
+        .background {
+            NavigationBarBackground()
+                .ignoresSafeArea(edges: .top)
+        }
+        .compositingGroup()
+        .shadow(.sticky)
     }
 }

@@ -41,6 +41,7 @@ struct WordScreen: View {
             isWordSaved: isWordSaved,
             onSave: addWord
         )
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .screen()
         .toolbar(.visible, for: .navigationBar)
         .navigationBarTitleDisplayMode(.inline)
@@ -204,7 +205,6 @@ private struct WordContentView: View {
         } else {
             VStack(spacing: 0) {
                 WordSavedView(word: word.word)
-                Separator(color: .appDarkGray.opacity(0.1))
                 MarginedList(
                     word.meanings.identified,
                     isAnimated: true

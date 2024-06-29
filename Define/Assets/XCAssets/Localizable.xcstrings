@@ -626,7 +626,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "You have saved '%@'"
+            "value" : "The word '%@' is saved"
           }
         }
       }
