@@ -32,7 +32,6 @@ struct SegmentedControl<Segment: SegmentedItem>: View {
         }
         .frame(maxWidth: .infinity)
         .padding(.margins)
-        .background(Color.appLightGray)
     }
 }
 
@@ -51,16 +50,15 @@ private struct SegmentView<Segment: SegmentedItem>: View {
             .textStyle(
                 .tag,
                 lineLimit: 1,
-                textColor: isSelected ? .appWhite : .appGray
+                textColor: isSelected ? .appDarkGray : .appGray
             )
             .frame(maxWidth: .infinity)
             .padding(.vertical, .smallMedium)
             .padding(.horizontal, .large)
             .background {
                 if isSelected {
-                    Color.appBlue
+                    GradientBlurView()
                         .clipShape(Capsule())
-                        .transition(.opacity)
                 }
             }
     }

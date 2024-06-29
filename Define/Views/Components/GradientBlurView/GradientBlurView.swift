@@ -11,7 +11,7 @@ import SwiftUI
 struct GradientBlurView: View {
 
     /// Color to blur with gradient
-    var color: Color
+    var color: Color = .default
 
     var body: some View {
         ZStack {
@@ -24,5 +24,5 @@ struct GradientBlurView: View {
 // MARK: - Preview
 
 #Preview {
-    GradientBlurView(color: .appBlue)
+    GradientBlurView()
 }

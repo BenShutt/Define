@@ -46,6 +46,8 @@ struct NavigationScreen<Content: View>: View {
                         .onSizeChanged { largeNavigationBarHeight = $0.height }
                 }
             )
+
+            // TODO: Add segment
         }
         .screen()
         .toolbar(.hidden, for: .navigationBar)
