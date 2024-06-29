@@ -7,19 +7,11 @@
 
 import SwiftUI
 
-// TODO: Improve UI
-
-/// `View` drawing a chevron
 struct ChevronView: View {
-    private let size: CGFloat = 24
-
     var body: some View {
         Image(systemName: "chevron.right")
-            .systemImage(size: size * 2 / 3, weight: .heavy)
+            .systemImage(size: 16, weight: .heavy)
             .foregroundStyle(Color.appDarkGray)
-            .frame(width: size, height: size)
-            .background(Color.appFaintGray)
-            .clipShape(.rect(cornerRadius: size / 4))
     }
 }
 
