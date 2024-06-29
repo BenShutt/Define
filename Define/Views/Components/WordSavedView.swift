@@ -8,11 +8,9 @@
 import SwiftUI
 
 struct WordSavedView: View {
-    var word: String
-
     var body: some View {
         VStack(spacing: 0) {
-            Text("word_saved \(word)")
+            Text("word_saved")
                 .textStyle(
                     .h4,
                     textColor: .appBlack,
@@ -31,7 +29,7 @@ struct WordSavedView: View {
 #Preview {
     VStack {
         Color.clear.frame(height: 1)
-        WordSavedView(word: "Preview")
+        WordSavedView()
         Spacer()
     }
     .screen()

@@ -609,13 +609,13 @@
         }
       }
     },
-    "word_saved %@" : {
+    "word_saved" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "The word '%@' is saved"
+            "value" : "Already saved"
           }
         }
       }

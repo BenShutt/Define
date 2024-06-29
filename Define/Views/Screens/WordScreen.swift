@@ -204,7 +204,7 @@ private struct WordContentView: View {
             )
         } else {
             VStack(spacing: 0) {
-                WordSavedView(word: word.word)
+                WordSavedView()
                 MarginedList(
                     word.meanings.identified,
                     isAnimated: true
