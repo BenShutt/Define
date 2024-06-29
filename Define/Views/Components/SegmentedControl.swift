@@ -71,7 +71,7 @@ private struct PreviewView: View {
     var body: some View {
         SegmentedControl(selectedIndex: $selectedIndex, titles: [
             "home_segment_title",
-            "settings_segment_title"
+            "info_segment_title"
         ])
     }
 }

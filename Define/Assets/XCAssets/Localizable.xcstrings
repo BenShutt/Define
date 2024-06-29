@@ -192,6 +192,16 @@
         }
       }
     },
+    "home_segment_title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Home"
+          }
+        }
+      }
+    },
     "home_subtitle" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -199,16 +209,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Search for a new word, or revisit what you have previously saved."
-          }
-        }
-      }
-    },
-    "home_tab" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Home"
           }
         }
       }
@@ -224,7 +224,7 @@
         }
       }
     },
-    "info_tab" : {
+    "info_segment_title" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -422,17 +422,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "No Results"
-          }
-        }
-      }
-    },
-    "search_tab" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Search"
           }
         }
       }
