@@ -12,8 +12,8 @@ struct NavigationBarBackground: View {
     var body: some View {
         LinearGradient(
             colors: [
-                .appBlue.opacity(0.1),
-                .appBlue.opacity(0.3)
+                .default.opacity(0.1),
+                .default.opacity(0.3)
             ],
             startPoint: .top,
             endPoint: .bottom

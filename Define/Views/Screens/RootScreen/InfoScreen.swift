@@ -94,7 +94,7 @@ struct ThemeListItem: View {
                     .clipShape(shape)
                     .overlay {
                         shape.strokeBorder(
-                            Color.appBlue.opacity(0.4),
+                            Color.default.opacity(0.4),
                             lineWidth: .borderWidth
                         )
                     }

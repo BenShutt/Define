@@ -15,10 +15,7 @@ struct WelcomeScreen: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 0) {
-                WelcomeHeaderView(
-                    animationValue: animationValue,
-                    color: .appBlue
-                )
+                WelcomeHeaderView(animationValue: animationValue)
 
                 Text("welcome_title")
                     .textStyle(.h1, fill: .leading)
@@ -57,7 +54,7 @@ private struct WelcomeHeaderView: View {
     private let iconHeight: CGFloat = 150
 
     var animationValue: Int
-    var color: Color
+    var color: Color = .default
 
     var body: some View {
         ZStack(alignment: .top) {
