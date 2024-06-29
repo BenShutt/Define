@@ -28,7 +28,7 @@ struct DefineApp: App {
 
 extension View {
     @MainActor func environmentObjects() -> some View {
-        self.environmentObject(WordsViewModel())
+        environmentObject(WordsViewModel())
             .environmentObject(NotificationManager())
     }
 }
