@@ -632,11 +632,11 @@
 				B8A1232128E9714600ACEC45 /* LottieView.swift */,
 				B801A3DA2986D41400FAD316 /* PartOfSpeechView.swift */,
 				B8A1232928E9744E00ACEC45 /* SearchEmptyView.swift */,
+				B8C404332C308BB80081922C /* SegmentedControl.swift */,
 				B8C25F9F294F8D5D001C8847 /* Separator.swift */,
 				B8BBA16128E8EDF100222116 /* StyledButton.swift */,
 				B879E9E828F0C5190094AA24 /* TagView.swift */,
 				B8DBE7922C2F5B4600A06DE3 /* WordSavedView.swift */,
-				B8C404332C308BB80081922C /* SegmentedControl.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -937,9 +937,9 @@
 				B813BFFD28EB7BA1000C766C /* SearchIconView.swift in Sources */,
 				B8D2A73C28DEEFAE0096A020 /* SearchScreen.swift in Sources */,
 				B879E9F028F0CA910094AA24 /* SearchViewModel.swift in Sources */,
+				B8C404342C308BB80081922C /* SegmentedControl.swift in Sources */,
 				B8C25FA0294F8D5D001C8847 /* Separator.swift in Sources */,
 				B80E722229FDAD60007CCE71 /* ShapeBorder.swift in Sources */,
-				B8C404342C308BB80081922C /* SegmentedControl.swift in Sources */,
 				B8F834CB2B73DC0F00D0C5D2 /* SmallNavigationBar.swift in Sources */,
 				B894FA2128FC8A4B00BC0BFA /* StickyBottom.swift in Sources */,
 				B894FA2428FC8D7A00BC0BFA /* StickyButton.swift in Sources */,
