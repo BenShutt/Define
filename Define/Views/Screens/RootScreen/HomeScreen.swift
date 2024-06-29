@@ -11,8 +11,23 @@ import SwiftUI
 
 /// Screen listing the user's saved definitions
 struct HomeScreen: View {
-    @EnvironmentObject private var words: WordsViewModel
     @Environment(\.push) private var push
+
+    var body: some View {
+        HomeContentView()
+            .stickyButton(
+                title: "search_button",
+                systemName: "magnifyingglass",
+                onTap: { push(.search) }
+            )
+            .screen()
+    }
+}
+
+// MARK: - HomeContentView
+
+private struct HomeContentView: View {
+    @EnvironmentObject private var words: WordsViewModel
 
     /// Group words into groups by date
     private var groups: DateGroups { // TODO: Performance, add to view-model
@@ -20,30 +35,19 @@ struct HomeScreen: View {
     }
 
     var body: some View {
-        NavigationScreen(
-            title: "home_title",
-            subtitle: "home_subtitle"
-        ) {
-            if groups.isEmpty {
-                HomeEmptyView()
-            } else {
-                LazyVStack(spacing: 0, pinnedViews: .sectionHeaders) {
-                    ForEach(groups, id: \.0) { group, savedWords in
-                        WordsSection(
-                            group: group,
-                            savedWords: savedWords
-                        )
-                    }
+        if groups.isEmpty {
+            HomeEmptyView()
+        } else {
+            LazyVStack(spacing: 0, pinnedViews: .sectionHeaders) {
+                ForEach(groups, id: \.0) { group, savedWords in
+                    WordsSection(
+                        group: group,
+                        savedWords: savedWords
+                    )
                 }
-                .marginedStack(.marginedStack)
             }
+            .marginedStack(.marginedStack)
         }
-        .stickyButton(
-            title: "search_button",
-            systemName: "magnifyingglass",
-            onTap: { push(.search) }
-        )
-        .toolbar(.visible, for: .tabBar)
     }
 }
 

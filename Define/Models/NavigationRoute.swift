@@ -36,7 +36,6 @@ extension View {
     func navigateRoutes() -> some View {
         navigationDestination(for: NavigationRoute.self) { route in
             route.screen
-                .toolbar(.hidden, for: .tabBar)
         }
     }
 }

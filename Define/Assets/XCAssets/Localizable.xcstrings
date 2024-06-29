@@ -192,16 +192,6 @@
         }
       }
     },
-    "home_segment_title" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Home"
-          }
-        }
-      }
-    },
     "home_subtitle" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -224,12 +214,12 @@
         }
       }
     },
-    "info_segment_title" : {
+    "info_subtitle %@" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Info"
+            "value" : "Browse your settings and find out more about the %@ app"
           }
         }
       }

@@ -7,22 +7,25 @@
 
 import SwiftUI
 
-struct SegmentedControl: View {
-    @Binding var selectedIndex: Int
-    var titles: [LocalizedStringKey]
+protocol SegmentedItem: Identifiable, Equatable {
+    var title: LocalizedStringKey { get }
+}
+
+struct SegmentedControl<Segment: SegmentedItem>: View {
+    @Binding var selectedSegment: Segment
+    var segments: [Segment]
 
     var body: some View {
         HStack(spacing: .medium) {
-            ForEach(titles.zipped, id: \.index) { index, title in
+            ForEach(segments) { segment in
                 Button(action: {
                     withAnimation {
-                        selectedIndex = index
+                        selectedSegment = segment
                     }
                 }, label: {
                     SegmentView(
-                        selectedIndex: $selectedIndex,
-                        index: index,
-                        title: title
+                        selectedSegment: $selectedSegment,
+                        segment: segment
                     )
                 })
             }
@@ -35,26 +38,26 @@ struct SegmentedControl: View {
 
 // MARK: - SegmentView
 
-private struct SegmentView: View {
-    @Binding var selectedIndex: Int
-    var index: Int
-    var title: LocalizedStringKey
+private struct SegmentView<Segment: SegmentedItem>: View {
+    @Binding var selectedSegment: Segment
+    var segment: Segment
 
-    private func textColor(for index: Int) -> Color {
-        index == selectedIndex ? .appWhite : .appGray
+    private var isSelected: Bool {
+        segment == selectedSegment
     }
 
     var body: some View {
-        Text(title)
+        Text(segment.title)
             .textStyle(
                 .tag,
                 lineLimit: 1,
-                textColor: textColor(for: index)
+                textColor: isSelected ? .appWhite : .appGray
             )
+            .frame(maxWidth: .infinity)
             .padding(.vertical, .smallMedium)
             .padding(.horizontal, .large)
             .background {
-                if index == selectedIndex {
+                if isSelected {
                     Color.appBlue
                         .clipShape(Capsule())
                         .transition(.opacity)
@@ -66,13 +69,13 @@ private struct SegmentView: View {
 // MARK: - Preview
 
 private struct PreviewView: View {
-    @State private var selectedIndex = 0
+    @State private var selectedSegment: RootSegment = .home
 
     var body: some View {
-        SegmentedControl(selectedIndex: $selectedIndex, titles: [
-            "home_segment_title",
-            "info_segment_title"
-        ])
+        SegmentedControl(
+            selectedSegment: $selectedSegment,
+            segments: RootSegment.allCases
+        )
     }
 }
 

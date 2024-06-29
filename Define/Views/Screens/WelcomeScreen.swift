@@ -12,10 +12,6 @@ struct WelcomeScreen: View {
     @State private var animationValue = 0
     var onContinue: (Bool) -> Void
 
-    private var appName: String {
-        Bundle.main.appName ?? ""
-    }
-
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 0) {
@@ -29,7 +25,7 @@ struct WelcomeScreen: View {
                     .padding(.top, 2 * .extraLarge)
                     .padding(.horizontal, .hMargin)
 
-                Text("welcome_subtitle \(appName)")
+                Text("welcome_subtitle \(appNameOrDefault)")
                     .textStyle(.body, fill: .leading)
                     .padding(.top, .large)
                     .padding(.horizontal, .hMargin)
