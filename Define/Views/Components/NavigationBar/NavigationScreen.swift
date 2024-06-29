@@ -10,27 +10,44 @@ import SwiftUI
 struct NavigationScreen<Content: View>: View {
     var title: LocalizedStringKey
     var subtitle: LocalizedStringKey
+    @ViewBuilder var content: () -> Content
 
     @State private var offset: CGPoint = .zero
-    @ViewBuilder var content: () -> Content
+    @State private var smallNavigationBarHeight: CGFloat = 0
+    @State private var largeNavigationBarHeight: CGFloat = 0
+
+    private var contentTopPadding: CGFloat {
+        max(0, largeNavigationBarHeight - smallNavigationBarHeight)
+    }
+
+    private var scrollTopPadding: CGFloat {
+        max(0, smallNavigationBarHeight)
+    }
 
     var body: some View {
         OffsetScrollView(
             onOffsetChange: { offset = $0 },
-            content: content
+            content: {
+                content()
+                    .padding(.top, contentTopPadding)
+            }
         )
-        .screen()
-        .stickyTop {
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .padding(.top, scrollTopPadding)
+        .overlay(alignment: .top) {
             NavigationBar(
                 offsetY: offset.y,
                 smallNavigationBar: {
                     SmallNavigationBar(title: title)
+                        .onSizeChanged { smallNavigationBarHeight = $0.height }
                 },
                 largeNavigationBar: {
                     LargeNavigationBar(title: title, subtitle: subtitle)
+                        .onSizeChanged { largeNavigationBarHeight = $0.height }
                 }
             )
         }
+        .screen()
         .toolbar(.hidden, for: .navigationBar)
     }
 }
