@@ -14,14 +14,12 @@ struct DefineApp: App {
 
     @StateObject private var words = WordsViewModel() // TODO: Rename
     @StateObject private var notificationManager = NotificationManager()
-    @StateObject private var tabRequestPublisher = TabRequestPublisher()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(words)
                 .environmentObject(notificationManager)
-                .environmentObject(tabRequestPublisher)
         }
     }
 }
@@ -32,6 +30,5 @@ extension View {
     @MainActor func environmentObjects() -> some View {
         self.environmentObject(WordsViewModel())
             .environmentObject(NotificationManager())
-            .environmentObject(TabRequestPublisher())
     }
 }

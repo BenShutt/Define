@@ -12,10 +12,13 @@ struct ContentView: View {
     @EnvironmentObject private var manager: NotificationManager
 
     var body: some View {
-        AppTabView()
-            .presentOnboarding()
-            .onReceive(.willPresent) { _ in
-                manager.updateIdentifiers()
-            }
+        RootNavigationStack {
+            HomeScreen()
+                .routeWordReminders()
+        }
+        .presentOnboarding()
+        .onReceive(.willPresent) { _ in
+            manager.updateIdentifiers()
+        }
     }
 }

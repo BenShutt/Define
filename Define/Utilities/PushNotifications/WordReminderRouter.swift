@@ -11,16 +11,14 @@ import SwiftUI
 
 private struct WordReminderRouter: ViewModifier {
     @EnvironmentObject private var words: WordsViewModel
-    @EnvironmentObject private var tabRequest: TabRequestPublisher
+    @Environment(\.push) private var push
 
     func body(content: Content) -> some View {
         content
             .onReceive(.didReceive) { notification in
                 let id = WordReminder.savedWordId(from: notification)
                 guard let id, let word = words.word(for: id) else { return }
-                tabRequest.open(tab: .home) { push, _ in
-                    push(.word(word.word))
-                }
+                push(.word(word.word))
             }
     }
 }
