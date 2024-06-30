@@ -30,22 +30,3 @@ struct SavedWord: JSONModel, Identifiable, Comparable {
         lhs.savedDate < rhs.savedDate
     }
 }
-
-// MARK: - Extensions
-
-extension SavedWord {
-
-    /// Formatted string of how long ago the word was saved
-    var addedSince: LocalizedStringKey {
-        let minutes = Calendar.current.dateComponents(
-            [.minute],
-            from: savedDate,
-            to: .now
-        ).minute ?? 0
-
-        guard minutes > 0 else { return "added_just_now" }
-        let formatter = DateComponentsFormatter.timeInterval
-        let formatted = formatter.string(from: savedDate, to: .now) ?? ""
-        return "added \(formatted)"
-    }
-}
