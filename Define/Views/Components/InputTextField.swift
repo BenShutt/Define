@@ -10,11 +10,11 @@ import SwiftUI
 /// `View` to input text
 struct InputTextField: View {
 
-    /// Is the field currently focused
-    @FocusState private var isFocused: Bool
-
     /// Text input
     @Binding var text: String
+
+    /// Is the field currently focused
+    @FocusState.Binding var isFocused: Bool
 
     /// Placeholder text
     var prompt: LocalizedStringKey
@@ -24,9 +24,6 @@ struct InputTextField: View {
 
     /// Content of the input
     var contentType: UITextContentType?
-
-    /// On focus changed observer
-    var onFocusChanged: ((Bool) -> Void)?
 
     /// Tint color
     private var tintColor: Color {
@@ -68,23 +65,5 @@ struct InputTextField: View {
         .onTapGesture {
             isFocused = true
         }
-        .onChange(of: isFocused) { newValue in
-            onFocusChanged?(newValue)
-        }
     }
-}
-
-// MARK: - Preview
-
-#Preview {
-    VStack {
-        InputTextField(
-            text: .constant("The value"),
-            prompt: "search_header_prompt",
-            image: Image(systemName: "magnifyingglass"),
-            contentType: .name
-        )
-        Spacer()
-    }
-    .padding(.margins)
 }

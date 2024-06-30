@@ -19,11 +19,12 @@ struct SearchHeaderView: View {
     /// There are two states here to handle both the @FocusState and the animation.
     /// The @FocusState is on the InputTextField and this is the animation property.
     /// The two should always be equivalent in value
-    @State private var isTextInputFocused = false
+    @FocusState private var isFocused: Bool
+    @State private var isCollapsed = false
 
     var body: some View {
         VStack(spacing: 0) {
-            if !isTextInputFocused {
+            if !isCollapsed {
                 Text("search_header_title")
                     .textStyle(.h1, fill: .leading)
 
@@ -36,19 +37,20 @@ struct SearchHeaderView: View {
 
             InputTextField(
                 text: $searchText,
+                isFocused: $isFocused,
                 prompt: "search_header_prompt",
-                image: Image(systemName: "magnifyingglass"),
-                onFocusChanged: { isFocused in
-                    withAnimation(.linear(duration: 0.1)) {
-                        isTextInputFocused = isFocused
-                    }
-                }
+                image: Image(systemName: "magnifyingglass")
             )
         }
         .padding(.margins)
         .background {
             NavigationBarBackground()
                 .ignoresSafeArea(edges: .top)
+        }
+        .onChange(of: isFocused) { isFocused in
+            withAnimation(.linear(duration: 0.1)) {
+                isCollapsed = isFocused
+            }
         }
     }
 }
