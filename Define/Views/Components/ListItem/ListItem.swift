@@ -11,14 +11,14 @@ import SwiftUI
 
 struct SwitchListItem: View {
     @Binding var isOn: Bool
-    var title: LocalizedStringKey
-    var subtitle: LocalizedStringKey
+    var title: LocalizedStringResource
+    var subtitle: LocalizedStringResource
     var margins: EdgeInsets = .zero
 
     var body: some View {
         ListItem(
-            title: title,
-            subtitle: subtitle,
+            title: .init(localized: title),
+            subtitle: .init(localized: subtitle),
             margins: margins,
             leading: {},
             trailing: {
@@ -33,14 +33,14 @@ struct SwitchListItem: View {
 // MARK: - TextListItem
 
 struct TextListItem: View {
-    var title: LocalizedStringKey
-    var subtitle: LocalizedStringKey
+    var title: LocalizedStringResource
+    var subtitle: LocalizedStringResource
     var margins: EdgeInsets = .zero
 
     var body: some View {
         ListItem(
-            title: title,
-            subtitle: subtitle,
+            title: .init(localized: title),
+            subtitle: .init(localized: subtitle),
             margins: margins,
             leading: {},
             trailing: {
@@ -53,8 +53,8 @@ struct TextListItem: View {
 // MARK: - ListItem
 
 struct ListItem<Leading: View, Trailing: View>: View {
-    var title: LocalizedStringKey
-    var subtitle: LocalizedStringKey?
+    var title: String
+    var subtitle: String?
     var margins: EdgeInsets = .zero
     @ViewBuilder var leading: () -> Leading
     @ViewBuilder var trailing: () -> Trailing

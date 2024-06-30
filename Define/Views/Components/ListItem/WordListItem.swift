@@ -10,6 +10,37 @@ import DictionaryAPI
 
 /// `ListItemView` for a `Word`
 struct WordListItem: View {
+    @EnvironmentObject private var settings: UserSettings
+    var word: Word
+
+    var body: some View {
+        if settings.wordsExpanded {
+            ExpandedWordListItem(word: word)
+        } else {
+            CollapsedWordListItem(word: word.title)
+        }
+    }
+}
+
+// MARK: - CollapsedWordListItem
+
+private struct CollapsedWordListItem: View {
+    var word: String
+
+    var body: some View {
+        ListItem(
+            title: word,
+            leading: {},
+            trailing: {
+                ChevronView()
+            }
+        )
+    }
+}
+
+// MARK: - ExpandedWordListItem
+
+private struct ExpandedWordListItem: View {
     @EnvironmentObject private var words: WordsViewModel
     @State private var addedSince: LocalizedStringKey?
     var word: Word
@@ -55,7 +86,7 @@ struct WordListItem: View {
                 WordReminderView(savedWord: savedWord)
             }
         }
-        .padding(.large)
+        .padding(.margins)
         .background(Color.appWhite)
         .onReceiveTimer {
             addedSince = savedWord?.addedSince
