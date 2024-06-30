@@ -21,11 +21,11 @@ extension LinearGradient {
 
     static let button = LinearGradient(
         colors: [
-            Color.appYellow,
             Color.appMaize,
-            Color.appYellow
+            Color.appYellow,
+            Color.appMaize
         ],
-        startPoint: .topLeading,
-        endPoint: .bottomTrailing
+        startPoint: .leading,
+        endPoint: .trailing
     )
 }

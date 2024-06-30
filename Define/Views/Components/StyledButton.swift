@@ -29,7 +29,6 @@ struct StyledButton: View {
         Button(action: onTap) {
             HStack(spacing: .medium) {
                 Image(systemName: systemName)
-                    .renderingMode(.template)
                     .systemImage(size: .icon, weight: .bold)
 
                 Text(title)
@@ -37,13 +36,11 @@ struct StyledButton: View {
                     .foregroundStyle(foregroundColor)
             }
             .frame(maxWidth: maxWidth)
-            .padding(.vertical, .mediumLarge)
+            .padding(.vertical, .medium)
             .padding(.horizontal, .large)
             .tint(foregroundColor)
             .background(LinearGradient.button)
             .clipShape(Capsule())
-            .compositingGroup()
-            .shadow(.container)
         }
     }
 }
