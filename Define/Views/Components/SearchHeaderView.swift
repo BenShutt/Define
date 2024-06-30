@@ -31,6 +31,7 @@ struct SearchHeaderView: View {
                     .textStyle(.body, fill: .leading)
                     .padding(.top, .medium)
                     .padding(.bottom, .extraLarge)
+                    .tint(Color(UIColor.systemBlue)) // Markdown URL
             }
 
             InputTextField(
