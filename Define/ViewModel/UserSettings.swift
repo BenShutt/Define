@@ -9,7 +9,7 @@ import SwiftUI
 
 @MainActor class UserSettings: ObservableObject {
     @AppStorage(.hasSeenWelcome) var hasSeenWelcome = false
-    @AppStorage(.wordsExpanded) var wordsExpanded = false
+    @AppStorage(.wordsExpanded) var wordsExpanded = true
 }
 
 // MARK: - UserDefaultKey
