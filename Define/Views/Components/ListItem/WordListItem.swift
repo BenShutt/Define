@@ -26,24 +26,25 @@ struct WordListItem: View {
 
     var body: some View {
         HStack(spacing: .mediumLarge) {
-            VStack(spacing: .small) {
+            VStack(spacing: 0) {
                 Text(verbatim: word.title)
                     .textStyle(.h3, fill: .leading)
-                    .padding(.bottom, .small)
 
                 if let subtitle = word.subtitle {
                     Text(subtitle)
                         .textStyle(.body, lineLimit: 3, fill: .leading)
+                        .padding(.top, .mediumLarge)
+                }
+
+                if hasCategories {
+                    PartsOfSpeechView(partsOfSpeech: word.partsOfSpeech)
+                        .padding(.top, .mediumLarge)
                 }
 
                 if let addedSince {
                     Text(addedSince)
                         .textStyle(.caption, fill: .leading)
-                }
-
-                if hasCategories {
-                    PartsOfSpeechView(partsOfSpeech: word.partsOfSpeech)
-                        .padding(.top, .medium)
+                        .padding(.top, .mediumLarge)
                 }
             }
 

@@ -15,15 +15,18 @@ private struct StickyBottom<Bottom: View>: ViewModifier {
             edge: .bottom,
             spacing: 0
         ) {
-            bottom()
-                .background {
-                    Color.appWhite
-                        .compositingGroup()
-                        .shadow(.sticky)
-                        .ignoresSafeArea()
-                }
-                .ignoresSafeArea(.keyboard)
-                .transaction { $0.animation = nil }
+            VStack(spacing: 0) {
+                Separator()
+                bottom()
+            }
+            .background {
+                Color.appWhite
+                    .compositingGroup()
+                    .shadow(.sticky)
+                    .ignoresSafeArea()
+            }
+            .ignoresSafeArea(.keyboard)
+            .transaction { $0.animation = nil }
         }
     }
 }

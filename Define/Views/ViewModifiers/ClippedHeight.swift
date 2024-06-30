@@ -23,7 +23,7 @@ private struct ClippedHeight: ViewModifier {
                     .fixedSize(horizontal: false, vertical: true)
                     .onSizeChanged { height = $0.height }
             }
-            .frame(height: clippedHeight(height))
+            .frame(height: max(0, clippedHeight(height)))
             .clipped()
     }
 }

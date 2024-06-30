@@ -123,7 +123,7 @@ private struct NavigationBar: View {
                 .offset(y: descriptionOffset)
                 .onSizeChanged { descriptionHeight = $0.height }
                 .clippedHeight {
-                    $0 + max(-descriptionHeight, min(0, -offsetY))
+                    $0 + descriptionOffset
                 }
         }
         .padding(.horizontal, .hMargin)

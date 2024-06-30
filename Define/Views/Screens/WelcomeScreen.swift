@@ -103,6 +103,35 @@ private struct CurvedBottom: Shape {
     }
 }
 
+// MARK: - OnboardingModifier
+
+private struct OnboardingModifier: ViewModifier {
+    @AppStorage(UserDefaultKey.hasSeenWelcome.rawValue) private var hasSeenWelcome = false
+    // TODO: Line length
+
+    func body(content: Content) -> some View {
+        content
+            .overlay {
+                if !hasSeenWelcome {
+                    WelcomeScreen { _ in
+                        withAnimation {
+                            hasSeenWelcome = true
+                        }
+                    }
+                    .transition(.move(edge: .bottom).combined(with: .opacity))
+                }
+            }
+    }
+}
+
+// MARK: View + OnboardingModifier
+
+extension View {
+    func presentOnboarding() -> some View {
+        modifier(OnboardingModifier())
+    }
+}
+
 // MARK: - Preview
 
 #Preview {
