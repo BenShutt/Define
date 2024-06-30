@@ -1,5 +1,5 @@
 //
-//  HomeScreen.swift
+//  HomeScrollContent.swift
 //  Define
 //
 //  Created by Ben Shutt on 24/12/2022.
@@ -7,26 +7,7 @@
 
 import SwiftUI
 
-// TODO: Add collapsable UI
-
-/// Screen listing the user's saved definitions
-struct HomeScreen: View {
-    @Environment(\.push) private var push
-
-    var body: some View {
-        HomeContentView()
-            .screen()
-            .stickyButton(
-                title: "search_button",
-                systemName: "magnifyingglass",
-                onTap: { push(.search) }
-            )
-    }
-}
-
-// MARK: - HomeContentView
-
-private struct HomeContentView: View {
+struct HomeScrollContent: View {
     @EnvironmentObject private var words: WordsViewModel
 
     /// Group words into groups by date
@@ -109,6 +90,9 @@ struct HomeEmptyView: View {
 // MARK: - Preview
 
 #Preview {
-    HomeScreen()
-        .environmentObjects()
+    ScrollView {
+        HomeScrollContent()
+    }
+    .screen()
+    .environmentObjects()
 }

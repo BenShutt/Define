@@ -23,6 +23,7 @@ private struct StickyBottom<Bottom: View>: ViewModifier {
                         .ignoresSafeArea()
                 }
                 .ignoresSafeArea(.keyboard)
+                .transaction { $0.animation = nil }
         }
     }
 }

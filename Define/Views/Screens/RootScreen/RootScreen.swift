@@ -29,10 +29,10 @@ enum RootSegment: Identifiable, Equatable, CaseIterable, SegmentedItem {
         }
     }
 
-    @ViewBuilder var screen: some View {
+    @ViewBuilder var scrollContent: some View {
         switch self {
-        case .home: HomeScreen()
-        case .info:  InfoScreen()
+        case .home: HomeScrollContent()
+        case .info:  InfoScrollContent()
         }
     }
 }
@@ -40,24 +40,95 @@ enum RootSegment: Identifiable, Equatable, CaseIterable, SegmentedItem {
 // MARK: - RootScreen
 
 struct RootScreen: View {
+    @Environment(\.push) private var push
+
+    @State private var offsetY: CGFloat = 0
     @State private var selectedSegment: RootSegment = .home
+    @State private var segmentedHeight: CGFloat = 0
+    @State private var descriptionHeight: CGFloat = 0
 
     var body: some View {
-        NavigationScreen(
-            title: selectedSegment.title,
-            subtitle: selectedSegment.subtitle,
+        OffsetScrollView(
+            onOffsetChange: { offsetY = $0.y },
             content: {
-                selectedSegment.screen
-            },
-            navigationContent: {
-                SegmentedControl(
-                    selectedSegment: $selectedSegment,
-                    segments: RootSegment.allCases
-                )
-                .padding(.top, 0)
-                .padding(.bottom, .vMargin)
-                .padding(.horizontal, .hMargin)
+                selectedSegment.scrollContent
+                    .padding(.top, descriptionHeight)
             }
         )
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .padding(.top, segmentedHeight)
+        .overlay(alignment: .top) {
+            NavigationBar(
+                offsetY: offsetY,
+                selectedSegment: $selectedSegment,
+                segmentedHeight: $segmentedHeight,
+                descriptionHeight: $descriptionHeight
+            )
+        }
+        .screen()
+        .toolbar(.hidden, for: .navigationBar)
+        .stickyBottom {
+            if selectedSegment == .home {
+                StyledButton(
+                    title: "search_button",
+                    systemName: "magnifyingglass",
+                    onTap: { push(.search) }
+                )
+                .padding(.margins)
+            }
+        }
+    }
+}
+
+// MARK: - NavigationBar
+
+private struct NavigationBar: View {
+    var offsetY: CGFloat
+    @Binding var selectedSegment: RootSegment
+    @Binding var segmentedHeight: CGFloat
+    @Binding var descriptionHeight: CGFloat
+
+    /// Value in `[0, 1]`.
+    /// Progress from not scrolled to fully scrolled (respectively)
+    private var progress: CGFloat {
+        max(0, min(1, offsetY / descriptionHeight))
+    }
+
+    /// Value in `[0, 1]`.
+    /// Opacity of the navigation bar description as a function of progress
+    /// - Note: Resolves at 2x the rate of progress
+    private var descriptionOpacity: CGFloat {
+        max(0, 1 - 2 * progress)
+    }
+
+    /// Value in `[-descriptionHeight, 0]`.
+    /// Offset in Y of the navigation bar description as a function of progress
+    private var descriptionOffset: CGFloat {
+        max(-descriptionHeight, min(0, -offsetY))
+    }
+
+    var body: some View {
+        VStack(spacing: 0) {
+            SegmentedControl(
+                selectedSegment: $selectedSegment,
+                segments: RootSegment.allCases
+            )
+            .padding(.vertical, .vMargin)
+            .onSizeChanged { segmentedHeight = $0.height }
+
+            Text(selectedSegment.subtitle)
+                .textStyle(.body, fill: .leading)
+                .padding(.bottom, .vMargin)
+                .opacity(descriptionOpacity)
+                .offset(y: descriptionOffset)
+                .onSizeChanged { descriptionHeight = $0.height }
+                .clippedHeight {
+                    $0 + max(-descriptionHeight, min(0, -offsetY))
+                }
+        }
+        .padding(.horizontal, .hMargin)
+        .background {
+            NavigationBarBackground()
+        }
     }
 }

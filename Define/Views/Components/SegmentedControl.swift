@@ -49,7 +49,7 @@ private struct SegmentView<Segment: SegmentedItem>: View {
             .textStyle(
                 .tag,
                 lineLimit: 1,
-                textColor: isSelected ? .appDarkGray : .appGray
+                textColor: isSelected ? .appBlack : .appGray
             )
             .frame(maxWidth: .infinity)
             .padding(.vertical, .smallMedium)

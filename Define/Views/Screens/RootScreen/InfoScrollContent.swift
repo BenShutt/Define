@@ -1,5 +1,5 @@
 //
-//  InfoScreen.swift
+//  InfoScrollContent.swift
 //  Define
 //
 //  Created by Ben Shutt on 26/06/2024.
@@ -8,7 +8,7 @@
 import SwiftUI
 import AppIcon
 
-struct InfoScreen: View {
+struct InfoScrollContent: View {
     @Environment(\.openURL) private var openURL
 
     private var settingsURL: URL? {
@@ -76,7 +76,6 @@ struct InfoScreen: View {
             }
         }
         .padding(.margins)
-        .screen()
     }
 }
 
@@ -112,7 +111,7 @@ struct ThemeListItem: View {
 
 #Preview {
     ScrollView {
-        InfoScreen()
+        InfoScrollContent()
     }
     .screen()
 }
