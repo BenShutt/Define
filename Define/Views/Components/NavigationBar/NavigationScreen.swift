@@ -58,7 +58,6 @@ struct NavigationScreen<Content: View, NavigationContent: View>: View {
             }
             .background {
                 NavigationBarBackground()
-                    .ignoresSafeArea(edges: .top)
             }
         }
         .screen()

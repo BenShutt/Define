@@ -28,18 +28,7 @@ struct HeaderView<Content: View>: View {
         .frame(maxWidth: .infinity)
         .padding(padding)
         .background {
-            HeaderBackground()
+            NavigationBarBackground()
         }
-    }
-}
-
-// MARK: - HeaderBackground
-
-struct HeaderBackground: View {
-    var body: some View {
-        GradientBlurView()
-            .ignoresSafeArea()
-            .compositingGroup()
-            .shadow(.sticky)
     }
 }

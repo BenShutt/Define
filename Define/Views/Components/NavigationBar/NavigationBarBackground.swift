@@ -21,6 +21,7 @@ struct NavigationBarBackground: View {
         .background(Color.appWhite)
         .compositingGroup()
         .shadow(.sticky)
+        .ignoresSafeArea(edges: .top)
     }
 }
 
