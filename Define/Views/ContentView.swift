@@ -16,6 +16,7 @@ struct ContentView: View {
             RootScreen()
                 .routeWordReminders()
         }
+        .tint(.appDarkGray)
         .presentOnboarding()
         .onReceive(.willPresent) { _ in
             manager.updateIdentifiers()

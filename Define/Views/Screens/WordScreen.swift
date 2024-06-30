@@ -41,16 +41,25 @@ struct WordScreen: View {
             isWordSaved: isWordSaved,
             onSave: addWord
         )
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .screen()
-        .toolbar(.visible, for: .navigationBar)
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .principal) {
-                Text(verbatim: word.title)
-                    .textStyle(.h2)
+        .deleteWordAlert(
+            word: word,
+            isPresented: $isPresentingDeleteWordAlert,
+            onDelete: {
+                guard let savedWord else { return }
+                removeWord(savedWord: savedWord)
             }
-
+        )
+        .deleteWordReminderAlert(
+            word: word,
+            isPresented: $isPresentingDeleteWordReminderAlert,
+            onDelete: {
+                guard let savedWord else { return }
+                removeWordReminder(savedWordId: savedWord.id)
+            }
+        )
+        .navigationBar(title: word.title)
+        .toolbar {
             if let savedWord {
                 ToolbarItem(placement: .topBarTrailing) {
                     WordReminderButton(savedWord: savedWord) { hasReminder in
@@ -71,25 +80,6 @@ struct WordScreen: View {
                 }
             }
         }
-        .stickyTop {
-            HeaderView(spacing: 0, padding: .headerPadding) {}
-        }
-        .deleteWordAlert(
-            word: word,
-            isPresented: $isPresentingDeleteWordAlert,
-            onDelete: {
-                guard let savedWord else { return }
-                removeWord(savedWord: savedWord)
-            }
-        )
-        .deleteWordReminderAlert(
-            word: word,
-            isPresented: $isPresentingDeleteWordReminderAlert,
-            onDelete: {
-                guard let savedWord else { return }
-                removeWordReminder(savedWordId: savedWord.id)
-            }
-        )
     }
 
     // MARK: - Add/Remove WordReminder
@@ -189,6 +179,11 @@ private struct WordContentView: View {
                 lottie: .searchNoResults,
                 title: "word_empty_title",
                 subtitle: "word_empty_subtitle \(word.title)"
+            )
+            .frame(
+                maxWidth: .infinity,
+                maxHeight: .infinity,
+                alignment: .top
             )
         } else if !isWordSaved {
             MarginedList(

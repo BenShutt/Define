@@ -17,7 +17,6 @@
 		B80E720229FBB67B007CCE71 /* CubeFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = B80E720129FBB67B007CCE71 /* CubeFoundation */; };
 		B80E720429FBB67B007CCE71 /* CubeFoundationSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = B80E720329FBB67B007CCE71 /* CubeFoundationSwiftUI */; };
 		B80E720629FBB972007CCE71 /* LinearGradient+Gradients.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80E720529FBB972007CCE71 /* LinearGradient+Gradients.swift */; };
-		B80E720829FBEBF7007CCE71 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80E720729FBEBF7007CCE71 /* HeaderView.swift */; };
 		B80E721B29FD9578007CCE71 /* MarginedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80E721A29FD9578007CCE71 /* MarginedList.swift */; };
 		B80E721F29FDA849007CCE71 /* IdentifiedElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80E721E29FDA849007CCE71 /* IdentifiedElement.swift */; };
 		B80E722229FDAD60007CCE71 /* ShapeBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80E722129FDAD60007CCE71 /* ShapeBorder.swift */; };
@@ -108,6 +107,7 @@
 		B8D2A74628DF3AFE0096A020 /* TextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2A74528DF3AFE0096A020 /* TextStyle.swift */; };
 		B8D780392C29BF28006D25EF /* RootNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D780382C29BF28006D25EF /* RootNavigationStack.swift */; };
 		B8D7803C2C29BF62006D25EF /* NavigationRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7803B2C29BF62006D25EF /* NavigationRoute.swift */; };
+		B8D903C32C31BEC30031A3EA /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D903C22C31BEC30031A3EA /* NavigationBar.swift */; };
 		B8DAF91D2AC332FF00514808 /* WordReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DAF91C2AC332FF00514808 /* WordReminder.swift */; };
 		B8DBE7932C2F5B4600A06DE3 /* WordSavedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DBE7922C2F5B4600A06DE3 /* WordSavedView.swift */; };
 		B8E336572AD5BABF00374E4A /* ListAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E336562AD5BABF00374E4A /* ListAnimator.swift */; };
@@ -154,7 +154,6 @@
 		B80399F928D79A3B008CE7B4 /* DefineUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefineUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B80E71FE29FBB578007CCE71 /* FigmaShadow+Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FigmaShadow+Values.swift"; sourceTree = "<group>"; };
 		B80E720529FBB972007CCE71 /* LinearGradient+Gradients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LinearGradient+Gradients.swift"; sourceTree = "<group>"; };
-		B80E720729FBEBF7007CCE71 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		B80E721A29FD9578007CCE71 /* MarginedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarginedList.swift; sourceTree = "<group>"; };
 		B80E721E29FDA849007CCE71 /* IdentifiedElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifiedElement.swift; sourceTree = "<group>"; };
 		B80E722129FDAD60007CCE71 /* ShapeBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeBorder.swift; sourceTree = "<group>"; };
@@ -243,6 +242,7 @@
 		B8D2A74528DF3AFE0096A020 /* TextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyle.swift; sourceTree = "<group>"; };
 		B8D780382C29BF28006D25EF /* RootNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationStack.swift; sourceTree = "<group>"; };
 		B8D7803B2C29BF62006D25EF /* NavigationRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRoute.swift; sourceTree = "<group>"; };
+		B8D903C22C31BEC30031A3EA /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		B8DAF91C2AC332FF00514808 /* WordReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordReminder.swift; sourceTree = "<group>"; };
 		B8DBE7922C2F5B4600A06DE3 /* WordSavedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSavedView.swift; sourceTree = "<group>"; };
 		B8E336562AD5BABF00374E4A /* ListAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAnimator.swift; sourceTree = "<group>"; };
@@ -384,15 +384,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		B80E721229FC09A9007CCE71 /* HeaderView */ = {
-			isa = PBXGroup;
-			children = (
-				B80E720729FBEBF7007CCE71 /* HeaderView.swift */,
-				B8B9B9D528EC5C54006FCA76 /* SearchHeaderView.swift */,
-			);
-			path = HeaderView;
-			sourceTree = "<group>";
-		};
 		B80E721929FD9546007CCE71 /* ScrollView */ = {
 			isa = PBXGroup;
 			children = (
@@ -445,6 +436,7 @@
 				B8E336562AD5BABF00374E4A /* ListAnimator.swift */,
 				B86BA87D2AE79C8B00C638CD /* ReceiveTimer.swift */,
 				B84E8CA92C2AE7BB0044FEDE /* StyledText.swift */,
+				B8D903C22C31BEC30031A3EA /* NavigationBar.swift */,
 			);
 			path = ViewModifiers;
 			sourceTree = "<group>";
@@ -599,13 +591,13 @@
 			isa = PBXGroup;
 			children = (
 				B8BFDC6D2AC77FDD009E1F83 /* GradientBlurView */,
-				B80E721229FC09A9007CCE71 /* HeaderView */,
 				B813BFFB28EB7ACA000C766C /* Icon */,
 				B879E9EA28F0C7110094AA24 /* ListItem */,
 				B8D7803A2C29BF34006D25EF /* Navigation */,
 				B80E721929FD9546007CCE71 /* ScrollView */,
 				B891F8E12950FB6600A53582 /* ChevronView.swift */,
 				B8AD58822AD471350054403E /* InformationSheet.swift */,
+				B8B9B9D528EC5C54006FCA76 /* SearchHeaderView.swift */,
 				B8D2A74128DF3A250096A020 /* InputTextField.swift */,
 				B8E49C0828DF917E00F9CAC4 /* LoadingView.swift */,
 				B8A1232128E9714600ACEC45 /* LottieView.swift */,
@@ -861,7 +853,6 @@
 				B80E71FF29FBB578007CCE71 /* FigmaShadow+Values.swift in Sources */,
 				B8B05F162C29748400F2A9A8 /* FixedSizeSheet.swift in Sources */,
 				B8BFDC6F2AC77FED009E1F83 /* GradientBlurView.swift in Sources */,
-				B80E720829FBEBF7007CCE71 /* HeaderView.swift in Sources */,
 				B895887429578BFB0041A315 /* HomeScrollContent.swift in Sources */,
 				B813C00328EB7F7D000C766C /* IconContainer.swift in Sources */,
 				B813C00128EB7DB9000C766C /* IconView.swift in Sources */,
@@ -908,6 +899,7 @@
 				B8BBA16228E8EDF100222116 /* StyledButton.swift in Sources */,
 				B84E8CAA2C2AE7BB0044FEDE /* StyledText.swift in Sources */,
 				B879E9E928F0C5190094AA24 /* TagView.swift in Sources */,
+				B8D903C32C31BEC30031A3EA /* NavigationBar.swift in Sources */,
 				B8D2A74628DF3AFE0096A020 /* TextStyle.swift in Sources */,
 				B8FF0DD529609EF3004C61B6 /* UserDefaultKey.swift in Sources */,
 				B86FB81E2C2C84B000687528 /* View+Extensions.swift in Sources */,

@@ -21,15 +21,8 @@ struct SearchHeaderView: View {
     /// The two should always be equivalent in value
     @State private var isTextInputFocused = false
 
-    /// Update the top padding of the header
-    private var padding: EdgeInsets {
-        var padding: EdgeInsets = .header
-        padding.top = .medium
-        return padding
-    }
-
     var body: some View {
-        HeaderView(spacing: 0, padding: padding) {
+        VStack(spacing: 0) {
             if !isTextInputFocused {
                 Text("search_header_title")
                     .textStyle(.h1, fill: .leading)
@@ -50,6 +43,11 @@ struct SearchHeaderView: View {
                     }
                 }
             )
+        }
+        .padding(.margins)
+        .background {
+            NavigationBarBackground()
+                .ignoresSafeArea(edges: .top)
         }
     }
 }

@@ -58,7 +58,7 @@ struct RootScreen: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(.top, segmentedHeight)
         .overlay(alignment: .top) {
-            NavigationBar(
+            RootNavigationBar(
                 offsetY: offsetY,
                 selectedSegment: $selectedSegment,
                 segmentedHeight: $segmentedHeight,
@@ -75,16 +75,16 @@ struct RootScreen: View {
                     onTap: { push(.search) }
                 )
                 .padding(.margins)
-            } else {
-                Color.screenBackground // TODO: Improve
             }
+
+            // TODO: Info bottom
         }
     }
 }
 
-// MARK: - NavigationBar
+// MARK: - RootNavigationBar
 
-private struct NavigationBar: View {
+private struct RootNavigationBar: View {
     var offsetY: CGFloat
     @Binding var selectedSegment: RootSegment
     @Binding var segmentedHeight: CGFloat
@@ -121,9 +121,9 @@ private struct NavigationBar: View {
             Text(selectedSegment.subtitle)
                 .textStyle(.body, fill: .leading)
                 .padding(.bottom, .vMargin)
+                .onSizeChanged { descriptionHeight = $0.height }
                 .opacity(descriptionOpacity)
                 .offset(y: descriptionOffset)
-                .onSizeChanged { descriptionHeight = $0.height }
                 .clippedHeight {
                     $0 + descriptionOffset
                 }
@@ -131,6 +131,7 @@ private struct NavigationBar: View {
         .padding(.horizontal, .hMargin)
         .background {
             NavigationBarBackground()
+                .ignoresSafeArea(edges: .top)
         }
     }
 }
