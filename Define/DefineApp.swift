@@ -12,12 +12,14 @@ import SwiftUI
 struct DefineApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
+    @StateObject private var settings = UserSettings()
     @StateObject private var words = WordsViewModel() // TODO: Rename
     @StateObject private var notificationManager = NotificationManager()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(settings)
                 .environmentObject(words)
                 .environmentObject(notificationManager)
         }
@@ -28,7 +30,8 @@ struct DefineApp: App {
 
 extension View {
     @MainActor func environmentObjects() -> some View {
-        environmentObject(WordsViewModel())
+        environmentObject(UserSettings())
+            .environmentObject(WordsViewModel())
             .environmentObject(NotificationManager())
     }
 }

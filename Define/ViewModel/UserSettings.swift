@@ -1,11 +1,18 @@
 //
-//  UserDefaultKey.swift
+//  UserSettings.swift
 //  Define
 //
-//  Created by Ben Shutt on 31/12/2022.
+//  Created by Ben Shutt on 30/06/2024.
 //
 
-import Foundation
+import SwiftUI
+
+@MainActor class UserSettings: ObservableObject {
+    @AppStorage(.hasSeenWelcome) var hasSeenWelcome = false
+    @AppStorage(.wordsExpanded) var wordsExpanded = false
+}
+
+// MARK: - UserDefaultKey
 
 /// Keys in the `UserDefaults`
 enum UserDefaultKey: String {
@@ -15,6 +22,9 @@ enum UserDefaultKey: String {
 
     /// Has seen the welcome screen
     case hasSeenWelcome
+
+    /// Are the words expanded or collapsed
+    case wordsExpanded
 
     /// The user's saved words
     case words
@@ -37,5 +47,13 @@ extension UserDefaults {
     ///   - key: `UserDefaultKey`
     func set<Value>(_ value: Value, for key: UserDefaultKey) {
         set(value, forKey: key.rawValue)
+    }
+}
+
+// MARK: - AppStorage + UserDefaultKey
+
+extension AppStorage where Value == Bool {
+    init(wrappedValue: Value, _ key: UserDefaultKey, store: UserDefaults? = nil) {
+        self.init(wrappedValue: wrappedValue, key.rawValue, store: store)
     }
 }

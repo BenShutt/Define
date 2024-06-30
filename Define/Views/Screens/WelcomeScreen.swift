@@ -106,16 +106,15 @@ private struct CurvedBottom: Shape {
 // MARK: - OnboardingModifier
 
 private struct OnboardingModifier: ViewModifier {
-    @AppStorage(UserDefaultKey.hasSeenWelcome.rawValue) private var hasSeenWelcome = false
-    // TODO: Line length
+    @EnvironmentObject private var settings: UserSettings
 
     func body(content: Content) -> some View {
         content
             .overlay {
-                if !hasSeenWelcome {
+                if !settings.hasSeenWelcome {
                     WelcomeScreen { _ in
                         withAnimation {
-                            hasSeenWelcome = true
+                            settings.hasSeenWelcome = true
                         }
                     }
                     .transition(.move(edge: .bottom).combined(with: .opacity))
