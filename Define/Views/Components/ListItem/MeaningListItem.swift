@@ -34,9 +34,10 @@ struct MeaningListItem: View {
 // MARK: - Preview
 
 #Preview {
-    VStack {
-        if let meaning = Word.preview.meanings.first {
+    WordPreviewView(word: "hello") { word in
+        if let meaning = word.meanings.first {
             MeaningListItem(meaning: meaning)
         }
     }
+    .screen()
 }

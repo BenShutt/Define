@@ -63,12 +63,10 @@ private struct DefinitionView: View {
 // MARK: - Preview
 
 #Preview {
-    VStack {
-        if let definition = Word.preview.meanings.first?.definitions.first {
+    WordPreviewView(word: "hello") { word in
+        if let definition = word.meanings.first?.definitions.first {
             DefinitionListItem(definition: definition)
         }
-        Spacer()
     }
-    .padding()
     .screen()
 }

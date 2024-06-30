@@ -84,7 +84,9 @@ private struct PartsOfSpeechView: View {
 // MARK: - Preview
 
 #Preview {
-    WordListItem(word: .preview)
-        .screen()
-        .environmentObjects()
+    WordPreviewView(word: "hello") { word in
+        WordListItem(word: word)
+    }
+    .screen()
+    .environmentObjects()
 }
