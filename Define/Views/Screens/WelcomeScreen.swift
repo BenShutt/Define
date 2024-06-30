@@ -41,7 +41,8 @@ struct WelcomeScreen: View {
                 onContinue(granted)
             }
         }
-        .onAppear {
+        .task {
+            try? await Task.sleep(for: .milliseconds(500))
             animationValue = max(animationValue, 1)
         }
     }
@@ -107,18 +108,18 @@ private struct CurvedBottom: Shape {
 
 private struct OnboardingModifier: ViewModifier {
     @EnvironmentObject private var settings: UserSettings
+    @State private var isPresented = false
 
     func body(content: Content) -> some View {
         content
-            .overlay {
-                if !settings.hasSeenWelcome {
-                    WelcomeScreen { _ in
-                        withAnimation {
-                            settings.hasSeenWelcome = true
-                        }
-                    }
-                    .transition(.move(edge: .bottom).combined(with: .opacity))
+            .fullScreenCover(isPresented: $isPresented) {
+                WelcomeScreen { _ in
+                    settings.hasSeenWelcome = true
+                    isPresented = false
                 }
+            }
+            .task {
+                isPresented = !settings.hasSeenWelcome
             }
     }
 }
