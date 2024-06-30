@@ -64,7 +64,7 @@ private struct ExpandedWordListItem: View {
                 if let subtitle = word.subtitle {
                     Text(subtitle)
                         .textStyle(.body, lineLimit: 3, fill: .leading)
-                        .padding(.top, .mediumLarge)
+                        .padding(.top, .smallMedium)
                 }
 
                 if hasCategories {
