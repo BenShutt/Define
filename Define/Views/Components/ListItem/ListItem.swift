@@ -24,6 +24,7 @@ struct SwitchListItem: View {
             trailing: {
                 Toggle(isOn: $isOn) {}
                     .toggleStyle(SwitchToggleStyle(tint: .default))
+                    .fixedSize(horizontal: true, vertical: false)
             }
         )
     }
@@ -78,4 +79,23 @@ struct ListItem<Leading: View, Trailing: View>: View {
         .background(Color.appWhite)
         .margined(margins)
     }
+}
+
+// MARK: - Preview
+
+#Preview {
+    VStack {
+        TextListItem(
+            title: "rate_app_title",
+            subtitle: "rate_app_subtitle"
+        )
+
+        SwitchListItem(
+            isOn: .constant(false),
+            title: "words_expanded_title",
+            subtitle: "words_expanded_subtitle"
+        )
+    }
+    .padding(.margins)
+    .screen()
 }
