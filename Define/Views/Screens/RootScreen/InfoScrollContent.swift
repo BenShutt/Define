@@ -9,6 +9,7 @@ import SwiftUI
 import AppIcon
 
 struct InfoScrollContent: View {
+    @EnvironmentObject private var settings: UserSettings
     @Environment(\.openURL) private var openURL
 
     private var settingsURL: URL? {
@@ -21,12 +22,16 @@ struct InfoScrollContent: View {
 
     var body: some View {
         LazyVStack(spacing: .vMargin) {
-            ThemeListItem()
-                .button {
-                    // TODO
-                }
+            SwitchListItem(
+                isOn: $settings.wordsExpanded,
+                title: "words_expanded_title",
+                subtitle: "words_expanded_subtitle"
+            )
+            .button {
+                settings.wordsExpanded.toggle()
+            }
 
-            SimpleListItem(
+            TextListItem(
                 title: "donate_title",
                 subtitle: "donate_subtitle"
             )
@@ -35,7 +40,7 @@ struct InfoScrollContent: View {
             }
 
             if let appStoreURL {
-                SimpleListItem(
+                TextListItem(
                     title: "rate_app_title",
                     subtitle: "rate_app_subtitle"
                 )
@@ -44,7 +49,7 @@ struct InfoScrollContent: View {
                 }
             }
 
-            SimpleListItem(
+            TextListItem(
                 title: "report_issue_title",
                 subtitle: "report_issue_subtitle"
             )
@@ -52,7 +57,7 @@ struct InfoScrollContent: View {
                 // TODO
             }
 
-            SimpleListItem(
+            TextListItem(
                 title: "export_title",
                 subtitle: "export_subtitle"
             )
@@ -61,7 +66,7 @@ struct InfoScrollContent: View {
             }
 
             if let settingsURL {
-                SimpleListItem(
+                TextListItem(
                     title: "ios_settings_title",
                     subtitle: "ios_settings_subtitle"
                 )
@@ -79,34 +84,6 @@ struct InfoScrollContent: View {
     }
 }
 
-// MARK: - ThemeListItem
-
-struct ThemeListItem: View {
-    private let shape = RoundedRectangle(cornerRadius: .cornerRadius)
-
-    var body: some View {
-        ListItem(
-            title: "theme_title",
-            subtitle: "theme_subtitle",
-            leading: {
-                AppIconGradient(start: 0.25, end: 1)
-                    .frame(width: 50, height: 50)
-                    .clipShape(shape)
-                    .overlay {
-                        shape.strokeBorder(
-                            Color.default.opacity(0.4),
-                            lineWidth: .borderWidth
-                        )
-                    }
-                    .overlay {
-                        Text(verbatim: "B") // TODO
-                            .textStyle(.h2)
-                    }
-            }
-        )
-    }
-}
-
 // MARK: - Preview
 
 #Preview {
@@ -114,4 +91,5 @@ struct ThemeListItem: View {
         InfoScrollContent()
     }
     .screen()
+    .environmentObjects()
 }

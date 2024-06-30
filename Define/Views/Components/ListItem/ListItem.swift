@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-// MARK: - SimpleListItem
+// MARK: - SwitchListItem
 
-struct SimpleListItem: View {
+struct SwitchListItem: View {
+    @Binding var isOn: Bool
     var title: LocalizedStringKey
     var subtitle: LocalizedStringKey
     var margins: EdgeInsets = .zero
@@ -19,18 +20,43 @@ struct SimpleListItem: View {
             title: title,
             subtitle: subtitle,
             margins: margins,
-            leading: {}
+            leading: {},
+            trailing: {
+                Toggle(isOn: $isOn) {}
+                    .toggleStyle(SwitchToggleStyle(tint: .default))
+            }
+        )
+    }
+}
+
+// MARK: - TextListItem
+
+struct TextListItem: View {
+    var title: LocalizedStringKey
+    var subtitle: LocalizedStringKey
+    var margins: EdgeInsets = .zero
+
+    var body: some View {
+        ListItem(
+            title: title,
+            subtitle: subtitle,
+            margins: margins,
+            leading: {},
+            trailing: {
+                ChevronView()
+            }
         )
     }
 }
 
 // MARK: - ListItem
 
-struct ListItem<Leading: View>: View {
+struct ListItem<Leading: View, Trailing: View>: View {
     var title: LocalizedStringKey
     var subtitle: LocalizedStringKey?
     var margins: EdgeInsets = .zero
     @ViewBuilder var leading: () -> Leading
+    @ViewBuilder var trailing: () -> Trailing
 
     var body: some View {
         HStack(spacing: .medium) {
@@ -46,7 +72,7 @@ struct ListItem<Leading: View>: View {
                 }
             }
 
-            ChevronView()
+            trailing()
         }
         .padding(.margins)
         .background(Color.appWhite)
