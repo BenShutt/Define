@@ -22,6 +22,9 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
         // Configure push notifications
         UNUserNotificationCenter.current().delegate = self
 
+        // Configure navigation bar global appearance
+        NavigationAppearance.setup()
+
         // Run any migrations before launching the app
         Migrations.execute()
         return true
