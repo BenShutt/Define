@@ -19,15 +19,15 @@ struct NavigationBar: ViewModifier {
                         .frame(height: metrics.safeAreaInsets.top)
                         .ignoresSafeArea(edges: .top)
                 }
-                .toolbarBackground(Color.clear, for: .navigationBar)
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar(.visible, for: .navigationBar)
-                .toolbar {
-                    ToolbarItem(placement: .principal) {
-                        Text(verbatim: title)
-                            .textStyle(.h3)
-                    }
-                }
+        }
+        .toolbarBackground(Color.clear, for: .navigationBar)
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar(.visible, for: .navigationBar)
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                Text(verbatim: title)
+                    .textStyle(.h3)
+            }
         }
     }
 }
