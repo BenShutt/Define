@@ -234,6 +234,26 @@
         }
       }
     },
+    "ios_settings_subtitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Update the app's iOS settings such as notifications."
+          }
+        }
+      }
+    },
+    "ios_settings_title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iOS Settings"
+          }
+        }
+      }
+    },
     "rate_app_subtitle" : {
       "localizations" : {
         "en" : {
@@ -416,26 +436,6 @@
         }
       }
     },
-    "settings_subtitle" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Update the app's iOS settings such as notifications."
-          }
-        }
-      }
-    },
-    "settings_title" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "App Settings"
-          }
-        }
-      }
-    },
     "theme_subtitle" : {
       "localizations" : {
         "en" : {
@@ -594,7 +594,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Already saved"
+            "value" : "Word Saved"
           }
         }
       }

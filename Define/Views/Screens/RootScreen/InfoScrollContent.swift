@@ -62,8 +62,8 @@ struct InfoScrollContent: View {
 
             if let settingsURL {
                 SimpleListItem(
-                    title: "settings_title",
-                    subtitle: "settings_subtitle"
+                    title: "ios_settings_title",
+                    subtitle: "ios_settings_subtitle"
                 )
                 .button {
                     openURL(settingsURL)
