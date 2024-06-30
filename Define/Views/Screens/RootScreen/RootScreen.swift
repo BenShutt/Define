@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// MARK: - RootSegment
+
 enum RootSegment: Identifiable, Equatable, CaseIterable, SegmentedItem {
     case home
     case info
@@ -16,14 +18,14 @@ enum RootSegment: Identifiable, Equatable, CaseIterable, SegmentedItem {
     var title: LocalizedStringKey {
         switch self {
         case .home: "home_title"
-        case .info:  "info_title"
+        case .info: "info_title"
         }
     }
 
     var subtitle: LocalizedStringKey {
         switch self {
         case .home: "home_subtitle"
-        case .info:  "info_subtitle \(appNameOrDefault)"
+        case .info: "info_subtitle \(appNameOrDefault)"
         }
     }
 
@@ -35,21 +37,27 @@ enum RootSegment: Identifiable, Equatable, CaseIterable, SegmentedItem {
     }
 }
 
+// MARK: - RootScreen
+
 struct RootScreen: View {
     @State private var selectedSegment: RootSegment = .home
 
     var body: some View {
         NavigationScreen(
             title: selectedSegment.title,
-            subtitle: selectedSegment.subtitle
-        ) {
-            SegmentedControl(
-                selectedSegment: $selectedSegment,
-                segments: RootSegment.allCases
-            )
-
-            selectedSegment.screen
-        }
-        .screen()
+            subtitle: selectedSegment.subtitle,
+            content: {
+                selectedSegment.screen
+            },
+            navigationContent: {
+                SegmentedControl(
+                    selectedSegment: $selectedSegment,
+                    segments: RootSegment.allCases
+                )
+                .padding(.top, 0)
+                .padding(.bottom, .vMargin)
+                .padding(.horizontal, .hMargin)
+            }
+        )
     }
 }

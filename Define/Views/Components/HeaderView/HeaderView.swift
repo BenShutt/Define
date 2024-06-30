@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// TODO: Improve NavigationBar re-use and consistency (i.e. clean up headers)
+
 /// Container of vertically stacked header UI
 struct HeaderView<Content: View>: View {
 

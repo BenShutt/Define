@@ -31,7 +31,6 @@ struct SegmentedControl<Segment: SegmentedItem>: View {
             }
         }
         .frame(maxWidth: .infinity)
-        .padding(.margins)
     }
 }
 
@@ -57,7 +56,7 @@ private struct SegmentView<Segment: SegmentedItem>: View {
             .padding(.horizontal, .large)
             .background {
                 if isSelected {
-                    GradientBlurView()
+                    Color.appWhite
                         .clipShape(Capsule())
                 }
             }
@@ -74,6 +73,7 @@ private struct PreviewView: View {
             selectedSegment: $selectedSegment,
             segments: RootSegment.allCases
         )
+        .padding(.margins)
     }
 }
 

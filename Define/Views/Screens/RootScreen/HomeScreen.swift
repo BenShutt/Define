@@ -15,12 +15,12 @@ struct HomeScreen: View {
 
     var body: some View {
         HomeContentView()
+            .screen()
             .stickyButton(
                 title: "search_button",
                 systemName: "magnifyingglass",
                 onTap: { push(.search) }
             )
-            .screen()
     }
 }
 

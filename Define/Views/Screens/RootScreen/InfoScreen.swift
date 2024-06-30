@@ -76,6 +76,7 @@ struct InfoScreen: View {
             }
         }
         .padding(.margins)
+        .screen()
     }
 }
 

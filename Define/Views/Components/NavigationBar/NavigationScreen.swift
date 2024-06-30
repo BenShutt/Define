@@ -7,26 +7,30 @@
 
 import SwiftUI
 
-struct NavigationScreen<Content: View>: View {
+struct NavigationScreen<Content: View, NavigationContent: View>: View {
     var title: LocalizedStringKey
     var subtitle: LocalizedStringKey
     @ViewBuilder var content: () -> Content
+    @ViewBuilder var navigationContent: () -> NavigationContent
 
-    @State private var offset: CGPoint = .zero
+    @State private var offsetY: CGFloat = 0
     @State private var smallNavigationBarHeight: CGFloat = 0
     @State private var largeNavigationBarHeight: CGFloat = 0
+    @State private var navigationContentHeight: CGFloat = 0
 
+    /// Pad the scroll view content by the difference between the expanded and collapsed navigation bar
     private var contentTopPadding: CGFloat {
         max(0, largeNavigationBarHeight - smallNavigationBarHeight)
     }
 
+    /// Pad the scroll view by the height of the navigation bar in the collapsed state
     private var scrollTopPadding: CGFloat {
-        max(0, smallNavigationBarHeight)
+        smallNavigationBarHeight + navigationContentHeight
     }
 
     var body: some View {
         OffsetScrollView(
-            onOffsetChange: { offset = $0 },
+            onOffsetChange: { offsetY = $0.y },
             content: {
                 content()
                     .padding(.top, contentTopPadding)
@@ -35,19 +39,27 @@ struct NavigationScreen<Content: View>: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(.top, scrollTopPadding)
         .overlay(alignment: .top) {
-            NavigationBar(
-                offsetY: offset.y,
-                smallNavigationBar: {
-                    SmallNavigationBar(title: title)
-                        .onSizeChanged { smallNavigationBarHeight = $0.height }
-                },
-                largeNavigationBar: {
-                    LargeNavigationBar(title: title, subtitle: subtitle)
-                        .onSizeChanged { largeNavigationBarHeight = $0.height }
-                }
-            )
+            VStack(spacing: 0) {
+                NavigationBar(
+                    offsetY: offsetY,
+                    maxOffsetY: contentTopPadding,
+                    smallNavigationBar: {
+                        SmallNavigationBar(title: title)
+                            .onSizeChanged { smallNavigationBarHeight = $0.height }
+                    },
+                    largeNavigationBar: {
+                        LargeNavigationBar(title: title, subtitle: subtitle)
+                            .onSizeChanged { largeNavigationBarHeight = $0.height }
+                    }
+                )
 
-            // TODO: Add segment
+                navigationContent()
+                    .onSizeChanged { navigationContentHeight = $0.height }
+            }
+            .background {
+                NavigationBarBackground()
+                    .ignoresSafeArea(edges: .top)
+            }
         }
         .screen()
         .toolbar(.hidden, for: .navigationBar)
@@ -68,5 +80,6 @@ struct NavigationScreen<Content: View>: View {
                         .padding(.vertical)
                 }
             }
-        })
+        }, navigationContent: {}
+    )
 }
