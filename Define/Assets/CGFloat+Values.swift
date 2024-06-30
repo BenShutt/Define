@@ -77,14 +77,5 @@ extension Double {
 
 extension EdgeInsets {
     static let margins = EdgeInsets(vertical: .vMargin, horizontal: .hMargin)
-    static let header = EdgeInsets(vertical: .large, horizontal: .extraLarge)
     static let marginedStack = EdgeInsets(vertical: .smallMedium, horizontal: .hMargin)
-
-    /// Padding for the header view
-    static let headerPadding = {
-        var padding: EdgeInsets = .header
-        padding.top = .extraSmall
-        padding.bottom = .extraSmall
-        return padding
-    }()
 }
