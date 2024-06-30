@@ -39,9 +39,9 @@ struct WordReminder {
     /// - Returns: A notification request
     static func request(for word: SavedWord) -> UNNotificationRequest {
         let content = UNMutableNotificationContent()
-        content.title = word.word.notificationTitle.value
+        content.title = word.word.notificationTitle
         if let subtitle = word.word.notificationSubtitle {
-            content.body = subtitle.value
+            content.body = subtitle
         }
         content.sound = .default
         content.userInfo = [userInfoKey: word.id.uuidString]

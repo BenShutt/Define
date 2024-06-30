@@ -265,17 +265,6 @@
         }
       }
     },
-    "reminder_push_subtitle %@ %d" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ (+%d more)"
-          }
-        }
-      }
-    },
     "reminder_push_title %@" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -617,28 +606,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ (+%lld more)"
-          }
-        }
-      }
-    },
-    "word_subtitle_one %@" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@"
-          }
-        }
-      }
-    },
-    "word_title %@" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@"
           }
         }
       }
