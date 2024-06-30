@@ -79,7 +79,7 @@ import UserNotifications
     /// Update identifiers of pending notification requests
     func updateIdentifiers() {
         Task {
-            identifiers = Set(await requests().map { $0.identifier })
+            identifiers = await Set(requests().map { $0.identifier })
         }
     }
 }
