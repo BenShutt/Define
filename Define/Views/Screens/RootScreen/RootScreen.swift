@@ -75,6 +75,8 @@ struct RootScreen: View {
                     onTap: { push(.search) }
                 )
                 .padding(.margins)
+            } else {
+                Color.screenBackground // TODO: Improve
             }
         }
     }
