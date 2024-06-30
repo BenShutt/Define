@@ -91,8 +91,8 @@ extension View {
     /// Perform an action when a PN is received from a view
     /// - Parameters:
     ///   - name: Notification name
-    ///   - center: The notification center
-    ///   - object: The object
+    ///   - center: The notification center, defaulted
+    ///   - object: The object, defaults to nil
     ///   - action: Action to perform
     /// - Returns: A view
     func onReceive(
