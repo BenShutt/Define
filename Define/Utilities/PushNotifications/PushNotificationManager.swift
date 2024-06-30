@@ -22,9 +22,14 @@ struct PushNotificationManager {
         UNUserNotificationCenter.current().requestAuthorization(
             options: [.alert, .badge, .sound]
         ) { granted, error in
+            // Log authorization and/or error
             logger.info("Push notification authorization: \(granted)")
             if let error { log(error: error) }
-            completion(granted && error == nil)
+
+            // Completion may not be called on main
+            DispatchQueue.main.async {
+                completion(granted && error == nil)
+            }
         }
     }
 
