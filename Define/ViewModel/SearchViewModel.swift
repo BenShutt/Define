@@ -9,7 +9,7 @@ import Combine
 import SwiftUI
 import DictionaryAPI
 
-/// View model wrapper of the `SearchAPI`
+/// Observable that fetches words from the API when the search updates
 @MainActor final class SearchViewModel: ObservableObject {
 
     /// Search state
@@ -76,14 +76,14 @@ import DictionaryAPI
                 scheduler: DispatchQueue.main
             )
             .sink { [weak self] search in
-                Task { await self?.getWords(for: search) }
+                Task { await self?.refresh(for: search) }
             }
             .store(in: &cancellables)
     }
 
     /// Fetch words from the API
     /// - Parameter search: `Search`
-    private func getWords(for search: String) async {
+    private func refresh(for search: String) async {
         var state: State
         do {
             guard !search.isEmpty else { return }
