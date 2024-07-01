@@ -47,7 +47,7 @@ struct SearchHeaderView: View {
             NavigationBarBackground()
                 .ignoresSafeArea(edges: .top)
         }
-        .onChange(of: isFocused) { isFocused in
+        .onChange(of: isFocused) {
             withAnimation(.linear(duration: 0.1)) {
                 isCollapsed = isFocused
             }

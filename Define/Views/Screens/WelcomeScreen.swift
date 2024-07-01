@@ -29,7 +29,7 @@ struct WelcomeScreen: View {
             }
             .padding(.bottom, .vMargin)
         }
-        .scrollBounceBasedOnSize()
+        .scrollBounceBehavior(.basedOnSize)
         .ignoresSafeArea(.all, edges: .top)
         .screen()
         .toolbar(.hidden, for: .navigationBar)

@@ -22,7 +22,7 @@ private struct WordReminderObserver: ViewModifier {
     func body(content: Content) -> some View {
         content
             .task { await update() }
-            .onChange(of: notifications.identifiers) { _ in
+            .onChange(of: notifications.identifiers) {
                 Task { await update() }
             }
     }

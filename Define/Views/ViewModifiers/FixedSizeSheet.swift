@@ -21,7 +21,7 @@ private struct FixedSizeSheet: ViewModifier {
                 .onSizeChanged { contentHeight = $0.height }
         }
         .scrollDisabled(contentHeight <= maxHeight)
-        .scrollBounceBasedOnSize()
+        .scrollBounceBehavior(.basedOnSize)
         .frame(height: height)
         .fixedSize(horizontal: false, vertical: true)
         .presentationDetents([.height(height)])

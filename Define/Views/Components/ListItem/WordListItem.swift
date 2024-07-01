@@ -107,7 +107,7 @@ private struct PartsOfSpeechView: View {
                 }
             }
         }
-        .scrollBounceBasedOnSize()
+        .scrollBounceBehavior(.basedOnSize)
         .frame(maxWidth: .infinity)
     }
 }
