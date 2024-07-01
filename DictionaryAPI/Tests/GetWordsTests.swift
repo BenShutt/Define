@@ -11,7 +11,8 @@ import DictionaryAPI
 
 final class GetWordsTests: XCTestCase {
     func testSuccess() async throws {
-        _ = try await GetWords(word: "hello").requestAndValidate()
+        let words = try await GetWords(word: "hello").requestAndValidate()
+        XCTAssertFalse(words.isEmpty)
     }
 
     func testFailure() async throws {
