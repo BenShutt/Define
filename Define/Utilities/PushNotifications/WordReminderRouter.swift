@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-// MARK: - WordReminderRouter
-
 private struct WordReminderRouter: ViewModifier {
     @EnvironmentObject private var words: WordsViewModel
     @Environment(\.push) private var push
