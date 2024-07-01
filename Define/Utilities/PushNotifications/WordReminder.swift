@@ -68,22 +68,22 @@ struct WordReminder {
     /// Add a notification request for the given word
     /// - Parameters:
     ///   - word: Saved word to schedule a notification for
-    ///   - manager: Notification manager of requests
+    ///   - notifications: Notification manager of requests
     @MainActor static func addRequest(
         for word: SavedWord,
-        on manager: NotificationManager
+        on notifications: NotificationManager
     ) {
-        Task { await manager.add(request(for: word)) }
+        Task { await notifications.add(request(for: word)) }
     }
 
     /// Remove the notification request for the given word
     /// - Parameters:
     ///   - word: Saved word to schedule a notification for
-    ///   - manager: Notification manager of requests
+    ///   - notifications: Notification manager of requests
     @MainActor static func removeRequest(
         for wordId: SavedWordId,
-        on manager: NotificationManager
+        on notifications: NotificationManager
     ) {
-        manager.remove(identifiers: [identifier(for: wordId)])
+        notifications.remove(identifiers: [identifier(for: wordId)])
     }
 }

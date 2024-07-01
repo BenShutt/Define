@@ -9,7 +9,7 @@ import SwiftUI
 import DictionaryAPI
 
 struct ContentView: View {
-    @EnvironmentObject private var manager: NotificationManager
+    @EnvironmentObject private var notifications: NotificationManager
 
     var body: some View {
         RootNavigationStack {
@@ -19,7 +19,7 @@ struct ContentView: View {
         .tint(.appDarkGray)
         .presentOnboarding()
         .onReceive(.willPresent) { _ in
-            manager.updateIdentifiers()
+            notifications.updateIdentifiers()
         }
     }
 }

@@ -13,7 +13,7 @@ import DictionaryAPI
 /// `View` to input a word to search for definitions
 struct WordScreen: View {
     @EnvironmentObject private var words: WordsViewModel
-    @EnvironmentObject private var manager: NotificationManager
+    @EnvironmentObject private var notifications: NotificationManager
     @Environment(\.popToRoot) private var popToRoot
 
     /// Is presenting alert to delete word
@@ -87,13 +87,13 @@ struct WordScreen: View {
     /// Add a word reminder notification
     /// - Parameter savedWord: Saved word to add a reminder for
     private func addWordReminder(savedWord: SavedWord) {
-        WordReminder.addRequest(for: savedWord, on: manager)
+        WordReminder.addRequest(for: savedWord, on: notifications)
     }
 
     /// Remove a word reminder notification
     /// - Parameter savedWord: Saved word to remove a reminder for
     private func removeWordReminder(savedWordId: SavedWordId) {
-        WordReminder.removeRequest(for: savedWordId, on: manager)
+        WordReminder.removeRequest(for: savedWordId, on: notifications)
     }
 
     // MARK: - Add/Remove SavedWord

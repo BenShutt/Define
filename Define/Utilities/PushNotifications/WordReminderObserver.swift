@@ -10,19 +10,19 @@ import DictionaryAPI
 
 /// Get and set the date of a push notification reminder notification for a word
 private struct WordReminderObserver: ViewModifier {
-    @EnvironmentObject private var manager: NotificationManager
+    @EnvironmentObject private var notifications: NotificationManager
     @Binding var reminderDate: Date?
     var savedWordId: SavedWordId
 
     private func update() async {
         let identifier = WordReminder.identifier(for: savedWordId)
-        reminderDate = await manager.nextTriggerDate(with: identifier)
+        reminderDate = await notifications.nextTriggerDate(with: identifier)
     }
 
     func body(content: Content) -> some View {
         content
             .task { await update() }
-            .onChange(of: manager.identifiers) { _ in
+            .onChange(of: notifications.identifiers) { _ in
                 Task { await update() }
             }
     }

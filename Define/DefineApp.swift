@@ -14,14 +14,14 @@ struct DefineApp: App {
 
     @StateObject private var settings = UserSettings()
     @StateObject private var words = WordsViewModel() // TODO: Rename
-    @StateObject private var notificationManager = NotificationManager()
+    @StateObject private var notifications = NotificationManager()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(settings)
                 .environmentObject(words)
-                .environmentObject(notificationManager)
+                .environmentObject(notifications)
         }
     }
 }
