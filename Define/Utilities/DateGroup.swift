@@ -54,7 +54,7 @@ struct DateGroup<Element: Equatable>: Identifiable, Equatable, Comparable {
 
     static func group(
         _ elements: [Element],
-        keyPath: KeyPath<Element, Date>
+        by keyPath: KeyPath<Element, Date>
     ) -> [DateGroup] {
         elements
             .reduce(into: [:]) { map, element in

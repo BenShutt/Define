@@ -22,10 +22,10 @@ struct HomeScrollContent: View {
     var body: some View {
         HomeScrollContentView(groups: groups)
             .task {
-                groups = DateGroup.group(words, keyPath: \.createdDate)
+                groups = DateGroup.group(words, by: \.createdDate)
             }
             .onChange(of: words) {
-                groups = DateGroup.group(words, keyPath: \.createdDate)
+                groups = DateGroup.group(words, by: \.createdDate)
             }
     }
 }
