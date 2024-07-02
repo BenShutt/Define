@@ -11,7 +11,10 @@ public struct Word: JSONModel {
     public var word: String
     public var meanings: [Meaning]
 
-    public init(word: String, meanings: [Meaning] = []) {
+    public init(
+        word: String,
+        meanings: [Meaning]
+    ) {
         self.word = word
         self.meanings = meanings
     }
@@ -23,6 +26,14 @@ public extension Word {
     struct Meaning: JSONModel {
         public var partOfSpeech: String
         public var definitions: [Definition]
+
+        public init(
+            partOfSpeech: String,
+            definitions: [Definition]
+        ) {
+            self.partOfSpeech = partOfSpeech
+            self.definitions = definitions
+        }
     }
 }
 
@@ -32,6 +43,14 @@ public extension Word.Meaning {
     struct Definition: JSONModel {
         public var definition: String
         public var example: String?
+
+        public init(
+            definition: String,
+            example: String?
+        ) {
+            self.definition = definition
+            self.example = example
+        }
     }
 }
 
@@ -48,23 +67,6 @@ extension Word: Equatable {
 extension Word: Comparable {
     public static func < (lhs: Word, rhs: Word) -> Bool {
         lhs.word < rhs.word
-    }
-}
-
-// MARK: - Word + ExpressibleByStringLiteral
-
-extension Word: ExpressibleByStringLiteral {
-    public init(stringLiteral value: StringLiteralType) {
-        word = value
-        meanings = []
-    }
-}
-
-// MARK: - Meaning + Extensions
-
-public extension Word.Meaning {
-    var category: PartOfSpeech? {
-        PartOfSpeech(value: partOfSpeech)
     }
 }
 

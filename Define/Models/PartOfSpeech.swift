@@ -8,7 +8,7 @@
 import Foundation
 
 /// A category of word
-public enum PartOfSpeech: String, CaseIterable, Identifiable {
+enum PartOfSpeech: String, CaseIterable, Identifiable {
     case adjective
     case adverb
     case interjection
@@ -17,9 +17,9 @@ public enum PartOfSpeech: String, CaseIterable, Identifiable {
     case pronoun
     case verb
 
-    public var id: Self { self }
+    var id: Self { self }
 
-    public init?(value: String) {
+    init?(value: String) {
         self.init(rawValue: value.lowercased())
     }
 }

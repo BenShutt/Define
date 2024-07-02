@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 import DictionaryAPI
 import CubeFoundation
 
@@ -26,7 +27,6 @@ import CubeFoundation
         defer { isLoading = false }
 
         let words = try await GetWords(word: term).requestAndValidate()
-        try await Task.sleep(for: .seconds(5))
         word = try words.first ?! WordPreviewError.empty
     }
 }

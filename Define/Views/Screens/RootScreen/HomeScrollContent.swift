@@ -6,14 +6,31 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct HomeScrollContent: View {
-    @EnvironmentObject private var words: WordsViewModel
 
-    /// Group words into groups by date
-    private var groups: DateGroups { // TODO: Performance, add to view-model
-        DateGroup.group(words.words, keyPath: \.savedDate)
+    /// Query the SwiftData database to get the saved words
+    @Query(sort: \SavedWord.createdDate, order: .reverse) var words: [SavedWord]
+
+    /// Group of the saved words by date
+    @State private var groups: DateGroups = []
+
+    var body: some View {
+        HomeScrollContentView(groups: groups)
+            .task {
+                groups = DateGroup.group(words, keyPath: \.createdDate)
+            }
+            .onChange(of: words) {
+                groups = DateGroup.group(words, keyPath: \.createdDate)
+            }
     }
+}
+
+// MARK: - HomeScrollContentView
+
+private struct HomeScrollContentView: View {
+    var groups: DateGroups
 
     var body: some View {
         if groups.isEmpty {
@@ -35,19 +52,14 @@ struct HomeScrollContent: View {
 // MARK: - WordsSection
 
 private struct WordsSection: View {
-    @Environment(\.push) private var push
     var group: DateGroup
     var savedWords: [SavedWord]
 
     var body: some View {
         Section(content: {
             ForEach(savedWords) { savedWord in
-                Button(action: {
-                    push(.word(savedWord.word))
-                }, label: {
-                    WordListItem(word: savedWord.word)
-                })
-                .margined(.marginedStack)
+                WordListItemButton(source: .saved(savedWord))
+                    .margined(.marginedStack)
             }
         }, header: {
             WordsSectionHeader(title: group.title)

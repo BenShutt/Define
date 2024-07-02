@@ -13,15 +13,18 @@ struct DefineApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     @StateObject private var settings = UserSettings()
-    @StateObject private var words = WordsViewModel() // TODO: Rename
     @StateObject private var notifications = NotificationManager()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(settings)
-                .environmentObject(words)
                 .environmentObject(notifications)
+                .modelContainer(for: [
+                    SavedWord.self,
+                    Meaning.self,
+                    Definition.self
+                ])
         }
     }
 }
@@ -31,7 +34,6 @@ struct DefineApp: App {
 extension View {
     @MainActor func environmentObjects() -> some View {
         environmentObject(UserSettings())
-            .environmentObject(WordsViewModel())
             .environmentObject(NotificationManager())
     }
 }

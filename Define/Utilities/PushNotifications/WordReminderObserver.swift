@@ -12,10 +12,10 @@ import DictionaryAPI
 private struct WordReminderObserver: ViewModifier {
     @EnvironmentObject private var notifications: NotificationManager
     @Binding var reminderDate: Date?
-    var savedWordId: SavedWordId
+    var savedWord: SavedWord
 
     private func update() async {
-        let identifier = WordReminder.identifier(for: savedWordId)
+        let identifier = WordReminder.identifier(for: savedWord.word)
         reminderDate = await notifications.nextTriggerDate(with: identifier)
     }
 
@@ -33,11 +33,11 @@ private struct WordReminderObserver: ViewModifier {
 extension View {
     func observeWordReminder(
         reminderDate: Binding<Date?>,
-        savedWordId: SavedWordId
+        savedWord: SavedWord
     ) -> some View {
         modifier(WordReminderObserver(
             reminderDate: reminderDate,
-            savedWordId: savedWordId
+            savedWord: savedWord
         ))
     }
 }
@@ -67,7 +67,7 @@ struct WordReminderButton: View {
             Image(systemName: systemName)
                 .observeWordReminder(
                     reminderDate: $reminderDate,
-                    savedWordId: savedWord.id
+                    savedWord: savedWord
                 )
         })
     }
@@ -81,7 +81,7 @@ struct WordReminderView: View {
     var savedWord: SavedWord
 
     private var title: String {
-        savedWord.word.title
+        savedWord.apiWord.title
     }
 
     var body: some View {
@@ -96,11 +96,10 @@ struct WordReminderView: View {
                 .offset(x: 16, y: -16)
         })
         .disabled(reminderDate == nil)
-        .compositingGroup()
         .opacity(reminderDate == nil ? 0 : 1)
         .observeWordReminder(
             reminderDate: $reminderDate,
-            savedWordId: savedWord.id
+            savedWord: savedWord
         )
         .sheet(item: $presentedTimeRemaining) { timeRemaining in
             InformationSheet(

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import DictionaryAPI
 
 /// `View` to input a word to search for definitions
 struct SearchScreen: View {
@@ -47,7 +48,7 @@ struct SearchScreen: View {
 // MARK: - SearchStateView
 
 private struct SearchStateView: View {
-    @Environment(\.push) private var push
+    @Environment(\.modelContext) private var modelContext
     @ObservedObject var viewModel: SearchViewModel
 
     var body: some View {
@@ -72,12 +73,11 @@ private struct SearchStateView: View {
             )
 
         case let .success(words):
-            MarginedList(words.identified) { indexElement in
-                Button(action: {
-                    push(.word(indexElement.element))
-                }, label: {
-                    WordListItem(word: indexElement.element)
-                })
+            MarginedList(words) { word in
+                WordListItemButton(source: .init(
+                    modelContext: modelContext,
+                    word: word
+                ))
             }
         }
     }

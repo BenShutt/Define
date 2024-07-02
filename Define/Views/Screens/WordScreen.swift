@@ -6,14 +6,15 @@
 //
 
 import SwiftUI
+import SwiftData
 import DictionaryAPI
 
 // TODO: Spacing should be the same between meanings and words (home and here)
 
 /// `View` to input a word to search for definitions
 struct WordScreen: View {
-    @EnvironmentObject private var words: WordsViewModel
     @EnvironmentObject private var notifications: NotificationManager
+    @Environment(\.modelContext) private var modelContext
     @Environment(\.popToRoot) private var popToRoot
 
     /// Is presenting alert to delete word
@@ -22,45 +23,36 @@ struct WordScreen: View {
     /// Is presenting alert to delete word reminder
     @State private var isPresentingDeleteWordReminderAlert = false
 
-    /// `Word` to define
-    var word: Word
-
-    /// Get the saved word
-    private var savedWord: SavedWord? {
-        words.words.first { $0.word == word }
-    }
-
-    /// Is the word currently saved
-    private var isWordSaved: Bool {
-        savedWord != nil
-    }
+    /// Word to define
+    var source: WordSource
 
     var body: some View {
         WordContentView(
-            word: word,
-            isWordSaved: isWordSaved,
-            onSave: addWord
+            source: source,
+            onSave: {
+                addWord(savedWord: source.word.makeSavedWord())
+            }
         )
         .screen()
         .deleteWordAlert(
-            word: word,
+            title: source.word.title,
             isPresented: $isPresentingDeleteWordAlert,
             onDelete: {
-                guard let savedWord else { return }
+                guard let savedWord = source.savedWord else { return }
                 removeWord(savedWord: savedWord)
             }
         )
         .deleteWordReminderAlert(
-            word: word,
+            title: source.word.title,
             isPresented: $isPresentingDeleteWordReminderAlert,
             onDelete: {
-                guard let savedWord else { return }
-                removeWordReminder(savedWordId: savedWord.id)
+                guard let savedWord = source.savedWord else { return }
+                removeWordReminder(savedWord: savedWord)
             }
         )
-        .navigationBar(title: word.title)
+        .navigationBar(title: source.word.title)
         .toolbar {
-            if let savedWord {
+            if let savedWord = source.savedWord {
                 ToolbarItem(placement: .topBarTrailing) {
                     WordReminderButton(savedWord: savedWord) { hasReminder in
                         if hasReminder {
@@ -85,33 +77,33 @@ struct WordScreen: View {
     // MARK: - Add/Remove WordReminder
 
     /// Add a word reminder notification
-    /// - Parameter savedWord: Saved word to add a reminder for
+    /// - Parameter savedWord: Word to add a reminder for
     private func addWordReminder(savedWord: SavedWord) {
         WordReminder.addRequest(for: savedWord, on: notifications)
     }
 
     /// Remove a word reminder notification
-    /// - Parameter savedWord: Saved word to remove a reminder for
-    private func removeWordReminder(savedWordId: SavedWordId) {
-        WordReminder.removeRequest(for: savedWordId, on: notifications)
+    /// - Parameter savedWord: Word to remove a reminder for
+    private func removeWordReminder(savedWord: SavedWord) {
+        WordReminder.removeRequest(for: savedWord, on: notifications)
     }
 
     // MARK: - Add/Remove SavedWord
 
     /// Add the word
-    private func addWord() {
-        let savedWord = SavedWord(word: word)
-        words.addWord(savedWord)
+    /// - Parameter savedWord: The word to add
+    private func addWord(savedWord: SavedWord) {
+        modelContext.insert(savedWord)
         addWordReminder(savedWord: savedWord)
         UINotificationFeedbackGenerator().notificationOccurred(.success)
         popToRoot()
     }
 
     /// Remove the word
-    /// - Parameter savedWord: The saved word to remove
+    /// - Parameter savedWord: The word to remove
     private func removeWord(savedWord: SavedWord) {
-        words.removeWord(savedWord)
-        removeWordReminder(savedWordId: savedWord.id)
+        modelContext.delete(savedWord)
+        removeWordReminder(savedWord: savedWord)
         popToRoot()
     }
 }
@@ -120,7 +112,7 @@ struct WordScreen: View {
 
 private extension View {
     func deleteWordAlert(
-        word: Word,
+        title: String,
         isPresented: Binding<Bool>,
         onDelete: @escaping () -> Void
     ) -> some View {
@@ -135,13 +127,13 @@ private extension View {
                 }
             },
             message: {
-                Text("word_delete_subtitle \(word.title)")
+                Text("word_delete_subtitle \(title)")
             }
         )
     }
 
     func deleteWordReminderAlert(
-        word: Word,
+        title: String,
         isPresented: Binding<Bool>,
         onDelete: @escaping () -> Void
     ) -> some View {
@@ -160,7 +152,7 @@ private extension View {
                 }
             },
             message: {
-                Text("word_reminder_delete_subtitle \(word.title)")
+                Text("word_reminder_delete_subtitle \(title)")
             }
         )
     }
@@ -169,28 +161,27 @@ private extension View {
 // MARK: - WordContentView
 
 private struct WordContentView: View {
-    var word: Word
-    var isWordSaved: Bool
+    var source: WordSource
     var onSave: () -> Void
 
     var body: some View {
-        if word.meanings.isEmpty {
+        if source.word.meanings.isEmpty {
             SearchEmptyView(
                 lottie: .searchNoResults,
                 title: "word_empty_title",
-                subtitle: "word_empty_subtitle \(word.title)"
+                subtitle: "word_empty_subtitle \(source.word.title)"
             )
             .frame(
                 maxWidth: .infinity,
                 maxHeight: .infinity,
                 alignment: .top
             )
-        } else if !isWordSaved {
+        } else if !source.isSaved {
             MarginedList(
-                word.meanings.identified,
+                source.word.meanings,
                 isAnimated: true
-            ) { item in
-                MeaningListItem(meaning: item.element)
+            ) { meaning in
+                MeaningListItem(meaning: meaning)
             }
             .stickyButton(
                 title: "word_save_button",
@@ -201,10 +192,10 @@ private struct WordContentView: View {
             VStack(spacing: 0) {
                 WordSavedView()
                 MarginedList(
-                    word.meanings.identified,
+                    source.word.meanings,
                     isAnimated: true
-                ) { item in
-                    MeaningListItem(meaning: item.element)
+                ) { meaning in
+                    MeaningListItem(meaning: meaning)
                 }
             }
         }
@@ -215,7 +206,9 @@ private struct WordContentView: View {
 
 #Preview {
     NavigationStack {
-        WordScreen(word: "Preview")
+        WordPreviewView(word: "hello") { word in
+            WordScreen(source: .api(word))
+        }
     }
     .environmentObjects()
 }

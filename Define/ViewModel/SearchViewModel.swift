@@ -40,7 +40,7 @@ import DictionaryAPI
     /// `Set` of `AnyCancellable`
     private var cancellables = Set<AnyCancellable>()
 
-    /// `[Word]` returned from the API
+    /// Words returned from the API
     var words: [Word] {
         guard case .success(let words) = state else { return [] }
         return words.sorted(by: <)
@@ -87,7 +87,6 @@ import DictionaryAPI
         var state: State
         do {
             guard !search.isEmpty else { return }
-            guard isSearchStillValid(search) else { return }
             let words = try await GetWords(word: search).requestAndValidate()
             guard !words.isEmpty else { throw SearchViewModelError.noResults }
             state = .success(words)
@@ -103,7 +102,7 @@ import DictionaryAPI
 
 // MARK: - SearchViewModelError
 
-/// Error with `SearchViewModel`
+/// Error in `SearchViewModel`
 enum SearchViewModelError: Error {
 
     /// No results found for the search

@@ -20,10 +20,10 @@ struct MeaningListItem: View {
                     color: meaning.category?.backgroundColor ?? .appLightGray
                 ))
 
-            ForEach(meaning.definitions.identified) { item in
+            ForEach(meaning.definitions.zipped, id: \.0) { _, definition in
                 VStack(spacing: 0) {
                     Separator(color: .separator)
-                    DefinitionListItem(definition: item.element)
+                    DefinitionListItem(definition: definition)
                 }
             }
         }

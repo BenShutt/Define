@@ -5,28 +5,100 @@
 //  Created by Ben Shutt on 26/12/2022.
 //
 
-import SwiftUI
+import Foundation
+import SwiftData
 import DictionaryAPI
 
-// TODO: Migrate to SwiftData
+// MARK: - SavedWord
 
-typealias SavedWordId = UUID
+@Model
+class SavedWord: Equatable, Hashable {
+    @Attribute(.unique) var word: String
+    @Relationship(deleteRule: .cascade) var meanings: [Meaning]
+    var createdDate: Date
 
-/// A saved word
-struct SavedWord: JSONModel, Identifiable, Comparable {
+    init(
+        word: String,
+        meanings: [Meaning],
+        createdDate: Date = .now
+    ) {
+        self.word = word
+        self.meanings = meanings
+        self.createdDate = createdDate
+    }
+}
 
-    /// `UUID`
-    var id = SavedWordId()
+// MARK: - Meaning
 
-    /// The word that was saved
-    var word: Word
+@Model
+class Meaning: Equatable, Hashable {
+    var partOfSpeech: String
+    @Relationship(deleteRule: .cascade) var definitions: [Definition]
 
-    /// `Date`
-    var savedDate = Date()
+    init(
+        partOfSpeech: String,
+        definitions: [Definition]
+    ) {
+        self.partOfSpeech = partOfSpeech
+        self.definitions = definitions
+    }
+}
 
-    // MARK: - Comparable
+// MARK: - Definition
 
-    static func < (lhs: SavedWord, rhs: SavedWord) -> Bool {
-        lhs.savedDate < rhs.savedDate
+@Model
+class Definition: Equatable, Hashable {
+    var definition: String
+    var example: String?
+
+    init(
+        definition: String,
+        example: String?
+    ) {
+        self.definition = definition
+        self.example = example
+    }
+}
+
+// MARK: - SavedWord + Word
+
+extension SavedWord {
+    var apiWord: Word {
+        .init(
+            word: word,
+            meanings: meanings.map { meaning in
+                .init(
+                    partOfSpeech: meaning.partOfSpeech,
+                    definitions: meaning.definitions.map { definition in
+                        .init(
+                            definition: definition.definition,
+                            example: definition.example
+                        )
+                    }
+                )
+            }
+        )
+    }
+}
+
+// MARK: - Word + SavedWord
+
+extension Word {
+    func makeSavedWord(createdDate: Date = .now) -> SavedWord {
+        .init(
+            word: word,
+            meanings: meanings.map { meaning in
+                .init(
+                    partOfSpeech: meaning.partOfSpeech,
+                    definitions: meaning.definitions.map { definition in
+                        .init(
+                            definition: definition.definition,
+                            example: definition.example
+                        )
+                    }
+                )
+            },
+            createdDate: createdDate
+        )
     }
 }

@@ -6,17 +6,22 @@
 //
 
 import SwiftUI
+import SwiftData
 
 private struct WordReminderRouter: ViewModifier {
-    @EnvironmentObject private var words: WordsViewModel
+    @Environment(\.modelContext) var modelContext
     @Environment(\.push) private var push
+
+    private var wordDb: WordDb {
+        WordDb(modelContext: modelContext)
+    }
 
     func body(content: Content) -> some View {
         content
             .onReceive(.didReceive) { notification in
-                let id = WordReminder.savedWordId(from: notification)
-                guard let id, let word = words.word(for: id) else { return }
-                push(.word(word.word))
+                guard let word = WordReminder.word(from: notification) else { return }
+                guard let savedWord = wordDb.fetchOrNil(word: word) else { return }
+                push(.word(.saved(savedWord)))
             }
     }
 }

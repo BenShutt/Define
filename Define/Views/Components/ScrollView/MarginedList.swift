@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// Scrolled vertical stack of elements
-struct MarginedList<Element: Identifiable, Content: View>: View {
+struct MarginedList<Element, Content: View>: View {
 
     /// `EdgeInsets` to apply as padding around the edge of the cells
     private let margins: EdgeInsets = .margins

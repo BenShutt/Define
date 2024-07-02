@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-/// Map `DateGroup` to its `SavedWord`s
+// TODO: Recompute start of each day?
+
+/// Map a `DateGroup` to its respective `[Word]`
 typealias DateGroups = [(group: DateGroup, savedWords: [SavedWord])]
 
 enum DateGroup: Int, Equatable, Hashable, Comparable {
@@ -46,7 +48,7 @@ enum DateGroup: Int, Equatable, Hashable, Comparable {
     }
 }
 
-// MARK: DateGroup + SwiftUI
+// MARK: DateGroup + LocalizedStringKey
 
 extension DateGroup {
     var title: LocalizedStringKey {

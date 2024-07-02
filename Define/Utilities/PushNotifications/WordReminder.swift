@@ -12,39 +12,37 @@ import DictionaryAPI
 /// Wraps the logic of reminder push notifications
 struct WordReminder {
 
-    /// Key in the word reminder user info payload that maps to the saved word ID
-    private static let userInfoKey = "saved_word_id"
+    /// Key in the word reminder user info payload that maps to the word
+    private static let userInfoKey = "word"
 
     /// Number of days to wait before sending the word reminder push notification
     private static let remindAfterDays = 3
 
     /// Identifier of the notification request
-    /// - Parameter id: ID of the saved word
+    /// - Parameter word: Word the notification regards
     /// - Returns: Notification identifier
-    static func identifier(for id: SavedWordId) -> String {
-        "word_reminder_\(id.uuidString.lowercased())"
+    static func identifier(for word: String) -> String {
+        "word_reminder_\(word.lowercased())"
     }
 
-    /// Get the ID of the saved word from the notification user info payload
-    /// - Parameter notification: Notification received
-    /// - Returns: The ID of the saved word or nil
-    static func savedWordId(from notification: Notification) -> SavedWordId? {
-        let uuidString = notification.userInfo?[userInfoKey] as? String
-        guard let uuidString else { return nil }
-        return UUID(uuidString: uuidString)
+    /// Get the word from the notification user info payload
+    /// - Parameter notification: The notification received
+    /// - Returns: The word or nil
+    static func word(from notification: Notification) -> String? {
+        notification.userInfo?[userInfoKey] as? String
     }
 
     /// Make a notification request for a local push notification to remind the user about a word
-    /// - Parameter word: The word to remind the user about
+    /// - Parameter savedWord: The word to remind the user about
     /// - Returns: A notification request
-    static func request(for word: SavedWord) -> UNNotificationRequest {
+    static func request(for savedWord: SavedWord) -> UNNotificationRequest {
         let content = UNMutableNotificationContent()
-        content.title = word.word.notificationTitle
-        if let subtitle = word.word.notificationSubtitle {
+        content.title = savedWord.notificationTitle
+        if let subtitle = savedWord.notificationSubtitle {
             content.body = subtitle
         }
         content.sound = .default
-        content.userInfo = [userInfoKey: word.id.uuidString]
+        content.userInfo = [userInfoKey: savedWord.word]
 
         let calendar = Calendar.current
         let date = calendar.adding(.day, value: remindAfterDays, to: Date())
@@ -59,7 +57,7 @@ struct WordReminder {
         )
 
         return UNNotificationRequest(
-            identifier: identifier(for: word.id),
+            identifier: identifier(for: savedWord.word),
             content: content,
             trigger: trigger
         )
@@ -67,23 +65,23 @@ struct WordReminder {
 
     /// Add a notification request for the given word
     /// - Parameters:
-    ///   - word: Saved word to schedule a notification for
+    ///   - savedWord: Word to schedule the notification for
     ///   - notifications: Notification manager of requests
     @MainActor static func addRequest(
-        for word: SavedWord,
+        for savedWord: SavedWord,
         on notifications: NotificationManager
     ) {
-        Task { await notifications.add(request(for: word)) }
+        Task { await notifications.add(request(for: savedWord)) }
     }
 
     /// Remove the notification request for the given word
     /// - Parameters:
-    ///   - word: Saved word to schedule a notification for
+    ///   - savedWord: Word to remove the notification for
     ///   - notifications: Notification manager of requests
     @MainActor static func removeRequest(
-        for wordId: SavedWordId,
+        for savedWord: SavedWord,
         on notifications: NotificationManager
     ) {
-        notifications.remove(identifiers: [identifier(for: wordId)])
+        notifications.remove(identifiers: [identifier(for: savedWord.word)])
     }
 }

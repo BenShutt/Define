@@ -15,15 +15,15 @@ enum NavigationRoute: Hashable {
     case search
 
     /// Word detail screen (meanings and their definitions)
-    case word(Word)
+    case word(WordSource)
 
-    /// Map to a respective view
+    /// Map each route to its respective view
     @ViewBuilder var screen: some View {
         switch self {
         case .search:
             SearchScreen()
-        case let .word(word):
-            WordScreen(word: word)
+        case let .word(source):
+            WordScreen(source: source)
         }
     }
 }

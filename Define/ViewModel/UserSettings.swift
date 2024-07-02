@@ -15,6 +15,7 @@ import SwiftUI
 // MARK: - UserDefaultKey
 
 /// Keys in the `UserDefaults`
+/// - Note: Useful for keeping track of what is persisted
 enum UserDefaultKey: String {
 
     /// Version number of the app
@@ -25,9 +26,6 @@ enum UserDefaultKey: String {
 
     /// Are the words expanded or collapsed
     case wordsExpanded
-
-    /// The user's saved words
-    case words
 }
 
 // MARK: - Extensions
@@ -53,7 +51,15 @@ extension UserDefaults {
 // MARK: - AppStorage + UserDefaultKey
 
 extension AppStorage where Value == Bool {
-    init(wrappedValue: Value, _ key: UserDefaultKey, store: UserDefaults? = nil) {
-        self.init(wrappedValue: wrappedValue, key.rawValue, store: store)
+    init(
+        wrappedValue: Value,
+        _ key: UserDefaultKey,
+        store: UserDefaults? = nil
+    ) {
+        self.init(
+            wrappedValue: wrappedValue,
+            key.rawValue,
+            store: store
+        )
     }
 }

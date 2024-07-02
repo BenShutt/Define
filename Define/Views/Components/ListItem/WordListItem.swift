@@ -8,16 +8,29 @@
 import SwiftUI
 import DictionaryAPI
 
+struct WordListItemButton: View {
+    @Environment(\.push) private var push
+    var source: WordSource
+
+    var body: some View {
+        Button(action: {
+            push(.word(source))
+        }, label: {
+            WordListItem(source: source)
+        })
+    }
+}
+
 /// `ListItemView` for a `Word`
 struct WordListItem: View {
     @EnvironmentObject private var settings: UserSettings
-    var word: Word
+    var source: WordSource
 
     var body: some View {
         if settings.wordsExpanded {
-            ExpandedWordListItem(word: word)
+            ExpandedWordListItem(source: source)
         } else {
-            CollapsedWordListItem(word: word.title)
+            CollapsedWordListItem(title: source.word.title)
         }
     }
 }
@@ -25,11 +38,11 @@ struct WordListItem: View {
 // MARK: - CollapsedWordListItem
 
 private struct CollapsedWordListItem: View {
-    var word: String
+    var title: String
 
     var body: some View {
         ListItem(
-            title: word,
+            title: title,
             leading: {},
             trailing: {
                 ChevronView()
@@ -41,34 +54,28 @@ private struct CollapsedWordListItem: View {
 // MARK: - ExpandedWordListItem
 
 private struct ExpandedWordListItem: View {
-    @EnvironmentObject private var words: WordsViewModel
+    @Environment(\.modelContext) private var modelContext
     @State private var addedSince: LocalizedStringKey?
-    var word: Word
+    var source: WordSource
 
-    /// Are there any parts of speech
-    private var hasCategories: Bool {
-        !word.partsOfSpeech.isEmpty
-    }
-
-    /// Get the saved word, if exists
-    private var savedWord: SavedWord? {
-        words.words.first { $0.word == word }
+    private var partsOfSpeech: [String] {
+        source.word.partsOfSpeech
     }
 
     var body: some View {
         HStack(spacing: .mediumLarge) {
             VStack(spacing: 0) {
-                Text(verbatim: word.title)
+                Text(verbatim: source.word.title)
                     .textStyle(.h3, fill: .leading)
 
-                if let subtitle = word.subtitle {
+                if let subtitle = source.word.subtitle {
                     Text(subtitle)
                         .textStyle(.body, lineLimit: 3, fill: .leading)
                         .padding(.top, .smallMedium)
                 }
 
-                if hasCategories {
-                    PartsOfSpeechView(partsOfSpeech: word.partsOfSpeech)
+                if !partsOfSpeech.isEmpty {
+                    PartsOfSpeechView(partsOfSpeech: partsOfSpeech)
                         .padding(.top, .mediumLarge)
                 }
 
@@ -82,14 +89,14 @@ private struct ExpandedWordListItem: View {
             ChevronView()
         }
         .overlay(alignment: .topTrailing) {
-            if let savedWord {
+            if let savedWord = source.savedWord {
                 WordReminderView(savedWord: savedWord)
             }
         }
         .padding(.margins)
         .background(Color.appWhite)
         .onReceiveTimer {
-            addedSince = savedWord?.addedSince
+            addedSince = source.savedWord?.addedSince
         }
     }
 }
@@ -116,7 +123,7 @@ private struct PartsOfSpeechView: View {
 
 #Preview {
     WordPreviewView(word: "hello") { word in
-        WordListItem(word: word)
+        WordListItem(source: .api(word))
     }
     .screen()
     .environmentObjects()

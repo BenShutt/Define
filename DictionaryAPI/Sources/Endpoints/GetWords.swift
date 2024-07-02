@@ -37,7 +37,7 @@ public struct GetWords: Endpoint {
     }
 
     /// Get `Word`s and validate the models
-    public func requestAndValidate() async throws -> [Word] {
+    public func requestAndValidate() async throws -> ResponseBody {
         var words = try await request()
         try words.validate()
         return words
