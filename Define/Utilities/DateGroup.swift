@@ -9,18 +9,37 @@ import SwiftUI
 
 // TODO: Recompute start of each day?
 
-/// Map a `DateGroup` to its respective `[Word]`
-typealias DateGroups = [(group: DateGroup, savedWords: [SavedWord])]
+struct DateGroup<Element: Equatable>: Identifiable, Equatable, Comparable {
+    enum Group: Int, Equatable {
+        case today
+        case lastWeek
+        case lastMonth
+        case other
+    }
 
-enum DateGroup: Int, Equatable, Hashable, Comparable {
-    case today
-    case lastWeek
-    case lastMonth
-    case other
+    var group: Group
+    var elements: [Element]
+    var id: Group { group }
 
-    private static let calendar: Calendar = .current
+    var title: LocalizedStringKey {
+        switch group {
+        case .today: "date_group_today"
+        case .lastWeek: "date_group_last_week"
+        case .lastMonth: "date_group_last_month"
+        case .other: "date_group_other"
+        }
+    }
 
-    private static func group(for date: Date) -> DateGroup {
+    // MARK: - Comparable
+
+    static func < (lhs: Self, rhs: Self) -> Bool {
+        lhs.group.rawValue < rhs.group.rawValue
+    }
+
+    // MARK: - Group
+
+    private static func group(for date: Date) -> Group {
+        let calendar: Calendar = .current
         let today = calendar.startOfDay(for: Date())
         guard date < today else { return .today }
 
@@ -33,34 +52,16 @@ enum DateGroup: Int, Equatable, Hashable, Comparable {
         return .other
     }
 
-    static func group<Element>(
+    static func group(
         _ elements: [Element],
         keyPath: KeyPath<Element, Date>
-    ) -> [(DateGroup, [Element])] {
+    ) -> [DateGroup] {
         elements
             .reduce(into: [:]) { map, element in
                 let group = group(for: element[keyPath: keyPath])
                 map[group, default: []] += [element]
             }
-            .sorted { $0.key < $1.key }
-    }
-
-    // MARK: - Comparable
-
-    static func < (lhs: DateGroup, rhs: DateGroup) -> Bool {
-        lhs.rawValue < rhs.rawValue
-    }
-}
-
-// MARK: DateGroup + LocalizedStringKey
-
-extension DateGroup {
-    var title: LocalizedStringKey {
-        switch self {
-        case .today: "date_group_today"
-        case .lastWeek: "date_group_last_week"
-        case .lastMonth: "date_group_last_month"
-        case .other: "date_group_other"
-        }
+            .map { DateGroup(group: $0.key, elements: $0.value) }
+            .sorted()
     }
 }

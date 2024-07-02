@@ -8,6 +8,9 @@
 import SwiftUI
 import SwiftData
 
+/// Shorthand for an array of date groups of saved words
+private typealias DateGroups = [DateGroup<SavedWord>]
+
 struct HomeScrollContent: View {
 
     /// Query the SwiftData database to get the saved words
@@ -37,11 +40,8 @@ private struct HomeScrollContentView: View {
             HomeEmptyView()
         } else {
             LazyVStack(spacing: 0, pinnedViews: .sectionHeaders) {
-                ForEach(groups, id: \.0) { group, savedWords in
-                    WordsSection(
-                        group: group,
-                        savedWords: savedWords
-                    )
+                ForEach(groups) { group in
+                    WordsSection(group: group)
                 }
             }
             .marginedStack(.marginedStack)
@@ -52,12 +52,11 @@ private struct HomeScrollContentView: View {
 // MARK: - WordsSection
 
 private struct WordsSection: View {
-    var group: DateGroup
-    var savedWords: [SavedWord]
+    var group: DateGroup<SavedWord>
 
     var body: some View {
         Section(content: {
-            ForEach(savedWords) { savedWord in
+            ForEach(group.elements) { savedWord in
                 WordListItemButton(source: .saved(savedWord))
                     .margined(.marginedStack)
             }
