@@ -18,18 +18,16 @@ enum DateGroup: Int, Equatable, Hashable, Comparable {
     case lastMonth
     case other
 
-    static func < (lhs: DateGroup, rhs: DateGroup) -> Bool {
-        lhs.rawValue < rhs.rawValue
-    }
+    private static let calendar: Calendar = .current
 
     private static func group(for date: Date) -> DateGroup {
-        let today = Calendar.current.startOfDay(for: Date())
+        let today = calendar.startOfDay(for: Date())
         guard date < today else { return .today }
 
-        let lastWeek = Calendar.current.adding(.weekOfYear, value: -1, to: today)
+        let lastWeek = calendar.adding(.weekOfYear, value: -1, to: today) ?? today
         guard date < lastWeek else { return .lastWeek }
 
-        let lastMonth = Calendar.current.adding(.month, value: -1, to: today)
+        let lastMonth = calendar.adding(.month, value: -1, to: today) ?? today
         guard date < lastMonth else { return .lastMonth }
 
         return .other
@@ -45,6 +43,12 @@ enum DateGroup: Int, Equatable, Hashable, Comparable {
                 map[group, default: []] += [element]
             }
             .sorted { $0.key < $1.key }
+    }
+
+    // MARK: - Comparable
+
+    static func < (lhs: DateGroup, rhs: DateGroup) -> Bool {
+        lhs.rawValue < rhs.rawValue
     }
 }
 

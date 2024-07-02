@@ -48,7 +48,7 @@ struct WordReminder {
         let date = calendar.adding(.day, value: remindAfterDays, to: Date())
         let dateComponents = calendar.dateComponents(
             [.year, .month, .day, .hour, .minute, .second],
-            from: date
+            from: date ?? Date()
         )
 
         let trigger = UNCalendarNotificationTrigger(
