@@ -11,6 +11,7 @@ import SwiftData
 /// Shorthand for an array of date groups of saved words
 private typealias DateGroups = [DateGroup<SavedWord>]
 
+/// View that is shown in a scroll view of the root screen
 struct HomeScrollContent: View {
 
     /// Query the SwiftData database to get the saved words
@@ -19,14 +20,15 @@ struct HomeScrollContent: View {
     /// Group of the saved words by date
     @State private var groups: DateGroups = []
 
+    /// Group the saved words loaded from the swift data database
+    private func reload() {
+        groups = DateGroup.group(words, by: \.createdDate)
+    }
+
     var body: some View {
         HomeScrollContentView(groups: groups)
-            .task {
-                groups = DateGroup.group(words, by: \.createdDate)
-            }
-            .onChange(of: words) {
-                groups = DateGroup.group(words, by: \.createdDate)
-            }
+            .task { reload() }
+            .onChange(of: words) { reload() }
     }
 }
 

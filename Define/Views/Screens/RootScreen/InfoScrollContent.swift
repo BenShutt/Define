@@ -8,6 +8,7 @@
 import SwiftUI
 import AppIcon
 
+/// View that is shown in a scroll view of the root screen
 struct InfoScrollContent: View {
     @EnvironmentObject private var settings: UserSettings
     @Environment(\.openURL) private var openURL
