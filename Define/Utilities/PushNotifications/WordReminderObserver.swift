@@ -81,7 +81,7 @@ struct WordReminderView: View {
     var savedWord: SavedWord
 
     private var title: String {
-        savedWord.apiWord.title
+        savedWord.model.title
     }
 
     var body: some View {

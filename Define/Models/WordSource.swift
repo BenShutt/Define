@@ -16,7 +16,7 @@ enum WordSource: Equatable, Hashable {
     var word: Word {
         switch self {
         case let .api(word): word
-        case let .saved(savedWord): savedWord.apiWord
+        case let .saved(savedWord): savedWord.model
         }
     }
 
@@ -104,12 +104,12 @@ extension SavedWord {
 
     /// Localized notification title
     var notificationTitle: String {
-        String(localized: "reminder_push_title \(apiWord.title)")
+        String(localized: "reminder_push_title \(model.title)")
     }
 
     /// Localized notification subtitle
     var notificationSubtitle: String? {
-        apiWord.subtitle
+        model.subtitle
     }
 
     /// Formatted string of how long ago the word was saved

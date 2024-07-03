@@ -30,7 +30,7 @@ struct WordScreen: View {
         WordContentView(
             source: source,
             onSave: {
-                addWord(savedWord: source.word.makeSavedWord())
+                addWord(savedWord: source.word.savedWord())
             }
         )
         .screen()

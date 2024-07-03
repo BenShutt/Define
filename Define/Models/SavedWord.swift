@@ -63,7 +63,7 @@ class Definition: Equatable, Hashable {
 // MARK: - SavedWord + Word
 
 extension SavedWord {
-    var apiWord: Word {
+    var model: Word {
         .init(
             word: word,
             meanings: meanings.map { meaning in
@@ -84,7 +84,7 @@ extension SavedWord {
 // MARK: - Word + SavedWord
 
 extension Word {
-    func makeSavedWord(createdDate: Date = .now) -> SavedWord {
+    func savedWord(createdDate: Date = .now) -> SavedWord {
         .init(
             word: word,
             meanings: meanings.map { meaning in
