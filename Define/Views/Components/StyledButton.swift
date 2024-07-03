@@ -39,7 +39,15 @@ struct StyledButton: View {
             .padding(.vertical, .medium)
             .padding(.horizontal, .large)
             .tint(foregroundColor)
-            .background(LinearGradient.button)
+            .background(LinearGradient(
+                colors: [
+                    Color.appMaize,
+                    Color.appYellow,
+                    Color.appMaize
+                ],
+                startPoint: .leading,
+                endPoint: .trailing
+            ))
             .clipShape(Capsule())
         }
     }

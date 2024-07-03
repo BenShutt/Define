@@ -15,7 +15,14 @@ struct GradientBlurView: View {
 
     var body: some View {
         ZStack {
-            LinearGradient.header(color: color)
+            LinearGradient(
+                colors: [
+                    .appWhite,
+                    color.opacity(0.2)
+                ],
+                startPoint: .top,
+                endPoint: .bottom
+            )
             BlurView(style: .light)
         }
     }
