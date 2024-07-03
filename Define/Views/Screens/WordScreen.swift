@@ -177,27 +177,31 @@ private struct WordContentView: View {
                 alignment: .top
             )
         } else if !source.isSaved {
-            MarginedList(
-                source.word.meanings,
-                isAnimated: true
-            ) { meaning in
-                MeaningListItem(meaning: meaning)
-            }
-            .stickyButton(
-                title: "word_save_button",
-                systemName: "plus",
-                onTap: onSave
-            )
+            MeaningsList(source: source)
+                .stickyButton(
+                    title: "word_save_button",
+                    systemName: "plus",
+                    onTap: onSave
+                )
         } else {
             VStack(spacing: 0) {
                 WordSavedView()
-                MarginedList(
-                    source.word.meanings,
-                    isAnimated: true
-                ) { meaning in
-                    MeaningListItem(meaning: meaning)
-                }
+                MeaningsList(source: source)
             }
+        }
+    }
+}
+
+// MARK: - MeaningsList
+
+private struct MeaningsList: View {
+    var source: WordSource
+    var body: some View {
+        MarginedList(
+            source.word.meanings,
+            isAnimated: true
+        ) { meaning in
+            MeaningListItem(meaning: meaning)
         }
     }
 }

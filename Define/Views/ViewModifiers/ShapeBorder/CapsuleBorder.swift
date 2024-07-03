@@ -35,7 +35,7 @@ extension View {
         color: Color,
         borderWidth: CGFloat = .borderWidth
     ) -> some View {
-        self.modifier(CapsuleBorder(
+        modifier(CapsuleBorder(
             color: color,
             borderWidth: borderWidth
         ))

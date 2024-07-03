@@ -40,7 +40,7 @@ extension View {
         cornerRadius: CGFloat = .cornerRadius,
         borderWidth: CGFloat = .borderWidth
     ) -> some View {
-        self.modifier(RoundedRectangleBorder(
+        modifier(RoundedRectangleBorder(
             color: color,
             cornerRadius: cornerRadius,
             borderWidth: borderWidth

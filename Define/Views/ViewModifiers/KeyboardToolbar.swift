@@ -13,10 +13,6 @@ private struct KeyboardToolbar: ViewModifier {
     /// Dismiss button tapped
     var onDismiss: () -> Void
 
-    /// Apply overlay of stroked `RoundedRectangle`
-    ///
-    /// - Parameter content: `Content`
-    /// - Returns: `View`
     func body(content: Content) -> some View {
         content.toolbar {
             ToolbarItemGroup(placement: .keyboard) {

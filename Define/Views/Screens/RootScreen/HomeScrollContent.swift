@@ -41,12 +41,12 @@ private struct HomeScrollContentView: View {
         if groups.isEmpty {
             HomeEmptyView()
         } else {
-            LazyVStack(spacing: 0, pinnedViews: .sectionHeaders) {
+            LazyVStack(spacing: .vMargin, pinnedViews: .sectionHeaders) {
                 ForEach(groups) { group in
                     WordsSection(group: group)
                 }
             }
-            .marginedStack(.marginedStack)
+            .padding(.vertical, .vMargin)
         }
     }
 }
@@ -60,7 +60,8 @@ private struct WordsSection: View {
         Section(content: {
             ForEach(group.elements) { savedWord in
                 WordListItemButton(source: .saved(savedWord))
-                    .margined(.marginedStack)
+                    .container()
+                    .padding(.horizontal, .hMargin)
             }
         }, header: {
             WordsSectionHeader(title: group.title)
@@ -76,6 +77,9 @@ private struct WordsSectionHeader: View {
 
     var body: some View {
         HStack(spacing: .extraLarge) {
+            Separator(color: separatorColor)
+                .frame(minWidth: .hMargin, maxWidth: .infinity)
+
             Text(title)
                 .textStyle(.h4)
 

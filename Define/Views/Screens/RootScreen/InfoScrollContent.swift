@@ -31,6 +31,7 @@ struct InfoScrollContent: View {
             .button {
                 settings.wordsExpanded.toggle()
             }
+            .container()
 
             TextListItem(
                 title: "donate_title",
@@ -39,6 +40,7 @@ struct InfoScrollContent: View {
             .button {
                 // TODO
             }
+            .container()
 
             if let appStoreURL {
                 TextListItem(
@@ -48,6 +50,7 @@ struct InfoScrollContent: View {
                 .button {
                     openURL(appStoreURL)
                 }
+                .container()
             }
 
             TextListItem(
@@ -57,6 +60,7 @@ struct InfoScrollContent: View {
             .button {
                 // TODO
             }
+            .container()
 
             TextListItem(
                 title: "export_title",
@@ -65,6 +69,7 @@ struct InfoScrollContent: View {
             .button {
                 // TODO
             }
+            .container()
 
             if let settingsURL {
                 TextListItem(
@@ -74,6 +79,7 @@ struct InfoScrollContent: View {
                 .button {
                     openURL(settingsURL)
                 }
+                .container()
             }
 
             if let appVersion = Bundle.main.appVersion {

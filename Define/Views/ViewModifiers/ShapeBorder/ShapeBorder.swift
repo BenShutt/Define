@@ -10,7 +10,7 @@ import SwiftUI
 /// A border driven by an `InsettableShape`
 protocol ShapeBorder: ViewModifier {
 
-    /// The `InsettableShape`
+    /// The `InsettableShape` to stroke a border and clip
     associatedtype BorderShape: InsettableShape
 
     /// Stroked border color

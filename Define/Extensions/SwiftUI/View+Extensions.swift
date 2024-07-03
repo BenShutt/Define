@@ -11,4 +11,13 @@ extension View {
     func button(action: @escaping () -> Void) -> some View {
         Button(action: action, label: { self })
     }
+
+    func container() -> some View {
+        roundedRectangleBorder(
+            color: .border,
+            borderWidth: .borderWidth
+        )
+        .compositingGroup()
+        .shadow(.container)
+    }
 }

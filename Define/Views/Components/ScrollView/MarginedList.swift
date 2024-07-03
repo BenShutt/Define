@@ -9,61 +9,45 @@ import SwiftUI
 
 /// Scrolled vertical stack of elements
 struct MarginedList<Element, Content: View>: View {
-
-    /// `EdgeInsets` to apply as padding around the edge of the cells
-    private let margins: EdgeInsets = .margins
-
-    /// Elements to layout
     var elements: [Element]
-
-    /// Should the list be animated
     var isAnimated: Bool
-
-    /// The items that have appeared
-    @State private var appearedItems: Set<Int> = []
-
-    /// Subview content
     @ViewBuilder var content: (Element) -> Content
 
     var body: some View {
         ScrollView {
-            VStack(spacing: 0) { // TODO: Not LazyVStack due to ListAnimator
-                ForEach(elements.zipped, id: \.0) { index, element in
-                    content(element)
-                        .margined(margins)
-                        .listAnimator(
-                            appearedItems: $appearedItems,
-                            index: index,
-                            isEnabled: isAnimated
-                        )
-                }
-            }
-            .marginedStack(margins)
+            MarginedStack(
+                elements: elements,
+                isAnimated: isAnimated,
+                content: content
+            )
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 
-// MARK: View + Extensions
+// MARK: - MarginedStack
 
-extension View {
+struct MarginedStack<Element, Content: View>: View {
+    var elements: [Element]
+    var isAnimated: Bool
+    @ViewBuilder var content: (Element) -> Content
 
-    /// Wrap in a margined container
-    /// - Parameter margins: `EdgeInsets`
-    /// - Returns: `View`
-    func margined(_ margins: EdgeInsets) -> some View {
-        roundedRectangleBorder(color: .border, borderWidth: .borderWidth)
-            .compositingGroup()
-            .shadow(.container)
-            .padding(margins)
-    }
+    @State private var appearedItems: Set<Int> = []
 
-    /// Apply padding to a stack containing margined cells
-    /// - Parameter margins: `EdgeInsets`
-    /// - Returns: `View`
-    func marginedStack(_ margins: EdgeInsets) -> some View {
-        padding(.top, margins.top)
-            .padding(.bottom, margins.bottom)
+    var body: some View {
+        VStack(spacing: .vMargin) { // TODO: Not LazyVStack due to ListAnimator
+            ForEach(elements.zipped, id: \.0) { index, element in
+                content(element)
+                    .container()
+                    .padding(.horizontal, .hMargin)
+                    .listAnimator(
+                        appearedItems: $appearedItems,
+                        index: index,
+                        isEnabled: isAnimated
+                    )
+            }
+        }
+        .padding(.vertical, .vMargin)
     }
 }
 

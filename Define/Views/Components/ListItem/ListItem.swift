@@ -13,13 +13,11 @@ struct SwitchListItem: View {
     @Binding var isOn: Bool
     var title: LocalizedStringResource
     var subtitle: LocalizedStringResource
-    var margins: EdgeInsets = .zero
 
     var body: some View {
         ListItem(
             title: .init(localized: title),
             subtitle: .init(localized: subtitle),
-            margins: margins,
             leading: {},
             trailing: {
                 Toggle(isOn: $isOn) {}
@@ -35,13 +33,11 @@ struct SwitchListItem: View {
 struct TextListItem: View {
     var title: LocalizedStringResource
     var subtitle: LocalizedStringResource
-    var margins: EdgeInsets = .zero
 
     var body: some View {
         ListItem(
             title: .init(localized: title),
             subtitle: .init(localized: subtitle),
-            margins: margins,
             leading: {},
             trailing: {
                 ChevronView()
@@ -55,7 +51,6 @@ struct TextListItem: View {
 struct ListItem<Leading: View, Trailing: View>: View {
     var title: String
     var subtitle: String?
-    var margins: EdgeInsets = .zero
     @ViewBuilder var leading: () -> Leading
     @ViewBuilder var trailing: () -> Trailing
 
@@ -77,7 +72,6 @@ struct ListItem<Leading: View, Trailing: View>: View {
         }
         .padding(.margins)
         .background(Color.appWhite)
-        .margined(margins)
     }
 }
 
