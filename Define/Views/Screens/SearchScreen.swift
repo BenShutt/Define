@@ -24,9 +24,11 @@ struct SearchScreen: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            SearchHeaderView(searchText: $viewModel.search)
-                .focused($isSearchFocused) // Become first responder
-                .zIndex(1)
+            SearchHeaderView(
+                search: $viewModel.search,
+                isFocused: $isSearchFocused
+            )
+            .zIndex(1)
 
             SearchStateView(viewModel: viewModel)
                 .frame(

@@ -11,15 +11,13 @@ import SwiftUI
 struct SearchHeaderView: View {
 
     /// Text being searched
-    @Binding var searchText: String
+    @Binding var search: String
 
     /// Is the field currently focused so the content is compressed
-    ///
-    /// - Note:
-    /// There are two states here to handle both the @FocusState and the animation.
-    /// The @FocusState is on the InputTextField and this is the animation property.
+    @FocusState.Binding var isFocused: Bool
+
+    /// Animation property that changes with `isFocused`
     /// The two should always be equivalent in value
-    @FocusState private var isFocused: Bool
     @State private var isCollapsed = false
 
     var body: some View {
@@ -36,7 +34,7 @@ struct SearchHeaderView: View {
             }
 
             InputTextField(
-                text: $searchText,
+                text: $search,
                 isFocused: $isFocused,
                 prompt: "search_header_prompt",
                 image: Image(systemName: "magnifyingglass")
@@ -57,9 +55,21 @@ struct SearchHeaderView: View {
 
 // MARK: - Preview
 
-#Preview {
-    VStack(spacing: 0) {
-        SearchHeaderView(searchText: .constant(""))
-        Spacer()
+private struct PreviewView: View {
+    @State private var search = ""
+    @FocusState private var isFocused: Bool
+
+    var body: some View {
+        VStack(spacing: 0) {
+            SearchHeaderView(
+                search: $search,
+                isFocused: $isFocused
+            )
+            Spacer()
+        }
     }
+}
+
+#Preview {
+    PreviewView()
 }
