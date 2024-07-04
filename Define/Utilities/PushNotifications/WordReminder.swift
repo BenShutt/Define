@@ -71,7 +71,9 @@ struct WordReminder {
         for savedWord: SavedWord,
         on notifications: NotificationManager
     ) {
-        Task { await notifications.add(request(for: savedWord)) }
+        Task {
+            await notifications.add(request(for: savedWord))
+        }
     }
 
     /// Remove the notification request for the given word
