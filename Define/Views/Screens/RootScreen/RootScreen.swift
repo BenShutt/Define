@@ -32,7 +32,7 @@ enum RootSegment: Identifiable, Equatable, CaseIterable, SegmentedItem {
     @ViewBuilder var scrollContent: some View {
         switch self {
         case .home: HomeScrollContent()
-        case .info:  InfoScrollContent()
+        case .info: InfoScrollContent()
         }
     }
 }
