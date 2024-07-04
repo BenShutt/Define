@@ -8,7 +8,7 @@
 import SwiftUI
 import DictionaryAPI
 
-/// `View` to input a word to search for definitions
+/// Search for a word and display the results from the API
 struct SearchScreen: View {
 
     /// Observable encapsulating search logic
@@ -48,7 +48,6 @@ struct SearchScreen: View {
 // MARK: - SearchStateView
 
 private struct SearchStateView: View {
-    @Environment(\.modelContext) private var modelContext
     @ObservedObject var viewModel: SearchViewModel
 
     var body: some View {
@@ -73,12 +72,30 @@ private struct SearchStateView: View {
             )
 
         case let .success(words):
-            MarginedList(words) { word in
-                WordListItemButton(source: .init(
-                    modelContext: modelContext,
-                    word: word
-                ))
+            WordList(words: words)
+        }
+    }
+}
+
+// MARK: - WordList
+
+private struct WordList: View {
+    @Environment(\.modelContext) private var modelContext
+    var words: [Word]
+
+    var body: some View {
+        ScrollView {
+            LazyVStack(spacing: .vMargin) {
+                ForEach(words.zipped, id: \.0) { _, word in
+                    WordListItemButton(source: .init(
+                        modelContext: modelContext,
+                        word: word
+                    ))
+                    .container()
+                    .padding(.horizontal, .hMargin)
+                }
             }
+            .padding(.vertical, .vMargin)
         }
     }
 }

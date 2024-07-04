@@ -177,7 +177,7 @@ private struct WordContentView: View {
                 alignment: .top
             )
         } else if !source.isSaved {
-            MeaningsList(source: source)
+            MeaningList(source: source)
                 .stickyButton(
                     title: "word_save_button",
                     systemName: "plus",
@@ -186,22 +186,23 @@ private struct WordContentView: View {
         } else {
             VStack(spacing: 0) {
                 WordSavedView()
-                MeaningsList(source: source)
+                MeaningList(source: source)
             }
         }
     }
 }
 
-// MARK: - MeaningsList
+// MARK: - MeaningList
 
-private struct MeaningsList: View {
+private struct MeaningList: View {
     var source: WordSource
+
     var body: some View {
-        MarginedList(
-            source.word.meanings,
-            isAnimated: true
-        ) { meaning in
+        AnimatedScrollView(
+            elements: source.word.meanings
+        ) { _, meaning in
             MeaningListItem(meaning: meaning)
+                .container()
         }
     }
 }
