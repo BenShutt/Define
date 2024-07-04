@@ -77,7 +77,4 @@ extension Double {
 
 extension EdgeInsets {
     static let margins = EdgeInsets(vertical: .vMargin, horizontal: .hMargin)
-
-    // TODO: Remove
-    static let marginedStack = EdgeInsets(vertical: .smallMedium, horizontal: .hMargin)
 }
