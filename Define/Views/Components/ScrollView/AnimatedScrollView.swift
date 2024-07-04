@@ -11,15 +11,12 @@ import SwiftUI
 /// - Warning: Using a `VStack` instead of `LazyVStack` so that `onAppear` works as expected
 struct AnimatedScrollView<Element, Content: View>: View {
     @State private var appearedItems: Set<Int> = []
-
-    var spacing: CGFloat = .vMargin
-    var stackPadding: EdgeInsets = .margins
     var elements: [Element]
     @ViewBuilder var content: (Int, Element) -> Content
 
     var body: some View {
         ScrollView {
-            VStack(spacing: spacing) {
+            VStack(spacing: .vMargin) {
                 ForEach(elements.zipped, id: \.0) { index, element in
                     content(index, element)
                         .modifier(OnAppearAnimator(
@@ -28,7 +25,7 @@ struct AnimatedScrollView<Element, Content: View>: View {
                         ))
                 }
             }
-            .padding(stackPadding)
+            .padding(.margins)
         }
     }
 }

@@ -94,10 +94,9 @@ private struct WordList: View {
                         word: word
                     ))
                     .container()
-                    .padding(.horizontal, .hMargin)
                 }
             }
-            .padding(.vertical, .vMargin)
+            .padding(.margins)
         }
     }
 }
