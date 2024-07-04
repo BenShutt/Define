@@ -19,10 +19,10 @@ struct WordReminder {
     private static let remindAfterDays = 3
 
     /// Identifier of the notification request
-    /// - Parameter word: Word the notification regards
+    /// - Parameter savedWord: Word the notification regards
     /// - Returns: Notification identifier
-    static func identifier(for word: String) -> String {
-        "word_reminder_\(word)"
+    static func identifier(for savedWord: SavedWord) -> String {
+        "word_reminder_\(savedWord.word)"
     }
 
     /// Get the word from the notification user info payload
@@ -57,7 +57,7 @@ struct WordReminder {
         )
 
         return UNNotificationRequest(
-            identifier: identifier(for: savedWord.word),
+            identifier: identifier(for: savedWord),
             content: content,
             trigger: trigger
         )
@@ -84,6 +84,8 @@ struct WordReminder {
         for savedWord: SavedWord,
         on notifications: NotificationManager
     ) {
-        notifications.remove(identifiers: [identifier(for: savedWord.word)])
+        notifications.remove(identifiers: [
+            identifier(for: savedWord)
+        ])
     }
 }
