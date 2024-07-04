@@ -56,7 +56,7 @@ struct PushNotificationManager {
         notification: UNNotification
     ) -> UNNotificationPresentationOptions {
         NotificationCenter.default.post(
-            name: .willPresent,
+            name: .willPresentNotification,
             object: nil,
             userInfo: notification.request.content.userInfo
         )
@@ -67,7 +67,7 @@ struct PushNotificationManager {
     /// - Parameter response: `UNNotificationResponse`
     static func didReceive(response: UNNotificationResponse) {
         NotificationCenter.default.post(
-            name: .didReceive,
+            name: .didReceiveNotification,
             object: nil,
             userInfo: response.notification.request.content.userInfo
         )
@@ -79,13 +79,13 @@ struct PushNotificationManager {
 extension Notification.Name {
 
     /// Push notification will present
-    static let willPresent = Notification.Name(
-        rawValue: "\(PushNotificationManager.self).willPresent"
+    static let willPresentNotification = Notification.Name(
+        rawValue: "\(PushNotificationManager.self).willPresentNotification"
     )
 
     /// Push notification did received
-    static let didReceive = Notification.Name(
-        rawValue: "\(PushNotificationManager.self).didReceive"
+    static let didReceiveNotification = Notification.Name(
+        rawValue: "\(PushNotificationManager.self).didReceiveNotification"
     )
 }
 

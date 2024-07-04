@@ -18,7 +18,7 @@ private struct WordReminderRouter: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .onReceive(.didReceive) { notification in
+            .onReceive(.didReceiveNotification) { notification in
                 guard let word = WordReminder.word(from: notification) else { return }
                 guard let savedWord = wordDb.fetchOrNil(word: word) else { return }
                 push(.word(.saved(savedWord)))
