@@ -14,7 +14,7 @@ struct WordDb {
     func fetch(word: String) throws -> SavedWord? {
         try modelContext.fetch(
             FetchDescriptor<SavedWord>(predicate: #Predicate {
-                $0.word == word
+                $0.word == word // Word properties are lowercase
             })
         ).first
     }
