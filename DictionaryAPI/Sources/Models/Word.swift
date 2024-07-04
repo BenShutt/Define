@@ -54,28 +54,15 @@ public extension Word.Meaning {
     }
 }
 
-// MARK: - Word + Equatable
-
-extension Word: Equatable {
-    public static func == (lhs: Word, rhs: Word) -> Bool {
-        lhs.word.caseInsensitiveCompare(rhs.word) == .orderedSame
-    }
-}
-
-// MARK: - Word + Comparable
-
-extension Word: Comparable {
-    public static func < (lhs: Word, rhs: Word) -> Bool {
-        lhs.word < rhs.word
-    }
-}
-
 // MARK: - Word + Validated
 
 extension Word: Validated {
     public mutating func validate() throws {
         try word.validate()
         try meanings.validate()
+
+        // All words are regarded in lowercase due to the missing ID
+        word = word.lowercased()
     }
 }
 

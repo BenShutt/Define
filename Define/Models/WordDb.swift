@@ -8,8 +8,6 @@
 import Foundation
 import SwiftData
 
-// TODO: Improve string checks app-wide
-
 struct WordDb {
     let modelContext: ModelContext
 

@@ -42,8 +42,7 @@ import DictionaryAPI
 
     /// Words returned from the API
     var words: [Word] {
-        guard case .success(let words) = state else { return [] }
-        return words.sorted(by: <)
+        if case .success(let words) = state { words } else { [] }
     }
 
     /// Construct a publisher for the search text
@@ -54,11 +53,11 @@ import DictionaryAPI
             .eraseToAnyPublisher()
     }
 
-    /// Check if the given `search` is still valid
-    /// - Parameter search: `String`
+    /// Check if the given search is still valid
+    /// - Parameter currentSearch: `String`
     /// - Returns: `Bool`
-    private func isSearchStillValid(_ search: String) -> Bool {
-        search.caseInsensitiveCompare(self.search.trimmed) == .orderedSame
+    private func isSearchStillValid(_ currentSearch: String) -> Bool {
+        currentSearch.caseInsensitiveEquals(search.trimmed)
     }
 
     /// Initialize setting up Combine publish events
@@ -107,4 +106,16 @@ enum SearchViewModelError: Error {
 
     /// No results found for the search
     case noResults
+}
+
+// MARK: - String + Extensions
+
+private extension String {
+
+    /// Perform a case-insensitive equality check
+    /// - Parameter other: String to compare this instance to
+    /// - Returns: Whether they are equal
+    func caseInsensitiveEquals(_ other: String) -> Bool {
+        caseInsensitiveCompare(other) == .orderedSame
+    }
 }

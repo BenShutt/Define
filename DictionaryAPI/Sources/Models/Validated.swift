@@ -25,7 +25,7 @@ extension String: Validated {
     /// Trim and throw if the trimmed value is empty
     public mutating func validate() throws {
         let value = trimmed.nilIfEmpty
-        guard let value else { throw ValidationError.whitespaceAndNewlines }
+        guard let value else { throw ValidationError.trimmed }
         self = value
     }
 }
@@ -45,6 +45,6 @@ extension Array: Validated where Element: Validated {
 /// An error when validating
 public enum ValidationError: Error {
 
-    /// Trimming the string was unexpectedly empty
-    case whitespaceAndNewlines
+    /// The trimmed string was unexpectedly empty
+    case trimmed
 }

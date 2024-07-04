@@ -22,7 +22,7 @@ struct WordReminder {
     /// - Parameter word: Word the notification regards
     /// - Returns: Notification identifier
     static func identifier(for word: String) -> String {
-        "word_reminder_\(word.lowercased())"
+        "word_reminder_\(word)"
     }
 
     /// Get the word from the notification user info payload
