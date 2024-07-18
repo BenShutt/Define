@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ViewRenderer
 
 @MainActor struct PNGImage {
     var directoryURL: URL
@@ -18,8 +19,8 @@ import SwiftUI
     }
 
     func renderAndWrite(content: some View) throws {
-        let renderer = PNGRenderer(width: width, height: height)
-        let data = try renderer.pngData(of: content)
+        let view = content.frame(width: width, height: height)
+        let data = try PNGRenderer().pngData(content: view)
         try data.write(to: url, options: .atomic)
     }
 }

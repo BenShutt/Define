@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Utilities
 
 public struct AppIcon: View {
     @State private var size: CGFloat = 0
@@ -22,9 +23,9 @@ public struct AppIcon: View {
 
     public var body: some View {
         AppIconGradient(color: color)
-            .onSizeChanged { size = $0.min }
+            .onSizeChange { size = $0.min }
             .overlay {
-                Image(systemName: "magnifyingglass")
+                Image(.magnifyingGlass)
                     .systemImage(size: size * 0.6, weight: .heavy)
                     .foregroundStyle(Color.appIconDarkGray)
                     .bounceSymbol(animationValue)

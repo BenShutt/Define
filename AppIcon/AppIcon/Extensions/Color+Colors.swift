@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
+import ColorUtilities
 
 public extension Color {
     static let appIconWhite = Color(white: 1)
-    static let appIconBlue = Color(red: 52 / 255, green: 152 / 255, blue: 219 / 255)
-    static let appIconDarkGray = Color(white: 12 / 255)
+    static let appIconBlue = Color(red255: 52, green: 152, blue: 219)
+    static let appIconDarkGray = Color(white255: 12)
 
     // MARK: - Computed
 

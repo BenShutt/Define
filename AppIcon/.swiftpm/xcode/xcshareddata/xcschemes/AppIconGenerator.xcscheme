@@ -51,7 +51,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "--directory &quot;~/Desktop/AppIcons&quot;"
+            argument = "--directory &quot;~/Desktop/DefineImages&quot;"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

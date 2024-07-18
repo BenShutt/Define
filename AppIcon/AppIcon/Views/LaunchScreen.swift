@@ -19,7 +19,7 @@ public struct LaunchScreen: View {
         AppIconGradient(color: color, end: 1)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .ignoresSafeArea()
-            .onSizeChanged { appIconSize = $0.min * 0.4 }
+            .onSizeChange { appIconSize = $0.min * 0.4 }
             .overlay {
                 AppIcon(color: color)
                     .frame(width: appIconSize, height: appIconSize)

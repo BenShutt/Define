@@ -1,4 +1,5 @@
 {
+  "originHash" : "e411d8440793de0aba2e01da10442aa880aa9d53ddbfa3c3d2daa19a93a7367a",
   "pins" : [
     {
       "identity" : "swift-argument-parser",
@@ -8,7 +9,16 @@
         "revision" : "8f4d2753f0e4778c76d5f05ad16c74f707390531",
         "version" : "1.2.3"
       }
+    },
+    {
+      "identity" : "utilities",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/BenShutt/Utilities.git",
+      "state" : {
+        "branch" : "develop",
+        "revision" : "74c5342597dcc9f422219b14b5905240f0661e3f"
+      }
     }
   ],
-  "version" : 2
+  "version" : 3
 }

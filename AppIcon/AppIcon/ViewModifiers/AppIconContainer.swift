@@ -17,7 +17,7 @@ private struct AppIconContainer: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .onSizeChanged { size = $0.min }
+            .onSizeChange { size = $0.min }
             .clipShape(shape)
             .overlay {
                 shape

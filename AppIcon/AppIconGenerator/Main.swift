@@ -8,6 +8,7 @@
 import SwiftUI
 import AppIcon
 import ArgumentParser
+import Utilities
 
 @main
 struct Main: AsyncParsableCommand {
@@ -18,12 +19,9 @@ struct Main: AsyncParsableCommand {
     @Option(help: "The file path of the directory to write the images to")
     var directory: String
 
-    /// Get `URL` of the `directory` file path
-    private var directoryURL: URL {
-        URL(filePath: (directory as NSString).expandingTildeInPath)
-    }
-
     @MainActor mutating func run() async throws {
+        let directoryURL = URL(expandingTildeInFilePath: directory)
+
         try FileManager.default.createDirectory(
             at: directoryURL,
             withIntermediateDirectories: true

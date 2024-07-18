@@ -14,8 +14,6 @@
 		B80399F828D79A3B008CE7B4 /* DefineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80399F728D79A3B008CE7B4 /* DefineUITests.swift */; };
 		B80399FA28D79A3B008CE7B4 /* DefineUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80399F928D79A3B008CE7B4 /* DefineUITestsLaunchTests.swift */; };
 		B80E71FF29FBB578007CCE71 /* FigmaShadow+Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80E71FE29FBB578007CCE71 /* FigmaShadow+Values.swift */; };
-		B80E720229FBB67B007CCE71 /* CubeFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = B80E720129FBB67B007CCE71 /* CubeFoundation */; };
-		B80E720429FBB67B007CCE71 /* CubeFoundationSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = B80E720329FBB67B007CCE71 /* CubeFoundationSwiftUI */; };
 		B80E722229FDAD60007CCE71 /* ShapeBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80E722129FDAD60007CCE71 /* ShapeBorder.swift */; };
 		B80E722429FDAD69007CCE71 /* CapsuleBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80E722329FDAD69007CCE71 /* CapsuleBorder.swift */; };
 		B80E722629FDB5C9007CCE71 /* RoundedRectangleBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80E722529FDB5C9007CCE71 /* RoundedRectangleBorder.swift */; };
@@ -258,8 +256,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8BFDC6C2AC77D04009E1F83 /* AppIcon in Frameworks */,
-				B80E720229FBB67B007CCE71 /* CubeFoundation in Frameworks */,
-				B80E720429FBB67B007CCE71 /* CubeFoundationSwiftUI in Frameworks */,
 				B8FF0DC9295F9528004C61B6 /* DictionaryAPI in Frameworks */,
 				B8A1232528E971EC00ACEC45 /* Lottie in Frameworks */,
 			);
@@ -651,8 +647,6 @@
 			name = Define;
 			packageProductDependencies = (
 				B8BFDC6B2AC77D04009E1F83 /* AppIcon */,
-				B80E720129FBB67B007CCE71 /* CubeFoundation */,
-				B80E720329FBB67B007CCE71 /* CubeFoundationSwiftUI */,
 				B8FF0DC8295F9528004C61B6 /* DictionaryAPI */,
 				B8A1232428E971EC00ACEC45 /* Lottie */,
 			);
@@ -729,7 +723,6 @@
 			);
 			mainGroup = B80399D028D79A36008CE7B4;
 			packageReferences = (
-				B80E720029FBB67B007CCE71 /* XCRemoteSwiftPackageReference "cubefoundation-ios" */,
 				B8A1232328E971EC00ACEC45 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = B80399DA28D79A37008CE7B4 /* Products */;
@@ -1231,14 +1224,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		B80E720029FBB67B007CCE71 /* XCRemoteSwiftPackageReference "cubefoundation-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/3sidedcube/cubefoundation-ios.git";
-			requirement = {
-				branch = develop;
-				kind = branch;
-			};
-		};
 		B8A1232328E971EC00ACEC45 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios";
@@ -1250,16 +1235,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		B80E720129FBB67B007CCE71 /* CubeFoundation */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B80E720029FBB67B007CCE71 /* XCRemoteSwiftPackageReference "cubefoundation-ios" */;
-			productName = CubeFoundation;
-		};
-		B80E720329FBB67B007CCE71 /* CubeFoundationSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B80E720029FBB67B007CCE71 /* XCRemoteSwiftPackageReference "cubefoundation-ios" */;
-			productName = CubeFoundationSwiftUI;
-		};
 		B8A1232428E971EC00ACEC45 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B8A1232328E971EC00ACEC45 /* XCRemoteSwiftPackageReference "lottie-ios" */;

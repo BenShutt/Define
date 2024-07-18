@@ -10,15 +10,6 @@
       }
     },
     {
-      "identity" : "cubefoundation-ios",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/3sidedcube/cubefoundation-ios.git",
-      "state" : {
-        "branch" : "develop",
-        "revision" : "b9d44aff2dbfd1912a21c56bcd2c6d489ee396f4"
-      }
-    },
-    {
       "identity" : "datarequest",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/BenShutt/DataRequest.git",
@@ -43,6 +34,15 @@
       "state" : {
         "revision" : "0fbc8848e389af3bb55c182bc19ca9d5dc2f255b",
         "version" : "1.4.0"
+      }
+    },
+    {
+      "identity" : "utilities",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/BenShutt/Utilities",
+      "state" : {
+        "branch" : "develop",
+        "revision" : "630d9cf1cfcb3e822a5792641d4c152dfd1abed9"
       }
     }
   ],
