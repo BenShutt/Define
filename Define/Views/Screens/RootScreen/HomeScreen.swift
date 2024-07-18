@@ -12,7 +12,9 @@ import SwiftData
 private typealias DateGroups = [DateGroup<SavedWord>]
 
 /// View that is shown in a scroll view of the root screen
-struct HomeScrollContent: View {
+struct HomeScreen: View {
+    @Environment(\.push) private var push
+    var segmentedHeight: CGFloat
 
     /// Query the SwiftData database to get the saved words
     @Query(sort: \SavedWord.createdDate, order: .reverse) var words: [SavedWord]
@@ -26,9 +28,20 @@ struct HomeScrollContent: View {
     }
 
     var body: some View {
-        HomeScrollContentView(groups: groups)
-            .task { reload() }
-            .onChange(of: words) { reload() }
+        RootNavigationScreen(
+            segmentedHeight: segmentedHeight,
+            subtitle: "home_subtitle",
+            scrollContent: {
+                HomeScrollContentView(groups: groups)
+            }
+        )
+        .task { reload() }
+        .onChange(of: words) { reload() }
+        .stickyButton(
+            title: "search_button",
+            systemName: "magnifyingglass",
+            onTap: { push(.search) }
+        )
     }
 }
 
@@ -108,7 +121,7 @@ struct HomeEmptyView: View {
 
 #Preview {
     ScrollView {
-        HomeScrollContent()
+        HomeScrollContentView(groups: [])
     }
     .screen()
     .environmentObjects()

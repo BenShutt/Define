@@ -36,7 +36,7 @@
 		B868F23A2AECCC13003765F8 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868F2392AECCC13003765F8 /* Logger.swift */; };
 		B868F23C2AECDD88003765F8 /* DateGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868F23B2AECDD88003765F8 /* DateGroup.swift */; };
 		B86BA87E2AE79C8B00C638CD /* ReceiveTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86BA87D2AE79C8B00C638CD /* ReceiveTimer.swift */; };
-		B86FB81A2C2C7F1D00687528 /* InfoScrollContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86FB8192C2C7F1D00687528 /* InfoScrollContent.swift */; };
+		B86FB81A2C2C7F1D00687528 /* InfoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86FB8192C2C7F1D00687528 /* InfoScreen.swift */; };
 		B86FB81C2C2C841D00687528 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86FB81B2C2C841D00687528 /* ListItem.swift */; };
 		B86FB81E2C2C84B000687528 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86FB81D2C2C84B000687528 /* View+Extensions.swift */; };
 		B879E9E928F0C5190094AA24 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B879E9E828F0C5190094AA24 /* TagView.swift */; };
@@ -49,7 +49,7 @@
 		B894FA1C28FC69FA00BC0BFA /* WordPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B894FA1B28FC69FA00BC0BFA /* WordPreviewView.swift */; };
 		B894FA2128FC8A4B00BC0BFA /* StickyBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B894FA2028FC8A4B00BC0BFA /* StickyBottom.swift */; };
 		B894FA2428FC8D7A00BC0BFA /* StickyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B894FA2328FC8D7A00BC0BFA /* StickyButton.swift */; };
-		B895887429578BFB0041A315 /* HomeScrollContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B895887329578BFB0041A315 /* HomeScrollContent.swift */; };
+		B895887429578BFB0041A315 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B895887329578BFB0041A315 /* HomeScreen.swift */; };
 		B896B9AD2AEA2EEF0043DA18 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B896B9AC2AEA2EEF0043DA18 /* NotificationManager.swift */; };
 		B8994CAE2A8EC4C2000BE101 /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8994CAD2A8EC4C2000BE101 /* PushNotificationManager.swift */; };
 		B89F179428E0EBF100A96E35 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89F179328E0EBF100A96E35 /* Screen.swift */; };
@@ -169,7 +169,7 @@
 		B868F2392AECCC13003765F8 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		B868F23B2AECDD88003765F8 /* DateGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateGroup.swift; sourceTree = "<group>"; };
 		B86BA87D2AE79C8B00C638CD /* ReceiveTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveTimer.swift; sourceTree = "<group>"; };
-		B86FB8192C2C7F1D00687528 /* InfoScrollContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoScrollContent.swift; sourceTree = "<group>"; };
+		B86FB8192C2C7F1D00687528 /* InfoScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoScreen.swift; sourceTree = "<group>"; };
 		B86FB81B2C2C841D00687528 /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
 		B86FB81D2C2C84B000687528 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		B879E9E828F0C5190094AA24 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
@@ -182,7 +182,7 @@
 		B894FA1B28FC69FA00BC0BFA /* WordPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordPreviewView.swift; sourceTree = "<group>"; };
 		B894FA2028FC8A4B00BC0BFA /* StickyBottom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyBottom.swift; sourceTree = "<group>"; };
 		B894FA2328FC8D7A00BC0BFA /* StickyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyButton.swift; sourceTree = "<group>"; };
-		B895887329578BFB0041A315 /* HomeScrollContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScrollContent.swift; sourceTree = "<group>"; };
+		B895887329578BFB0041A315 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		B896B9AC2AEA2EEF0043DA18 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		B8994CAD2A8EC4C2000BE101 /* PushNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
 		B89F179328E0EBF100A96E35 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
@@ -512,8 +512,8 @@
 		B8C404372C30A9F40081922C /* RootScreen */ = {
 			isa = PBXGroup;
 			children = (
-				B895887329578BFB0041A315 /* HomeScrollContent.swift */,
-				B86FB8192C2C7F1D00687528 /* InfoScrollContent.swift */,
+				B895887329578BFB0041A315 /* HomeScreen.swift */,
+				B86FB8192C2C7F1D00687528 /* InfoScreen.swift */,
 				B8C404382C30AA020081922C /* RootScreen.swift */,
 			);
 			path = RootScreen;
@@ -842,11 +842,11 @@
 				B80E71FF29FBB578007CCE71 /* FigmaShadow+Values.swift in Sources */,
 				B8B05F162C29748400F2A9A8 /* FixedSizeSheet.swift in Sources */,
 				B8BFDC6F2AC77FED009E1F83 /* GradientBlurView.swift in Sources */,
-				B895887429578BFB0041A315 /* HomeScrollContent.swift in Sources */,
+				B895887429578BFB0041A315 /* HomeScreen.swift in Sources */,
 				B813C00328EB7F7D000C766C /* IconContainer.swift in Sources */,
 				B813C00128EB7DB9000C766C /* IconView.swift in Sources */,
 				B88491A629620353009F6469 /* IndexElement.swift in Sources */,
-				B86FB81A2C2C7F1D00687528 /* InfoScrollContent.swift in Sources */,
+				B86FB81A2C2C7F1D00687528 /* InfoScreen.swift in Sources */,
 				B8AD58832AD471350054403E /* InformationSheet.swift in Sources */,
 				B8D2A74228DF3A250096A020 /* InputTextField.swift in Sources */,
 				B8C25F9C294F7AAF001C8847 /* KeyboardToolbar.swift in Sources */,

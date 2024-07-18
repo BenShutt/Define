@@ -9,7 +9,23 @@ import SwiftUI
 import AppIcon
 
 /// View that is shown in a scroll view of the root screen
-struct InfoScrollContent: View {
+struct InfoScreen: View {
+    var segmentedHeight: CGFloat
+
+    var body: some View {
+        RootNavigationScreen(
+            segmentedHeight: segmentedHeight,
+            subtitle: "info_subtitle \(appNameOrDefault)",
+            scrollContent: {
+                InfoScrollContentView()
+            }
+        )
+    }
+}
+
+// MARK: - InfoScrollContentView
+
+private struct InfoScrollContentView: View {
     @EnvironmentObject private var settings: UserSettings
     @Environment(\.openURL) private var openURL
 
@@ -23,6 +39,9 @@ struct InfoScrollContent: View {
 
     var body: some View {
         LazyVStack(spacing: .vMargin) {
+            Text("info_subtitle \(appNameOrDefault)")
+                .textStyle(.body, fill: .leading)
+
             SwitchListItem(
                 isOn: $settings.wordsExpanded,
                 title: "words_expanded_title",
@@ -95,7 +114,7 @@ struct InfoScrollContent: View {
 
 #Preview {
     ScrollView {
-        InfoScrollContent()
+        InfoScrollContentView()
     }
     .screen()
     .environmentObjects()
