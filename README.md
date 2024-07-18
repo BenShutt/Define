@@ -1,4 +1,4 @@
-# Define
+# Define - WIP
 
 An iOS app used to search for the definitions of words and save them for later.
 It may be used while, say, reading to learn and remember new words.
