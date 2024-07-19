@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 import DictionaryAPI
-import CubeFoundation
+import Utilities
 
 // MARK: - WordPreview
 

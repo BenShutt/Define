@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import CubeFoundationSwiftUI
+import ColorUtilities
 
 extension Color {
     static let appBlack = Color(white255: 0)

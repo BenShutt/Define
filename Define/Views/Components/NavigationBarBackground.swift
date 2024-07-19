@@ -19,8 +19,7 @@ struct NavigationBarBackground: View {
             endPoint: .bottom
         )
         .background(Color.appWhite)
-        .compositingGroup()
-        .shadow(.sticky)
+        .stickyShadow()
     }
 }
 

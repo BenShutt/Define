@@ -18,7 +18,7 @@ private struct FixedSizeSheet: ViewModifier {
     func body(content: Content) -> some View {
         ScrollView {
             content
-                .onSizeChanged { contentHeight = $0.height }
+                .onSizeChange { contentHeight = $0.height }
         }
         .scrollDisabled(contentHeight <= maxHeight)
         .scrollBounceBehavior(.basedOnSize)

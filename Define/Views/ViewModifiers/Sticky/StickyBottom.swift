@@ -21,8 +21,7 @@ private struct StickyBottom<Bottom: View>: ViewModifier {
             }
             .background {
                 Color.appWhite
-                    .compositingGroup()
-                    .shadow(.sticky)
+                    .stickyShadow()
                     .ignoresSafeArea()
             }
             .ignoresSafeArea(.keyboard)

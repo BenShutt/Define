@@ -71,8 +71,7 @@ private struct WelcomeHeaderView: View {
             .frame(height: backgroundHeight)
             .background(Color.appWhite)
             .clipShape(CurvedBottom())
-            .compositingGroup()
-            .shadow(.sticky)
+            .stickyShadow()
 
             AppIcon(
                 color: color,

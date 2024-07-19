@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Utilities
 
 public struct LaunchScreen: View {
     @State private var appIconSize: CGFloat = 0

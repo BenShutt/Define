@@ -17,7 +17,6 @@ extension View {
             color: .border,
             borderWidth: .borderWidth
         )
-        .compositingGroup()
-        .shadow(.container)
+        .containerShadow()
     }
 }

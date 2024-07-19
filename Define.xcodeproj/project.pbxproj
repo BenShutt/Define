@@ -13,7 +13,7 @@
 		B80399E428D79A3B008CE7B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B80399E328D79A3B008CE7B4 /* Preview Assets.xcassets */; };
 		B80399F828D79A3B008CE7B4 /* DefineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80399F728D79A3B008CE7B4 /* DefineUITests.swift */; };
 		B80399FA28D79A3B008CE7B4 /* DefineUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80399F928D79A3B008CE7B4 /* DefineUITestsLaunchTests.swift */; };
-		B80E71FF29FBB578007CCE71 /* FigmaShadow+Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80E71FE29FBB578007CCE71 /* FigmaShadow+Values.swift */; };
+		B80E71FF29FBB578007CCE71 /* View+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80E71FE29FBB578007CCE71 /* View+Shadow.swift */; };
 		B80E722229FDAD60007CCE71 /* ShapeBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80E722129FDAD60007CCE71 /* ShapeBorder.swift */; };
 		B80E722429FDAD69007CCE71 /* CapsuleBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80E722329FDAD69007CCE71 /* CapsuleBorder.swift */; };
 		B80E722629FDB5C9007CCE71 /* RoundedRectangleBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80E722529FDB5C9007CCE71 /* RoundedRectangleBorder.swift */; };
@@ -30,7 +30,8 @@
 		B84AD60A28FAFC9E00C2D5AE /* WordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84AD60928FAFC9E00C2D5AE /* WordScreen.swift */; };
 		B84AD60C28FB01AF00C2D5AE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84AD60B28FB01AF00C2D5AE /* ContentView.swift */; };
 		B84E8CAA2C2AE7BB0044FEDE /* StyledText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84E8CA92C2AE7BB0044FEDE /* StyledText.swift */; };
-		B84E8CAC2C2AFCFD0044FEDE /* Color+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84E8CAB2C2AFCFD0044FEDE /* Color+Random.swift */; };
+		B85FB3C32C4ADF440089FBCE /* ColorUtilities in Frameworks */ = {isa = PBXBuildFile; productRef = B85FB3C22C4ADF440089FBCE /* ColorUtilities */; };
+		B85FB3C52C4ADF440089FBCE /* Utilities in Frameworks */ = {isa = PBXBuildFile; productRef = B85FB3C42C4ADF440089FBCE /* Utilities */; };
 		B868F23A2AECCC13003765F8 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868F2392AECCC13003765F8 /* Logger.swift */; };
 		B868F23C2AECDD88003765F8 /* DateGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868F23B2AECDD88003765F8 /* DateGroup.swift */; };
 		B86BA87E2AE79C8B00C638CD /* ReceiveTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86BA87D2AE79C8B00C638CD /* ReceiveTimer.swift */; };
@@ -113,7 +114,6 @@
 		B8F834D02B73E40700D0C5D2 /* NavigationBarBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F834CF2B73E40700D0C5D2 /* NavigationBarBackground.swift */; };
 		B8FF0DC9295F9528004C61B6 /* DictionaryAPI in Frameworks */ = {isa = PBXBuildFile; productRef = B8FF0DC8295F9528004C61B6 /* DictionaryAPI */; };
 		B8FF0DD129609DDF004C61B6 /* Migrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FF0DD029609DDF004C61B6 /* Migrations.swift */; };
-		B8FF0DD329609E3E004C61B6 /* Bundle+Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FF0DD229609E3E004C61B6 /* Bundle+Key.swift */; };
 		B8FF0DD82960ACCE004C61B6 /* SavedWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FF0DD72960ACCE004C61B6 /* SavedWord.swift */; };
 		B8FF0DDC2960B548004C61B6 /* MeaningListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FF0DDB2960B548004C61B6 /* MeaningListItem.swift */; };
 /* End PBXBuildFile section */
@@ -146,7 +146,7 @@
 		B80399F328D79A3B008CE7B4 /* DefineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DefineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B80399F728D79A3B008CE7B4 /* DefineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefineUITests.swift; sourceTree = "<group>"; };
 		B80399F928D79A3B008CE7B4 /* DefineUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefineUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		B80E71FE29FBB578007CCE71 /* FigmaShadow+Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FigmaShadow+Values.swift"; sourceTree = "<group>"; };
+		B80E71FE29FBB578007CCE71 /* View+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Shadow.swift"; sourceTree = "<group>"; };
 		B80E722129FDAD60007CCE71 /* ShapeBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeBorder.swift; sourceTree = "<group>"; };
 		B80E722329FDAD69007CCE71 /* CapsuleBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleBorder.swift; sourceTree = "<group>"; };
 		B80E722529FDB5C9007CCE71 /* RoundedRectangleBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangleBorder.swift; sourceTree = "<group>"; };
@@ -163,7 +163,6 @@
 		B84AD60928FAFC9E00C2D5AE /* WordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordScreen.swift; sourceTree = "<group>"; };
 		B84AD60B28FB01AF00C2D5AE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B84E8CA92C2AE7BB0044FEDE /* StyledText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledText.swift; sourceTree = "<group>"; };
-		B84E8CAB2C2AFCFD0044FEDE /* Color+Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Random.swift"; sourceTree = "<group>"; };
 		B868F2392AECCC13003765F8 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		B868F23B2AECDD88003765F8 /* DateGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateGroup.swift; sourceTree = "<group>"; };
 		B86BA87D2AE79C8B00C638CD /* ReceiveTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveTimer.swift; sourceTree = "<group>"; };
@@ -245,7 +244,6 @@
 		B8FF0DBC295F30D1004C61B6 /* AppIcon */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AppIcon; sourceTree = "<group>"; };
 		B8FF0DC4295F7927004C61B6 /* DictionaryAPI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DictionaryAPI; sourceTree = "<group>"; };
 		B8FF0DD029609DDF004C61B6 /* Migrations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Migrations.swift; sourceTree = "<group>"; };
-		B8FF0DD229609E3E004C61B6 /* Bundle+Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Key.swift"; sourceTree = "<group>"; };
 		B8FF0DD72960ACCE004C61B6 /* SavedWord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedWord.swift; sourceTree = "<group>"; };
 		B8FF0DDB2960B548004C61B6 /* MeaningListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeaningListItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -256,7 +254,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8BFDC6C2AC77D04009E1F83 /* AppIcon in Frameworks */,
+				B85FB3C32C4ADF440089FBCE /* ColorUtilities in Frameworks */,
 				B8FF0DC9295F9528004C61B6 /* DictionaryAPI in Frameworks */,
+				B85FB3C52C4ADF440089FBCE /* Utilities in Frameworks */,
 				B8A1232528E971EC00ACEC45 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,7 +351,7 @@
 				B8B9B9DE28EDC6E4006FCA76 /* XCAssets */,
 				B8E49C0A28DF985500F9CAC4 /* CGFloat+Values.swift */,
 				B8D2A73D28DEEFE70096A020 /* Color+Values.swift */,
-				B80E71FE29FBB578007CCE71 /* FigmaShadow+Values.swift */,
+				B80E71FE29FBB578007CCE71 /* View+Shadow.swift */,
 				B8B563E828F00096004B80F0 /* LaunchScreen.storyboard */,
 				B8A1232628E971FD00ACEC45 /* LottieFile.swift */,
 				B8D2A74528DF3AFE0096A020 /* TextStyle.swift */,
@@ -390,7 +390,6 @@
 		B80E722729FDB8BE007CCE71 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				B8FF0DD229609E3E004C61B6 /* Bundle+Key.swift */,
 				B80E722A29FDBBC1007CCE71 /* Calendar+Extensions.swift */,
 				B80E722829FDB8CC007CCE71 /* DateComponentsFormatter+Extensions.swift */,
 			);
@@ -530,7 +529,6 @@
 		B8C894EB28D905EE00975E25 /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				B84E8CAB2C2AFCFD0044FEDE /* Color+Random.swift */,
 				B8B9B9D728EC603D006FCA76 /* EdgeInsets+Extensions.swift */,
 				B86FB81D2C2C84B000687528 /* View+Extensions.swift */,
 			);
@@ -649,6 +647,8 @@
 				B8BFDC6B2AC77D04009E1F83 /* AppIcon */,
 				B8FF0DC8295F9528004C61B6 /* DictionaryAPI */,
 				B8A1232428E971EC00ACEC45 /* Lottie */,
+				B85FB3C22C4ADF440089FBCE /* ColorUtilities */,
+				B85FB3C42C4ADF440089FBCE /* Utilities */,
 			);
 			productName = Define;
 			productReference = B80399D928D79A37008CE7B4 /* Define.app */;
@@ -724,6 +724,7 @@
 			mainGroup = B80399D028D79A36008CE7B4;
 			packageReferences = (
 				B8A1232328E971EC00ACEC45 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				B85FB3C12C4ADF440089FBCE /* XCRemoteSwiftPackageReference "Utilities" */,
 			);
 			productRefGroup = B80399DA28D79A37008CE7B4 /* Products */;
 			projectDirPath = "";
@@ -814,13 +815,11 @@
 				B8E336572AD5BABF00374E4A /* AnimatedScrollView.swift in Sources */,
 				B89F179D28E0FABE00A96E35 /* AppDelegate.swift in Sources */,
 				B8BFDC712AC7800C009E1F83 /* BlurView.swift in Sources */,
-				B8FF0DD329609E3E004C61B6 /* Bundle+Key.swift in Sources */,
 				B8E49C0B28DF985500F9CAC4 /* CGFloat+Values.swift in Sources */,
 				B80E722B29FDBBC1007CCE71 /* Calendar+Extensions.swift in Sources */,
 				B80E722429FDAD69007CCE71 /* CapsuleBorder.swift in Sources */,
 				B891F8E22950FB6600A53582 /* ChevronView.swift in Sources */,
 				B832D6642C2466BF00FF3EFE /* ClippedHeight.swift in Sources */,
-				B84E8CAC2C2AFCFD0044FEDE /* Color+Random.swift in Sources */,
 				B8D2A73E28DEEFE70096A020 /* Color+Values.swift in Sources */,
 				B84AD60C28FB01AF00C2D5AE /* ContentView.swift in Sources */,
 				B813BFFF28EB7BE6000C766C /* CrossIconView.swift in Sources */,
@@ -829,7 +828,7 @@
 				B80399DD28D79A37008CE7B4 /* DefineApp.swift in Sources */,
 				B88491A22961FFB5009F6469 /* DefinitionListItem.swift in Sources */,
 				B8B9B9D828EC603D006FCA76 /* EdgeInsets+Extensions.swift in Sources */,
-				B80E71FF29FBB578007CCE71 /* FigmaShadow+Values.swift in Sources */,
+				B80E71FF29FBB578007CCE71 /* View+Shadow.swift in Sources */,
 				B8B05F162C29748400F2A9A8 /* FixedSizeSheet.swift in Sources */,
 				B8BFDC6F2AC77FED009E1F83 /* GradientBlurView.swift in Sources */,
 				B895887429578BFB0041A315 /* HomeScreen.swift in Sources */,
@@ -1224,6 +1223,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B85FB3C12C4ADF440089FBCE /* XCRemoteSwiftPackageReference "Utilities" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/BenShutt/Utilities";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
 		B8A1232328E971EC00ACEC45 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios";
@@ -1235,6 +1242,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B85FB3C22C4ADF440089FBCE /* ColorUtilities */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B85FB3C12C4ADF440089FBCE /* XCRemoteSwiftPackageReference "Utilities" */;
+			productName = ColorUtilities;
+		};
+		B85FB3C42C4ADF440089FBCE /* Utilities */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B85FB3C12C4ADF440089FBCE /* XCRemoteSwiftPackageReference "Utilities" */;
+			productName = Utilities;
+		};
 		B8A1232428E971EC00ACEC45 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B8A1232328E971EC00ACEC45 /* XCRemoteSwiftPackageReference "lottie-ios" */;

@@ -21,7 +21,7 @@ private struct ClippedHeight: ViewModifier {
             .overlay(alignment: .top) {
                 content
                     .fixedSize(horizontal: false, vertical: true)
-                    .onSizeChanged { height = $0.height }
+                    .onSizeChange { height = $0.height }
             }
             .frame(height: max(0, clippedHeight(height)))
             .clipped()

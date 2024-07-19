@@ -53,7 +53,7 @@ struct RootScreen: View {
                 segments: RootSegment.allCases
             )
             .padding(.margins)
-            .onSizeChanged { segmentedHeight = $0.height }
+            .onSizeChange { segmentedHeight = $0.height }
         }
         .toolbar(.hidden, for: .navigationBar)
     }
@@ -124,7 +124,7 @@ private struct NavigationBarSubtitle: View {
             .textStyle(.body, fill: .leading)
             .padding(.horizontal, .hMargin)
             .padding(.bottom, .vMargin)
-            .onSizeChanged { subtitleHeight = $0.height }
+            .onSizeChange { subtitleHeight = $0.height }
             .opacity(subtitleOpacity)
             .offset(y: subtitleOffset)
             .clippedHeight {

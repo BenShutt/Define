@@ -26,7 +26,7 @@ private struct AppIconContainer: ViewModifier {
             }
             .compositingGroup()
             .shadow(
-                color: .appIconShadowHeavy,
+                color: .appIconShadowHeavy, // TODO: Reuse?
                 radius: size * 0.1
             )
     }
