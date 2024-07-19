@@ -24,11 +24,7 @@ private struct AppIconContainer: ViewModifier {
                     .strokeBorder(lineWidth: size * 0.02)
                     .foregroundStyle(color.opacity(0.25))
             }
-            .compositingGroup()
-            .shadow(
-                color: .appIconShadowHeavy, // TODO: Reuse?
-                radius: size * 0.1
-            )
+            .containerShadow()
     }
 }
 

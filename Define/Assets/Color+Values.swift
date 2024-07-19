@@ -31,5 +31,5 @@ extension Color {
     static let separator: Color = .appLightGray
     static let screenBackground: Color = .appFaintGray
     static let shadowHeavy: Color = .appIconShadowHeavy // Alias
-    static let shadowLight: Color = .appGray.opacity(0.06)
+    static let shadowLight: Color = .appIconShadowLight // Alias
 }

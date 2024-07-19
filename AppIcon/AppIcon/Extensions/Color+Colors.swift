@@ -17,4 +17,5 @@ public extension Color {
 
     static let appIconDefault: Color = .appIconBlue
     static let appIconShadowHeavy: Color = .appIconDarkGray.opacity(0.1)
+    static let appIconShadowLight: Color = .appIconDarkGray.opacity(0.05)
 }
