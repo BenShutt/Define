@@ -642,9 +642,9 @@
 			name = Define;
 			packageProductDependencies = (
 				B8BFDC6B2AC77D04009E1F83 /* AppIcon */,
+				B85FB3C22C4ADF440089FBCE /* ColorUtilities */,
 				B8FF0DC8295F9528004C61B6 /* DictionaryAPI */,
 				B8A1232428E971EC00ACEC45 /* Lottie */,
-				B85FB3C22C4ADF440089FBCE /* ColorUtilities */,
 				B85FB3C42C4ADF440089FBCE /* Utilities */,
 			);
 			productName = Define;
@@ -720,8 +720,8 @@
 			);
 			mainGroup = B80399D028D79A36008CE7B4;
 			packageReferences = (
-				B8A1232328E971EC00ACEC45 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				B85FB3C12C4ADF440089FBCE /* XCRemoteSwiftPackageReference "Utilities" */,
+				B8A1232328E971EC00ACEC45 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = B80399DA28D79A37008CE7B4 /* Products */;
 			projectDirPath = "";
