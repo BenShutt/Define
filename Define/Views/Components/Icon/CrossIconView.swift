@@ -28,7 +28,7 @@ struct CrossIcon: View {
 
     var body: some View {
         IconView(
-            image: Image(systemName: "xmark.circle.fill"),
+            image: Image(.crossCircleFill),
             foregroundColor: .appDarkGray,
             size: size
         )

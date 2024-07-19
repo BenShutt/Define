@@ -8,10 +8,17 @@
 
 import SwiftUI
 
-// TODO: Use!
-
 public enum SystemImage: String {
     case magnifyingGlass = "magnifyingglass"
+    case chevronRight = "chevron.right"
+    case chevronUp = "chevron.up"
+    case chevronDown = "chevron.down"
+    case plus
+    case trash
+    case crossCircleFill = "xmark.circle.fill"
+    case checkmark
+    case clock
+    case arrow = "arrow.forward"
 }
 
 // MARK: - Image + SystemImage

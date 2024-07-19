@@ -39,7 +39,7 @@ struct HomeScreen: View {
         .onChange(of: words) { reload() }
         .stickyButton(
             title: "search_button",
-            systemName: "magnifyingglass",
+            systemName: .magnifyingGlass,
             onTap: { push(.search) }
         )
     }

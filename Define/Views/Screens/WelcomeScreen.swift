@@ -35,7 +35,7 @@ struct WelcomeScreen: View {
         .toolbar(.hidden, for: .navigationBar)
         .stickyButton(
             title: "continue_button",
-            systemName: "arrow.forward"
+            systemName: .arrow
         ) {
             PushNotificationManager.requestRemoteNotificationPermission { granted in
                 onContinue(granted)

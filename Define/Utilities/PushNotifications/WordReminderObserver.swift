@@ -7,6 +7,7 @@
 
 import SwiftUI
 import DictionaryAPI
+import AppIcon
 
 /// Get and set the date of a push notification reminder notification for a word
 private struct WordReminderObserver: ViewModifier {
@@ -56,15 +57,15 @@ struct WordReminderButton: View {
     var onTap: (Bool) -> Void
 
     /// Name of the image based on the reminder date
-    private var systemName: String {
-        reminderDate != nil ? "checkmark" : "clock"
+    private var systemName: SystemImage {
+        reminderDate != nil ? .checkmark : .clock
     }
 
     var body: some View {
         Button(action: {
             onTap(reminderDate != nil)
         }, label: {
-            Image(systemName: systemName)
+            Image(systemName)
                 .observeWordReminder(
                     reminderDate: $reminderDate,
                     savedWord: savedWord
@@ -89,7 +90,7 @@ struct WordReminderView: View {
             guard let reminderDate else { return }
             presentedTimeRemaining = TimeRemaining(toDate: reminderDate)
         }, label: {
-            Image(systemName: "clock")
+            Image(.clock)
                 .systemImage(size: 16)
                 .foregroundStyle(Color.appGray)
                 .padding(16)

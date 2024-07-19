@@ -37,7 +37,7 @@ struct SearchHeaderView: View {
                 text: $search,
                 isFocused: $isFocused,
                 prompt: "search_header_prompt",
-                image: Image(systemName: "magnifyingglass")
+                image: Image(.magnifyingGlass)
             )
         }
         .padding(.margins)

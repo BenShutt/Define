@@ -51,7 +51,7 @@ private struct DefinitionView: View {
             }
 
             if example != nil {
-                Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
+                Image(isExpanded ? .chevronUp : .chevronDown)
                     .systemImage(size: 12)
                     .foregroundStyle(Color.appDarkGray)
             }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AppIcon
 
 /// `View` with sticky button content
 struct StickyButton: ViewModifier {
@@ -14,7 +15,7 @@ struct StickyButton: ViewModifier {
     var title: LocalizedStringKey
 
     /// SF Symbol name
-    var systemName: String
+    var systemName: SystemImage
 
     /// On button tapped
     var onTap: () -> Void
@@ -36,7 +37,7 @@ struct StickyButton: ViewModifier {
 extension View {
     func stickyButton(
         title: LocalizedStringKey,
-        systemName: String,
+        systemName: SystemImage,
         onTap: @escaping () -> Void
     ) -> some View {
         modifier(StickyButton(
@@ -54,7 +55,7 @@ extension View {
         .screen()
         .stickyButton(
             title: "continue_button",
-            systemName: "plus",
+            systemName: .plus,
             onTap: {}
         )
 }

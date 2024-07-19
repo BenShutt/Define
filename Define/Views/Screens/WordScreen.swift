@@ -65,7 +65,7 @@ struct WordScreen: View {
                     Button(action: {
                         isPresentingDeleteWordAlert = true
                     }, label: {
-                        Image(systemName: "trash")
+                        Image(.trash)
                     })
                 }
             }
@@ -178,7 +178,7 @@ private struct WordContentView: View {
             MeaningList(source: source)
                 .stickyButton(
                     title: "word_save_button",
-                    systemName: "plus",
+                    systemName: .plus,
                     onTap: onSave
                 )
         } else {

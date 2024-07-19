@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AppIcon
 
 /// Button component
 struct StyledButton: View {
@@ -17,7 +18,7 @@ struct StyledButton: View {
     var title: LocalizedStringKey
 
     /// SF Symbol name
-    var systemName: String
+    var systemName: SystemImage
 
     /// Width of the text
     var maxWidth: CGFloat? = .infinity
@@ -28,7 +29,7 @@ struct StyledButton: View {
     var body: some View {
         Button(action: onTap) {
             HStack(spacing: .medium) {
-                Image(systemName: systemName)
+                Image(systemName)
                     .systemImage(size: .icon, weight: .bold)
 
                 Text(title)
@@ -58,7 +59,7 @@ struct StyledButton: View {
 #Preview {
     StyledButton(
         title: "continue_button",
-        systemName: "plus",
+        systemName: .plus,
         maxWidth: nil,
         onTap: {}
     )

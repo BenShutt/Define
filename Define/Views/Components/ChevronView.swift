@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ChevronView: View {
     var body: some View {
-        Image(systemName: "chevron.right")
+        Image(.chevronRight)
             .systemImage(size: 16, weight: .heavy)
             .foregroundStyle(Color.appDarkGray)
     }

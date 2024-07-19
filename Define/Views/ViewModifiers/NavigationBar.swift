@@ -68,7 +68,7 @@ private struct PreviewDetailView: View {
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button(action: {}, label: {
-                    Image(systemName: "plus")
+                    Image(.plus)
                         .foregroundStyle(Color.appDarkGray)
                 })
             }
