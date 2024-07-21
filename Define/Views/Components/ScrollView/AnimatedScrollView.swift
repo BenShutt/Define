@@ -78,7 +78,7 @@ private struct PreviewColorView: View {
             .frame(maxWidth: .infinity)
             .overlay {
                 Text(index, format: .number)
-                    .textStyle(.h1, textColor: .appDarkGray)
+                    .textStyle(.h1)
                     .padding(height / 10)
                     .background(Color.appLightGray)
                     .clipShape(shape)

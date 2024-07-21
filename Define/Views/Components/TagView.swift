@@ -21,7 +21,8 @@ struct TagView: View {
 
     var body: some View {
         Text(verbatim: text)
-            .textStyle(.tag, textColor: foregroundColor)
+            .foregroundStyle(foregroundColor) // Override
+            .textStyle(.tag)
             .padding(.vertical, .smallMedium)
             .padding(.horizontal, .medium)
             .background(GradientBlurView(color: backgroundColor))

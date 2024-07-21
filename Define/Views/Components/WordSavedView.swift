@@ -11,11 +11,8 @@ struct WordSavedView: View {
     var body: some View {
         VStack(spacing: 0) {
             Text("word_saved")
-                .textStyle(
-                    .h4,
-                    textColor: .appBlack,
-                    fill: .center
-                )
+                .foregroundStyle(Color.appBlack) // Override
+                .textStyle(.h4, fill: .center)
                 .padding(.margins)
                 .background(GradientBlurView(color: .appGreen))
 

@@ -43,12 +43,8 @@ struct InputTextField: View {
             TextField(prompt, text: $text)
                 .focused($isFocused)
                 .textContentType(contentType)
-                .textStyle(
-                    .body,
-                    lineLimit: 1,
-                    textColor: tintColor,
-                    fill: .leading
-                )
+                .foregroundStyle(tintColor) // Override
+                .textStyle(.body, lineLimit: 1, fill: .leading)
                 .tint(tintColor)
                 .accentColor(tintColor) // For cursor
                 .padding(.vertical, .mediumLarge)

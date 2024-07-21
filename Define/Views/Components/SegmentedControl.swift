@@ -46,11 +46,8 @@ private struct SegmentView<Segment: SegmentedItem>: View {
 
     var body: some View {
         Text(segment.title)
-            .textStyle(
-                .tag,
-                lineLimit: 1,
-                textColor: isSelected ? .appBlack : .appGray
-            )
+            .foregroundStyle(isSelected ? Color.appBlack : .appGray) // Override
+            .textStyle(.tag, lineLimit: 1)
             .frame(maxWidth: .infinity)
             .padding(.vertical, .smallMedium)
             .padding(.horizontal, .large)

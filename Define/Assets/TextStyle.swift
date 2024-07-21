@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import Utilities
 
-/// Set of `TextStyle`s (styles of text)
-enum TextStyle: String, CaseIterable, Hashable, Identifiable {
+/// Set of styles of text
+enum TextStyle: String, CaseIterable, Identifiable {
     case h1
     case h2
     case h3
@@ -35,7 +36,7 @@ enum TextStyle: String, CaseIterable, Hashable, Identifiable {
     }
 
     /// Get name and weight of the font
-    private var font: WorkSans {
+    private var workSans: WorkSans {
         switch self {
         case .h1: .bold
         case .h2: .semiBold
@@ -49,7 +50,7 @@ enum TextStyle: String, CaseIterable, Hashable, Identifiable {
     }
 
     /// Default text color
-    private var defaultTextColor: Color {
+    var defaultTextColor: Color {
         switch self {
         case .h1: .appDarkGray
         case .h2: .appDarkGray
@@ -62,25 +63,9 @@ enum TextStyle: String, CaseIterable, Hashable, Identifiable {
         }
     }
 
-    /// Make a styled text
-    /// - Parameters:
-    ///   - lineLimit: Number of lines to limit to, defaults to `nil`
-    ///   - textColor: Override text color, defaults to text style's default
-    ///   - fill: Fill parent width and set text alignment, defaults to `nil`
-    /// - Returns: A styled text
-    func styledText(
-        lineLimit: Int?,
-        textColor: Color?,
-        fill: TextAlignment?
-    ) -> StyledText {
-        StyledText(
-            font: font,
-            fontSize: fontSize,
-            lintLimit: lineLimit,
-            textAlignment: fill ?? .center,
-            foregroundColor: textColor ?? defaultTextColor,
-            maxWidth: fill != nil ? .infinity : nil
-        )
+    /// Map to font
+    var font: Font {
+        .custom(workSans.rawValue, size: fontSize)
     }
 }
 
@@ -90,14 +75,15 @@ extension View {
     func textStyle(
         _ textStyle: TextStyle,
         lineLimit: Int? = nil,
-        textColor: Color? = nil,
         fill: TextAlignment? = nil
     ) -> some View {
-        modifier(textStyle.styledText(
-            lineLimit: lineLimit,
-            textColor: textColor,
-            fill: fill
-        ))
+        self.textStyle(
+            font: textStyle.font,
+            lintLimit: lineLimit,
+            textAlignment: fill ?? .center,
+            foregroundColor: textStyle.defaultTextColor,
+            maxWidth: fill != nil ? .infinity : nil
+        )
     }
 }
 

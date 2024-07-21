@@ -46,7 +46,8 @@ private struct DefinitionView: View {
 
                 if let example, isExpanded {
                     Text("definition_example \(example)")
-                        .textStyle(.caption, textColor: .appBlue, fill: .leading)
+                        .foregroundStyle(Color.appBlue) // Override
+                        .textStyle(.caption, fill: .leading)
                 }
             }
 
