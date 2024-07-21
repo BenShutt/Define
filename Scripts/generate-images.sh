@@ -3,6 +3,7 @@
 #
 # Script: generate-images.sh
 # Usage: ./generate-images.sh
+#
 # Build and run the Swift Package Executable.
 #
 
@@ -19,8 +20,5 @@ cd "${SCRIPT_DIR}/../AppIcon"
 echo "Building Swift Package Executable..."
 swift build --configuration release
 
-# Move into build directory
-cd .build/release/
-
 # Run the Executable
-./AppIconGenerator --directory "~/Desktop/DefineImages"
+./.build/release/AppIconGenerator --directory "~/Desktop/DefineImages"
