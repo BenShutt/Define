@@ -79,7 +79,7 @@ extension View {
     ) -> some View {
         self.textStyle(
             font: textStyle.font,
-            lintLimit: lineLimit,
+            lineLimit: lineLimit,
             textAlignment: fill ?? .center,
             foregroundColor: textStyle.defaultTextColor,
             maxWidth: fill != nil ? .infinity : nil
