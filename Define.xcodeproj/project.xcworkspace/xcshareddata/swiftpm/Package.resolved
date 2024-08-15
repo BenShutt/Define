@@ -15,7 +15,7 @@
       "location" : "https://github.com/BenShutt/DataRequest.git",
       "state" : {
         "branch" : "main",
-        "revision" : "31ce27895768ef0600214ea47e63e354c7340e08"
+        "revision" : "2073a715759c679f59fb408e76c2fb90450d9e6a"
       }
     },
     {
@@ -23,8 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/airbnb/lottie-ios",
       "state" : {
-        "revision" : "769b88d83a42ca8d5572b020c96f47e3690b3796",
-        "version" : "4.4.3"
+        "revision" : "fe4c6fe3a0aa66cdeb51d549623c82ca9704b9a5",
+        "version" : "4.5.0"
       }
     },
     {
@@ -32,8 +32,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-argument-parser.git",
       "state" : {
-        "revision" : "0fbc8848e389af3bb55c182bc19ca9d5dc2f255b",
-        "version" : "1.4.0"
+        "revision" : "41982a3656a71c768319979febd796c6fd111d5c",
+        "version" : "1.5.0"
       }
     },
     {
@@ -42,7 +42,7 @@
       "location" : "https://github.com/BenShutt/Utilities",
       "state" : {
         "branch" : "develop",
-        "revision" : "4b902d67370809e4c8a1d489b73e2495dd6a1d29"
+        "revision" : "e43124fb9f729acc9a629cecd73a611689b05d90"
       }
     }
   ],
