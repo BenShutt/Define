@@ -17,18 +17,16 @@ struct Main: AsyncParsableCommand {
     )
 
     @Option(help: "The file path of the directory to write the images to")
-    var directory: String
+    var directory: File
 
     @MainActor mutating func run() async throws {
-        let directoryURL = URL(expandingTildeInFilePath: directory)
-
         try FileManager.default.createDirectory(
-            at: directoryURL,
+            at: directory.url,
             withIntermediateDirectories: true
         )
 
         try PNGImage(
-            directoryURL: directoryURL,
+            directoryURL: directory.url,
             fileName: "AppIcon",
             width: .appIconSize,
             height: .appIconSize
@@ -36,13 +34,23 @@ struct Main: AsyncParsableCommand {
         .renderAndWrite(content: AppIcon())
 
         try PNGImage(
-            directoryURL: directoryURL,
+            directoryURL: directory.url,
             fileName: "LaunchScreen",
             width: .launchScreenWidth,
             height: .launchScreenHeight
         )
         .renderAndWrite(content: LaunchScreen())
 
-        print("Success, images written to '\(directoryURL)'")
+        print("Success, images written to '\(directory.url)'")
+    }
+}
+
+// MARK: - File
+
+struct File: ExpressibleByArgument {
+    var url: URL
+
+    init?(argument: String) {
+        url = URL(expandingTildeInFilePath: argument)
     }
 }
