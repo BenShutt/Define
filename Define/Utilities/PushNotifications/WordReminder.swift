@@ -45,10 +45,10 @@ struct WordReminder {
         content.userInfo = [userInfoKey: savedWord.word]
 
         let calendar = Calendar.current
-        let date = calendar.adding(.day, value: remindAfterDays, to: Date())
+        let date = calendar.addOrDefault(.day, value: remindAfterDays, to: Date())
         let dateComponents = calendar.dateComponents(
             [.year, .month, .day, .hour, .minute, .second],
-            from: date ?? Date()
+            from: date
         )
 
         let trigger = UNCalendarNotificationTrigger(

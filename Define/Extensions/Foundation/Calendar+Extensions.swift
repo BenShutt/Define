@@ -14,16 +14,16 @@ extension Calendar {
     ///   - component: A calendar component
     ///   - value: Amount of component to add
     ///   - date: The date to add to
-    /// - Returns: The new date after adding or `nil`
-    func adding(
+    /// - Returns: The new date after adding or `date` on `nil`
+    func addOrDefault(
         _ component: Calendar.Component,
         value: Int,
         to date: Date
-    ) -> Date? {
+    ) -> Date {
         self.date(
             byAdding: component,
             value: value,
             to: date
-        )
+        ) ?? date
     }
 }

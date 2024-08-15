@@ -43,10 +43,10 @@ struct DateGroup<Element: Equatable>: Identifiable, Equatable, Comparable {
         let today = calendar.startOfDay(for: Date())
         guard date < today else { return .today }
 
-        let lastWeek = calendar.adding(.weekOfYear, value: -1, to: today) ?? today
+        let lastWeek = calendar.addOrDefault(.weekOfYear, value: -1, to: today)
         guard date < lastWeek else { return .lastWeek }
 
-        let lastMonth = calendar.adding(.month, value: -1, to: today) ?? today
+        let lastMonth = calendar.addOrDefault(.month, value: -1, to: today)
         guard date < lastMonth else { return .lastMonth }
 
         return .other
