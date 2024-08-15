@@ -39,9 +39,6 @@ private struct InfoScrollContentView: View {
 
     var body: some View {
         LazyVStack(spacing: .vMargin) {
-            Text("info_subtitle \(appNameOrDefault)")
-                .textStyle(.body, fill: .leading)
-
             SwitchListItem(
                 isOn: $settings.wordsExpanded,
                 title: "words_expanded_title",
