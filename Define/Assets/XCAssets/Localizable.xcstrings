@@ -152,6 +152,17 @@
         }
       }
     },
+    "export_share_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "JSON Export"
+          }
+        }
+      }
+    },
     "export_subtitle" : {
       "localizations" : {
         "en" : {
@@ -253,6 +264,9 @@
           }
         }
       }
+    },
+    "Key" : {
+      "extractionState" : "manual"
     },
     "rate_app_subtitle" : {
       "localizations" : {

@@ -10,6 +10,9 @@ import AppIcon
 
 /// View that is shown in a scroll view of the root screen
 struct InfoScreen: View {
+    @Environment(\.modelContext) private var modelContext
+    @StateObject private var exportManager = ExportManager()
+
     var segmentedHeight: CGFloat
 
     var body: some View {
@@ -17,9 +20,16 @@ struct InfoScreen: View {
             segmentedHeight: segmentedHeight,
             subtitle: "info_subtitle \(appNameOrDefault)",
             scrollContent: {
-                InfoScrollContentView()
+                InfoScrollContentView(onExport: {
+                    exportManager.export(modelContext: modelContext)
+                })
             }
         )
+        .sheet(item: $exportManager.jsonFileURL) { url in
+            ShareSheet(items: [url.item]) { _, _, _, _ in
+                exportManager.clean(modelContext: modelContext)
+            }
+        }
     }
 }
 
@@ -28,6 +38,8 @@ struct InfoScreen: View {
 private struct InfoScrollContentView: View {
     @EnvironmentObject private var settings: UserSettings
     @Environment(\.openURL) private var openURL
+
+    var onExport: () -> Void
 
     private var settingsURL: URL? {
         URL(string: UIApplication.openSettingsURLString)
@@ -82,9 +94,7 @@ private struct InfoScrollContentView: View {
                 title: "export_title",
                 subtitle: "export_subtitle"
             )
-            .button {
-                // TODO
-            }
+            .button(action: onExport)
             .container()
 
             if let settingsURL {
@@ -111,7 +121,7 @@ private struct InfoScrollContentView: View {
 
 #Preview {
     ScrollView {
-        InfoScrollContentView()
+        InfoScrollContentView {}
     }
     .screen()
     .environmentObjects()
