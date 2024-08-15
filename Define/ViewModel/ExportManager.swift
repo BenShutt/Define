@@ -61,7 +61,8 @@ private struct JSONExport {
     }
 
     private func export(to url: URL) throws -> URL {
-        let savedWords = try modelContext.fetch(FetchDescriptor<SavedWord>())
+        let db = WordDb(modelContext: modelContext)
+        let savedWords = try db.fetchAll()
         let words = savedWords.map { $0.model }
         let data = try JSONEncoder.pretty.encode(words)
         try data.write(to: url, options: .atomic)

@@ -11,6 +11,10 @@ import SwiftData
 struct WordDb {
     let modelContext: ModelContext
 
+    func fetchAll() throws -> [SavedWord] {
+        try modelContext.fetch(FetchDescriptor<SavedWord>())
+    }
+
     func fetch(word: String) throws -> SavedWord? {
         try modelContext.fetch(
             FetchDescriptor<SavedWord>(predicate: #Predicate {
