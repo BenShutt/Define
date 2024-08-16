@@ -10,20 +10,18 @@ import Utilities
 
 /// Blurred linear gradient
 struct GradientBlurView: View {
-
-    /// Color to blur with gradient
     var color: Color = .default
 
     var body: some View {
-        ZStack {
-            LinearGradient(
-                colors: [
-                    .appWhite,
-                    color.opacity(0.2)
-                ],
-                startPoint: .top,
-                endPoint: .bottom
-            )
+        LinearGradient(
+            colors: [
+                .appWhite,
+                color.opacity(0.2)
+            ],
+            startPoint: .top,
+            endPoint: .bottom
+        )
+        .overlay {
             BlurView(style: .light)
         }
     }

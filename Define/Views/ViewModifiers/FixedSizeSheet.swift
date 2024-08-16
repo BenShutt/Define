@@ -26,7 +26,7 @@ private struct FixedSizeSheet: ViewModifier {
         .fixedSize(horizontal: false, vertical: true)
         .presentationDetents([.height(height)])
         .presentationDragIndicator(.visible)
-        .padding(.top, 5) // For presentation drag indicator
+        .padding(.top, 30) // For presentation drag indicator
     }
 }
 

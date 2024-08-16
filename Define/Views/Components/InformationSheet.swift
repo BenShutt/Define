@@ -23,7 +23,7 @@ struct InformationSheet: View {
 
             Text(subtitle)
                 .textStyle(.body, fill: .leading)
-                .padding(.top, .smallMedium)
+                .padding(.top, .small)
         }
         .padding(.margins)
         .fixedSizeSheet()
