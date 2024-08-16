@@ -20,4 +20,3 @@ rm -rf ~/Library/org.swift.swiftpm
 
 # Remove Xcode DerivedData
 rm -rf "${HOME}/Library/Developer/Xcode/DerivedData"
-
