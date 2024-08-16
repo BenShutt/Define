@@ -344,8 +344,8 @@
 				B8E49C0A28DF985500F9CAC4 /* CGFloat+Values.swift */,
 				B8D2A73D28DEEFE70096A020 /* Color+Values.swift */,
 				B8A1232628E971FD00ACEC45 /* LottieFile.swift */,
-				B8D2A74528DF3AFE0096A020 /* TextStyle.swift */,
 				B8C8FB202C6F462E003D9824 /* NotoSans.swift */,
+				B8D2A74528DF3AFE0096A020 /* TextStyle.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -445,10 +445,10 @@
 		B8B9B9DE28EDC6E4006FCA76 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B8B563E828F00096004B80F0 /* LaunchScreen.storyboard */,
 				B8A1231C28E9711600ACEC45 /* Lotties */,
 				B8C8FB222C6F48DC003D9824 /* NotoSans */,
 				B80399E028D79A3B008CE7B4 /* Images.xcassets */,
+				B8B563E828F00096004B80F0 /* LaunchScreen.storyboard */,
 				B818266E2AC5C57A00C6CCC7 /* Localizable.xcstrings */,
 			);
 			path = Resources;
@@ -487,9 +487,9 @@
 		B8C894ED28D908E900975E25 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				B8C8FB182C6E5DEA003D9824 /* ExportManager.swift */,
 				B879E9EF28F0CA910094AA24 /* SearchViewModel.swift */,
 				B89F6ED22C31F0E40097BF94 /* UserSettings.swift */,
-				B8C8FB182C6E5DEA003D9824 /* ExportManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -550,8 +550,8 @@
 				B8D7803A2C29BF34006D25EF /* Navigation */,
 				B80E721929FD9546007CCE71 /* ScrollView */,
 				B891F8E12950FB6600A53582 /* ChevronView.swift */,
-				B8AD58822AD471350054403E /* InformationSheet.swift */,
 				B8BFDC6E2AC77FED009E1F83 /* GradientBlurView.swift */,
+				B8AD58822AD471350054403E /* InformationSheet.swift */,
 				B8D2A74128DF3A250096A020 /* InputTextField.swift */,
 				B8E49C0828DF917E00F9CAC4 /* LoadingView.swift */,
 				B8F834CF2B73E40700D0C5D2 /* NavigationBarBackground.swift */,
@@ -560,10 +560,10 @@
 				B8B9B9D528EC5C54006FCA76 /* SearchHeaderView.swift */,
 				B8C404332C308BB80081922C /* SegmentedControl.swift */,
 				B8C25F9F294F8D5D001C8847 /* Separator.swift */,
+				B8C8FB1A2C6E6850003D9824 /* ShareSheet.swift */,
 				B8BBA16128E8EDF100222116 /* StyledButton.swift */,
 				B879E9E828F0C5190094AA24 /* TagView.swift */,
 				B8DBE7922C2F5B4600A06DE3 /* WordSavedView.swift */,
-				B8C8FB1A2C6E6850003D9824 /* ShareSheet.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -717,30 +717,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8C8FBAC2C6F48F1003D9824 /* NotoSans-Bold.ttf in Resources */,
-				B8C8FB7E2C6F48F1003D9824 /* NotoSans-Italic.ttf in Resources */,
-				B8C8FB6F2C6F48F1003D9824 /* NotoSans-Regular.ttf in Resources */,
-				B8C8FB7B2C6F48F1003D9824 /* NotoSans-Medium.ttf in Resources */,
-				B8C8FB772C6F48F1003D9824 /* NotoSans-ThinItalic.ttf in Resources */,
-				B8C8FB7D2C6F48F1003D9824 /* NotoSans-BoldItalic.ttf in Resources */,
-				B8C8FB9A2C6F48F1003D9824 /* NotoSans-Thin.ttf in Resources */,
-				B8C8FB802C6F48F1003D9824 /* NotoSans-SemiBoldItalic.ttf in Resources */,
-				B8C8FB942C6F48F1003D9824 /* NotoSans-ExtraLight.ttf in Resources */,
-				B8C8FB872C6F48F1003D9824 /* NotoSans-LightItalic.ttf in Resources */,
 				B8B9B9E128EDC9FC006FCA76 /* Images.xcassets in Resources */,
-				B8C8FB6D2C6F48F1003D9824 /* NotoSans-ExtraBoldItalic.ttf in Resources */,
 				B8B563E928F00096004B80F0 /* LaunchScreen.storyboard in Resources */,
-				B8C8FBA52C6F48F1003D9824 /* NotoSans-ExtraLightItalic.ttf in Resources */,
 				B818266F2AC5C57A00C6CCC7 /* Localizable.xcstrings in Resources */,
-				B8C8FB922C6F48F1003D9824 /* NotoSans-Light.ttf in Resources */,
-				B80399E428D79A3B008CE7B4 /* Preview Assets.xcassets in Resources */,
-				B8C8FBA22C6F48F1003D9824 /* NotoSans-BlackItalic.ttf in Resources */,
-				B8A1232028E9712300ACEC45 /* searchEmpty.json in Resources */,
-				B8C8FBA72C6F48F1003D9824 /* NotoSans-ExtraBold.ttf in Resources */,
-				B8C8FB992C6F48F1003D9824 /* NotoSans-MediumItalic.ttf in Resources */,
-				B8A1231F28E9712300ACEC45 /* searchNoResults.json in Resources */,
-				B8C8FB9E2C6F48F1003D9824 /* NotoSans-SemiBold.ttf in Resources */,
 				B8C8FB9B2C6F48F1003D9824 /* NotoSans-Black.ttf in Resources */,
+				B8C8FBA22C6F48F1003D9824 /* NotoSans-BlackItalic.ttf in Resources */,
+				B8C8FBAC2C6F48F1003D9824 /* NotoSans-Bold.ttf in Resources */,
+				B8C8FB7D2C6F48F1003D9824 /* NotoSans-BoldItalic.ttf in Resources */,
+				B8C8FBA72C6F48F1003D9824 /* NotoSans-ExtraBold.ttf in Resources */,
+				B8C8FB6D2C6F48F1003D9824 /* NotoSans-ExtraBoldItalic.ttf in Resources */,
+				B8C8FB942C6F48F1003D9824 /* NotoSans-ExtraLight.ttf in Resources */,
+				B8C8FBA52C6F48F1003D9824 /* NotoSans-ExtraLightItalic.ttf in Resources */,
+				B8C8FB7E2C6F48F1003D9824 /* NotoSans-Italic.ttf in Resources */,
+				B8C8FB922C6F48F1003D9824 /* NotoSans-Light.ttf in Resources */,
+				B8C8FB872C6F48F1003D9824 /* NotoSans-LightItalic.ttf in Resources */,
+				B8C8FB7B2C6F48F1003D9824 /* NotoSans-Medium.ttf in Resources */,
+				B8C8FB992C6F48F1003D9824 /* NotoSans-MediumItalic.ttf in Resources */,
+				B8C8FB6F2C6F48F1003D9824 /* NotoSans-Regular.ttf in Resources */,
+				B8C8FB9E2C6F48F1003D9824 /* NotoSans-SemiBold.ttf in Resources */,
+				B8C8FB802C6F48F1003D9824 /* NotoSans-SemiBoldItalic.ttf in Resources */,
+				B8C8FB9A2C6F48F1003D9824 /* NotoSans-Thin.ttf in Resources */,
+				B8C8FB772C6F48F1003D9824 /* NotoSans-ThinItalic.ttf in Resources */,
+				B80399E428D79A3B008CE7B4 /* Preview Assets.xcassets in Resources */,
+				B8A1232028E9712300ACEC45 /* searchEmpty.json in Resources */,
+				B8A1231F28E9712300ACEC45 /* searchNoResults.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -801,6 +801,7 @@
 				B868F23C2AECDD88003765F8 /* DateGroup.swift in Sources */,
 				B80399DD28D79A37008CE7B4 /* DefineApp.swift in Sources */,
 				B88491A22961FFB5009F6469 /* DefinitionListItem.swift in Sources */,
+				B8C8FB192C6E5DEA003D9824 /* ExportManager.swift in Sources */,
 				B8B05F162C29748400F2A9A8 /* FixedSizeSheet.swift in Sources */,
 				B8BFDC6F2AC77FED009E1F83 /* GradientBlurView.swift in Sources */,
 				B895887429578BFB0041A315 /* HomeScreen.swift in Sources */,
@@ -822,6 +823,7 @@
 				B8F834D02B73E40700D0C5D2 /* NavigationBarBackground.swift in Sources */,
 				B8D7803C2C29BF62006D25EF /* NavigationRoute.swift in Sources */,
 				B896B9AD2AEA2EEF0043DA18 /* NotificationManager.swift in Sources */,
+				B8C8FB212C6F462E003D9824 /* NotoSans.swift in Sources */,
 				B832D6622C24654A00FF3EFE /* OffsetScrollView.swift in Sources */,
 				B8ACB21E2C333653002DF7C5 /* PartOfSpeech.swift in Sources */,
 				B801A3DB2986D41400FAD316 /* PartOfSpeechView.swift in Sources */,
@@ -831,10 +833,8 @@
 				B8C404392C30AA020081922C /* RootScreen.swift in Sources */,
 				B80E722629FDB5C9007CCE71 /* RoundedRectangleBorder.swift in Sources */,
 				B8FF0DD82960ACCE004C61B6 /* SavedWord.swift in Sources */,
-				B8C8FB192C6E5DEA003D9824 /* ExportManager.swift in Sources */,
 				B89F179428E0EBF100A96E35 /* Screen.swift in Sources */,
 				B8A1232A28E9744E00ACEC45 /* SearchEmptyView.swift in Sources */,
-				B8C8FB212C6F462E003D9824 /* NotoSans.swift in Sources */,
 				B8B9B9D628EC5C54006FCA76 /* SearchHeaderView.swift in Sources */,
 				B813BFFD28EB7BA1000C766C /* SearchIconView.swift in Sources */,
 				B8D2A73C28DEEFAE0096A020 /* SearchScreen.swift in Sources */,
@@ -842,6 +842,7 @@
 				B8C404342C308BB80081922C /* SegmentedControl.swift in Sources */,
 				B8C25FA0294F8D5D001C8847 /* Separator.swift in Sources */,
 				B80E722229FDAD60007CCE71 /* ShapeBorder.swift in Sources */,
+				B8C8FB1B2C6E6850003D9824 /* ShareSheet.swift in Sources */,
 				B894FA2128FC8A4B00BC0BFA /* StickyBottom.swift in Sources */,
 				B894FA2428FC8D7A00BC0BFA /* StickyButton.swift in Sources */,
 				B830B7D32C317BA5007DBD8A /* StickyTop.swift in Sources */,
@@ -860,7 +861,6 @@
 				B8DBE7932C2F5B4600A06DE3 /* WordSavedView.swift in Sources */,
 				B84AD60A28FAFC9E00C2D5AE /* WordScreen.swift in Sources */,
 				B8C98F5D2C33E49200658F7C /* WordSource.swift in Sources */,
-				B8C8FB1B2C6E6850003D9824 /* ShareSheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
