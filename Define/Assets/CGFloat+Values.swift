@@ -10,11 +10,6 @@ import SwiftUI
 /// Set of fixed `CGFloat` values
 extension CGFloat {
 
-    /// π
-    static let π: CGFloat = .pi
-
-    // MARK: - Config
-
     /// 2pts
     static let borderWidth: CGFloat = 2
 
@@ -63,14 +58,6 @@ extension CGFloat {
 
     /// Medium pts
     static let vMargin: CGFloat = .medium
-}
-
-// MARK: - Double + Values
-
-extension Double {
-
-    /// π
-    static let π: Double = .pi
 }
 
 // MARK: - EdgeInsets + Values

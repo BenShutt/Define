@@ -340,11 +340,9 @@
 		B8039A0A28D7A26E008CE7B4 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				B8A1231C28E9711600ACEC45 /* Lotties */,
-				B8B9B9DE28EDC6E4006FCA76 /* XCAssets */,
+				B8B9B9DE28EDC6E4006FCA76 /* Resources */,
 				B8E49C0A28DF985500F9CAC4 /* CGFloat+Values.swift */,
 				B8D2A73D28DEEFE70096A020 /* Color+Values.swift */,
-				B8B563E828F00096004B80F0 /* LaunchScreen.storyboard */,
 				B8A1232628E971FD00ACEC45 /* LottieFile.swift */,
 				B8D2A74528DF3AFE0096A020 /* TextStyle.swift */,
 				B8C8FB202C6F462E003D9824 /* NotoSans.swift */,
@@ -444,14 +442,16 @@
 			path = Lotties;
 			sourceTree = "<group>";
 		};
-		B8B9B9DE28EDC6E4006FCA76 /* XCAssets */ = {
+		B8B9B9DE28EDC6E4006FCA76 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B8B563E828F00096004B80F0 /* LaunchScreen.storyboard */,
+				B8A1231C28E9711600ACEC45 /* Lotties */,
 				B8C8FB222C6F48DC003D9824 /* NotoSans */,
 				B80399E028D79A3B008CE7B4 /* Images.xcassets */,
 				B818266E2AC5C57A00C6CCC7 /* Localizable.xcstrings */,
 			);
-			path = XCAssets;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		B8C404372C30A9F40081922C /* RootScreen */ = {
