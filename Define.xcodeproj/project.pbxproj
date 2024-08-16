@@ -97,6 +97,8 @@
 		B8C8FBB42C6F4F2F003D9824 /* PasteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C8FBB32C6F4F2F003D9824 /* PasteButton.swift */; };
 		B8C8FBB62C6F568D003D9824 /* URL+Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C8FBB52C6F568D003D9824 /* URL+Values.swift */; };
 		B8C98F5D2C33E49200658F7C /* WordSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C98F5C2C33E49200658F7C /* WordSource.swift */; };
+		B8CB735C2C6FF50C00D6A727 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CB735B2C6FF50C00D6A727 /* TableViewController.swift */; };
+		B8CB73612C6FF5D300D6A727 /* AnimatedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CB73602C6FF5D300D6A727 /* AnimatedTableView.swift */; };
 		B8D2A73C28DEEFAE0096A020 /* SearchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2A73B28DEEFAE0096A020 /* SearchScreen.swift */; };
 		B8D2A73E28DEEFE70096A020 /* Color+Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2A73D28DEEFE70096A020 /* Color+Values.swift */; };
 		B8D2A74228DF3A250096A020 /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2A74128DF3A250096A020 /* InputTextField.swift */; };
@@ -225,6 +227,8 @@
 		B8C8FBB32C6F4F2F003D9824 /* PasteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteButton.swift; sourceTree = "<group>"; };
 		B8C8FBB52C6F568D003D9824 /* URL+Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Values.swift"; sourceTree = "<group>"; };
 		B8C98F5C2C33E49200658F7C /* WordSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSource.swift; sourceTree = "<group>"; };
+		B8CB735B2C6FF50C00D6A727 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		B8CB73602C6FF5D300D6A727 /* AnimatedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTableView.swift; sourceTree = "<group>"; };
 		B8D2A73B28DEEFAE0096A020 /* SearchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreen.swift; sourceTree = "<group>"; };
 		B8D2A73D28DEEFE70096A020 /* Color+Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Values.swift"; sourceTree = "<group>"; };
 		B8D2A74128DF3A250096A020 /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
@@ -524,6 +528,15 @@
 			path = NotoSans;
 			sourceTree = "<group>";
 		};
+		B8CB735D2C6FF51A00D6A727 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				B8CB735B2C6FF50C00D6A727 /* TableViewController.swift */,
+				B8CB73602C6FF5D300D6A727 /* AnimatedTableView.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
 		B8D2A73828DEEF8B0096A020 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -550,6 +563,7 @@
 		B8D2A74028DF0E670096A020 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				B8CB735D2C6FF51A00D6A727 /* TableView */,
 				B813BFFB28EB7ACA000C766C /* Icon */,
 				B879E9EA28F0C7110094AA24 /* ListItem */,
 				B8D7803A2C29BF34006D25EF /* Navigation */,
@@ -829,6 +843,7 @@
 				B8F834D02B73E40700D0C5D2 /* NavigationBarBackground.swift in Sources */,
 				B8D7803C2C29BF62006D25EF /* NavigationRoute.swift in Sources */,
 				B896B9AD2AEA2EEF0043DA18 /* NotificationManager.swift in Sources */,
+				B8CB73612C6FF5D300D6A727 /* AnimatedTableView.swift in Sources */,
 				B8C8FB212C6F462E003D9824 /* NotoSans.swift in Sources */,
 				B832D6622C24654A00FF3EFE /* OffsetScrollView.swift in Sources */,
 				B8ACB21E2C333653002DF7C5 /* PartOfSpeech.swift in Sources */,
@@ -843,6 +858,7 @@
 				B89F179428E0EBF100A96E35 /* Screen.swift in Sources */,
 				B8A1232A28E9744E00ACEC45 /* SearchEmptyView.swift in Sources */,
 				B8B9B9D628EC5C54006FCA76 /* SearchHeaderView.swift in Sources */,
+				B8CB735C2C6FF50C00D6A727 /* TableViewController.swift in Sources */,
 				B813BFFD28EB7BA1000C766C /* SearchIconView.swift in Sources */,
 				B8D2A73C28DEEFAE0096A020 /* SearchScreen.swift in Sources */,
 				B879E9F028F0CA910094AA24 /* SearchViewModel.swift in Sources */,
