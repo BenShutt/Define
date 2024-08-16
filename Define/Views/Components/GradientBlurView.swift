@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Utilities
 
 /// Blurred linear gradient
 struct GradientBlurView: View {

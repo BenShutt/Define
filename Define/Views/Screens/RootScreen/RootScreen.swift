@@ -133,6 +133,8 @@ private struct NavigationBarSubtitle: View {
     }
 }
 
+// MARK: - CGFloat + Extensions
+
 extension CGFloat {
     func clamped(to range: ClosedRange<CGFloat>) -> CGFloat {
         Swift.max(range.lowerBound, Swift.min(range.upperBound, self))
