@@ -36,14 +36,14 @@ enum TextStyle: String, CaseIterable, Identifiable {
     }
 
     /// Get name and weight of the font
-    private var workSans: WorkSans {
+    private var notoSans: NotoSans {
         switch self {
-        case .h1: .bold
-        case .h2: .semiBold
-        case .h3: .semiBold
-        case .h4: .semiBold
+        case .h1: .black
+        case .h2: .black
+        case .h3: .extraBold
+        case .h4: .bold
         case .body: .regular
-        case .button: .bold
+        case .button: .extraBold
         case .tag: .semiBold
         case .caption: .lightItalic // Italic applied via font
         }
@@ -65,7 +65,7 @@ enum TextStyle: String, CaseIterable, Identifiable {
 
     /// Map to font
     var font: Font {
-        .custom(workSans.rawValue, size: fontSize)
+        .custom(notoSans.rawValue, size: fontSize)
     }
 }
 

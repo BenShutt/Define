@@ -4,24 +4,24 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>WorkSans-Regular.ttf</string>
-		<string>WorkSans-Light.ttf</string>
-		<string>WorkSans-ExtraBold.ttf</string>
-		<string>WorkSans-SemiBoldItalic.ttf</string>
-		<string>WorkSans-MediumItalic.ttf</string>
-		<string>WorkSans-BoldItalic.ttf</string>
-		<string>WorkSans-ExtraLight.ttf</string>
-		<string>WorkSans-ThinItalic.ttf</string>
-		<string>WorkSans-ExtraLightItalic.ttf</string>
-		<string>WorkSans-Medium.ttf</string>
-		<string>WorkSans-SemiBold.ttf</string>
-		<string>WorkSans-Italic.ttf</string>
-		<string>WorkSans-BlackItalic.ttf</string>
-		<string>WorkSans-Thin.ttf</string>
-		<string>WorkSans-Black.ttf</string>
-		<string>WorkSans-LightItalic.ttf</string>
-		<string>WorkSans-ExtraBoldItalic.ttf</string>
-		<string>WorkSans-Bold.ttf</string>
+		<string>NotoSans-Black.ttf</string>
+		<string>NotoSans-BlackItalic.ttf</string>
+		<string>NotoSans-Bold.ttf</string>
+		<string>NotoSans-BoldItalic.ttf</string>
+		<string>NotoSans-ExtraBold.ttf</string>
+		<string>NotoSans-ExtraBoldItalic.ttf</string>
+		<string>NotoSans-ExtraLight.ttf</string>
+		<string>NotoSans-ExtraLightItalic.ttf</string>
+		<string>NotoSans-Italic.ttf</string>
+		<string>NotoSans-Light.ttf</string>
+		<string>NotoSans-LightItalic.ttf</string>
+		<string>NotoSans-Medium.ttf</string>
+		<string>NotoSans-MediumItalic.ttf</string>
+		<string>NotoSans-Regular.ttf</string>
+		<string>NotoSans-SemiBold.ttf</string>
+		<string>NotoSans-SemiBoldItalic.ttf</string>
+		<string>NotoSans-Thin.ttf</string>
+		<string>NotoSans-ThinItalic.ttf</string>
 	</array>
 </dict>
 </plist>
