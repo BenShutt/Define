@@ -13,7 +13,7 @@ struct InformationSheet: View {
     var subtitle: LocalizedStringKey
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
+        VStack(spacing: 0) {
             HStack(spacing: .medium) {
                 Text(title)
                     .textStyle(.h2, fill: .leading)
@@ -26,7 +26,6 @@ struct InformationSheet: View {
                 .padding(.top, .smallMedium)
         }
         .padding(.margins)
-        .padding(.vertical, .small)
         .fixedSizeSheet()
     }
 }
