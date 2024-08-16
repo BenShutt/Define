@@ -9,6 +9,8 @@ import SwiftUI
 import DictionaryAPI
 import AppIcon
 
+// TODO: Have seen a bug where the clock/modal said 2 weeks on first launch
+
 /// Get and set the date of a push notification reminder notification for a word
 private struct WordReminderObserver: ViewModifier {
     @EnvironmentObject private var notifications: NotificationManager
