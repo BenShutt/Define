@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
 
 #
-# Script: generate-images.sh
-# Usage: ./generate-images.sh
+# Script: 
+# generate-images.sh
 #
-# Build and run the Swift Package Executable.
+# Usage: 
+# ./generate-images.sh
+#
+# Description:
+# Build and run the AppIconGenerator swift package executable.
 #
 
 # Set defaults

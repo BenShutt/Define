@@ -1,9 +1,13 @@
 #!/usr/bin/env bash
 
 #
-# Script: sort-xcode-project.sh
-# Usage: ./sort-xcode-project.sh
+# Script:
+# sort-xcode-project.sh
 #
+# Usage: 
+# ./sort-xcode-project.sh
+#
+# Description:
 # Sorts the ".pbxproj" project file in the ".xcodeproj" 
 # directory alphabetically.
 #
@@ -11,11 +15,11 @@
 # Set defaults
 set -o nounset -o errexit -o errtrace -o pipefail
 
-# URL of the remote perl script on GitHub
-REMOTE_URL="https://raw.githubusercontent.com/WebKit/webkit/main/Tools/Scripts/sort-Xcode-project-file"
-
 # Get directory of this script
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
+# URL of the remote perl script on GitHub
+REMOTE_URL="https://raw.githubusercontent.com/WebKit/webkit/main/Tools/Scripts/sort-Xcode-project-file"
 
 # Path to ".pbxproj" project file in the ".xcodeproj" directory
 PROJECT_FILE="${SCRIPT_DIR}/../Define.xcodeproj/project.pbxproj"

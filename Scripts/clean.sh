@@ -1,8 +1,17 @@
 #!/usr/bin/env bash
 
 #
-# Script: clean
-# Usage: ./clean
+# Script:
+# clean.sh
+#
+# Usage: 
+# ./clean.sh
+#
+# Description:
+# Removes the following files:
+# - Build directory of AppIcon package
+# - SwiftPM caches
+# - Xcode derived data
 #
 
 # Set defaults
