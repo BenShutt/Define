@@ -17,9 +17,6 @@ struct SearchEmptyView: View {
     /// Lottie animation loop mode
     var loopMode: LottieLoopMode = .loop
 
-    /// Transform for lottie
-    var lottieTransform: CGAffineTransform = .identity
-
     /// Title text
     var title: LocalizedStringKey
 
@@ -36,12 +33,11 @@ struct SearchEmptyView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            LottieView(
-                file: lottie,
-                loopMode: loopMode,
-                transform: lottieTransform
-            )
-            .frame(width: 300, height: 100)
+            LottieView(lottie)
+                .playing(loopMode: loopMode)
+                .aspectRatio(contentMode: .fit)
+                .transform(lottie: lottie)
+                .frame(height: 150)
 
             Text(title)
                 .textStyle(.h1, fill: .center)

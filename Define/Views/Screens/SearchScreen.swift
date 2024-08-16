@@ -57,7 +57,6 @@ private struct SearchStateView: View {
         case .emptySearch:
             SearchEmptyView(
                 lottie: .searchEmpty,
-                lottieTransform: .init(scaleX: 1.5, y: 1.5),
                 title: "search_empty_title",
                 subtitle: "search_empty_subtitle"
             )
