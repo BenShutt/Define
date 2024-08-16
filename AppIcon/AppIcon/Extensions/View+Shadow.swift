@@ -10,11 +10,11 @@ import SwiftUI
 public extension View {
     func stickyShadow() -> some View {
         compositingGroup()
-            .shadow(color: .appIconShadowHeavy, radius: 15, x: 0, y: 2)
+            .shadow(color: .appIconShadowHeavy, radius: 10, x: 0, y: 2)
     }
 
     func containerShadow() -> some View {
         compositingGroup()
-            .shadow(color: .appIconShadowLight, radius: 3, x: 0, y: 0)
+            .shadow(color: .appIconShadowLight, radius: 7.5, x: 0, y: 0)
     }
 }

@@ -27,7 +27,7 @@ extension Color {
     // MARK: - Computed
 
     static let `default`: Color = .appIconDefault // Alias
-    static let border: Color = .appGray.opacity(0.15)
+    static let border: Color = .appDarkGray.opacity(0.05)
     static let separator: Color = .appLightGray
     static let screenBackground: Color = .appFaintGray
     static let shadowHeavy: Color = .appIconShadowHeavy // Alias
