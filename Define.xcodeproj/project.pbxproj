@@ -95,6 +95,7 @@
 		B8C8FBA72C6F48F1003D9824 /* NotoSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8C8FB5F2C6F48F0003D9824 /* NotoSans-ExtraBold.ttf */; };
 		B8C8FBAC2C6F48F1003D9824 /* NotoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8C8FB642C6F48F0003D9824 /* NotoSans-Bold.ttf */; };
 		B8C8FBB42C6F4F2F003D9824 /* PasteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C8FBB32C6F4F2F003D9824 /* PasteButton.swift */; };
+		B8C8FBB62C6F568D003D9824 /* URL+Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C8FBB52C6F568D003D9824 /* URL+Values.swift */; };
 		B8C98F5D2C33E49200658F7C /* WordSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C98F5C2C33E49200658F7C /* WordSource.swift */; };
 		B8D2A73C28DEEFAE0096A020 /* SearchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2A73B28DEEFAE0096A020 /* SearchScreen.swift */; };
 		B8D2A73E28DEEFE70096A020 /* Color+Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2A73D28DEEFE70096A020 /* Color+Values.swift */; };
@@ -222,6 +223,7 @@
 		B8C8FB5F2C6F48F0003D9824 /* NotoSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-ExtraBold.ttf"; sourceTree = "<group>"; };
 		B8C8FB642C6F48F0003D9824 /* NotoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Bold.ttf"; sourceTree = "<group>"; };
 		B8C8FBB32C6F4F2F003D9824 /* PasteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteButton.swift; sourceTree = "<group>"; };
+		B8C8FBB52C6F568D003D9824 /* URL+Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Values.swift"; sourceTree = "<group>"; };
 		B8C98F5C2C33E49200658F7C /* WordSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSource.swift; sourceTree = "<group>"; };
 		B8D2A73B28DEEFAE0096A020 /* SearchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreen.swift; sourceTree = "<group>"; };
 		B8D2A73D28DEEFE70096A020 /* Color+Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Values.swift"; sourceTree = "<group>"; };
@@ -344,6 +346,7 @@
 			children = (
 				B8B9B9DE28EDC6E4006FCA76 /* Resources */,
 				B8E49C0A28DF985500F9CAC4 /* CGFloat+Values.swift */,
+				B8C8FBB52C6F568D003D9824 /* URL+Values.swift */,
 				B8D2A73D28DEEFE70096A020 /* Color+Values.swift */,
 				B8A1232628E971FD00ACEC45 /* LottieFile.swift */,
 				B8C8FB202C6F462E003D9824 /* NotoSans.swift */,
@@ -811,6 +814,7 @@
 				B813C00328EB7F7D000C766C /* IconContainer.swift in Sources */,
 				B813C00128EB7DB9000C766C /* IconView.swift in Sources */,
 				B88491A629620353009F6469 /* IndexElement.swift in Sources */,
+				B8C8FBB62C6F568D003D9824 /* URL+Values.swift in Sources */,
 				B8AD58832AD471350054403E /* InformationSheet.swift in Sources */,
 				B86FB81A2C2C7F1D00687528 /* InfoScreen.swift in Sources */,
 				B8D2A74228DF3A250096A020 /* InputTextField.swift in Sources */,

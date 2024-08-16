@@ -265,9 +265,6 @@
         }
       }
     },
-    "Key" : {
-      "extractionState" : "manual"
-    },
     "paste_copy" : {
       "localizations" : {
         "en" : {
@@ -456,6 +453,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Search"
+          }
+        }
+      }
+    },
+    "source_code_subtitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This project is open-source. You are very welcome to read through and even contribute!"
+          }
+        }
+      }
+    },
+    "source_code_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Source Code"
           }
         }
       }

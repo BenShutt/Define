@@ -41,14 +41,6 @@ private struct InfoScrollContentView: View {
 
     var onExport: () -> Void
 
-    private var settingsURL: URL? {
-        URL(string: UIApplication.openSettingsURLString)
-    }
-
-    private var appStoreURL: URL? {
-        nil // TODO: Add if used in production
-    }
-
     var body: some View {
         LazyVStack(spacing: .vMargin) {
             SwitchListItem(
@@ -70,7 +62,7 @@ private struct InfoScrollContentView: View {
             }
             .container()
 
-            if let appStoreURL {
+            if let appStoreURL = URL.appStore {
                 TextListItem(
                     title: "rate_app_title",
                     subtitle: "rate_app_subtitle"
@@ -81,14 +73,16 @@ private struct InfoScrollContentView: View {
                 .container()
             }
 
-            TextListItem(
-                title: "report_issue_title",
-                subtitle: "report_issue_subtitle"
-            )
-            .button {
-                // TODO
+            if let reportIssueURL = URL.reportIssue {
+                TextListItem(
+                    title: "report_issue_title",
+                    subtitle: "report_issue_subtitle"
+                )
+                .button {
+                    openURL(reportIssueURL)
+                }
+                .container()
             }
-            .container()
 
             TextListItem(
                 title: "export_title",
@@ -97,7 +91,18 @@ private struct InfoScrollContentView: View {
             .button(action: onExport)
             .container()
 
-            if let settingsURL {
+            if let sourceCodeURL = URL.sourceCode {
+                TextListItem(
+                    title: "source_code_title",
+                    subtitle: "source_code_subtitle"
+                )
+                .button {
+                    openURL(sourceCodeURL)
+                }
+                .container()
+            }
+
+            if let settingsURL = URL.settings {
                 TextListItem(
                     title: "ios_settings_title",
                     subtitle: "ios_settings_subtitle"
