@@ -346,11 +346,11 @@
 			children = (
 				B8B9B9DE28EDC6E4006FCA76 /* Resources */,
 				B8E49C0A28DF985500F9CAC4 /* CGFloat+Values.swift */,
-				B8C8FBB52C6F568D003D9824 /* URL+Values.swift */,
 				B8D2A73D28DEEFE70096A020 /* Color+Values.swift */,
 				B8A1232628E971FD00ACEC45 /* LottieFile.swift */,
 				B8C8FB202C6F462E003D9824 /* NotoSans.swift */,
 				B8D2A74528DF3AFE0096A020 /* TextStyle.swift */,
+				B8C8FBB52C6F568D003D9824 /* URL+Values.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -561,6 +561,7 @@
 				B8E49C0828DF917E00F9CAC4 /* LoadingView.swift */,
 				B8F834CF2B73E40700D0C5D2 /* NavigationBarBackground.swift */,
 				B801A3DA2986D41400FAD316 /* PartOfSpeechView.swift */,
+				B8C8FBB32C6F4F2F003D9824 /* PasteButton.swift */,
 				B8A1232928E9744E00ACEC45 /* SearchEmptyView.swift */,
 				B8B9B9D528EC5C54006FCA76 /* SearchHeaderView.swift */,
 				B8C404332C308BB80081922C /* SegmentedControl.swift */,
@@ -569,7 +570,6 @@
 				B8BBA16128E8EDF100222116 /* StyledButton.swift */,
 				B879E9E828F0C5190094AA24 /* TagView.swift */,
 				B8DBE7922C2F5B4600A06DE3 /* WordSavedView.swift */,
-				B8C8FBB32C6F4F2F003D9824 /* PasteButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -814,7 +814,6 @@
 				B813C00328EB7F7D000C766C /* IconContainer.swift in Sources */,
 				B813C00128EB7DB9000C766C /* IconView.swift in Sources */,
 				B88491A629620353009F6469 /* IndexElement.swift in Sources */,
-				B8C8FBB62C6F568D003D9824 /* URL+Values.swift in Sources */,
 				B8AD58832AD471350054403E /* InformationSheet.swift in Sources */,
 				B86FB81A2C2C7F1D00687528 /* InfoScreen.swift in Sources */,
 				B8D2A74228DF3A250096A020 /* InputTextField.swift in Sources */,
@@ -834,6 +833,7 @@
 				B832D6622C24654A00FF3EFE /* OffsetScrollView.swift in Sources */,
 				B8ACB21E2C333653002DF7C5 /* PartOfSpeech.swift in Sources */,
 				B801A3DB2986D41400FAD316 /* PartOfSpeechView.swift in Sources */,
+				B8C8FBB42C6F4F2F003D9824 /* PasteButton.swift in Sources */,
 				B8994CAE2A8EC4C2000BE101 /* PushNotificationManager.swift in Sources */,
 				B86BA87E2AE79C8B00C638CD /* ReceiveTimer.swift in Sources */,
 				B8D780392C29BF28006D25EF /* RootNavigationStack.swift in Sources */,
@@ -848,7 +848,6 @@
 				B879E9F028F0CA910094AA24 /* SearchViewModel.swift in Sources */,
 				B8C404342C308BB80081922C /* SegmentedControl.swift in Sources */,
 				B8C25FA0294F8D5D001C8847 /* Separator.swift in Sources */,
-				B8C8FBB42C6F4F2F003D9824 /* PasteButton.swift in Sources */,
 				B80E722229FDAD60007CCE71 /* ShapeBorder.swift in Sources */,
 				B8C8FB1B2C6E6850003D9824 /* ShareSheet.swift in Sources */,
 				B894FA2128FC8A4B00BC0BFA /* StickyBottom.swift in Sources */,
@@ -857,6 +856,7 @@
 				B8BBA16228E8EDF100222116 /* StyledButton.swift in Sources */,
 				B879E9E928F0C5190094AA24 /* TagView.swift in Sources */,
 				B8D2A74628DF3AFE0096A020 /* TextStyle.swift in Sources */,
+				B8C8FBB62C6F568D003D9824 /* URL+Values.swift in Sources */,
 				B89F6ED32C31F0E40097BF94 /* UserSettings.swift in Sources */,
 				B86FB81E2C2C84B000687528 /* View+Extensions.swift in Sources */,
 				B8E762B42A95F2E6006E168E /* WelcomeScreen.swift in Sources */,
