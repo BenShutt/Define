@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// TODO: We need lazy really, use TableView for animation?
+
 /// Scroll view that animates its contents when they appear based on their index
 /// - Warning: Using a `VStack` instead of `LazyVStack` so that `onAppear` works as expected
 struct AnimatedScrollView<Element, Content: View>: View {
