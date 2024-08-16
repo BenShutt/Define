@@ -94,6 +94,7 @@
 		B8C8FBA52C6F48F1003D9824 /* NotoSans-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8C8FB5D2C6F48F0003D9824 /* NotoSans-ExtraLightItalic.ttf */; };
 		B8C8FBA72C6F48F1003D9824 /* NotoSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8C8FB5F2C6F48F0003D9824 /* NotoSans-ExtraBold.ttf */; };
 		B8C8FBAC2C6F48F1003D9824 /* NotoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8C8FB642C6F48F0003D9824 /* NotoSans-Bold.ttf */; };
+		B8C8FBB42C6F4F2F003D9824 /* PasteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C8FBB32C6F4F2F003D9824 /* PasteButton.swift */; };
 		B8C98F5D2C33E49200658F7C /* WordSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C98F5C2C33E49200658F7C /* WordSource.swift */; };
 		B8D2A73C28DEEFAE0096A020 /* SearchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2A73B28DEEFAE0096A020 /* SearchScreen.swift */; };
 		B8D2A73E28DEEFE70096A020 /* Color+Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2A73D28DEEFE70096A020 /* Color+Values.swift */; };
@@ -220,6 +221,7 @@
 		B8C8FB5D2C6F48F0003D9824 /* NotoSans-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
 		B8C8FB5F2C6F48F0003D9824 /* NotoSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-ExtraBold.ttf"; sourceTree = "<group>"; };
 		B8C8FB642C6F48F0003D9824 /* NotoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Bold.ttf"; sourceTree = "<group>"; };
+		B8C8FBB32C6F4F2F003D9824 /* PasteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteButton.swift; sourceTree = "<group>"; };
 		B8C98F5C2C33E49200658F7C /* WordSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSource.swift; sourceTree = "<group>"; };
 		B8D2A73B28DEEFAE0096A020 /* SearchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreen.swift; sourceTree = "<group>"; };
 		B8D2A73D28DEEFE70096A020 /* Color+Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Values.swift"; sourceTree = "<group>"; };
@@ -564,6 +566,7 @@
 				B8BBA16128E8EDF100222116 /* StyledButton.swift */,
 				B879E9E828F0C5190094AA24 /* TagView.swift */,
 				B8DBE7922C2F5B4600A06DE3 /* WordSavedView.swift */,
+				B8C8FBB32C6F4F2F003D9824 /* PasteButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -841,6 +844,7 @@
 				B879E9F028F0CA910094AA24 /* SearchViewModel.swift in Sources */,
 				B8C404342C308BB80081922C /* SegmentedControl.swift in Sources */,
 				B8C25FA0294F8D5D001C8847 /* Separator.swift in Sources */,
+				B8C8FBB42C6F4F2F003D9824 /* PasteButton.swift in Sources */,
 				B80E722229FDAD60007CCE71 /* ShapeBorder.swift in Sources */,
 				B8C8FB1B2C6E6850003D9824 /* ShareSheet.swift in Sources */,
 				B894FA2128FC8A4B00BC0BFA /* StickyBottom.swift in Sources */,

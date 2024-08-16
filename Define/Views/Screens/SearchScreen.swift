@@ -22,6 +22,11 @@ struct SearchScreen: View {
         viewModel.words.isEmpty
     }
 
+    /// Get and set copied text
+    private var pasteboard: String? {
+        UIPasteboard.general.string?.trimmed.nilIfEmpty
+    }
+
     var body: some View {
         VStack(spacing: 0) {
             SearchHeaderView(
@@ -29,6 +34,12 @@ struct SearchScreen: View {
                 isFocused: $isSearchFocused
             )
             .zIndex(1)
+
+            if case .emptySearch = viewModel.state, let pasteboard {
+                PasteButton(title: "paste_copy") {
+                    viewModel.search = pasteboard
+                }
+            }
 
             SearchStateView(viewModel: viewModel)
                 .frame(
