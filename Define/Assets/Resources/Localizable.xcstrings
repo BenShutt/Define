@@ -209,7 +209,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Search for a new word, or revisit what you have previously saved"
+            "value" : "Search for a new word or revisit what you have previously saved"
           }
         }
       }
@@ -250,7 +250,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Update the app's iOS settings such as notifications."
+            "value" : "Update the app's iOS settings such as push notifications."
           }
         }
       }
@@ -473,7 +473,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "This project is open-source. You are very welcome to read through and even contribute!"
+            "value" : "This project is open-source. You are very welcome to read through or even contribute!"
           }
         }
       }
