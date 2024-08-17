@@ -27,6 +27,10 @@ struct SearchScreen: View {
         UIPasteboard.general.string?.trimmed.nilIfEmpty
     }
 
+    private var pasteboardHasStrings: Bool {
+        UIPasteboard.general.hasStrings
+    }
+
     var body: some View {
         VStack(spacing: 0) {
             SearchHeaderView(
@@ -35,9 +39,11 @@ struct SearchScreen: View {
             )
             .zIndex(1)
 
-            if case .emptySearch = viewModel.state, let pasteboard {
+            if case .emptySearch = viewModel.state, pasteboardHasStrings {
                 PasteButton(title: "paste_copy") {
-                    viewModel.search = pasteboard
+                    if let pasteboard {
+                        viewModel.search = pasteboard
+                    }
                 }
             }
 
@@ -99,10 +105,13 @@ private struct WordList: View {
         ScrollView {
             LazyVStack(spacing: .vMargin) {
                 ForEach(words.zipped, id: \.0) { _, word in
-                    WordListItemButton(source: .init(
-                        modelContext: modelContext,
-                        word: word
-                    ))
+                    WordListItemButton(
+                        source: .init(
+                            modelContext: modelContext,
+                            word: word
+                        ),
+                        isExpanded: true
+                    )
                     .container()
                 }
             }
