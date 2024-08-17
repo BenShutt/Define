@@ -11,23 +11,27 @@ import DictionaryAPI
 struct WordListItemButton: View {
     @Environment(\.push) private var push
     var source: WordSource
+    var isExpanded: Bool
 
     var body: some View {
         Button(action: {
             push(.word(source))
         }, label: {
-            WordListItem(source: source)
+            WordListItem(
+                source: source,
+                isExpanded: isExpanded
+            )
         })
     }
 }
 
 /// `ListItemView` for a `Word`
-struct WordListItem: View {
-    @EnvironmentObject private var settings: UserSettings
+private struct WordListItem: View {
     var source: WordSource
+    var isExpanded: Bool
 
     var body: some View {
-        if settings.wordsExpanded {
+        if isExpanded {
             ExpandedWordListItem(source: source)
         } else {
             CollapsedWordListItem(title: source.word.title)
@@ -123,7 +127,7 @@ private struct PartsOfSpeechView: View {
 
 #Preview {
     WordPreviewView(word: "hello") { word in
-        WordListItem(source: .api(word))
+        WordListItem(source: .api(word), isExpanded: true)
     }
     .screen()
     .environmentObjects()

@@ -67,14 +67,18 @@ private struct HomeScrollContentView: View {
 // MARK: - WordsSection
 
 private struct WordsSection: View {
+    @EnvironmentObject private var settings: UserSettings
     var group: DateGroup<SavedWord>
 
     var body: some View {
         Section(content: {
             ForEach(group.elements) { savedWord in
-                WordListItemButton(source: .saved(savedWord))
-                    .container()
-                    .padding(.horizontal, .hMargin)
+                WordListItemButton(
+                    source: .saved(savedWord),
+                    isExpanded: settings.wordsExpanded
+                )
+                .container()
+                .padding(.horizontal, .hMargin)
             }
         }, header: {
             SectionHeader(title: group.title)
