@@ -110,7 +110,8 @@ private struct WordList: View {
                             modelContext: modelContext,
                             word: word
                         ),
-                        isExpanded: true
+                        isExpanded: true,
+                        showSaved: true
                     )
                     .container()
                 }

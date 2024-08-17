@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct WordSavedView: View {
+    var padding: EdgeInsets = .margins
+
     var body: some View {
         VStack(spacing: 0) {
             Text("word_saved")
                 .foregroundStyle(Color.appBlack) // Override
                 .textStyle(.h4, fill: .center)
-                .padding(.margins)
+                .padding(padding)
                 .background(GradientBlurView(color: .appGreen))
 
             Separator(color: .appDarkGray.opacity(0.1))

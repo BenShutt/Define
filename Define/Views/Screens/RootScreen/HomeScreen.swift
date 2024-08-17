@@ -75,7 +75,8 @@ private struct WordsSection: View {
             ForEach(group.elements) { savedWord in
                 WordListItemButton(
                     source: .saved(savedWord),
-                    isExpanded: settings.wordsExpanded
+                    isExpanded: settings.wordsExpanded,
+                    showSaved: false
                 )
                 .container()
                 .padding(.horizontal, .hMargin)

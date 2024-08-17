@@ -12,6 +12,7 @@ struct WordListItemButton: View {
     @Environment(\.push) private var push
     var source: WordSource
     var isExpanded: Bool
+    var showSaved: Bool
 
     var body: some View {
         Button(action: {
@@ -19,7 +20,8 @@ struct WordListItemButton: View {
         }, label: {
             WordListItem(
                 source: source,
-                isExpanded: isExpanded
+                isExpanded: isExpanded,
+                showSaved: showSaved
             )
         })
     }
@@ -29,10 +31,11 @@ struct WordListItemButton: View {
 private struct WordListItem: View {
     var source: WordSource
     var isExpanded: Bool
+    var showSaved: Bool
 
     var body: some View {
         if isExpanded {
-            ExpandedWordListItem(source: source)
+            ExpandedWordListItem(source: source, showSaved: showSaved)
         } else {
             CollapsedWordListItem(title: source.word.title)
         }
@@ -61,43 +64,53 @@ private struct ExpandedWordListItem: View {
     @Environment(\.modelContext) private var modelContext
     @State private var addedSince: LocalizedStringKey?
     var source: WordSource
+    var showSaved: Bool
 
     private var partsOfSpeech: [String] {
         source.word.partsOfSpeech
     }
 
     var body: some View {
-        HStack(spacing: .mediumLarge) {
-            VStack(spacing: 0) {
-                Text(verbatim: source.word.title)
-                    .textStyle(.h3, fill: .leading)
-
-                if let subtitle = source.word.subtitle {
-                    Text(subtitle)
-                        .textStyle(.body, lineLimit: 3, fill: .leading)
-                        .padding(.top, .smallMedium)
-                }
-
-                if !partsOfSpeech.isEmpty {
-                    PartsOfSpeechView(partsOfSpeech: partsOfSpeech)
-                        .padding(.top, .mediumLarge)
-                }
-
-                if let addedSince {
-                    Text(addedSince)
-                        .textStyle(.caption, fill: .leading)
-                        .padding(.top, .mediumLarge)
-                }
+        VStack(spacing: 0) {
+            if showSaved, source.isSaved {
+                WordSavedView(padding: .init(
+                    vertical: .smallMedium,
+                    horizontal: .hMargin
+                ))
             }
 
-            ChevronView()
-        }
-        .overlay(alignment: .topTrailing) {
-            if let savedWord = source.savedWord {
-                WordReminderView(savedWord: savedWord)
+            HStack(spacing: .mediumLarge) {
+                VStack(spacing: 0) {
+                    Text(verbatim: source.word.title)
+                        .textStyle(.h3, fill: .leading)
+
+                    if let subtitle = source.word.subtitle {
+                        Text(subtitle)
+                            .textStyle(.body, lineLimit: 3, fill: .leading)
+                            .padding(.top, .smallMedium)
+                    }
+
+                    if !partsOfSpeech.isEmpty {
+                        PartsOfSpeechView(partsOfSpeech: partsOfSpeech)
+                            .padding(.top, .mediumLarge)
+                    }
+
+                    if let addedSince {
+                        Text(addedSince)
+                            .textStyle(.caption, fill: .leading)
+                            .padding(.top, .mediumLarge)
+                    }
+                }
+
+                ChevronView()
             }
+            .overlay(alignment: .topTrailing) {
+                if let savedWord = source.savedWord {
+                    WordReminderView(savedWord: savedWord)
+                }
+            }
+            .padding(.margins)
         }
-        .padding(.margins)
         .background(Color.appWhite)
         .onReceiveTimer {
             addedSince = source.savedWord?.addedSince
@@ -127,7 +140,11 @@ private struct PartsOfSpeechView: View {
 
 #Preview {
     WordPreviewView(word: "hello") { word in
-        WordListItem(source: .api(word), isExpanded: true)
+        WordListItemButton(
+            source: .api(word),
+            isExpanded: true,
+            showSaved: true
+        )
     }
     .screen()
     .environmentObjects()
