@@ -21,10 +21,12 @@ struct AnimatedScrollView<Element, Content: View>: View {
             LazyVStack(spacing: .vMargin) {
                 ForEach(elements.zipped, id: \.0) { index, element in
                     content(index, element)
-                        .modifier(OnAppearAnimator(
-                            index: index,
-                            hasAppeared: hasAppeared
-                        ))
+                        .opacity(hasAppeared ? 1 : 0)
+                        .offset(y: hasAppeared ? 0 : 50)
+                        .animation(
+                            .easeIn.delay(TimeInterval(index) * 0.2),
+                            value: hasAppeared
+                        )
                 }
             }
             .padding(.margins)
@@ -34,24 +36,6 @@ struct AnimatedScrollView<Element, Content: View>: View {
                 hasAppeared = true
             }
         }
-    }
-}
-
-// MARK: - OnAppearAnimator
-
-private struct OnAppearAnimator: ViewModifier {
-    var index: Int
-    var hasAppeared = false
-
-    private var delay: TimeInterval {
-        TimeInterval(index) * 0.2
-    }
-
-    func body(content: Content) -> some View {
-        content
-            .opacity(hasAppeared ? 1 : 0)
-            .offset(y: hasAppeared ? 0 : 50)
-            .animation(.easeIn.delay(delay), value: hasAppeared)
     }
 }
 
