@@ -7,27 +7,31 @@
 
 import SwiftUI
 
-// TODO: We need lazy really, use TableView for animation?
-
-/// Scroll view that animates its contents when they appear based on their index
-/// - Warning: Using a `VStack` instead of `LazyVStack` so that `onAppear` works as expected
+/// Scroll view that animates its contents based on index
+/// - Warning: `onAppear` can not be relied upon when scrolling a `LazyVStack`
 struct AnimatedScrollView<Element, Content: View>: View {
-    @State private var appearedItems: Set<Int> = []
+    @State private var hasAppeared = false
+
     var elements: [Element]
     @ViewBuilder var content: (Int, Element) -> Content
 
     var body: some View {
         ScrollView {
-            VStack(spacing: .vMargin) {
+            LazyVStack(spacing: .vMargin) {
                 ForEach(elements.zipped, id: \.0) { index, element in
                     content(index, element)
                         .modifier(OnAppearAnimator(
-                            appearedItems: $appearedItems,
-                            index: index
+                            index: index,
+                            hasAppeared: hasAppeared
                         ))
                 }
             }
             .padding(.margins)
+        }
+        .onAppear {
+            withAnimation {
+                hasAppeared = true
+            }
         }
     }
 }
@@ -35,70 +39,47 @@ struct AnimatedScrollView<Element, Content: View>: View {
 // MARK: - OnAppearAnimator
 
 private struct OnAppearAnimator: ViewModifier {
-    @Binding var appearedItems: Set<Int>
     var index: Int
+    var hasAppeared = false
 
     private var delay: TimeInterval {
-        TimeInterval(index) * 0.15
-    }
-
-    private var opacity: CGFloat {
-        appearedItems.contains(index) ? 1 : 0
-    }
-
-    private var offsetY: CGFloat {
-        appearedItems.contains(index) ? 0 : -30
+        TimeInterval(index) * 0.2
     }
 
     func body(content: Content) -> some View {
         content
-            .opacity(opacity)
-            .offset(y: offsetY)
-            .onAppear {
-                guard !appearedItems.contains(index) else { return }
-                _ = withAnimation(.linear(duration: 0.25).delay(delay)) {
-                    appearedItems.insert(index)
-                }
-            }
+            .opacity(hasAppeared ? 1 : 0)
+            .offset(y: hasAppeared ? 0 : 50)
+            .animation(.easeIn.delay(delay), value: hasAppeared)
     }
 }
 
 // MARK: - Preview
 
-private struct PreviewColorView: View {
-    var index: Int
-    var color: Color
-    var height: CGFloat = 200
-
-    private var shape: RoundedRectangle {
-        .init(cornerRadius: height / 10)
-    }
-
-    var body: some View {
-        color
-            .frame(height: height)
-            .frame(maxWidth: .infinity)
-            .overlay {
-                Text(index, format: .number)
-                    .textStyle(.h1)
-                    .padding(height / 10)
-                    .background(Color.appLightGray)
-                    .clipShape(shape)
-            }
-            .clipShape(shape)
-    }
-}
-
 private struct PreviewView: View {
-    @State private var appearedItems: Set<Int> = []
+    var colorHeight: CGFloat = 200
 
-    private var colors: [Color] {
-        (1...20).map { _ in .random() }
+    private let colors = {
+        (1...20).map { _ in Color.random() }
+    }()
+
+    private var shape: some InsettableShape {
+        RoundedRectangle(cornerRadius: colorHeight / 10)
     }
 
     var body: some View {
         AnimatedScrollView(elements: colors) { index, color in
-            PreviewColorView(index: index, color: color)
+            color
+                .frame(height: colorHeight)
+                .frame(maxWidth: .infinity)
+                .overlay {
+                    Text(index, format: .number)
+                        .textStyle(.h1)
+                        .padding(colorHeight / 10)
+                        .background(Color.appLightGray)
+                        .clipShape(shape)
+                }
+                .clipShape(shape)
         }
     }
 }
