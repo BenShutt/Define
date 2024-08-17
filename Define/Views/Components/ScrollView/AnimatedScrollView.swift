@@ -8,7 +8,8 @@
 import SwiftUI
 
 /// Scroll view that animates its contents based on index
-/// - Warning: `onAppear` can not be relied upon when scrolling a `LazyVStack`
+/// - Warning: `onAppear` on the cell contents can not be relied upon when
+/// scrolling a `LazyVStack`
 struct AnimatedScrollView<Element, Content: View>: View {
     @State private var hasAppeared = false
 
