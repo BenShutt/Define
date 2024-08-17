@@ -10,6 +10,7 @@ import DictionaryAPI
 
 struct WordListItemButton: View {
     @Environment(\.push) private var push
+
     var source: WordSource
     var isExpanded: Bool
     var showSaved: Bool
@@ -27,7 +28,8 @@ struct WordListItemButton: View {
     }
 }
 
-/// `ListItemView` for a `Word`
+// MARK: - WordListItem
+
 private struct WordListItem: View {
     var source: WordSource
     var isExpanded: Bool
@@ -61,14 +63,8 @@ private struct CollapsedWordListItem: View {
 // MARK: - ExpandedWordListItem
 
 private struct ExpandedWordListItem: View {
-    @Environment(\.modelContext) private var modelContext
-    @State private var addedSince: LocalizedStringKey?
     var source: WordSource
     var showSaved: Bool
-
-    private var partsOfSpeech: [String] {
-        source.word.partsOfSpeech
-    }
 
     var body: some View {
         VStack(spacing: 0) {
@@ -79,39 +75,55 @@ private struct ExpandedWordListItem: View {
                 ))
             }
 
-            HStack(spacing: .mediumLarge) {
-                VStack(spacing: 0) {
-                    Text(verbatim: source.word.title)
-                        .textStyle(.h3, fill: .leading)
-
-                    if let subtitle = source.word.subtitle {
-                        Text(subtitle)
-                            .textStyle(.body, lineLimit: 3, fill: .leading)
-                            .padding(.top, .smallMedium)
-                    }
-
-                    if !partsOfSpeech.isEmpty {
-                        PartsOfSpeechView(partsOfSpeech: partsOfSpeech)
-                            .padding(.top, .mediumLarge)
-                    }
-
-                    if let addedSince {
-                        Text(addedSince)
-                            .textStyle(.caption, fill: .leading)
-                            .padding(.top, .mediumLarge)
-                    }
-                }
-
-                ChevronView()
-            }
-            .overlay(alignment: .topTrailing) {
-                if let savedWord = source.savedWord {
-                    WordReminderView(savedWord: savedWord)
-                }
-            }
-            .padding(.margins)
+            WordListItemContentView(source: source)
         }
         .background(Color.appWhite)
+    }
+}
+
+// MARK: - WordListItemContentView
+
+private struct WordListItemContentView: View {
+    @State private var addedSince: LocalizedStringKey?
+
+    var source: WordSource
+
+    private var partsOfSpeech: [String] {
+        source.word.partsOfSpeech
+    }
+
+    var body: some View {
+        HStack(spacing: .mediumLarge) {
+            VStack(spacing: 0) {
+                Text(verbatim: source.word.title)
+                    .textStyle(.h3, fill: .leading)
+
+                if let subtitle = source.word.subtitle {
+                    Text(subtitle)
+                        .textStyle(.body, lineLimit: 3, fill: .leading)
+                        .padding(.top, .smallMedium)
+                }
+
+                if !partsOfSpeech.isEmpty {
+                    PartsOfSpeechView(partsOfSpeech: partsOfSpeech)
+                        .padding(.top, .mediumLarge)
+                }
+
+                if let addedSince {
+                    Text(addedSince)
+                        .textStyle(.caption, fill: .leading)
+                        .padding(.top, .mediumLarge)
+                }
+            }
+
+            ChevronView()
+        }
+        .overlay(alignment: .topTrailing) {
+            if let savedWord = source.savedWord {
+                WordReminderView(savedWord: savedWord)
+            }
+        }
+        .padding(.margins)
         .onReceiveTimer {
             addedSince = source.savedWord?.addedSince
         }
