@@ -10,6 +10,7 @@ import SwiftUI
 @MainActor class UserSettings: ObservableObject {
     @AppStorage(.hasSeenWelcome) var hasSeenWelcome = false
     @AppStorage(.wordsExpanded) var wordsExpanded = true
+    @AppStorage(.wordReminders) var wordReminders = true
 }
 
 // MARK: - UserDefaultKey
@@ -26,6 +27,9 @@ enum UserDefaultKey: String {
 
     /// Are the words expanded or collapsed
     case wordsExpanded
+
+    /// Send word reminder push notifications
+    case wordReminders
 }
 
 // MARK: - Extensions

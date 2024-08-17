@@ -11,6 +11,7 @@ import DictionaryAPI
 
 /// `View` to input a word to search for definitions
 struct WordScreen: View {
+    @EnvironmentObject private var settings: UserSettings
     @EnvironmentObject private var notifications: NotificationManager
     @Environment(\.modelContext) private var modelContext
     @Environment(\.popToRoot) private var popToRoot
@@ -92,7 +93,9 @@ struct WordScreen: View {
     /// - Parameter savedWord: The word to add
     private func addWord(savedWord: SavedWord) {
         modelContext.insert(savedWord)
-        addWordReminder(savedWord: savedWord)
+        if settings.wordReminders {
+            addWordReminder(savedWord: savedWord)
+        }
         UINotificationFeedbackGenerator().notificationOccurred(.success)
         popToRoot()
     }

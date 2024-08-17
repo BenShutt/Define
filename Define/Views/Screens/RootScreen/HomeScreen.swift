@@ -77,31 +77,8 @@ private struct WordsSection: View {
                     .padding(.horizontal, .hMargin)
             }
         }, header: {
-            WordsSectionHeader(title: group.title)
+            SectionHeader(title: group.title)
         })
-    }
-}
-
-// MARK: - WordsSectionHeader
-
-private struct WordsSectionHeader: View {
-    var title: LocalizedStringKey
-    private let separatorColor: Color = .appGray.opacity(0.1)
-
-    var body: some View {
-        HStack(spacing: .extraLarge) {
-            Separator(color: separatorColor)
-                .frame(minWidth: .hMargin, maxWidth: .infinity)
-
-            Text(title)
-                .textStyle(.h4)
-
-            Separator(color: separatorColor)
-                .frame(minWidth: .hMargin, maxWidth: .infinity)
-        }
-        .padding(.horizontal, .hMargin)
-        .padding(.vertical, .smallMedium)
-        .background(Color.screenBackground)
     }
 }
 

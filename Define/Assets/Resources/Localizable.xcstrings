@@ -457,6 +457,16 @@
         }
       }
     },
+    "settings_title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your Settings"
+          }
+        }
+      }
+    },
     "source_code_subtitle" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -596,6 +606,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Delete Reminder"
+          }
+        }
+      }
+    },
+    "word_reminders_subtitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Receive word reminders push notifications after saving them"
+          }
+        }
+      }
+    },
+    "word_reminders_title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Word Reminders"
           }
         }
       }
