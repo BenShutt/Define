@@ -49,6 +49,7 @@ import SwiftUI
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.backgroundColor = UIColor(Color.screenBackground)
         tableView.register(
             UITableViewCell.self,
             forCellReuseIdentifier: reuseIdentifier

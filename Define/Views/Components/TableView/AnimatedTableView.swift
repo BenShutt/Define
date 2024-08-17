@@ -10,7 +10,7 @@ import SwiftUI
 // TODO: Use on WordScreen
 
 /// The `onAppear` modifier can not be relied upon when scrolling a `LazyVStack`.
-/// Fallback to using a `UITableView`; a `VStack` would not be memory efficient.
+/// Fallback to using a `UITableView` since a `VStack` would not be memory efficient.
 struct AnimatedTableView<Model, Content: View>: UIViewControllerRepresentable {
     @ViewBuilder var content: (Model) -> Content
     var data: [Model]
