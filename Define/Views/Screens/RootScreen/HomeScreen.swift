@@ -80,7 +80,6 @@ private struct WordsSection: View {
             ForEach(words) { savedWord in
                 WordListItemButton(
                     source: .saved(savedWord),
-                    isExpanded: settings.wordsExpanded,
                     showSaved: false
                 )
                 .container()

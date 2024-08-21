@@ -12,7 +12,6 @@ struct WordListItemButton: View {
     @Environment(\.push) private var push
 
     var source: WordSource
-    var isExpanded: Bool
     var showSaved: Bool
 
     var body: some View {
@@ -21,7 +20,6 @@ struct WordListItemButton: View {
         }, label: {
             WordListItem(
                 source: source,
-                isExpanded: isExpanded,
                 showSaved: showSaved
             )
         })
@@ -31,38 +29,6 @@ struct WordListItemButton: View {
 // MARK: - WordListItem
 
 private struct WordListItem: View {
-    var source: WordSource
-    var isExpanded: Bool
-    var showSaved: Bool
-
-    var body: some View {
-        if isExpanded {
-            ExpandedWordListItem(source: source, showSaved: showSaved)
-        } else {
-            CollapsedWordListItem(title: source.word.title)
-        }
-    }
-}
-
-// MARK: - CollapsedWordListItem
-
-private struct CollapsedWordListItem: View {
-    var title: String
-
-    var body: some View {
-        ListItem(
-            title: title,
-            leading: {},
-            trailing: {
-                ChevronView()
-            }
-        )
-    }
-}
-
-// MARK: - ExpandedWordListItem
-
-private struct ExpandedWordListItem: View {
     var source: WordSource
     var showSaved: Bool
 
@@ -154,7 +120,6 @@ private struct PartsOfSpeechView: View {
     WordPreviewView(word: "hello") { word in
         WordListItemButton(
             source: .api(word),
-            isExpanded: true,
             showSaved: true
         )
     }
