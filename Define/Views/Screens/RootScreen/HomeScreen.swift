@@ -71,6 +71,8 @@ private struct HomeScrollContentView: View {
 
 // MARK: - WordsSection
 
+// TODO: FlowLayoutView not redrawing (same width?)
+
 private struct WordsSection: View {
     @EnvironmentObject private var settings: UserSettings
     var words: [SavedWord]
@@ -99,29 +101,34 @@ private struct WordsSection: View {
 
 private struct WordTagView: View, FlowLayoutSized {
     @Environment(\.push) private var push
+
+    private let textStyle: TextStyle = .body
+    private let padding = EdgeInsets(.medium)
     var word: SavedWord
 
-    private var tagView: TagView {
-        TagView(
-            title: word.model.title,
-            foregroundColor: .appBlack,
-            backgroundColor: .appWhite
-        )
-    }
+    private var title: String { word.model.title }
 
     var body: some View {
         Button(action: {
             push(.word(.saved(word)))
         }, label: {
-            tagView
+            Text(title)
+                .foregroundStyle(Color.appDarkGray)
+                .textStyle(textStyle, lineLimit: 1)
+                .padding(padding)
+                .background(Color.appWhite)
+                .fixedSize(horizontal: true, vertical: true)
+                .container()
         })
-        .buttonStyle(PlainButtonStyle())
     }
 
     // MARK: FlowLayoutSized
 
     func size(in boundsSize: CGSize) -> CGSize {
-        tagView.size(in: boundsSize)
+        (title as NSString).size(withAttributes: [
+            .font: textStyle.uiFont as UIFont
+        ])
+        .padding(padding)
     }
 }
 
