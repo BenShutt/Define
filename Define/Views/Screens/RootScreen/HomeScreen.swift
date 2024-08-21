@@ -71,8 +71,6 @@ private struct HomeScrollContentView: View {
 
 // MARK: - WordsSection
 
-// TODO: FlowLayoutView not redrawing (same width?)
-
 private struct WordsSection: View {
     @EnvironmentObject private var settings: UserSettings
     var words: [SavedWord]
