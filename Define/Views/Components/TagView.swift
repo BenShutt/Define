@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import FlowLayout
 
 /// Tag capsule
-struct TagView: View {
+struct TagView: View, FlowLayoutSized {
+    private let padding = EdgeInsets(vertical: .smallMedium, horizontal: .medium)
+    private let textStyle: TextStyle = .tag
 
     /// Title of the tag
-    var text: String
+    var title: String
 
     /// Color of the foreground
     var foregroundColor: Color
@@ -20,15 +23,35 @@ struct TagView: View {
     var backgroundColor: Color
 
     var body: some View {
-        Text(verbatim: text)
+        Text(title)
             .foregroundStyle(foregroundColor) // Override
-            .textStyle(.tag)
-            .padding(.vertical, .smallMedium)
-            .padding(.horizontal, .medium)
+            .textStyle(textStyle, lineLimit: 1)
+            .padding(padding)
             .background(GradientBlurView(color: backgroundColor))
             .capsuleBorder(
                 color: backgroundColor.opacity(0.2),
                 borderWidth: .borderWidth
             )
+            .fixedSize(horizontal: true, vertical: true)
+    }
+
+    // MARK: - FlowLayoutSized
+
+    func size(in boundsSize: CGSize) -> CGSize {
+        (title as NSString).size(withAttributes: [
+            .font: textStyle.uiFont as UIFont
+        ])
+        .padding(padding)
+    }
+}
+
+// MARK: - CGSize + Extensions
+
+private extension CGSize {
+    func padding(_ insets: EdgeInsets) -> CGSize {
+        CGSize(
+            width: width + insets.horizontal,
+            height: height + insets.vertical
+        )
     }
 }

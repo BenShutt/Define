@@ -22,7 +22,7 @@ struct PartOfSpeechView: View {
     /// Draw view
     var body: some View {
         TagView(
-            text: partOfSpeech,
+            title: partOfSpeech,
             foregroundColor: .appDarkGray,
             backgroundColor: backgroundColor
         )

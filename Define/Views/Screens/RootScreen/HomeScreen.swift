@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import FlowLayout
 
 /// Shorthand for an array of date groups of saved words
 private typealias DateGroups = [DateGroup<SavedWord>]
@@ -56,10 +57,14 @@ private struct HomeScrollContentView: View {
         } else {
             LazyVStack(spacing: .vMargin, pinnedViews: .sectionHeaders) {
                 ForEach(groups) { group in
-                    WordsSection(group: group)
+                    Section(content: {
+                        WordsSection(words: group.elements)
+                    }, header: {
+                        SectionHeader(title: group.title)
+                    })
                 }
             }
-            .padding(.vertical, .vMargin)
+            .padding(.margins)
         }
     }
 }
@@ -68,22 +73,56 @@ private struct HomeScrollContentView: View {
 
 private struct WordsSection: View {
     @EnvironmentObject private var settings: UserSettings
-    var group: DateGroup<SavedWord>
+    var words: [SavedWord]
 
     var body: some View {
-        Section(content: {
-            ForEach(group.elements) { savedWord in
+        if settings.wordsExpanded {
+            ForEach(words) { savedWord in
                 WordListItemButton(
                     source: .saved(savedWord),
                     isExpanded: settings.wordsExpanded,
                     showSaved: false
                 )
                 .container()
-                .padding(.horizontal, .hMargin)
             }
-        }, header: {
-            SectionHeader(title: group.title)
+        } else {
+            FlowLayoutView(words.map { word in
+                WordTagView(word: word)
+            }, configuration: .init(
+                hSpacing: .medium,
+                vSpacing: .small
+            ))
+        }
+    }
+}
+
+// MARK: - WordTagView
+
+private struct WordTagView: View, FlowLayoutSized {
+    @Environment(\.push) private var push
+    var word: SavedWord
+
+    private var tagView: TagView {
+        TagView(
+            title: word.model.title,
+            foregroundColor: .appBlack,
+            backgroundColor: .appWhite
+        )
+    }
+
+    var body: some View {
+        Button(action: {
+            push(.word(.saved(word)))
+        }, label: {
+            tagView
         })
+        .buttonStyle(PlainButtonStyle())
+    }
+
+    // MARK: FlowLayoutSized
+
+    func size(in boundsSize: CGSize) -> CGSize {
+        tagView.size(in: boundsSize)
     }
 }
 

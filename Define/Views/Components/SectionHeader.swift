@@ -17,14 +17,14 @@ struct SectionHeader: View {
                 .frame(minWidth: .hMargin, maxWidth: .infinity)
 
             Text(title)
-                .textStyle(.h4)
+                .textStyle(.h4, lineLimit: 1)
                 .fixedSize(horizontal: true, vertical: true)
 
             Separator(color: separatorColor)
                 .frame(minWidth: .hMargin, maxWidth: .infinity)
         }
-        .padding(.horizontal, .hMargin)
         .padding(.vertical, .smallMedium)
         .background(Color.screenBackground)
+        .fixedSize(horizontal: false, vertical: true)
     }
 }

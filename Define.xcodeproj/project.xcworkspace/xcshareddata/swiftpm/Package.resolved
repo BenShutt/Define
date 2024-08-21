@@ -19,6 +19,15 @@
       }
     },
     {
+      "identity" : "flowlayout",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/BenShutt/FlowLayout.git",
+      "state" : {
+        "branch" : "develop",
+        "revision" : "86dc87302ac6968de664f4060ba6269d2482681d"
+      }
+    },
+    {
       "identity" : "lottie-ios",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/airbnb/lottie-ios",
@@ -42,7 +51,7 @@
       "location" : "https://github.com/BenShutt/Utilities",
       "state" : {
         "branch" : "develop",
-        "revision" : "e43124fb9f729acc9a629cecd73a611689b05d90"
+        "revision" : "57bf19cb2d020b9cf3cf0a4f3c398ac23a3029e0"
       }
     }
   ],

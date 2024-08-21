@@ -67,6 +67,13 @@ enum TextStyle: String, CaseIterable, Identifiable {
     var font: Font {
         .custom(notoSans.rawValue, size: fontSize)
     }
+
+    /// Map to UI font
+    var uiFont: UIFont {
+        let font = UIFont(name: notoSans.rawValue, size: fontSize)
+        guard let font else { fatalError("\(UIFont.self)") }
+        return font
+    }
 }
 
 // MARK: - View + TextStyle

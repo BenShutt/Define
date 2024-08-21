@@ -68,6 +68,7 @@
 		B8B9B9D628EC5C54006FCA76 /* SearchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9B9D528EC5C54006FCA76 /* SearchHeaderView.swift */; };
 		B8B9B9E128EDC9FC006FCA76 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B80399E028D79A3B008CE7B4 /* Images.xcassets */; };
 		B8BBA16228E8EDF100222116 /* StyledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BBA16128E8EDF100222116 /* StyledButton.swift */; };
+		B8BEFCA12C749B6100212DC8 /* FlowLayout in Frameworks */ = {isa = PBXBuildFile; productRef = B8BEFCA02C749B6100212DC8 /* FlowLayout */; };
 		B8BFDC6C2AC77D04009E1F83 /* AppIcon in Frameworks */ = {isa = PBXBuildFile; productRef = B8BFDC6B2AC77D04009E1F83 /* AppIcon */; };
 		B8BFDC6F2AC77FED009E1F83 /* GradientBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BFDC6E2AC77FED009E1F83 /* GradientBlurView.swift */; };
 		B8C25F9C294F7AAF001C8847 /* KeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C25F9B294F7AAF001C8847 /* KeyboardToolbar.swift */; };
@@ -255,6 +256,7 @@
 			files = (
 				B8BFDC6C2AC77D04009E1F83 /* AppIcon in Frameworks */,
 				B85FB3C32C4ADF440089FBCE /* ColorUtilities in Frameworks */,
+				B8BEFCA12C749B6100212DC8 /* FlowLayout in Frameworks */,
 				B8FF0DC9295F9528004C61B6 /* DictionaryAPI in Frameworks */,
 				B8A1232528E971EC00ACEC45 /* Lottie in Frameworks */,
 				B85FB3C52C4ADF440089FBCE /* Utilities in Frameworks */,
@@ -571,8 +573,8 @@
 				B8C8FB1A2C6E6850003D9824 /* ShareSheet.swift */,
 				B8BBA16128E8EDF100222116 /* StyledButton.swift */,
 				B879E9E828F0C5190094AA24 /* TagView.swift */,
-				B8DBE7922C2F5B4600A06DE3 /* WordSavedView.swift */,
 				B8A8F5D92C713729003A2B09 /* SectionHeader.swift */,
+				B8DBE7922C2F5B4600A06DE3 /* WordSavedView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -633,6 +635,7 @@
 				B8FF0DC8295F9528004C61B6 /* DictionaryAPI */,
 				B8A1232428E971EC00ACEC45 /* Lottie */,
 				B85FB3C42C4ADF440089FBCE /* Utilities */,
+				B8BEFCA02C749B6100212DC8 /* FlowLayout */,
 			);
 			productName = Define;
 			productReference = B80399D928D79A37008CE7B4 /* Define.app */;
@@ -709,6 +712,7 @@
 			packageReferences = (
 				B85FB3C12C4ADF440089FBCE /* XCRemoteSwiftPackageReference "Utilities" */,
 				B8A1232328E971EC00ACEC45 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				B8BEFC9F2C749B6100212DC8 /* XCRemoteSwiftPackageReference "FlowLayout" */,
 			);
 			productRefGroup = B80399DA28D79A37008CE7B4 /* Products */;
 			projectDirPath = "";
@@ -1223,6 +1227,14 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		B8BEFC9F2C749B6100212DC8 /* XCRemoteSwiftPackageReference "FlowLayout" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/BenShutt/FlowLayout.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1240,6 +1252,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B8A1232328E971EC00ACEC45 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		B8BEFCA02C749B6100212DC8 /* FlowLayout */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B8BEFC9F2C749B6100212DC8 /* XCRemoteSwiftPackageReference "FlowLayout" */;
+			productName = FlowLayout;
 		};
 		B8BFDC6B2AC77D04009E1F83 /* AppIcon */ = {
 			isa = XCSwiftPackageProductDependency;
