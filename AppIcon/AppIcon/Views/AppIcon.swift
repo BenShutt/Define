@@ -28,7 +28,7 @@ public struct AppIcon: View {
                 Image(.magnifyingGlass)
                     .systemImage(size: size * 0.6, weight: .heavy)
                     .foregroundStyle(Color.appIconDarkGray)
-                    .bounceSymbol(animationValue)
+                    .symbolEffect(.bounce, value: animationValue)
             }
     }
 }
