@@ -25,7 +25,7 @@ struct NavigationBar: ViewModifier {
         .toolbar(.visible, for: .navigationBar)
         .toolbar {
             ToolbarItem(placement: .principal) {
-                Text(verbatim: title)
+                Text(title)
                     .textStyle(.h3)
             }
         }

@@ -61,7 +61,7 @@ private struct WordListItemContentView: View {
     var body: some View {
         HStack(spacing: .mediumLarge) {
             VStack(spacing: 0) {
-                Text(verbatim: source.word.title)
+                Text(source.word.title)
                     .textStyle(.h3, fill: .leading)
 
                 if let subtitle = source.word.subtitle {

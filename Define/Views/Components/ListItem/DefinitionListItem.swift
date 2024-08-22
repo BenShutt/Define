@@ -41,7 +41,7 @@ private struct DefinitionView: View {
     var body: some View {
         HStack(spacing: .medium) {
             VStack(spacing: .small) {
-                Text(verbatim: definition.title)
+                Text(definition.title)
                     .textStyle(.body, fill: .leading)
 
                 if let example, isExpanded {
