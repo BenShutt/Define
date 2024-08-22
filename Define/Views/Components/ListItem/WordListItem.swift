@@ -90,7 +90,10 @@ private struct WordListItemContentView: View {
             }
         }
         .padding(.margins)
-        .onReceiveTimer {
+        .onReceiveTimer(
+            timeInterval: 60,
+            runTask: true
+        ) {
             addedSince = source.savedWord?.addedSince
         }
     }
