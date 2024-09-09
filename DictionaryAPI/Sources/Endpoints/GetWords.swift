@@ -11,7 +11,7 @@ import DataRequest
 // TODO: Other languages
 
 /// Make `HTTPRequest` for the Dictionary entries API
-public struct GetWords: Endpoint {
+public struct GetWords: Endpoint, Sendable {
 
     /// Response model from the API
     public typealias ResponseBody = [Word]

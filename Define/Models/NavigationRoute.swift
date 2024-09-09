@@ -18,6 +18,7 @@ enum NavigationRoute: Hashable {
     case word(WordSource)
 
     /// Map each route to its respective view
+    @MainActor
     @ViewBuilder var screen: some View {
         switch self {
         case .search:

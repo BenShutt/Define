@@ -24,7 +24,7 @@
       "location" : "https://github.com/BenShutt/FlowLayout.git",
       "state" : {
         "branch" : "develop",
-        "revision" : "e765439b413a42aec6d9f579f9c5c9beb1e327f8"
+        "revision" : "2449f1ea839752ce3c163427ba6835538070c384"
       }
     },
     {
@@ -51,7 +51,7 @@
       "location" : "https://github.com/BenShutt/Utilities",
       "state" : {
         "branch" : "develop",
-        "revision" : "57bf19cb2d020b9cf3cf0a4f3c398ac23a3029e0"
+        "revision" : "8569f18844544aa33563d7c7093dc14f68a9274a"
       }
     }
   ],

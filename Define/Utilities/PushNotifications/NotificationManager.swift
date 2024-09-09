@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import UserNotifications
+@preconcurrency import UserNotifications
 
 /// Manage notification requests
 @MainActor class NotificationManager: ObservableObject {

@@ -37,25 +37,28 @@ struct RootNavigationStack<Content: View>: View {
 
 // MARK: - Environment Structures
 
-struct PushAction {
-    var action: (NavigationRoute) -> Void
+struct PushAction: Sendable {
+    var action: @MainActor (NavigationRoute) -> Void
 
+    @MainActor
     func callAsFunction(_ value: NavigationRoute) {
         action(value)
     }
 }
 
-struct PopAction {
-    var action: () -> Void
+struct PopAction: Sendable {
+    var action: @MainActor () -> Void
 
+    @MainActor
     func callAsFunction() {
         action()
     }
 }
 
-struct PopToRootAction {
-    var action: () -> Void
+struct PopToRootAction: Sendable {
+    var action: @MainActor () -> Void
 
+    @MainActor
     func callAsFunction() {
         action()
     }

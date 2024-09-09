@@ -22,6 +22,7 @@ enum RootSegment: Identifiable, Equatable, CaseIterable, SegmentedItem {
         }
     }
 
+    @MainActor
     @ViewBuilder func screen(segmentedHeight: CGFloat) -> some View {
         switch self {
         case .home: HomeScreen(segmentedHeight: segmentedHeight)

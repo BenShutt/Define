@@ -84,7 +84,7 @@ extension View {
         lineLimit: Int? = nil,
         fill: TextAlignment? = nil
     ) -> some View {
-        self.textStyle(
+        self.styledText(
             font: textStyle.font,
             lineLimit: lineLimit,
             textAlignment: fill ?? .center,

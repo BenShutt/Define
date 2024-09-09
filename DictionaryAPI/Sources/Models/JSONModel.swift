@@ -8,7 +8,7 @@
 import Foundation
 
 /// A `Codable` which can be represented as a JSON `String`
-public protocol JSONModel: Codable, Equatable, Hashable, CustomStringConvertible {}
+public protocol JSONModel: Equatable, Hashable, Codable, Sendable, CustomStringConvertible {}
 
 // MARK: - Extensions
 
