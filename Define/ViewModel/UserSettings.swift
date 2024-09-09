@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-@MainActor class UserSettings: ObservableObject {
+@MainActor
+class UserSettings: ObservableObject {
     @AppStorage(.hasSeenWelcome) var hasSeenWelcome = false
     @AppStorage(.wordsExpanded) var wordsExpanded = true
     @AppStorage(.wordReminders) var wordReminders = true

@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import AppIcon
 
 /// Icon with a fixed color
 struct IconView: View {
 
     /// Image icon
-    var image: Image
+    var image: SystemImage
 
     /// Color to tint the image
     var foregroundColor: Color = .appDarkGray
@@ -24,11 +25,12 @@ struct IconView: View {
 
     /// Make icon `View`
     private var iconView: some View {
-        image
+        Image(image)
             .renderingMode(.template)
             .resizable()
             .aspectRatio(contentMode: contentMode)
             .foregroundStyle(foregroundColor)
+            .accessibilityHidden(true)
     }
 
     var body: some View {

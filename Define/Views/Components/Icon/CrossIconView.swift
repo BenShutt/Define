@@ -28,7 +28,7 @@ struct CrossIcon: View {
 
     var body: some View {
         IconView(
-            image: Image(.crossCircleFill),
+            image: .crossCircleFill,
             foregroundColor: .appDarkGray,
             size: size
         )

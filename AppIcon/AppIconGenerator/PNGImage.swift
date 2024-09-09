@@ -8,7 +8,8 @@
 import SwiftUI
 import ViewRenderer
 
-@MainActor struct PNGImage {
+@MainActor
+struct PNGImage {
     var directoryURL: URL
     var fileName: String // Without path extension
     var width: CGFloat

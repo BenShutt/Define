@@ -7,7 +7,7 @@
 
 import XCTest
 
-class DefineUITests: XCTestCase {
+final class DefineUITests: XCTestCase {
     func testExample() throws {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()

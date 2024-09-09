@@ -36,8 +36,7 @@ struct SearchHeaderView: View {
             InputTextField(
                 text: $search,
                 isFocused: $isFocused,
-                prompt: "search_header_prompt",
-                image: Image(.magnifyingGlass)
+                prompt: "search_header_prompt"
             )
         }
         .padding(.margins)

@@ -9,7 +9,7 @@ import XCTest
 import CoreGraphics
 
 /// Test insetting of a `CGRect`
-class CGRectTests: XCTestCase {
+final class CGRectTests: XCTestCase {
 
     /// Epsilon accuracy
     private static let ε = 0.00001

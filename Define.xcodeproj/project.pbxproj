@@ -1235,7 +1235,7 @@
 /* Begin XCRemoteSwiftPackageReference section */
 		B85FB3C12C4ADF440089FBCE /* XCRemoteSwiftPackageReference "Utilities" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/BenShutt/Utilities";
+			repositoryURL = "https://github.com/BenShutt/Utilities.git";
 			requirement = {
 				branch = develop;
 				kind = branch;

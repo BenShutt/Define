@@ -46,8 +46,8 @@ extension Word {
     /// Definitions
     private var definitions: [String] {
         meanings
-            .flatMap { $0.definitions }
-            .map { $0.title }
+            .flatMap(\.definitions)
+            .map(\.title)
     }
 
     /// Capitalized word
@@ -64,7 +64,7 @@ extension Word {
 
     /// Parts of speech
     var partsOfSpeech: [String] {
-        Set(meanings.map { $0.partOfSpeechTitle }).sorted()
+        Set(meanings.map(\.partOfSpeechTitle)).sorted()
     }
 }
 

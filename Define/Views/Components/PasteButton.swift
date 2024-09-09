@@ -19,6 +19,7 @@ struct PasteButton: View {
             HStack(spacing: .medium) {
                 Image(.paste)
                     .font(textStyle.font)
+                    .accessibilityHidden(true)
 
                 Text(title)
                     .foregroundStyle(color)

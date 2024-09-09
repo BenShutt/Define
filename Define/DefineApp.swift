@@ -32,7 +32,9 @@ struct DefineApp: App {
 // MARK: - View + EnvironmentObjects
 
 extension View {
-    @MainActor func environmentObjects() -> some View {
+
+    @MainActor
+    func environmentObjects() -> some View {
         environmentObject(UserSettings())
             .environmentObject(NotificationManager())
     }

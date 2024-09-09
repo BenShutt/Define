@@ -3,7 +3,6 @@
 //  AppIconGenerator
 //
 //  Created by Ben Shutt on 27/06/2024.
-//  Copyright © 2024 Ben Shutt. All rights reserved.
 //
 
 import Foundation

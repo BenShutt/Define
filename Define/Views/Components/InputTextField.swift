@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AppIcon
 
 /// `View` to input text
 struct InputTextField: View {
@@ -18,9 +19,6 @@ struct InputTextField: View {
 
     /// Placeholder text
     var prompt: LocalizedStringKey
-
-    /// Leading image icon
-    var image: Image
 
     /// Content of the input
     var contentType: UITextContentType?
@@ -61,5 +59,6 @@ struct InputTextField: View {
         .onTapGesture {
             isFocused = true
         }
+        .accessibilityAddTraits(.isButton)
     }
 }

@@ -11,7 +11,7 @@ import SwiftUI
 struct SearchIconView: View {
     var body: some View {
         IconView(
-            image: Image(.magnifyingGlass),
+            image: .magnifyingGlass,
             foregroundColor: .appDarkGray,
             size: .icon
         )

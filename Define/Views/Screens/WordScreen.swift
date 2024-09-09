@@ -67,6 +67,7 @@ struct WordScreen: View {
                         isPresentingDeleteWordAlert = true
                     }, label: {
                         Image(.trash)
+                            .accessibilityHidden(true)
                     })
                 }
             }

@@ -12,6 +12,7 @@ struct ChevronView: View {
         Image(.chevronRight)
             .systemImage(size: 16, weight: .heavy)
             .foregroundStyle(Color.appDarkGray)
+            .accessibilityHidden(true)
     }
 }
 

@@ -67,7 +67,8 @@ struct WordReminder {
     /// - Parameters:
     ///   - savedWord: Word to schedule the notification for
     ///   - notifications: Notification manager of requests
-    @MainActor static func addRequest(
+    @MainActor
+    static func addRequest(
         for savedWord: SavedWord,
         on notifications: NotificationManager
     ) {
@@ -80,7 +81,8 @@ struct WordReminder {
     /// - Parameters:
     ///   - savedWord: Word to remove the notification for
     ///   - notifications: Notification manager of requests
-    @MainActor static func removeRequest(
+    @MainActor
+    static func removeRequest(
         for savedWord: SavedWord,
         on notifications: NotificationManager
     ) {

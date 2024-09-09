@@ -55,6 +55,7 @@ private struct DefinitionView: View {
                 Image(isExpanded ? .chevronUp : .chevronDown)
                     .systemImage(size: 12)
                     .foregroundStyle(Color.appDarkGray)
+                    .accessibilityHidden(true)
             }
         }
         .padding(.margins)

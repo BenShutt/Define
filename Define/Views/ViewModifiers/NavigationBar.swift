@@ -70,6 +70,7 @@ private struct PreviewDetailView: View {
                 Button(action: {}, label: {
                     Image(.plus)
                         .foregroundStyle(Color.appDarkGray)
+                        .accessibilityHidden(true)
                 })
             }
         }

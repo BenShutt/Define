@@ -9,22 +9,31 @@ import Foundation
 import SwiftData
 import Utilities
 
-@MainActor class ExportManager: ObservableObject {
+@MainActor
+class ExportManager: ObservableObject {
     @Published var jsonFileURL: JSONFileURL?
 
     func export(modelContext: ModelContext) {
         Task {
-            let export = JSONExport(modelContext: modelContext)
-            let url = try await export.export()
-            jsonFileURL = JSONFileURL(url: url)
+            do {
+                let export = JSONExport(modelContext: modelContext)
+                let url = try await export.export()
+                jsonFileURL = JSONFileURL(url: url)
+            } catch {
+                log(error: error)
+            }
         }
     }
 
     func clean(modelContext: ModelContext) {
         Task {
-            jsonFileURL = nil
-            let export = JSONExport(modelContext: modelContext)
-            try? await export.clean()
+            do {
+                jsonFileURL = nil
+                let export = JSONExport(modelContext: modelContext)
+                try await export.clean()
+            } catch {
+                log(error: error)
+            }
         }
     }
 }
@@ -63,7 +72,7 @@ private struct JSONExport {
     private func export(to url: URL) throws -> URL {
         let db = WordDb(modelContext: modelContext)
         let savedWords = try db.fetchAll()
-        let words = savedWords.map { $0.model }
+        let words = savedWords.map(\.model)
         let data = try JSONEncoder.pretty.encode(words)
         try data.write(to: url, options: .atomic)
         return url

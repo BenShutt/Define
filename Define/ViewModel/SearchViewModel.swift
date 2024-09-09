@@ -10,7 +10,8 @@ import SwiftUI
 import DictionaryAPI
 
 /// Observable that fetches words from the API when the search updates
-@MainActor final class SearchViewModel: ObservableObject {
+@MainActor
+final class SearchViewModel: ObservableObject {
 
     /// Search state
     enum State {
@@ -48,7 +49,7 @@ import DictionaryAPI
     /// Construct a publisher for the search text
     private var searchPublisher: AnyPublisher<String, Never> {
         $search
-            .map { $0.trimmed }
+            .map(\.trimmed)
             .removeDuplicates()
             .eraseToAnyPublisher()
     }

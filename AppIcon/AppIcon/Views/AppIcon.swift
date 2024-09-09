@@ -29,6 +29,7 @@ public struct AppIcon: View {
                     .systemImage(size: size * 0.6, weight: .heavy)
                     .foregroundStyle(Color.appIconDarkGray)
                     .symbolEffect(.bounce, value: animationValue)
+                    .accessibilityHidden(true)
             }
     }
 }

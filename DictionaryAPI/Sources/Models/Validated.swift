@@ -3,7 +3,6 @@
 //  DictionaryAPI
 //
 //  Created by Ben Shutt on 06/10/2023.
-//  Copyright © 2023 Ben Shutt. All rights reserved.
 //
 
 import Foundation

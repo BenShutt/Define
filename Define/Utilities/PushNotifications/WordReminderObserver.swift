@@ -72,6 +72,7 @@ struct WordReminderButton: View {
                     reminderDate: $reminderDate,
                     savedWord: savedWord
                 )
+                .accessibilityHidden(true)
         })
     }
 }
@@ -97,6 +98,7 @@ struct WordReminderView: View {
                 .foregroundStyle(Color.appGray)
                 .padding(16)
                 .offset(x: 16, y: -16)
+                .accessibilityHidden(true)
         })
         .disabled(reminderDate == nil)
         .opacity(reminderDate == nil ? 0 : 1)

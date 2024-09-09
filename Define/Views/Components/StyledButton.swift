@@ -31,6 +31,7 @@ struct StyledButton: View {
             HStack(spacing: .medium) {
                 Image(systemName)
                     .systemImage(size: .icon, weight: .bold)
+                    .accessibilityHidden(true)
 
                 Text(title)
                     .textStyle(.button)

@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-@MainActor struct NavigationAppearance {
+@MainActor
+struct NavigationAppearance {
     var backgroundColor: Color = .clear
 
     static func setup() {

@@ -3,7 +3,6 @@
 //  AppIcon
 //
 //  Created by Ben Shutt on 18/07/2024.
-//  Copyright © 2024 Ben Shutt. All rights reserved.
 //
 
 import SwiftUI

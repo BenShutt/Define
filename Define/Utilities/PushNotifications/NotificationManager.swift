@@ -9,7 +9,8 @@ import SwiftUI
 @preconcurrency import UserNotifications
 
 /// Manage notification requests
-@MainActor class NotificationManager: ObservableObject {
+@MainActor
+class NotificationManager: ObservableObject {
 
     /// Set of identifiers of the pending notification requests.
     /// This property is updated when a notification request is:
@@ -79,7 +80,7 @@ import SwiftUI
     /// Update identifiers of pending notification requests
     func updateIdentifiers() {
         Task {
-            identifiers = await Set(requests().map { $0.identifier })
+            identifiers = await Set(requests().map(\.identifier))
         }
     }
 }

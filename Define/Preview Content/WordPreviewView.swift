@@ -12,13 +12,18 @@ import Utilities
 
 // MARK: - WordPreview
 
-@MainActor class WordPreview: ObservableObject {
+@MainActor
+class WordPreview: ObservableObject {
     @Published var word: Word?
     @Published var isLoading = false
 
     init(word: String) {
         Task {
-            try await load(term: word)
+            do {
+                try await load(term: word)
+            } catch {
+                log(error: error)
+            }
         }
     }
 

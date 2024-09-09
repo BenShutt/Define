@@ -19,7 +19,8 @@ struct Main: AsyncParsableCommand {
     @Option(help: "The file path of the directory to write the images to")
     var directory: File
 
-    @MainActor mutating func run() async throws {
+    @MainActor
+    mutating func run() async throws {
         try FileManager.default.createDirectory(
             at: directory.url,
             withIntermediateDirectories: true

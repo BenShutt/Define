@@ -60,13 +60,13 @@ class ActivityItemSource: NSObject, UIActivityItemSource {
         title
     }
 
-   func activityViewControllerLinkMetadata(
-       _ activityViewController: UIActivityViewController
-   ) -> LPLinkMetadata? {
-       let metadata = LPLinkMetadata()
-       metadata.title = title
-       metadata.originalURL = url
-       metadata.url = metadata.originalURL
-       return metadata
-   }
+    func activityViewControllerLinkMetadata(
+        _ activityViewController: UIActivityViewController
+    ) -> LPLinkMetadata? {
+        let metadata = LPLinkMetadata()
+        metadata.title = title
+        metadata.originalURL = url
+        metadata.url = metadata.originalURL
+        return metadata
+    }
 }
