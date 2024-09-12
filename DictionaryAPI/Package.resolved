@@ -17,6 +17,15 @@
         "branch" : "main",
         "revision" : "f8ae202158a3a748d969ea756057a07f55b2676c"
       }
+    },
+    {
+      "identity" : "utilities",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/BenShutt/Utilities.git",
+      "state" : {
+        "branch" : "develop",
+        "revision" : "5974919cd860c2c52e578bc2ab262e510d9ccdfb"
+      }
     }
   ],
   "version" : 2

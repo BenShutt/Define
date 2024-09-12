@@ -19,12 +19,16 @@ let package = Package(
         .package(
             url: "https://github.com/BenShutt/DataRequest.git",
             branch: "main"
+        ),
+        .package(
+            url: "https://github.com/BenShutt/Utilities.git",
+            branch: "develop"
         )
     ],
     targets: [
         .target(
             name: "DictionaryAPI",
-            dependencies: ["DataRequest"],
+            dependencies: ["DataRequest", "Utilities"],
             path: "Sources"
         ),
         .testTarget(

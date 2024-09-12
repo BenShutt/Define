@@ -31,7 +31,7 @@ class WordPreview: ObservableObject {
         isLoading = true
         defer { isLoading = false }
 
-        let words = try await GetWords(word: term).requestAndValidate()
+        let words = try await GetWords(word: term).request()
         word = try words.first ?! WordPreviewError.empty
     }
 }

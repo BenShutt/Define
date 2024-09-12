@@ -6,9 +6,13 @@
 //
 
 import Foundation
+import Utilities
+
+/// An entity which is encoded and decoded as a model
+public typealias Model = Equatable & Hashable & Codable & Sendable
 
 /// A `Codable` which can be represented as a JSON `String`
-public protocol JSONModel: Equatable, Hashable, Codable, Sendable, CustomStringConvertible {}
+public protocol JSONModel: Model, CustomStringConvertible {}
 
 // MARK: - Extensions
 
@@ -26,21 +30,4 @@ public extension JSONModel {
     var description: String {
         (try? jsonString()) ?? "\(type(of: self))"
     }
-}
-
-// MARK: - JSONEncoder + Extensions
-
-private extension JSONEncoder {
-
-    /// `JSONEncoder` for pretty printing
-    static let pretty = {
-        let encoder = JSONEncoder()
-        encoder.dateEncodingStrategy = .iso8601
-        encoder.outputFormatting = [
-            .prettyPrinted,
-            .sortedKeys,
-            .withoutEscapingSlashes
-        ]
-        return encoder
-    }()
 }

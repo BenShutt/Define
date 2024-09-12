@@ -87,7 +87,7 @@ final class SearchViewModel: ObservableObject {
         var state: State
         do {
             guard !search.isEmpty else { return }
-            let words = try await GetWords(word: search).requestAndValidate()
+            let words = try await GetWords(word: search).request()
             guard !words.isEmpty else { throw SearchViewModelError.noResults }
             state = .success(words)
         } catch {

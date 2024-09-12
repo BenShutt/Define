@@ -35,11 +35,4 @@ public struct GetWords: Endpoint, Sendable {
     public var endpoint: String {
         "entries/\(languageCode)/\(word)"
     }
-
-    /// Get `Word`s and validate the models
-    public func requestAndValidate() async throws -> ResponseBody {
-        var words = try await request()
-        try words.validate()
-        return words
-    }
 }

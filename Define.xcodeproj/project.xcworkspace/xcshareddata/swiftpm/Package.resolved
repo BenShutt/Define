@@ -48,10 +48,10 @@
     {
       "identity" : "utilities",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/BenShutt/Utilities",
+      "location" : "https://github.com/BenShutt/Utilities.git",
       "state" : {
         "branch" : "develop",
-        "revision" : "8569f18844544aa33563d7c7093dc14f68a9274a"
+        "revision" : "5974919cd860c2c52e578bc2ab262e510d9ccdfb"
       }
     }
   ],

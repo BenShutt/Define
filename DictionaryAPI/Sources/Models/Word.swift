@@ -8,14 +8,14 @@
 import Foundation
 
 public struct Word: JSONModel {
-    public var word: String
+    @Trimmed @Lowercased public var word: String
     public var meanings: [Meaning]
 
     public init(
         word: String,
         meanings: [Meaning]
     ) {
-        self.word = word
+        _word = .init(wrappedValue: .init(wrappedValue: word))
         self.meanings = meanings
     }
 }
@@ -24,14 +24,14 @@ public struct Word: JSONModel {
 
 public extension Word {
     struct Meaning: JSONModel {
-        public var partOfSpeech: String
+        @Trimmed public var partOfSpeech: String
         public var definitions: [Definition]
 
         public init(
             partOfSpeech: String,
             definitions: [Definition]
         ) {
-            self.partOfSpeech = partOfSpeech
+            _partOfSpeech = .init(wrappedValue: partOfSpeech)
             self.definitions = definitions
         }
     }
@@ -41,45 +41,15 @@ public extension Word {
 
 public extension Word.Meaning {
     struct Definition: JSONModel {
-        public var definition: String
-        public var example: String?
+        @Trimmed public var definition: String
+        @Trimmed public var example: String?
 
         public init(
             definition: String,
             example: String?
         ) {
-            self.definition = definition
-            self.example = example
+            _definition = .init(wrappedValue: definition)
+            _example = .init(wrappedValue: example)
         }
-    }
-}
-
-// MARK: - Word + Validated
-
-extension Word: Validated {
-    public mutating func validate() throws {
-        try word.validate()
-        try meanings.validate()
-
-        // All words are regarded in lowercase due to the missing ID
-        word = word.lowercased()
-    }
-}
-
-// MARK: - Word.Meaning + Validated
-
-extension Word.Meaning: Validated {
-    public mutating func validate() throws {
-        try partOfSpeech.validate()
-        try definitions.validate()
-    }
-}
-
-// MARK: - Word.Meaning.Definition + Validated
-
-extension Word.Meaning.Definition: Validated {
-    public mutating func validate() throws {
-        try definition.validate()
-        try example?.validate()
     }
 }
