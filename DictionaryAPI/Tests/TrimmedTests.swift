@@ -5,10 +5,12 @@
 //  Created by Ben Shutt on 09/10/2023.
 //
 
-import XCTest
+import Foundation
+import Testing
 import DictionaryAPI
 
-final class TrimmedTests: XCTestCase {
+@Suite struct TrimmedTests {
+    let uuid = UUID().uuidString
 
     // MARK: - Models
 
@@ -22,46 +24,55 @@ final class TrimmedTests: XCTestCase {
 
     // MARK: - Tests
 
-    func testValid() throws {
+    @Test func valid() throws {
         try testStringKey(json("X"), expectedValue: "X")
     }
 
-    func testInvalid() throws {
-        let never = UUID().uuidString
-        XCTAssertThrowsError(try testStringKey("{}", expectedValue: never))
-        XCTAssertThrowsError(try testStringKey(nullJSON(), expectedValue: never))
-        XCTAssertThrowsError(try testStringKey(json(""), expectedValue: never))
-        XCTAssertThrowsError(try testStringKey(json(" "), expectedValue: never))
+    @Test func invalid() throws {
+        expectThrows(try testStringKey("{}", expectedValue: uuid))
+        expectThrows(try testStringKey(nullJSON(), expectedValue: uuid))
+        expectThrows(try testStringKey(json(""), expectedValue: uuid))
+        expectThrows(try testStringKey(json(" "), expectedValue: uuid))
     }
 
-    func testOptionalValid() throws {
+    @Test func optionalValid() throws {
         try testOptionalStringKey("{}", expectedValue: nil)
         try testOptionalStringKey(nullJSON(), expectedValue: nil)
     }
 
-    func testOptionalInvalid() throws {
-        let never = UUID().uuidString
-        XCTAssertThrowsError(try testOptionalStringKey(json(""), expectedValue: never))
-        XCTAssertThrowsError(try testOptionalStringKey(json(" "), expectedValue: never))
+    @Test func optionalInvalid() throws {
+        expectThrows(try testOptionalStringKey(json(""), expectedValue: uuid))
+        expectThrows(try testOptionalStringKey(json(" "), expectedValue: uuid))
     }
 
-    func testSpaces() throws {
+    @Test func spaces() throws {
         try testStringKey(json(" X"), expectedValue: "X")
         try testStringKey(json("X "), expectedValue: "X")
         try testStringKey(json(" X "), expectedValue: "X")
     }
 
-    func testNewLines() throws {
+    @Test func newLines() throws {
         try testStringKey(json("\\nX"), expectedValue: "X")
         try testStringKey(json("X\\n"), expectedValue: "X")
         try testStringKey(json("\\nX\\n"), expectedValue: "X")
     }
 
-    func testSpacesAndNewLines() throws {
+    @Test func spacesAndNewLines() throws {
         try testStringKey(json("\\n X \\n"), expectedValue: "X")
     }
 
     // MARK: - Helper
+
+    /// Check if a function throws _any_ error.
+    /// This is used when we are not concerned with the specific error that is thrown
+    private func expectThrows(_ closure: @autoclosure () throws -> Void) {
+        do {
+            try closure()
+            #expect(Bool(false))
+        } catch {
+            // Do nothing
+        }
+    }
 
     private func decode<Model: Decodable>(
         _ json: String,
@@ -75,7 +86,7 @@ final class TrimmedTests: XCTestCase {
         expectedValue: String
     ) throws {
         let model = try decode(json, as: StringKey.self)
-        XCTAssertEqual(model.key, expectedValue)
+        #expect(model.key == expectedValue)
         try testOptionalStringKey(json, expectedValue: expectedValue)
     }
 
@@ -84,7 +95,7 @@ final class TrimmedTests: XCTestCase {
         expectedValue: String?
     ) throws {
         let model = try decode(json, as: OptionalStringKey.self)
-        XCTAssertEqual(model.key, expectedValue)
+        #expect(model.key == expectedValue)
     }
 
     // MARK: - JSON
