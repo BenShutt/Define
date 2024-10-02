@@ -66,11 +66,8 @@ import DictionaryAPI
     /// Check if a function throws _any_ error.
     /// This is used when we are not concerned with the specific error that is thrown
     private func expectThrows(_ closure: @autoclosure () throws -> Void) {
-        do {
+        #expect(throws: (any Error).self) {
             try closure()
-            #expect(Bool(false))
-        } catch {
-            // Do nothing
         }
     }
 
