@@ -5,10 +5,11 @@
 //  Created by Ben Shutt on 12/09/2024.
 //
 
-import XCTest
+import Testing
+import Foundation
 import DictionaryAPI
 
-final class LowercasedTests: XCTestCase {
+@Suite struct LowercasedTests {
     private struct Model: Decodable {
         @Trimmed @Lowercased var one: String
         @Lowercased var two: String
@@ -16,23 +17,23 @@ final class LowercasedTests: XCTestCase {
 
     // MARK: - Tests
 
-    func testLowercase() throws {
+    @Test func lowercase() throws {
         let model = Model(one: "One", two: "TWO")
-        XCTAssertEqual(model.one, "one")
-        XCTAssertEqual(model.two, "two")
+        #expect(model.one == "one")
+        #expect(model.two == "two")
     }
 
-    func testLowercaseTrimmed() throws {
+    @Test func lowercaseTrimmed() throws {
         let model = Model(one: " OnE ", two: " tWo ")
-        XCTAssertEqual(model.one, "one")
-        XCTAssertEqual(model.two, " two ")
+        #expect(model.one == "one")
+        #expect(model.two == " two ")
     }
 
-    func testDecode() throws {
+    @Test func decode() throws {
         let json = "{\"one\":\" ONE \",\"two\":\" TWO \"}"
         let jsonData = Data(json.utf8)
         let model = try JSONDecoder().decode(Model.self, from: jsonData)
-        XCTAssertEqual(model.one, "one")
-        XCTAssertEqual(model.two, " two ")
+        #expect(model.one == "one")
+        #expect(model.two == " two ")
     }
 }
