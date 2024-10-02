@@ -5,52 +5,54 @@
 //  Created by Ben Shutt on 21/12/2022.
 //
 
-import XCTest
-import CoreGraphics
+import Testing
+import SwiftUI
 
-/// Test insetting of a `CGRect`
-final class CGRectTests: XCTestCase {
+struct CGRectTests {
+    let insetRect: CGRect
 
-    /// Epsilon accuracy
-    private static let ε = 0.00001
-
-    /// Test `CGRect`
-    private static let rect = CGRect(x: 0, y: 0, width: 20, height: 10)
-
-    /// Test insetted `rect`
-    private static let insetRect = rect.insetBy(dx: 5, dy: 5)
+    init() {
+        let rect = CGRect(x: 0, y: 0, width: 20, height: 10)
+        insetRect = rect.insetBy(dx: 5, dy: 5)
+    }
 
     // MARK: - Tests
 
-    /// Test insetting of a rect
-    func testInsetRect() {
-        assertEqual(
-            lhs: Self.insetRect,
-            rhs: CGRect(x: 5, y: 5, width: 10, height: 0)
-        )
+    @Test func insetValues() {
+        let lhs = insetRect
+        let rhs = CGRect(x: 5, y: 5, width: 10, height: 0)
+
+        expectEqual(lhs.origin.x, rhs.origin.x)
+        expectEqual(lhs.origin.y, rhs.origin.y)
+        expectEqual(lhs.size.width, rhs.size.width)
+        expectEqual(lhs.size.height, rhs.size.height)
+        #expect(lhs == rhs)
     }
 
-    /// Test min, mid, and max values in X and Y
-    func testInsetRectValues() {
-        XCTAssertEqual(Self.insetRect.minX, 5, accuracy: Self.ε)
-        XCTAssertEqual(Self.insetRect.midX, 10, accuracy: Self.ε)
-        XCTAssertEqual(Self.insetRect.maxX, 15, accuracy: Self.ε)
+    @Test func insetRectValues() {
+        expectEqual(insetRect.minX, 5)
+        expectEqual(insetRect.midX, 10)
+        expectEqual(insetRect.maxX, 15)
 
-        XCTAssertEqual(Self.insetRect.minY, 5, accuracy: Self.ε)
-        XCTAssertEqual(Self.insetRect.midY, 5, accuracy: Self.ε)
-        XCTAssertEqual(Self.insetRect.maxY, 5, accuracy: Self.ε)
+        expectEqual(insetRect.minY, 5)
+        expectEqual(insetRect.midY, 5)
+        expectEqual(insetRect.maxY, 5)
     }
 
     // MARK: - Helper
 
-    /// Check `lhs` and `rhs` rects are equal
-    /// - Parameters:
-    ///   - lhs: `CGRect`
-    ///   - rhs: `CGRect`
-    private func assertEqual(lhs: CGRect, rhs: CGRect) {
-        XCTAssertEqual(lhs.origin.x, rhs.origin.x, accuracy: Self.ε)
-        XCTAssertEqual(lhs.origin.y, rhs.origin.y, accuracy: Self.ε)
-        XCTAssertEqual(lhs.size.width, rhs.size.width, accuracy: Self.ε)
-        XCTAssertEqual(lhs.size.height, rhs.size.height, accuracy: Self.ε)
+    private func expectEqual(_ lhs: Double, _ rhs: Double) {
+        #expect(lhs.isEqual(to: rhs))
+    }
+}
+
+// MARK: - Double + Extensions
+
+private extension Double {
+    func isEqual(
+        to other: Double,
+        precision ε: Double = 0.00001
+    ) -> Bool {
+        abs(self - other) < ε
     }
 }
