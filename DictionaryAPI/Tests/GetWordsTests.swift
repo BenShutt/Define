@@ -5,22 +5,23 @@
 //  Created by Ben Shutt on 27/04/2023.
 //
 
-import XCTest
+import Testing
 import Alamofire
 import DictionaryAPI
 
-final class GetWordsTests: XCTestCase {
-    func testSuccess() async throws {
+@Suite struct GetWordsTests {
+    @Test func hello() async throws {
         let words = try await GetWords(word: "hello").request()
-        XCTAssertFalse(words.isEmpty)
+        #expect(!words.isEmpty)
     }
 
-    func testFailure() async throws {
+    @Test func look() async throws {
         do {
             // The API seems to be missing "look"?
             _ = try await GetWords(word: "look").request()
+            #expect(Bool(false))
         } catch {
-            XCTAssertEqual(error.responseCode, 404)
+            #expect(error.responseCode == 404)
         }
     }
 }
