@@ -8,7 +8,7 @@
 import Testing
 import SwiftUI
 
-struct CGRectTests {
+@Suite struct CGRectTests {
     let insetRect: CGRect
 
     init() {
