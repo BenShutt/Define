@@ -16,20 +16,8 @@ import DictionaryAPI
     }
 
     @Test func look() async throws {
-        do {
-            // The API seems to be missing "look"?
-            _ = try await GetWords(word: "look").request()
-            #expect(Bool(false))
-        } catch {
-            #expect(error.responseCode == 404)
+        await withKnownIssue {
+            try await GetWords(word: "look").request()
         }
-    }
-}
-
-// MARK: - Error + Alamofire
-
-private extension Error {
-    var responseCode: Int? {
-        (self as? AFError)?.responseCode
     }
 }
