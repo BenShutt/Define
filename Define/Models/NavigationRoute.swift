@@ -17,6 +17,12 @@ enum NavigationRoute: Hashable {
     /// Word detail screen (meanings and their definitions)
     case word(WordSource)
 
+    /// Donation screen
+    case donate
+
+    /// Thank you screen (e.g. after a donation)
+    case thankYou
+
     /// Map each route to its respective view
     @MainActor
     @ViewBuilder var screen: some View {
@@ -25,6 +31,10 @@ enum NavigationRoute: Hashable {
             SearchScreen()
         case let .word(source):
             WordScreen(source: source)
+        case .donate:
+            DonateScreen()
+        case .thankYou:
+            ThankYouScreen()
         }
     }
 }

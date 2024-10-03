@@ -11,10 +11,10 @@ import PassKit
 // TODO: Prerequisites for Apple Pay
 // 1. Make merchant identifier in Apple Developer portal (merchant.{bundleId})
 // 2. Add this merchant identifier in the signing and capabilities tab in Xcode
-private struct ApplePay {
+struct ApplePay {
 
     /// Identifier of the merchant set up in capabilities and the developer portal
-    private var merchantIdentifier: String {
+    var merchantIdentifier: String {
         if let bundleId = Bundle.main.bundleIdentifier {
             "merchant.\(bundleId)"
         } else {
@@ -24,17 +24,17 @@ private struct ApplePay {
 
     /// Two-letter ISO 3166 country code.
     /// Set to code for: "United Kingdom of Great Britain and Northern Ireland"
-    private let countryCode = "GB"
+    let countryCode = "GB"
 
     /// Three-letter ISO 4217 currency code.
     /// Set to code for: "United Kingdom of Great Britain and Northern Ireland"
-    private let currencyCode = "GBP"
+    let currencyCode = "GBP"
 
     /// Payment-processing protocols and card types that are supported
-    private let capabilities: PKMerchantCapability = .threeDSecure
+    let capabilities: PKMerchantCapability = .threeDSecure
 
     /// Payment methods that the user can select to fund the payment
-    private let networks: [PKPaymentNetwork] = [
+    let networks: [PKPaymentNetwork] = [
         .amex,
         .discover,
         .masterCard,
@@ -55,11 +55,13 @@ private struct ApplePay {
         request.currencyCode = currencyCode
 
         request.supportedNetworks = networks
-        request.paymentSummaryItems = [.init(
-            label: .init(localized: "apple_payment_title"),
-            amount: .init(decimal: amount),
-            type: .final // TODO: Total?
-        )]
+        request.paymentSummaryItems = [
+            .init(
+                label: .init(localized: "apple_payment_title"),
+                amount: .init(decimal: amount),
+                type: .final // TODO: Total?
+            )
+        ]
 
         return request
     }

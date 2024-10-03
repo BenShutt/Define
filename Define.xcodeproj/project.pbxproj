@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		420D1C932CAEB3E5006513F3 /* ApplePayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420D1C922CAEB3E0006513F3 /* ApplePayButton.swift */; };
-		420D1C952CAEB72B006513F3 /* DonationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420D1C942CAEB728006513F3 /* DonationScreen.swift */; };
+		420D1C952CAEB72B006513F3 /* DonateScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420D1C942CAEB728006513F3 /* DonateScreen.swift */; };
 		420D1C972CAEB816006513F3 /* ThankYouScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420D1C962CAEB810006513F3 /* ThankYouScreen.swift */; };
 		420D1C992CAEB93F006513F3 /* confetti.json in Resources */ = {isa = PBXBuildFile; fileRef = 420D1C982CAEB93F006513F3 /* confetti.json */; };
 		420D1C9B2CAEBA86006513F3 /* tick.json in Resources */ = {isa = PBXBuildFile; fileRef = 420D1C9A2CAEBA86006513F3 /* tick.json */; };
+		420D1C9D2CAEF8E2006513F3 /* Decimal+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420D1C9C2CAEF8DC006513F3 /* Decimal+Extensions.swift */; };
 		B801A3DB2986D41400FAD316 /* PartOfSpeechView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B801A3DA2986D41400FAD316 /* PartOfSpeechView.swift */; };
 		B80258E32C2ED8490058048C /* WordReminderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80258E22C2ED8490058048C /* WordReminderRouter.swift */; };
 		B80399DD28D79A37008CE7B4 /* DefineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80399DC28D79A37008CE7B4 /* DefineApp.swift */; };
@@ -143,10 +144,11 @@
 
 /* Begin PBXFileReference section */
 		420D1C922CAEB3E0006513F3 /* ApplePayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplePayButton.swift; sourceTree = "<group>"; };
-		420D1C942CAEB728006513F3 /* DonationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationScreen.swift; sourceTree = "<group>"; };
+		420D1C942CAEB728006513F3 /* DonateScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonateScreen.swift; sourceTree = "<group>"; };
 		420D1C962CAEB810006513F3 /* ThankYouScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouScreen.swift; sourceTree = "<group>"; };
 		420D1C982CAEB93F006513F3 /* confetti.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = confetti.json; sourceTree = "<group>"; };
 		420D1C9A2CAEBA86006513F3 /* tick.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = tick.json; sourceTree = "<group>"; };
+		420D1C9C2CAEF8DC006513F3 /* Decimal+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decimal+Extensions.swift"; sourceTree = "<group>"; };
 		B801A3DA2986D41400FAD316 /* PartOfSpeechView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartOfSpeechView.swift; sourceTree = "<group>"; };
 		B80258E22C2ED8490058048C /* WordReminderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordReminderRouter.swift; sourceTree = "<group>"; };
 		B80399D928D79A37008CE7B4 /* Define.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Define.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -400,6 +402,7 @@
 		B80E722729FDB8BE007CCE71 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				420D1C9C2CAEF8DC006513F3 /* Decimal+Extensions.swift */,
 				B80E722A29FDBBC1007CCE71 /* Calendar+Extensions.swift */,
 				B80E722829FDB8CC007CCE71 /* DateComponentsFormatter+Extensions.swift */,
 			);
@@ -555,7 +558,7 @@
 			isa = PBXGroup;
 			children = (
 				B8C404372C30A9F40081922C /* RootScreen */,
-				420D1C942CAEB728006513F3 /* DonationScreen.swift */,
+				420D1C942CAEB728006513F3 /* DonateScreen.swift */,
 				B89F179328E0EBF100A96E35 /* Screen.swift */,
 				B8D2A73B28DEEFAE0096A020 /* SearchScreen.swift */,
 				420D1C962CAEB810006513F3 /* ThankYouScreen.swift */,
@@ -832,7 +835,7 @@
 				B868F23C2AECDD88003765F8 /* DateGroup.swift in Sources */,
 				B80399DD28D79A37008CE7B4 /* DefineApp.swift in Sources */,
 				B88491A22961FFB5009F6469 /* DefinitionListItem.swift in Sources */,
-				420D1C952CAEB72B006513F3 /* DonationScreen.swift in Sources */,
+				420D1C952CAEB72B006513F3 /* DonateScreen.swift in Sources */,
 				B8C8FB192C6E5DEA003D9824 /* ExportManager.swift in Sources */,
 				B8B05F162C29748400F2A9A8 /* FixedSizeSheet.swift in Sources */,
 				B8BFDC6F2AC77FED009E1F83 /* GradientBlurView.swift in Sources */,
@@ -844,6 +847,7 @@
 				B86FB81A2C2C7F1D00687528 /* InfoScreen.swift in Sources */,
 				B8D2A74228DF3A250096A020 /* InputTextField.swift in Sources */,
 				B8C25F9C294F7AAF001C8847 /* KeyboardToolbar.swift in Sources */,
+				420D1C9D2CAEF8E2006513F3 /* Decimal+Extensions.swift in Sources */,
 				B86FB81C2C2C841D00687528 /* ListItem.swift in Sources */,
 				B8E49C0928DF917E00F9CAC4 /* LoadingView.swift in Sources */,
 				B868F23A2AECCC13003765F8 /* Logger.swift in Sources */,

@@ -89,6 +89,7 @@ private struct SettingsSection: View {
 private struct InfoSection: View {
     @EnvironmentObject private var settings: UserSettings
     @Environment(\.openURL) private var openURL
+    @Environment(\.push) private var push
     var onExport: () -> Void
 
     var body: some View {
@@ -97,7 +98,7 @@ private struct InfoSection: View {
             subtitle: "donate_subtitle"
         )
         .button {
-            // TODO
+            push(.donate)
         }
         .container()
 
