@@ -15,8 +15,11 @@ private struct ApplePay {
 
     /// Identifier of the merchant set up in capabilities and the developer portal
     private var merchantIdentifier: String {
-        let bundleId = Bundle.main.bundleIdentifier ?? ""
-        return "merchant.\(bundleId)"
+        if let bundleId = Bundle.main.bundleIdentifier {
+            "merchant.\(bundleId)"
+        } else {
+            fatalError("Nil Bundle ID")
+        }
     }
 
     /// Two-letter ISO 3166 country code.
@@ -87,6 +90,7 @@ struct ApplePayButton: View {
             break
 
         case let .didAuthorize(_, resultHandler):
+            // Check country code?
             let result = PKPaymentAuthorizationResult(status: .success, errors: nil)
             resultHandler(result)
 
