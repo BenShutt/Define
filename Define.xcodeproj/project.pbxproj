@@ -266,8 +266,8 @@
 			files = (
 				B8BFDC6C2AC77D04009E1F83 /* AppIcon in Frameworks */,
 				B85FB3C32C4ADF440089FBCE /* ColorUtilities in Frameworks */,
-				B8BEFCA12C749B6100212DC8 /* FlowLayout in Frameworks */,
 				B8FF0DC9295F9528004C61B6 /* DictionaryAPI in Frameworks */,
+				B8BEFCA12C749B6100212DC8 /* FlowLayout in Frameworks */,
 				B8A1232528E971EC00ACEC45 /* Lottie in Frameworks */,
 				B85FB3C52C4ADF440089FBCE /* Utilities in Frameworks */,
 			);
@@ -554,11 +554,11 @@
 		B8D2A73F28DF0E620096A020 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				420D1C962CAEB810006513F3 /* ThankYouScreen.swift */,
-				420D1C942CAEB728006513F3 /* DonationScreen.swift */,
 				B8C404372C30A9F40081922C /* RootScreen */,
+				420D1C942CAEB728006513F3 /* DonationScreen.swift */,
 				B89F179328E0EBF100A96E35 /* Screen.swift */,
 				B8D2A73B28DEEFAE0096A020 /* SearchScreen.swift */,
+				420D1C962CAEB810006513F3 /* ThankYouScreen.swift */,
 				B8E762B32A95F2E6006E168E /* WelcomeScreen.swift */,
 				B84AD60928FAFC9E00C2D5AE /* WordScreen.swift */,
 			);
@@ -572,6 +572,7 @@
 				B879E9EA28F0C7110094AA24 /* ListItem */,
 				B8D7803A2C29BF34006D25EF /* Navigation */,
 				B80E721929FD9546007CCE71 /* ScrollView */,
+				420D1C922CAEB3E0006513F3 /* ApplePayButton.swift */,
 				B891F8E12950FB6600A53582 /* ChevronView.swift */,
 				B8BFDC6E2AC77FED009E1F83 /* GradientBlurView.swift */,
 				B8AD58822AD471350054403E /* InformationSheet.swift */,
@@ -582,14 +583,13 @@
 				B8C8FBB32C6F4F2F003D9824 /* PasteButton.swift */,
 				B8A1232928E9744E00ACEC45 /* SearchEmptyView.swift */,
 				B8B9B9D528EC5C54006FCA76 /* SearchHeaderView.swift */,
+				B8A8F5D92C713729003A2B09 /* SectionHeader.swift */,
 				B8C404332C308BB80081922C /* SegmentedControl.swift */,
 				B8C25F9F294F8D5D001C8847 /* Separator.swift */,
 				B8C8FB1A2C6E6850003D9824 /* ShareSheet.swift */,
 				B8BBA16128E8EDF100222116 /* StyledButton.swift */,
 				B879E9E828F0C5190094AA24 /* TagView.swift */,
-				B8A8F5D92C713729003A2B09 /* SectionHeader.swift */,
 				B8DBE7922C2F5B4600A06DE3 /* WordSavedView.swift */,
-				420D1C922CAEB3E0006513F3 /* ApplePayButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -745,7 +745,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				420D1C9B2CAEBA86006513F3 /* tick.json in Resources */,
+				420D1C992CAEB93F006513F3 /* confetti.json in Resources */,
 				B8B9B9E128EDC9FC006FCA76 /* Images.xcassets in Resources */,
 				B8B563E928F00096004B80F0 /* LaunchScreen.storyboard in Resources */,
 				B818266F2AC5C57A00C6CCC7 /* Localizable.xcstrings in Resources */,
@@ -756,7 +756,6 @@
 				B8C8FBA72C6F48F1003D9824 /* NotoSans-ExtraBold.ttf in Resources */,
 				B8C8FB6D2C6F48F1003D9824 /* NotoSans-ExtraBoldItalic.ttf in Resources */,
 				B8C8FB942C6F48F1003D9824 /* NotoSans-ExtraLight.ttf in Resources */,
-				420D1C992CAEB93F006513F3 /* confetti.json in Resources */,
 				B8C8FBA52C6F48F1003D9824 /* NotoSans-ExtraLightItalic.ttf in Resources */,
 				B8C8FB7E2C6F48F1003D9824 /* NotoSans-Italic.ttf in Resources */,
 				B8C8FB922C6F48F1003D9824 /* NotoSans-Light.ttf in Resources */,
@@ -771,6 +770,7 @@
 				B80399E428D79A3B008CE7B4 /* Preview Assets.xcassets in Resources */,
 				B8A1232028E9712300ACEC45 /* searchEmpty.json in Resources */,
 				B8A1231F28E9712300ACEC45 /* searchNoResults.json in Resources */,
+				420D1C9B2CAEBA86006513F3 /* tick.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -819,10 +819,10 @@
 			files = (
 				B8E336572AD5BABF00374E4A /* AnimatedScrollView.swift in Sources */,
 				B89F179D28E0FABE00A96E35 /* AppDelegate.swift in Sources */,
+				420D1C932CAEB3E5006513F3 /* ApplePayButton.swift in Sources */,
 				B80E722B29FDBBC1007CCE71 /* Calendar+Extensions.swift in Sources */,
 				B80E722429FDAD69007CCE71 /* CapsuleBorder.swift in Sources */,
 				B8E49C0B28DF985500F9CAC4 /* CGFloat+Values.swift in Sources */,
-				420D1C952CAEB72B006513F3 /* DonationScreen.swift in Sources */,
 				B891F8E22950FB6600A53582 /* ChevronView.swift in Sources */,
 				B832D6642C2466BF00FF3EFE /* ClippedHeight.swift in Sources */,
 				B8D2A73E28DEEFE70096A020 /* Color+Values.swift in Sources */,
@@ -832,6 +832,7 @@
 				B868F23C2AECDD88003765F8 /* DateGroup.swift in Sources */,
 				B80399DD28D79A37008CE7B4 /* DefineApp.swift in Sources */,
 				B88491A22961FFB5009F6469 /* DefinitionListItem.swift in Sources */,
+				420D1C952CAEB72B006513F3 /* DonationScreen.swift in Sources */,
 				B8C8FB192C6E5DEA003D9824 /* ExportManager.swift in Sources */,
 				B8B05F162C29748400F2A9A8 /* FixedSizeSheet.swift in Sources */,
 				B8BFDC6F2AC77FED009E1F83 /* GradientBlurView.swift in Sources */,
@@ -858,7 +859,6 @@
 				B832D6622C24654A00FF3EFE /* OffsetScrollView.swift in Sources */,
 				B8ACB21E2C333653002DF7C5 /* PartOfSpeech.swift in Sources */,
 				B801A3DB2986D41400FAD316 /* PartOfSpeechView.swift in Sources */,
-				420D1C932CAEB3E5006513F3 /* ApplePayButton.swift in Sources */,
 				B8C8FBB42C6F4F2F003D9824 /* PasteButton.swift in Sources */,
 				B8994CAE2A8EC4C2000BE101 /* PushNotificationManager.swift in Sources */,
 				B86BA87E2AE79C8B00C638CD /* ReceiveTimer.swift in Sources */,
@@ -867,13 +867,12 @@
 				B80E722629FDB5C9007CCE71 /* RoundedRectangleBorder.swift in Sources */,
 				B8FF0DD82960ACCE004C61B6 /* SavedWord.swift in Sources */,
 				B89F179428E0EBF100A96E35 /* Screen.swift in Sources */,
-				420D1C972CAEB816006513F3 /* ThankYouScreen.swift in Sources */,
 				B8A1232A28E9744E00ACEC45 /* SearchEmptyView.swift in Sources */,
 				B8B9B9D628EC5C54006FCA76 /* SearchHeaderView.swift in Sources */,
 				B813BFFD28EB7BA1000C766C /* SearchIconView.swift in Sources */,
 				B8D2A73C28DEEFAE0096A020 /* SearchScreen.swift in Sources */,
-				B8A8F5DA2C713729003A2B09 /* SectionHeader.swift in Sources */,
 				B879E9F028F0CA910094AA24 /* SearchViewModel.swift in Sources */,
+				B8A8F5DA2C713729003A2B09 /* SectionHeader.swift in Sources */,
 				B8C404342C308BB80081922C /* SegmentedControl.swift in Sources */,
 				B8C25FA0294F8D5D001C8847 /* Separator.swift in Sources */,
 				B80E722229FDAD60007CCE71 /* ShapeBorder.swift in Sources */,
@@ -884,6 +883,7 @@
 				B8BBA16228E8EDF100222116 /* StyledButton.swift in Sources */,
 				B879E9E928F0C5190094AA24 /* TagView.swift in Sources */,
 				B8D2A74628DF3AFE0096A020 /* TextStyle.swift in Sources */,
+				420D1C972CAEB816006513F3 /* ThankYouScreen.swift in Sources */,
 				B8C8FBB62C6F568D003D9824 /* URL+Values.swift in Sources */,
 				B89F6ED32C31F0E40097BF94 /* UserSettings.swift in Sources */,
 				B86FB81E2C2C84B000687528 /* View+Extensions.swift in Sources */,
