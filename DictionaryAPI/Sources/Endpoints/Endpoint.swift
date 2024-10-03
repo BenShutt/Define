@@ -29,10 +29,4 @@ public extension Endpoint {
         urlComponents.queryItems = queryItems.isEmpty ? nil : queryItems
         return urlComponents
     }
-
-    var decoder: DataDecoder {
-        let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .iso8601
-        return decoder
-    }
 }
