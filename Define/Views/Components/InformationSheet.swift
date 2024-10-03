@@ -18,12 +18,14 @@ struct InformationSheet: View {
                 Text(title)
                     .textStyle(.h2, fill: .leading)
 
+                // TODO: Too small, also maybe should be higher?
                 CrossButton(action: dismiss.callAsFunction)
             }
 
             Text(subtitle)
                 .textStyle(.body, fill: .leading)
                 .padding(.top, .small)
+                .padding(.bottom, .large)
         }
         .padding(.margins)
         .fixedSizeSheet()
