@@ -33,7 +33,7 @@ struct ThankYouScreen: View {
                     .textStyle(.h1, fill: .leading)
                     .padding(.top, .medium)
 
-                Text("thank_you_subtitle")
+                Text(.init("thank_you_subtitle"))
                     .textStyle(.body, fill: .leading)
                     .padding(.top, .medium)
 

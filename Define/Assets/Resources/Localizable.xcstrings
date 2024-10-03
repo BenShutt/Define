@@ -45,7 +45,14 @@
       }
     },
     "back_button" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "BACK"
+          }
+        }
+      }
     },
     "cancel" : {
       "extractionState" : "manual",
@@ -504,10 +511,24 @@
       }
     },
     "thank_you_subtitle" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your donation is _massively_ appreciated, thank you so much!"
+          }
+        }
+      }
     },
     "thank_you_title" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thank You!"
+          }
+        }
+      }
     },
     "welcome_subtitle %@" : {
       "extractionState" : "manual",
