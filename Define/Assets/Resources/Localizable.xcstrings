@@ -23,6 +23,26 @@
         }
       }
     },
+    "amount_invalid" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Invalid amount. Require at least £1"
+          }
+        }
+      }
+    },
+    "amount_valid %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You’ve selected: %@"
+          }
+        }
+      }
+    },
     "app_version %@" : {
       "localizations" : {
         "en" : {
@@ -61,6 +81,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cancel"
+          }
+        }
+      }
+    },
+    "confirm" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confirm"
           }
         }
       }
@@ -153,6 +183,16 @@
         }
       }
     },
+    "donate_body" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thank you so much for considering a donation. This app has running costs so it could do with all the help it could get. Please select an amount that seems reasonable to you."
+          }
+        }
+      }
+    },
     "donate_subtitle" : {
       "localizations" : {
         "en" : {
@@ -169,6 +209,27 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Say Thanks"
+          }
+        }
+      }
+    },
+    "enter_amount" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter amount"
+          }
+        }
+      }
+    },
+    "enter_amount_gbp" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter Amount In GBP"
           }
         }
       }
@@ -282,6 +343,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "iOS Settings"
+          }
+        }
+      }
+    },
+    "other_amount" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter Other"
+          }
+        }
+      }
+    },
+    "other_amount %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Other: %@"
           }
         }
       }

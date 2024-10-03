@@ -7,19 +7,13 @@
 
 import SwiftUI
 
-// MARK: - GBP
-
-/// Amount in Pound Sterling
-typealias GBP = Decimal
-
 // MARK: - Amount
 
 struct Amount {
     let currencyCode = ApplePay().currencyCode
     let min: GBP = 1
-
-    var isQuick: Bool
-    var amount: GBP
+    let isQuick: Bool
+    let amount: GBP
 
     var isValid: Bool {
         amount >= min
@@ -29,7 +23,7 @@ struct Amount {
         isValid ? .appGreen : .appRed
     }
 
-    var formattedAmount: String? {
+    func formatted(amount: GBP) -> String? {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
         formatter.currencyCode = currencyCode
@@ -37,9 +31,10 @@ struct Amount {
     }
 
     var title: LocalizedStringKey {
-        if isValid, let formattedAmount {
+        if isValid, let formattedAmount = formatted(amount: amount) {
             "amount_valid \(formattedAmount)"
         } else {
+            // Note: hardcoded currency in localized value
             "amount_invalid"
         }
     }
@@ -58,6 +53,7 @@ struct Amount {
 // MARK: - DonateScreen
 
 struct DonateScreen: View {
+    @Environment(\.push) private var push
     @State private var selectedAmount: Amount
     private let quickAmounts: [GBP] = [5, 10, 20]
 
@@ -93,12 +89,17 @@ struct DonateScreen: View {
         .padding(.margins)
         .screen()
         .stickyBottom {
-            ApplePayButton(amount: selectedAmount.amount)
-                .disabled(!selectedAmount.isValid)
-                .opacity(selectedAmount.isValid ? 1 : 0.25)
-                .frame(maxWidth: .infinity)
-                .frame(height: 50)
-                .padding(.margins)
+            ApplePayButton(
+                amount: selectedAmount.amount,
+                onFinish: {
+                    push(.thankYou)
+                }
+            )
+            .disabled(!selectedAmount.isValid)
+            .opacity(selectedAmount.isValid ? 1 : 0.25)
+            .frame(maxWidth: .infinity)
+            .frame(height: 50)
+            .padding(.margins)
         }
         .navigationBar(title: "donate_title")
     }
@@ -164,7 +165,7 @@ private struct OtherAmountButton: View {
                     isPresentingAlert = true
                 }
             )
-            .alert("custom_amount", isPresented: $isPresentingAlert) {
+            .alert("enter_amount_gbp", isPresented: $isPresentingAlert) {
                 TextField("enter_amount", text: $customAmount)
                     .keyboardType(.decimalPad)
 

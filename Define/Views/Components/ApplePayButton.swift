@@ -8,6 +8,9 @@
 import SwiftUI
 import PassKit
 
+/// Amount in Pound Sterling
+typealias GBP = Decimal
+
 // TODO: Prerequisites for Apple Pay
 // 1. Make merchant identifier in Apple Developer portal (merchant.{bundleId})
 // 2. Add this merchant identifier in the signing and capabilities tab in Xcode
@@ -45,7 +48,7 @@ struct ApplePay {
         PKPaymentAuthorizationController.canMakePayments()
     }
 
-    func request(amount: Decimal) -> PKPaymentRequest {
+    func request(amount: GBP) -> PKPaymentRequest {
         let request = PKPaymentRequest()
 
         request.merchantIdentifier = merchantIdentifier
@@ -59,7 +62,7 @@ struct ApplePay {
             .init(
                 label: .init(localized: "apple_payment_title"),
                 amount: .init(decimal: amount),
-                type: .final // TODO: Total?
+                type: .final
             )
         ]
 
@@ -81,23 +84,29 @@ struct ApplePay {
 // MARK: - ApplePayButton
 
 struct ApplePayButton: View {
+    @State private var isSuccess = false
+
     private let applePay = ApplePay()
-    var amount: Decimal
+    var amount: GBP
+    var onFinish: () -> Void
 
     private func onPaymentAuthorizationChange(
         phase: PayWithApplePayButtonPaymentAuthorizationPhase
     ) {
         switch phase {
         case .willAuthorize:
-            break
+            isSuccess = false
 
         case let .didAuthorize(_, resultHandler):
             // Check country code?
             let result = PKPaymentAuthorizationResult(status: .success, errors: nil)
             resultHandler(result)
+            isSuccess = true
 
         case .didFinish:
-            break
+            if isSuccess {
+                onFinish()
+            }
 
         @unknown default:
             break
@@ -112,6 +121,7 @@ struct ApplePayButton: View {
                     request: applePay.request(amount: amount),
                     onPaymentAuthorizationChange: onPaymentAuthorizationChange
                 )
+                .id(amount) // Force redraw on amount change (request doesn't)
             } else if applePay.canSetupCards() {
                 PayWithApplePayButton(.setUp) {
                     applePay.setupCards()

@@ -54,6 +54,7 @@ struct ThankYouScreen: View {
                 popToRoot()
             }
         )
+        .navigationBarBackButtonHidden(true)
     }
 }
 
