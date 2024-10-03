@@ -38,15 +38,8 @@ private struct ApplePay {
         .visa
     ]
 
-    func canMakePayments() -> Bool {
+    func canRequest() -> Bool {
         PKPaymentAuthorizationController.canMakePayments()
-    }
-
-    func canSetupCards() -> Bool {
-        PKPaymentAuthorizationController.canMakePayments(
-            usingNetworks: networks,
-            capabilities: capabilities
-        )
     }
 
     func request(amount: Decimal) -> PKPaymentRequest {
@@ -67,6 +60,17 @@ private struct ApplePay {
 
         return request
     }
+
+    func canSetupCards() -> Bool {
+        PKPaymentAuthorizationController.canMakePayments(
+            usingNetworks: networks,
+            capabilities: capabilities
+        )
+    }
+
+    func setupCards() {
+        PKPassLibrary().openPaymentSetup()
+    }
 }
 
 // MARK: - ApplePayButton
@@ -82,7 +86,7 @@ struct ApplePayButton: View {
         case .willAuthorize:
             break
 
-        case let .didAuthorize(payment, resultHandler):
+        case let .didAuthorize(_, resultHandler):
             let result = PKPaymentAuthorizationResult(status: .success, errors: nil)
             resultHandler(result)
 
@@ -94,20 +98,23 @@ struct ApplePayButton: View {
         }
     }
 
-    private func button(_ label: PayWithApplePayButtonLabel) -> some View {
-        PayWithApplePayButton(
-            label,
-            request: applePay.request(amount: amount),
-            onPaymentAuthorizationChange: onPaymentAuthorizationChange
-        )
-        .payWithApplePayButtonStyle(.black)
-    }
-
     var body: some View {
-        if applePay.canMakePayments() {
-            button(.donate)
-        } else if applePay.canSetupCards() {
-            button(.setUp)
+        Group {
+            if applePay.canRequest() {
+                PayWithApplePayButton(
+                    .donate,
+                    request: applePay.request(amount: amount),
+                    onPaymentAuthorizationChange: onPaymentAuthorizationChange
+                )
+            } else if applePay.canSetupCards() {
+                PayWithApplePayButton(
+                    .setUp,
+                    action: {
+                        applePay.setupCards()
+                    }
+                )
+            }
         }
+        .payWithApplePayButtonStyle(.black)
     }
 }
