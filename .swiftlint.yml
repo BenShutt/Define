@@ -9,7 +9,6 @@ opt_in_rules:
   - all
 disabled_rules:
   - anonymous_argument_in_multiline_closure
-  - anyobject_protocol # Deprecated
   - balanced_xctest_lifecycle
   - conditional_returns_on_newline
   - contrasted_opening_brace
@@ -29,6 +28,7 @@ disabled_rules:
   - no_grouping_extension
   - no_magic_numbers
   - one_declaration_per_file
+  - optional_data_string_conversion
   - prefer_nimble
   - prefer_self_in_static_references
   - prefixed_toplevel_constant
@@ -51,9 +51,11 @@ attributes:
     - "@ViewBuilder"
     - "@Environment"
     - "@EnvironmentObject"
+    - "@Suite"
+    - "@Test"
 closure_body_length:
     warning: 50
-    error: 100
+    error: 60
 function_body_length: 60
 large_tuple: 3
 number_separator:

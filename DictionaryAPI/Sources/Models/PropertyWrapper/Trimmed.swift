@@ -28,6 +28,7 @@ public struct Trimmed<Value: Trimmable>: Model, CodablePropertyWrapper {
 
 public protocol Trimmable: Model {
     func trim() -> Self
+
     var isEmpty: Bool { get }
 }
 

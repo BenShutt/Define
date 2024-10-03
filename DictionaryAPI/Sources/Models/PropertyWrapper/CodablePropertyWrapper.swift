@@ -10,7 +10,9 @@ import Foundation
 /// A property wrapper than should be encoded and decoded by its wrapped value
 public protocol CodablePropertyWrapper: Codable {
     associatedtype Value: Codable
+
     var wrappedValue: Value { get }
+
     init(wrappedValue: Value)
 }
 
