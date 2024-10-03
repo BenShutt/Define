@@ -10,6 +10,7 @@ import Lottie
 
 /// A Lottie asset file
 enum LottieFile: String {
+    case book
     case confetti
     case searchEmpty
     case searchNoResults

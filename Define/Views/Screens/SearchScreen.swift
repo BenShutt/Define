@@ -72,7 +72,7 @@ private struct SearchStateView: View {
     var body: some View {
         switch viewModel.state {
         case .emptySearch:
-            SearchEmptyView(
+            EmptyContentView(
                 lottie: .searchEmpty,
                 title: "search_empty_title",
                 subtitle: "search_empty_subtitle"
@@ -83,7 +83,7 @@ private struct SearchStateView: View {
                 .padding(.top, .large)
 
         case .failure:
-            SearchEmptyView(
+            EmptyContentView(
                 lottie: .searchNoResults,
                 title: "search_no_results_title",
                 subtitle: "search_no_results_subtitle \(viewModel.search)"

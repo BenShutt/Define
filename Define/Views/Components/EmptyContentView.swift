@@ -1,5 +1,5 @@
 //
-//  SearchEmptyView.swift
+//  EmptyContentView.swift
 //  Define
 //
 //  Created by Ben Shutt on 02/10/2022.
@@ -8,8 +8,8 @@
 import SwiftUI
 import Lottie
 
-/// `View` that draws a search empty state
-struct SearchEmptyView: View {
+/// `View` that draws an empty state
+struct EmptyContentView: View {
 
     /// Lottie animation
     var lottie: LottieFile

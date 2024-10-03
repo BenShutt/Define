@@ -168,7 +168,7 @@ private struct WordContentView: View {
 
     var body: some View {
         if source.word.meanings.isEmpty {
-            SearchEmptyView(
+            EmptyContentView(
                 lottie: .searchNoResults,
                 title: "word_empty_title",
                 subtitle: "word_empty_subtitle \(source.word.title)"

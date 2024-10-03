@@ -80,11 +80,12 @@ struct DonateScreen: View {
             OtherAmountButton(selectedAmount: $selectedAmount)
                 .padding(.top, .medium)
 
-            Spacer(minLength: 0)
-
             Text(selectedAmount.title)
                 .foregroundStyle(selectedAmount.color)
                 .textStyle(.h4)
+                .padding(.top, .medium)
+
+            Spacer(minLength: 0)
         }
         .padding(.margins)
         .screen()

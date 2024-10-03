@@ -10,7 +10,7 @@ import ColorUtilities
 
 public extension Color {
     static let appIconWhite = Color(white: 1)
-    static let appIconBlue = Color(red255: 52, green: 152, blue: 219)
+    static let appIconBlue = Color(red255: 52, green: 152, blue: 219) // #3498db
     static let appIconDarkGray = Color(white255: 12)
 
     // MARK: - Computed

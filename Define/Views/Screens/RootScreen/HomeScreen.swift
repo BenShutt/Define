@@ -134,8 +134,8 @@ private struct WordTagView: View, FlowLayoutSized {
 
 struct HomeEmptyView: View {
     var body: some View {
-        SearchEmptyView(
-            lottie: .searchNoResults,
+        EmptyContentView(
+            lottie: .book,
             title: "home_empty_title",
             subtitle: "home_empty_subtitle"
         )

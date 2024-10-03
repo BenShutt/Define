@@ -13,6 +13,7 @@
 		420D1C992CAEB93F006513F3 /* confetti.json in Resources */ = {isa = PBXBuildFile; fileRef = 420D1C982CAEB93F006513F3 /* confetti.json */; };
 		420D1C9B2CAEBA86006513F3 /* tick.json in Resources */ = {isa = PBXBuildFile; fileRef = 420D1C9A2CAEBA86006513F3 /* tick.json */; };
 		420D1C9D2CAEF8E2006513F3 /* Decimal+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420D1C9C2CAEF8DC006513F3 /* Decimal+Extensions.swift */; };
+		420D1C9F2CAF0BC4006513F3 /* book.json in Resources */ = {isa = PBXBuildFile; fileRef = 420D1C9E2CAF0BC4006513F3 /* book.json */; };
 		B801A3DB2986D41400FAD316 /* PartOfSpeechView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B801A3DA2986D41400FAD316 /* PartOfSpeechView.swift */; };
 		B80258E32C2ED8490058048C /* WordReminderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80258E22C2ED8490058048C /* WordReminderRouter.swift */; };
 		B80399DD28D79A37008CE7B4 /* DefineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80399DC28D79A37008CE7B4 /* DefineApp.swift */; };
@@ -63,7 +64,7 @@
 		B8A1232028E9712300ACEC45 /* searchEmpty.json in Resources */ = {isa = PBXBuildFile; fileRef = B8A1231E28E9712300ACEC45 /* searchEmpty.json */; };
 		B8A1232528E971EC00ACEC45 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = B8A1232428E971EC00ACEC45 /* Lottie */; };
 		B8A1232728E971FD00ACEC45 /* LottieFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A1232628E971FD00ACEC45 /* LottieFile.swift */; };
-		B8A1232A28E9744E00ACEC45 /* SearchEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A1232928E9744E00ACEC45 /* SearchEmptyView.swift */; };
+		B8A1232A28E9744E00ACEC45 /* EmptyContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A1232928E9744E00ACEC45 /* EmptyContentView.swift */; };
 		B8A8F5DA2C713729003A2B09 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A8F5D92C713729003A2B09 /* SectionHeader.swift */; };
 		B8ACB21E2C333653002DF7C5 /* PartOfSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8ACB21D2C333653002DF7C5 /* PartOfSpeech.swift */; };
 		B8ACB2202C3339E2002DF7C5 /* WordDb.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8ACB21F2C3339E2002DF7C5 /* WordDb.swift */; };
@@ -149,6 +150,7 @@
 		420D1C982CAEB93F006513F3 /* confetti.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = confetti.json; sourceTree = "<group>"; };
 		420D1C9A2CAEBA86006513F3 /* tick.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = tick.json; sourceTree = "<group>"; };
 		420D1C9C2CAEF8DC006513F3 /* Decimal+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decimal+Extensions.swift"; sourceTree = "<group>"; };
+		420D1C9E2CAF0BC4006513F3 /* book.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = book.json; sourceTree = "<group>"; };
 		B801A3DA2986D41400FAD316 /* PartOfSpeechView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartOfSpeechView.swift; sourceTree = "<group>"; };
 		B80258E22C2ED8490058048C /* WordReminderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordReminderRouter.swift; sourceTree = "<group>"; };
 		B80399D928D79A37008CE7B4 /* Define.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Define.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -200,7 +202,7 @@
 		B8A1231D28E9712300ACEC45 /* searchNoResults.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = searchNoResults.json; sourceTree = "<group>"; };
 		B8A1231E28E9712300ACEC45 /* searchEmpty.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = searchEmpty.json; sourceTree = "<group>"; };
 		B8A1232628E971FD00ACEC45 /* LottieFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieFile.swift; sourceTree = "<group>"; };
-		B8A1232928E9744E00ACEC45 /* SearchEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEmptyView.swift; sourceTree = "<group>"; };
+		B8A1232928E9744E00ACEC45 /* EmptyContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyContentView.swift; sourceTree = "<group>"; };
 		B8A1235E28E9829B00ACEC45 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8A8F5D92C713729003A2B09 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		B8ACB21D2C333653002DF7C5 /* PartOfSpeech.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartOfSpeech.swift; sourceTree = "<group>"; };
@@ -458,6 +460,7 @@
 		B8A1231C28E9711600ACEC45 /* Lotties */ = {
 			isa = PBXGroup;
 			children = (
+				420D1C9E2CAF0BC4006513F3 /* book.json */,
 				420D1C982CAEB93F006513F3 /* confetti.json */,
 				B8A1231E28E9712300ACEC45 /* searchEmpty.json */,
 				B8A1231D28E9712300ACEC45 /* searchNoResults.json */,
@@ -584,7 +587,7 @@
 				B8F834CF2B73E40700D0C5D2 /* NavigationBarBackground.swift */,
 				B801A3DA2986D41400FAD316 /* PartOfSpeechView.swift */,
 				B8C8FBB32C6F4F2F003D9824 /* PasteButton.swift */,
-				B8A1232928E9744E00ACEC45 /* SearchEmptyView.swift */,
+				B8A1232928E9744E00ACEC45 /* EmptyContentView.swift */,
 				B8B9B9D528EC5C54006FCA76 /* SearchHeaderView.swift */,
 				B8A8F5D92C713729003A2B09 /* SectionHeader.swift */,
 				B8C404332C308BB80081922C /* SegmentedControl.swift */,
@@ -759,6 +762,7 @@
 				B8C8FBA72C6F48F1003D9824 /* NotoSans-ExtraBold.ttf in Resources */,
 				B8C8FB6D2C6F48F1003D9824 /* NotoSans-ExtraBoldItalic.ttf in Resources */,
 				B8C8FB942C6F48F1003D9824 /* NotoSans-ExtraLight.ttf in Resources */,
+				420D1C9F2CAF0BC4006513F3 /* book.json in Resources */,
 				B8C8FBA52C6F48F1003D9824 /* NotoSans-ExtraLightItalic.ttf in Resources */,
 				B8C8FB7E2C6F48F1003D9824 /* NotoSans-Italic.ttf in Resources */,
 				B8C8FB922C6F48F1003D9824 /* NotoSans-Light.ttf in Resources */,
@@ -871,7 +875,7 @@
 				B80E722629FDB5C9007CCE71 /* RoundedRectangleBorder.swift in Sources */,
 				B8FF0DD82960ACCE004C61B6 /* SavedWord.swift in Sources */,
 				B89F179428E0EBF100A96E35 /* Screen.swift in Sources */,
-				B8A1232A28E9744E00ACEC45 /* SearchEmptyView.swift in Sources */,
+				B8A1232A28E9744E00ACEC45 /* EmptyContentView.swift in Sources */,
 				B8B9B9D628EC5C54006FCA76 /* SearchHeaderView.swift in Sources */,
 				B813BFFD28EB7BA1000C766C /* SearchIconView.swift in Sources */,
 				B8D2A73C28DEEFAE0096A020 /* SearchScreen.swift in Sources */,
