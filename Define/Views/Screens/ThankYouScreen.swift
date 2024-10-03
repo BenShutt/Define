@@ -17,15 +17,15 @@ struct ThankYouScreen: View {
                 LottieView(.tick)
                     .playing(loopMode: .playOnce)
                     .animationSpeed(0.75)
-                    .aspectRatio(contentMode: .fit)
+                    .aspectRatio(contentMode: .fill)
                     .transform(lottie: .tick)
-                    .frame(width: metrics.size.width * 0.8)
+                    .frame(height: metrics.size.height * 0.5)
                     .overlay {
                         LottieView(.confetti)
                             .playing(loopMode: .playOnce)
                             .aspectRatio(contentMode: .fill)
                             .transform(lottie: .confetti)
-                            .frame(width: metrics.size.width * 1.5)
+                            .frame(width: metrics.size.width)
                             .fixedSize()
                     }
 
