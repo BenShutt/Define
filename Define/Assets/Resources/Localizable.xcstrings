@@ -511,6 +511,7 @@
       }
     },
     "thank_you_subtitle" : {
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
