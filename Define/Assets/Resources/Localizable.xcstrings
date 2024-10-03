@@ -270,7 +270,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "You do not currently have any words saved, try searching and save what interests you"
+            "value" : "You do not currently have any words saved. Try searching and save what interests you"
           }
         }
       }
