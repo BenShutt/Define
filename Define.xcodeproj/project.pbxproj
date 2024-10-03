@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		420D1C932CAEB3E5006513F3 /* ApplePayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420D1C922CAEB3E0006513F3 /* ApplePayButton.swift */; };
+		420D1C952CAEB72B006513F3 /* DonationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420D1C942CAEB728006513F3 /* DonationScreen.swift */; };
+		420D1C972CAEB816006513F3 /* ThankYouScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420D1C962CAEB810006513F3 /* ThankYouScreen.swift */; };
+		420D1C992CAEB93F006513F3 /* confetti.json in Resources */ = {isa = PBXBuildFile; fileRef = 420D1C982CAEB93F006513F3 /* confetti.json */; };
+		420D1C9B2CAEBA86006513F3 /* tick.json in Resources */ = {isa = PBXBuildFile; fileRef = 420D1C9A2CAEBA86006513F3 /* tick.json */; };
 		B801A3DB2986D41400FAD316 /* PartOfSpeechView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B801A3DA2986D41400FAD316 /* PartOfSpeechView.swift */; };
 		B80258E32C2ED8490058048C /* WordReminderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80258E22C2ED8490058048C /* WordReminderRouter.swift */; };
 		B80399DD28D79A37008CE7B4 /* DefineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80399DC28D79A37008CE7B4 /* DefineApp.swift */; };
@@ -139,6 +143,10 @@
 
 /* Begin PBXFileReference section */
 		420D1C922CAEB3E0006513F3 /* ApplePayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplePayButton.swift; sourceTree = "<group>"; };
+		420D1C942CAEB728006513F3 /* DonationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationScreen.swift; sourceTree = "<group>"; };
+		420D1C962CAEB810006513F3 /* ThankYouScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouScreen.swift; sourceTree = "<group>"; };
+		420D1C982CAEB93F006513F3 /* confetti.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = confetti.json; sourceTree = "<group>"; };
+		420D1C9A2CAEBA86006513F3 /* tick.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = tick.json; sourceTree = "<group>"; };
 		B801A3DA2986D41400FAD316 /* PartOfSpeechView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartOfSpeechView.swift; sourceTree = "<group>"; };
 		B80258E22C2ED8490058048C /* WordReminderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordReminderRouter.swift; sourceTree = "<group>"; };
 		B80399D928D79A37008CE7B4 /* Define.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Define.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -447,8 +455,10 @@
 		B8A1231C28E9711600ACEC45 /* Lotties */ = {
 			isa = PBXGroup;
 			children = (
+				420D1C982CAEB93F006513F3 /* confetti.json */,
 				B8A1231E28E9712300ACEC45 /* searchEmpty.json */,
 				B8A1231D28E9712300ACEC45 /* searchNoResults.json */,
+				420D1C9A2CAEBA86006513F3 /* tick.json */,
 			);
 			path = Lotties;
 			sourceTree = "<group>";
@@ -544,6 +554,8 @@
 		B8D2A73F28DF0E620096A020 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				420D1C962CAEB810006513F3 /* ThankYouScreen.swift */,
+				420D1C942CAEB728006513F3 /* DonationScreen.swift */,
 				B8C404372C30A9F40081922C /* RootScreen */,
 				B89F179328E0EBF100A96E35 /* Screen.swift */,
 				B8D2A73B28DEEFAE0096A020 /* SearchScreen.swift */,
@@ -733,6 +745,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				420D1C9B2CAEBA86006513F3 /* tick.json in Resources */,
 				B8B9B9E128EDC9FC006FCA76 /* Images.xcassets in Resources */,
 				B8B563E928F00096004B80F0 /* LaunchScreen.storyboard in Resources */,
 				B818266F2AC5C57A00C6CCC7 /* Localizable.xcstrings in Resources */,
@@ -743,6 +756,7 @@
 				B8C8FBA72C6F48F1003D9824 /* NotoSans-ExtraBold.ttf in Resources */,
 				B8C8FB6D2C6F48F1003D9824 /* NotoSans-ExtraBoldItalic.ttf in Resources */,
 				B8C8FB942C6F48F1003D9824 /* NotoSans-ExtraLight.ttf in Resources */,
+				420D1C992CAEB93F006513F3 /* confetti.json in Resources */,
 				B8C8FBA52C6F48F1003D9824 /* NotoSans-ExtraLightItalic.ttf in Resources */,
 				B8C8FB7E2C6F48F1003D9824 /* NotoSans-Italic.ttf in Resources */,
 				B8C8FB922C6F48F1003D9824 /* NotoSans-Light.ttf in Resources */,
@@ -808,6 +822,7 @@
 				B80E722B29FDBBC1007CCE71 /* Calendar+Extensions.swift in Sources */,
 				B80E722429FDAD69007CCE71 /* CapsuleBorder.swift in Sources */,
 				B8E49C0B28DF985500F9CAC4 /* CGFloat+Values.swift in Sources */,
+				420D1C952CAEB72B006513F3 /* DonationScreen.swift in Sources */,
 				B891F8E22950FB6600A53582 /* ChevronView.swift in Sources */,
 				B832D6642C2466BF00FF3EFE /* ClippedHeight.swift in Sources */,
 				B8D2A73E28DEEFE70096A020 /* Color+Values.swift in Sources */,
@@ -852,6 +867,7 @@
 				B80E722629FDB5C9007CCE71 /* RoundedRectangleBorder.swift in Sources */,
 				B8FF0DD82960ACCE004C61B6 /* SavedWord.swift in Sources */,
 				B89F179428E0EBF100A96E35 /* Screen.swift in Sources */,
+				420D1C972CAEB816006513F3 /* ThankYouScreen.swift in Sources */,
 				B8A1232A28E9744E00ACEC45 /* SearchEmptyView.swift in Sources */,
 				B8B9B9D628EC5C54006FCA76 /* SearchHeaderView.swift in Sources */,
 				B813BFFD28EB7BA1000C766C /* SearchIconView.swift in Sources */,

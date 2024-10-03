@@ -10,14 +10,16 @@ import Lottie
 
 /// A Lottie asset file
 enum LottieFile: String {
+    case confetti
     case searchEmpty
     case searchNoResults
+    case tick
 
     /// Workaround: scale the lottie to remove whitespace on the asset
     var scale: CGFloat {
         switch self {
         case .searchEmpty: 1.5
-        case .searchNoResults: 1
+        default: 1
         }
     }
 }

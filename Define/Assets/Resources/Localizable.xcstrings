@@ -44,6 +44,9 @@
         }
       }
     },
+    "back_button" : {
+
+    },
     "cancel" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -499,6 +502,12 @@
           }
         }
       }
+    },
+    "thank_you_subtitle" : {
+
+    },
+    "thank_you_title" : {
+
     },
     "welcome_subtitle %@" : {
       "extractionState" : "manual",

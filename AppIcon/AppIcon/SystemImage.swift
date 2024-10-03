@@ -18,6 +18,7 @@ public enum SystemImage: String {
     case checkmark
     case clock
     case arrow = "arrow.forward"
+    case arrowBack = "arrow.backward"
     case paste = "doc.on.doc.fill"
 }
 
