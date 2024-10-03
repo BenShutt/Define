@@ -111,12 +111,9 @@ struct ApplePayButton: View {
                     onPaymentAuthorizationChange: onPaymentAuthorizationChange
                 )
             } else if applePay.canSetupCards() {
-                PayWithApplePayButton(
-                    .setUp,
-                    action: {
-                        applePay.setupCards()
-                    }
-                )
+                PayWithApplePayButton(.setUp) {
+                    applePay.setupCards()
+                }
             }
         }
         .payWithApplePayButtonStyle(.black)
