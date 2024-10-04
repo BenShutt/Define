@@ -14,3 +14,6 @@
 BUNDLE_IDENTIFIER = com.benshutt.Define
 MERCHANT_IDENTIFIER = merchant.$(BUNDLE_IDENTIFIER)
 BUNDLE_DISPLAY_NAME = Define
+
+// TODO: Use a test key until security is implemented
+STRIPE_PUBLISHABLE_KEY = 123

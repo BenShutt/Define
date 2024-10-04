@@ -16,6 +16,8 @@
 		420D1C9F2CAF0BC4006513F3 /* book.json in Resources */ = {isa = PBXBuildFile; fileRef = 420D1C9E2CAF0BC4006513F3 /* book.json */; };
 		4227DA062CB0058300EB333B /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4227DA052CB0057F00EB333B /* Configuration.swift */; };
 		4227DA132CB00FB400EB333B /* ConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4227DA122CB00FB400EB333B /* ConfigurationTests.swift */; };
+		4227DA182CB0199200EB333B /* StripePaymentSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 4227DA172CB0199200EB333B /* StripePaymentSheet */; };
+		4227DA1B2CB02D7900EB333B /* StripeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4227DA1A2CB02D7900EB333B /* StripeManager.swift */; };
 		B801A3DB2986D41400FAD316 /* PartOfSpeechView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B801A3DA2986D41400FAD316 /* PartOfSpeechView.swift */; };
 		B80258E32C2ED8490058048C /* WordReminderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80258E22C2ED8490058048C /* WordReminderRouter.swift */; };
 		B80399DD28D79A37008CE7B4 /* DefineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80399DC28D79A37008CE7B4 /* DefineApp.swift */; };
@@ -156,6 +158,7 @@
 		4227DA052CB0057F00EB333B /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		4227DA092CB007C300EB333B /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
 		4227DA122CB00FB400EB333B /* ConfigurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationTests.swift; sourceTree = "<group>"; };
+		4227DA1A2CB02D7900EB333B /* StripeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripeManager.swift; sourceTree = "<group>"; };
 		B801A3DA2986D41400FAD316 /* PartOfSpeechView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartOfSpeechView.swift; sourceTree = "<group>"; };
 		B80258E22C2ED8490058048C /* WordReminderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordReminderRouter.swift; sourceTree = "<group>"; };
 		B80399D928D79A37008CE7B4 /* Define.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Define.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -273,6 +276,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4227DA182CB0199200EB333B /* StripePaymentSheet in Frameworks */,
 				B8BFDC6C2AC77D04009E1F83 /* AppIcon in Frameworks */,
 				B85FB3C32C4ADF440089FBCE /* ColorUtilities in Frameworks */,
 				B8FF0DC9295F9528004C61B6 /* DictionaryAPI in Frameworks */,
@@ -538,6 +542,7 @@
 		B8C894ED28D908E900975E25 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				4227DA1A2CB02D7900EB333B /* StripeManager.swift */,
 				B8C8FB182C6E5DEA003D9824 /* ExportManager.swift */,
 				B879E9EF28F0CA910094AA24 /* SearchViewModel.swift */,
 				B89F6ED22C31F0E40097BF94 /* UserSettings.swift */,
@@ -681,6 +686,7 @@
 				B8A1232428E971EC00ACEC45 /* Lottie */,
 				B85FB3C42C4ADF440089FBCE /* Utilities */,
 				B8BEFCA02C749B6100212DC8 /* FlowLayout */,
+				4227DA172CB0199200EB333B /* StripePaymentSheet */,
 			);
 			productName = Define;
 			productReference = B80399D928D79A37008CE7B4 /* Define.app */;
@@ -758,6 +764,7 @@
 				B85FB3C12C4ADF440089FBCE /* XCRemoteSwiftPackageReference "Utilities" */,
 				B8A1232328E971EC00ACEC45 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				B8BEFC9F2C749B6100212DC8 /* XCRemoteSwiftPackageReference "FlowLayout" */,
+				4227DA142CB018D400EB333B /* XCRemoteSwiftPackageReference "stripe-ios-spm" */,
 			);
 			productRefGroup = B80399DA28D79A37008CE7B4 /* Products */;
 			projectDirPath = "";
@@ -871,6 +878,7 @@
 				B813C00328EB7F7D000C766C /* IconContainer.swift in Sources */,
 				B813C00128EB7DB9000C766C /* IconView.swift in Sources */,
 				B88491A629620353009F6469 /* IndexElement.swift in Sources */,
+				4227DA1B2CB02D7900EB333B /* StripeManager.swift in Sources */,
 				B8AD58832AD471350054403E /* InformationSheet.swift in Sources */,
 				B86FB81A2C2C7F1D00687528 /* InfoScreen.swift in Sources */,
 				B8D2A74228DF3A250096A020 /* InputTextField.swift in Sources */,
@@ -1285,6 +1293,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4227DA142CB018D400EB333B /* XCRemoteSwiftPackageReference "stripe-ios-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stripe/stripe-ios-spm";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 23.31.0;
+			};
+		};
 		B85FB3C12C4ADF440089FBCE /* XCRemoteSwiftPackageReference "Utilities" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/BenShutt/Utilities.git";
@@ -1312,6 +1328,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4227DA172CB0199200EB333B /* StripePaymentSheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4227DA142CB018D400EB333B /* XCRemoteSwiftPackageReference "stripe-ios-spm" */;
+			productName = StripePaymentSheet;
+		};
 		B85FB3C22C4ADF440089FBCE /* ColorUtilities */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B85FB3C12C4ADF440089FBCE /* XCRemoteSwiftPackageReference "Utilities" */;

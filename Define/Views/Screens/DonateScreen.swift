@@ -54,7 +54,11 @@ struct Amount {
 
 struct DonateScreen: View {
     @Environment(\.push) private var push
+
+    @StateObject private var stripe = StripeManager()
+    @State private var isPresentingCard = false
     @State private var selectedAmount: Amount
+
     private let quickAmounts: [GBP] = [5, 10, 20]
 
     init() {
@@ -90,18 +94,44 @@ struct DonateScreen: View {
         .padding(.margins)
         .screen()
         .stickyBottom {
-            ApplePayButton(
-                amount: selectedAmount.amount,
-                onFinish: {
-                    push(.thankYou)
+            VStack(spacing: .medium) {
+                ApplePayButton(
+                    amount: selectedAmount.amount,
+                    onFinish: {
+                        push(.thankYou)
+                    }
+                )
+                .buttonEnabled(selectedAmount.isValid)
+                .frame(maxWidth: .infinity, minHeight: 50)
+                .fixedSize(horizontal: false, vertical: true)
+
+                StyledButton(
+                    title: "donate_button",
+                    systemName: .card,
+                    onTap: {
+                        stripe.process(amount: selectedAmount.amount)
+                    }
+                )
+                .buttonEnabled(selectedAmount.isValid && !stripe.isLoading)
+                .overlay {
+                    if stripe.isLoading {
+                        LoadingView()
+                    }
                 }
-            )
-            .buttonEnabled(selectedAmount.isValid)
-            .frame(maxWidth: .infinity, minHeight: 50)
-            .fixedSize(horizontal: false, vertical: true)
+            }
             .padding(.margins)
         }
-        .navigationBar(title: "donate_title")
+        .navigationBar(title: String(localized: "donate"))
+        .paymentSheet(
+            isPresented: $stripe.isPresentingSheet,
+            paymentSheet: stripe.paymentSheet,
+            onCompletion: { result in
+                // TODO: Completed does not mean the transfer was successful (see docs)
+                if case .completed = result {
+                    push(.thankYou)
+                }
+            }
+        )
     }
 }
 

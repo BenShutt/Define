@@ -13,5 +13,6 @@ import Testing
         _ = Configuration.bundleIdentifier
         _ = Configuration.merchantIdentifier
         _ = Configuration.bundleDisplayName
+        _ = Configuration.stripePublishableKey
     }
 }

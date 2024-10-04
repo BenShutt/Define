@@ -20,6 +20,7 @@ public enum SystemImage: String {
     case arrow = "arrow.forward"
     case arrowBack = "arrow.backward"
     case paste = "doc.on.doc.fill"
+    case card = "creditcard.fill"
 }
 
 // MARK: - Image + SystemImage

@@ -19,6 +19,9 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: LaunchOptions? = nil
     ) -> Bool {
+        // Configure any settings
+        Configuration.setup()
+
         // Configure push notifications
         UNUserNotificationCenter.current().delegate = self
 

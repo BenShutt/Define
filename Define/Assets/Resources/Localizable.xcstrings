@@ -183,12 +183,33 @@
         }
       }
     },
+    "donate" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Donate"
+          }
+        }
+      }
+    },
     "donate_body" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Thank you so much for considering a donation. This app has running costs so welcomes all the help it can get. Please select an amount that seems reasonable to you."
+          }
+        }
+      }
+    },
+    "donate_button" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DONATE BY CARD"
           }
         }
       }

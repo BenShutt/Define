@@ -8,8 +8,12 @@
 import SwiftUI
 import PassKit
 
+// MARK: - GBP
+
 /// Amount in Pound Sterling
 typealias GBP = Decimal
+
+// MARK: - ApplePay
 
 // TODO: Prerequisites for Apple Pay
 // 1. Make merchant identifier in Apple Developer portal (merchant.{bundleId})
