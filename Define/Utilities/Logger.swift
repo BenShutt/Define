@@ -8,13 +8,9 @@
 import Foundation
 import OSLog
 
-var appNameOrDefault: String {
-    Bundle.main.appName ?? "Define"
-}
-
 let logger = Logger(
-    subsystem: Bundle.main.bundleIdentifier ?? appNameOrDefault,
-    category: appNameOrDefault
+    subsystem: Configuration.bundleIdentifier,
+    category: appName
 )
 
 func log(error: Error) {

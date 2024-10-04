@@ -18,7 +18,7 @@ struct InfoScreen: View {
     var body: some View {
         RootNavigationScreen(
             segmentedHeight: segmentedHeight,
-            subtitle: "info_subtitle \(appNameOrDefault)",
+            subtitle: "info_subtitle \(appName)",
             scrollContent: {
                 InfoScrollContentView(onExport: {
                     exportManager.export(modelContext: modelContext)

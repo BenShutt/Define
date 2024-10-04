@@ -96,10 +96,9 @@ struct DonateScreen: View {
                     push(.thankYou)
                 }
             )
-            .disabled(!selectedAmount.isValid)
-            .opacity(selectedAmount.isValid ? 1 : 0.25)
-            .frame(maxWidth: .infinity)
-            .frame(height: 50)
+            .buttonEnabled(selectedAmount.isValid)
+            .frame(maxWidth: .infinity, minHeight: 50)
+            .fixedSize(horizontal: false, vertical: true)
             .padding(.margins)
         }
         .navigationBar(title: "donate_title")
@@ -223,6 +222,15 @@ private extension View {
             isSelected: isSelected,
             action: action
         ))
+    }
+}
+
+// MARK: - View + Extensions
+
+private extension View {
+    func buttonEnabled(_ enabled: Bool) -> some View {
+        disabled(!enabled)
+            .opacity(enabled ? 1 : 0.25)
     }
 }
 

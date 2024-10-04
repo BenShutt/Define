@@ -17,13 +17,7 @@ typealias GBP = Decimal
 struct ApplePay {
 
     /// Identifier of the merchant set up in capabilities and the developer portal
-    var merchantIdentifier: String {
-        if let bundleId = Bundle.main.bundleIdentifier {
-            "merchant.\(bundleId)"
-        } else {
-            fatalError("Nil Bundle ID")
-        }
-    }
+    let merchantIdentifier = Configuration.merchantIdentifier
 
     /// Two-letter ISO 3166 country code.
     /// Set to code for: "United Kingdom of Great Britain and Northern Ireland"

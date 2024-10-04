@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>BUNDLE_DISPLAY_NAME</key>
+	<string>$(BUNDLE_DISPLAY_NAME)</string>
+	<key>MERCHANT_IDENTIFIER</key>
+	<string>$(MERCHANT_IDENTIFIER)</string>
+	<key>BUNDLE_IDENTIFIER</key>
+	<string>$(BUNDLE_IDENTIFIER)</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>NotoSans-Black.ttf</string>

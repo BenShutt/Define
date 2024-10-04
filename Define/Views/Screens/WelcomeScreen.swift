@@ -22,7 +22,7 @@ struct WelcomeScreen: View {
                     .padding(.top, 2 * .extraLarge)
                     .padding(.horizontal, .hMargin)
 
-                Text("welcome_subtitle \(appNameOrDefault)")
+                Text("welcome_subtitle \(appName)")
                     .textStyle(.body, fill: .leading)
                     .padding(.top, .large)
                     .padding(.horizontal, .hMargin)

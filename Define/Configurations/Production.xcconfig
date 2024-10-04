@@ -1,0 +1,16 @@
+//
+//  Production.xcconfig
+//  Define
+//
+//  Created by Ben Shutt on 04/10/2024.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+//
+// Configuration documentation
+// https://developer.apple.com/documentation/xcode/adding-a-build-configuration-file-to-your-project
+
+BUNDLE_IDENTIFIER = com.benshutt.Define
+MERCHANT_IDENTIFIER = merchant.$(BUNDLE_IDENTIFIER)
+BUNDLE_DISPLAY_NAME = Define

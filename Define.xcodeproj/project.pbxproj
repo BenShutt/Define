@@ -14,6 +14,8 @@
 		420D1C9B2CAEBA86006513F3 /* tick.json in Resources */ = {isa = PBXBuildFile; fileRef = 420D1C9A2CAEBA86006513F3 /* tick.json */; };
 		420D1C9D2CAEF8E2006513F3 /* Decimal+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420D1C9C2CAEF8DC006513F3 /* Decimal+Extensions.swift */; };
 		420D1C9F2CAF0BC4006513F3 /* book.json in Resources */ = {isa = PBXBuildFile; fileRef = 420D1C9E2CAF0BC4006513F3 /* book.json */; };
+		4227DA062CB0058300EB333B /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4227DA052CB0057F00EB333B /* Configuration.swift */; };
+		4227DA132CB00FB400EB333B /* ConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4227DA122CB00FB400EB333B /* ConfigurationTests.swift */; };
 		B801A3DB2986D41400FAD316 /* PartOfSpeechView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B801A3DA2986D41400FAD316 /* PartOfSpeechView.swift */; };
 		B80258E32C2ED8490058048C /* WordReminderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80258E22C2ED8490058048C /* WordReminderRouter.swift */; };
 		B80399DD28D79A37008CE7B4 /* DefineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80399DC28D79A37008CE7B4 /* DefineApp.swift */; };
@@ -151,6 +153,9 @@
 		420D1C9A2CAEBA86006513F3 /* tick.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = tick.json; sourceTree = "<group>"; };
 		420D1C9C2CAEF8DC006513F3 /* Decimal+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decimal+Extensions.swift"; sourceTree = "<group>"; };
 		420D1C9E2CAF0BC4006513F3 /* book.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = book.json; sourceTree = "<group>"; };
+		4227DA052CB0057F00EB333B /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		4227DA092CB007C300EB333B /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
+		4227DA122CB00FB400EB333B /* ConfigurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationTests.swift; sourceTree = "<group>"; };
 		B801A3DA2986D41400FAD316 /* PartOfSpeechView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartOfSpeechView.swift; sourceTree = "<group>"; };
 		B80258E22C2ED8490058048C /* WordReminderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordReminderRouter.swift; sourceTree = "<group>"; };
 		B80399D928D79A37008CE7B4 /* Define.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Define.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -294,6 +299,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4227DA002CB0016A00EB333B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4227DA072CB0071000EB333B /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				4227DA092CB007C300EB333B /* Production.xcconfig */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
 		B80399D028D79A36008CE7B4 = {
 			isa = PBXGroup;
 			children = (
@@ -302,6 +322,7 @@
 				B80399EC28D79A3B008CE7B4 /* DefineTests */,
 				B80399F628D79A3B008CE7B4 /* DefineUITests */,
 				B8FF0DC4295F7927004C61B6 /* DictionaryAPI */,
+				4227DA002CB0016A00EB333B /* Frameworks */,
 				B80399DA28D79A37008CE7B4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -319,6 +340,7 @@
 		B80399DB28D79A37008CE7B4 /* Define */ = {
 			isa = PBXGroup;
 			children = (
+				4227DA072CB0071000EB333B /* Configurations */,
 				B8039A0A28D7A26E008CE7B4 /* Assets */,
 				B8039A0F28D7A51F008CE7B4 /* Extensions */,
 				B8FF0DD62960AC6C004C61B6 /* Models */,
@@ -346,6 +368,7 @@
 			isa = PBXGroup;
 			children = (
 				B891F8E529530E6500A53582 /* CGRectTests.swift */,
+				4227DA122CB00FB400EB333B /* ConfigurationTests.swift */,
 			);
 			path = DefineTests;
 			sourceTree = "<group>";
@@ -494,6 +517,7 @@
 		B8C894E428D895DE00975E25 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				4227DA052CB0057F00EB333B /* Configuration.swift */,
 				B8DAF91B2AC332ED00514808 /* PushNotifications */,
 				B868F23B2AECDD88003765F8 /* DateGroup.swift */,
 				B868F2392AECCC13003765F8 /* Logger.swift */,
@@ -864,6 +888,7 @@
 				B8D7803C2C29BF62006D25EF /* NavigationRoute.swift in Sources */,
 				B896B9AD2AEA2EEF0043DA18 /* NotificationManager.swift in Sources */,
 				B8C8FB212C6F462E003D9824 /* NotoSans.swift in Sources */,
+				4227DA062CB0058300EB333B /* Configuration.swift in Sources */,
 				B832D6622C24654A00FF3EFE /* OffsetScrollView.swift in Sources */,
 				B8ACB21E2C333653002DF7C5 /* PartOfSpeech.swift in Sources */,
 				B801A3DB2986D41400FAD316 /* PartOfSpeechView.swift in Sources */,
@@ -912,6 +937,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4227DA132CB00FB400EB333B /* ConfigurationTests.swift in Sources */,
 				B891F8E629530E6500A53582 /* CGRectTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1063,6 +1089,7 @@
 		};
 		B80399FE28D79A3B008CE7B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4227DA092CB007C300EB333B /* Production.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1074,7 +1101,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Define/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Define;
+				INFOPLIST_KEY_CFBundleDisplayName = "$(BUNDLE_DISPLAY_NAME)";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1088,7 +1115,7 @@
 					"@executable_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.benshutt.Define;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_IDENTIFIER)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_STRICT_CONCURRENCY = complete;
@@ -1109,6 +1136,7 @@
 		};
 		B80399FF28D79A3B008CE7B4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4227DA092CB007C300EB333B /* Production.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1120,7 +1148,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Define/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Define;
+				INFOPLIST_KEY_CFBundleDisplayName = "$(BUNDLE_DISPLAY_NAME)";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1134,7 +1162,7 @@
 					"@executable_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.benshutt.Define;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_IDENTIFIER)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_STRICT_CONCURRENCY = complete;
