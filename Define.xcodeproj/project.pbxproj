@@ -276,12 +276,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4227DA182CB0199200EB333B /* StripePaymentSheet in Frameworks */,
 				B8BFDC6C2AC77D04009E1F83 /* AppIcon in Frameworks */,
 				B85FB3C32C4ADF440089FBCE /* ColorUtilities in Frameworks */,
 				B8FF0DC9295F9528004C61B6 /* DictionaryAPI in Frameworks */,
 				B8BEFCA12C749B6100212DC8 /* FlowLayout in Frameworks */,
 				B8A1232528E971EC00ACEC45 /* Lottie in Frameworks */,
+				4227DA182CB0199200EB333B /* StripePaymentSheet in Frameworks */,
 				B85FB3C52C4ADF440089FBCE /* Utilities in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,8 +344,8 @@
 		B80399DB28D79A37008CE7B4 /* Define */ = {
 			isa = PBXGroup;
 			children = (
-				4227DA072CB0071000EB333B /* Configurations */,
 				B8039A0A28D7A26E008CE7B4 /* Assets */,
+				4227DA072CB0071000EB333B /* Configurations */,
 				B8039A0F28D7A51F008CE7B4 /* Extensions */,
 				B8FF0DD62960AC6C004C61B6 /* Models */,
 				B80399E228D79A3B008CE7B4 /* Preview Content */,
@@ -431,9 +431,9 @@
 		B80E722729FDB8BE007CCE71 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				420D1C9C2CAEF8DC006513F3 /* Decimal+Extensions.swift */,
 				B80E722A29FDBBC1007CCE71 /* Calendar+Extensions.swift */,
 				B80E722829FDB8CC007CCE71 /* DateComponentsFormatter+Extensions.swift */,
+				420D1C9C2CAEF8DC006513F3 /* Decimal+Extensions.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -521,8 +521,8 @@
 		B8C894E428D895DE00975E25 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				4227DA052CB0057F00EB333B /* Configuration.swift */,
 				B8DAF91B2AC332ED00514808 /* PushNotifications */,
+				4227DA052CB0057F00EB333B /* Configuration.swift */,
 				B868F23B2AECDD88003765F8 /* DateGroup.swift */,
 				B868F2392AECCC13003765F8 /* Logger.swift */,
 				B8FF0DD029609DDF004C61B6 /* Migrations.swift */,
@@ -542,9 +542,9 @@
 		B8C894ED28D908E900975E25 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				4227DA1A2CB02D7900EB333B /* StripeManager.swift */,
 				B8C8FB182C6E5DEA003D9824 /* ExportManager.swift */,
 				B879E9EF28F0CA910094AA24 /* SearchViewModel.swift */,
+				4227DA1A2CB02D7900EB333B /* StripeManager.swift */,
 				B89F6ED22C31F0E40097BF94 /* UserSettings.swift */,
 			);
 			path = ViewModel;
@@ -609,6 +609,7 @@
 				B80E721929FD9546007CCE71 /* ScrollView */,
 				420D1C922CAEB3E0006513F3 /* ApplePayButton.swift */,
 				B891F8E12950FB6600A53582 /* ChevronView.swift */,
+				B8A1232928E9744E00ACEC45 /* EmptyContentView.swift */,
 				B8BFDC6E2AC77FED009E1F83 /* GradientBlurView.swift */,
 				B8AD58822AD471350054403E /* InformationSheet.swift */,
 				B8D2A74128DF3A250096A020 /* InputTextField.swift */,
@@ -616,7 +617,6 @@
 				B8F834CF2B73E40700D0C5D2 /* NavigationBarBackground.swift */,
 				B801A3DA2986D41400FAD316 /* PartOfSpeechView.swift */,
 				B8C8FBB32C6F4F2F003D9824 /* PasteButton.swift */,
-				B8A1232928E9744E00ACEC45 /* EmptyContentView.swift */,
 				B8B9B9D528EC5C54006FCA76 /* SearchHeaderView.swift */,
 				B8A8F5D92C713729003A2B09 /* SectionHeader.swift */,
 				B8C404332C308BB80081922C /* SegmentedControl.swift */,
@@ -782,6 +782,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				420D1C9F2CAF0BC4006513F3 /* book.json in Resources */,
 				420D1C992CAEB93F006513F3 /* confetti.json in Resources */,
 				B8B9B9E128EDC9FC006FCA76 /* Images.xcassets in Resources */,
 				B8B563E928F00096004B80F0 /* LaunchScreen.storyboard in Resources */,
@@ -793,7 +794,6 @@
 				B8C8FBA72C6F48F1003D9824 /* NotoSans-ExtraBold.ttf in Resources */,
 				B8C8FB6D2C6F48F1003D9824 /* NotoSans-ExtraBoldItalic.ttf in Resources */,
 				B8C8FB942C6F48F1003D9824 /* NotoSans-ExtraLight.ttf in Resources */,
-				420D1C9F2CAF0BC4006513F3 /* book.json in Resources */,
 				B8C8FBA52C6F48F1003D9824 /* NotoSans-ExtraLightItalic.ttf in Resources */,
 				B8C8FB7E2C6F48F1003D9824 /* NotoSans-Italic.ttf in Resources */,
 				B8C8FB922C6F48F1003D9824 /* NotoSans-Light.ttf in Resources */,
@@ -864,13 +864,16 @@
 				B891F8E22950FB6600A53582 /* ChevronView.swift in Sources */,
 				B832D6642C2466BF00FF3EFE /* ClippedHeight.swift in Sources */,
 				B8D2A73E28DEEFE70096A020 /* Color+Values.swift in Sources */,
+				4227DA062CB0058300EB333B /* Configuration.swift in Sources */,
 				B84AD60C28FB01AF00C2D5AE /* ContentView.swift in Sources */,
 				B813BFFF28EB7BE6000C766C /* CrossIconView.swift in Sources */,
 				B80E722929FDB8CC007CCE71 /* DateComponentsFormatter+Extensions.swift in Sources */,
 				B868F23C2AECDD88003765F8 /* DateGroup.swift in Sources */,
+				420D1C9D2CAEF8E2006513F3 /* Decimal+Extensions.swift in Sources */,
 				B80399DD28D79A37008CE7B4 /* DefineApp.swift in Sources */,
 				B88491A22961FFB5009F6469 /* DefinitionListItem.swift in Sources */,
 				420D1C952CAEB72B006513F3 /* DonateScreen.swift in Sources */,
+				B8A1232A28E9744E00ACEC45 /* EmptyContentView.swift in Sources */,
 				B8C8FB192C6E5DEA003D9824 /* ExportManager.swift in Sources */,
 				B8B05F162C29748400F2A9A8 /* FixedSizeSheet.swift in Sources */,
 				B8BFDC6F2AC77FED009E1F83 /* GradientBlurView.swift in Sources */,
@@ -878,12 +881,10 @@
 				B813C00328EB7F7D000C766C /* IconContainer.swift in Sources */,
 				B813C00128EB7DB9000C766C /* IconView.swift in Sources */,
 				B88491A629620353009F6469 /* IndexElement.swift in Sources */,
-				4227DA1B2CB02D7900EB333B /* StripeManager.swift in Sources */,
 				B8AD58832AD471350054403E /* InformationSheet.swift in Sources */,
 				B86FB81A2C2C7F1D00687528 /* InfoScreen.swift in Sources */,
 				B8D2A74228DF3A250096A020 /* InputTextField.swift in Sources */,
 				B8C25F9C294F7AAF001C8847 /* KeyboardToolbar.swift in Sources */,
-				420D1C9D2CAEF8E2006513F3 /* Decimal+Extensions.swift in Sources */,
 				B86FB81C2C2C841D00687528 /* ListItem.swift in Sources */,
 				B8E49C0928DF917E00F9CAC4 /* LoadingView.swift in Sources */,
 				B868F23A2AECCC13003765F8 /* Logger.swift in Sources */,
@@ -896,7 +897,6 @@
 				B8D7803C2C29BF62006D25EF /* NavigationRoute.swift in Sources */,
 				B896B9AD2AEA2EEF0043DA18 /* NotificationManager.swift in Sources */,
 				B8C8FB212C6F462E003D9824 /* NotoSans.swift in Sources */,
-				4227DA062CB0058300EB333B /* Configuration.swift in Sources */,
 				B832D6622C24654A00FF3EFE /* OffsetScrollView.swift in Sources */,
 				B8ACB21E2C333653002DF7C5 /* PartOfSpeech.swift in Sources */,
 				B801A3DB2986D41400FAD316 /* PartOfSpeechView.swift in Sources */,
@@ -908,7 +908,6 @@
 				B80E722629FDB5C9007CCE71 /* RoundedRectangleBorder.swift in Sources */,
 				B8FF0DD82960ACCE004C61B6 /* SavedWord.swift in Sources */,
 				B89F179428E0EBF100A96E35 /* Screen.swift in Sources */,
-				B8A1232A28E9744E00ACEC45 /* EmptyContentView.swift in Sources */,
 				B8B9B9D628EC5C54006FCA76 /* SearchHeaderView.swift in Sources */,
 				B813BFFD28EB7BA1000C766C /* SearchIconView.swift in Sources */,
 				B8D2A73C28DEEFAE0096A020 /* SearchScreen.swift in Sources */,
@@ -921,6 +920,7 @@
 				B894FA2128FC8A4B00BC0BFA /* StickyBottom.swift in Sources */,
 				B894FA2428FC8D7A00BC0BFA /* StickyButton.swift in Sources */,
 				B830B7D32C317BA5007DBD8A /* StickyTop.swift in Sources */,
+				4227DA1B2CB02D7900EB333B /* StripeManager.swift in Sources */,
 				B8BBA16228E8EDF100222116 /* StyledButton.swift in Sources */,
 				B879E9E928F0C5190094AA24 /* TagView.swift in Sources */,
 				B8D2A74628DF3AFE0096A020 /* TextStyle.swift in Sources */,
@@ -945,8 +945,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4227DA132CB00FB400EB333B /* ConfigurationTests.swift in Sources */,
 				B891F8E629530E6500A53582 /* CGRectTests.swift in Sources */,
+				4227DA132CB00FB400EB333B /* ConfigurationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
